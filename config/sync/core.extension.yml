@@ -3,6 +3,7 @@ module:
   adminimal_admin_toolbar: 0
   block: 0
   breakpoint: 0
+  covid: 0
   dblog: 0
   devel: 0
   dynamic_page_cache: 0

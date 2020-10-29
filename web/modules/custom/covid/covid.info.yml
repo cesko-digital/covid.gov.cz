@@ -1,0 +1,8 @@
+name: Covid
+description: Covid.gov.cz base module
+
+type: module
+core_version_requirement: ^9.0
+
+version: '1.0.0'
+project: 'covid.gov.cz'

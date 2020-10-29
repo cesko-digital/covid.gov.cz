@@ -1,0 +1,51 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\covid_ui\ToolbarHandler;
+
+
+/**
+ * Implements hook_toolbar().
+ */
+function covid_ui_toolbar() {
+  $items = [];
+
+  $tray = [
+    'covid_menu' => [
+      '#lazy_builder' => [ToolbarHandler::class . ':lazyBuilder', []],
+      '#create_placeholder' => TRUE,
+    ]
+  ];
+
+  $items['covid'] = [
+    '#type' => 'toolbar_item',
+    '#weight' => 5,
+    'tab' => [
+      '#type' => 'link',
+      '#title' => 'COVID Portál',
+      '#url' => Url::fromRoute('covid_ui'),
+      '#attributes' => [
+        '#title' => 'COVID Portál',
+        'class' => ['toolbar-icon', 'toolbar-icon-covid']
+      ]
+    ],
+    'tray' => [
+        '#heading' => 'COVID Portál',
+      ] + $tray,
+    '#attached' => [
+      'library' => 'covid_ui/toolbar'
+    ],
+    '#cache' => [
+      'contexts' => ['user.permissions']
+    ]
+  ];
+
+  return $items;
+}
+
+/**
+ * Implements hook_toolbar_alter().
+ */
+function covid_ui_toolbar_alter(&$items) {
+  $items['administration']['#attached']['library'][] = 'covid_ui/toolbar';
+}

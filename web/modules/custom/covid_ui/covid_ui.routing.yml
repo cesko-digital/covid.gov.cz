@@ -1,0 +1,7 @@
+covid_ui:
+  path: '/admin/covid'
+  defaults:
+    _controller: '\Drupal\covid_ui\Controller\AdminMenuController::adminMenuBlockPage'
+    _title: 'COVID Portál'
+  requirements:
+    _permission: 'access administration pages'

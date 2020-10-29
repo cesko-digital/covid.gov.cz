@@ -10,7 +10,6 @@ libraries:
 regions:
   content: Content
 
-# Information added by Drupal.org packaging script on 2020-10-06
-version: '8.x-1.0'
+version: '1.0.0'
 project: 'covid.gov.cz'
-datestamp: 1602006939
+
