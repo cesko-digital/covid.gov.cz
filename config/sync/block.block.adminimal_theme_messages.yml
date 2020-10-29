@@ -1,5 +1,5 @@
 uuid: 81d7569a-3d51-4953-a92e-925c95ded93a
-langcode: en
+langcode: cs
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: 'Stavové zprávy'
   provider: system
   label_display: '0'
 visibility: {  }

@@ -3,3 +3,4 @@ default_scheme: public
 temporary_maximum_age: 21600
 _core:
   default_config_hash: mguGHCYb9Dw5EcpfjwoShGV1Vjkbz3QuPRCLfxiye-g
+langcode: cs

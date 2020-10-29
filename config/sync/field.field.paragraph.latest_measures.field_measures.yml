@@ -1,0 +1,28 @@
+uuid: 80f90c6d-967b-41d5-af02-86383c2fb6d7
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_measures
+    - node.type.measure
+    - paragraphs.paragraphs_type.latest_measures
+id: paragraph.latest_measures.field_measures
+field_name: field_measures
+entity_type: paragraph
+bundle: latest_measures
+label: Opatření
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      measure: measure
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

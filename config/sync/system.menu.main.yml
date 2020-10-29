@@ -1,10 +1,10 @@
 uuid: ae986ead-2b26-43c2-aac8-2aa7cdc7ce6a
-langcode: en
+langcode: cs
 status: true
 dependencies: {  }
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
-label: 'Main navigation'
-description: 'Site section links'
+label: 'Hlavní navigace'
+description: 'Odkazy na hlavní sekce webu'
 locked: true

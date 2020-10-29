@@ -1,13 +1,13 @@
-uuid: 7ef9995a-0c23-4a8d-937a-99a87ae9763e
-langcode: en
-status: true
+uuid: b2b06fa0-1ac1-4d95-8173-a81542e8da8c
+langcode: cs
+status: false
 dependencies:
   theme:
-    - stark
+    - covid_theme
 _core:
   default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
-id: stark_local_actions
-theme: stark
+id: covid_theme_local_actions
+theme: covid_theme
 region: content
 weight: -10
 provider: null

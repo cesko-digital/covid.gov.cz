@@ -1,5 +1,5 @@
 uuid: 04e49162-18e2-4237-8427-a1ca38c67c1d
-langcode: en
+langcode: cs
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: JBptjnfuOMtsdKygklXxoOgeOCTMtQxlkymjnnj-cC0
 id: node_unpromote_action
-label: 'Remove content from front page'
+label: 'Odstranit obsah z titulní stránky'
 type: node
 plugin: node_unpromote_action
 configuration: {  }

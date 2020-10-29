@@ -1,5 +1,5 @@
 uuid: d3fb7f48-a3a4-497b-9c73-4637b866ce6b
-langcode: en
+langcode: cs
 status: true
 dependencies:
   theme:
@@ -14,7 +14,7 @@ provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Primary tabs'
+  label: 'Hlavní záložky'
   provider: core
   label_display: '0'
   primary: true

@@ -1,5 +1,5 @@
 uuid: f701ceb8-3e29-4d3c-869b-ce7c789f8f34
-langcode: en
+langcode: cs
 status: true
 dependencies:
   theme:
@@ -14,7 +14,7 @@ provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: 'Secondary tabs'
+  label: 'Sekundární záložky'
   provider: core
   label_display: '0'
   primary: false

@@ -9,7 +9,7 @@ set('default_timeout', 600);
 set('application', 'covid.vantuch.cz');
 
 // Project repository
-set('repository', 'git@bitbucket.org:VanTuch/covid.git');
+set('repository', 'git@github.com:cesko-digital/covid.gov.cz.git');
 
 set('http_user', 'daemon');
 
@@ -43,7 +43,7 @@ host('gce')
   ->port('22')
   ->user('marek')
   ->stage('staging')
-  ->set('deploy_path', '/data/docroot/dev.mujrozhlas.cz');
+  ->set('deploy_path', '/home/marek/apps/covid.vantuch.cz/htdocs');
 
 // Tasks
 task('deploy:composer', 'composer install --no-dev --no-progress --optimize-autoloader');
@@ -79,4 +79,3 @@ task('deploy', [
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-

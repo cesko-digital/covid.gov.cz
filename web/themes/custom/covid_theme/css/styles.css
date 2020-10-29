@@ -1,0 +1,13 @@
+body {
+  background: #2362A2;
+  color: white;
+  font-family: sans-serif; }
+
+.layout-container {
+  text-align: center;
+  font-size: 100px;
+  padding-top: 100px; }
+  .layout-container img {
+    width: 200px; }
+
+/*# sourceMappingURL=styles.css.map */

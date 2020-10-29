@@ -1,16 +1,16 @@
-uuid: 74a46fa7-6c52-459a-932d-9dfebe61a984
-langcode: en
-status: true
+uuid: 9e3a30e9-da10-4719-bd01-9db73efaaa87
+langcode: cs
+status: false
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - covid_theme
 _core:
   default_config_hash: fRKXNB91UxDvEMkzCR8ZBsawfC6Fqbme2gtobei3gu4
-id: stark_branding
-theme: stark
-region: header
+id: covid_theme_branding
+theme: covid_theme
+region: content
 weight: 0
 provider: null
 plugin: system_branding_block

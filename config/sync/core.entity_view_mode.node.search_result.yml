@@ -1,5 +1,5 @@
 uuid: 5ef9038c-0251-4a2e-83b9-d376a14c97c7
-langcode: en
+langcode: cs
 status: false
 dependencies:
   module:
@@ -7,6 +7,6 @@ dependencies:
 _core:
   default_config_hash: 6GCOQ-jP2RbdbHA5YWQ6bT8CfGbqrBYKOSC_XY4E3ZM
 id: node.search_result
-label: 'Search result highlighting input'
+label: 'Zvýraznit hledaný text ve výsledcích.'
 targetEntityType: node
 cache: true

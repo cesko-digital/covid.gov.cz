@@ -1,5 +1,5 @@
 uuid: 82fe9672-0bc8-4920-844b-6a097c0c6f95
-langcode: en
+langcode: cs
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: SPsUXsR3Rc8d1y3gewzaAKWa1ncea_ywXX3f7LTn7k0
 id: user_unblock_user_action
-label: 'Unblock the selected user(s)'
+label: 'Odblokovat vybrané uživatele'
 type: user
 plugin: user_unblock_user_action
 configuration: {  }

@@ -1,22 +1,22 @@
-uuid: 43d8c95a-d9aa-47d1-b1c0-1baf0460b4cc
-langcode: en
-status: true
+uuid: babda2a4-c423-4bb3-95af-5056fb75ee2b
+langcode: cs
+status: false
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - covid_theme
 _core:
   default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
-id: stark_messages
-theme: stark
-region: highlighted
+id: covid_theme_messages
+theme: covid_theme
+region: content
 weight: 0
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: 'Stavové zprávy'
   provider: system
   label_display: '0'
 visibility: {  }

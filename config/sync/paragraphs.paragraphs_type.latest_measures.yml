@@ -1,0 +1,10 @@
+uuid: f5c9d67d-e4e4-4fea-a6f1-225fc8135968
+langcode: cs
+status: true
+dependencies: {  }
+id: latest_measures
+label: 'Nejnovější opatření'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

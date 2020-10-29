@@ -1,5 +1,5 @@
 uuid: 66a46e47-8a7e-4dfa-b06f-bf4542069fd8
-langcode: en
+langcode: cs
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_breadcrumb_block
 settings:
   id: system_breadcrumb_block
-  label: Breadcrumbs
+  label: 'Drobečková navigace'
   provider: system
   label_display: '0'
 visibility: {  }
