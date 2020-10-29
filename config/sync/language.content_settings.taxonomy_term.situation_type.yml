@@ -1,0 +1,11 @@
+uuid: df783146-a4a2-49f9-a3c3-3ebb192ff989
+langcode: cs
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.situation_type
+id: taxonomy_term.situation_type
+target_entity_type_id: taxonomy_term
+target_bundle: situation_type
+default_langcode: site_default
+language_alterable: false

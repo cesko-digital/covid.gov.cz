@@ -11,7 +11,7 @@ set('application', 'covid.vantuch.cz');
 // Project repository
 set('repository', 'git@github.com:cesko-digital/covid.gov.cz.git');
 
-set('http_user', 'daemon');
+set('http_user', 'covid');
 
 // Shared files/dirs between deploys
 set('shared_files', [
@@ -38,12 +38,12 @@ set('drush', 'vendor/bin/drush');
 
 // Hosts
 
-host('gce')
-  ->hostname('104.155.64.21')
-  ->port('22')
-  ->user('marek')
+host('smitka')
+  ->hostname('89.221.223.20')
+  ->port('9022')
+  ->user('covid')
   ->stage('staging')
-  ->set('deploy_path', '/home/marek/apps/covid.vantuch.cz/htdocs');
+  ->set('deploy_path', '/home/covid/htdocs/');
 
 // Tasks
 task('deploy:composer', 'composer install --no-dev --no-progress --optimize-autoloader');
@@ -79,3 +79,4 @@ task('deploy', [
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
+

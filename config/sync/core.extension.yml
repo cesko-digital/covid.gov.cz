@@ -4,6 +4,7 @@ module:
   block: 0
   breakpoint: 0
   covid: 0
+  covid_ui: 0
   dblog: 0
   devel: 0
   dynamic_page_cache: 0
@@ -23,6 +24,7 @@ module:
   path_alias: 0
   serialization: 0
   system: 0
+  taxonomy: 0
   text: 0
   toolbar: 0
   update: 0
