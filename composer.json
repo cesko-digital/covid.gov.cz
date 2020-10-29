@@ -19,13 +19,18 @@
         "php": ">=7.3",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6",
+        "drupal/adminimal_admin_toolbar": "^1.11",
+        "drupal/adminimal_theme": "^1.6",
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0",
+        "drupal/devel": "^4.0",
+        "drupal/paragraphs": "^1.12",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
     },
     "require-dev": {
+        "deployer/deployer": "^6.8",
         "drupal/core-dev": "^9.0",
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
