@@ -42,17 +42,9 @@ jobs:
           key: ${{ secrets.SSH_KEY_STAGE }}
           known_hosts: ${{ secrets.KNOWN_HOSTS_STAGE }}
 
-      - name: Deploy to stage
-        run:
-          - cd drupal
-          - composer install
+      - name: Install composer
+        run: cd drupal && composer install
 
-#      - name: Create GitHub deployment
-#        uses: chrnorm/deployment-action@releases/v1
-#        id: deployment
-#        with:
-#          token: "${{ github.token }}"
-#          target_url: http://my-app-url.com
-#          environment: production
-#     - name: Deploy
-#       run: vendor/bin/dep deploy staging
+      - name: Deploy to stage
+        run: drupal/vendor/bin/dep deploy staging
+
