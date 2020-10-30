@@ -1,32 +1,58 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "@covid/frontend",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Frontend vládního webu pro srozumitelný přehled informací a opatření ohledně pandemie koronaviru.",
   "version": "0.1.0",
-  "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint .",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "gatsby": "^2.24.91",
+    "gatsby-plugin-scss-typescript": "^4.0.13",
+    "gatsby-plugin-typescript": "^2.4.25",
     "gatsby-source-drupal-multilanguage": "^3.1.11",
+    "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gatsby-plugin-eslint": "^2.0.8",
+    "gatsby-plugin-stylelint": "^3.2.0",
+    "gatsby-plugin-ts-config": "^1.1.0",
+    "gatsby-plugin-tsconfig-paths": "^1.0.2",
+    "prettier": "^2.0.4",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "typescript": "^4.0.5",
+    "typescript-plugin-css-modules": "^2.7.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/cesko-digital/covid.gov.cz"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/cesko-digital/covid.gov.cz/issues"
   }
 }
