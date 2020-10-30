@@ -4,7 +4,10 @@
     "declarationDir": "dist",
     "module": "esnext",
     "target": "es5",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "sourceMap": true,
     "jsx": "preserve",
     "moduleResolution": "node",
@@ -12,10 +15,22 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "types": ["node", "react"]
+    "types": [
+      "node",
+      "react",
+      "jest"
+    ]
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "public", ".cache"]
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ]
 }

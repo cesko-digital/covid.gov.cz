@@ -20,6 +20,8 @@ jobs:
 
       - run: yarn install
 
+      - run: yarn test
+
       - run: yarn format
 
       - run: yarn lint
