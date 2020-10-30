@@ -3,7 +3,6 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.situation.field_area
     - field.field.node.situation.field_content
     - field.field.node.situation.field_description
     - field.field.node.situation.field_situation_type
@@ -15,16 +14,6 @@ targetEntityType: node
 bundle: situation
 mode: default
 content:
-  field_area:
-    weight: 1
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_content:
     weight: 5
     settings:
@@ -73,6 +62,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   created: true
   promote: true

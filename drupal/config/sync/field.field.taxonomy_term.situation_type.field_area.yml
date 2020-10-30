@@ -1,18 +1,18 @@
-uuid: 75e36c8c-4fb8-43b8-913f-efc8febbd9ba
+uuid: f029be47-f8ee-4074-90fa-eb0385544569
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_area
-    - node.type.situation
+    - field.storage.taxonomy_term.field_area
     - taxonomy.vocabulary.area
-id: node.situation.field_area
+    - taxonomy.vocabulary.situation_type
+id: taxonomy_term.situation_type.field_area
 field_name: field_area
-entity_type: node
-bundle: situation
+entity_type: taxonomy_term
+bundle: situation_type
 label: Okruh
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

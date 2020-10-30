@@ -1,13 +1,12 @@
-uuid: 05fcaa89-8de8-4855-ab80-9049c98ce41f
+uuid: 1f067e1c-d258-47d0-bbff-6775731c5990
 langcode: cs
 status: true
 dependencies:
   module:
-    - node
     - taxonomy
-id: node.field_area
+id: taxonomy_term.field_area
 field_name: field_area
-entity_type: node
+entity_type: taxonomy_term
 type: entity_reference
 settings:
   target_type: taxonomy_term
