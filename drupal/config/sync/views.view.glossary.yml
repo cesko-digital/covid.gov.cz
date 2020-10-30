@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: Z1Lg95xnf11BTHIugkzple_pdxZdECiqLRcrLVo3bcw
 id: glossary
-label: Glossary
+label: Slovník
 module: node
 description: 'All content, by letter.'
 tag: default
@@ -19,7 +19,7 @@ base_field: nid
 display:
   default:
     id: default
-    display_title: Master
+    display_title: Nadřízené
     display_plugin: default
     position: 0
     display_options:
@@ -42,13 +42,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Použít
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Řadit dle'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzestupně
+          sort_desc_label: Sestupně
       pager:
         type: mini
         options:
@@ -58,12 +58,12 @@ display:
           total_pages: 0
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Vše -'
             offset: false
-            offset_label: Offset
+            offset_label: Posun
           tags:
             previous: ‹‹
             next: ››
@@ -76,7 +76,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Title
+          label: Nadpis
           exclude: false
           alter:
             alter_text: false
@@ -123,7 +123,7 @@ display:
           id: name
           table: users_field_data
           field: name
-          label: Author
+          label: Autor
           relationship: uid
           plugin_id: field
           type: user_name
@@ -175,7 +175,7 @@ display:
           id: changed
           table: node_field_data
           field: changed
-          label: 'Last update'
+          label: 'Poslední obnova'
           type: timestamp
           settings:
             date_format: long
@@ -365,7 +365,7 @@ display:
       tags: {  }
   attachment_1:
     id: attachment_1
-    display_title: Attachment
+    display_title: Příloha
     display_plugin: attachment
     position: 2
     display_options:
@@ -433,7 +433,7 @@ display:
       tags: {  }
   page_1:
     id: page_1
-    display_title: Page
+    display_title: Stránka
     display_plugin: page
     position: 1
     display_options:
@@ -443,7 +443,7 @@ display:
       path: glossary
       menu:
         type: normal
-        title: Glossary
+        title: Slovník
         weight: 0
         menu_name: main
         parent: ''
