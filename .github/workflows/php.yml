@@ -4,8 +4,8 @@ on:
   push:
     branches: [ master ]
     paths-ignore:
-      - 'gatsby/**'
-      - 'docker/**'
+    - 'gatsby/**'
+    - 'docker/**'
 
 jobs:
 #  build:
