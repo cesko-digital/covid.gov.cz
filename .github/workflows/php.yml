@@ -47,5 +47,5 @@ jobs:
         run: cd drupal && composer install
 
       - name: Deploy to stage
-        run: cd drupal && vendor/bin/dep deploy staging -vvv
+        run: cd drupal && vendor/bin/dep deploy staging
 
