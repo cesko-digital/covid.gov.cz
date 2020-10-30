@@ -9,24 +9,24 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Validate composer.json and composer.lock
-      run: composer validate
-
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
-
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
+#    steps:
+#    - uses: actions/checkout@v2
+#
+#    - name: Validate composer.json and composer.lock
+#      run: composer validate
+#
+#    - name: Cache Composer packages
+#      id: composer-cache
+#      uses: actions/cache@v2
+#      with:
+#        path: vendor
+#        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+#        restore-keys: |
+#          ${{ runner.os }}-php-
+#
+#    - name: Install dependencies
+#      if: steps.composer-cache.outputs.cache-hit != 'true'
+#      run: composer install --prefer-dist --no-progress --no-suggest
 
   deploy:
     name: Deploy to Staging
@@ -36,20 +36,23 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install SSH key
+      - name: Install stage SSH key
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_KEY }}
-          name: id_rsa # optional
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          config: ${{ secrets.CONFIG }} # ssh_config; optional
+          key: ${{ secrets.SSH_KEY_STAGE }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS_STAGE }}
 
-      - name: Create GitHub deployment
-        uses: chrnorm/deployment-action@releases/v1
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          target_url: http://my-app-url.com
-          environment: production
+      - name: Deploy to stage
+        run:
+          - cd drupal
+          - composer install
+
+#      - name: Create GitHub deployment
+#        uses: chrnorm/deployment-action@releases/v1
+#        id: deployment
+#        with:
+#          token: "${{ github.token }}"
+#          target_url: http://my-app-url.com
+#          environment: production
 #     - name: Deploy
 #       run: vendor/bin/dep deploy staging
