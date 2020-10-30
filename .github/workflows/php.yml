@@ -3,6 +3,9 @@ name: PHP Composer
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - 'gatsby/**'
+      - 'docker/**'
 
 jobs:
 #  build:
