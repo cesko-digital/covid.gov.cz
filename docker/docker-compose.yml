@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+  drupal:
+    user: "${COVID_USER}"
+    image:  covid_php
+    env_file:
+      - .env
+    volumes:  [ "${COVID_PROJECT_DIR}:/var/www/html:delegated" ]
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    depends_on:
+      - mysql
+
+  adminer:
+    image: adminer:latest
+    ports: [ "${COVID_PORT_ADMINER}:8080" ]
+    depends_on:
+      - mysql
+
+  nginx:
+    user: "${COVID_USER}"
+    image:  covid_nginx
+    ports: [ "${COVID_PORT_NGINX}:8080" ]
+    volumes:  [ "${COVID_PROJECT_DIR}:/var/www/html:delegated" ]
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+
+  mysql:
+    image:  mysql:5.7.31
+    ports: [ "${COVID_PORT_MYSQL}:3306" ]
+    environment:
+      MYSQL_ROOT_PASSWORD: "${COVID_MYSQL_ROOT_PASSWORD}"
+    volumes: [ "/var/lib/mysql" ]
