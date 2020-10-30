@@ -4,6 +4,6 @@ exports[`Hello renders correctly 1`] = `
 <div
   className="text"
 >
-  Hello world!
+  greetings
 </div>
 `;
