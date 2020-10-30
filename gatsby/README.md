@@ -1,6 +1,7 @@
 ## Gatsby
-- yarn install
-- yarn global add gatsby-cli
-- yarn dev
+Install Gatsby CLI
+- `yarn global add gatsby-cli`
 
-
+Run dev server
+- `yarn install`
+- `yarn dev`
