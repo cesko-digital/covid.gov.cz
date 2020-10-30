@@ -1,6 +1,6 @@
 ## Gatsby
-- npm install
-- npm install -g gatsby-cli
-- gatsby develop
+- yarn install
+- yarn global add gatsby-cli
+- yarn dev
 
 
