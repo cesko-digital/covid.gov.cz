@@ -1,5 +1,22 @@
 # COVID Portal
+## Backend - Drupal
 
-`drupal` back-end based on headless Drupal 9
+ - back-end based on headless Drupal 9
 
-`gatsby` front-end based on Gatsby JS
+
+## Frontend - GatsbyJS
+
+
+### Getting started
+
+- `cd gatsby`
+
+Install Gatsby CLI
+- `yarn global add gatsby-cli`
+
+
+Install dependencies
+- `yarn install`
+
+Run dev server
+- `yarn dev`
