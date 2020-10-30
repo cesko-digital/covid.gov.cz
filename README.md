@@ -9,8 +9,11 @@
 
 ### Getting started
 
+- `cd gatsby`
+
 Install Gatsby CLI
 - `yarn global add gatsby-cli`
+
 
 Install dependencies
 - `yarn install`
