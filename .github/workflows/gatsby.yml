@@ -28,7 +28,4 @@ jobs:
 
       - run: yarn stylelint
 
-      #TODO: https://trello.com/c/KddZ7Pph/22-setup-ts-jest-in-gatsby-project
-      # -run: yarn test
-
       - run: yarn build
