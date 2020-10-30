@@ -1,0 +1,32 @@
+name: Gatsby
+
+on:
+  push:
+    paths:
+      - "gatsby/*"
+
+defaults:
+  run:
+    working-directory: ./gatsby
+
+jobs:
+  validate:
+    name: Validate Gatsby Code Base
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: yarn install
+
+      - run: yarn format
+
+      - run: yarn lint
+
+      - run: yarn stylelint
+
+      #TODO: https://trello.com/c/KddZ7Pph/22-setup-ts-jest-in-gatsby-project
+      # -run: yarn test
+
+      - run: yarn build

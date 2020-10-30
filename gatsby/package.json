@@ -6,8 +6,10 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint .",
+    "stylelint": "stylelint \"**/*.scss\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
