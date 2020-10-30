@@ -1,7 +1,7 @@
 ## Gatsby
 Install Gatsby CLI
 - `yarn global add gatsby-cli`
-
-Run dev server
+Install dependencies
 - `yarn install`
+Run dev server
 - `yarn dev`
