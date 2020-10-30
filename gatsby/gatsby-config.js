@@ -1,16 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
+const { generateConfig } = require('gatsby-plugin-ts-config');
 
-module.exports = {
-  plugins: [ 
-   {
-      resolve: 'gatsby-source-drupal-multilanguage',
-      options: {
-        baseUrl: 'https://covid.pristup.net/',
-      }
-    }
-  ],
-}
+module.exports = generateConfig({
+  configDir: 'config',
+  projectRoot: __dirname,
+});
