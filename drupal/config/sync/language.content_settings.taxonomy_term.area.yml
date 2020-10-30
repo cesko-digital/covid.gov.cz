@@ -1,16 +1,16 @@
-uuid: 6a646875-12f1-4eb2-b28a-d1837b853326
+uuid: 84ff8c47-4674-4ff1-b3ac-4d1bc93ed4e7
 langcode: cs
 status: true
 dependencies:
   config:
-    - node.type.situation
+    - taxonomy.vocabulary.area
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: true
-id: node.situation
-target_entity_type_id: node
-target_bundle: situation
+id: taxonomy_term.area
+target_entity_type_id: taxonomy_term
+target_bundle: area
 default_langcode: site_default
 language_alterable: false

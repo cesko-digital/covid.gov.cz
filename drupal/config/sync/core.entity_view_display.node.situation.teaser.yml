@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.situation.field_area
+    - field.field.node.situation.field_content
     - field.field.node.situation.field_description
     - field.field.node.situation.field_situation_type
     - node.type.situation
@@ -20,6 +22,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_area: true
+  field_content: true
   field_description: true
   field_situation_type: true
   langcode: true

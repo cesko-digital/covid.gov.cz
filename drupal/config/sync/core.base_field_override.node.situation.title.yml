@@ -1,0 +1,18 @@
+uuid: b92ad63f-59aa-4e52-8933-62eebb2c6884
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.situation
+id: node.situation.title
+field_name: title
+entity_type: node
+bundle: situation
+label: Název
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

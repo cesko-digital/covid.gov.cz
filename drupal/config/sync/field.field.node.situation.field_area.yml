@@ -1,16 +1,16 @@
-uuid: e3e2a0fd-928a-4aa2-b54d-a6e66c9081d0
+uuid: 75e36c8c-4fb8-43b8-913f-efc8febbd9ba
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_situation_type
+    - field.storage.node.field_area
     - node.type.situation
-    - taxonomy.vocabulary.situation_type
-id: node.situation.field_situation_type
-field_name: field_situation_type
+    - taxonomy.vocabulary.area
+id: node.situation.field_area
+field_name: field_area
 entity_type: node
 bundle: situation
-label: Téma
+label: Okruh
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      situation_type: situation_type
+      area: area
     sort:
       field: name
       direction: asc

@@ -1,0 +1,41 @@
+uuid: 90ed061c-7977-4aa0-ad20-a336d4a758ba
+langcode: cs
+status: true
+dependencies:
+  config:
+    - filter.format.basic
+  module:
+    - ckeditor
+format: basic
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formátování
+          items:
+            - Bold
+            - Italic
+        -
+          name: Odkazy
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

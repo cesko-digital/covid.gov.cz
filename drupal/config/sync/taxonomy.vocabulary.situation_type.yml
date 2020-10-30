@@ -2,7 +2,7 @@ uuid: 8dcd3a57-3bc4-4d63-b60e-f542fc957ff5
 langcode: cs
 status: true
 dependencies: {  }
-name: 'Kategorie životní situace'
+name: 'Téma životní situace'
 vid: situation_type
 description: ''
 weight: 0

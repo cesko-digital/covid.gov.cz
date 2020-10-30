@@ -3,22 +3,38 @@ langcode: cs
 status: true
 dependencies:
   config:
+    - field.field.node.situation.field_area
+    - field.field.node.situation.field_content
     - field.field.node.situation.field_description
     - field.field.node.situation.field_situation_type
     - node.type.situation
+  module:
+    - text
 id: node.situation.default
 targetEntityType: node
 bundle: situation
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
+  field_area:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_content:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_description:
-    weight: 121
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -26,7 +42,7 @@ content:
     type: string_textarea
     region: content
   field_situation_type:
-    weight: 122
+    weight: 2
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -37,48 +53,28 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 15
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    region: content
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true
