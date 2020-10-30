@@ -48,3 +48,16 @@ jobs:
       - name: Deploy to stage
         run: cd drupal && vendor/bin/dep deploy staging
 
+  deploy-gatsby:
+    name: Deploy Gatsby
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: "gh-pages"
+          working-directory: "gatsby"
