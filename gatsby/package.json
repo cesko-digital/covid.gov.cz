@@ -16,12 +16,15 @@
   },
   "dependencies": {
     "gatsby": "^2.24.91",
+    "gatsby-plugin-react-i18next": "^0.0.27",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "gatsby-plugin-typescript": "^2.4.25",
     "gatsby-source-drupal-multilanguage": "^3.1.11",
+    "i18next": "^19.8.3",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-i18next": "^11.7.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.26.0",
