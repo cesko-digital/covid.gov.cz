@@ -15,26 +15,26 @@ set('http_user', 'covid');
 
 // Shared files/dirs between deploys
 set('shared_files', [
-  'web/sites/{{drupal_site}}/settings.php',
-  'web/sites/{{drupal_site}}/services.yml',
-  '.env'
+  'drupal/web/sites/{{drupal_site}}/settings.php',
+  'drupal/web/sites/{{drupal_site}}/services.yml',
+  'drupal/.env'
 ]);
 
 set('shared_dirs', [
-  'private',
-  'web/sites/{{drupal_site}}/files'
+  'drupal/private',
+  'drupal/web/sites/{{drupal_site}}/files'
 ]);
 
 set('writable_dirs', [
-  'web/sites/{{drupal_site}}/files',
-  'web/sites/{{drupal_site}}/files/translations'
+  'drupal/web/sites/{{drupal_site}}/files',
+  'drupal/web/sites/{{drupal_site}}/files/translations'
 ]);
 
 //set('writable_use_sudo', true);
 
 set('allow_anonymous_stats', false);
 
-set('drush', 'vendor/bin/drush');
+set('drush', 'drupal/vendor/bin/drush');
 
 // Hosts
 
@@ -46,7 +46,7 @@ host('smitka')
   ->set('deploy_path', '/home/covid/htdocs/');
 
 // Tasks
-task('deploy:composer', 'composer install --no-dev --no-progress --optimize-autoloader');
+task('deploy:composer', 'cd drupal && composer install --no-dev --no-progress --optimize-autoloader');
 
 
 // Separated to find which one fails deploy
