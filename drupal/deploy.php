@@ -43,7 +43,7 @@ host('smitka')
   ->port('9022')
   ->user('covid')
   ->stage('staging')
-  ->set('deploy_path', '/home/covid/htdocs/');
+  ->set('deploy_path', '/home/covid/htdocs');
 
 // Tasks
 task('deploy:composer', 'cd drupal && composer install --no-dev --no-progress --optimize-autoloader');
