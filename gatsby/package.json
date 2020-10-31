@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.11",
     "classnames": "^2.2.6",
     "gatsby": "^2.24.91",
     "gatsby-plugin-purgecss": "^5.0.0",
