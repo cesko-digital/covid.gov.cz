@@ -7,6 +7,10 @@ export const wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>;
 };
 
+/*
+
+FIXME: Uncomment following code when app insights key env var is added to Vercel.
+
 const appInsights =
   process.env.NODE_ENV !== 'development'
     ? new ApplicationInsights({
@@ -27,4 +31,6 @@ export const onRouteUpdate = () => {
   if (appInsights) appInsights.trackPageView();
 };
 
-(window as any).appInsights = appInsights;
+ (window as any).appInsights = appInsights;
+
+*/
