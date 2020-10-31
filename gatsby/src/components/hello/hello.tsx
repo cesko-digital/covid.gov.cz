@@ -1,11 +1,11 @@
 import React from 'react';
 import { Trans } from 'gatsby-plugin-react-i18next';
-import styles from './hello.module.scss';
 
-export default function Hello() {
+const Hello: React.FC = () => {
   return (
-    <div className={styles.text}>
+    <div>
       <Trans i18nKey="greetings" />
     </div>
   );
 }
+export default Hello;
