@@ -14,9 +14,11 @@ const getClass = (
   );
 };
 
+export type Variant = 'contained' | 'outline' | 'secondary';
+
 interface IProps {
   text: string;
-  variant?: 'contained' | 'outline' | 'secondary';
+  variant?: Variant;
   className?: string;
   onClick?: () => void;
   href?: string;
