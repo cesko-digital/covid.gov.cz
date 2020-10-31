@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Row: React.FC = ({ children }) => {
-  return <div className="row">{children}</div>;
+interface IProps {
+  className?: string;
+}
+
+const Row: React.FC<IProps> = ({ children, className = '' }) => {
+  return <div className={`row ${className}`}>{children}</div>;
 };
 
 export default Row;
