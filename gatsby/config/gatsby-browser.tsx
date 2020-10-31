@@ -7,19 +7,24 @@ export const wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>;
 };
 
-const appInsights = new ApplicationInsights({
-  config: {
-    instrumentationKey: process.env.GATSBY_APPINSIGHTS_KEY,
-  },
-});
+const appInsights =
+  process.env.NODE_ENV !== 'development'
+    ? new ApplicationInsights({
+        config: {
+          instrumentationKey: process.env.GATSBY_APPINSIGHTS_KEY,
+        },
+      })
+    : null;
 
 export const onInitialClientRender = () => {
-  appInsights.loadAppInsights();
-  appInsights.trackPageView();
+  if (appInsights) {
+    appInsights.loadAppInsights();
+    appInsights.trackPageView();
+  }
 };
 
 export const onRouteUpdate = () => {
-  appInsights.trackPageView();
+  if (appInsights) appInsights.trackPageView();
 };
 
 (window as any).appInsights = appInsights;
