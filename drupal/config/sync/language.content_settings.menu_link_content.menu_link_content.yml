@@ -1,18 +1,17 @@
-uuid: 84ff8c47-4674-4ff1-b3ac-4d1bc93ed4e7
+uuid: cab911bc-633a-46ab-a424-284cc23ddcaa
 langcode: cs
 status: true
 dependencies:
-  config:
-    - taxonomy.vocabulary.area
   module:
     - content_translation
+    - menu_link_content
 third_party_settings:
   content_translation:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.area
-target_entity_type_id: taxonomy_term
-target_bundle: area
+id: menu_link_content.menu_link_content
+target_entity_type_id: menu_link_content
+target_bundle: menu_link_content
 default_langcode: site_default
 language_alterable: false

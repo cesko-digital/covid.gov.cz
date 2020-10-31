@@ -1,0 +1,11 @@
+uuid: f7260d6e-4324-436d-8f26-92d4f8d9e3bb
+langcode: cs
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.path_alias
+target_entity_type_id: path_alias
+target_bundle: path_alias
+default_langcode: site_default
+language_alterable: false
