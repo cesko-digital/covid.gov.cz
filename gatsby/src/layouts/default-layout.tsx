@@ -1,6 +1,7 @@
 import React from 'react';
 import 'assets/ds/scss/front.scss';
 import { Helmet } from 'react-helmet';
+import Footer from '@/components/footer';
 
 const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -11,6 +12,7 @@ const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({
         <html className="pvs-theme" />
       </Helmet>
       <div>{children}</div>
+      <Footer />
     </div>
   );
 };

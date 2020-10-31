@@ -8,7 +8,7 @@ import { Link } from 'gatsby-plugin-react-i18next';
 const Home: React.FC = () => {
   return (
     <Layout>
-      <Helmet title="Index Page"/>
+      <Helmet title="Index Page" />
       <Hello />
       <Link to="/" language="en">
         English Page
