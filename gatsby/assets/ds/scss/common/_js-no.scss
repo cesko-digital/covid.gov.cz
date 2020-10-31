@@ -2,19 +2,20 @@
  *	No JS common
  */
 
-#{$theme-class}.js-no #{$body-wrapper} {
-  .js-no-hide {
-    display: none !important;
-  }
 
-  .js-disclaimer {
-    text-align: center;
-    margin: 20px 0;
-  }
+#{$theme-class}.js-no #{$body-wrapper} {
+	.js-no-hide {
+		display: none !important;
+	}
+
+	.js-disclaimer {
+		text-align: center;
+		margin: 20px 0;
+	}
 }
 
 #{$theme-class}.js-ok #{$body-wrapper} {
-  .js-no-show {
-    display: none !important;
-  }
+	.js-no-show {
+		display: none !important;
+	}
 }

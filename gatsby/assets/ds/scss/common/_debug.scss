@@ -4,13 +4,13 @@
  *	This file serves debug mixins.
  */
 
-.debug-viewports {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background: $theme-blue;
-  color: $theme-white;
-  padding: 3px 5px;
 
-  @include font-size(10);
+.debug-viewports {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: $theme-blue;
+	color: $theme-white;
+	padding: 3px 5px;
+	@include font-size(10);
 }

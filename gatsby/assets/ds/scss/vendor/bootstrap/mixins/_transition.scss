@@ -2,9 +2,7 @@
   @if $enable-transitions {
     @if length($transition) == 0 {
       transition: $transition-base;
-    }
-
-    @else {
+    } @else {
       transition: $transition;
     }
   }

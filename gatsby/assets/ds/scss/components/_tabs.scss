@@ -1,184 +1,179 @@
 .tabs {
-  &__list {
-    position: relative;
+	&__list {
+		position: relative;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: $tab-list-border-color;
-    }
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: $tab-list-border-color;
+		}
 
-    &-holder {
-      display: flex;
-      margin-left: 0;
-      overflow-x: scroll;
-    }
-  }
+		&-holder {
+			display: flex;
+			margin-left: 0;
+			overflow-x: scroll;
+		}
+	}
 
-  &__item {
-    display: block;
-    margin-bottom: 0;
-    flex-shrink: 0;
+	&__item {
+		display: block;
+		margin-bottom: 0;
+		flex-shrink: 0;
 
-    //Media queries
-    @include media-breakpoint-up(md) {
-      display: inline-block;
-    }
+		//Media queries
+		@include media-breakpoint-up(md) {
+			display: inline-block;
+		}
 
-    & + & {
-      margin-left: ($spacer / 1.5);
-    }
-  }
+		& + & {
+			margin-left: ( $spacer / 1.5 );
+		}
+	}
 
-  &__link {
-    &,
-    &:visited {
-      display: block;
-      position: relative;
-      text-transform: uppercase;
+	&__link {
+		&,
+		&:visited {
+			display: block;
+			position: relative;
+			text-transform: uppercase;
+			@include font-size(12);
+			letter-spacing: .5px;
+			color: $tab-link-color;
+			font-weight: 500;
+			padding-bottom: ( $spacer / 4 );
+			text-decoration: none;
 
-      @include font-size(12);
+			&::after {
+				content: none;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: $tab-link-hover-color;
+				z-index: 1;
+			}
+		}
 
-      letter-spacing: 0.5px;
-      color: $tab-link-color;
-      font-weight: 500;
-      padding-bottom: ($spacer / 4);
-      text-decoration: none;
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			color: $tab-link-hover-color;
 
-      &::after {
-        content: none;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: $tab-link-hover-color;
-        z-index: 1;
-      }
-    }
+			&::after {
+				content: '';
+			}
+		}
 
-    &:hover,
-    &:focus,
-    &:active {
-      text-decoration: none;
-      color: $tab-link-hover-color;
 
-      &::after {
-        content: '';
-      }
-    }
+		&--active {
+			&,
+			&:visited {
+				color: $tab-link-active-color;
 
-    &--active {
-      &,
-      &:visited {
-        color: $tab-link-active-color;
+				&::after {
+					content: '';
+					background-color: $tab-link-active-color;
+				}
+			}
 
-        &::after {
-          content: '';
-          background-color: $tab-link-active-color;
-        }
-      }
+			&:hover,
+			&:focus,
+			&:active {
+				color: $tab-link-hover-color;
 
-      &:hover,
-      &:focus,
-      &:active {
-        color: $tab-link-hover-color;
+				&::after {
+					background-color: $tab-link-hover-color;
+				}
+			}
+		}
+	}
 
-        &::after {
-          background-color: $tab-link-hover-color;
-        }
-      }
-    }
-  }
+	&__side-title {
+		margin-top: $spacer;
+	}
 
-  &__side-title {
-    margin-top: $spacer;
-  }
+	&__content {
+		letter-spacing: ( $theme-letter-spacing / 2 );
+		word-break: break-word;
+	}
 
-  &__content {
-    letter-spacing: ($theme-letter-spacing / 2);
-    word-break: break-word;
-  }
+	&__content-col {
+		padding-top: ( $spacer * .4 );
+		border-top: 1px solid rgba($theme-gray, 0.3);
+	}
 
-  &__content-col {
-    padding-top: ($spacer * 0.4);
-    border-top: 1px solid rgba($theme-gray, 0.3);
-  }
+	&__content-title {
+		color: $theme-blue;
+		font-weight: 500;
+		@include font-size(12);
+		text-transform: uppercase;
+	}
 
-  &__content-title {
-    color: $theme-blue;
-    font-weight: 500;
+	&__content-table {
+		tr {
+			border: none;
+			padding: 0;
+		}
 
-    @include font-size(12);
+		td {
+			display: inline-block;
+			line-height: 1.4;
+			padding: 0;
 
-    text-transform: uppercase;
-  }
+			//Media queries
+			@include media-breakpoint-up(md) {
+				display: table-cell;
+			}
 
-  &__content-table {
-    tr {
-      border: none;
-      padding: 0;
-    }
+			&::nth-child(2) {
+				text-align: right;
+				margin-left: 10px;
+			}
+		}
+	}
 
-    td {
-      display: inline-block;
-      line-height: 1.4;
-      padding: 0;
+	&__content-list {
+		margin: 0;
 
-      //Media queries
-      @include media-breakpoint-up(md) {
-        display: table-cell;
-      }
+		li {
+			margin: 0;
+		}
+	}
 
-      &::nth-child(2) {
-        text-align: right;
-        margin-left: 10px;
-      }
-    }
-  }
+	&__content-arrow {
+		&,
+		&:visited {
+			position: relative;
+			padding: $spacer / 6;
+			background: $theme-yellow;
+			color: $theme-white;
+			@include font-size(10);
+			text-decoration: none;
+		}
 
-  &__content-list {
-    margin: 0;
+		&:hover,
+		&:focus,
+		&:active {
+			color: $theme-white;
+			text-decoration: none;
+		}
 
-    li {
-      margin: 0;
-    }
-  }
+		.arrow {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+		}
+	}
 
-  &__content-arrow {
-    &,
-    &:visited {
-      position: relative;
-      padding: $spacer / 6;
-      background: $theme-yellow;
-      color: $theme-white;
-
-      @include font-size(10);
-
-      text-decoration: none;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $theme-white;
-      text-decoration: none;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 5px;
-      left: 5px;
-    }
-  }
-
-  &__content-heading {
-    border-top: 1px solid rgba($theme-gray, 0.3);
-    padding-top: ($spacer / 2);
-    margin: ($spacer / 6) 0 ($spacer * 0.3);
-  }
+	&__content-heading {
+		border-top: 1px solid rgba($theme-gray, 0.3);
+		padding-top: ( $spacer / 2 );
+		margin: ( $spacer / 6 ) 0 ( $spacer * .3 );
+	}
 }

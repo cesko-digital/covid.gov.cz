@@ -6,9 +6,7 @@
 $positions: static, relative, absolute, fixed, sticky;
 
 @each $position in $positions {
-  .position-#{$position} {
-    position: $position !important;
-  }
+  .position-#{$position} { position: $position !important; }
 }
 
 // Shorthand

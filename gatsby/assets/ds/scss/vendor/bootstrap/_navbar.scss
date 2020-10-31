@@ -9,6 +9,7 @@
 // Navbar position
 // Navbar themes
 
+
 // Navbar
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
@@ -33,6 +34,7 @@
   }
 }
 
+
 // Navbar brand
 //
 // Used for brand, project, or site names.
@@ -50,6 +52,7 @@
     text-decoration: none;
   }
 }
+
 
 // Navbar nav
 //
@@ -73,6 +76,7 @@
   }
 }
 
+
 // Navbar text
 //
 //
@@ -82,6 +86,7 @@
   padding-top: $nav-link-padding-y;
   padding-bottom: $nav-link-padding-y;
 }
+
 
 // Responsive navbar
 //
@@ -106,7 +111,6 @@
   line-height: 1;
   background: transparent; // remove default button style
   border: $border-width solid transparent; // remove default button style
-
   @include border-radius($navbar-toggler-border-radius);
 
   @include hover-focus {
@@ -121,7 +125,7 @@
   width: 1.5em;
   height: 1.5em;
   vertical-align: middle;
-  content: '';
+  content: "";
   background: no-repeat center center;
   background-size: 100% 100%;
 }
@@ -159,8 +163,8 @@
           }
 
           .nav-link {
-            padding-right: 0.5rem;
-            padding-left: 0.5rem;
+            padding-right: .5rem;
+            padding-left: .5rem;
           }
         }
 
@@ -171,7 +175,7 @@
         }
 
         .navbar-collapse {
-          display: flex !important; // stylelint-disable-line declaration-no-important
+          display: flex !important;  // stylelint-disable-line declaration-no-important
 
           // Changes flex-bases to auto because of an IE10 bug
           flex-basis: auto;
@@ -191,6 +195,7 @@
     }
   }
 }
+
 
 // Navbar themes
 //
@@ -238,7 +243,6 @@
 
   .navbar-text {
     color: $navbar-light-color;
-
     a {
       color: $navbar-light-active-color;
 
@@ -291,7 +295,6 @@
 
   .navbar-text {
     color: $navbar-dark-color;
-
     a {
       color: $navbar-dark-active-color;
 

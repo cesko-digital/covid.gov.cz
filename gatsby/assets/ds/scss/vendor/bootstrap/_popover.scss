@@ -8,14 +8,12 @@
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
   @include reset-text();
-
   font-size: $font-size-sm;
   // Allow breaking very long words so they don't overflow the popover's bounds
   word-wrap: break-word;
   background-color: $popover-bg;
   background-clip: padding-box;
   border: $popover-border-width solid $popover-border-color;
-
   @include border-radius($border-radius-lg);
   @include box-shadow($popover-box-shadow);
 
@@ -39,12 +37,11 @@
   }
 
   .arrow::before {
-    content: '';
+    content: "";
     border-width: $popover-arrow-width;
   }
-
   .arrow::after {
-    content: '';
+    content: "";
     border-width: $popover-arrow-width;
   }
 
@@ -130,7 +127,7 @@
       display: block;
       width: 20px;
       margin-left: -10px;
-      content: '';
+      content: "";
       border-bottom: $popover-border-width solid $popover-header-bg;
     }
   }
@@ -158,25 +155,22 @@
       border-left-color: $popover-arrow-color;
     }
   }
-
   &.bs-popover-auto {
-    &[x-placement^='top'] {
+    &[x-placement^="top"] {
       @extend .bs-popover-top;
     }
-
-    &[x-placement^='right'] {
+    &[x-placement^="right"] {
       @extend .bs-popover-right;
     }
-
-    &[x-placement^='bottom'] {
+    &[x-placement^="bottom"] {
       @extend .bs-popover-bottom;
     }
-
-    &[x-placement^='left'] {
+    &[x-placement^="left"] {
       @extend .bs-popover-left;
     }
   }
 }
+
 
 // Offset the popover to account for the popover arrow
 .popover-header {
@@ -187,7 +181,6 @@
   background-color: $popover-header-bg;
   border-bottom: $popover-border-width solid darken($popover-header-bg, 5%);
   $offset-border-width: calc(#{$border-radius-lg} - #{$popover-border-width});
-
   @include border-top-radius($offset-border-width);
 
   &:empty {

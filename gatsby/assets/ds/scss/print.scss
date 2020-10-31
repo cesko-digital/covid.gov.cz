@@ -4,345 +4,349 @@
  *	This file describes print view
  */
 
+
 //
 // Basic print styles
 // --------------------------------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
 
+
 * {
-  text-shadow: none !important;
-  color: #000 !important; // Black prints faster: h5bp.com/s
-  background: transparent !important;
-  box-shadow: none !important;
-  height: auto !important;
-  width: auto !important;
-  font-size: 1.5rem;
+	text-shadow: none !important;
+	color: #000 !important; // Black prints faster: h5bp.com/s
+	background: transparent !important;
+	box-shadow: none !important;
+	height: auto !important;
+	width: auto !important;
+	font-size: 1.5rem;
 }
 
 a,
 a:visited {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
-a[href]::after {
-  content: ' (' attr(href) ')';
+a[href]:after {
+	content: " (" attr(href) ")";
 }
 
-abbr[title]::after {
-  content: ' (' attr(title) ')';
+abbr[title]:after {
+	content: " (" attr(title) ")";
 }
 
 // Don't show links for images, or javascript/internal links
-a[href^='javascript:']::after,
-a[href^='#']::after {
-  content: '';
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+	content: "";
 }
 
 pre,
 blockquote {
-  border: 1px solid #999;
-  page-break-inside: avoid;
+	border: 1px solid #999;
+	page-break-inside: avoid;
 }
 
 thead {
-  display: table-header-group; // h5bp.com/t
+	display: table-header-group; // h5bp.com/t
 }
 
 tr,
 img {
-  page-break-inside: avoid;
+	page-break-inside: avoid;
 }
 
 img {
-  max-width: 100% !important;
+	max-width: 100% !important;
 }
 
 p,
 h2,
 h3 {
-  orphans: 3;
-  widows: 3;
+	orphans: 3;
+	widows: 3;
 }
 
 h2,
 h3 {
-  page-break-after: avoid;
+	page-break-after: avoid;
 }
 
 h1 {
-  font-size: 2.2rem !important;
+	font-size: 2.2rem !important;
 }
 
 h2 {
-  font-size: 2.1rem !important;
+	font-size: 2.1rem !important;
 }
 
 h3 {
-  font-size: 1.9rem !important;
+	font-size: 1.9rem !important;
 }
 
 h4 {
-  font-size: 1.8rem !important;
+	font-size: 1.8rem !important;
 }
 
 // Chrome (OSX) fix for https://github.com/twbs/bootstrap/issues/11245
 // Once fixed, we can just straight up remove this.
 select {
-  background: #fff !important;
+	background: #fff !important;
 }
 
 // Bootstrap components
 .navbar {
-  display: none;
+	display: none;
 }
 
 .table {
-  td,
-  th {
-    background-color: #fff !important;
-  }
+	td,
+	th {
+		background-color: #fff !important;
+	}
 }
 
 .btn,
 .dropup > .btn {
-  > .caret {
-    border-top-color: #000 !important;
-  }
+	> .caret {
+		border-top-color: #000 !important;
+	}
 }
 
 .label {
-  border: 1px solid #000;
+	border: 1px solid #000;
 }
 
 .table {
-  border-collapse: collapse !important;
+	border-collapse: collapse !important;
 }
 
 .table-bordered {
-  th,
-  td {
-    border: 1px solid #ddd !important;
-  }
+	th,
+	td {
+		border: 1px solid #ddd !important;
+	}
 }
 
 // Customs styles
-@import 'base/_variables'; // Variables
-@import 'base/_mixins'; // Mixins
-@import 'base/_functions'; // Support functions
-@import 'base/_icons'; // Icons
-@import 'base/_typography'; // Typography
+@import 'base/_variables';                                               // Variables
+@import 'base/_mixins';                                                  // Mixins
+@import 'base/_functions';                                               // Support functions
+@import 'base/_icons';                                                 // Icons
+@import 'base/_typography';                                            // Typography
 
 html#{$theme-class} {
-  position: relative;
-  min-width: 320px;
-  font-size: 10px;
-  min-height: 100%;
+	position: relative;
+	min-width: 320px;
+	font-size: 10px;
+	min-height: 100%;
 }
 
 #{$theme-class} {
-  iframe,
-  .js-disclaimer,
-  .footer__links,
-  .footer__common ul,
-  .debug-viewports,
-  .btn-login,
-  .lang-change__link,
-  .nav--primary,
-  .header--title,
-  .search-holder,
-  .nav--horizontal,
-  .guide__icon,
-  .guide__back-step,
-  .nav--vertical,
-  .guide h1,
-  .guide__link-holder,
-  .guide--mobile,
-  .nav__vertical--secondary,
-  .navigation h3,
-  .district-selection,
-  .select--secondary,
-  .tabs__list,
-  .date-picker,
-  .paginator,
-  .modal--municipality {
-    display: none !important;
-  }
 
-  .container {
-    max-width: 100% !important;
-  }
+	iframe,
+	.js-disclaimer,
+	.footer__links,
+	.footer__common ul,
+	.debug-viewports,
+	.btn-login,
+	.lang-change__link,
+	.nav--primary,
+	.header--title,
+	.search-holder,
+	.nav--horizontal,
+	.guide__icon,
+	.guide__back-step,
+	.nav--vertical,
+	.guide h1,
+	.guide__link-holder,
+	.guide--mobile,
+	.nav__vertical--secondary,
+	.navigation h3,
+	.district-selection,
+	.select--secondary,
+	.tabs__list,
+	.date-picker,
+	.paginator,
+	.modal--municipality {
+		display: none !important;
+	}
 
-  .header__logo {
-    display: none;
-  }
+	.container {
+		max-width: 100% !important;
+	}
 
-  .header__logo--print {
-    display: block;
-    width: 188px !important;
-    height: 102px !important;
-    -webkit-print-color-adjust: exact !important;
-    color-adjust: exact !important;
-  }
+	.header__logo {
+		display: none;
+	}
 
-  .infoline {
-    display: block;
-    padding: 20px 0 5px;
+	.header__logo--print {
+		display: block;
+		width: 188px !important;
+		height: 102px !important;
+		-webkit-print-color-adjust: exact !important;
+		color-adjust: exact !important;
+	}
 
-    br {
-      display: none;
-    }
-  }
+	.infoline {
+		display: block;
+		padding: 20px 0 5px;
 
-  .header__inner {
-    padding: 10px 0;
-    margin-bottom: 10px;
-    border-bottom: 1px solid $theme-black;
-  }
+		br {
+			display: none;
+		}
+	}
 
-  .body__wrapper--hp {
-    .btn--more {
-      display: block;
-      padding-bottom: 10px;
-      font-size: 0;
-      line-height: 0;
+	.header__inner {
+		padding: 10px 0;
+		margin-bottom: 10px;
+		border-bottom: 1px solid $theme-black;
+	}
 
-      &[href]::after {
-        content: '(' attr(href) ')';
-        padding-bottom: 5px;
-        font-size: 15px;
-      }
-    }
-  }
+	.body__wrapper--hp {
 
-  .breadcrumb {
-    display: block !important;
+		.btn--more {
+			display: block;
+			padding-bottom: 10px;
+			font-size: 0;
+			line-height: 0;
 
-    @include reset-pa-ma();
+			&[href]:after {
+				content: "(" attr(href) ")";
+				padding-bottom: 5px;
+				font-size: 15px;
+			}
+		}
+	}
 
-    padding: 5px 0 10px;
-    border-bottom: 1px solid rgba(112, 112, 112, 0.3);
+	.breadcrumb {
+		display: block !important;
+		@include reset-pa-ma();
+		padding: 5px 0 10px;
+		border-bottom: 1px solid rgba(112, 112, 112, 0.3);
 
-    li {
-      display: inline-block;
-    }
+		li {
+			display: inline-block;
+		}
 
-    li + li {
-      &::before {
-        content: '|';
-        padding: 0 10px;
-      }
-    }
+		li + li {
 
-    .active {
-      text-decoration: none;
-    }
-  }
+			&::before {
+				content: '|';
+				padding: 0 10px;
+			}
+		}
 
-  .box__inner,
-  .tabs__side-title {
-    border-top: 1px solid rgba(112, 112, 112, 0.3);
-  }
+		.active {
+			text-decoration: none;
+		}
+	}
 
-  .mb-1 {
-    margin-bottom: 15px;
-  }
+	.box__inner,
+	.tabs__side-title {
+		border-top: 1px solid rgba(112, 112, 112, 0.3);
+	}
 
-  .data-box {
-    margin: 15px 0;
+	.mb-1 {
+		margin-bottom: 15px;
+	}
 
-    ul {
-      padding-left: 0;
-    }
+	.data-box {
+		margin: 15px 0;
 
-    li {
-      list-style-type: none;
-    }
-  }
+		ul {
+			padding-left: 0;
+		}
 
-  .tabs__content-list {
-    margin-top: 5px;
-    padding-left: 0;
+		li {
+			list-style-type: none;
+		}
+	}
 
-    li {
-      list-style-type: none;
-    }
-  }
+	.tabs__content-list {
+		margin-top: 5px;
+		padding-left: 0;
 
-  .tabs__content-table {
-    margin: 0;
-  }
+		li {
+			list-style-type: none;
+		}
+	}
 
-  .tabs__content-col {
-    margin-bottom: 20px;
-  }
+	.tabs__content-table {
+		margin: 0;
+	}
 
-  .accordion {
-    border-bottom: 1px solid rgba(112, 112, 112, 0.3);
+	.tabs__content-col {
+		margin-bottom: 20px;
+	}
 
-    &:first-child {
-      padding-top: 20px;
-    }
-  }
+	.accordion {
+		border-bottom: 1px solid rgba(112, 112, 112, 0.3);
 
-  .accordion__link {
-    text-decoration: none !important;
-  }
+		&:first-child {
+			padding-top: 20px;
+		}
+	}
 
-  .accordion__list {
-    li {
-      list-style-type: disc;
-    }
-  }
+	.accordion__link {
+		text-decoration: none !important;
+	}
 
-  table {
-    margin: 20px 0;
-    text-align: left;
-    border-collapse: collapse;
-  }
+	.accordion__list {
+		li {
+			list-style-type: disc;
+		}
+	}
 
-  thead {
-    th {
-      padding-left: 1em;
-      padding-bottom: 0.3em;
+	table {
+		margin: 20px 0;
+		text-align: left;
+		border-collapse: collapse;
+	}
 
-      &:first-child {
-        padding-left: 0;
-      }
-    }
-  }
+	thead {
+		th {
+			padding-left: 1em;
+			padding-bottom: 0.3em;
 
-  tbody {
-    padding-top: 5px;
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
 
-    tr {
-      td {
-        padding: 10px 15px;
+	tbody {
+		padding-top: 5px;
 
-        &:first-of-type {
-          padding-left: 0;
-        }
-      }
-    }
+		tr {
 
-    td,
-    th {
-      border-bottom: 1px solid #ebebeb;
-    }
+			td {
+				padding: 10px 15px;
 
-    tr:last-child {
-      td,
-      th {
-        border-bottom: none;
-      }
-    }
+				&:first-of-type {
+					padding-left: 0;
+				}
+			}
+		}
 
-    .td--before {
-      display: none;
-    }
-  }
+		td,
+		th {
+			border-bottom: 1px solid #ebebeb;
+		}
 
-  .footer__inner {
-    padding: 10px 0 20px;
-    border-top: 1px solid $theme-black;
-  }
+		tr:last-child {
+			td,
+			th {
+				border-bottom: none;
+			}
+		}
+
+		.td--before {
+			display: none;
+		}
+	}
+
+	.footer__inner {
+		padding: 10px 0 20px;
+		border-top: 1px solid $theme-black;
+	}
 }

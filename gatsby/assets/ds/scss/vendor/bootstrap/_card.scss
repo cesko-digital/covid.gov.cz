@@ -11,7 +11,6 @@
   background-color: $card-bg;
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
-
   @include border-radius($card-border-radius);
 
   > hr {
@@ -73,9 +72,7 @@
   border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
-    @include border-radius(
-      $card-inner-border-radius $card-inner-border-radius 0 0
-    );
+    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
   }
 
   + .list-group {
@@ -91,11 +88,10 @@
   border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
-    @include border-radius(
-      0 0 $card-inner-border-radius $card-inner-border-radius
-    );
+    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
   }
 }
+
 
 //
 // Header navs
@@ -125,22 +121,20 @@
 
 .card-img {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
-
   @include border-radius($card-inner-border-radius);
 }
 
 // Card image caps
 .card-img-top {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
-
   @include border-top-radius($card-inner-border-radius);
 }
 
 .card-img-bottom {
   width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
-
   @include border-bottom-radius($card-inner-border-radius);
 }
+
 
 // Card deck
 
@@ -168,6 +162,7 @@
     }
   }
 }
+
 
 //
 // Card groups
@@ -202,7 +197,6 @@
           .card-img-top {
             border-top-right-radius: 0;
           }
-
           .card-img-bottom {
             border-bottom-right-radius: 0;
           }
@@ -214,7 +208,6 @@
           .card-img-top {
             border-top-left-radius: 0;
           }
-
           .card-img-bottom {
             border-bottom-left-radius: 0;
           }
@@ -226,7 +219,6 @@
           .card-img-top {
             @include border-top-radius($card-border-radius);
           }
-
           .card-img-bottom {
             @include border-bottom-radius($card-border-radius);
           }
@@ -244,6 +236,7 @@
     }
   }
 }
+
 
 //
 // Columns

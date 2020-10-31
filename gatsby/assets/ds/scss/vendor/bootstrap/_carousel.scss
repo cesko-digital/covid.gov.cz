@@ -14,9 +14,7 @@
   display: none;
   align-items: center;
   width: 100%;
-
   @include transition($carousel-transition);
-
   backface-visibility: hidden;
   perspective: 1000px;
 }
@@ -61,6 +59,7 @@
   }
 }
 
+
 //
 // Left/right controls for nav
 //
@@ -86,33 +85,19 @@
     color: $carousel-control-color;
     text-decoration: none;
     outline: 0;
-    opacity: 0.9;
+    opacity: .9;
   }
 }
-
 .carousel-control-prev {
   left: 0;
-
   @if $enable-gradients {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.001)
-      );
+    background: linear-gradient(90deg, rgba(0,0,0,.25), rgba(0,0,0,.001));
   }
 }
-
 .carousel-control-next {
   right: 0;
-
   @if $enable-gradients {
-    background:
-      linear-gradient(
-        270deg,
-        rgba(0, 0, 0, 0.25),
-        rgba(0, 0, 0, 0.001)
-      );
+    background: linear-gradient(270deg, rgba(0,0,0,.25), rgba(0,0,0,.001));
   }
 }
 
@@ -125,14 +110,13 @@
   background: transparent no-repeat center center;
   background-size: 100% 100%;
 }
-
 .carousel-control-prev-icon {
   background-image: $carousel-control-prev-icon-bg;
 }
-
 .carousel-control-next-icon {
   background-image: $carousel-control-next-icon-bg;
 }
+
 
 // Optional indicator pips
 //
@@ -161,7 +145,7 @@
     margin-right: $carousel-indicator-spacer;
     margin-left: $carousel-indicator-spacer;
     text-indent: -999px;
-    background-color: rgba($carousel-indicator-active-bg, 0.5);
+    background-color: rgba($carousel-indicator-active-bg, .5);
 
     // Use pseudo classes to increase the hit area by 10px on top and bottom.
     &::before {
@@ -171,9 +155,8 @@
       display: inline-block;
       width: 100%;
       height: 10px;
-      content: '';
+      content: "";
     }
-
     &::after {
       position: absolute;
       bottom: -10px;
@@ -181,7 +164,7 @@
       display: inline-block;
       width: 100%;
       height: 10px;
-      content: '';
+      content: "";
     }
   }
 
@@ -189,6 +172,7 @@
     background-color: $carousel-indicator-active-bg;
   }
 }
+
 
 // Optional captions
 //
