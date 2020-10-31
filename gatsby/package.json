@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "scripts": {
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "format": "prettier \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint .",
