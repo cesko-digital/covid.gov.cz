@@ -1,14 +1,23 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Hello from '@/components/hello/hello';
 import ContentBox from '@/components/content-box';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
 
-const Home: React.FC = () => {
+interface Data {
+
+}
+
+interface Props {
+  data: any;
+}
+
+const Home: React.FC<Props> = ({ data }) => {
   return (
     <div>
-      <Helmet title="Index Page" />
+      <Helmet title={data.homepage.title} />
       <Hello />
       <ContentBox
         title="Aktuální opatření (72)"
@@ -25,11 +34,6 @@ const Home: React.FC = () => {
         buttonVariant="outline"
         buttonText="Zobrazit všechny životní situace"
       />
-      <ContentBox
-        title="Co dělat když..."
-        boldedTitleCount={2}
-        buttonText="Zobrazit další"
-      />
       <Link to="/" language="en" className="">
         English Page
       </Link>
@@ -37,3 +41,11 @@ const Home: React.FC = () => {
   );
 };
 export default Home;
+
+export const query = graphql`
+  query {
+    homepage {
+      title
+    }
+  }
+`

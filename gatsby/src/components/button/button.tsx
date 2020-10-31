@@ -14,11 +14,11 @@ const getClass = (
   );
 };
 
-export type Variant = 'contained' | 'outline' | 'secondary';
+export type ButtonVariant = 'contained' | 'outline' | 'secondary';
 
 interface IProps {
   text: string;
-  variant?: Variant;
+  variant?: ButtonVariant;
   className?: string;
   onClick?: () => void;
   href?: string;

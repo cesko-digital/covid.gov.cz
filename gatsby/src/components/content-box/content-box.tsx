@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import Button, { Variant } from '@/components/button';
+import Button, { ButtonVariant } from '@/components/button';
 
 import styles from './content-box.module.scss';
 
@@ -7,7 +7,7 @@ interface Props {
   title: string;
   description?: string;
   boldedTitleCount?: number;
-  buttonVariant?: Variant;
+  buttonVariant?: ButtonVariant;
   buttonText: string;
 }
 
@@ -24,7 +24,11 @@ const ContentBox: React.FC<Props> = ({
     if (boldedTitleCount) {
       return splittedTitle.map((item, index) => {
         if (index < boldedTitleCount) {
-          return <span className={styles.contentBoxTitleBold}>{item}</span>;
+          return (
+            <span key={index} className={styles.contentBoxTitleBold}>
+              {item}
+            </span>
+          );
         }
 
         return item;
