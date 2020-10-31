@@ -17,6 +17,7 @@ const config = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         // develop: true,
+        whitelist: ['pvs-theme', 'a'],
       },
     },
   ],
