@@ -1,0 +1,38 @@
+.measure {
+  border-top: 1px solid rgba(35, 98, 162, 0.3);
+  padding: 1.6rem 0;
+}
+
+.measureTitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.1rem;
+  color: #2b4762;
+  margin-bottom: 0.8rem;
+}
+
+.measureDescription {
+  color: #707070;
+  margin-bottom: 1.2rem;
+}
+
+.measureDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.measureDetail {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: #2362A2;
+}
+
+.measureButton:global(.btn.btn-outline-primary) {
+  border-color: #2362a2;
+  color: #2362a2;
+  &:hover {
+    background-color: #2362a2;
+  }
+}

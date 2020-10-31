@@ -13,10 +13,11 @@ const getClass = (
     { [additionalClass]: additionalClass },
   );
 };
+
 interface IProps {
   text: string;
   variant?: 'contained' | 'outline' | 'secondary';
-  additionalClass?: string;
+  className?: string;
   onClick?: () => void;
   href?: string;
   disabled?: boolean;
@@ -27,12 +28,12 @@ const Button: React.FC<IProps> = ({
   onClick,
   text,
   href = '',
-  additionalClass,
+  className,
   disabled = false,
 }) => {
   if (href !== '' && !disabled) {
     return (
-      <a href={href} className={getClass(variant, additionalClass)}>
+      <a href={href} className={getClass(variant, className)}>
         {text}
       </a>
     );
@@ -41,7 +42,7 @@ const Button: React.FC<IProps> = ({
   return (
     <button
       type="button"
-      className={getClass(variant, additionalClass)}
+      className={getClass(variant, className)}
       onClick={onClick || null}
       disabled={disabled}
     >
