@@ -2,11 +2,7 @@ import React from 'react';
 import '../../assets/ds/scss/front.scss';
 import { Helmet } from 'react-helmet';
 
-interface Props {
-  children?: React.ReactNode;
-}
-
-export default function Layout({ children }: Props) {
+const Layout: React.FC = ({ children }) => {
   return (
     <div className="body__wrapper">
       <Helmet>
@@ -25,4 +21,6 @@ export default function Layout({ children }: Props) {
       </div>
     </div>
   );
-}
+};
+
+export default Layout;
