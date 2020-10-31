@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       <Hello />
-      <Link to='/' language='en'>
+      <Link to="/" language="en">
         English Page
       </Link>
     </Layout>
