@@ -11,6 +11,9 @@ Copy and modify env file as needed
 Start containers
 - `docker-compose up -d`
 
+Install dependencies
+- `docker-compose exec drupal composer install`
+
 Install Drupal with existing config
 - `docker-compose exec drupal drush si 
   --db-url=mysql://root:password@mysql:3306/covid --existing-config -y`
