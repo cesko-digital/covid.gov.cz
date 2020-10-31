@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.situation.field_content
     - field.field.node.situation.field_description
+    - field.field.node.situation.field_faqs
     - field.field.node.situation.field_situation_type
     - node.type.situation
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.situation.default
@@ -28,6 +30,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_faqs:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_situation_type:
     weight: 102

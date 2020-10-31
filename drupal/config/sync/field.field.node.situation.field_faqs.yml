@@ -1,0 +1,34 @@
+uuid: 57285946-122f-4b46-8366-af38e168ace9
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faqs
+    - node.type.situation
+    - paragraphs.paragraphs_type.faq
+  module:
+    - entity_reference_revisions
+id: node.situation.field_faqs
+field_name: field_faqs
+entity_type: node
+bundle: situation
+label: 'Otázky a odpovědi'
+description: 'Přidejte libovolné množství Otázek a odpovědí. Pomocí křížků vlevo je tažením můžete seřadit dle potřeby.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      faq: faq
+    target_bundles_drag_drop:
+      faq:
+        enabled: true
+        weight: 3
+      latest_measures:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

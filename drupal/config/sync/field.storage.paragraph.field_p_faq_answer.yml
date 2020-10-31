@@ -1,0 +1,19 @@
+uuid: dbd0726c-7a38-4b90-9272-eb0feba2ed3b
+langcode: cs
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_p_faq_answer
+field_name: field_p_faq_answer
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

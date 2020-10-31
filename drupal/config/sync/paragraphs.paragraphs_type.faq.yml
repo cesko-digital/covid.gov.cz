@@ -1,0 +1,10 @@
+uuid: 6b665369-126e-4967-9a15-2ed7681dfa45
+langcode: cs
+status: true
+dependencies: {  }
+id: faq
+label: 'Otázka a odpověď'
+icon_uuid: null
+icon_default: null
+description: 'Slouží k zadávání častých otázek a odpovědí (FAQ) k danému tématu.'
+behavior_plugins: {  }

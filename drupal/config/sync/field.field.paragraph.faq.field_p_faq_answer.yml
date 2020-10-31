@@ -1,0 +1,21 @@
+uuid: 25a67b04-6225-4fde-8619-c4276c48dbee
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_faq_answer
+    - paragraphs.paragraphs_type.faq
+  module:
+    - text
+id: paragraph.faq.field_p_faq_answer
+field_name: field_p_faq_answer
+entity_type: paragraph
+bundle: faq
+label: Odpověď
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
