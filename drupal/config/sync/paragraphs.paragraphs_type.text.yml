@@ -1,0 +1,10 @@
+uuid: 68a7d017-d2db-45da-be90-a7f5760aaf3b
+langcode: cs
+status: true
+dependencies: {  }
+id: text
+label: Text
+icon_uuid: null
+icon_default: null
+description: 'Slouží k zadávání formátovaného textu.'
+behavior_plugins: {  }

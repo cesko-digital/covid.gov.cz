@@ -1,0 +1,21 @@
+uuid: b0dc9ad8-9558-45a1-a09c-e2c8f25ef9c6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_content
+    - paragraphs.paragraphs_type.text
+  module:
+    - text
+id: paragraph.text.field_p_content
+field_name: field_p_content
+entity_type: paragraph
+bundle: text
+label: Obsah
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
