@@ -1,30 +1,30 @@
 import React from 'react';
 import Measure from './measure';
 
-import styles from './measure-list.module.scss';
-import Button from '@/components/button';
+interface Props {
+  measures: Array<{
+    title: string;
+    id: string;
+    relationships: {
+      region: {
+        name: string;
+      };
+    };
+  }>;
+}
 
-const MeasureList: React.FC = () => {
+const MeasureList: React.FC<Props> = ({ measures }) => {
   return (
     <>
-      <Measure
-        title="Nosit roušky"
-        description="Rouška se musí nosit venku až na pár"
-        validity="od 2. října do 6. listopadu"
-        area="Celá ČR"
-      />
-      <Measure
-        title="Nosit roušky"
-        description="Rouška se musí nosit venku až na pár"
-        validity="od 2. října do 6. listopadu"
-        area="Celá ČR"
-      />
-      <Measure
-        title="Nosit roušky"
-        description="Rouška se musí nosit venku až na pár"
-        validity="od 2. října do 6. listopadu"
-        area="Celá ČR"
-      />
+      {measures.map((item) => (
+        <Measure
+          key={item.id}
+          title={item.title}
+          description="Rouška se musí nosit venku až na pár"
+          validity="od 2. října do 6. listopadu"
+          area={item.relationships.region.name}
+        />
+      ))}
     </>
   );
 };

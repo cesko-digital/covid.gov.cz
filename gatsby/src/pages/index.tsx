@@ -17,7 +17,7 @@ interface Props {
 const Home: React.FC<Props> = ({ data }) => {
   return (
     <div>
-      <Helmet title={data.homepage.title} />
+      <Helmet title="Index Page" />
       <Hello />
       <ContentBox
         title="Aktuální opatření (72)"
@@ -25,7 +25,9 @@ const Home: React.FC<Props> = ({ data }) => {
         description="Všechna současná nařízení vlády, jejich detail, platnost a jednoduché vysvětlení"
         buttonText="Zobrazit všech 72 nařízení"
       >
-        <MeasureList />
+        <MeasureList
+          measures={data.latestMeasures.relationships.measures}
+        />
       </ContentBox>
       <ContentBox
         title="Životní situace s covidem"
@@ -44,8 +46,18 @@ export default Home;
 
 export const query = graphql`
   query {
-    homepage {
-      title
+    latestMeasures {
+      relationships {
+        measures {
+          title
+          id
+          relationships {
+            region {
+              name
+            }
+          }
+        }
+      }
     }
   }
-`
+`;
