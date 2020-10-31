@@ -7,6 +7,8 @@ interface IProps {
   colLg?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   colXl?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   className?: string;
+  justify?: 'start' | 'center' | 'end' | 'around' | 'between';
+  alignSelf?: 'start' | 'center' | 'end';
 }
 
 const Col: React.FC<IProps> = ({
@@ -17,6 +19,7 @@ const Col: React.FC<IProps> = ({
   colLg,
   colXl,
   className = '',
+  alignSelf,
 }) => {
   const getClass = (): string => {
     var strng = '';
@@ -34,6 +37,9 @@ const Col: React.FC<IProps> = ({
     }
     if (colXl) {
       strng += typeof colXl === 'boolean' ? 'col-xl ' : `col-xl-${colXl} `;
+    }
+    if (alignSelf) {
+      strng += `align-self-${alignSelf} `;
     }
     strng += className;
     strng = strng.trim();
