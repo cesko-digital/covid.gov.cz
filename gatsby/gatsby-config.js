@@ -11,8 +11,8 @@ module.exports = {
       resolve: 'gatsby-plugin-react-i18next',
       options: {
         path: `${__dirname}/locales`,
-        languages: ['cz', 'en'],
-        defaultLanguage: 'cz',
+        languages: ['cs', 'en'],
+        defaultLanguage: 'cs',
         redirect: false,
         i18nextOptions: {
           interpolation: {

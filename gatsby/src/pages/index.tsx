@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Hello from '@/components/hello/hello';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby-plugin-react-i18next';
