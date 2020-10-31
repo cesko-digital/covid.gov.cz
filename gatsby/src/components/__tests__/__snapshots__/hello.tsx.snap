@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Hello renders correctly 1`] = `
-<div
-  className="text"
->
-  greetings
-</div>
-`;
