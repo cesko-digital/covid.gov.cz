@@ -1,0 +1,86 @@
+/**
+ *	Master templates support
+ */
+
+.mp-section {
+  padding: ($spacer / 4) 0;
+  margin-bottom: ($spacer / 3);
+  border-bottom: 1px solid $theme-blue-light;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.mp-overview {
+  .btn {
+    margin: 0 ($spacer / 3) ($spacer / 2) 0;
+  }
+}
+
+.mp-holder {
+  padding: $spacer / 1.5;
+
+  &--white {
+    background-color: $theme-white;
+  }
+}
+
+.mp-background--blue {
+  background-color: $theme-blue;
+}
+
+.mp-color--white {
+  color: $white;
+}
+
+$mp-colors: ($theme-blue-light 1), ($theme-blue 2), ($theme-blue-dark 3),
+  ($theme-yellow 4), ($theme-gray-dark 5), ($theme-gray 6),
+  ($theme-gray-light 7), ($theme-white 8), ($theme-red 9);
+
+@each $mc in $mp-colors {
+  $color: nth($mc, 1);
+  $class: nth($mc, 2);
+
+  .mp-support-color-#{$class} {
+    margin-bottom: ($spacer / 3);
+    background-color: #{$color};
+    border: 10px solid $theme-white;
+    padding-top: ($spacer * 1.5);
+  }
+}
+
+.mp-support-color__value {
+  text-align: center;
+  background-color: $theme-white;
+  padding: ($spacer / 3) ($spacer / 3) ($spacer / 6);
+
+  @include font-size(12);
+}
+
+.mp-support-icon {
+  text-align: center;
+  margin-bottom: ($spacer / 3);
+  border: 10px solid $theme-white;
+
+  > span {
+    display: block;
+    padding: ($spacer / 2) 0;
+
+    @include font-size(30);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $theme-white;
+    color: $theme-blue-light;
+  }
+}
+
+.mp-support-icon__value {
+  text-align: center;
+  background-color: $theme-white;
+  padding: ($spacer / 3) ($spacer / 3) ($spacer / 6);
+
+  @include font-size(12);
+}

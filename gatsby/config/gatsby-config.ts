@@ -4,7 +4,7 @@ const config = {
       resolve: 'gatsby-source-drupal-multilanguage',
       options: {
         baseUrl: 'https://covid.pristup.net/',
-        apiBase: 'api'
+        apiBase: 'api',
       },
     },
     'gatsby-plugin-typescript',
@@ -12,6 +12,13 @@ const config = {
     'gatsby-plugin-scss-typescript',
     'gatsby-plugin-tsconfig-paths',
     'gatsby-plugin-eslint',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        develop: true,
+      },
+    },
   ],
 };
 export default config;

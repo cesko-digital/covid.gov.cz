@@ -1,0 +1,110 @@
+/**
+ *  Paginator
+ */
+
+.paginator {
+  display: block;
+
+  //Media queries
+  @include media-breakpoint-up(md) {
+    float: right;
+    display: inline-block;
+  }
+
+  &__list {
+    margin-left: 0;
+  }
+
+  &__holder {
+    padding-top: ($spacer / 3.75);
+    border-top: 1px solid rgba($theme-gray, 0.3);
+    text-align: center;
+
+    //Media queries
+    @include media-breakpoint-up(md) {
+      text-align: left;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+
+    @include font-size(15);
+
+    font-weight: 500;
+
+    //Media queries
+    @include media-breakpoint-up(md) {
+      margin: 0 ($spacer / 7.5);
+
+      @include font-size(12);
+    }
+  }
+
+  &__link {
+    &,
+    &:visited {
+      display: block;
+      padding: ($spacer / 7.5) ($spacer / 5);
+      text-decoration: none;
+
+      &::before {
+        content: none;
+        position: absolute;
+        background: $theme-gray-dark;
+        width: 30px;
+        height: 2px;
+        left: 50%;
+        top: -($spacer / 3.75);
+
+        @include translate(-50%, 0);
+      }
+    }
+
+    &:focus:not(.active):not(.paginator__link--disabled),
+    &:hover:not(.active):not(.paginator__link--disabled) {
+      color: $theme-yellow;
+      text-decoration: none;
+
+      &::before {
+        content: '';
+        background: $theme-yellow;
+      }
+    }
+
+    &:active:not(.paginator__link--disabled):not(.active) {
+      color: darken($theme-yellow, 12%);
+
+      &::before {
+        content: '';
+      }
+
+      .paginator__arrow {
+        color: darken($theme-yellow, 12%);
+      }
+    }
+
+    &.active:not(.paginator__link--disabled) {
+      color: $theme-gray-dark;
+
+      &::before {
+        content: '';
+      }
+    }
+
+    &--disabled {
+      opacity: 0.4;
+
+      &:focus,
+      &:hover,
+      &:active {
+        text-decoration: none;
+        color: $theme-yellow;
+      }
+    }
+  }
+
+  &__arrow {
+    color: $theme-yellow;
+  }
+}

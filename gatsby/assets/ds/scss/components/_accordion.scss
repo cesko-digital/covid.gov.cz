@@ -1,0 +1,136 @@
+.accordion {
+  border-top: 1px solid rgba($theme-gray, 0.3);
+
+  &__link {
+    &,
+    &:visited {
+      display: block;
+      position: relative;
+      padding: ($spacer * 0.5) ($spacer * 0.75) ($spacer * 0.5) 0;
+      text-decoration: none;
+
+      // Media queries
+      @include media-breakpoint-up(sm) {
+        padding-right: ($spacer / 0.75);
+      }
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+      background-color: rgba($theme-blue-light, 0.05);
+    }
+
+    &:focus {
+      text-decoration: none;
+      background-color: transparent;
+
+      &:hover {
+        background-color: rgba($theme-blue-light, 0.05);
+      }
+    }
+
+    &::after {
+      content: '\e907';
+
+      @include icon-mix;
+
+      position: absolute;
+      right: 6px;
+      top: ($spacer * 0.5) + ($h3-font-size / 2);
+
+      @include font-size(10);
+
+      color: $theme-yellow;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    letter-spacing: ($theme-letter-spacing / 2);
+    color: $theme-gray-dark;
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    // Cubic bezier is fixing delay with max-height animation
+    -webkit-transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    -o-transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 1s cubic-bezier(0, 1, 0, 1);
+    color: $theme-gray-dark;
+
+    // Media queries
+    @include media-breakpoint-up(sm) {
+      padding-right: ($spacer / 0.75);
+    }
+  }
+
+  &__list {
+    li {
+      margin-bottom: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: -25px;
+        background: $theme-gray;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &--no-border {
+    border-top: none;
+  }
+
+  &--smaller {
+    .accordion__link {
+      &,
+      &:visited {
+        padding: ($spacer * 0.4) ($spacer * 0.6) ($spacer * 0.4) 0;
+
+        // Media queries
+        @include media-breakpoint-up(sm) {
+          padding-right: ($spacer * 0.6);
+        }
+      }
+
+      &::after {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .accordion__content {
+      // Media queries
+      @include media-breakpoint-up(sm) {
+        padding-right: ($spacer * 0.6);
+      }
+    }
+
+    .accordion__title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+  }
+
+  &--open {
+    .accordion__content {
+      max-height: 5000px;
+      -webkit-transition: max-height 1s ease-in;
+      -o-transition: max-height 1s ease-in;
+      transition: max-height 1s ease-in;
+    }
+
+    .accordion__link {
+      &::after {
+        content: '\e910';
+      }
+    }
+  }
+}

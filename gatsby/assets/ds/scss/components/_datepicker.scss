@@ -1,0 +1,107 @@
+/**
+* Date picker
+*/
+
+.date-picker {
+  legend {
+    display: none;
+  }
+
+  .form-control--date-picker {
+    @include placeholder($theme-gray-dark);
+  }
+
+  &--icon {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+    color: $theme-yellow;
+
+    @include font-size(22);
+
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 9;
+  }
+
+  .help-block {
+    color: $theme-gray-dark;
+  }
+}
+
+.datepicker-dropdown {
+  background-color: $theme-blue;
+  color: $white;
+
+  &::before,
+  &.datepicker-orient-bottom::after {
+    border-top-color: $theme-blue;
+  }
+
+  thead {
+    display: table-header-group;
+
+    th,
+    th:first-child {
+      color: $white;
+      padding: ($spacer / 6) ($spacer / 7);
+
+      // Media queries
+      @include media-breakpoint-up(xl) {
+        padding: ($spacer / 6) ($spacer / 5);
+      }
+    }
+
+    tr:first-child {
+      th {
+        &:hover,
+        &:focus {
+          background-color: rgba($white, 0.1);
+        }
+      }
+    }
+  }
+
+  tbody {
+    display: table-row-group;
+
+    tr {
+      display: table-row;
+      border-top: none;
+
+      td {
+        &.today {
+          background-color: transparent;
+          border-color: transparent;
+          color: $theme-yellow;
+        }
+
+        &.day,
+        &.year,
+        span {
+          &:hover,
+          &:focus {
+            background-color: rgba($white, 0.1);
+          }
+        }
+      }
+    }
+
+    td {
+      display: table-cell;
+
+      @include font-size(12);
+
+      padding: ($spacer / 5);
+
+      &:first-of-type {
+        padding: 0;
+
+        // Media queries
+        @include media-breakpoint-up(md) {
+          padding: ($spacer / 5);
+        }
+      }
+    }
+  }
+}
