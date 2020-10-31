@@ -7,5 +7,5 @@ const Hello: React.FC = () => {
       <Trans i18nKey="greetings" />
     </div>
   );
-}
+};
 export default Hello;
