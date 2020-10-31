@@ -1,16 +1,11 @@
 import React from 'react';
-import 'assets/ds/scss/front.scss';
-import { Helmet } from 'react-helmet';
 
-const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+const DefaultLayout: React.FC<{ children }> = ({ children }) => {
   return (
     <div className="body__wrapper">
-      <Helmet>
-        <html className="pvs-theme" />
-      </Helmet>
+      Layout Start
       <div>{children}</div>
+      Layout End
     </div>
   );
 };

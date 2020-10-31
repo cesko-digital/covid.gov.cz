@@ -1,19 +1,17 @@
 import React from 'react';
-
-import Layout from '@/layouts/default-layout';
 import Hello from '@/components/hello/hello';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby-plugin-react-i18next';
 
 const Home: React.FC = () => {
   return (
-    <Layout>
-      <Helmet title="Index Page"/>
+    <div>
+      <Helmet title="Index Page" />
       <Hello />
-      <Link to="/" language="en">
+      <Link to="/" language="en" className="">
         English Page
       </Link>
-    </Layout>
+    </div>
   );
-}
+};
 export default Home;
