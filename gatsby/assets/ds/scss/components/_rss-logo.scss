@@ -1,0 +1,42 @@
+/**
+* RSS logo
+*/
+
+.rss-logo {
+  &,
+  &:visited {
+    display: block;
+    margin-top: ($spacer * 0.25);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+
+    .rss-logo__text {
+      color: $theme-yellow;
+    }
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  &__icon {
+    color: $theme-yellow;
+
+    @include font-size(22);
+  }
+
+  &__text {
+    display: block;
+    padding-top: 5px;
+
+    @include font-size(12);
+
+    color: $theme-black;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,31 @@
+.district-selection {
+  @include display-flex();
+
+  align-items: center;
+
+  &__link {
+    &,
+    &:visited {
+      @include font-size(12);
+
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $theme-gray-dark;
+      letter-spacing: normal;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $theme-blue;
+    }
+  }
+
+  &__icon {
+    color: $theme-yellow;
+
+    @include font-size(20);
+
+    padding-right: ($spacer * 0.2);
+  }
+}

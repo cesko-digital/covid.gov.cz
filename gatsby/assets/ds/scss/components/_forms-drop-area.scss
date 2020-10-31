@@ -1,0 +1,32 @@
+/**
+* Forms - Drop area / file input
+*/
+
+.drop-area {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed rgba($theme-gray, 0.3);
+  text-align: center;
+
+  // Media queries
+  @include media-breakpoint-up(sm) {
+    height: 260px;
+  }
+
+  &__title,
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    margin-bottom: 0;
+  }
+
+  &--over {
+    background-color: rgba($theme-gray-dark, 0.05);
+  }
+}
