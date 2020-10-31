@@ -18,7 +18,7 @@ const Link: React.FC<Props> = ({ label, to }) => {
   return (
     <GatsbyLink
       to={to}
-      className={classnames('text_change_color_orange', {
+      className={classnames({
         external: isExternal,
       })}
       title={label}
