@@ -12,7 +12,7 @@ const Row: React.FC<IProps> = ({
   justify,
   alignItems,
 }) => {
-  const classes = () => {
+  const getClassNames = () => {
     var strng = '';
 
     if (justify) {
@@ -27,7 +27,7 @@ const Row: React.FC<IProps> = ({
     return strng;
   };
 
-  return <div className={`row ${classes()}`}>{children}</div>;
+  return <div className={`row ${getClassNames()}`}>{children}</div>;
 };
 
 export default Row;

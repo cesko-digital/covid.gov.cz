@@ -1,11 +1,26 @@
 import React from 'react';
 
+type ColSize =
+  | boolean
+  | 'auto'
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12;
 interface IProps {
-  col?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  colSm?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  colMd?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  colLg?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  colXl?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+  col?: ColSize;
+  colSm?: ColSize;
+  colMd?: ColSize;
+  colLg?: ColSize;
+  colXl?: ColSize;
   className?: string;
   alignSelf?: 'start' | 'center' | 'end';
 }
@@ -20,7 +35,7 @@ const Col: React.FC<IProps> = ({
   className = '',
   alignSelf,
 }) => {
-  const getClass = (): string => {
+  const getClassNames = (): string => {
     var strng = '';
     if (col) {
       strng += typeof col === 'boolean' ? 'col ' : `col-${col} `;
@@ -44,7 +59,7 @@ const Col: React.FC<IProps> = ({
     strng = strng.trim();
     return strng;
   };
-  return <div className={getClass()}>{children}</div>;
+  return <div className={getClassNames()}>{children}</div>;
 };
 
 export default Col;

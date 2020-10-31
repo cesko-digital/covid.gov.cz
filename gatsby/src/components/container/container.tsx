@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 
 interface IProps {
@@ -12,9 +13,11 @@ const Container: React.FC<IProps> = ({
 }) => {
   return (
     <div
-      className={`${
-        variant === 'normal' ? 'container' : 'container-fluid'
-      } ${className}`}
+      className={classNames(
+        { container: variant === 'normal' },
+        { 'container-fluid': variant === 'fluid' },
+        className,
+      )}
     >
       {children}
     </div>
