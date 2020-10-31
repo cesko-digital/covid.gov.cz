@@ -46,5 +46,6 @@
     "eslint.lintTask.enable": true,
     "eslint.workingDirectories": ["gatsby"],
     "eslint.packageManager": "yarn",
+    "deepscan.enable": true,
   }
   
