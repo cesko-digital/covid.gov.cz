@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
-import { Link as GatsbyLink } from 'gatsby';
+import { Link as TranslateLink } from 'gatsby-plugin-react-i18next';
 
 interface Props {
   label: string;
@@ -16,7 +16,7 @@ const Link: React.FC<Props> = ({ label, to }) => {
   }, [to]);
 
   return (
-    <GatsbyLink
+    <TranslateLink
       to={to}
       className={classnames({
         external: isExternal,
@@ -26,7 +26,7 @@ const Link: React.FC<Props> = ({ label, to }) => {
       target={isExternal && '_blank'}
     >
       {label}
-    </GatsbyLink>
+    </TranslateLink>
   );
 };
 
