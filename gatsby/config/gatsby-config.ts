@@ -4,6 +4,7 @@ const config = {
       resolve: 'gatsby-source-drupal-multilanguage',
       options: {
         baseUrl: 'https://covid.pristup.net/',
+        apiBase: 'api'
       },
     },
     'gatsby-plugin-typescript',
