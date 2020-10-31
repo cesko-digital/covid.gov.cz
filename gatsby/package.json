@@ -16,10 +16,11 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/classnames": "^2.2.11",
-    "classnames": "^2.2.6",
     "@microsoft/applicationinsights-web": "^2.5.9",
+    "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.15",
+    "@types/react-helmet": "^6.1.0",
+    "classnames": "^2.2.6",
     "gatsby": "^2.24.91",
     "gatsby-plugin-purgecss": "^5.0.0",
     "gatsby-plugin-react-helmet": "^3.3.14",
