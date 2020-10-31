@@ -38,13 +38,10 @@
 
   .nav-link {
     border: $nav-tabs-border-width solid transparent;
-
     @include border-top-radius($nav-tabs-border-radius);
 
     @include hover-focus {
-      border-color:
-        $nav-tabs-link-hover-border-color
-        $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+      border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
     }
 
     &.disabled {
@@ -58,9 +55,7 @@
   .nav-item.show .nav-link {
     color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
-    border-color:
-      $nav-tabs-link-active-border-color
-      $nav-tabs-link-active-border-color $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color $nav-tabs-link-active-border-color $nav-tabs-link-active-bg;
   }
 
   .dropdown-menu {
@@ -70,6 +65,7 @@
     @include border-top-radius(0);
   }
 }
+
 
 //
 // Pills
@@ -86,6 +82,7 @@
     background-color: $nav-pills-link-active-bg;
   }
 }
+
 
 //
 // Justified variants
@@ -106,6 +103,7 @@
   }
 }
 
+
 // Tabbable tabs
 //
 // Hide tabbable panes to start, show them when `.active`
@@ -114,7 +112,6 @@
   > .tab-pane {
     display: none;
   }
-
   > .active {
     display: block;
   }

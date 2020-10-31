@@ -2,282 +2,275 @@
  *	Buttons
  */
 
+
 .btn {
-  cursor: pointer;
+	cursor: pointer;
+	@include font-size(12);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: .5px;
 
-  @include font-size(12);
+	&[disabled],
+	&.disabled,
+	&:disabled {
+		cursor: not-allowed;
+		opacity: .38;
 
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+		&.btn-inverse {
+			color: $white;
+		}
+	}
 
-  &[disabled],
-  &.disabled,
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.38;
+	&.btn--raw {
+		color: $theme-gray-dark;
+		padding: 0;
+		border: none;
 
-    &.btn-inverse {
-      color: $white;
-    }
-  }
+		&:hover,
+		&:focus {
+			&:not([disabled]) {
+				color: $theme-yellow;
+			}
+		}
 
-  &.btn--raw {
-    color: $theme-gray-dark;
-    padding: 0;
-    border: none;
+		&:active {
+			&:not([disabled]) {
+				color: darken($theme-yellow, 8%);
+			}
+		}
 
-    &:hover,
-    &:focus {
-      &:not([disabled]) {
-        color: $theme-yellow;
-      }
-    }
+		&.btn-inverse {
+			color: $white;
+		}
+	}
 
-    &:active {
-      &:not([disabled]) {
-        color: darken($theme-yellow, 8%);
-      }
-    }
+	&.btn-sm {
+		@include font-size(10);
+		line-height: 1.45;
 
-    &.btn-inverse {
-      color: $white;
-    }
-  }
+		&.btn--more,
+		&.btn--external,
+		&.btn--direct {
+			&::after {
+				@include font-size(8);
+			}
+		}
 
-  &.btn-sm {
-    @include font-size(10);
+		&.btn--more,
+		&.btn--external {
+			padding-right: ( $spacer / 4 );
+		}
 
-    line-height: 1.45;
+		&.btn--direct {
+			padding-left: ( $spacer / 4 );
+		}
+	}
 
-    &.btn--more,
-    &.btn--external,
-    &.btn--direct {
-      &::after {
-        @include font-size(8);
-      }
-    }
+	&.btn-lg {
+		@include font-size(14);
+		line-height: 1.45;
 
-    &.btn--more,
-    &.btn--external {
-      padding-right: ($spacer / 4);
-    }
+		&.btn--more,
+		&.btn--external,
+		&.btn--direct {
+			&::after {
+				@include font-size(12);
+				top: ( $spacer / 12 );
+			}
+		}
 
-    &.btn--direct {
-      padding-left: ($spacer / 4);
-    }
-  }
+		&.btn--more {
+			padding-right: ( $spacer / 2.5 );
+		}
 
-  &.btn-lg {
-    @include font-size(14);
+		&.btn--external {
+			padding-right: ( $spacer / 3 );
+		}
 
-    line-height: 1.45;
+		&.btn--direct {
+			padding-left: ( $spacer / 2 );
+		}
+	}
 
-    &.btn--more,
-    &.btn--external,
-    &.btn--direct {
-      &::after {
-        @include font-size(12);
+	&.btn--more,
+	&.btn--external,
+	&.btn--direct {
+		position: relative;
 
-        top: ($spacer / 12);
-      }
-    }
+		&::after {
+			@include icon-mix();
+			@include font-size(10);
+			color: $theme-yellow;
+			position: absolute;
+			top: ( $spacer / 15 );
+		}
+	}
 
-    &.btn--more {
-      padding-right: ($spacer / 2.5);
-    }
+	&.btn--more,
+	&.btn--external {
+		padding-right: ( $spacer / 3 );
 
-    &.btn--external {
-      padding-right: ($spacer / 3);
-    }
+		&::after {
+			right: 0;
+		}
+	}
 
-    &.btn--direct {
-      padding-left: ($spacer / 2);
-    }
-  }
+	&.btn--more {
+		&::after {
+			content: '\e912';
+		}
+	}
 
-  &.btn--more,
-  &.btn--external,
-  &.btn--direct {
-    position: relative;
+	&.btn--external {
+		vertical-align: initial;
+		text-decoration: underline;
+		text-transform: none;
+		letter-spacing: $theme-letter-spacing;
 
-    &::after {
-      @include icon-mix();
-      @include font-size(10);
+		&::after {
+			content: '\e909';
+		}
+	}
 
-      color: $theme-yellow;
-      position: absolute;
-      top: ($spacer / 15);
-    }
-  }
+	&.btn--direct {
+		padding-left: ( $spacer / 2.5 );
 
-  &.btn--more,
-  &.btn--external {
-    padding-right: ($spacer / 3);
+		&::after {
+			content: '\e906';
+			left: 0;
+		}
+	}
 
-    &::after {
-      right: 0;
-    }
-  }
+	&.btn-primary {
+		border-color: darken($theme-yellow, 5%);
+		background-color: $theme-yellow;
+		color: $theme-gray-dark;
 
-  &.btn--more {
-    &::after {
-      content: '\e912';
-    }
-  }
+		&:hover,
+		&:focus {
+			&:not([disabled]) {
+				border-color: darken($theme-yellow, 5%);
+				background-color: darken($theme-yellow, 5%);
+			}
+		}
 
-  &.btn--external {
-    vertical-align: initial;
-    text-decoration: underline;
-    text-transform: none;
-    letter-spacing: $theme-letter-spacing;
+		&:active {
+			&:not([disabled]) {
+				border-color: darken($theme-yellow, 8%);
+				background-color: darken($theme-yellow, 8%);
+				color: $theme-gray-dark;
+			}
+		}
 
-    &::after {
-      content: '\e909';
-    }
-  }
+		&.btn-inverse {
+			color: $theme-gray-dark;
 
-  &.btn--direct {
-    padding-left: ($spacer / 2.5);
+			&:active {
+				color: $theme-gray-dark;
+			}
+		}
+	}
 
-    &::after {
-      content: '\e906';
-      left: 0;
-    }
-  }
+	&.btn-outline-primary {
+		border-color: $theme-yellow;
+		color: $theme-gray-dark;
+		text-align: left;
+		white-space: normal;
+		font-weight: 500;
 
-  &.btn-primary {
-    border-color: darken($theme-yellow, 5%);
-    background-color: $theme-yellow;
-    color: $theme-gray-dark;
+		&:hover,
+		&:focus {
+			&:not([disabled]) {
+				border-color: $theme-yellow;
+				background-color: $theme-yellow;
+			}
+		}
 
-    &:hover,
-    &:focus {
-      &:not([disabled]) {
-        border-color: darken($theme-yellow, 5%);
-        background-color: darken($theme-yellow, 5%);
-      }
-    }
+		&:active {
+			&:not([disabled]) {
+				border-color: darken($theme-yellow, 8%);
+				background-color: darken($theme-yellow, 8%);
+				color: $theme-gray-dark;
+			}
+		}
 
-    &:active {
-      &:not([disabled]) {
-        border-color: darken($theme-yellow, 8%);
-        background-color: darken($theme-yellow, 8%);
-        color: $theme-gray-dark;
-      }
-    }
+		&.btn-inverse {
+			color: $white;
 
-    &.btn-inverse {
-      color: $theme-gray-dark;
+			&:not([disabled]) {
+				&:active,
+				&:hover,
+				&:focus {
+					color: $theme-gray-dark;
+				}
+			}
+		}
+	}
 
-      &:active {
-        color: $theme-gray-dark;
-      }
-    }
-  }
+	&.btn-secondary {
+		border-color: transparent;
+		background-color: transparent;
+		color: $theme-gray-dark;
 
-  &.btn-outline-primary {
-    border-color: $theme-yellow;
-    color: $theme-gray-dark;
-    text-align: left;
-    white-space: normal;
-    font-weight: 500;
+		&:hover,
+		&:focus {
+			&:not([disabled]) {
+				border-color: transparent;
+				background-color: rgba($theme-gray-dark, .1);
+			}
+		}
 
-    &:hover,
-    &:focus {
-      &:not([disabled]) {
-        border-color: $theme-yellow;
-        background-color: $theme-yellow;
-      }
-    }
+		&:active {
+			&:not([disabled]) {
+				border-color: transparent;
+				background-color: rgba($theme-gray-dark, .2);
+				color: $theme-gray-dark;
+			}
+		}
 
-    &:active {
-      &:not([disabled]) {
-        border-color: darken($theme-yellow, 8%);
-        background-color: darken($theme-yellow, 8%);
-        color: $theme-gray-dark;
-      }
-    }
+		&.btn-inverse {
+			color: $white;
 
-    &.btn-inverse {
-      color: $white;
+			&:hover,
+			&:focus {
+				&:not([disabled]) {
+					border-color: transparent;
+					background-color: rgba($white, .1);
+				}
+			}
 
-      &:not([disabled]) {
-        &:active,
-        &:hover,
-        &:focus {
-          color: $theme-gray-dark;
-        }
-      }
-    }
-  }
+			&:active {
+				&:not([disabled]) {
+					border-color: transparent;
+					background-color: rgba($white, .2);
+					color: $white;
+				}
+			}
+		}
+	}
 
-  &.btn-secondary {
-    border-color: transparent;
-    background-color: transparent;
-    color: $theme-gray-dark;
+	&.btn--color-white {
+		color: $theme-white;
+	}
 
-    &:hover,
-    &:focus {
-      &:not([disabled]) {
-        border-color: transparent;
-        background-color: rgba($theme-gray-dark, 0.1);
-      }
-    }
+	&.btn__content-link {
+		&,
+		&:visited {
+			display: inline;
+			padding: 0;
+			color: $theme-gray-dark;
+			@include font-size(14);
+			font-weight: 400;
+			letter-spacing: $theme-letter-spacing;
+			white-space: normal;
+			text-transform: none;
+			text-decoration: underline;
+		}
 
-    &:active {
-      &:not([disabled]) {
-        border-color: transparent;
-        background-color: rgba($theme-gray-dark, 0.2);
-        color: $theme-gray-dark;
-      }
-    }
-
-    &.btn-inverse {
-      color: $white;
-
-      &:hover,
-      &:focus {
-        &:not([disabled]) {
-          border-color: transparent;
-          background-color: rgba($white, 0.1);
-        }
-      }
-
-      &:active {
-        &:not([disabled]) {
-          border-color: transparent;
-          background-color: rgba($white, 0.2);
-          color: $white;
-        }
-      }
-    }
-  }
-
-  &.btn--color-white {
-    color: $theme-white;
-  }
-
-  &.btn__content-link {
-    &,
-    &:visited {
-      display: inline;
-      padding: 0;
-      color: $theme-gray-dark;
-
-      @include font-size(14);
-
-      font-weight: 400;
-      letter-spacing: $theme-letter-spacing;
-      white-space: normal;
-      text-transform: none;
-      text-decoration: underline;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $theme-yellow;
-    }
-  }
+		&:hover,
+		&:focus,
+		&:active {
+			color: $theme-yellow;
+		}
+	}
 }

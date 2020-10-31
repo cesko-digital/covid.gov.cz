@@ -1,11 +1,6 @@
 @keyframes progress-bar-stripes {
-  from {
-    background-position: $progress-height 0;
-  }
-
-  to {
-    background-position: 0 0;
-  }
+  from { background-position: $progress-height 0; }
+  to { background-position: 0 0; }
 }
 
 .progress {
@@ -14,7 +9,6 @@
   overflow: hidden; // force rounded corners by cropping it
   font-size: $progress-font-size;
   background-color: $progress-bg;
-
   @include border-radius($progress-border-radius);
 }
 
@@ -28,7 +22,6 @@
 
 .progress-bar-striped {
   @include gradient-striped();
-
   background-size: $progress-height $progress-height;
 }
 

@@ -2,118 +2,112 @@
  *	Footer
  */
 
+
 .footer {
-  background-color: $footer-bg;
-  color: $footer-text-color;
+	background-color: $footer-bg;
+	color: $footer-text-color;
 
-  ul {
-    @include reset-pa-ma();
-    @include after-clear();
+	ul {
+		@include reset-pa-ma();
+		@include after-clear();
+		list-style: none;
 
-    list-style: none;
+		&.bigger {
 
-    &.bigger {
-      a {
-        &,
-        &:visited {
-          @include font-size(20);
+			a {
+				&,
+				&:visited {
+					@include font-size(20);
+					font-weight: 400;
+				}
+			}
 
-          font-weight: 400;
-        }
-      }
+			li {
+				line-height: 1.3;
+				padding-bottom: 1.2em;
 
-      li {
-        line-height: 1.3;
-        padding-bottom: 1.2em;
+				// Media queries
+				@include media-breakpoint-up(sm) {
+					padding-bottom: .8em;
+				}
+			}
+		}
 
-        // Media queries
-        @include media-breakpoint-up(sm) {
-          padding-bottom: 0.8em;
-        }
-      }
-    }
+		li {
+			@include reset-pa-ma();
+			padding-bottom: 1.2em;
 
-    li {
-      @include reset-pa-ma();
+			// Media queries
+			@include media-breakpoint-up(sm) {
+				padding-bottom: .4em;
+			}
 
-      padding-bottom: 1.2em;
+			&:last-child {
+				padding-bottom: 0;
+			}
 
-      // Media queries
-      @include media-breakpoint-up(sm) {
-        padding-bottom: 0.4em;
-      }
+			&::before {
+				display: none;
+			}
+		}
+	}
 
-      &:last-child {
-        padding-bottom: 0;
-      }
+	h3 {
+		color: $theme-white;
+	}
 
-      &::before {
-        display: none;
-      }
-    }
-  }
+	a {
+		&,
+		&:visited {
+			color: $theme-white;
+			text-transform: uppercase;
+			@include font-size(12);
+			font-weight: 500;
+			text-decoration: none;
+		}
 
-  h3 {
-    color: $theme-white;
-  }
+		&:hover,
+		&:focus {
+			color: $theme-yellow;
+			text-decoration: underline;
+		}
 
-  a {
-    &,
-    &:visited {
-      color: $theme-white;
-      text-transform: uppercase;
+		&:active {
+			color: $theme-yellow;
+			text-decoration: none;
+		}
 
-      @include font-size(12);
+		@include complement-visited-links() {
+			color: $theme-white;
+		}
+	}
 
-      font-weight: 500;
-      text-decoration: none;
-    }
+	&__links {
+		padding: ( $spacer / 1.5 ) 0;
+	}
 
-    &:hover,
-    &:focus {
-      color: $theme-yellow;
-      text-decoration: underline;
-    }
+	&__common {
+		padding: ( $spacer / 1.5 ) 0;
+		@include font-size(12);
+		font-weight: 500;
+		border-top: 1px solid rgba($theme-white, .2);
 
-    &:active {
-      color: $theme-yellow;
-      text-decoration: none;
-    }
+		// Media queries
+		@include media-breakpoint-up(lg) {
+			padding: $spacer 0;
+		}
+	}
 
-    @include complement-visited-links() {
-      color: $theme-white;
-    }
-  }
+	&__brand {
+		@include reset-pa-ma();
+		@include font-size(12);
+		text-transform: uppercase;
+		font-weight: 500;
+		line-height: 1.34;
 
-  &__links {
-    padding: ($spacer / 1.5) 0;
-  }
-
-  &__common {
-    padding: ($spacer / 1.5) 0;
-
-    @include font-size(12);
-
-    font-weight: 500;
-    border-top: 1px solid rgba($theme-white, 0.2);
-
-    // Media queries
-    @include media-breakpoint-up(lg) {
-      padding: $spacer 0;
-    }
-  }
-
-  &__brand {
-    @include reset-pa-ma();
-    @include font-size(12);
-
-    text-transform: uppercase;
-    font-weight: 500;
-    line-height: 1.34;
-
-    // Media queries
-    @include media-breakpoint-up(sm) {
-      line-height: 1.85;
-    }
-  }
+		// Media queries
+		@include media-breakpoint-up(sm) {
+			line-height: 1.85;
+		}
+	}
 }

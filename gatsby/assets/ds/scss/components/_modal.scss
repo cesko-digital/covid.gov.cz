@@ -1,86 +1,85 @@
 //Botstrap modal overrides
 
 .modal {
-  &--municipality {
-    .modal-dialog {
-      max-width: 90%;
-      margin: 30px auto;
+	&--municipality {
+		.modal-dialog {
+			max-width: 90%;
+			margin: 30px auto;
 
-      @include media-breakpoint-up(lg) {
-        max-width: 840px;
-      }
-    }
+			@include media-breakpoint-up(lg) {
+				max-width: 840px;
+			}
+		}
 
-    .modal-content {
-      background: $theme-gray-light;
-      padding: ($spacer / 3) ($spacer / 3) 0;
-    }
+		.modal-content {
+			background: $theme-gray-light;
+			padding: ( $spacer / 3 ) ( $spacer / 3 ) 0;
+		}
 
-    .modal-list {
-      margin: 0;
-    }
+		.modal-list {
+			margin: 0;
+		}
 
-    .modal-item {
-      margin-bottom: ($spacer * 0.3);
+		.modal-item {
+			margin-bottom: ( $spacer * .3 );
 
-      a {
-        &,
-        &:visited {
-          color: $theme-gray-dark;
-          letter-spacing: normal;
-          font-weight: 500;
+			a {
+				&,
+				&:visited {
+					color: $theme-gray-dark;
+					letter-spacing: normal;
+					font-weight: 500;
+					@include font-size(12);
+					text-transform: uppercase;
+				}
 
-          @include font-size(12);
+				&:hover,
+				&:focus,
+				&:active {
+					color: $theme-blue;
+					text-decoration: none;
+				}
+			}
+		}
 
-          text-transform: uppercase;
-        }
+		.paginator__holder {
+			width: 100%;
+		}
 
-        &:hover,
-        &:focus,
-        &:active {
-          color: $theme-blue;
-          text-decoration: none;
-        }
-      }
-    }
+		.paginator__link {
+			padding: 8px 10px;
 
-    .paginator__holder {
-      width: 100%;
-    }
+			@include media-breakpoint-up(sm) {
+				padding: 8px 12px;
+			}
 
-    .paginator__link {
-      padding: 8px 10px;
+		}
 
-      @include media-breakpoint-up(sm) {
-        padding: 8px 12px;
-      }
-    }
+		.search {
+			margin-bottom: ( $spacer / 1.2 );
+		}
 
-    .search {
-      margin-bottom: ($spacer / 1.2);
-    }
-
-    .search__button--icon {
-      display: block;
-    }
-  }
+		.search__button--icon {
+			display: block;
+		}
+	}
 }
 
 //Bootstrap V4 fix
 
 .fade.in {
-  opacity: 1;
+	opacity: 1;
 }
 
 .modal-header,
 .modal-footer {
-  border: none;
+	border: none;
 }
 
 .modal-backdrop.in {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .modal.in .modal-dialog {
-  @include translate(0, 0);
+	@include translate(0, 0);
 }

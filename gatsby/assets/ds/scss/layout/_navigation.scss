@@ -2,358 +2,347 @@
  *	Navigations
  */
 
+
 .navigation {
-  position: relative;
-  overflow-x: auto;
-  overflow-y: hidden;
+	position: relative;
+	overflow-x: auto;
+	overflow-y: hidden;
 
-  .nav {
-    @include reset-pa-ma();
-    @include after-clear();
+	.nav {
+		@include reset-pa-ma();
+		@include after-clear();
+		list-style: none;
+		@extend .no-bullets;
 
-    list-style: none;
+		.nav__link {
+			&,
+			&:visited {
+				position: relative;
+				text-decoration: none;
+			}
 
-    @extend .no-bullets;
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
 
-    .nav__link {
-      &,
-      &:visited {
-        position: relative;
-        text-decoration: none;
-      }
+		&--primary {
+			display: table-row;
 
-      &:hover,
-      &:focus {
-        text-decoration: none;
-      }
-    }
+			// Media queries
+			@include media-breakpoint-up(sm) {
+				@include display-flex();
+			}
 
-    &--primary {
-      display: table-row;
+			.nav__item {
+				position: relative;
+				display: table-cell;
+				@include reset-pa-ma();
+				padding-right: ( $grid-gutter-width * .75 );
+				margin-right: auto;
 
-      // Media queries
-      @include media-breakpoint-up(sm) {
-        @include display-flex();
-      }
+				// Media queries
+				@include media-breakpoint-up(sm) {
+					display: inline-block;
+					padding-right: 0;
+				}
 
-      .nav__item {
-        position: relative;
-        display: table-cell;
+				&:last-child {
+					padding-right: 0;
+					margin-right: 0;
+				}
+			}
 
-        @include reset-pa-ma();
+			.nav__link {
+				&,
+				&:visited {
+					display: block;
+					padding-bottom: ( $grid-gutter-width * .45 );
+					color: $theme-white;
+					@include font-size(15);
+					text-transform: uppercase;
+					font-weight: bold;
 
-        padding-right: ($grid-gutter-width * 0.75);
-        margin-right: auto;
+					// Media queries
+					@include media-breakpoint-up(md) {
+						padding-top: ( $grid-gutter-width * .6 );
+						padding-bottom: 0;
+						@include font-size(14);
+					}
+					@include media-breakpoint-up(lg) {
+						@include font-size(15);
+					}
 
-        // Media queries
-        @include media-breakpoint-up(sm) {
-          display: inline-block;
-          padding-right: 0;
-        }
+					&:last-child {
+						margin-right: 0;
+					}
+				}
 
-        &:last-child {
-          padding-right: 0;
-          margin-right: 0;
-        }
-      }
+				&:hover,
+				&:focus {
+					color: $theme-yellow;
+					text-decoration: none;
 
-      .nav__link {
-        &,
-        &:visited {
-          display: block;
-          padding-bottom: ($grid-gutter-width * 0.45);
-          color: $theme-white;
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 2px;
+						background-color: $theme-yellow;
 
-          @include font-size(15);
+						// Media queries
+						@include media-breakpoint-up(md) {
+							top: 0;
+						}
+					}
+				}
 
-          text-transform: uppercase;
-          font-weight: bold;
+				&:active,
+				&.active {
+					color: $theme-white;
+					text-decoration: none;
 
-          // Media queries
-          @include media-breakpoint-up(md) {
-            padding-top: ($grid-gutter-width * 0.6);
-            padding-bottom: 0;
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 2px;
+						background-color: $white;
 
-            @include font-size(14);
-          }
+						// Media queries
+						@include media-breakpoint-up(md) {
+							top: 0;
+						}
+					}
+				}
+			}
+		}
 
-          @include media-breakpoint-up(lg) {
-            @include font-size(15);
-          }
+		&--horizontal {
 
-          &:last-child {
-            margin-right: 0;
-          }
-        }
+			.nav__item {
+				margin-right: auto;
+				margin-bottom: 0;
 
-        &:hover,
-        &:focus {
-          color: $theme-yellow;
-          text-decoration: none;
+				&::after {
+					content: "|";
+					position: absolute;
+					top: -1px;
+					right: -20px;
+					color: $theme-white;
 
-          &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: $theme-yellow;
+					// Media queries
+					@include media-breakpoint-up(xl) {
+						right: -27px;
+					}
+				}
 
-            // Media queries
-            @include media-breakpoint-up(md) {
-              top: 0;
-            }
-          }
-        }
+				&:last-child {
+					margin-right: 0;
 
-        &:active,
-        &.active {
-          color: $theme-white;
-          text-decoration: none;
+					&::after {
+						display: none;
+					}
+				}
+			}
 
-          &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: $white;
+			.nav__link {
+				&,
+				&:visited {
+					display: block;
+					padding-top: 0;
+					padding-bottom: $spacer / 2;
+					color: $theme-white;
+					font-weight: 500;
+					text-transform: uppercase;
 
-            // Media queries
-            @include media-breakpoint-up(md) {
-              top: 0;
-            }
-          }
-        }
-      }
-    }
+					// Media queries
+					@include media-breakpoint-up(lg) {
+						@include font-size(12);
+					}
+					@include media-breakpoint-up(xl) {
+						@include font-size(14);
+					}
+				}
 
-    &--horizontal {
-      .nav__item {
-        margin-right: auto;
-        margin-bottom: 0;
+				&:hover,
+				&:focus {
+					&::after {
+						content: "";
+						position: absolute;
+						background: $theme-white;
+						display: block;
+						bottom: 0;
+						top: auto;
+						width: 100%;
+						height: 2px;
+					}
+				}
 
-        &::after {
-          content: '|';
-          position: absolute;
-          top: -1px;
-          right: -20px;
-          color: $theme-white;
+				&:active,
+				&.active {
+					&::after {
+						content: "";
+						position: absolute;
+						background: $theme-white;
+						display: block;
+						bottom: 0;
+						top: auto;
+						width: 100%;
+						height: 2px;
+					}
+				}
+			}
+		}
 
-          // Media queries
-          @include media-breakpoint-up(xl) {
-            right: -27px;
-          }
-        }
+		&--vertical {
 
-        &:last-child {
-          margin-right: 0;
+			// Media queries
+			@include media-breakpoint-up(lg) {
+				padding-top: $spacer / 1.25;
+			}
 
-          &::after {
-            display: none;
-          }
-        }
-      }
+			.nav__item {
+				display: block;
+				width: 100%;
+				margin-bottom: ($spacer * 0.35);
+			}
 
-      .nav__link {
-        &,
-        &:visited {
-          display: block;
-          padding-top: 0;
-          padding-bottom: $spacer / 2;
-          color: $theme-white;
-          font-weight: 500;
-          text-transform: uppercase;
+			.nav__link {
+				&,
+				&:visited {
+					display: inline-block;
+					padding: ( $spacer * .05 ) ( $spacer * .4 ) ( $spacer * .05 ) 0;
+					font-weight: 500;
+					@include font-size(12);
+					color: $white;
+					text-transform: uppercase;
+					letter-spacing: ( $theme-letter-spacing / 2 );
+				}
 
-          // Media queries
-          @include media-breakpoint-up(lg) {
-            @include font-size(12);
-          }
+				&:focus,
+				&:hover {
+					color: $theme-yellow;
+					text-decoration: none;
 
-          @include media-breakpoint-up(xl) {
-            @include font-size(14);
-          }
-        }
+					&::after {
+						background: none;
+					}
+				}
 
-        &:hover,
-        &:focus {
-          &::after {
-            content: '';
-            position: absolute;
-            background: $theme-white;
-            display: block;
-            bottom: 0;
-            top: auto;
-            width: 100%;
-            height: 2px;
-          }
-        }
+				&.active,
+				&:active {
+					background-color: $theme-white;
+					color: $theme-blue;
+					text-decoration: none;
 
-        &:active,
-        &.active {
-          &::after {
-            content: '';
-            position: absolute;
-            background: $theme-white;
-            display: block;
-            bottom: 0;
-            top: auto;
-            width: 100%;
-            height: 2px;
-          }
-        }
-      }
-    }
+				   &::after {
+						background: none;
+				   }
+				}
+			}
+		}
 
-    &--vertical {
-      // Media queries
-      @include media-breakpoint-up(lg) {
-        padding-top: $spacer / 1.25;
-      }
+		&__vertical--secondary {
 
-      .nav__item {
-        display: block;
-        width: 100%;
-        margin-bottom: ($spacer * 0.35);
-      }
+			.nav__item {
+				display: block;
+				width: 100%;
+				@include reset-pa-ma();
+			}
 
-      .nav__link {
-        &,
-        &:visited {
-          display: inline-block;
-          padding: ($spacer * 0.05) ($spacer * 0.4) ($spacer * 0.05) 0;
-          font-weight: 500;
+			.nav__link {
+				&,
+				&:visited {
+					display: block;
+					padding-top: 0;
+					padding-left: ( $spacer / 3 );
+					margin: ( $spacer / 7 ) 0;
+					color: $theme-gray-dark;
+					@include font-size(12);
+					font-weight: 500;
+					letter-spacing: normal;
+					text-transform: uppercase;
+					text-align: left;
+				}
 
-          @include font-size(12);
+				&:focus,
+				&:hover {
+					color: $theme-yellow;
+				}
 
-          color: $white;
-          text-transform: uppercase;
-          letter-spacing: ($theme-letter-spacing / 2);
-        }
+				&:active {
+					color: $theme-yellow;
+				}
 
-        &:focus,
-        &:hover {
-          color: $theme-yellow;
-          text-decoration: none;
+				&::before {
+					content: "\e906";
+					position: absolute;
+					top: 6px;
+					left: 0;
+					@include icon-mix();
+					color: $theme-yellow;
+					@include font-size(10);
+				}
+			}
+		}
+	}
 
-          &::after {
-            background: none;
-          }
-        }
-
-        &.active,
-        &:active {
-          background-color: $theme-white;
-          color: $theme-blue;
-          text-decoration: none;
-
-          &::after {
-            background: none;
-          }
-        }
-      }
-    }
-
-    &__vertical--secondary {
-      .nav__item {
-        display: block;
-        width: 100%;
-
-        @include reset-pa-ma();
-      }
-
-      .nav__link {
-        &,
-        &:visited {
-          display: block;
-          padding-top: 0;
-          padding-left: ($spacer / 3);
-          margin: ($spacer / 7) 0;
-          color: $theme-gray-dark;
-
-          @include font-size(12);
-
-          font-weight: 500;
-          letter-spacing: normal;
-          text-transform: uppercase;
-          text-align: left;
-        }
-
-        &:focus,
-        &:hover {
-          color: $theme-yellow;
-        }
-
-        &:active {
-          color: $theme-yellow;
-        }
-
-        &::before {
-          content: '\e906';
-          position: absolute;
-          top: 6px;
-          left: 0;
-
-          @include icon-mix();
-
-          color: $theme-yellow;
-
-          @include font-size(10);
-        }
-      }
-    }
-  }
-
-  &--bordered {
-    border-top: 1px solid rgba($theme-gray, 0.3);
-  }
+	&--bordered {
+		border-top: 1px solid rgba($theme-gray, 0.3);
+	}
 }
 
 .breadcrumb-m-height {
-  margin-top: ($spacer / 1.69);
+	margin-top: ( $spacer / 1.69 );
 }
 
 .hidden-desktop {
-  // Media queries
-  @include media-breakpoint-up(sm) {
-    display: none;
-  }
+
+	// Media queries
+	@include media-breakpoint-up(sm) {
+		display: none;
+	}
 }
 
 .show-to-desktop {
-  // Media queries
-  @include media-breakpoint-up(lg) {
-    display: none;
-  }
+
+	// Media queries
+	@include media-breakpoint-up(lg) {
+		display: none;
+	}
 }
 
 .hidden-tablet {
-  display: none;
+	display: none;
 
-  // Media queries
-  @include media-breakpoint-up(md) {
-    display: block;
-  }
+	// Media queries
+	@include media-breakpoint-up(md) {
+		display: block;
+	}
 }
 
 .hidden-mobile {
-  display: none;
+	display: none;
 
-  // Media queries
-  @include media-breakpoint-up(sm) {
-    display: block;
-  }
+	// Media queries
+	@include media-breakpoint-up(sm) {
+		display: block;
+	}
 }
 
 .show-from-desktop {
-  display: none;
+	display: none;
 
-  // Media queries
-  @include media-breakpoint-up(lg) {
-    display: block;
-  }
+	// Media queries
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
 }

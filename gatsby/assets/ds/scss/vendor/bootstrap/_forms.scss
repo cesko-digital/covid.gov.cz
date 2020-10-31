@@ -21,9 +21,7 @@
   @if $enable-rounded {
     // Manually use the if/else instead of the mixin to account for iOS override
     border-radius: $input-border-radius;
-  }
-
-  @else {
+  } @else {
     // Otherwise undo the iOS default
     border-radius: 0;
   }
@@ -82,6 +80,7 @@ select.form-control {
   display: block;
 }
 
+
 //
 // Labels
 //
@@ -109,6 +108,7 @@ select.form-control {
   line-height: $input-btn-line-height-sm;
 }
 
+
 //
 // Legends
 //
@@ -121,6 +121,7 @@ select.form-control {
   margin-bottom: 0;
   font-size: $font-size-base;
 }
+
 
 // Readonly controls as plain text
 //
@@ -143,6 +144,7 @@ select.form-control {
   }
 }
 
+
 // Form control sizing
 //
 // Build on `.form-control` with modifier classes to decrease or increase the
@@ -155,7 +157,6 @@ select.form-control {
   padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
   font-size: $font-size-sm;
   line-height: $input-btn-line-height-sm;
-
   @include border-radius($input-border-radius-sm);
 }
 
@@ -169,7 +170,6 @@ select.form-control-sm {
   padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
   font-size: $font-size-lg;
   line-height: $input-btn-line-height-lg;
-
   @include border-radius($input-border-radius-lg);
 }
 
@@ -178,6 +178,7 @@ select.form-control-lg {
     height: $input-height-lg;
   }
 }
+
 
 // Form groups
 //
@@ -193,6 +194,7 @@ select.form-control-lg {
   margin-top: $form-text-margin-top;
 }
 
+
 // Form grid
 //
 // Special replacement for our grid system's `.row` for tighter form layouts.
@@ -204,11 +206,12 @@ select.form-control-lg {
   margin-left: -5px;
 
   > .col,
-  > [class*='col-'] {
+  > [class*="col-"] {
     padding-right: 5px;
     padding-left: 5px;
   }
 }
+
 
 // Checkboxes and radios
 //
@@ -247,6 +250,7 @@ select.form-control-lg {
   }
 }
 
+
 // Form validation
 //
 // Provide feedback to users when form field values are valid or invalid. Works
@@ -254,8 +258,8 @@ select.form-control-lg {
 // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
 // server side validation.
 
-@include form-validation-state('valid', $form-feedback-valid-color);
-@include form-validation-state('invalid', $form-feedback-invalid-color);
+@include form-validation-state("valid", $form-feedback-valid-color);
+@include form-validation-state("invalid", $form-feedback-invalid-color);
 
 // Inline forms
 //
@@ -322,11 +326,9 @@ select.form-control-lg {
       margin-top: 0;
       margin-bottom: 0;
     }
-
     .form-check-label {
       padding-left: 0;
     }
-
     .form-check-input {
       position: relative;
       margin-top: 0;
@@ -341,7 +343,6 @@ select.form-control-lg {
       justify-content: center;
       padding-left: 0;
     }
-
     .custom-control-indicator {
       position: static;
       display: inline-block;

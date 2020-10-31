@@ -18,7 +18,6 @@
 
 .datepicker.datepicker-rtl {
   direction: rtl;
-
   table tr td span {
     float: right;
   }
@@ -27,8 +26,7 @@
 .datepicker-dropdown {
   top: 0;
   left: 0;
-
-  &::before {
+  &:before {
     content: '';
     display: inline-block;
     border-left: 7px solid transparent;
@@ -38,8 +36,7 @@
     border-bottom-color: rgba(0, 0, 0, 0.2);
     position: absolute;
   }
-
-  &::after {
+  &:after {
     content: '';
     display: inline-block;
     border-left: 6px solid transparent;
@@ -48,45 +45,37 @@
     border-top: 0;
     position: absolute;
   }
-
   &.datepicker-orient-left {
-    &::before {
+    &:before {
       left: 6px;
     }
-
-    &::after {
+    &:after {
       left: 7px;
     }
   }
-
   &.datepicker-orient-right {
-    &::before {
+    &:before {
       right: 6px;
     }
-
-    &::after {
+    &:after {
       right: 7px;
     }
   }
-
   &.datepicker-orient-top {
-    &::before {
+    &:before {
       top: -7px;
     }
-
-    &::after {
+    &:after {
       top: -6px;
     }
   }
-
   &.datepicker-orient-bottom {
-    &::before {
+    &:before {
       bottom: -7px;
       border-bottom: 0;
       border-top: 7px solid #999;
     }
-
-    &::after {
+    &:after {
       bottom: -6px;
       border-bottom: 0;
       border-top: 6px solid #fff;
@@ -98,13 +87,9 @@
   > div {
     display: none;
   }
-
-  &.days .datepicker-days,
-  &.months .datepicker-months,
-  &.years .datepicker-years {
+  &.days .datepicker-days, &.months .datepicker-months, &.years .datepicker-years {
     display: block;
   }
-
   table {
     margin: 0;
     -webkit-touch-callout: none;
@@ -113,10 +98,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     tr {
-      td,
-      th {
+      td, th {
         text-align: center;
         width: 30px;
         height: 30px;
@@ -128,106 +111,82 @@
 }
 
 .table-striped .datepicker table tr {
-  td,
-  th {
+  td, th {
     background-color: transparent;
   }
 }
 
 .datepicker table tr td {
   &.day {
-    &:hover,
-    &.focused {
-      background: #eee;
+    &:hover, &.focused {
+      background: #eeeeee;
       cursor: pointer;
     }
   }
-
-  &.old,
-  &.new {
-    color: #999;
+  &.old, &.new {
+    color: #999999;
   }
-
   &.disabled {
     background: none;
-    color: #999;
+    color: #999999;
     cursor: default;
-
     &:hover {
       background: none;
-      color: #999;
+      color: #999999;
       cursor: default;
     }
   }
-
   &.today {
-    color: #000;
+    color: #000000;
     background-color: #ffdb99;
     border-color: #ffb733;
-
     &:hover {
-      color: #000;
+      color: #000000;
       background-color: #ffdb99;
       border-color: #ffb733;
     }
-
     &.disabled {
-      color: #000;
+      color: #000000;
       background-color: #ffdb99;
       border-color: #ffb733;
-
       &:hover {
-        color: #000;
+        color: #000000;
         background-color: #ffdb99;
         border-color: #ffb733;
       }
     }
-
-    &:hover,
-    &.disabled:hover,
-    &:focus,
-    &:hover:focus {
-      color: #000;
+    &:hover, &.disabled:hover, &:focus, &:hover:focus {
+      color: #000000;
       background-color: #ffcd70;
       border-color: #f59e00;
     }
-
     &.disabled {
-      &:focus,
-      &:hover:focus {
-        color: #000;
+      &:focus, &:hover:focus {
+        color: #000000;
         background-color: #ffcd70;
         border-color: #f59e00;
       }
     }
-
-    &:active,
-    &:hover:active {
-      color: #000;
+    &:active, &:hover:active {
+      color: #000000;
       background-color: #ffcd70;
       border-color: #f59e00;
     }
-
     &.disabled {
-      &:active,
-      &:hover:active {
-        color: #000;
+      &:active, &:hover:active {
+        color: #000000;
         background-color: #ffcd70;
         border-color: #f59e00;
       }
     }
-
-    &.active,
-    &:hover.active {
-      color: #000;
+    &.active, &:hover.active {
+      color: #000000;
       background-color: #ffcd70;
       border-color: #f59e00;
     }
-
     &.disabled {
-      &.active,
-      &:hover.active {
-        color: #000;
+      &.active, &:hover.active {
+        color: #000000;
         background-color: #ffcd70;
         border-color: #f59e00;
       }
@@ -236,23 +195,20 @@
 }
 
 .open .dropdown-toggle.datepicker table tr td.today {
-  color: #000;
+  color: #000000;
   background-color: #ffcd70;
   border-color: #f59e00;
-
   &:hover {
-    color: #000;
+    color: #000000;
     background-color: #ffcd70;
     border-color: #f59e00;
   }
-
   &.disabled {
-    color: #000;
+    color: #000000;
     background-color: #ffcd70;
     border-color: #f59e00;
-
     &:hover {
-      color: #000;
+      color: #000000;
       background-color: #ffcd70;
       border-color: #f59e00;
     }
@@ -260,26 +216,19 @@
 }
 
 .datepicker table tr td.today {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-image: none;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-image: none;
     }
   }
-
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-image: none;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-image: none;
     }
   }
@@ -287,14 +236,11 @@
 
 .open .dropdown-toggle.datepicker table tr td.today {
   background-image: none;
-
   &:hover {
     background-image: none;
   }
-
   &.disabled {
     background-image: none;
-
     &:hover {
       background-image: none;
     }
@@ -302,29 +248,22 @@
 }
 
 .datepicker table tr td.today {
-  &.disabled,
-  &:hover.disabled {
+  &.disabled, &:hover.disabled {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &.disabled,
-    &:hover.disabled {
+    &.disabled, &:hover.disabled {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
   }
-
-  &[disabled],
-  &:hover[disabled] {
+  &[disabled], &:hover[disabled] {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &[disabled],
-    &:hover[disabled] {
+    &[disabled], &:hover[disabled] {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -334,16 +273,13 @@
 fieldset[disabled] .datepicker table tr td.today {
   background-color: #ffdb99;
   border-color: #ffb733;
-
   &:hover {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
     background-color: #ffdb99;
     border-color: #ffb733;
-
     &:hover {
       background-color: #ffdb99;
       border-color: #ffb733;
@@ -352,46 +288,36 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 .datepicker table tr td.today {
-  &.disabled:hover,
-  &[disabled]:hover,
-  &.disabled[disabled]:hover {
+  &.disabled:hover, &[disabled]:hover, &.disabled[disabled]:hover {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
 }
 
 fieldset[disabled] .datepicker table tr td.today {
-  &:hover,
-  &.disabled:hover {
+  &:hover, &.disabled:hover {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
 }
 
 .datepicker table tr td.today {
-  &.disabled:focus,
-  &:hover.disabled:focus {
+  &.disabled:focus, &:hover.disabled:focus {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &.disabled:focus,
-    &:hover.disabled:focus {
+    &.disabled:focus, &:hover.disabled:focus {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
   }
-
-  &[disabled]:focus,
-  &:hover[disabled]:focus {
+  &[disabled]:focus, &:hover[disabled]:focus {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &[disabled]:focus,
-    &:hover[disabled]:focus {
+    &[disabled]:focus, &:hover[disabled]:focus {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -399,15 +325,12 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 fieldset[disabled] .datepicker table tr td.today {
-  &:focus,
-  &:hover:focus {
+  &:focus, &:hover:focus {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
+    &:focus, &:hover:focus {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -415,29 +338,22 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 .datepicker table tr td.today {
-  &.disabled:active,
-  &:hover.disabled:active {
+  &.disabled:active, &:hover.disabled:active {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &.disabled:active,
-    &:hover.disabled:active {
+    &.disabled:active, &:hover.disabled:active {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
   }
-
-  &[disabled]:active,
-  &:hover[disabled]:active {
+  &[disabled]:active, &:hover[disabled]:active {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &[disabled]:active,
-    &:hover[disabled]:active {
+    &[disabled]:active, &:hover[disabled]:active {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -445,15 +361,12 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 fieldset[disabled] .datepicker table tr td.today {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -461,29 +374,22 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 .datepicker table tr td.today {
-  &.disabled.active,
-  &:hover.disabled.active {
+  &.disabled.active, &:hover.disabled.active {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &.disabled.active,
-    &:hover.disabled.active {
+    &.disabled.active, &:hover.disabled.active {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
   }
-
-  &[disabled].active,
-  &:hover[disabled].active {
+  &[disabled].active, &:hover[disabled].active {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &[disabled].active,
-    &:hover[disabled].active {
+    &[disabled].active, &:hover[disabled].active {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -491,15 +397,12 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 fieldset[disabled] .datepicker table tr td.today {
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-color: #ffdb99;
     border-color: #ffb733;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-color: #ffdb99;
       border-color: #ffb733;
     }
@@ -511,103 +414,80 @@ fieldset[disabled] .datepicker table tr td.today {
     &:hover:hover {
       color: #000;
     }
-
     &.active:hover {
       color: #fff;
     }
   }
-
   &.range {
-    background: #eee;
+    background: #eeeeee;
     border-radius: 0;
-
     &:hover {
-      background: #eee;
+      background: #eeeeee;
       border-radius: 0;
     }
-
     &.disabled {
-      background: #eee;
+      background: #eeeeee;
       border-radius: 0;
-
       &:hover {
-        background: #eee;
+        background: #eeeeee;
         border-radius: 0;
       }
     }
-
     &.today {
-      color: #000;
+      color: #000000;
       background-color: #f7ca77;
       border-color: #f1a417;
       border-radius: 0;
-
       &:hover {
-        color: #000;
+        color: #000000;
         background-color: #f7ca77;
         border-color: #f1a417;
         border-radius: 0;
       }
-
       &.disabled {
-        color: #000;
+        color: #000000;
         background-color: #f7ca77;
         border-color: #f1a417;
         border-radius: 0;
-
         &:hover {
-          color: #000;
+          color: #000000;
           background-color: #f7ca77;
           border-color: #f1a417;
           border-radius: 0;
         }
       }
-
-      &:hover,
-      &.disabled:hover,
-      &:focus,
-      &:hover:focus {
-        color: #000;
+      &:hover, &.disabled:hover, &:focus, &:hover:focus {
+        color: #000000;
         background-color: #f4bb51;
         border-color: #bf800c;
       }
-
       &.disabled {
-        &:focus,
-        &:hover:focus {
-          color: #000;
+        &:focus, &:hover:focus {
+          color: #000000;
           background-color: #f4bb51;
           border-color: #bf800c;
         }
       }
-
-      &:active,
-      &:hover:active {
-        color: #000;
+      &:active, &:hover:active {
+        color: #000000;
         background-color: #f4bb51;
         border-color: #bf800c;
       }
-
       &.disabled {
-        &:active,
-        &:hover:active {
-          color: #000;
+        &:active, &:hover:active {
+          color: #000000;
           background-color: #f4bb51;
           border-color: #bf800c;
         }
       }
-
-      &.active,
-      &:hover.active {
-        color: #000;
+      &.active, &:hover.active {
+        color: #000000;
         background-color: #f4bb51;
         border-color: #bf800c;
       }
-
       &.disabled {
-        &.active,
-        &:hover.active {
-          color: #000;
+        &.active, &:hover.active {
+          color: #000000;
           background-color: #f4bb51;
           border-color: #bf800c;
         }
@@ -617,23 +497,20 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 .open .dropdown-toggle.datepicker table tr td.range.today {
-  color: #000;
+  color: #000000;
   background-color: #f4bb51;
   border-color: #bf800c;
-
   &:hover {
-    color: #000;
+    color: #000000;
     background-color: #f4bb51;
     border-color: #bf800c;
   }
-
   &.disabled {
-    color: #000;
+    color: #000000;
     background-color: #f4bb51;
     border-color: #bf800c;
-
     &:hover {
-      color: #000;
+      color: #000000;
       background-color: #f4bb51;
       border-color: #bf800c;
     }
@@ -641,26 +518,19 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 .datepicker table tr td.range.today {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-image: none;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-image: none;
     }
   }
-
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-image: none;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-image: none;
     }
   }
@@ -668,14 +538,11 @@ fieldset[disabled] .datepicker table tr td.today {
 
 .open .dropdown-toggle.datepicker table tr td.range.today {
   background-image: none;
-
   &:hover {
     background-image: none;
   }
-
   &.disabled {
     background-image: none;
-
     &:hover {
       background-image: none;
     }
@@ -683,29 +550,22 @@ fieldset[disabled] .datepicker table tr td.today {
 }
 
 .datepicker table tr td.range.today {
-  &.disabled,
-  &:hover.disabled {
+  &.disabled, &:hover.disabled {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &.disabled,
-    &:hover.disabled {
+    &.disabled, &:hover.disabled {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
   }
-
-  &[disabled],
-  &:hover[disabled] {
+  &[disabled], &:hover[disabled] {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &[disabled],
-    &:hover[disabled] {
+    &[disabled], &:hover[disabled] {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -715,16 +575,13 @@ fieldset[disabled] .datepicker table tr td.today {
 fieldset[disabled] .datepicker table tr td.range.today {
   background-color: #f7ca77;
   border-color: #f1a417;
-
   &:hover {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
     background-color: #f7ca77;
     border-color: #f1a417;
-
     &:hover {
       background-color: #f7ca77;
       border-color: #f1a417;
@@ -733,46 +590,36 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .datepicker table tr td.range.today {
-  &.disabled:hover,
-  &[disabled]:hover,
-  &.disabled[disabled]:hover {
+  &.disabled:hover, &[disabled]:hover, &.disabled[disabled]:hover {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
 }
 
 fieldset[disabled] .datepicker table tr td.range.today {
-  &:hover,
-  &.disabled:hover {
+  &:hover, &.disabled:hover {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
 }
 
 .datepicker table tr td.range.today {
-  &.disabled:focus,
-  &:hover.disabled:focus {
+  &.disabled:focus, &:hover.disabled:focus {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &.disabled:focus,
-    &:hover.disabled:focus {
+    &.disabled:focus, &:hover.disabled:focus {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
   }
-
-  &[disabled]:focus,
-  &:hover[disabled]:focus {
+  &[disabled]:focus, &:hover[disabled]:focus {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &[disabled]:focus,
-    &:hover[disabled]:focus {
+    &[disabled]:focus, &:hover[disabled]:focus {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -780,15 +627,12 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 fieldset[disabled] .datepicker table tr td.range.today {
-  &:focus,
-  &:hover:focus {
+  &:focus, &:hover:focus {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
+    &:focus, &:hover:focus {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -796,29 +640,22 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .datepicker table tr td.range.today {
-  &.disabled:active,
-  &:hover.disabled:active {
+  &.disabled:active, &:hover.disabled:active {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &.disabled:active,
-    &:hover.disabled:active {
+    &.disabled:active, &:hover.disabled:active {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
   }
-
-  &[disabled]:active,
-  &:hover[disabled]:active {
+  &[disabled]:active, &:hover[disabled]:active {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &[disabled]:active,
-    &:hover[disabled]:active {
+    &[disabled]:active, &:hover[disabled]:active {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -826,15 +663,12 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 fieldset[disabled] .datepicker table tr td.range.today {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -842,29 +676,22 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .datepicker table tr td.range.today {
-  &.disabled.active,
-  &:hover.disabled.active {
+  &.disabled.active, &:hover.disabled.active {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &.disabled.active,
-    &:hover.disabled.active {
+    &.disabled.active, &:hover.disabled.active {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
   }
-
-  &[disabled].active,
-  &:hover[disabled].active {
+  &[disabled].active, &:hover[disabled].active {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &[disabled].active,
-    &:hover[disabled].active {
+    &[disabled].active, &:hover[disabled].active {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -872,15 +699,12 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 fieldset[disabled] .datepicker table tr td.range.today {
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-color: #f7ca77;
     border-color: #f1a417;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-color: #f7ca77;
       border-color: #f1a417;
     }
@@ -888,77 +712,60 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .datepicker table tr td.selected {
-  color: #fff;
-  background-color: #999;
-  border-color: #555;
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #555555;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
   &:hover {
-    color: #fff;
-    background-color: #999;
-    border-color: #555;
+    color: #ffffff;
+    background-color: #999999;
+    border-color: #555555;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   }
-
   &.disabled {
-    color: #fff;
-    background-color: #999;
-    border-color: #555;
+    color: #ffffff;
+    background-color: #999999;
+    border-color: #555555;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
     &:hover {
-      color: #fff;
-      background-color: #999;
-      border-color: #555;
+      color: #ffffff;
+      background-color: #999999;
+      border-color: #555555;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     }
   }
-
-  &:hover,
-  &.disabled:hover,
-  &:focus,
-  &:hover:focus {
-    color: #fff;
+  &:hover, &.disabled:hover, &:focus, &:hover:focus {
+    color: #ffffff;
     background-color: #858585;
     border-color: #373737;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
-      color: #fff;
+    &:focus, &:hover:focus {
+      color: #ffffff;
       background-color: #858585;
       border-color: #373737;
     }
   }
-
-  &:active,
-  &:hover:active {
-    color: #fff;
+  &:active, &:hover:active {
+    color: #ffffff;
     background-color: #858585;
     border-color: #373737;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
-      color: #fff;
+    &:active, &:hover:active {
+      color: #ffffff;
       background-color: #858585;
       border-color: #373737;
     }
   }
-
-  &.active,
-  &:hover.active {
-    color: #fff;
+  &.active, &:hover.active {
+    color: #ffffff;
     background-color: #858585;
     border-color: #373737;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
-      color: #fff;
+    &.active, &:hover.active {
+      color: #ffffff;
       background-color: #858585;
       border-color: #373737;
     }
@@ -966,23 +773,20 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .open .dropdown-toggle.datepicker table tr td.selected {
-  color: #fff;
+  color: #ffffff;
   background-color: #858585;
   border-color: #373737;
-
   &:hover {
-    color: #fff;
+    color: #ffffff;
     background-color: #858585;
     border-color: #373737;
   }
-
   &.disabled {
-    color: #fff;
+    color: #ffffff;
     background-color: #858585;
     border-color: #373737;
-
     &:hover {
-      color: #fff;
+      color: #ffffff;
       background-color: #858585;
       border-color: #373737;
     }
@@ -990,26 +794,19 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .datepicker table tr td.selected {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-image: none;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-image: none;
     }
   }
-
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-image: none;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-image: none;
     }
   }
@@ -1017,14 +814,11 @@ fieldset[disabled] .datepicker table tr td.range.today {
 
 .open .dropdown-toggle.datepicker table tr td.selected {
   background-image: none;
-
   &:hover {
     background-image: none;
   }
-
   &.disabled {
     background-image: none;
-
     &:hover {
       background-image: none;
     }
@@ -1032,282 +826,222 @@ fieldset[disabled] .datepicker table tr td.range.today {
 }
 
 .datepicker table tr td.selected {
-  &.disabled,
-  &:hover.disabled {
-    background-color: #999;
-    border-color: #555;
+  &.disabled, &:hover.disabled {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &.disabled,
-    &:hover.disabled {
-      background-color: #999;
-      border-color: #555;
+    &.disabled, &:hover.disabled {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
-
-  &[disabled],
-  &:hover[disabled] {
-    background-color: #999;
-    border-color: #555;
+  &[disabled], &:hover[disabled] {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &[disabled],
-    &:hover[disabled] {
-      background-color: #999;
-      border-color: #555;
+    &[disabled], &:hover[disabled] {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 fieldset[disabled] .datepicker table tr td.selected {
-  background-color: #999;
-  border-color: #555;
-
+  background-color: #999999;
+  border-color: #555555;
   &:hover {
-    background-color: #999;
-    border-color: #555;
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    background-color: #999;
-    border-color: #555;
-
+    background-color: #999999;
+    border-color: #555555;
     &:hover {
-      background-color: #999;
-      border-color: #555;
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 .datepicker table tr td.selected {
-  &.disabled:hover,
-  &[disabled]:hover,
-  &.disabled[disabled]:hover {
-    background-color: #999;
-    border-color: #555;
+  &.disabled:hover, &[disabled]:hover, &.disabled[disabled]:hover {
+    background-color: #999999;
+    border-color: #555555;
   }
 }
 
 fieldset[disabled] .datepicker table tr td.selected {
-  &:hover,
-  &.disabled:hover {
-    background-color: #999;
-    border-color: #555;
+  &:hover, &.disabled:hover {
+    background-color: #999999;
+    border-color: #555555;
   }
 }
 
 .datepicker table tr td.selected {
-  &.disabled:focus,
-  &:hover.disabled:focus {
-    background-color: #999;
-    border-color: #555;
+  &.disabled:focus, &:hover.disabled:focus {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &.disabled:focus,
-    &:hover.disabled:focus {
-      background-color: #999;
-      border-color: #555;
+    &.disabled:focus, &:hover.disabled:focus {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
-
-  &[disabled]:focus,
-  &:hover[disabled]:focus {
-    background-color: #999;
-    border-color: #555;
+  &[disabled]:focus, &:hover[disabled]:focus {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &[disabled]:focus,
-    &:hover[disabled]:focus {
-      background-color: #999;
-      border-color: #555;
+    &[disabled]:focus, &:hover[disabled]:focus {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 fieldset[disabled] .datepicker table tr td.selected {
-  &:focus,
-  &:hover:focus {
-    background-color: #999;
-    border-color: #555;
+  &:focus, &:hover:focus {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
-      background-color: #999;
-      border-color: #555;
+    &:focus, &:hover:focus {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 .datepicker table tr td.selected {
-  &.disabled:active,
-  &:hover.disabled:active {
-    background-color: #999;
-    border-color: #555;
+  &.disabled:active, &:hover.disabled:active {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &.disabled:active,
-    &:hover.disabled:active {
-      background-color: #999;
-      border-color: #555;
+    &.disabled:active, &:hover.disabled:active {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
-
-  &[disabled]:active,
-  &:hover[disabled]:active {
-    background-color: #999;
-    border-color: #555;
+  &[disabled]:active, &:hover[disabled]:active {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &[disabled]:active,
-    &:hover[disabled]:active {
-      background-color: #999;
-      border-color: #555;
+    &[disabled]:active, &:hover[disabled]:active {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 fieldset[disabled] .datepicker table tr td.selected {
-  &:active,
-  &:hover:active {
-    background-color: #999;
-    border-color: #555;
+  &:active, &:hover:active {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
-      background-color: #999;
-      border-color: #555;
+    &:active, &:hover:active {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 .datepicker table tr td.selected {
-  &.disabled.active,
-  &:hover.disabled.active {
-    background-color: #999;
-    border-color: #555;
+  &.disabled.active, &:hover.disabled.active {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &.disabled.active,
-    &:hover.disabled.active {
-      background-color: #999;
-      border-color: #555;
+    &.disabled.active, &:hover.disabled.active {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
-
-  &[disabled].active,
-  &:hover[disabled].active {
-    background-color: #999;
-    border-color: #555;
+  &[disabled].active, &:hover[disabled].active {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &[disabled].active,
-    &:hover[disabled].active {
-      background-color: #999;
-      border-color: #555;
+    &[disabled].active, &:hover[disabled].active {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 fieldset[disabled] .datepicker table tr td.selected {
-  &.active,
-  &:hover.active {
-    background-color: #999;
-    border-color: #555;
+  &.active, &:hover.active {
+    background-color: #999999;
+    border-color: #555555;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
-      background-color: #999;
-      border-color: #555;
+    &.active, &:hover.active {
+      background-color: #999999;
+      border-color: #555555;
     }
   }
 }
 
 .datepicker table tr td.active {
-  color: #fff;
+  color: #ffffff;
   background-color: #428bca;
   border-color: #357ebd;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
   &:hover {
-    color: #fff;
+    color: #ffffff;
     background-color: #428bca;
     border-color: #357ebd;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   }
-
   &.disabled {
-    color: #fff;
+    color: #ffffff;
     background-color: #428bca;
     border-color: #357ebd;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
     &:hover {
-      color: #fff;
+      color: #ffffff;
       background-color: #428bca;
       border-color: #357ebd;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     }
   }
-
-  &:hover,
-  &.disabled:hover,
-  &:focus,
-  &:hover:focus {
-    color: #fff;
+  &:hover, &.disabled:hover, &:focus, &:hover:focus {
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
-      color: #fff;
+    &:focus, &:hover:focus {
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
   }
-
-  &:active,
-  &:hover:active {
-    color: #fff;
+  &:active, &:hover:active {
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
-      color: #fff;
+    &:active, &:hover:active {
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
   }
-
-  &.active,
-  &:hover.active {
-    color: #fff;
+  &.active, &:hover.active {
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
-      color: #fff;
+    &.active, &:hover.active {
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
@@ -1315,23 +1049,20 @@ fieldset[disabled] .datepicker table tr td.selected {
 }
 
 .open .dropdown-toggle.datepicker table tr td.active {
-  color: #fff;
+  color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
-
   &:hover {
-    color: #fff;
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
   }
-
   &.disabled {
-    color: #fff;
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
-
     &:hover {
-      color: #fff;
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
@@ -1339,26 +1070,19 @@ fieldset[disabled] .datepicker table tr td.selected {
 }
 
 .datepicker table tr td.active {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-image: none;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-image: none;
     }
   }
-
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-image: none;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-image: none;
     }
   }
@@ -1366,14 +1090,11 @@ fieldset[disabled] .datepicker table tr td.selected {
 
 .open .dropdown-toggle.datepicker table tr td.active {
   background-image: none;
-
   &:hover {
     background-image: none;
   }
-
   &.disabled {
     background-image: none;
-
     &:hover {
       background-image: none;
     }
@@ -1381,29 +1102,22 @@ fieldset[disabled] .datepicker table tr td.selected {
 }
 
 .datepicker table tr td.active {
-  &.disabled,
-  &:hover.disabled {
+  &.disabled, &:hover.disabled {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled,
-    &:hover.disabled {
+    &.disabled, &:hover.disabled {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled],
-  &:hover[disabled] {
+  &[disabled], &:hover[disabled] {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled],
-    &:hover[disabled] {
+    &[disabled], &:hover[disabled] {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1413,16 +1127,13 @@ fieldset[disabled] .datepicker table tr td.selected {
 fieldset[disabled] .datepicker table tr td.active {
   background-color: #428bca;
   border-color: #357ebd;
-
   &:hover {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
     background-color: #428bca;
     border-color: #357ebd;
-
     &:hover {
       background-color: #428bca;
       border-color: #357ebd;
@@ -1431,46 +1142,36 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 .datepicker table tr td.active {
-  &.disabled:hover,
-  &[disabled]:hover,
-  &.disabled[disabled]:hover {
+  &.disabled:hover, &[disabled]:hover, &.disabled[disabled]:hover {
     background-color: #428bca;
     border-color: #357ebd;
   }
 }
 
 fieldset[disabled] .datepicker table tr td.active {
-  &:hover,
-  &.disabled:hover {
+  &:hover, &.disabled:hover {
     background-color: #428bca;
     border-color: #357ebd;
   }
 }
 
 .datepicker table tr td.active {
-  &.disabled:focus,
-  &:hover.disabled:focus {
+  &.disabled:focus, &:hover.disabled:focus {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled:focus,
-    &:hover.disabled:focus {
+    &.disabled:focus, &:hover.disabled:focus {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled]:focus,
-  &:hover[disabled]:focus {
+  &[disabled]:focus, &:hover[disabled]:focus {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled]:focus,
-    &:hover[disabled]:focus {
+    &[disabled]:focus, &:hover[disabled]:focus {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1478,15 +1179,12 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 fieldset[disabled] .datepicker table tr td.active {
-  &:focus,
-  &:hover:focus {
+  &:focus, &:hover:focus {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
+    &:focus, &:hover:focus {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1494,29 +1192,22 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 .datepicker table tr td.active {
-  &.disabled:active,
-  &:hover.disabled:active {
+  &.disabled:active, &:hover.disabled:active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled:active,
-    &:hover.disabled:active {
+    &.disabled:active, &:hover.disabled:active {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled]:active,
-  &:hover[disabled]:active {
+  &[disabled]:active, &:hover[disabled]:active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled]:active,
-    &:hover[disabled]:active {
+    &[disabled]:active, &:hover[disabled]:active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1524,15 +1215,12 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 fieldset[disabled] .datepicker table tr td.active {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1540,29 +1228,22 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 .datepicker table tr td.active {
-  &.disabled.active,
-  &:hover.disabled.active {
+  &.disabled.active, &:hover.disabled.active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled.active,
-    &:hover.disabled.active {
+    &.disabled.active, &:hover.disabled.active {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled].active,
-  &:hover[disabled].active {
+  &[disabled].active, &:hover[disabled].active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled].active,
-    &:hover[disabled].active {
+    &[disabled].active, &:hover[disabled].active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1570,15 +1251,12 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 fieldset[disabled] .datepicker table tr td.active {
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1594,95 +1272,74 @@ fieldset[disabled] .datepicker table tr td.active {
   margin: 1%;
   cursor: pointer;
   border-radius: 4px;
-
   &:hover {
-    background: #eee;
+    background: #eeeeee;
   }
-
   &.disabled {
     background: none;
-    color: #999;
+    color: #999999;
     cursor: default;
-
     &:hover {
       background: none;
-      color: #999;
+      color: #999999;
       cursor: default;
     }
   }
-
   &.active {
-    color: #fff;
+    color: #ffffff;
     background-color: #428bca;
     border-color: #357ebd;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
     &:hover {
-      color: #fff;
+      color: #ffffff;
       background-color: #428bca;
       border-color: #357ebd;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     }
-
     &.disabled {
-      color: #fff;
+      color: #ffffff;
       background-color: #428bca;
       border-color: #357ebd;
       text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-
       &:hover {
-        color: #fff;
+        color: #ffffff;
         background-color: #428bca;
         border-color: #357ebd;
         text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
       }
     }
-
-    &:hover,
-    &.disabled:hover,
-    &:focus,
-    &:hover:focus {
-      color: #fff;
+    &:hover, &.disabled:hover, &:focus, &:hover:focus {
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
-
     &.disabled {
-      &:focus,
-      &:hover:focus {
-        color: #fff;
+      &:focus, &:hover:focus {
+        color: #ffffff;
         background-color: #3276b1;
         border-color: #285e8e;
       }
     }
-
-    &:active,
-    &:hover:active {
-      color: #fff;
+    &:active, &:hover:active {
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
-
     &.disabled {
-      &:active,
-      &:hover:active {
-        color: #fff;
+      &:active, &:hover:active {
+        color: #ffffff;
         background-color: #3276b1;
         border-color: #285e8e;
       }
     }
-
-    &.active,
-    &:hover.active {
-      color: #fff;
+    &.active, &:hover.active {
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
-
     &.disabled {
-      &.active,
-      &:hover.active {
-        color: #fff;
+      &.active, &:hover.active {
+        color: #ffffff;
         background-color: #3276b1;
         border-color: #285e8e;
       }
@@ -1691,23 +1348,20 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 .open .dropdown-toggle.datepicker table tr td span.active {
-  color: #fff;
+  color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
-
   &:hover {
-    color: #fff;
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
   }
-
   &.disabled {
-    color: #fff;
+    color: #ffffff;
     background-color: #3276b1;
     border-color: #285e8e;
-
     &:hover {
-      color: #fff;
+      color: #ffffff;
       background-color: #3276b1;
       border-color: #285e8e;
     }
@@ -1715,26 +1369,19 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 .datepicker table tr td span.active {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-image: none;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-image: none;
     }
   }
-
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-image: none;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-image: none;
     }
   }
@@ -1742,14 +1389,11 @@ fieldset[disabled] .datepicker table tr td.active {
 
 .open .dropdown-toggle.datepicker table tr td span.active {
   background-image: none;
-
   &:hover {
     background-image: none;
   }
-
   &.disabled {
     background-image: none;
-
     &:hover {
       background-image: none;
     }
@@ -1757,29 +1401,22 @@ fieldset[disabled] .datepicker table tr td.active {
 }
 
 .datepicker table tr td span.active {
-  &.disabled,
-  &:hover.disabled {
+  &.disabled, &:hover.disabled {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled,
-    &:hover.disabled {
+    &.disabled, &:hover.disabled {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled],
-  &:hover[disabled] {
+  &[disabled], &:hover[disabled] {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled],
-    &:hover[disabled] {
+    &[disabled], &:hover[disabled] {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1789,16 +1426,13 @@ fieldset[disabled] .datepicker table tr td.active {
 fieldset[disabled] .datepicker table tr td span.active {
   background-color: #428bca;
   border-color: #357ebd;
-
   &:hover {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
     background-color: #428bca;
     border-color: #357ebd;
-
     &:hover {
       background-color: #428bca;
       border-color: #357ebd;
@@ -1807,46 +1441,36 @@ fieldset[disabled] .datepicker table tr td span.active {
 }
 
 .datepicker table tr td span.active {
-  &.disabled:hover,
-  &[disabled]:hover,
-  &.disabled[disabled]:hover {
+  &.disabled:hover, &[disabled]:hover, &.disabled[disabled]:hover {
     background-color: #428bca;
     border-color: #357ebd;
   }
 }
 
 fieldset[disabled] .datepicker table tr td span.active {
-  &:hover,
-  &.disabled:hover {
+  &:hover, &.disabled:hover {
     background-color: #428bca;
     border-color: #357ebd;
   }
 }
 
 .datepicker table tr td span.active {
-  &.disabled:focus,
-  &:hover.disabled:focus {
+  &.disabled:focus, &:hover.disabled:focus {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled:focus,
-    &:hover.disabled:focus {
+    &.disabled:focus, &:hover.disabled:focus {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled]:focus,
-  &:hover[disabled]:focus {
+  &[disabled]:focus, &:hover[disabled]:focus {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled]:focus,
-    &:hover[disabled]:focus {
+    &[disabled]:focus, &:hover[disabled]:focus {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1854,15 +1478,12 @@ fieldset[disabled] .datepicker table tr td span.active {
 }
 
 fieldset[disabled] .datepicker table tr td span.active {
-  &:focus,
-  &:hover:focus {
+  &:focus, &:hover:focus {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &:focus,
-    &:hover:focus {
+    &:focus, &:hover:focus {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1870,29 +1491,22 @@ fieldset[disabled] .datepicker table tr td span.active {
 }
 
 .datepicker table tr td span.active {
-  &.disabled:active,
-  &:hover.disabled:active {
+  &.disabled:active, &:hover.disabled:active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled:active,
-    &:hover.disabled:active {
+    &.disabled:active, &:hover.disabled:active {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled]:active,
-  &:hover[disabled]:active {
+  &[disabled]:active, &:hover[disabled]:active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled]:active,
-    &:hover[disabled]:active {
+    &[disabled]:active, &:hover[disabled]:active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1900,15 +1514,12 @@ fieldset[disabled] .datepicker table tr td span.active {
 }
 
 fieldset[disabled] .datepicker table tr td span.active {
-  &:active,
-  &:hover:active {
+  &:active, &:hover:active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &:active,
-    &:hover:active {
+    &:active, &:hover:active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1916,29 +1527,22 @@ fieldset[disabled] .datepicker table tr td span.active {
 }
 
 .datepicker table tr td span.active {
-  &.disabled.active,
-  &:hover.disabled.active {
+  &.disabled.active, &:hover.disabled.active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.disabled.active,
-    &:hover.disabled.active {
+    &.disabled.active, &:hover.disabled.active {
       background-color: #428bca;
       border-color: #357ebd;
     }
   }
-
-  &[disabled].active,
-  &:hover[disabled].active {
+  &[disabled].active, &:hover[disabled].active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &[disabled].active,
-    &:hover[disabled].active {
+    &[disabled].active, &:hover[disabled].active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1946,15 +1550,12 @@ fieldset[disabled] .datepicker table tr td span.active {
 }
 
 fieldset[disabled] .datepicker table tr td span.active {
-  &.active,
-  &:hover.active {
+  &.active, &:hover.active {
     background-color: #428bca;
     border-color: #357ebd;
   }
-
   &.disabled {
-    &.active,
-    &:hover.active {
+    &.active, &:hover.active {
       background-color: #428bca;
       border-color: #357ebd;
     }
@@ -1963,33 +1564,25 @@ fieldset[disabled] .datepicker table tr td span.active {
 
 .datepicker {
   table tr td span {
-    &.old,
-    &.new {
-      color: #999;
+    &.old, &.new {
+      color: #999999;
     }
   }
-
   .datepicker-switch {
     width: 145px;
   }
-
-  thead tr:first-child th,
-  tfoot tr th {
+  thead tr:first-child th, tfoot tr th {
     cursor: pointer;
   }
-
-  thead tr:first-child th:hover,
-  tfoot tr th:hover {
-    background: #eee;
+  thead tr:first-child th:hover, tfoot tr th:hover {
+    background: #eeeeee;
   }
-
   .cw {
     font-size: 10px;
     width: 12px;
     padding: 0 2px 0 5px;
     vertical-align: middle;
   }
-
   thead tr:first-child .cw {
     cursor: default;
     background-color: transparent;
@@ -2002,19 +1595,15 @@ fieldset[disabled] .datepicker table tr td span.active {
 
 .input-daterange {
   width: 100%;
-
   input {
     text-align: center;
-
     &:first-child {
       border-radius: 3px 0 0 3px;
     }
-
     &:last-child {
       border-radius: 0 3px 3px 0;
     }
   }
-
   .input-group-addon {
     width: auto;
     min-width: 16px;
@@ -2024,8 +1613,8 @@ fieldset[disabled] .datepicker table tr td span.active {
     text-align: center;
     text-shadow: 0 1px 0 #fff;
     vertical-align: middle;
-    background-color: #eee;
-    border: solid #ccc;
+    background-color: #eeeeee;
+    border: solid #cccccc;
     border-width: 1px 0;
     margin-left: -5px;
     margin-right: -5px;
