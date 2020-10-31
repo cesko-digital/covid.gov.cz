@@ -16,6 +16,9 @@
       "version": "16"
     }
   },
+  "rules": {
+    "react/prop-types": "off"
+  },
   "extends": [
     "standard",
     "standard-react",

@@ -1,0 +1,89 @@
+/**
+* Info Message
+*/
+
+
+.message {
+	position: relative;
+	margin: ( $spacer / 2 ) ( -$spacer / 3 );
+	padding: ( $spacer / 2 );
+	border: 10px solid $theme-yellow;
+
+	// Media queries
+	@include media-breakpoint-up(lg) {
+		padding: ( $spacer / 1.5 ) 0;
+		margin: $spacer ( -$spacer / 2 ) 0;
+		display: flex;
+	}
+
+	.message__icon {
+		flex: 0 0 auto;
+		margin-bottom: $spacer / 2;
+		display: flex;
+		align-items: flex-start;
+
+		// Media queries
+		@include media-breakpoint-up(lg) {
+			width: 160px;
+			justify-content: center;
+			margin-bottom: 0;
+		}
+	}
+
+	.message__image {
+		height: auto;
+		width: 64px;
+	}
+
+	.message__content {
+		flex-grow: 1;
+	}
+
+	.message__title {
+		margin-bottom: ( $spacer / 3 );
+		font-family: 'Tahoma', sans-serif;
+		font-weight: 700;
+		color: $white;
+		@include font-size(13);
+
+		// Media queries
+		@include media-breakpoint-up(lg) {
+			margin-bottom: ( $spacer / 2 );
+		}
+	}
+
+	.message__text {
+		line-height: 1.5em;
+		color: $white;
+		@include font-size(20);
+
+		// Media queries
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+			padding-right: ( $spacer * 2 );
+		}
+	}
+
+	.message__controls {
+		align-self: flex-end;
+		flex-shrink: 0;
+		text-align: center;
+
+		// Media queries
+		@include media-breakpoint-up(lg) {
+			padding-right: ( $spacer );
+			margin-left: -( $spacer / 2 );
+			margin-bottom: 7px;    // Level button with message text
+			text-align: left;
+		}
+
+		.btn {
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $body-color;
+			}
+		}
+	}
+}

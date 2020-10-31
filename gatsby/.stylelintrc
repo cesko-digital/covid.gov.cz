@@ -7,5 +7,8 @@
   ],
   "extends": [
     "stylelint-config-standard"
+  ],
+  "ignoreFiles": [
+    "assets/ds/**/*.scss"
   ]
 }
