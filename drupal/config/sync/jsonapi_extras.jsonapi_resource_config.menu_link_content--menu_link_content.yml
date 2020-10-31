@@ -1,0 +1,143 @@
+uuid: 8427e3c2-c3ac-4f4c-888a-17105d506c7a
+langcode: cs
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content--menu_link_content
+disabled: false
+path: menu_links
+resourceType: menu_links
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  revision_id:
+    disabled: true
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  bundle:
+    fieldName: bundle
+    publicName: bundle
+    enhancer:
+      id: ''
+    disabled: false
+  revision_created:
+    disabled: true
+    fieldName: revision_created
+    publicName: revision_created
+    enhancer:
+      id: ''
+  revision_user:
+    disabled: true
+    fieldName: revision_user
+    publicName: revision_user
+    enhancer:
+      id: ''
+  revision_log_message:
+    disabled: true
+    fieldName: revision_log_message
+    publicName: revision_log_message
+    enhancer:
+      id: ''
+  enabled:
+    fieldName: enabled
+    publicName: enabled
+    enhancer:
+      id: ''
+    disabled: false
+  title:
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+    disabled: false
+  description:
+    fieldName: description
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+  menu_name:
+    fieldName: menu_name
+    publicName: menu_name
+    enhancer:
+      id: ''
+    disabled: false
+  link:
+    fieldName: link
+    publicName: link
+    enhancer:
+      id: ''
+    disabled: false
+  external:
+    disabled: true
+    fieldName: external
+    publicName: external
+    enhancer:
+      id: ''
+  rediscover:
+    disabled: true
+    fieldName: rediscover
+    publicName: rediscover
+    enhancer:
+      id: ''
+  weight:
+    fieldName: weight
+    publicName: weight
+    enhancer:
+      id: ''
+    disabled: false
+  expanded:
+    disabled: true
+    fieldName: expanded
+    publicName: expanded
+    enhancer:
+      id: ''
+  parent:
+    fieldName: parent
+    publicName: parent
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    disabled: false
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
