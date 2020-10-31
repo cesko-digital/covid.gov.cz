@@ -24,6 +24,10 @@ Access site on `http://localhost:1577` if you didn't change
 ## Frontend - GatsbyJS
 
 
+### Environment Variables
+
+Create a `.env.development` file from `.env.development.sample` in `gatsby` directory 
+
 ### Getting started
 
 - `cd gatsby`
