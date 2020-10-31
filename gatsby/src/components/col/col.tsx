@@ -7,7 +7,6 @@ interface IProps {
   colLg?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   colXl?: boolean | 'auto' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   className?: string;
-  justify?: 'start' | 'center' | 'end' | 'around' | 'between';
   alignSelf?: 'start' | 'center' | 'end';
 }
 
