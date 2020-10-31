@@ -25,9 +25,7 @@ const Home: React.FC<Props> = ({ data }) => {
         description="Všechna současná nařízení vlády, jejich detail, platnost a jednoduché vysvětlení"
         buttonText="Zobrazit všech 72 nařízení"
       >
-        <MeasureList
-          measures={data.latestMeasures.relationships.measures}
-        />
+        <MeasureList measures={data.latestMeasures.relationships.measures} />
       </ContentBox>
       <ContentBox
         title="Životní situace s covidem"
