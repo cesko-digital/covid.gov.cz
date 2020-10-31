@@ -1,0 +1,14 @@
+uuid: 4b3c5055-1f3a-4c94-8c38-6f60eb6f1a45
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.administrator
+  module:
+    - user
+id: user_add_role_action.administrator
+label: 'Přidat vybraným uživatelům roli Administrator'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: administrator
