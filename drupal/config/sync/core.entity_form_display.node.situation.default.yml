@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.situation.field_content
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_ref_icon
     - field.field.node.situation.field_region
     - field.field.node.situation.field_situation_link
     - field.field.node.situation.field_situation_ref_measures
@@ -23,7 +24,7 @@ bundle: situation
 mode: default
 content:
   field_content:
-    weight: 5
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -31,7 +32,7 @@ content:
     type: text_textarea
     region: content
   field_internal_note:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -39,21 +40,31 @@ content:
     type: text_textarea
     region: content
   field_meta_description:
-    weight: 8
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_ref_icon:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_region:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_situation_link:
-    weight: 7
+    weight: 8
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -61,7 +72,7 @@ content:
     type: link_default
     region: content
   field_situation_ref_measures:
-    weight: 6
+    weight: 7
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -71,26 +82,26 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_situation_type:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_valid_from:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_valid_to:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   langcode:
     type: language_select
-    weight: 10
+    weight: 11
     region: content
     settings:
       include_locked: true
@@ -99,7 +110,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     region: content
     third_party_settings: {  }
   title:
@@ -111,7 +122,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

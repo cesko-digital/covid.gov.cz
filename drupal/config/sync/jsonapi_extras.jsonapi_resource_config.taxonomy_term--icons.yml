@@ -1,0 +1,155 @@
+uuid: 36b4fa09-67e4-4c6a-80c6-45231b56ece1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.icons
+id: taxonomy_term--icons
+disabled: false
+path: term/icons
+resourceType: taxonomy_term--icons
+resourceFields:
+  tid:
+    disabled: true
+    fieldName: tid
+    publicName: tid
+    enhancer:
+      id: ''
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  revision_id:
+    disabled: true
+    fieldName: revision_id
+    publicName: revision_id
+    enhancer:
+      id: ''
+  langcode:
+    disabled: true
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  revision_created:
+    disabled: true
+    fieldName: revision_created
+    publicName: revision_created
+    enhancer:
+      id: ''
+  revision_user:
+    disabled: true
+    fieldName: revision_user
+    publicName: revision_user
+    enhancer:
+      id: ''
+  revision_log_message:
+    disabled: true
+    fieldName: revision_log_message
+    publicName: revision_log_message
+    enhancer:
+      id: ''
+  status:
+    disabled: true
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+  name:
+    disabled: true
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+  description:
+    disabled: true
+    fieldName: description
+    publicName: description
+    enhancer:
+      id: ''
+  weight:
+    disabled: true
+    fieldName: weight
+    publicName: weight
+    enhancer:
+      id: ''
+  parent:
+    disabled: true
+    fieldName: parent
+    publicName: parent
+    enhancer:
+      id: ''
+  changed:
+    disabled: true
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  content_translation_source:
+    disabled: true
+    fieldName: content_translation_source
+    publicName: content_translation_source
+    enhancer:
+      id: ''
+  content_translation_outdated:
+    disabled: true
+    fieldName: content_translation_outdated
+    publicName: content_translation_outdated
+    enhancer:
+      id: ''
+  content_translation_uid:
+    disabled: true
+    fieldName: content_translation_uid
+    publicName: content_translation_uid
+    enhancer:
+      id: ''
+  content_translation_created:
+    disabled: true
+    fieldName: content_translation_created
+    publicName: content_translation_created
+    enhancer:
+      id: ''
+  field_icon_code:
+    fieldName: field_icon_code
+    publicName: code
+    enhancer:
+      id: ''
+    disabled: false
+  field_icon_file:
+    disabled: true
+    fieldName: field_icon_file
+    publicName: field_icon_file
+    enhancer:
+      id: ''
+  field_icon_set:
+    fieldName: field_icon_set
+    publicName: source
+    enhancer:
+      id: ''
+    disabled: false
