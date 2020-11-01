@@ -5,8 +5,8 @@ namespace Drupal\covid\Plugin\Field\FieldWidget;
 
 
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\Plugin\Field\FieldWidget\StringTextareaWidget;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\text\Plugin\Field\FieldWidget\TextareaWidget;
 
 /**
  * Plugin implementation of the 'mr_person_widget' widget.
@@ -19,23 +19,25 @@ use Drupal\text\Plugin\Field\FieldWidget\TextareaWidget;
  *   }
  * )
  */
-class QuestionAnswerWidget extends TextareaWidget {
+class QuestionAnswerWidget extends StringTextareaWidget {
 
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
-
-    $element['#title'] = 'Odpověď';
-    $element['#rows'] = 3;
 
     $value = $items[$delta]->getValue();
 
     $element['question'] = [
       '#type' => 'textfield',
       '#title' => 'Otázka',
-      '#default_value' => $value['question'] ?? ''
+      '#default_value' => $value['question'] ?? '',
+      '#weight' => -1
     ];
+
+    $element['value']['#title'] = 'Odpověď';
+    $element['value']['#title_display'] = 'before';
 
     return $element;
   }
+
 
 }
