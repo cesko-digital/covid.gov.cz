@@ -1,6 +1,6 @@
 uuid: 71b8e5d7-baba-4a9c-a153-fe5afbc654f1
 langcode: cs
-status: false
+status: true
 dependencies:
   theme:
     - covid_admin
@@ -8,7 +8,7 @@ _core:
   default_config_hash: QRf2Kek-3r0d5-ciMUIXT8vEV4P5YliI93WjTbE1xFs
 id: covid_admin_secondary_local_tasks
 theme: covid_admin
-region: sidebar_first
+region: pre_content
 weight: 0
 provider: null
 plugin: local_tasks_block
