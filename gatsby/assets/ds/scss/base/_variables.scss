@@ -11,35 +11,35 @@ $theme-white:                 $white;                              // Pure white
 $black:                       #000;                              // Pure black color
 $theme-black:                 $black;                              // Pure black color
 
-$theme-blue-lighten:          #3375ae;
-$theme-blue-light:            #337dbd;
-$theme-blue:                  #2362a2;
-$theme-blue-dark:             #254e80;
+$theme-blue-lighten:          #3375ae !default;
+$theme-blue-light:            #337dbd !default;
+$theme-blue:                  #2362a2 !default;
+$theme-blue-dark:             #254e80 !default;
 
-$theme-yellow:                #ecae1a;
-$theme-red:                   #e04857;
-$theme-gray-dark:             #3b3b3b;
-$theme-gray:                  #707070;
-$theme-gray-lighten:          #e1e1e1;
-$theme-gray-light:            #f5f5f5;
+$theme-yellow:                #ecae1a !default;
+$theme-red:                   #e04857 !default;
+$theme-gray-dark:             #3b3b3b !default;
+$theme-gray:                  #707070 !default;
+$theme-gray-lighten:          #e1e1e1 !default;
+$theme-gray-light:            #f5f5f5 !default;
 
 
 // Layout
 $border-radius:               3px !default;
 $enable-shadows:              true !default;
 
-$theme-bg:                    $theme-gray-light;
+$theme-bg:                    $theme-gray-light !default;
 $theme-font-size-base-raw:    14;
 $theme-font-size-base:        14px !default;
 
-$theme-class-def:             'pvs-theme';
-$theme-class:                 '.#{$theme-class-def}';
-$theme-path:                  '/ds';
-$theme-text-color:            $theme-gray;
-$theme-letter-spacing:        .075em;
-$theme-headings-color:        $theme-gray-dark;
+$theme-class-def:             'pvs-theme' !default;
+$theme-class:                 '.#{$theme-class-def}' !default;
+$theme-path:                  '' !default;
+$theme-text-color:            $theme-gray !default;
+$theme-letter-spacing:        .075em !default;
+$theme-headings-color:        $theme-gray-dark !default;
 
-$body-wrapper:                '.body__wrapper';
+$body-wrapper:                '.body__wrapper' !default;
 
 $font-family-sans-serif:      'Roboto', helvetica, arial, sans-serif !default;
 
@@ -47,28 +47,28 @@ $font-weight-base:            400 !default;
 $headings-line-height:        1.3 !default;
 $line-height-base:            ( 20 / 15 ) !default;
 
-$grid-gutter-width:           32px !default;
+$grid-gutter-width:           60px !default;
 $spacer:                      $grid-gutter-width !default;
 
-$main-bg:                     $theme-gray-light;
+$main-bg:                     $theme-gray-light !default;
 
-$header-bg:                   $theme-blue-dark;
-$header-color:                $theme-white;
+$header-bg:                   $theme-blue-dark !default;
+$header-color:                $theme-white !default;
 
-$footer-bg:                   $theme-gray-dark;
-$footer-text-color:           #a8a8a8;
+$footer-bg:                   $theme-gray-dark !default;
+$footer-text-color:           #a8a8a8 !default;
 
-$micro-animation-time:        150ms;
+$micro-animation-time:        150ms !default;
 
 $link-color:                  $theme-blue !default;
-$link-decoration:             underline;
+$link-decoration:             underline !default;
 $link-hover-color:            $theme-yellow !default;
-$link-hover-decoration:       none;
-$link-transition:             color .15s ease-in-out, text-decoration .15s ease-in-out;
+$link-hover-decoration:       none !default;
+$link-transition:             color .15s ease-in-out, text-decoration .15s ease-in-out !default;
 
 
-$box-border-color:            rgba(#464646, .2);
-$box-border-color-white:      rgba($theme-white, .3);
+$box-border-color:            rgba(#464646, .2) !default;
+$box-border-color-white:      rgba($theme-white, .3) !default;
 
 $input-btn-padding-y:         1.1rem !default;
 $input-btn-padding-x:         2rem !default;
@@ -95,22 +95,22 @@ $btn-border-radius:           $border-radius !default;
 $btn-border-radius-lg:        $border-radius !default;
 $btn-border-radius-sm:        $border-radius !default;
 
-$guide-shadow:                0 1px 4px 0 rgba(0, 0, 0, .41);
-$guide-negative-offset-hp-m:  70px;
-$guide-negative-offset-sp-m:  60px;
-$guide-negative-offset-hp-d:  80px;
-$guide-negative-offset-sp-d:  60px;
+$guide-shadow:                0 1px 4px 0 rgba(0, 0, 0, .41) !default;
+$guide-negative-offset-hp-m:  70px !default;
+$guide-negative-offset-sp-m:  60px !default;
+$guide-negative-offset-hp-d:  80px !default;
+$guide-negative-offset-sp-d:  60px !default;
 
 $cursor-disabled:             not-allowed !default;
 
-$h1-font-size:                80px;
-$h1-font-size-mobile:         56px;
-$h2-font-size:                40px;
-$h2-font-size-mobile:         30px;
-$h3-font-size:                20px;
-$h4-font-size:                12px;
-$h5-font-size:                12px;
-$h6-font-size:                12px;
+$h1-font-size:                80px !default;
+$h1-font-size-mobile:         56px !default;
+$h2-font-size:                40px !default;
+$h2-font-size-mobile:         30px !default;
+$h3-font-size:                20px !default;
+$h4-font-size:                12px !default;
+$h5-font-size:                12px !default;
+$h6-font-size:                12px !default;
 
 $custom-control-gutter:                 4rem !default;
 
@@ -136,11 +136,11 @@ $custom-control-indicator-active-box-shadow:    none !default;
 $custom-checkbox-indicator-border-radius:       $border-radius !default;
 
 // Toggle
-$toggle-size-x:                                 4rem;
-$toggle-size-y:                                 2.4rem;
-$toggle-border-width:                           .1rem;
-$toggle-pointer-size:                           $toggle-size-y - $toggle-border-width - $toggle-border-width;
-$toggle-pointer-shadow:                         0 2px 4px 0 rgba(0, 0, 0, .5);
+$toggle-size-x:                                 4rem !default;
+$toggle-size-y:                                 2.4rem !default;
+$toggle-border-width:                           .1rem !default;
+$toggle-pointer-size:                           $toggle-size-y - $toggle-border-width - $toggle-border-width !default;
+$toggle-pointer-shadow:                         0 2px 4px 0 rgba(0, 0, 0, .5) !default;
 
 
 // Breadcrumbs
@@ -148,11 +148,11 @@ $breadcrumb-bg:                                 transparent !default;
 $breadcrumb-padding-y:                          0 !default;
 $breadcrumb-padding-x:                          0 !default;
 $breadcrumb-margin-bottom:                      0 !default;
-$breadcrumb-divider:                            '\e912';
-$breadcrumb-divider-color:                      $theme-gray-dark;
+$breadcrumb-divider:                            '\e912' !default;
+$breadcrumb-divider-color:                      $theme-gray-dark !default;
 
 // Tabs
-$tab-list-border-color:                         rgba($theme-gray, .3);
-$tab-link-color:                                $theme-blue;
-$tab-link-active-color:                         $theme-gray-dark;
-$tab-link-hover-color:                          $theme-yellow;
+$tab-list-border-color:                         rgba($theme-gray, .3) !default;
+$tab-link-color:                                $theme-blue !default;
+$tab-link-active-color:                         $theme-gray-dark !default;
+$tab-link-hover-color:                          $theme-yellow !default;
