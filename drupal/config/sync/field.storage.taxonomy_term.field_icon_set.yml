@@ -1,0 +1,27 @@
+uuid: 22c1d79b-b0a6-429e-969e-c5268b4e5a68
+langcode: cs
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_icon_set
+field_name: field_icon_set
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: materialicon
+      label: 'Material Icon'
+    -
+      value: govcz
+      label: gov.cz
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 45a3671d-44f4-456e-a22f-d05c51e8809b
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_ref_icon
+field_name: field_ref_icon
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

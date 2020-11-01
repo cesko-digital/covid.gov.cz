@@ -1,0 +1,27 @@
+uuid: 2c801a58-4cb1-46de-bea2-fb383000f172
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon_file
+    - taxonomy.vocabulary.icons
+  module:
+    - file
+id: taxonomy_term.icons.field_icon_file
+field_name: field_icon_file
+entity_type: taxonomy_term
+bundle: icons
+label: Ikona
+description: 'Soubor ikony. Ideálně SVG.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: icons
+  file_extensions: 'jpg png gif svg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
