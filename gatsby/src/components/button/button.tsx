@@ -1,10 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const getClass = (
-  variant: IProps['variant'],
-  additionalClass?: string,
-): string => {
+const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
   return classNames(
     'btn',
     { 'btn-primary': variant === 'contained' },
@@ -13,10 +10,13 @@ const getClass = (
     { [additionalClass]: additionalClass },
   );
 };
+
+export type ButtonVariant = 'contained' | 'outline' | 'secondary';
+
 interface IProps {
   text: string;
-  variant?: 'contained' | 'outline' | 'secondary';
-  additionalClass?: string;
+  variant?: ButtonVariant;
+  className?: string;
   onClick?: () => void;
   href?: string;
   disabled?: boolean;
@@ -27,12 +27,12 @@ const Button: React.FC<IProps> = ({
   onClick,
   text,
   href = '',
-  additionalClass,
+  className,
   disabled = false,
 }) => {
   if (href !== '' && !disabled) {
     return (
-      <a href={href} className={getClass(variant, additionalClass)}>
+      <a href={href} className={getClass(variant, className)}>
         {text}
       </a>
     );
@@ -41,7 +41,7 @@ const Button: React.FC<IProps> = ({
   return (
     <button
       type="button"
-      className={getClass(variant, additionalClass)}
+      className={getClass(variant, className)}
       onClick={onClick || null}
       disabled={disabled}
     >
