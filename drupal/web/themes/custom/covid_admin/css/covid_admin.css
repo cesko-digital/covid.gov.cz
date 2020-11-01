@@ -1,4 +1,11 @@
 .field--widget-covid-question-answer-widget .field-multiple-table input {
   width: 100%; }
 
+.view-moderated-content .views-field-moderation-state.moderation-state--draft {
+  background: rgb(252, 153, 153); }
+.view-moderated-content .views-field-moderation-state.moderation-state--needs-review {
+  background:rgb(110, 197, 255); }
+.view-moderated-content .views-field-moderation-state.moderation-state--approved {
+  background: rgb(153, 255, 106); }
+
 /*# sourceMappingURL=covid_admin.css.map */
