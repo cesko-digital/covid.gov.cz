@@ -30,7 +30,8 @@ interface IProps {
     | 'arrow-up'
     | 'arrow-left'
     | 'arrow-down'
-    | 'add';
+    | 'add'
+    | 'search';
   size?: 16 | 20 | 24 | 32;
   tooltip?: string;
   className?: string;

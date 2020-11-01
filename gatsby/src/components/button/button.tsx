@@ -14,12 +14,13 @@ const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
 export type ButtonVariant = 'contained' | 'outline' | 'secondary';
 
 interface IProps {
-  text: string;
+  text?: string;
   variant?: ButtonVariant;
   className?: string;
   onClick?: () => void;
   href?: string;
   disabled?: boolean;
+  icon?: React.ReactNode;
 }
 
 const Button: React.FC<IProps> = ({
@@ -29,6 +30,7 @@ const Button: React.FC<IProps> = ({
   href = '',
   className,
   disabled = false,
+  icon,
 }) => {
   if (href !== '' && !disabled) {
     return (
@@ -45,7 +47,7 @@ const Button: React.FC<IProps> = ({
       onClick={onClick || null}
       disabled={disabled}
     >
-      {text}
+      {text} {icon}
     </button>
   );
 };
