@@ -17,6 +17,8 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@microsoft/applicationinsights-web": "^2.5.9",
     "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
