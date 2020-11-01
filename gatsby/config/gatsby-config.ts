@@ -18,6 +18,13 @@ const config = {
       options: {
         // develop: true,
         whitelist: ['pvs-theme', 'a'],
+        whitelistPatterns: [
+          /^col/,
+          /^justify-content/,
+          /^align-items/,
+          /^align-self/,
+          /^pvs-theme-icon/,
+        ],
       },
     },
     {
@@ -38,4 +45,5 @@ const config = {
     },
   ],
 };
+
 export default config;
