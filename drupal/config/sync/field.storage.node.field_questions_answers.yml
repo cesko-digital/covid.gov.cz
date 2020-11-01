@@ -1,0 +1,19 @@
+uuid: 63f10b2a-461c-4094-8beb-9cf0ebf81bb9
+langcode: cs
+status: true
+dependencies:
+  module:
+    - covid
+    - node
+id: node.field_questions_answers
+field_name: field_questions_answers
+entity_type: node
+type: covid_question_answer
+settings: {  }
+module: covid
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

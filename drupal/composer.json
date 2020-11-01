@@ -45,7 +45,8 @@
     "prefer-stable": true,
     "config": {
         "discard-changes": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "autoload": {
         "classmap": [

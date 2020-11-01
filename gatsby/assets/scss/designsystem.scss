@@ -1,0 +1,8 @@
+$grid-gutter-width: 32px;
+$theme-path: '/ds';
+
+@import '../ds/scss/front';
+
+.form-control {
+  cursor: auto;
+}

@@ -1,4 +1,4 @@
-name: Covid
+name: COVID Portal Theme
 type: theme
 description: 'Covid.gov.cz portal theme.'
 core_version_requirement: ^8.8 || ^9
