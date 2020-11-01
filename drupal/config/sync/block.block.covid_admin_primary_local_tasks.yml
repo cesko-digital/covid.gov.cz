@@ -1,0 +1,22 @@
+uuid: f5d8da6d-6829-41bc-8537-466f07d581f2
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - covid_admin
+_core:
+  default_config_hash: ZptEQAUSSM2xvKve8DAof1AWylhmfL0tnmb_70ITh2o
+id: covid_admin_primary_local_tasks
+theme: covid_admin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }
