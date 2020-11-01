@@ -11,7 +11,7 @@ interface Props {
 
 const ABSOLUTE_URL_REGEX = new RegExp('^(?:[a-z]+:)?//', 'i');
 
-const Link: React.FC<Props> = ({ label, to, className, onClick }) => {
+const Link: React.FC<Props> = ({ children, label, to, className, onClick }) => {
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
     return ABSOLUTE_URL_REGEX.test(to);
@@ -23,7 +23,7 @@ const Link: React.FC<Props> = ({ label, to, className, onClick }) => {
       [className]: className,
     }),
     title: label,
-    ['aria-label']: label,
+    'aria-label': label,
   };
 
   const handleExternalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -38,11 +38,11 @@ const Link: React.FC<Props> = ({ label, to, className, onClick }) => {
 
   return !isExternal ? (
     <TranslateLink onClick={handleInternalLinkClick} to={to} {...commonProps}>
-      {label}
+      {children || label}
     </TranslateLink>
   ) : (
     <a href={to} onClick={handleExternalLinkClick} target="_blank" {...commonProps}>
-      {label}
+      {children || label}
     </a>
   );
 };

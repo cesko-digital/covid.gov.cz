@@ -5,6 +5,7 @@ import Headline from '@/components/headline';
 import Breadcrumb from '@/components/breadcrumb';
 import Accordion from '@/components/accordion';
 import Container from '@/components/container';
+import ContentBox from '@/components/content-box';
 
 const breadcrumbItems = [
   {
@@ -26,11 +27,11 @@ const accordion = [
     title: 'Nadpis',
     items: [
       {
-        title: 'První',
+        text: 'První',
         href: '#',
       },
       {
-        title: 'Druhý',
+        text: 'Druhý',
         href: '#',
       },
     ],
@@ -39,16 +40,16 @@ const accordion = [
     title: 'Druhý nadpis',
     items: [
       {
-        title: 'První',
+        text: 'První',
         href: '#',
       },
       {
-        title: 'Druhý',
+        text: 'Druhý',
         href: '#',
       },
     ],
   },
-]
+];
 
 const Text: React.FC = () => {
   return (
@@ -57,7 +58,9 @@ const Text: React.FC = () => {
       <Breadcrumb items={breadcrumbItems} variant="inverse" />
       <Headline>Headline #1</Headline>
       <TextBox />
-      <Accordion data={accordion} />
+      <ContentBox title="Časté dotazy k tomuto tématu">
+        <Accordion data={accordion} />
+      </ContentBox>
     </Container>
   );
 };

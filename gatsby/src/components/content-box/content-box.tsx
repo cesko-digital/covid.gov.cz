@@ -8,7 +8,7 @@ interface Props {
   description?: string;
   boldedTitleCount?: number;
   buttonVariant?: ButtonVariant;
-  buttonText: string;
+  buttonText?: string;
 }
 
 const ContentBox: React.FC<Props> = ({
@@ -44,11 +44,13 @@ const ContentBox: React.FC<Props> = ({
         <p className={styles.contentBoxDescription}>{description}</p>
       )}
       {children}
-      <Button
-        variant={buttonVariant}
-        text={buttonText}
-        className={styles.contentBoxButton}
-      />
+      {buttonText && (
+        <Button
+          variant={buttonVariant}
+          text={buttonText}
+          className={styles.contentBoxButton}
+        />
+      )}
     </div>
   );
 };
