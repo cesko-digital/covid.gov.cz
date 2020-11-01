@@ -1,0 +1,21 @@
+uuid: 442f5699-faaa-42ee-9a36-2ff7e9c038d8
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_internal_note
+    - node.type.situation
+  module:
+    - text
+id: node.situation.field_internal_note
+field_name: field_internal_note
+entity_type: node
+bundle: situation
+label: 'Interní poznámka'
+description: 'Nezobrazuje se na webu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

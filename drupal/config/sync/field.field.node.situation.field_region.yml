@@ -1,29 +1,29 @@
-uuid: e3e2a0fd-928a-4aa2-b54d-a6e66c9081d0
+uuid: a24f2b33-63b8-4970-9d16-420a83971996
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_situation_type
+    - field.storage.node.field_region
     - node.type.situation
-    - taxonomy.vocabulary.area
-id: node.situation.field_situation_type
-field_name: field_situation_type
+    - taxonomy.vocabulary.region
+id: node.situation.field_region
+field_name: field_region
 entity_type: node
 bundle: situation
-label: Okruh
+label: Působnost
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      area: area
+      region: region
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: area
+    auto_create_bundle: ''
 field_type: entity_reference

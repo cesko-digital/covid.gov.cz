@@ -1,16 +1,15 @@
-uuid: 0bca4c74-b499-486d-a48a-dbf9d90da3d3
+uuid: 81bc232f-7c83-4351-b5a1-ef15a73cafef
 langcode: cs
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_region
-field_name: field_region
+id: node.field_situation_ref_measures
+field_name: field_situation_ref_measures
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
 cardinality: -1
