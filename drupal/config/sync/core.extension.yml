@@ -24,6 +24,9 @@ module:
   locale: 0
   menu_link_content: 0
   menu_ui: 0
+  migrate: 0
+  migrate_plus: 0
+  migrate_tools: 0
   node: 0
   one_time_password: 0
   options: 0

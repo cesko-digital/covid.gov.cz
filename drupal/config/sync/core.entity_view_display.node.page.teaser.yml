@@ -1,0 +1,25 @@
+uuid: a1bcaf8b-cade-40a4-8c29-aea592170b66
+langcode: cs
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_content
+    - field.field.node.page.field_meta_description
+    - node.type.page
+  module:
+    - user
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content: true
+  field_meta_description: true
+  langcode: true
