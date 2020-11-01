@@ -5,10 +5,11 @@ import ContentBox from '@/components/content-box';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
+import SearchBox from '@/components/search-box';
+import Row from '@/components/row';
+import Container from '@/components/container';
 
-interface Data {
-
-}
+interface Data {}
 
 interface Props {
   data: any;
@@ -16,9 +17,11 @@ interface Props {
 
 const Home: React.FC<Props> = ({ data }) => {
   return (
-    <div>
+    <Container>
       <Helmet title="Index Page" />
-      <Hello />
+      <Row>
+        <SearchBox />
+      </Row>
       <ContentBox
         title="Aktuální opatření (72)"
         boldedTitleCount={1}
@@ -37,7 +40,7 @@ const Home: React.FC<Props> = ({ data }) => {
       <Link to="/" language="en" className="">
         English Page
       </Link>
-    </div>
+    </Container>
   );
 };
 export default Home;
