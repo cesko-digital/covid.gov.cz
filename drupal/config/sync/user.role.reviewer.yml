@@ -4,6 +4,27 @@ status: true
 dependencies: {  }
 id: reviewer
 label: Reviewer
-weight: 4
+weight: -7
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'administer nodes'
+  - 'change own username'
+  - 'delete any measure content'
+  - 'delete any page content'
+  - 'delete any situation content'
+  - 'edit any homepage content'
+  - 'edit any measure content'
+  - 'edit any page content'
+  - 'edit any situation content'
+  - 'use content transition approved'
+  - 'use content transition create_new_draft'
+  - 'use content transition publish'
+  - 'use content transition review'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view the administration theme'
