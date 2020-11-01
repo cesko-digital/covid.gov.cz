@@ -1,0 +1,10 @@
+.small-black-button {
+  border: 2px solid black;
+  margin-left: 15px;
+  border-radius: 3px;
+  padding: 8px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

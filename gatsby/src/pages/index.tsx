@@ -25,27 +25,27 @@ const Home: React.FC<Props> = ({ data }) => {
           <SearchBox />
         </Row>
       </Container>
-      <Alert />
+      <Alert to="" />
       <Container>
         <ContentBox
-        title="Životní situace"
-        boldedTitleCount={2}
-        buttonVariant="outline"
-        buttonText="Zobrazit všechny životní situace"
-      >
-        <SituationsBox />
-      </ContentBox>
-      <ContentBox
-        title="Aktuální opatření"
-        boldedTitleCount={1}
-        buttonText="Zobrazit všechna opatření"
-      >
-        <MeasureList measures={data.latestMeasures.relationships.measures} />
-      </ContentBox>
-      <Link to="/" language="en" className="">
-        English Page
-      </Link>
-    </Container>
+          title="Životní situace"
+          boldedTitleCount={2}
+          buttonVariant="outline"
+          buttonText="Zobrazit všechny životní situace"
+        >
+          <SituationsBox />
+        </ContentBox>
+        <ContentBox
+          title="Aktuální opatření"
+          boldedTitleCount={1}
+          buttonText="Zobrazit všechna opatření"
+        >
+          <MeasureList measures={data.latestMeasures.relationships.measures} />
+        </ContentBox>
+        <Link to="/" language="en" className="">
+          English Page
+        </Link>
+      </Container>
     </>
   );
 };
