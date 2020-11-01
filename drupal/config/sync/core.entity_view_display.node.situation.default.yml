@@ -4,10 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.situation.field_content
-    - field.field.node.situation.field_description
+    - field.field.node.situation.field_internal_note
+    - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_region
+    - field.field.node.situation.field_situation_link
+    - field.field.node.situation.field_situation_ref_measures
     - field.field.node.situation.field_situation_type
+    - field.field.node.situation.field_valid_from
+    - field.field.node.situation.field_valid_to
     - node.type.situation
   module:
+    - datetime
+    - link
     - text
     - user
 id: node.situation.default
@@ -22,12 +30,47 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_description:
-    weight: 101
+  field_internal_note:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_meta_description:
+    weight: 108
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_region:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_situation_link:
+    weight: 106
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_situation_ref_measures:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_situation_type:
     weight: 102
@@ -36,6 +79,24 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_valid_from:
+    weight: 109
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 110
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   links:
     weight: 100

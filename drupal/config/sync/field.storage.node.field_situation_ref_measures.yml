@@ -1,18 +1,18 @@
-uuid: 1f067e1c-d258-47d0-bbff-6775731c5990
+uuid: 81bc232f-7c83-4351-b5a1-ef15a73cafef
 langcode: cs
 status: true
 dependencies:
   module:
-    - taxonomy
-id: taxonomy_term.field_area
-field_name: field_area
-entity_type: taxonomy_term
+    - node
+id: node.field_situation_ref_measures
+field_name: field_situation_ref_measures
+entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: node
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
