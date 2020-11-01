@@ -1,10 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const getClass = (
-  variant: IProps['variant'],
-  additionalClass?: string,
-): string => {
+const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
   return classNames(
     'btn',
     { 'btn-primary': variant === 'contained' },
