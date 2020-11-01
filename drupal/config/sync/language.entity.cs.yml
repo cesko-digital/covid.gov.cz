@@ -3,7 +3,7 @@ langcode: cs
 status: true
 dependencies: {  }
 id: cs
-label: Czech
+label: Česky
 direction: ltr
 weight: 1
 locked: false

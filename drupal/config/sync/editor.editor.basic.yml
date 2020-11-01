@@ -25,6 +25,7 @@ settings:
         -
           name: Tools
           items:
+            - PasteFromWord
             - Source
   plugins:
     language:

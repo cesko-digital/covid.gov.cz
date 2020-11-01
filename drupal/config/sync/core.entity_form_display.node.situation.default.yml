@@ -49,6 +49,14 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_questions_answers:
+    weight: 26
+    settings:
+      rows: '3'
+      placeholder: ''
+    third_party_settings: {  }
+    type: covid_question_answer_widget
+    region: content
   field_ref_icon:
     weight: 1
     settings:
@@ -58,14 +66,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_questions_answers:
-    weight: 26
-    settings:
-      rows: '3'
-      placeholder: ''
-    third_party_settings: {  }
-    type: covid_question_answer_widget
     region: content
   field_region:
     weight: 5
