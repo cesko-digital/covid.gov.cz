@@ -1,0 +1,16 @@
+uuid: fac65771-774d-4104-a846-c1192ab611a3
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.page
+target_entity_type_id: node
+target_bundle: page
+default_langcode: site_default
+language_alterable: false

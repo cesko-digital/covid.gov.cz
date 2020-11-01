@@ -1,0 +1,27 @@
+uuid: 8039f107-bcf7-4014-9e59-08241f366525
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_situations
+    - node.type.situation
+id: node.situation.field_situations
+field_name: field_situations
+entity_type: node
+bundle: situation
+label: 'Příbuzná témata'
+description: 'Podobné životní situace (témata). Začněte psát název opatření a poté vyberte se seznamu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      situation: situation
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

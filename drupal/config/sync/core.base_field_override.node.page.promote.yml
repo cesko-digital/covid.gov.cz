@@ -1,0 +1,22 @@
+uuid: 6d6b9e15-87f2-4924-aa02-00f3cc4e503b
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.promote
+field_name: promote
+entity_type: node
+bundle: page
+label: 'Zobrazit na titulní stránce'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnuto
+  off_label: Vypnuto
+field_type: boolean
