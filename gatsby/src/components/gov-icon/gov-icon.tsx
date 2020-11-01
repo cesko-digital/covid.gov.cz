@@ -1,37 +1,46 @@
 import classNames from 'classnames';
 import React from 'react';
 
-/**
- * TODO: Find correct names for icons
- * Icons can be found here in official docs:
- * https://designsystem.gov.cz/styles/iconography.html
- */
-
 interface IProps {
   icon:
-    | 'warning'
-    | 'time'
-    | 'settings'
-    | 'remove'
-    | 'plus'
-    | 'place'
     | 'person'
-    | 'notification'
-    | 'more'
-    | 'message'
-    | 'mail'
-    | 'grade'
-    | 'external'
-    | 'events'
-    | 'dashboard'
-    | 'check'
-    | 'attachment'
-    | 'arrow-right'
+    | 'search'
+    | 'dots-three-vertical'
+    | 'pvs-logo'
+    | 'pvs-logo-text'
+    | 'accordion-arrow-down'
+    | 'accordion-arrow-up'
+    | 'accordion-arrow-left'
+    | 'accordion-arrow-right'
+    | 'arrow-list-down'
+    | 'arrow-list-up'
+    | 'arrow-list-left'
+    | 'arrow-list-right'
+    | 'arrow-down'
     | 'arrow-up'
     | 'arrow-left'
-    | 'arrow-down'
-    | 'add'
-    | 'search';
+    | 'arrow-right'
+    | 'check'
+    | 'external-link'
+    | 'rss'
+    | 'data-box'
+    | 'pin'
+    | 'calendar'
+    | 'plus'
+    | 'thin-plus'
+    | 'alert'
+    | 'mail'
+    | 'close'
+    | 'circle-plus'
+    | 'circle-minus'
+    | 'time'
+    | 'star'
+    | 'attachment'
+    | 'message'
+    | 'notification'
+    | 'settings'
+    | 'exit'
+    | 'squares-grid';
   size?: 16 | 20 | 24 | 32;
   tooltip?: string;
   className?: string;
