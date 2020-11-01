@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import TextBox from '@/components/text-box';
 import Headline from '@/components/headline';
 import Breadcrumb from '@/components/breadcrumb';
+import Accordion from '@/components/accordion';
 
 const breadcrumbItems = [
   {
@@ -19,6 +20,35 @@ const breadcrumbItems = [
   },
 ];
 
+const accordion = [
+  {
+    title: 'Nadpis',
+    items: [
+      {
+        title: 'První',
+        href: '#',
+      },
+      {
+        title: 'Druhý',
+        href: '#',
+      },
+    ],
+  },
+  {
+    title: 'Druhý nadpis',
+    items: [
+      {
+        title: 'První',
+        href: '#',
+      },
+      {
+        title: 'Druhý',
+        href: '#',
+      },
+    ],
+  },
+]
+
 const Text: React.FC = () => {
   return (
     <div>
@@ -26,6 +56,7 @@ const Text: React.FC = () => {
       <Breadcrumb items={breadcrumbItems} variant="inverse" />
       <Headline>Headline #1</Headline>
       <TextBox />
+      <Accordion data={accordion} />
     </div>
   );
 };
