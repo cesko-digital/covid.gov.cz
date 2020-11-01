@@ -1,0 +1,22 @@
+uuid: d93003ef-827a-457f-b61d-65877b951c1d
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - covid_admin
+_core:
+  default_config_hash: qTz69Y7CZG9CS6vtkY_w7EHlffiMzm1aeGEGwfgu36o
+id: covid_admin_breadcrumbs
+theme: covid_admin
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

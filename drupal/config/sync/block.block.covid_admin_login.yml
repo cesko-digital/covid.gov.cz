@@ -1,0 +1,22 @@
+uuid: d62cb1ab-242a-4f9a-a3d7-1b9d4414ff39
+langcode: cs
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - covid_admin
+_core:
+  default_config_hash: PybeEJhoAguvuVhhx222KY5TI6Ct-Br-5qxJN3McsWY
+id: covid_admin_login
+theme: covid_admin
+region: content
+weight: 10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }
