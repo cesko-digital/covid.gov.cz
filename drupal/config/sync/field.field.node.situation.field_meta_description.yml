@@ -1,14 +1,14 @@
-uuid: 7367948e-9662-4f40-bf87-3cda4eb186fe
-langcode: en
+uuid: 43a26f20-538a-4adf-885a-fe357ffdd042
+langcode: cs
 status: true
 dependencies:
   config:
     - field.storage.node.field_meta_description
-    - node.type.measure
-id: node.measure.field_meta_description
+    - node.type.situation
+id: node.situation.field_meta_description
 field_name: field_meta_description
 entity_type: node
-bundle: measure
+bundle: situation
 label: 'Meta popisek'
 description: "Popis zobrazovaný ve výsledcích online vyhledávačů nebo při sdílení na sociálních sítích. \r\nPokud je prázdný, bude automaticky vygenerován z pole Obsah.\r\nIdeálně kolem 150–200 znaků."
 required: false
