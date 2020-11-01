@@ -1,0 +1,21 @@
+uuid: b33ed846-050f-419a-9b47-fa1b1c6e3853
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_questions_answers
+    - node.type.situation
+  module:
+    - covid
+id: node.situation.field_questions_answers
+field_name: field_questions_answers
+entity_type: node
+bundle: situation
+label: 'Otázky a odpovědi'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: covid_question_answer
