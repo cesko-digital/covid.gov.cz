@@ -1,0 +1,23 @@
+uuid: 687bd2d6-2097-47fb-9af0-c1d4d6930e8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.measure
+  module:
+    - link
+id: node.measure.field_source
+field_name: field_source
+entity_type: node
+bundle: measure
+label: Zdroj
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
