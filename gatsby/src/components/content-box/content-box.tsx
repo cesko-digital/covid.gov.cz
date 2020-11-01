@@ -1,5 +1,8 @@
 import React, { useMemo } from 'react';
+import classNames from 'classnames';
 import Button, { ButtonVariant } from '@/components/button';
+import Row from '@/components/row';
+import Col from '@/components/col';
 
 import styles from './content-box.module.scss';
 
@@ -38,19 +41,21 @@ const ContentBox: React.FC<Props> = ({
   }, [title]);
 
   return (
-    <div className={styles.contentBox}>
-      <h2 className={styles.contentBoxTitle}>{boldedTitle}</h2>
-      {description && (
-        <p className={styles.contentBoxDescription}>{description}</p>
-      )}
-      {children}
-      {buttonText && (
-        <Button
-          variant={buttonVariant}
-          text={buttonText}
-          className={styles.contentBoxButton}
-        />
-      )}
+    <div className={classNames(styles.contentBox, 'row')}>
+      <Col col={12}>
+        <h2 className={styles.contentBoxTitle}>{boldedTitle}</h2>
+        {description && (
+          <p className={styles.contentBoxDescription}>{description}</p>
+        )}
+        {children}
+        {buttonText && (
+          <Button
+            variant={buttonVariant}
+            text={buttonText}
+            className={styles.contentBoxButton}
+          />
+        )}
+      </Col>
     </div>
   );
 };
