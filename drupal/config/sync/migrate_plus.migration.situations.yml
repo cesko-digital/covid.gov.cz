@@ -103,7 +103,7 @@ process:
     source: related_topics
     process:
       target_id:
-        process: migration_lookup
+        plugin: migration_lookup
         source: Id
         migration: situations
 destination:
