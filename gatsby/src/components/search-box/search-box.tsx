@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
+
 import Button from '../button';
-import Col from '../col';
 import GovIcon from '../gov-icon';
+
+import classes from './search-box.module.scss';
 
 interface IProps {
   placeholder?: string;
@@ -32,25 +35,28 @@ const SearchBox: React.FC<IProps> = ({
   };
 
   return (
-    <Col col={12} colMd={4}>
-      <div className="search">
-        <div className="search__input-holder search--with-icon">
-          <input
-            type="text"
-            className="form-control search__input"
-            placeholder={placeholder}
-            onChange={(event) => setSearch(event.currentTarget.value)}
-            value={search}
-            onKeyDown={handleKeyDown}
-          />
-          <Button
-            icon={<GovIcon icon="search" className="search__button--icon" />}
-            onClick={handleSearch}
-            className="search__button"
-          />
-        </div>
+    <div className="search">
+      <div
+        className={classnames(
+          classes.searchBox,
+          'search__input-holder search--with-icon',
+        )}
+      >
+        <input
+          type="text"
+          className="form-control search__input"
+          placeholder={placeholder}
+          onChange={(event) => setSearch(event.currentTarget.value)}
+          value={search}
+          onKeyDown={handleKeyDown}
+        />
+        <Button
+          icon={<GovIcon icon="search" className="search__button--icon" />}
+          onClick={handleSearch}
+          className="search__button"
+        />
       </div>
-    </Col>
+    </div>
   );
 };
 

@@ -41,7 +41,7 @@ interface IProps {
     | 'settings'
     | 'exit'
     | 'squares-grid';
-  size?: 16 | 20 | 24 | 32;
+  size?: 10 | 16 | 20 | 24 | 32;
   tooltip?: string;
   className?: string;
 }

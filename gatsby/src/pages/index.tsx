@@ -5,6 +5,7 @@ import ContentBox from '@/components/content-box';
 import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
+import { Alert } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import { IQuery } from 'graphql-types';
 
@@ -26,6 +27,7 @@ const Home: React.FC<IProps> = ({ data }) => {
   return (
     <>
       <Helmet title="Index Page" />
+      <Alert />
       <Container>
         <ContentBox
           title={situation_label}

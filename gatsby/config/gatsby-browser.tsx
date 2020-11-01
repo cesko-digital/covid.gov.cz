@@ -1,7 +1,9 @@
 import 'assets/scss/custom-variables.scss';
 import React from 'react';
-import Layout from 'src/layouts/default-layout';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
+
+import '../assets/scss/design-system/front.scss';
+import Layout from '../src/layouts/default-layout';
 
 export const wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>;
