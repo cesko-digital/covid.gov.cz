@@ -129,15 +129,39 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
-  body:
-    fieldName: body
-    publicName: body
+  field_content:
+    fieldName: field_content
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+  field_meta_description:
+    fieldName: field_meta_description
+    publicName: meta_description
     enhancer:
       id: ''
     disabled: false
   field_region:
     fieldName: field_region
     publicName: region
+    enhancer:
+      id: ''
+    disabled: false
+  field_source:
+    fieldName: field_source
+    publicName: source
+    enhancer:
+      id: ''
+    disabled: false
+  field_valid_from:
+    fieldName: field_valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
+  field_valid_to:
+    fieldName: field_valid_to
+    publicName: valid_to
     enhancer:
       id: ''
     disabled: false
