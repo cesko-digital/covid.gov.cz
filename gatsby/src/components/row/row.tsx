@@ -27,7 +27,6 @@ const Row: React.FC<IProps> = ({
     return strng;
   };
 
-  // row
   return <div className={`row ${getClassNames()}`}>{children}</div>;
 };
 
