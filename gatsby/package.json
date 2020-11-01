@@ -8,7 +8,7 @@
     "dev": "gatsby develop",
     "dev:local": "gatsby develop -H 0.0.0.0",
     "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "format": "prettier \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint .",
     "stylelint": "stylelint \"**/*.scss\"",
     "start": "npm run develop",

@@ -7,18 +7,14 @@ export const wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>;
 };
 
-/*
-
-FIXME: Uncomment following code when app insights key env var is added to Vercel.
-
 const appInsights =
-  process.env.NODE_ENV !== 'development'
+  process.env.NODE_ENV !== 'development' && process.env.GATSBY_APPINSIGHTS_KEY
     ? new ApplicationInsights({
         config: {
           instrumentationKey: process.env.GATSBY_APPINSIGHTS_KEY,
         },
       })
-    : null;
+    : console.warn('Analytics is not applied');
 
 export const onInitialClientRender = () => {
   if (appInsights) {
@@ -31,6 +27,5 @@ export const onRouteUpdate = () => {
   if (appInsights) appInsights.trackPageView();
 };
 
- (window as any).appInsights = appInsights;
-
-*/
+// FIXME: apply global.d.ts
+(window as any).appInsights = appInsights;
