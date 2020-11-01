@@ -29,12 +29,12 @@ source:
       label: 'Measure title'
       selector: Name
     -
-      name: source_id
-      label: 'Source ID'
+      name: measure_id
+      label: 'Measure ID'
       selector: refSourceId
     -
-      name: category_id
-      label: 'Category ID'
+      name: area_id
+      label: 'Area ID'
       selector: refCategoryId
     -
       name: description
@@ -66,8 +66,29 @@ source:
 process:
   type:
     plugin: default_value
-    default_value: measure
+    default_value: situation
   title: title
+  field_internal_note: note
+  field_content: description
+  field_situation_ref_measures:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: measure_id
+    -
+      plugin: migration_lookup
+      source: measure_id
+      migration: measures
+  field_situation_type:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: measure_id
+    -
+      plugin: migration_lookup
+      source: area_id
+      migration: categories
+
 destination:
   plugin: 'entity:node'
 migration_dependencies: {  }
