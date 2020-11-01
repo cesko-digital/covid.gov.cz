@@ -58,14 +58,6 @@ content:
     third_party_settings: {  }
     type: covid_question_answer_widget
     region: content
-  field_questions_answers:
-    weight: 26
-    settings:
-      rows: '3'
-      placeholder: ''
-    third_party_settings: {  }
-    type: covid_question_answer_widget
-    region: content
   field_ref_icon:
     weight: 1
     settings:

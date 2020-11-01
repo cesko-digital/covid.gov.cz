@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.measure.field_content
+    - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
     - field.field.node.measure.field_region
     - field.field.node.measure.field_source
@@ -26,6 +27,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_measure_type:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_meta_description:
     weight: 106
@@ -74,8 +83,8 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true
