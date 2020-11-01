@@ -45,19 +45,15 @@ source:
       label: 'Internal note'
       selector: InternalRemark
     -
-      name: link_uri
+      name: links
       label: 'Link URI'
-      selector: TopicRelatedLink/0/Url
+      selector: TopicRelatedLink
     -
-      name: link_label
-      label: 'Link Label'
-      selector: TopicRelatedLink/1/Name
-    -
-      name: topics_array
+      name: related_topics
       label: 'Topics array'
       selector: TopicRelatedTopic
     -
-      name: faqs_array
+      name: faqs
       label: 'FAQs array'
       selector: TopicFAQ
   ids:
@@ -88,7 +84,28 @@ process:
       plugin: migration_lookup
       source: area_id
       migration: categories
-
+  field_situation_link:
+    plugin: sub_process
+    source: links
+    process:
+      uri:
+        plugin: urlencode
+        source: Url
+      title: Name
+  field_questions_answers:
+    plugin: sub_process
+    source: faqs
+    process:
+      question: Question
+      value: Answer
+  field_related_topics:
+    plugin: sub_process
+    source: related_topics
+    process:
+      target_id:
+        process: migration_lookup
+        source: Id
+        migration: situations
 destination:
   plugin: 'entity:node'
 migration_dependencies: {  }
