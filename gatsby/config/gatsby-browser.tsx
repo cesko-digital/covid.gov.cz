@@ -1,4 +1,4 @@
-import 'assets/ds/scss/front.scss';
+import 'assets/scss/designsystem.scss';
 import React from 'react';
 import Layout from '../src/layouts/default-layout';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
