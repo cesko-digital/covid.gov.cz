@@ -136,38 +136,50 @@ resourceFields:
       id: ''
     disabled: false
   field_internal_note:
+    disabled: true
     fieldName: field_internal_note
     publicName: field_internal_note
     enhancer:
       id: ''
-    disabled: false
   field_meta_description:
     fieldName: field_meta_description
-    publicName: field_meta_description
+    publicName: meta_description
+    enhancer:
+      id: ''
+    disabled: false
+  field_questions_answers:
+    fieldName: field_questions_answers
+    publicName: questions_answers
     enhancer:
       id: ''
     disabled: false
   field_ref_icon:
     fieldName: field_ref_icon
-    publicName: field_ref_icon
+    publicName: icon
     enhancer:
       id: ''
     disabled: false
   field_region:
     fieldName: field_region
-    publicName: field_region
+    publicName: region
+    enhancer:
+      id: ''
+    disabled: false
+  field_situations:
+    fieldName: field_situations
+    publicName: related_situations
     enhancer:
       id: ''
     disabled: false
   field_situation_link:
     fieldName: field_situation_link
-    publicName: field_situation_link
+    publicName: links
     enhancer:
       id: ''
     disabled: false
   field_situation_ref_measures:
     fieldName: field_situation_ref_measures
-    publicName: field_situation_ref_measures
+    publicName: measures
     enhancer:
       id: ''
     disabled: false
@@ -179,13 +191,13 @@ resourceFields:
     disabled: false
   field_valid_from:
     fieldName: field_valid_from
-    publicName: field_valid_from
+    publicName: valid_from
     enhancer:
       id: ''
     disabled: false
   field_valid_to:
     fieldName: field_valid_to
-    publicName: field_valid_to
+    publicName: valid_to
     enhancer:
       id: ''
     disabled: false
