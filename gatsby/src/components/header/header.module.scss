@@ -1,0 +1,126 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.header {
+  background-color: $theme-blue;
+
+  color: $white;
+
+  padding: 10px 0;
+
+  @include media-breakpoint-down(md) {
+    padding: 22px 0 8px;
+  }
+}
+
+.header__inner {
+  position: relative;
+}
+
+.navigation {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: unset !important;
+}
+
+.nav__link {
+  margin-top: -1px !important;
+  padding: 15px 14px 0 !important;
+}
+
+.nav__toggleWrapper {
+  position: relative;
+  z-index: 1001;
+  padding-left: 0;
+}
+
+.nav__toggle {
+  cursor: pointer;
+  position: relative;
+  padding-right: 40px;
+  user-select: none;
+
+  // icon
+  & > span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    background: $white;
+    border-radius: 2px;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 0.2s ease-out;
+    &:first-of-type {
+      right: 12px;
+      top: 10px;
+    }
+    &:last-of-type {
+      top: 19px;
+      width: 12px;
+      right: 12px;
+    }
+  }
+
+  // label
+  & > div {
+    line-height: 32px;
+  }
+}
+
+.nav__toggle--open {
+  & > span {
+    &:first-of-type {
+      top: 15px;
+      transform: rotate(45deg);
+    }
+    &:last-of-type {
+      width: 18px;
+      top: 15px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.nav__mobile {
+  background-color: $theme-blue;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  transform: translateX(100%);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 78px 0 50px;
+}
+
+.nav__mobile--open {
+  transform: translateX(0);
+}
+
+.nav__mobileLink {
+  display: block;
+  width: 100%;
+  color: $white !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: right;
+  padding: 22px 26px 22px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav__mobileLink--active {
+  background-color: $white;
+  color: $theme-blue-light !important;
+  font-weight: 900;
+}

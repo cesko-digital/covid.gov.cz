@@ -1,0 +1,39 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.localeSelect__wrapper {
+  position: absolute;
+  right: -48px;
+  top: 0;
+  bottom: 0;
+}
+
+.localeSelect__inner {
+  position: relative;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: $white;
+
+  a {
+    margin: 4px 0;
+    color: $white !important;
+    text-decoration: none !important;
+  }
+}
+
+.localeSelect {
+  cursor: pointer;
+  user-select: none;
+  padding: 0 8px;
+
+  & > span:first-of-type {
+    display: inline-block;
+    margin-right: 4px;
+  }
+}
+
+.localeSelect__selectBox {
+  position: absolute;
+  padding: 6px 24px 6px 8px;
+  background-color: $theme-blue;
+}
