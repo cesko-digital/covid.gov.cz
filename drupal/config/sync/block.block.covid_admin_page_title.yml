@@ -1,0 +1,20 @@
+uuid: 66946e43-c2f6-4883-a4d6-2d27136ca31b
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - covid_admin
+_core:
+  default_config_hash: k_zfCC5eJVc18LZWseIHTXLSjl6iLgFpVEbZyMIXrkI
+id: covid_admin_page_title
+theme: covid_admin
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

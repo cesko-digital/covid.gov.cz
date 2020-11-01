@@ -1,0 +1,20 @@
+.situation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.8rem 0;
+
+  &Title {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+    color: #254e80;
+
+    &Icon {
+      color: #ecae1a;
+      margin-right: 1.6rem;
+    }
+  }
+}

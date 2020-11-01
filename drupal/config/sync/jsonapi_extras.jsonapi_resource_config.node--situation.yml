@@ -1,0 +1,203 @@
+uuid: 20a1bb16-bb60-47d7-bc4e-2314f9d07c3a
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.situation
+id: node--situation
+disabled: false
+path: node/situation
+resourceType: situation
+resourceFields:
+  nid:
+    fieldName: nid
+    publicName: nid
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  vid:
+    disabled: true
+    fieldName: vid
+    publicName: vid
+    enhancer:
+      id: ''
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  revision_timestamp:
+    disabled: true
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
+    enhancer:
+      id: ''
+  status:
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+    disabled: false
+  uid:
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+    disabled: false
+  title:
+    fieldName: title
+    publicName: title
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''
+    disabled: false
+  changed:
+    fieldName: changed
+    publicName: changed
+    enhancer:
+      id: ''
+    disabled: false
+  promote:
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+    disabled: false
+  sticky:
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+    disabled: false
+  default_langcode:
+    disabled: true
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+  revision_default:
+    disabled: true
+    fieldName: revision_default
+    publicName: revision_default
+    enhancer:
+      id: ''
+  revision_translation_affected:
+    disabled: true
+    fieldName: revision_translation_affected
+    publicName: revision_translation_affected
+    enhancer:
+      id: ''
+  content_translation_source:
+    disabled: true
+    fieldName: content_translation_source
+    publicName: content_translation_source
+    enhancer:
+      id: ''
+  content_translation_outdated:
+    disabled: true
+    fieldName: content_translation_outdated
+    publicName: content_translation_outdated
+    enhancer:
+      id: ''
+  field_content:
+    fieldName: field_content
+    publicName: content
+    enhancer:
+      id: ''
+    disabled: false
+  field_internal_note:
+    disabled: true
+    fieldName: field_internal_note
+    publicName: field_internal_note
+    enhancer:
+      id: ''
+  field_meta_description:
+    fieldName: field_meta_description
+    publicName: meta_description
+    enhancer:
+      id: ''
+    disabled: false
+  field_questions_answers:
+    fieldName: field_questions_answers
+    publicName: questions_answers
+    enhancer:
+      id: ''
+    disabled: false
+  field_ref_icon:
+    fieldName: field_ref_icon
+    publicName: icon
+    enhancer:
+      id: ''
+    disabled: false
+  field_region:
+    fieldName: field_region
+    publicName: region
+    enhancer:
+      id: ''
+    disabled: false
+  field_situations:
+    fieldName: field_situations
+    publicName: related_situations
+    enhancer:
+      id: ''
+    disabled: false
+  field_situation_link:
+    fieldName: field_situation_link
+    publicName: links
+    enhancer:
+      id: ''
+    disabled: false
+  field_situation_ref_measures:
+    fieldName: field_situation_ref_measures
+    publicName: measures
+    enhancer:
+      id: ''
+    disabled: false
+  field_situation_type:
+    fieldName: field_situation_type
+    publicName: situation_type
+    enhancer:
+      id: ''
+    disabled: false
+  field_valid_from:
+    fieldName: field_valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
+  field_valid_to:
+    fieldName: field_valid_to
+    publicName: valid_to
+    enhancer:
+      id: ''
+    disabled: false

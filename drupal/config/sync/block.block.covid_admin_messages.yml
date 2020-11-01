@@ -1,0 +1,22 @@
+uuid: ae1b2a5d-47a1-4f8e-a471-ab9fa185010a
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - covid_admin
+_core:
+  default_config_hash: ur6kCdm-b0DPK31J-iQOq3kfdjkQSJdv67-eIY9xgs8
+id: covid_admin_messages
+theme: covid_admin
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

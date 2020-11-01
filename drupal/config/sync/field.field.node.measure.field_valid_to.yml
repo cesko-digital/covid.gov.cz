@@ -1,0 +1,21 @@
+uuid: ca97a3b6-ac65-41d1-8b84-061c2ec94ab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valid_to
+    - node.type.measure
+  module:
+    - datetime
+id: node.measure.field_valid_to
+field_name: field_valid_to
+entity_type: node
+bundle: measure
+label: 'Platnost do '
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

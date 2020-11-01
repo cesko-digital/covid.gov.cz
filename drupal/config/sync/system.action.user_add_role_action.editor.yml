@@ -1,0 +1,14 @@
+uuid: 431fa2ed-bbfb-4cb7-8b0c-f4bb83e08c87
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.editor
+  module:
+    - user
+id: user_add_role_action.editor
+label: 'Přidat vybraným uživatelům roli Editor'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editor

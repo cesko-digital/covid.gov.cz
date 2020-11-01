@@ -24,6 +24,10 @@
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0",
         "drupal/devel": "^4.0",
+        "drupal/jsonapi_extras": "^3.16",
+        "drupal/migrate_plus": "^5.1",
+        "drupal/migrate_tools": "^5.0",
+        "drupal/one_time_password": "^1.0@RC",
         "drupal/paragraphs": "^1.12",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
@@ -41,7 +45,8 @@
     "prefer-stable": true,
     "config": {
         "discard-changes": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "autoload": {
         "classmap": [

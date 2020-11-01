@@ -1,0 +1,21 @@
+uuid: 806c7882-c3c4-4708-a04e-8b6617cbb2c8
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valid_to
+    - node.type.situation
+  module:
+    - datetime
+id: node.situation.field_valid_to
+field_name: field_valid_to
+entity_type: node
+bundle: situation
+label: 'Platnost do '
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

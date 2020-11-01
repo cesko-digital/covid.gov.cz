@@ -1,0 +1,8 @@
+uuid: ee085099-7f7d-409f-a162-1777d55a3625
+langcode: cs
+status: true
+dependencies: {  }
+name: Působnost
+vid: region
+description: 'Působnost na jakou opatření platí'
+weight: 0

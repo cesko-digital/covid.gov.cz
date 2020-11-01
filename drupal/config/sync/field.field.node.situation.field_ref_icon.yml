@@ -1,0 +1,25 @@
+uuid: f17ee2e3-1694-438b-ac3b-8521c8548166
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_icon
+    - node.type.situation
+id: node.situation.field_ref_icon
+field_name: field_ref_icon
+entity_type: node
+bundle: situation
+label: Ikona
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: icons
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEI,uEAAM;EACJ,KAAK,EAAE,IAAI",
+"sources": ["covid_admin.scss"],
+"names": [],
+"file": "covid_admin.css"
+}

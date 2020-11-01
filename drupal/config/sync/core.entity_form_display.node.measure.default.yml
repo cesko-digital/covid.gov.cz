@@ -3,75 +3,97 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.measure.body
+    - field.field.node.measure.field_content
+    - field.field.node.measure.field_meta_description
+    - field.field.node.measure.field_region
+    - field.field.node.measure.field_source
+    - field.field.node.measure.field_valid_from
+    - field.field.node.measure.field_valid_to
     - node.type.measure
   module:
+    - datetime
+    - link
     - text
 id: node.measure.default
 targetEntityType: node
 bundle: measure
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 121
+  field_content:
+    weight: 30
     settings:
-      rows: 9
-      summary_rows: 3
+      rows: 5
       placeholder: ''
-      show_summary: false
     third_party_settings: {  }
+    type: text_textarea
     region: content
-  created:
-    type: datetime_timestamp
-    weight: 10
+  field_meta_description:
+    weight: 29
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
     region: content
+  field_region:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_source:
+    weight: 28
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_valid_from:
+    weight: 26
     settings: {  }
     third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
-    third_party_settings: {  }
-  promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 15
-    region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    region: content
+  translation:
+    weight: 10
+    settings: {  }
     third_party_settings: {  }
-hidden: {  }
+    region: content
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true

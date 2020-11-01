@@ -1,0 +1,21 @@
+uuid: a8f9fc1b-b6f9-4397-aa2f-7ffdd926bcb0
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon_set
+    - taxonomy.vocabulary.icons
+  module:
+    - options
+id: taxonomy_term.icons.field_icon_set
+field_name: field_icon_set
+entity_type: taxonomy_term
+bundle: icons
+label: 'Sada ikon'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

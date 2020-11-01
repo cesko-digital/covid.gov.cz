@@ -3,30 +3,71 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.situation.field_description
+    - field.field.node.situation.field_content
+    - field.field.node.situation.field_internal_note
+    - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_questions_answers
+    - field.field.node.situation.field_ref_icon
+    - field.field.node.situation.field_region
+    - field.field.node.situation.field_situation_link
+    - field.field.node.situation.field_situation_ref_measures
     - field.field.node.situation.field_situation_type
+    - field.field.node.situation.field_situations
+    - field.field.node.situation.field_valid_from
+    - field.field.node.situation.field_valid_to
     - node.type.situation
+  module:
+    - covid
+    - datetime
+    - link
+    - text
 id: node.situation.default
 targetEntityType: node
 bundle: situation
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 10
-    region: content
-    settings: {  }
+  field_content:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-  field_description:
-    weight: 121
+    type: text_textarea
+    region: content
+  field_internal_note:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_meta_description:
+    weight: 11
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_situation_type:
-    weight: 122
+  field_questions_answers:
+    weight: 10
+    settings:
+      rows: '3'
+      placeholder: ''
+    third_party_settings: {  }
+    type: covid_question_answer_widget
+    region: content
+  field_questions_answers:
+    weight: 26
+    settings:
+      rows: '3'
+      placeholder: ''
+    third_party_settings: {  }
+    type: covid_question_answer_widget
+    region: content
+  field_ref_icon:
+    weight: 1
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -35,50 +76,87 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_region:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_situation_link:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_situation_ref_measures:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_situation_type:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_situations:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_valid_from:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 13
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
-  promote:
+  status:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 15
     region: content
     third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 120
-    region: content
-    third_party_settings: {  }
-  sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
-    region: content
-    third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
+  translation:
+    weight: 14
     region: content
+    settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  promote: true
+  sticky: true
+  uid: true

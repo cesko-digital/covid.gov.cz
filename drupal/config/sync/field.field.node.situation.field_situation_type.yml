@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_situation_type
     - node.type.situation
-    - taxonomy.vocabulary.situation_type
+    - taxonomy.vocabulary.area
 id: node.situation.field_situation_type
 field_name: field_situation_type
 entity_type: node
 bundle: situation
-label: Kategorie
+label: Okruh
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      situation_type: situation_type
+      area: area
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: area
 field_type: entity_reference

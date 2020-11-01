@@ -1,0 +1,22 @@
+uuid: a74574fa-da9d-4b51-98ff-0f90c2161aa3
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - covid_admin
+_core:
+  default_config_hash: mLtXEvVQCKNJgcDUyRrmjveNZYQZyZQaKwCLeuOQF7I
+id: covid_admin_content
+theme: covid_admin
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

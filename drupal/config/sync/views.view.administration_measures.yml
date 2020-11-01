@@ -282,7 +282,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Administration - measures'
+      title: Opatření
       header: {  }
       footer: {  }
       empty: {  }

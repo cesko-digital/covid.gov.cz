@@ -1,0 +1,21 @@
+uuid: f4b0458d-e905-4bb6-bd11-c7780c8102c5
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.situation
+  module:
+    - text
+id: node.situation.field_content
+field_name: field_content
+entity_type: node
+bundle: situation
+label: Obsah
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

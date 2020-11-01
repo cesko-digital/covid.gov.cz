@@ -1,0 +1,21 @@
+uuid: 3322d70b-9814-48e7-815c-538ba6a64b6f
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.page
+  module:
+    - text
+id: node.page.field_content
+field_name: field_content
+entity_type: node
+bundle: page
+label: Obsah
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

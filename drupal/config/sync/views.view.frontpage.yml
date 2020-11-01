@@ -11,7 +11,7 @@ dependencies:
 _core:
   default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
 id: frontpage
-label: Frontpage
+label: 'Titulní strana'
 module: node
 description: 'All content promoted to the front page.'
 tag: default
@@ -30,7 +30,7 @@ display:
       empty:
         area_text_custom:
           admin_label: ''
-          content: 'No front page content has been created yet.<br/>Follow the <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">User Guide</a> to start building your site.'
+          content: 'Pro hlavní stranu zatím neexistuje žádný obsah. Instrukce pro přidání obsahu najdete v <a target="_blank" href="https://www.drupal.org/docs/user_guide/en/index.html">uživatelské příručce</a>.'
           empty: true
           field: area_text_custom
           group_type: group
@@ -60,18 +60,18 @@ display:
           admin_label: ''
           label: ''
           empty: true
-          title: 'Welcome to [site:name]'
+          title: 'Vítejte na webu [site:name]'
           plugin_id: title
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Použít
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Řadit dle'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzestupně
+          sort_desc_label: Sestupně
       filters:
         promote:
           admin_label: ''
@@ -177,17 +177,17 @@ display:
           total_pages: 0
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Vše -'
             offset: false
-            offset_label: Offset
+            offset_label: Posun
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            previous: '‹ Předchozí'
+            next: 'Následující ›'
+            first: '« První'
+            last: 'Poslední »'
           quantity: 9
       query:
         type: views_query
@@ -246,7 +246,7 @@ display:
       arguments: {  }
       display_extenders: {  }
     display_plugin: default
-    display_title: Master
+    display_title: Nadřízené
     id: default
     position: 0
     cache_metadata:
@@ -260,7 +260,7 @@ display:
   feed_1:
     display_plugin: feed
     id: feed_1
-    display_title: Feed
+    display_title: Zdroj
     position: 2
     display_options:
       sitename_title: true
@@ -297,7 +297,7 @@ display:
       path: node
       display_extenders: {  }
     display_plugin: page
-    display_title: Page
+    display_title: Stránka
     id: page_1
     position: 1
     cache_metadata:

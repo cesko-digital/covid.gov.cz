@@ -1,0 +1,8 @@
+uuid: 7900254b-51a7-4aed-b13e-ce5055524446
+langcode: cs
+status: true
+dependencies: {  }
+name: 'Okruh životní situace'
+vid: area
+description: ''
+weight: 0

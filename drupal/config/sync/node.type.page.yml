@@ -1,0 +1,18 @@
+uuid: e4d67b8c-5dd3-4b1d-a27c-431084265721
+langcode: cs
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Stránka
+type: page
+description: 'Slouží k zadávání jednoduchého statického obsahu. např. prohlášení o přístupnosti.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

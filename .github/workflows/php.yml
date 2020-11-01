@@ -3,6 +3,9 @@ name: PHP Composer
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+    - 'gatsby/**'
+    - 'docker/**'
 
 jobs:
 #  build:
@@ -48,4 +51,3 @@ jobs:
 
       - name: Deploy to stage
         run: cd drupal && vendor/bin/dep deploy staging
-
