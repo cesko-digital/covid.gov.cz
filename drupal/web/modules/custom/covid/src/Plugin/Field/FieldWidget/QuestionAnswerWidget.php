@@ -9,7 +9,7 @@ use Drupal\Core\Field\Plugin\Field\FieldWidget\StringTextareaWidget;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Plugin implementation of the 'mr_person_widget' widget.
+ * Plugin implementation of the 'covid_question_answer_widget' widget.
  *
  * @FieldWidget(
  *   id = "covid_question_answer_widget",
