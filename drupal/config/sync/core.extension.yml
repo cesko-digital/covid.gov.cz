@@ -1,11 +1,13 @@
 module:
   admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
   adminimal_admin_toolbar: 0
   block: 0
   breakpoint: 0
   ckeditor: 0
   covid: 0
   covid_ui: 0
+  datetime: 0
   dblog: 0
   devel: 0
   dynamic_page_cache: 0
@@ -23,6 +25,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   node: 0
+  one_time_password: 0
   page_cache: 0
   path_alias: 0
   serialization: 0

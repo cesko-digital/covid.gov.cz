@@ -5,8 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.situation.field_content
-    - field.field.node.situation.field_description
+    - field.field.node.situation.field_internal_note
+    - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_region
+    - field.field.node.situation.field_situation_link
+    - field.field.node.situation.field_situation_ref_measures
     - field.field.node.situation.field_situation_type
+    - field.field.node.situation.field_valid_from
+    - field.field.node.situation.field_valid_to
     - node.type.situation
   module:
     - user
@@ -22,6 +28,12 @@ content:
     region: content
 hidden:
   field_content: true
-  field_description: true
+  field_internal_note: true
+  field_meta_description: true
+  field_region: true
+  field_situation_link: true
+  field_situation_ref_measures: true
   field_situation_type: true
+  field_valid_from: true
+  field_valid_to: true
   langcode: true
