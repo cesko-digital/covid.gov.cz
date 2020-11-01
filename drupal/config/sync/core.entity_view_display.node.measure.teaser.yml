@@ -4,30 +4,30 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.measure.body
+    - field.field.node.measure.field_content
+    - field.field.node.measure.field_meta_description
     - field.field.node.measure.field_region
+    - field.field.node.measure.field_source
+    - field.field.node.measure.field_valid_from
+    - field.field.node.measure.field_valid_to
     - node.type.measure
   module:
-    - text
     - user
 id: node.measure.teaser
 targetEntityType: node
 bundle: measure
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
+  field_content: true
+  field_meta_description: true
   field_region: true
+  field_source: true
+  field_valid_from: true
+  field_valid_to: true
   langcode: true
