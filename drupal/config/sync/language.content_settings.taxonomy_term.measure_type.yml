@@ -1,0 +1,16 @@
+uuid: a3f8d9f4-a80d-485b-a1ad-5e195cf7522d
+langcode: cs
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.measure_type
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.measure_type
+target_entity_type_id: taxonomy_term
+target_bundle: measure_type
+default_langcode: site_default
+language_alterable: false
