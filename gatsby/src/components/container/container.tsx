@@ -12,6 +12,8 @@ const Container: React.FC<IProps> = ({
   className = '',
 }) => {
   return (
+    // container
+    // container-fluid
     <div
       className={classNames(
         { container: variant === 'normal' },
