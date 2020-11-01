@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.situation.field_content
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_ref_icon
     - field.field.node.situation.field_region
     - field.field.node.situation.field_situation_link
     - field.field.node.situation.field_situation_ref_measures
@@ -30,6 +31,7 @@ hidden:
   field_content: true
   field_internal_note: true
   field_meta_description: true
+  field_ref_icon: true
   field_region: true
   field_situation_link: true
   field_situation_ref_measures: true

@@ -1,0 +1,19 @@
+uuid: 21783957-83c0-44c7-8bb3-98c5b9927cf3
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_icon_code
+    - taxonomy.vocabulary.icons
+id: taxonomy_term.icons.field_icon_code
+field_name: field_icon_code
+entity_type: taxonomy_term
+bundle: icons
+label: 'Kód ikony'
+description: 'Strojový název ikony, tak aby byl platný v daném setu. např. "attachment"  pro <a href="https://material.io/resources/icons/?search=atta&icon=attachment&style=baseline">Material icon Attachment</a>.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
