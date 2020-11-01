@@ -7,6 +7,7 @@ import MeasureList from '@/components/measure-list';
 import SearchBox from '@/components/search-box';
 import Row from '@/components/row';
 import Container from '@/components/container';
+import Alert from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 
 interface Data {}
@@ -17,12 +18,16 @@ interface Props {
 
 const Home: React.FC<Props> = ({ data }) => {
   return (
-    <Container>
-      <Helmet title="Index Page" />
-      <Row>
-        <SearchBox />
-      </Row>
-      <ContentBox
+    <>
+      <Container>
+        <Helmet title="Index Page" />
+        <Row>
+          <SearchBox />
+        </Row>
+      </Container>
+      <Alert />
+      <Container>
+        <ContentBox
         title="Životní situace"
         boldedTitleCount={2}
         buttonVariant="outline"
@@ -41,6 +46,7 @@ const Home: React.FC<Props> = ({ data }) => {
         English Page
       </Link>
     </Container>
+    </>
   );
 };
 export default Home;
