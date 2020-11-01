@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.situation.field_content
+    - field.field.node.situation.field_questions_answers
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_meta_description
     - field.field.node.situation.field_ref_icon
@@ -44,6 +45,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_questions_answers:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_ref_icon:
     weight: 112

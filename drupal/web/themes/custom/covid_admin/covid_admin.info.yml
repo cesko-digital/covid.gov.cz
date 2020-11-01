@@ -1,0 +1,24 @@
+name: COVID Portal Admin Theme
+type: theme
+description: 'Covid.gov.cz portal theme.'
+core_version_requirement: ^8.8 || ^9
+base theme: adminimal_theme
+
+libraries:
+  - covid_admin/global-styling
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
+
+version: '1.0'
+project: 'covid.gov.cz'
