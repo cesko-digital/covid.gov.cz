@@ -58,7 +58,7 @@ const Text: React.FC = () => {
       <Breadcrumb items={breadcrumbItems} variant="inverse" />
       <Headline>Headline #1</Headline>
       <TextBox />
-      <ContentBox title="Časté dotazy k tomuto tématu">
+      <ContentBox title="Časté dotazy k tomuto tématu" boldedTitleCount={2}>
         <Accordion data={accordion} />
       </ContentBox>
     </Container>
