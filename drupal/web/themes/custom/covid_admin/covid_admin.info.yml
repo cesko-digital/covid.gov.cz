@@ -1,15 +1,11 @@
-name: COVID Portal Theme
+name: COVID Portal Admin Theme
 type: theme
 description: 'Covid.gov.cz portal theme.'
 core_version_requirement: ^8.8 || ^9
-base theme: false
+base theme: adminimal_theme
 
 libraries:
-  - covid_theme/global-styling
+  - covid_admin/global-styling
 
-regions:
-  content: Content
-
-version: '1.0.0'
+version: '1.0'
 project: 'covid.gov.cz'
-

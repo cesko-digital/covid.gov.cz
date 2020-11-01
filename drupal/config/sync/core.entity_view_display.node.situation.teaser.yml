@@ -29,9 +29,9 @@ content:
     region: content
 hidden:
   field_content: true
-  field_questions_answers: true
   field_internal_note: true
   field_meta_description: true
+  field_questions_answers: true
   field_region: true
   field_situation_link: true
   field_situation_ref_measures: true
