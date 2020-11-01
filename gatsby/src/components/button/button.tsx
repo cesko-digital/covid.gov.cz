@@ -53,7 +53,8 @@ const Button: React.FC<IProps> = ({
       onClick={onClick || null}
       disabled={disabled}
     >
-      {text} {icon}
+      {text}
+      {icon}
     </button>
   );
 };
