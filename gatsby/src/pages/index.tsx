@@ -9,14 +9,18 @@ import Row from '@/components/row';
 import Container from '@/components/container';
 import Alert from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
+import { ILatest_Measures } from 'graphql-types';
 
-interface Data {}
-
-interface Props {
-  data: any;
+interface IQueryResult {
+  latestMeasures?: ILatest_Measures;
 }
 
-const Home: React.FC<Props> = ({ data }) => {
+interface IProps {
+  data: IQueryResult;
+}
+
+const Home: React.FC<IProps> = ({ data }) => {
+  const { latestMeasures } = data;
   return (
     <>
       <Container>
@@ -40,7 +44,7 @@ const Home: React.FC<Props> = ({ data }) => {
           boldedTitleCount={1}
           buttonText="Zobrazit všechna opatření"
         >
-          <MeasureList measures={data.latestMeasures.relationships.measures} />
+          <MeasureList measures={latestMeasures.relationships.measures} />
         </ContentBox>
         <Link to="/" language="en" className="">
           English Page
@@ -52,7 +56,7 @@ const Home: React.FC<Props> = ({ data }) => {
 export default Home;
 
 export const query = graphql`
-  query {
+  query IndexQuery {
     latestMeasures {
       relationships {
         measures {
