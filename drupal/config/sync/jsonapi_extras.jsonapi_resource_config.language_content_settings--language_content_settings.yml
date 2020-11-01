@@ -1,0 +1,77 @@
+uuid: ca420571-d7f6-4046-9a76-ccfcdf7f4b1c
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+id: language_content_settings--language_content_settings
+disabled: true
+path: language_content_settings/language_content_settings
+resourceType: language_content_settings--language_content_settings
+resourceFields:
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  status:
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+    disabled: false
+  dependencies:
+    fieldName: dependencies
+    publicName: dependencies
+    enhancer:
+      id: ''
+    disabled: false
+  third_party_settings:
+    fieldName: third_party_settings
+    publicName: third_party_settings
+    enhancer:
+      id: ''
+    disabled: false
+  _core:
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+    disabled: false
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  target_entity_type_id:
+    fieldName: target_entity_type_id
+    publicName: target_entity_type_id
+    enhancer:
+      id: ''
+    disabled: false
+  target_bundle:
+    fieldName: target_bundle
+    publicName: target_bundle
+    enhancer:
+      id: ''
+    disabled: false
+  default_langcode:
+    fieldName: default_langcode
+    publicName: default_langcode
+    enhancer:
+      id: ''
+    disabled: false
+  language_alterable:
+    fieldName: language_alterable
+    publicName: language_alterable
+    enhancer:
+      id: ''
+    disabled: false

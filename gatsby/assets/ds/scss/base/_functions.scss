@@ -1,0 +1,37 @@
+/**
+ *	Theme functions
+ *
+ *	This file defines new mixins and extends standards mixins from Bootstrap.
+ */
+
+
+/*
+ *	Tachyoms
+ */
+
+
+
+// Table behav
+@mixin table-same-columns($val) {
+	&.table--same-colums-#{$val} {
+		thead,
+		tbody {
+			tr {
+				th,
+				td {
+					width: (100% / $val);
+				}
+			}
+		}
+	}
+}
+
+/*
+ - Mixin for links non visited [href]
+ */
+
+@mixin complement-visited-links() {
+	&:visited:not(.overview):not(.more):not(.direct):not(.with-icon):not(.btn):not(.breadcrumb__link):not(.nav__link):not(.btn-login):not(.guide__link):not(.guide__link-back):not(.not-visited):not(.paginator__link) {
+		@content;
+	}
+}

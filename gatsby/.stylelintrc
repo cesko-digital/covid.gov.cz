@@ -1,11 +1,20 @@
 {
   "rules": {
     "prettier/prettier": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
   },
   "plugins": [
     "stylelint-prettier"
   ],
   "extends": [
     "stylelint-config-standard"
+  ],
+  "ignoreFiles": [
+    "assets/ds/**/*.scss"
   ]
 }

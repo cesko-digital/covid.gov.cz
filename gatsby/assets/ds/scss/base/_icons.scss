@@ -1,0 +1,87 @@
+/**
+ *	Theme icons
+ *
+ *	This file contains all used custom icons.
+ */
+
+
+$version: '3';
+
+@font-face {
+	font-family: 'pvs-icons';
+	src: url('#{$theme-path}/fonts/icons/pvs-icons.ttf?v=#{$version}') format('truetype'),
+		 url('#{$theme-path}/fonts/icons/pvs-icons.woff?v=#{$version}') format('woff'),
+		 url('#{$theme-path}/fonts/icons/pvs-icons.svg?v=#{$version}#icon') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin icon-mix() {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'pvs-icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^='#{$theme-class-def}-icon-'],
+[class*=' #{$theme-class-def}-icon-'] {
+	@include icon-mix();
+}
+
+$icons:
+	(person '\e900'),
+	(search '\e901'),
+	(dots-three-vertical '\e902'),
+	(pvs-logo '\e903'),
+	(pvs-logo-text '\e904'),
+	(accordion-arrow-down '\e905'),
+	(accordion-arrow-up '\e90a'),
+	(accordion-arrow-left '\e90b'),
+	(accordion-arrow-right '\e90c'),
+	(arrow-list-down '\e90d'),
+	(arrow-list-up '\e90e'),
+	(arrow-list-left '\e90f'),
+	(arrow-list-right '\e906'),
+	(arrow-down '\e907'),
+	(arrow-up '\e910'),
+	(arrow-left '\e911'),
+	(arrow-right '\e912'),
+	(check '\e908'),
+	(external-link '\e909'),
+	(rss '\e913'),
+	(data-box '\e914'),
+	(pin '\e915'),
+	(calendar '\e916'),
+	(plus '\e917'),
+	(thin-plus '\e918'),
+	(alert '\e919'),
+	(mail '\e91a'),
+	(close '\e91b'),
+	(circle-plus '\e91c'),
+	(circle-minus '\e91d'),
+	(time '\e91e'),
+	(star '\e91f'),
+	(attachment '\e920'),
+	(message '\e921'),
+	(notification '\e922'),
+	(settings '\e923'),
+	(exit '\e924'),
+	(squares-grid '\e925');
+
+
+@each $icon in $icons {
+	$class: nth($icon, 1);
+	$content: nth($icon, 2);
+
+	#{$theme-class}-icon-#{$class}::before {
+		content: $content;
+	}
+}

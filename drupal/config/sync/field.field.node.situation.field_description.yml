@@ -12,7 +12,7 @@ bundle: situation
 label: Popis
 description: 'Popis zobrazený na přehledu životních situací'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -16,6 +16,10 @@
       "version": "16"
     }
   },
+  "rules": {
+    "react/prop-types": "off",
+    "react/jsx-fragments": "off"
+  },
   "extends": [
     "standard",
     "standard-react",
