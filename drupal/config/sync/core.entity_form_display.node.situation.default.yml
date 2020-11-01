@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.situation.field_situation_link
     - field.field.node.situation.field_situation_ref_measures
     - field.field.node.situation.field_situation_type
+    - field.field.node.situation.field_situations
     - field.field.node.situation.field_valid_from
     - field.field.node.situation.field_valid_to
     - node.type.situation
@@ -34,7 +35,7 @@ content:
     type: text_textarea
     region: content
   field_internal_note:
-    weight: 10
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -42,7 +43,7 @@ content:
     type: text_textarea
     region: content
   field_meta_description:
-    weight: 9
+    weight: 11
     settings:
       rows: 5
       placeholder: ''
@@ -50,7 +51,7 @@ content:
     type: string_textarea
     region: content
   field_questions_answers:
-    weight: 26
+    weight: 10
     settings:
       rows: '3'
       placeholder: ''
@@ -97,6 +98,16 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_situations:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_valid_from:
     weight: 3
     settings: {  }
@@ -111,7 +122,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 11
+    weight: 13
     region: content
     settings:
       include_locked: true
@@ -120,7 +131,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 15
     region: content
     third_party_settings: {  }
   title:
@@ -132,7 +143,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 12
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
