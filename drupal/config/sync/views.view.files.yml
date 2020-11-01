@@ -8,9 +8,9 @@ dependencies:
 _core:
   default_config_hash: gLmoA0yjvlXfMRp9ihOhRKSSQQlbdLdvpDkbVwkYPrg
 id: files
-label: Files
+label: Soubory
 module: file
-description: 'Find and manage files.'
+description: 'Vyhledat a spravovat soubory.'
 tag: default
 base_table: file_managed
 base_field: fid
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Nadřízené
     position: 0
     display_options:
       access:
@@ -39,13 +39,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtr
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Řadit dle'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzestupně
+          sort_desc_label: Sestupně
       pager:
         type: mini
         options:
@@ -54,16 +54,16 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ Předchozí'
+            next: 'Následující ›'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Vše -'
             offset: false
-            offset_label: Offset
+            offset_label: Posun
       style:
         type: table
         options:
@@ -186,7 +186,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Name
+          label: Jméno
           exclude: false
           alter:
             alter_text: false
@@ -249,7 +249,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'MIME type'
+          label: 'Typ MIME'
           exclude: false
           alter:
             alter_text: false
@@ -301,7 +301,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Size
+          label: Velikost
           exclude: false
           alter:
             alter_text: false
@@ -353,7 +353,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Stav
           exclude: false
           alter:
             alter_text: false
@@ -397,8 +397,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: Temporary
-            format_custom_true: Permanent
+            format_custom_false: Dočasný
+            format_custom_true: Trvalý
           plugin_id: field
           entity_type: file
           entity_field: status
@@ -409,7 +409,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Upload date'
+          label: 'Datum nahrání'
           exclude: false
           alter:
             alter_text: false
@@ -465,7 +465,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Changed date'
+          label: 'Datum změny'
           exclude: false
           alter:
             alter_text: false
@@ -521,7 +521,7 @@ display:
           relationship: fid
           group_type: sum
           admin_label: ''
-          label: 'Used in'
+          label: 'Použito v'
           exclude: false
           alter:
             alter_text: false
@@ -585,7 +585,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: Filename
+            label: 'Název souboru'
             description: ''
             use_operator: false
             operator: filename_op
@@ -627,7 +627,7 @@ display:
           exposed: true
           expose:
             operator_id: filemime_op
-            label: 'MIME type'
+            label: 'Typ MIME'
             description: ''
             use_operator: false
             operator: filemime_op
@@ -669,7 +669,7 @@ display:
           exposed: true
           expose:
             operator_id: status_op
-            label: Status
+            label: Stav
             description: ''
             use_operator: false
             operator: status_op
@@ -700,7 +700,7 @@ display:
           entity_type: file
           entity_field: status
       sorts: {  }
-      title: Files
+      title: Soubory
       header: {  }
       footer: {  }
       empty:
@@ -709,7 +709,7 @@ display:
           table: views
           field: area_text_custom
           empty: true
-          content: 'No files available.'
+          content: 'Žádné soubory nejsou k dispozici.'
           plugin_id: text_custom
       relationships:
         fid:
@@ -736,13 +736,13 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: 'Files overview'
+    display_title: 'Přehled souborů'
     position: 1
     display_options:
       path: admin/content/files
       menu:
         type: tab
-        title: Files
+        title: Soubory
         description: ''
         menu_name: admin
         weight: 0
@@ -799,16 +799,16 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
+            previous: '‹ Předchozí'
+            next: 'Následující ›'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Vše -'
             offset: false
-            offset_label: Offset
+            offset_label: Posun
       filters: {  }
       filter_groups:
         operator: AND
@@ -871,7 +871,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Entity type'
+          label: 'Typ entity'
           exclude: false
           alter:
             alter_text: false
@@ -920,7 +920,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Registering module'
+          label: 'Probíhá registrace modulu'
           exclude: false
           alter:
             alter_text: false
@@ -1033,9 +1033,9 @@ display:
           exception:
             value: all
             title_enable: false
-            title: All
+            title: Vše
           title_enable: true
-          title: 'File usage information for {{ arguments.fid }}'
+          title: 'Informace o použití souboru pro {{arguments.fid}}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''

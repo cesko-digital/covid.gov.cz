@@ -7,6 +7,6 @@ dependencies:
 _core:
   default_config_hash: h3BeHVei4Lnyqbkao3YiF4KqoY-DhRvUNfEgKG8Rgjg
 id: paragraph.preview
-label: Preview
+label: Náhled
 targetEntityType: paragraph
 cache: true

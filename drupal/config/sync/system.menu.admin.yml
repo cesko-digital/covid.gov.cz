@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: sapEi2YDGoI9yQIT_WgIV2vUdQ6DScH0V3fAyTadAL0
 id: admin
-label: Administration
+label: Administrace
 description: 'Odkazy pro administrativní úkoly'
 locked: true
