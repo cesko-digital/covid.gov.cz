@@ -7,21 +7,30 @@ export const wrapPageElement = ({ element }) => {
   return <Layout>{element}</Layout>;
 };
 
+/*
 
-// FIXME: Uncomment when the GATSBY_APPINSIGHTS_KEY is added to Vercel
-// const appInsights = new ApplicationInsights({
-//   config: {
-//     instrumentationKey: process.env.GATSBY_APPINSIGHTS_KEY,
-//   },
-// });
+FIXME: Uncomment following code when app insights key env var is added to Vercel.
 
-// export const onInitialClientRender = () => {
-//   appInsights.loadAppInsights();
-//   appInsights.trackPageView();
-// };
+const appInsights =
+  process.env.NODE_ENV !== 'development'
+    ? new ApplicationInsights({
+        config: {
+          instrumentationKey: process.env.GATSBY_APPINSIGHTS_KEY,
+        },
+      })
+    : null;
 
-// export const onRouteUpdate = () => {
-//   appInsights.trackPageView();
-// };
+export const onInitialClientRender = () => {
+  if (appInsights) {
+    appInsights.loadAppInsights();
+    appInsights.trackPageView();
+  }
+};
 
-// (window as any).appInsights = appInsights;
+export const onRouteUpdate = () => {
+  if (appInsights) appInsights.trackPageView();
+};
+
+ (window as any).appInsights = appInsights;
+
+*/
