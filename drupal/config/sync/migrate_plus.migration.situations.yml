@@ -1,3 +1,4 @@
+uuid: 1af76586-6045-438a-9611-e35247fc112e
 langcode: en
 status: true
 dependencies:
@@ -37,22 +38,26 @@ source:
       selector: refCategoryId
     -
       name: description
-      label: 'Description'
+      label: Description
       selector: Description
     -
       name: note
       label: 'Internal note'
       selector: InternalRemark
-    - name: link_uri
+    -
+      name: link_uri
       label: 'Link URI'
       selector: TopicRelatedLink/0/Url
-    - name: link_label
+    -
+      name: link_label
       label: 'Link Label'
       selector: TopicRelatedLink/1/Name
-    - name: topics_array
+    -
+      name: topics_array
       label: 'Topics array'
       selector: TopicRelatedTopic
-    - name: faqs_array
+    -
+      name: faqs_array
       label: 'FAQs array'
       selector: TopicFAQ
   ids:

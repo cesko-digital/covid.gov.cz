@@ -52,7 +52,7 @@ process:
     plugin: format_date
     from_format: 'Y-m-d\TH:i:sP'
     to_format: 'Y-m-d\TH:i:s'
-    from_timezone: 'Europe/Prague'
+    from_timezone: Europe/Prague
     source: valid_from
   field_valid_to:
     -
@@ -64,7 +64,7 @@ process:
       plugin: format_date
       from_format: 'Y-m-d\TH:i:sP'
       to_format: 'Y-m-d\TH:i:s'
-      from_timezone: 'Europe/Prague'
+      from_timezone: Europe/Prague
       source: valid_to
   field_source/uri:
     -
