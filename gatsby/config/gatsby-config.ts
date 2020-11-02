@@ -1,3 +1,5 @@
+import { plugin as resolverPlugin } from '@graphql-codegen/typescript-resolvers';
+
 const config = {
   plugins: [
     {
@@ -13,6 +15,27 @@ const config = {
     'gatsby-plugin-tsconfig-paths',
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        codegenConfig: {
+          // key-value configs that will be applied to every plugins.
+          // Note: The example below is completely unnecessary, just a demonstration.
+          typesPrefix: 'I', // -> import { HiImageQuery } from '../../graphql-types'
+        },
+        codegenPlugins: [
+          {
+            // built-in plugin.
+            // Use `typescript` for `@graphql-codegen/typescript`
+            // and `operations` for `@graphql-codegen/typescript-operations`
+            resolve: 'typescript',
+            options: {
+              namingConvention: `pascal-case#pascalCase`,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
