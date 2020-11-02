@@ -11,13 +11,7 @@ services:
       context: .
       dockerfile: Dockerfile.php
     depends_on:
-      - mysql
-
-  adminer:
-    image: adminer:latest
-    ports: [ "${COVID_PORT_ADMINER}:8080" ]
-    depends_on:
-      - mysql
+      - database
 
   nginx:
     user: "${COVID_USER}"
@@ -28,9 +22,9 @@ services:
       context: .
       dockerfile: Dockerfile.nginx
 
-  mysql:
-    image:  mysql:5.7.31
-    ports: [ "${COVID_PORT_MYSQL}:3306" ]
+  database:
+    image:  mcr.microsoft.com/mssql/server:5.7.31
+    ports: [ "${COVID_PORT_MSSQL}:1433" ]
     environment:
-      MYSQL_ROOT_PASSWORD: "${COVID_MYSQL_ROOT_PASSWORD}"
-    volumes: [ "/var/lib/mysql" ]
+      ACCEPT_EULA: "y"
+      SA_PASSWORD: "SuperDrupalSite8"

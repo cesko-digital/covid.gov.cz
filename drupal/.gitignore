@@ -24,5 +24,3 @@
 /.env
 /.editorconfig
 /.gitattributes
-
-/.lando.yml

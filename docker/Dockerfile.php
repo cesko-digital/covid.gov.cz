@@ -9,11 +9,17 @@ COPY ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
 WORKDIR /var/www/html
 
 USER root
+# Add Microsoft repositories
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+   && curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
 RUN chown www-data:www-data /var/www \
-   && apt-get update && apt-get install -y nodejs apt-utils libpng-dev libjpeg-dev libwebp-dev libpq-dev default-mysql-client patch wget libzip-dev libfontconfig libxslt-dev lsof git git-core libbz2-dev vim mc libxrender1 \
+   && apt-get update && apt-get install -y nodejs apt-utils libpng-dev libjpeg-dev libwebp-dev libpq-dev patch wget libzip-dev libfontconfig libxslt-dev lsof git git-core libbz2-dev vim mc libxrender1 msodbcsql17 unixodbc-dev \
+   && pecl install sqlsrv pdo_sqlsrv \
    && docker-php-ext-configure bcmath --enable-bcmath \
    && docker-php-ext-configure gd --with-webp-dir=/usr --with-jpeg-dir=/usr \
-   && docker-php-ext-install gd mbstring opcache pdo pdo_mysql pdo_pgsql zip xsl bz2 exif  bcmath \
+   && docker-php-ext-install gd mbstring opcache zip xsl bz2 exif  bcmath \
+   && docker-php-ext-enable sqlsrv pdo_sqlsrv \
    && curl -fSL "https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar" -o /usr/local/bin/drush \
    && chmod +x /usr/local/bin/drush \
    && curl -fSL "https://getcomposer.org/download/1.9.1/composer.phar" -o /usr/local/bin/composer \
