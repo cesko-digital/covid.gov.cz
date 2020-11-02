@@ -8,9 +8,9 @@ dependencies:
 _core:
   default_config_hash: MxwbHUmXqKQgTGCTWcMxsfUH9NZJ8ZVqZp6801AOa40
 id: content_recent
-label: 'Recent content'
+label: 'Nový obsah'
 module: node
-description: 'Recent content.'
+description: 'Poslední obsah.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Nadřízené
     position: 0
     display_options:
       access:
@@ -39,13 +39,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Použít
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Řadit dle'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzestupně
+          sort_desc_label: Sestupně
       pager:
         type: some
         options:
@@ -261,7 +261,7 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: date
-      title: 'Recent content'
+      title: 'Nový obsah'
       header: {  }
       footer: {  }
       empty:
@@ -274,7 +274,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No content available.'
+          content: 'Žádný obsah není k dispozici.'
           plugin_id: text_custom
       relationships:
         uid:
@@ -292,7 +292,7 @@ display:
       display_extenders: {  }
       use_more: false
       use_more_always: false
-      use_more_text: More
+      use_more_text: Více
       link_url: ''
       link_display: '0'
     cache_metadata:
@@ -307,7 +307,7 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: Blok
     position: 1
     display_options:
       display_extenders: {  }

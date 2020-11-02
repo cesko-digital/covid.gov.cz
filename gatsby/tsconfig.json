@@ -14,7 +14,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["node", "react"]
+    "types": ["node", "react", "jest"]
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "public", ".cache"]

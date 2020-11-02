@@ -1,10 +1,12 @@
 import React from 'react';
+import classnames from 'classnames';
 import Footer from '@/components/footer';
 
-const DefaultLayout: React.FC<{ children }> = ({ children }) => {
+import styles from './default-layout.module.scss';
+
+const DefaultLayout: React.FC = ({ children }) => {
   return (
-    <div className="body__wrapper">
-      Layout Start
+    <div className={classnames('body__wrapper', styles.wrapper)}>
       <div>{children}</div>
       <Footer />
     </div>

@@ -10,7 +10,7 @@ _core:
 id: watchdog
 label: Watchdog
 module: views
-description: 'Recent log messages'
+description: 'Poslední zprávy v logu'
 tag: ''
 base_table: watchdog
 base_field: wid
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Nadřízené
     position: 0
     display_options:
       access:
@@ -39,13 +39,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtr
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Řadit dle'
           expose_sort_order: false
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzestupně
+          sort_desc_label: Sestupně
       pager:
         type: mini
         options:
@@ -55,12 +55,12 @@ display:
           total_pages: null
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Vše -'
             offset: false
-            offset_label: Offset
+            offset_label: Posun
           tags:
             previous: ‹‹
             next: ››
@@ -150,7 +150,7 @@ display:
           field: nothing
           relationship: none
           group_type: group
-          admin_label: Icon
+          admin_label: Ikona
           label: ''
           exclude: false
           alter:
@@ -249,7 +249,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Severity
+          label: Vážnost
           exclude: true
           alter:
             alter_text: false
@@ -299,7 +299,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Type
+          label: Typ
           exclude: false
           alter:
             alter_text: false
@@ -348,7 +348,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Date
+          label: Datum
           exclude: false
           alter:
             alter_text: false
@@ -400,7 +400,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Message
+          label: Zpráva
           exclude: false
           alter:
             alter_text: false
@@ -450,7 +450,7 @@ display:
           relationship: uid
           group_type: group
           admin_label: ''
-          label: User
+          label: Uživatel
           exclude: false
           alter:
             alter_text: false
@@ -515,7 +515,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Operace
           exclude: false
           alter:
             alter_text: false
@@ -571,7 +571,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: Type
+            label: Typ
             description: ''
             use_operator: false
             operator: type_op
@@ -612,7 +612,7 @@ display:
           exposed: true
           expose:
             operator_id: severity_op
-            label: Severity
+            label: Vážnost
             description: ''
             use_operator: false
             operator: severity_op
@@ -653,7 +653,7 @@ display:
           expose:
             label: ''
           plugin_id: standard
-      title: 'Recent log messages'
+      title: 'Poslední zprávy v logu'
       header: {  }
       footer: {  }
       empty:
@@ -663,10 +663,10 @@ display:
           field: area_text_custom
           relationship: none
           group_type: group
-          admin_label: 'No log messages available.'
+          admin_label: 'Nejsou k dispozici žádné zprávy v logu.'
           empty: true
           tokenize: false
-          content: 'No log messages available.'
+          content: 'Nejsou k dispozici žádné zprávy v logu.'
           plugin_id: text_custom
       relationships:
         uid:
@@ -697,7 +697,7 @@ display:
   page:
     display_plugin: page
     id: page
-    display_title: Page
+    display_title: Stránka
     position: 1
     display_options:
       display_extenders: {  }

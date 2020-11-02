@@ -1,0 +1,50 @@
+uuid: 78fae360-298a-4af4-ae73-0ff60dd6b7a8
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.icons.field_icon_code
+    - field.field.taxonomy_term.icons.field_icon_file
+    - field.field.taxonomy_term.icons.field_icon_set
+    - taxonomy.vocabulary.icons
+  module:
+    - file
+    - options
+    - text
+id: taxonomy_term.icons.default
+targetEntityType: taxonomy_term
+bundle: icons
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon_code:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_icon_file:
+    weight: 3
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_icon_set:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  langcode: true

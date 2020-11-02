@@ -18,8 +18,32 @@ const config = {
       options: {
         // develop: true,
         whitelist: ['pvs-theme', 'a'],
+        whitelistPatterns: [
+          /^col/,
+          /^justify-content/,
+          /^align-items/,
+          /^align-self/,
+          /^pvs-theme-icon/,
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-i18next',
+      options: {
+        path: `${__dirname}/locales`,
+        languages: ['cs', 'en'],
+        defaultLanguage: 'cs',
+        redirect: false,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
       },
     },
   ],
 };
+
 export default config;

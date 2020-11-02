@@ -1,0 +1,24 @@
+uuid: 7923f255-1a88-434d-b496-8047d1ba5660
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valid_from
+    - node.type.measure
+  module:
+    - datetime
+id: node.measure.field_valid_from
+field_name: field_valid_from
+entity_type: node
+bundle: measure
+label: 'Platnost od'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

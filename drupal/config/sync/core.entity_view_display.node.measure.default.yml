@@ -3,10 +3,16 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.measure.body
+    - field.field.node.measure.field_content
+    - field.field.node.measure.field_meta_description
     - field.field.node.measure.field_region
+    - field.field.node.measure.field_source
+    - field.field.node.measure.field_valid_from
+    - field.field.node.measure.field_valid_to
     - node.type.measure
   module:
+    - datetime
+    - link
     - text
     - user
 id: node.measure.default
@@ -14,12 +20,19 @@ targetEntityType: node
 bundle: measure
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
+  field_content:
+    weight: 107
+    label: above
     settings: {  }
     third_party_settings: {  }
+    type: text_default
+    region: content
+  field_meta_description:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_region:
     weight: 102
@@ -28,6 +41,36 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_source:
+    weight: 105
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_valid_from:
+    weight: 103
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   links:
     weight: 100

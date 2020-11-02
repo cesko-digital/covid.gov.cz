@@ -50,3 +50,7 @@
 .text-hide {
   @include text-hide();
 }
+
+.text-black {
+  color: #000;
+}
