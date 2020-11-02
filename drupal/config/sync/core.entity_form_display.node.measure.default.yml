@@ -11,17 +11,88 @@ dependencies:
     - field.field.node.measure.field_valid_from
     - field.field.node.measure.field_valid_to
     - node.type.measure
+    - workflows.workflow.content
   module:
+    - content_moderation
     - datetime
+    - field_group
     - link
     - text
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_content_content
+        - group_meta
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Obsah
+    group_content_content:
+      children:
+        - title
+        - field_region
+        - field_measure_type
+        - field_source
+        - group_flex
+        - field_content
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Obsah
+    group_meta:
+      children:
+        - field_meta_description
+      parent_name: group_content
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Meta
+    group_flex:
+      children:
+        - field_valid_from
+        - field_valid_to
+      parent_name: group_content_content
+      weight: 5
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: field-group--flex
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Flex
 id: node.measure.default
 targetEntityType: node
 bundle: measure
 mode: default
 content:
   field_content:
-    weight: 10
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -29,13 +100,13 @@ content:
     type: text_textarea
     region: content
   field_measure_type:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_meta_description:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -43,7 +114,7 @@ content:
     type: string_textarea
     region: content
   field_region:
-    weight: 1
+    weight: 2
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -53,7 +124,7 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_source:
-    weight: 8
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -61,27 +132,27 @@ content:
     type: link_default
     region: content
   field_valid_from:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_valid_to:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 4
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 12
     settings: {  }
     region: content
     third_party_settings: {  }
@@ -89,19 +160,19 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
