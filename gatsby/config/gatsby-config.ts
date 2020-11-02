@@ -24,6 +24,7 @@ const config = {
           /^align-items/,
           /^align-self/,
           /^pvs-theme-icon/,
+          /btn/,
         ],
       },
     },
