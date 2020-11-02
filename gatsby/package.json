@@ -23,6 +23,7 @@
     "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
     "@types/react-helmet": "^6.1.0",
+    "@types/react-test-renderer": "^16.9.3",
     "classnames": "^2.2.6",
     "gatsby": "^2.24.91",
     "gatsby-plugin-purgecss": "^5.0.0",
