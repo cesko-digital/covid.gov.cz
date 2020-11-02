@@ -19,6 +19,11 @@ type_settings:
       default_revision: false
       label: Approved
       weight: 0
+    archived:
+      published: false
+      default_revision: true
+      label: Archived
+      weight: 2
     draft:
       label: Draft
       published: false
@@ -43,11 +48,21 @@ type_settings:
         - needs_review
       to: approved
       weight: 0
+    archive:
+      label: Archive
+      from:
+        - approved
+        - draft
+        - needs_review
+        - published
+      to: archived
+      weight: 2
     create_new_draft:
       label: 'Create New Draft'
       to: draft
       weight: -2
       from:
+        - archived
         - draft
         - needs_review
         - published
