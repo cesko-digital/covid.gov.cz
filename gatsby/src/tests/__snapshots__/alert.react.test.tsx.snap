@@ -24,6 +24,12 @@ exports[`Alert box renders correctly 1`] = `
       >
         Testovací message
       </span>
+      <a
+        className="btnSmallBlack"
+        href="#"
+      >
+        Více
+      </a>
     </div>
   </div>
 </div>

@@ -1,1 +1,1 @@
-export const smallBlackButton: string;
+export const btnSmallBlack: string;

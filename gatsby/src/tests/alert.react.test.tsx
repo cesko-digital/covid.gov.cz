@@ -3,7 +3,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 test('Alert box renders correctly', () => {
-  const component = renderer.create(<Alert message="Testovací message" />);
+  const component = renderer.create(
+    <Alert message="Testovací message" link="#" />,
+  );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

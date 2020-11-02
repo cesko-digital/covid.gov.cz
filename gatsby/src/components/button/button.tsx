@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import s from './variants.module.scss';
+import styles from './variants.module.scss';
 
 const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
   return classNames(
@@ -10,7 +10,7 @@ const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
     { 'btn-outline-dark': variant === 'outline-black' },
     { 'text-black': variant === 'outline-black' },
     { 'btn-secondary': variant === 'secondary' },
-    { [s.smallBlackButton]: variant === 'small-black' },
+    { [styles.btnSmallBlack]: variant === 'small-black' },
     { [additionalClass]: additionalClass },
   );
 };
