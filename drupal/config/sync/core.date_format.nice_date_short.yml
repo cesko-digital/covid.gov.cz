@@ -1,0 +1,8 @@
+uuid: 9959e2ae-5b7a-4b0b-806a-6e4c11d26bed
+langcode: cs
+status: true
+dependencies: {  }
+id: nice_date_short
+label: 'Nice date short'
+locked: false
+pattern: 'j. n. Y, H:i'

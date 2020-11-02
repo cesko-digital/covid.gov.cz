@@ -1,0 +1,8 @@
+uuid: 26abd59f-ad0e-4fb3-9a38-59eafcb24bfa
+langcode: cs
+status: true
+dependencies: {  }
+id: nice_date_long
+label: 'Nice date long'
+locked: false
+pattern: 'l, j. F Y - H:i'
