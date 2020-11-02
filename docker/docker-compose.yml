@@ -10,6 +10,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.php
+    links:
+      - database
     depends_on:
       - database
 
@@ -23,8 +25,12 @@ services:
       dockerfile: Dockerfile.nginx
 
   database:
-    image:  mcr.microsoft.com/mssql/server:5.7.31
+    image: microsoft/mssql-server-linux
     ports: [ "${COVID_PORT_MSSQL}:1433" ]
+    command: /opt/mssql/bin/sqlservr
     environment:
-      ACCEPT_EULA: "y"
-      SA_PASSWORD: "SuperDrupalSite8"
+      ACCEPT_EULA: 'Y'
+      PATH: >-
+        /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/mssql-tools/bin
+      SA_PASSWORD: SuperDrupalSite8
+
