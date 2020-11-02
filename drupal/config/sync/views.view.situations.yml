@@ -14,7 +14,7 @@ dependencies:
     - node
     - user
 id: situations
-label: Situations
+label: 'Covid - Situations'
 module: views
 description: ''
 tag: ''
@@ -192,7 +192,7 @@ display:
           type: datetime_default
           settings:
             timezone_override: ''
-            format_type: short
+            format_type: nice_date_long
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -256,7 +256,7 @@ display:
           type: datetime_default
           settings:
             timezone_override: ''
-            format_type: short
+            format_type: nice_date_long
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -538,7 +538,7 @@ display:
             operator_limit_selection: false
             operator_list: {  }
       sorts: {  }
-      title: Situations
+      title: 'Životní situace'
       header:
         area_text_custom:
           id: area_text_custom
@@ -549,7 +549,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: "<ul class=\"action-links\">\r\n<li><a href=\"/node/add/situation\" class=\"button button-action button--primary button--small\">Přidat Životní situaci</a></li>\r\n</ul>"
+          content: "<ul class=\"action-links\">\r\n<li><a href=\"/node/add/situation\" class=\"button button-action button--primary button--small\">Přidat Životní situaci</a></li>\r\n</ul>\r\n<h2>Seznam aktuálně vydaných Životních situací. </h2>\r\n<p>Rozpracované verze najdete v <a href=\"/admin/content/moderated\">Moderovaném obsahu</a>.</p>"
           plugin_id: text_custom
       footer: {  }
       empty: {  }
