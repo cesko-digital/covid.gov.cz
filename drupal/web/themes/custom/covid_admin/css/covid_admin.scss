@@ -45,3 +45,14 @@ $moderated-content--approved: rgb(153, 255, 106);
     }
   }
 }
+
+// Edit form styles.
+.field-group--flex {
+  display: flex;
+
+  > div + div {
+    @media (min-width: 1370px) {
+      margin-left: 20px; 
+    }
+ }
+}
