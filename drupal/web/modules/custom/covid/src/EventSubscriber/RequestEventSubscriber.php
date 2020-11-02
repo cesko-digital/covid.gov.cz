@@ -5,6 +5,7 @@ namespace Drupal\covid\EventSubscriber;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
 use Drupal\user\Entity\User;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -16,6 +17,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
  * Listens to the request events.
  */
 class RequestEventSubscriber implements EventSubscriberInterface {
+
+  use StringTranslationTrait;
 
   /**
    * The current route match.
@@ -80,7 +83,7 @@ class RequestEventSubscriber implements EventSubscriberInterface {
             'user' => $user->id(),
           ]);
           $event->setResponse(new RedirectResponse($url->toString()));
-          $this->messenger->addError('Please enable two-factor authentication.');
+          $this->messenger->addError($this->t('Please enable two-factor authentication.'));
         }
       }
     }
