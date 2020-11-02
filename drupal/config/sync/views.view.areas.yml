@@ -282,7 +282,18 @@ display:
           entity_field: name
           plugin_id: standard
       title: Okruhy
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<ul class=\"action-links\">\r\n<li><a href=\"/admin/structure/taxonomy/manage/area/add\" class=\"button button-action button--primary button--small\">Přidat Okruh životní situace</a></li>\r\n</ul>"
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships: {  }

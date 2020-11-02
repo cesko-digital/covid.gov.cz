@@ -283,7 +283,18 @@ display:
             label: ''
           granularity: second
       title: Opatření
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<ul class=\"action-links\">\r\n<li><a href=\"/node/add/measure\" class=\"button button-action button--primary button--small\">Přidat Opatření</a></li>\r\n</ul>"
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships: {  }
