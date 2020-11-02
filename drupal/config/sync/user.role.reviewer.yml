@@ -8,10 +8,8 @@ weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access content overview'
   - 'access site in maintenance mode'
   - 'access toolbar'
-  - 'administer nodes'
   - 'change own username'
   - 'delete any measure content'
   - 'delete any page content'

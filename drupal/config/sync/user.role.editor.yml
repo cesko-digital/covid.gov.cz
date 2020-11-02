@@ -8,12 +8,10 @@ weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access content overview'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer menu'
-  - 'administer nodes'
   - 'change own username'
   - 'create content translations'
   - 'create measure content'
