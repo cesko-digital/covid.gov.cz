@@ -25,4 +25,12 @@
 .view-moderated-content .moderation-state__legend .moderation-state--approved {
   background: rgb(153, 255, 106); }
 
+.field-group--flex {
+  display: flex; 
+  flex-wrap: wrap; }
+
+@media (min-width: 1370px) {
+  .field-group--flex  > div + div {
+    margin-left: 20px; }
+}
 /*# sourceMappingURL=covid_admin.css.map */
