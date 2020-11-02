@@ -5,8 +5,81 @@ dependencies:
   config:
     - field.field.node.homepage.field_paragraphs
     - node.type.homepage
+    - workflows.workflow.content
   module:
+    - content_moderation
+    - field_group
     - paragraphs
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - group_content_content
+        - group_situation
+        - group_measure
+        - group_meta
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Obsah
+    group_content_content:
+      children:
+        - title
+      parent_name: group_content
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Obsah
+    group_meta:
+      children: {  }
+      parent_name: group_content
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Meta
+    group_situation:
+      children: {  }
+      parent_name: group_content
+      weight: 21
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Životní situace'
+    group_measure:
+      children: {  }
+      parent_name: group_content
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Opatření
 id: node.homepage.default
 targetEntityType: node
 bundle: homepage
@@ -14,13 +87,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraphs:
     type: entity_reference_paragraphs
-    weight: 121
+    weight: 10
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -37,43 +110,49 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    settings: {  }
+    region: content
+    third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
