@@ -30,6 +30,7 @@
         "drupal/migrate_tools": "^5.0",
         "drupal/one_time_password": "^1.0@RC",
         "drupal/paragraphs": "^1.12",
+        "drupal/redis": "^1.4",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
