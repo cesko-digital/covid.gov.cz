@@ -1,0 +1,26 @@
+name: covid
+recipe: drupal8
+config:
+  webroot: web
+services:
+  appserver:
+    type: php:7.4
+    overrides:
+      environment:
+        ACCEPT_EULA: "Y"
+    build_as_root:
+      - apt-get update -y
+      - apt-get install apt-transport-https -y
+      - curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+      - curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+      - apt-get update -y
+      - apt-get install msodbcsql17 -y
+      - apt-get install unixodbc-dev -y
+      - pecl install sqlsrv
+      - pecl install pdo_sqlsrv
+      - docker-php-ext-enable sqlsrv
+      - docker-php-ext-enable pdo_sqlsrv
+  database:
+    type: mssql
+    creds:
+      password: SuperDrupalSite8
