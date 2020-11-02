@@ -33,7 +33,10 @@
   border-color: #2362a2;
   color: #2362a2;
 
-  &:hover {
-    background-color: #2362a2;
+  &:hover,
+  &:focus {
+    border-color: #254e80;
+    background-color: #e5ebf0;
+    color: #254e80;
   }
 }
