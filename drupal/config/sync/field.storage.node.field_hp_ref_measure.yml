@@ -1,13 +1,12 @@
-uuid: 4d695fe2-8527-4357-8fd7-cbf5e90e2741
+uuid: 9732d157-956a-4fd4-b25c-21f8b8992500
 langcode: cs
 status: true
 dependencies:
   module:
     - node
-    - paragraphs
-id: paragraph.field_measures
-field_name: field_measures
-entity_type: paragraph
+id: node.field_hp_ref_measure
+field_name: field_hp_ref_measure
+entity_type: node
 type: entity_reference
 settings:
   target_type: node

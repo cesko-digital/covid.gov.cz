@@ -1,18 +1,18 @@
-uuid: 80f90c6d-967b-41d5-af02-86383c2fb6d7
+uuid: 957cf768-7483-4361-8c9c-40a58edc30f6
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_measures
+    - field.storage.node.field_hp_ref_measure
+    - node.type.homepage
     - node.type.measure
-    - paragraphs.paragraphs_type.latest_measures
-id: paragraph.latest_measures.field_measures
-field_name: field_measures
-entity_type: paragraph
-bundle: latest_measures
-label: Opatření
+id: node.homepage.field_hp_ref_measure
+field_name: field_hp_ref_measure
+entity_type: node
+bundle: homepage
+label: 'Vybraná opatření'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

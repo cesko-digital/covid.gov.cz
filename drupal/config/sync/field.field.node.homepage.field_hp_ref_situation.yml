@@ -1,0 +1,28 @@
+uuid: a3cb73bb-7fe6-4901-aee7-bba7db645cfc
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hp_ref_situation
+    - node.type.homepage
+    - node.type.situation
+id: node.homepage.field_hp_ref_situation
+field_name: field_hp_ref_situation
+entity_type: node
+bundle: homepage
+label: 'Vybrané situace'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      situation: situation
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

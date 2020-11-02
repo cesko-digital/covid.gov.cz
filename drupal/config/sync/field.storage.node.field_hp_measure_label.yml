@@ -1,12 +1,12 @@
-uuid: 2ff8c840-2cc8-47e9-a454-e932b9215661
+uuid: 216a5fd6-5685-4ff9-a1fc-4965d5b33f9b
 langcode: cs
 status: true
 dependencies:
   module:
-    - paragraphs
-id: paragraph.field_title
-field_name: field_title
-entity_type: paragraph
+    - node
+id: node.field_hp_measure_label
+field_name: field_hp_measure_label
+entity_type: node
 type: string
 settings:
   max_length: 255
