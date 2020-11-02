@@ -117,6 +117,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  moderation_state:
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+    disabled: false
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
@@ -129,9 +135,57 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
-  field_paragraphs:
-    fieldName: field_paragraphs
-    publicName: field_paragraphs
+  field_hp_measure_label:
+    fieldName: field_hp_measure_label
+    publicName: measure_label
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_measure_link:
+    fieldName: field_hp_measure_link
+    publicName: measure_link
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_measure_text:
+    fieldName: field_hp_measure_text
+    publicName: measure_text
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_ref_measure:
+    fieldName: field_hp_ref_measure
+    publicName: measure_items
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_ref_situation:
+    fieldName: field_hp_ref_situation
+    publicName: situation_items
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_situation_label:
+    fieldName: field_hp_situation_label
+    publicName: situation_label
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_situation_link:
+    fieldName: field_hp_situation_link
+    publicName: situation_link
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_situation_text:
+    fieldName: field_hp_situation_text
+    publicName: situation_text
+    enhancer:
+      id: ''
+    disabled: false
+  field_meta_description:
+    fieldName: field_meta_description
+    publicName: meta_description
     enhancer:
       id: ''
     disabled: false

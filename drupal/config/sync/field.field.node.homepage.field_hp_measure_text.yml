@@ -1,0 +1,19 @@
+uuid: 4baf2fa2-f3ae-4b76-a383-0ab933985aa9
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hp_measure_text
+    - node.type.homepage
+id: node.homepage.field_hp_measure_text
+field_name: field_hp_measure_text
+entity_type: node
+bundle: homepage
+label: 'Úvodník sekce'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

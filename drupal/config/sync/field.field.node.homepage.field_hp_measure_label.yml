@@ -1,0 +1,19 @@
+uuid: cbafafa6-5750-4379-8f5b-44c0bb604145
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hp_measure_label
+    - node.type.homepage
+id: node.homepage.field_hp_measure_label
+field_name: field_hp_measure_label
+entity_type: node
+bundle: homepage
+label: 'Nadpis sekce'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

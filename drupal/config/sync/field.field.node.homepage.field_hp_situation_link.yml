@@ -1,0 +1,23 @@
+uuid: 0f2a4148-355a-41be-94ad-601c3568b8d1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hp_situation_link
+    - node.type.homepage
+  module:
+    - link
+id: node.homepage.field_hp_situation_link
+field_name: field_hp_situation_link
+entity_type: node
+bundle: homepage
+label: Odkaz
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

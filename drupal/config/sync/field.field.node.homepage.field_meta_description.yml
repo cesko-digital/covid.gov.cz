@@ -1,0 +1,19 @@
+uuid: 3b2bc42d-b0c8-48ef-bff2-d633a17304a0
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_description
+    - node.type.homepage
+id: node.homepage.field_meta_description
+field_name: field_meta_description
+entity_type: node
+bundle: homepage
+label: 'Meta popisek'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
