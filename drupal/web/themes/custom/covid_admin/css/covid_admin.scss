@@ -6,14 +6,42 @@
   }
 }
 
-.view-moderated-content .views-field-moderation-state {
-  &.moderation-state--draft {
-    background: rgb(252, 153, 153);
+// Styles for moderation content view table.
+$moderated-content--draft: rgb(252, 153, 153);
+$moderated-content--needs-review: rgb(110, 197, 255);
+$moderated-content--approved: rgb(153, 255, 106);
+.view-moderated-content {
+  .views-field-moderation-state {
+    &.moderation-state--draft {
+      background: $moderated-content--draft;
+    }
+    &.moderation-state--needs-review {
+      background:$moderated-content--needs-review;
+    }
+    &.moderation-state--approved {
+      background: $moderated-content--approved;
+    }
   }
-  &.moderation-state--needs-review {
-    background: rgb(110, 197, 255);
-  }
-  &.moderation-state--approved {
-    background: rgb(153, 255, 106);
+
+  .moderation-state__legend {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    flex-direction: column;
+
+    > div {
+      padding: 5px;
+      width: 100%;
+    }
+
+    .moderation-state--draft {
+      background: $moderated-content--draft; 
+    }
+    .moderation-state--needs-review {
+      background: $moderated-content--needs-review; 
+    }
+    .moderation-state--approved {
+      background: $moderated-content--approved; 
+    }
   }
 }

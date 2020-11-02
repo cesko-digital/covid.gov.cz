@@ -14,7 +14,7 @@ dependencies:
 _core:
   default_config_hash: Kjqf5d4F134C3zua0tXV7LA3m5OEeS_Fowa2dP9kk2I
 id: moderated_content
-label: 'Moderated content'
+label: 'Moderovaný obsah'
 module: views
 description: 'Find and moderate content.'
 tag: ''
@@ -24,7 +24,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Nadřízené
     position: 0
     display_options:
       access:
@@ -45,13 +45,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtr
           reset_button: true
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Řadit dle'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Vzestupně
+          sort_desc_label: Sestupně
       pager:
         type: full
         options:
@@ -60,10 +60,10 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
+            previous: '‹ Předchozí'
+            next: 'Následující ›'
+            first: '« První'
+            last: 'Poslední »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -144,7 +144,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Title
+          label: Nadpis
           exclude: false
           alter:
             alter_text: false
@@ -209,7 +209,7 @@ display:
           relationship: nid
           group_type: group
           admin_label: ''
-          label: 'Content type'
+          label: 'Typ obsahu'
           exclude: false
           alter:
             alter_text: false
@@ -274,7 +274,7 @@ display:
           relationship: uid
           group_type: group
           admin_label: ''
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -339,7 +339,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Moderation state'
+          label: 'Stav moderování'
           exclude: false
           alter:
             alter_text: false
@@ -468,7 +468,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Updated
+          label: Aktualizováno
           exclude: false
           alter:
             alter_text: false
@@ -535,7 +535,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Operace
           exclude: false
           alter:
             alter_text: false
@@ -632,7 +632,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Nadpis
             description: ''
             use_operator: false
             operator: title_op
@@ -674,7 +674,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'Content type'
+            label: 'Typ obsahu'
             description: ''
             use_operator: false
             operator: type_op
@@ -720,7 +720,7 @@ display:
           exposed: true
           expose:
             operator_id: moderation_state_op
-            label: 'Moderation state'
+            label: 'Stav moderování'
             description: ''
             use_operator: false
             operator: moderation_state_op
@@ -764,7 +764,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Jazyk
             description: ''
             use_operator: false
             operator: langcode_op
@@ -842,7 +842,18 @@ display:
       sorts: {  }
       title: 'Moderovaný obsah'
       header: {  }
-      footer: {  }
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: "<div class=\"moderation-state__legend\">\r\n<h3>Legenda</h3>\r\n<div class=\"moderation-state--draft\">Draft – Návrh</div>\r\n<div class=\"moderation-state--needs-review\">Needs Review – Připraveno ke kontrole</div>\r\n<div class=\"moderation-state--approved\">Approved – Schváleno</div>\r\n</div>"
+          plugin_id: text_custom
       empty:
         area_text_custom:
           id: area_text_custom
