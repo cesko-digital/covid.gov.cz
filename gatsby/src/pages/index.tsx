@@ -7,7 +7,7 @@ import MeasureList from '@/components/measure-list';
 import SearchBox from '@/components/search-box';
 import Row from '@/components/row';
 import Container from '@/components/container';
-import Alert from '@/components/alert';
+import Alert, { AlertContaner } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 
 interface Data {}
@@ -25,7 +25,7 @@ const Home: React.FC<Props> = ({ data }) => {
           <SearchBox />
         </Row>
       </Container>
-      <Alert />
+      <AlertContaner />
       <Container>
         <ContentBox
           title="Životní situace"
