@@ -9,7 +9,7 @@ dependencies:
     - taxonomy
     - user
 id: areas
-label: Areas
+label: 'Covid - Areas'
 module: views
 description: ''
 tag: ''
@@ -107,7 +107,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -122,57 +122,6 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        operations:
-          id: operations
-          table: taxonomy_term_data
-          field: operations
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Akce
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          destination: false
-          entity_type: taxonomy_term
-          plugin_id: entity_operations
         status:
           id: status
           table: taxonomy_term_field_data
@@ -240,6 +189,57 @@ display:
           entity_type: taxonomy_term
           entity_field: status
           plugin_id: field
+        operations:
+          id: operations
+          table: taxonomy_term_data
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Akce
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: false
+          entity_type: taxonomy_term
+          plugin_id: entity_operations
       filters:
         status:
           value: '1'
@@ -281,7 +281,7 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: standard
-      title: Okruhy
+      title: 'Okruhy Životních Situací'
       header:
         area_text_custom:
           id: area_text_custom
@@ -316,7 +316,7 @@ display:
       path: admin/covid/areas
       menu:
         type: normal
-        title: Okruhy
+        title: 'Okruhy ŽS'
         description: ''
         expanded: false
         parent: covid_ui

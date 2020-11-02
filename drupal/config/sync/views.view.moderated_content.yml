@@ -3,6 +3,7 @@ langcode: cs
 status: true
 dependencies:
   config:
+    - system.menu.covid
     - workflows.workflow.content
   enforced:
     module:
@@ -14,7 +15,7 @@ dependencies:
 _core:
   default_config_hash: Kjqf5d4F134C3zua0tXV7LA3m5OEeS_Fowa2dP9kk2I
 id: moderated_content
-label: 'Moderovaný obsah'
+label: 'Covid - Moderovaný obsah'
 module: views
 description: 'Find and moderate content.'
 tag: ''
@@ -66,12 +67,12 @@ display:
             last: 'Poslední »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Položek na stránku'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Vše -'
             offset: false
-            offset_label: Offset
+            offset_label: Posun
           quantity: 9
       style:
         type: table
@@ -579,7 +580,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: short
+            date_format: nice_date_short
             custom_date_format: ''
             timezone: ''
           group_column: value
@@ -983,6 +984,15 @@ display:
       display_extenders: {  }
       path: admin/content/moderated
       display_description: ''
+      menu:
+        type: normal
+        title: 'Moderovaný obsah'
+        description: ''
+        expanded: false
+        parent: covid_ui
+        weight: -30
+        context: '0'
+        menu_name: covid
     cache_metadata:
       max-age: -1
       contexts:
