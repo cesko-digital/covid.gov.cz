@@ -5,7 +5,7 @@ slogan: ''
 page:
   403: ''
   404: ''
-  front: /admin/content
+  front: /admin/content/moderated
 admin_compact_mode: false
 weight_select_max: 100
 langcode: cs
