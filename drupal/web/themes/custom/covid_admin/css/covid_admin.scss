@@ -5,3 +5,15 @@
     }
   }
 }
+
+.view-moderated-content .views-field-moderation-state {
+  &.moderation-state--draft {
+    background: rgb(252, 153, 153);
+  }
+  &.moderation-state--needs-review {
+    background: rgb(110, 197, 255);
+  }
+  &.moderation-state--approved {
+    background: rgb(153, 255, 106);
+  }
+}

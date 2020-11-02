@@ -1,7 +1,7 @@
 import React from 'react';
-import AccordionSection, { Section } from '@/components/accordion/accordion-section';
-
-import styles from './accordion.module.scss';
+import AccordionSection, {
+  Section,
+} from '@/components/accordion/accordion-section';
 
 interface Props {
   data: Section[];
@@ -9,7 +9,7 @@ interface Props {
 
 const Accordion: React.FC<Props> = ({ data }) => {
   return (
-    <div className={styles.accordion}>
+    <div>
       {data.map((item, index) => (
         <AccordionSection key={index} {...item} />
       ))}

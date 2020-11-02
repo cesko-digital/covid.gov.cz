@@ -1,0 +1,14 @@
+uuid: 037a4fd0-adad-4e74-bad2-4f4c297f676c
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.reviewer
+  module:
+    - user
+id: user_remove_role_action.reviewer
+label: 'Odebrat vybraným uživatelům roli Reviewer'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: reviewer

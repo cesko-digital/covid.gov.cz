@@ -1,14 +1,16 @@
 import React from 'react';
 import classNames from 'classnames';
+import s from './variants.module.scss';
 
 const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
   return classNames(
-    'btn',
+    { btn: variant !== 'small-black' },
     { 'btn-primary': variant === 'contained' },
     { 'btn-outline-primary': variant === 'outline' },
     { 'btn-outline-dark': variant === 'outline-black' },
     { 'text-black': variant === 'outline-black' },
     { 'btn-secondary': variant === 'secondary' },
+    { [s.smallBlackButton]: variant === 'small-black' },
     { [additionalClass]: additionalClass },
   );
 };
@@ -17,7 +19,8 @@ export type ButtonVariant =
   | 'contained'
   | 'outline'
   | 'secondary'
-  | 'outline-black';
+  | 'outline-black'
+  | 'small-black';
 
 interface IProps {
   text?: string;

@@ -1,10 +1,10 @@
 country:
-  default: ''
-first_day: 0
+  default: CZ
+first_day: 1
 timezone:
-  default: Europe/Berlin
+  default: Europe/Prague
   user:
-    configurable: true
+    configurable: false
     warn: false
     default: 0
 _core:

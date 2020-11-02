@@ -5,6 +5,7 @@ module:
   block: 0
   breakpoint: 0
   ckeditor: 0
+  content_moderation: 0
   covid: 0
   covid_ui: 0
   datetime: 0
@@ -40,6 +41,7 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  workflows: 0
   content_translation: 10
   views: 10
   paragraphs: 11

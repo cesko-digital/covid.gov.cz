@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.measure.field_content
+    - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
     - field.field.node.measure.field_region
     - field.field.node.measure.field_source
@@ -25,6 +26,7 @@ content:
     region: content
 hidden:
   field_content: true
+  field_measure_type: true
   field_meta_description: true
   field_region: true
   field_source: true

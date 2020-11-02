@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert box renders correctly 1`] = `
+<div
+  className="row justify-content-center align-items-center w-100 m-0 bg-warning text-black"
+>
+  <div
+    className="col-11 col-md-9 col-lg-6"
+  >
+    <div
+      className="d-flex align-items-center justify-content-center py-1"
+    >
+      <span
+        className="pvs-theme-icon-alert"
+        style={
+          Object {
+            "fontSize": 20,
+          }
+        }
+        title=""
+      />
+      <span
+        className="ml-2"
+      >
+        Testovací message
+      </span>
+    </div>
+  </div>
+</div>
+`;

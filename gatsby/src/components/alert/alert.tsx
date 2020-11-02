@@ -3,7 +3,19 @@ import Button from '../button';
 import GovIcon from '../gov-icon';
 import Row from '../row';
 import Col from '../col';
-const Alert: React.FC = () => {
+
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+
+interface IProps {
+  message: string;
+  link?: string;
+}
+
+const Alert: React.FC<IProps> = ({
+  message = 'Probíhá aktualizace dat, prosím, berte na vědomí, že data nemusí být aktuální všude.',
+  link,
+}) => {
+  const { t } = useTranslation();
   return (
     <>
       <Row
@@ -11,13 +23,15 @@ const Alert: React.FC = () => {
         justify="center"
         alignItems="center"
       >
-        <Col col={11} colMd={6}>
+        <Col col={11} colMd={9} colLg={6}>
           <div className="d-flex align-items-center justify-content-center py-1">
             <GovIcon icon="alert" size={20} />
-            <span className="text-center mx-1">
-              Nemocnice kolabují lorem dolores mendes lorem ipsum!
-            </span>
-            <Button variant="outline-black" text="Více" />
+            <span className="ml-2">{message}</span>
+            {link != null ? (
+              <Button variant="small-black" text={t('Více')} href={link} />
+            ) : (
+              <></>
+            )}
           </div>
         </Col>
       </Row>

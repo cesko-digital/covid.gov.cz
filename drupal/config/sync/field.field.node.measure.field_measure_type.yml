@@ -1,0 +1,29 @@
+uuid: d6dbe7e4-7a64-459f-879d-8697e87d2180
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_measure_type
+    - node.type.measure
+    - taxonomy.vocabulary.measure_type
+id: node.measure.field_measure_type
+field_name: field_measure_type
+entity_type: node
+bundle: measure
+label: 'Typ opatření'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      measure_type: measure_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

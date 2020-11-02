@@ -7,7 +7,7 @@ import MeasureList from '@/components/measure-list';
 import SearchBox from '@/components/search-box';
 import Row from '@/components/row';
 import Container from '@/components/container';
-import Alert from '@/components/alert';
+import Alert, { AlertContaner } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 
 interface Data {}
@@ -25,27 +25,27 @@ const Home: React.FC<Props> = ({ data }) => {
           <SearchBox />
         </Row>
       </Container>
-      <Alert />
+      <AlertContaner />
       <Container>
         <ContentBox
-        title="Životní situace"
-        boldedTitleCount={2}
-        buttonVariant="outline"
-        buttonText="Zobrazit všechny životní situace"
-      >
-        <SituationsBox />
-      </ContentBox>
-      <ContentBox
-        title="Aktuální opatření"
-        boldedTitleCount={1}
-        buttonText="Zobrazit všechna opatření"
-      >
-        <MeasureList measures={data.latestMeasures.relationships.measures} />
-      </ContentBox>
-      <Link to="/" language="en" className="">
-        English Page
-      </Link>
-    </Container>
+          title="Životní situace"
+          boldedTitleCount={2}
+          buttonVariant="outline"
+          buttonText="Zobrazit všechny životní situace"
+        >
+          <SituationsBox />
+        </ContentBox>
+        <ContentBox
+          title="Aktuální opatření"
+          boldedTitleCount={1}
+          buttonText="Zobrazit všechna opatření"
+        >
+          <MeasureList measures={data.latestMeasures.relationships.measures} />
+        </ContentBox>
+        <Link to="/" language="en" className="">
+          English Page
+        </Link>
+      </Container>
     </>
   );
 };

@@ -1,0 +1,8 @@
+uuid: 41c4956e-b86a-49c5-96f0-0d42c7ad2dd4
+langcode: cs
+status: true
+dependencies: {  }
+name: 'Typ opatření'
+vid: measure_type
+description: ''
+weight: 0

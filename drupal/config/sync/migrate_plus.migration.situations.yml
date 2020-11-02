@@ -98,14 +98,15 @@ process:
     process:
       question: Question
       value: Answer
-  field_related_topics:
+  field_situations:
     plugin: sub_process
     source: related_topics
     process:
       target_id:
-        process: migration_lookup
-        source: Id
+        plugin: migration_lookup
+        source: refRelatedTopicId
         migration: situations
+        no_stub: true
 destination:
   plugin: 'entity:node'
 migration_dependencies: {  }
