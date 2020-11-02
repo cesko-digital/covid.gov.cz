@@ -8,4 +8,21 @@
 .view-moderated-content .views-field-moderation-state.moderation-state--approved {
   background: rgb(153, 255, 106); }
 
+.view-moderated-content .moderation-state__legend {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  flex-direction: column;
+}
+
+.view-moderated-content .moderation-state__legend > div {
+  padding: 5px;
+  width: 100%; }
+.view-moderated-content .moderation-state__legend .moderation-state--draft {
+  background: rgb(252, 153, 153); }
+.view-moderated-content .moderation-state__legend .moderation-state--needs-review {
+  background:rgb(110, 197, 255); }
+.view-moderated-content .moderation-state__legend .moderation-state--approved {
+  background: rgb(153, 255, 106); }
+
 /*# sourceMappingURL=covid_admin.css.map */
