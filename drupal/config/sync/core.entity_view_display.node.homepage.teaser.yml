@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.homepage.field_paragraphs
     - node.type.homepage
   module:
     - user
@@ -13,11 +12,15 @@ targetEntityType: node
 bundle: homepage
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
-  field_paragraphs: true
   langcode: true

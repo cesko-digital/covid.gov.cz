@@ -3,13 +3,11 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.homepage.field_paragraphs
     - node.type.homepage
     - workflows.workflow.content
   module:
     - content_moderation
     - field_group
-    - paragraphs
 third_party_settings:
   field_group:
     group_content:
@@ -91,18 +89,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_paragraphs:
-    type: entity_reference_paragraphs
-    weight: 10
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   langcode:
     type: language_select
     weight: 2
