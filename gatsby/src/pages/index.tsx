@@ -1,13 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
-import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
-import SearchBox from '@/components/search-box';
-import Row from '@/components/row';
 import Container from '@/components/container';
-import { AlertContaner } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import { IQuery } from 'graphql-types';
 
