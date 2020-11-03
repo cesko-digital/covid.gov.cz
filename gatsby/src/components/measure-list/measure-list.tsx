@@ -14,7 +14,6 @@ const MeasureList: React.FC<Props> = ({ measures }) => {
 
   return (
     <>
-      {isMobile ? <div>Mobile</div> : <div>Desktop</div>}
       {measures
         .slice(0, maxItems - 1)
         .map(({ id, title, relationships }, i) => (
