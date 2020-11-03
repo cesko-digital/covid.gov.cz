@@ -20,11 +20,16 @@ const Home: React.FC<IProps> = ({ data }) => {
       <Container>
         <Headline>{area.name}</Headline>
         <div>
-          {area.relationships.situation.map((item, index) => {
-            return (
-              <ListCard title={item.title} key={index} link={item.path.alias} />
-            );
-          })}
+          {area.relationships.situation &&
+            area.relationships.situation.map((item, index) => {
+              return (
+                <ListCard
+                  title={item.title}
+                  key={index}
+                  link={item.path.alias}
+                />
+              );
+            })}
         </div>
       </Container>
     </>

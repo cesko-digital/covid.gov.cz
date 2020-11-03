@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import { Link } from 'gatsby-plugin-react-i18next';
@@ -8,7 +9,7 @@ import SituationsBox from '@/components/situations-box';
 import { IQuery } from 'graphql-types';
 
 interface IProps {
-  data: IQuery;
+  data: IQueryResult;
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
@@ -24,13 +25,7 @@ const Home: React.FC<IProps> = ({ data }) => {
 
   return (
     <>
-      <Container>
-        <Helmet title="Index | Covid Portál" />
-        <Row>
-          <SearchBox />
-        </Row>
-      </Container>
-      <AlertContaner />
+      <Helmet title="Index Page" />
       <Container>
         <ContentBox
           title={situation_label}
