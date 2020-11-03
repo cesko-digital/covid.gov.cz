@@ -14,8 +14,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["node", "react", "jest"]
+    "types": ["node", "react", "jest", "testing-library__jest-dom"]
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "./__tests__/**/*"],
   "exclude": ["node_modules", "public", ".cache"]
 }
