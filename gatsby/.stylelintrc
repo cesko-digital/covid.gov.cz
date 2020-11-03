@@ -15,6 +15,6 @@
     "stylelint-config-standard"
   ],
   "ignoreFiles": [
-    "assets/design-system/**/*.scss"
+    "assets/scss/design-system/**/*.scss"
   ]
 }
