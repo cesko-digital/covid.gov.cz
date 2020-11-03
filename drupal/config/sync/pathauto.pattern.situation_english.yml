@@ -1,0 +1,33 @@
+uuid: 26bdcfbd-2f00-4c01-a512-a2e95c3c40b8
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: situation_english
+label: 'Situation English'
+type: 'canonical_entities:node'
+pattern: '/situations/[node:field_situation_type:entity:name]/[node:title]'
+selection_criteria:
+  13199d62-37ab-40fc-8fec-3cd9cb17d1fd:
+    id: node_type
+    bundles:
+      situation: situation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 13199d62-37ab-40fc-8fec-3cd9cb17d1fd
+  91e03ff5-8e36-47e3-91f1-9d6f4d4af3bd:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 91e03ff5-8e36-47e3-91f1-9d6f4d4af3bd
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Jazyk

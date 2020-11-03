@@ -1,0 +1,33 @@
+uuid: fe356223-b5c1-4752-90d3-a9421144d16d
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: measure_czech
+label: 'Measure Czech'
+type: 'canonical_entities:node'
+pattern: '/opatreni/[node:field_measure_type:entity:name]/[node:title]'
+selection_criteria:
+  52bb9676-2439-4a24-ab4e-a73a234fa9f4:
+    id: node_type
+    bundles:
+      measure: measure
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 52bb9676-2439-4a24-ab4e-a73a234fa9f4
+  c9e51ef8-b5c9-4bc3-a085-f4a9683b6299:
+    id: language
+    langcodes:
+      cs: cs
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: c9e51ef8-b5c9-4bc3-a085-f4a9683b6299
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Jazyk

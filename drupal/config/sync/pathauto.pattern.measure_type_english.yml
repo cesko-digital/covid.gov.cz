@@ -1,0 +1,34 @@
+uuid: e0044726-e62a-4ceb-9349-466006bc507b
+langcode: cs
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: measure_type_english
+label: 'Measure Type English'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'measures/[term:name]'
+selection_criteria:
+  25d21612-9e3e-4905-968c-0a2e5c19c7e1:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      measure_type: measure_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 25d21612-9e3e-4905-968c-0a2e5c19c7e1
+  2bd0b2c8-b43b-4984-805d-b050ce4d0130:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: 2bd0b2c8-b43b-4984-805d-b050ce4d0130
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Jazyk

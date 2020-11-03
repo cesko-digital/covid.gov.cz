@@ -1,0 +1,34 @@
+uuid: b11d160a-a700-40c5-b7d2-7f95e01bdd10
+langcode: cs
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: situation_area
+label: 'Situation Area English'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'situations/[term:name]'
+selection_criteria:
+  82c94c67-1891-4a59-873a-6e09dd58eaeb:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      area: area
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 82c94c67-1891-4a59-873a-6e09dd58eaeb
+  f2c64043-433d-418c-8a07-099f3b8520ff:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: f2c64043-433d-418c-8a07-099f3b8520ff
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Jazyk
