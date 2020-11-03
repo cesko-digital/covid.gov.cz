@@ -1,0 +1,5 @@
+services:
+  covid.normalizer:
+    class: Drupal\covid\Normalizer
+    tags:
+      - { name: normalizer, priority: 10 }
