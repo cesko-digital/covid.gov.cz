@@ -1,0 +1,54 @@
+## Install dependencies by composer
+FROM composer:1 as deps
+
+# Copy only composer files, so cache relies only on them.
+COPY composer.json composer.lock /app/
+COPY scripts/composer/ScriptHandler.php /app/scripts/composer/
+RUN cd /app && composer install --ignore-platform-reqs
+
+FROM php:7.3-apache
+
+ENV DB_NAME="msdb"
+ENV DB_USER="sa"
+ENV DB_PASS="SuperDrupalSite8"
+ENV DB_HOST="database"
+ENV DB_PORT="1433"
+ENV DB_SCHEMA="dbo"
+
+USER root
+RUN apt-get update && apt-get install -y ca-certificates wget apt-transport-https gnupg apt-utils
+# Add Microsoft repositories
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+RUN curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
+RUN chown www-data:www-data /var/www
+RUN apt-get update \
+    && apt-get install -y libpng-dev libjpeg-dev libwebp-dev libpq-dev libmemcached-dev zlib1g-dev libicu-dev libzip-dev libxslt-dev libbz2-dev
+RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-tools unixodbc-dev g++ make
+RUN pecl install sqlsrv pdo_sqlsrv \
+    && docker-php-ext-configure bcmath --enable-bcmath \
+    && docker-php-ext-configure gd --with-webp-dir=/usr --with-jpeg-dir=/usr \
+    && docker-php-ext-install gd mbstring opcache zip xsl bz2 exif  bcmath \
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv \
+    && apt-get clean
+
+COPY ./php/php.ini /usr/local/etc/php/conf.d/drupal.ini
+COPY ./php/apache.conf /etc/apache2/sites-enabled/000-default.conf
+
+RUN sed -s -i -e "s/80/8080/" /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf
+
+WORKDIR /app
+
+# Copy dependencies from first stage
+COPY --from=deps /app /app
+# Copy app
+COPY . /app/
+
+RUN mkdir -pm 777 /tmp/drupal /privatefiles /app/web/sites/default/files \
+	&& chown -R 1001:1001 /tmp/drupal /privatefiles /app/web/sites/default/files /app/web
+
+VOLUME ["/tmp/drupal", "/privatefiles", "/app/web/sites/default/files"]
+
+EXPOSE 8080
+
+USER 1001
