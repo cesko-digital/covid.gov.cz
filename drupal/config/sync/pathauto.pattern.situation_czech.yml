@@ -1,0 +1,33 @@
+uuid: b8befca3-990d-4c39-a154-dca2c3a791dd
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: situation_czech
+label: 'Situation Czech'
+type: 'canonical_entities:node'
+pattern: '/situace/[node:title]'
+selection_criteria:
+  5f8c2cb0-91e8-4ac6-be01-c4aced495eab:
+    id: node_type
+    bundles:
+      situation: situation
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5f8c2cb0-91e8-4ac6-be01-c4aced495eab
+  a1e27394-1c05-496a-983d-4c76e9ce3a96:
+    id: language
+    langcodes:
+      cs: cs
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: a1e27394-1c05-496a-983d-4c76e9ce3a96
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Jazyk

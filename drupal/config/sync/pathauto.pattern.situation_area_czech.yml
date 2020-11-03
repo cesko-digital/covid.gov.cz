@@ -1,0 +1,34 @@
+uuid: d0f01b95-fa11-4e29-afd9-ada2a9e6b8cb
+langcode: cs
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: situation_area_czech
+label: 'Situation Area Czech'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'situace/okruh/[term:name]'
+selection_criteria:
+  53b302de-97a3-4cb1-9564-086fedb20593:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      area: area
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 53b302de-97a3-4cb1-9564-086fedb20593
+  a78d16b0-408e-470b-9918-1d99d6d29c68:
+    id: language
+    langcodes:
+      cs: cs
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: a78d16b0-408e-470b-9918-1d99d6d29c68
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Jazyk

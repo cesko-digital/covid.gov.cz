@@ -32,6 +32,7 @@
         "drupal/one_time_password": "^1.0@RC",
         "drupal/paragraphs": "^1.12",
         "drupal/password_policy": "3.x-dev@dev",
+        "drupal/pathauto": "^1.8",
         "drupal/sqlsrv": "^4.0.3",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",

@@ -1,0 +1,34 @@
+uuid: 6a2b8b18-e433-48cf-af53-98fa3275abf3
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: measure_english
+label: 'Measure English'
+type: 'canonical_entities:node'
+pattern: '/measure/[node:title]'
+selection_criteria:
+  5261b8b8-faf7-4e64-a0e7-d80f9946bbee:
+    id: node_type
+    bundles:
+      measure: measure
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5261b8b8-faf7-4e64-a0e7-d80f9946bbee
+  f60e6095-788a-4d6f-862e-dba89e527cbc:
+    id: language
+    langcodes:
+      en: en
+      cs: cs
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: f60e6095-788a-4d6f-862e-dba89e527cbc
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Jazyk
