@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.situation.field_content
+    - field.field.node.situation.field_faq_parser
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_meta_description
     - field.field.node.situation.field_questions_answers
@@ -26,12 +27,24 @@ targetEntityType: node
 bundle: situation
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_content:
     weight: 104
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_faq_parser:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_internal_note:
     weight: 107

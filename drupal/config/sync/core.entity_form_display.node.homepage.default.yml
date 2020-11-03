@@ -74,11 +74,11 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
-        description: ''
+        description: '<h3>Životní situace</h3>'
         formatter: closed
         required_fields: true
+        id: ''
+        classes: ''
       label: 'Životní situace'
     group_measure:
       children:
@@ -91,11 +91,11 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
-        description: ''
+        description: '<h3>Opatření</h3>'
         formatter: closed
         required_fields: true
+        id: ''
+        classes: ''
       label: Opatření
 id: node.homepage.default
 targetEntityType: node

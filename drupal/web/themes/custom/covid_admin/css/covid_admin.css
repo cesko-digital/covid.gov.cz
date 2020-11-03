@@ -30,7 +30,7 @@
   flex-wrap: wrap; }
 
 @media (min-width: 1370px) {
-  .field-group--flex  > div + div {
-    margin-left: 20px; }
+  .field-group--flex  > div {
+    margin-right: 20px; }
 }
 /*# sourceMappingURL=covid_admin.css.map */

@@ -1,0 +1,19 @@
+uuid: 42baac5f-d7dd-4a44-89f2-a82103d86bc5
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_faq_parser
+field_name: field_faq_parser
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

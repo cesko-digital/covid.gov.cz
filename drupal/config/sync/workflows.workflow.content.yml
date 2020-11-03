@@ -86,4 +86,4 @@ type_settings:
       - measure
       - page
       - situation
-  default_moderation_state: draft
+  default_moderation_state: published
