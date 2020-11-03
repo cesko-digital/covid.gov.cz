@@ -9,13 +9,13 @@ interface Props {
 const MeasureList: React.FC<Props> = ({ measures }) => {
   return (
     <>
-      {measures.map((item) => (
+      {measures.map(({ id, title, relationships }, i) => (
         <Measure
-          key={item.id}
-          title={item.title}
+          key={id}
+          title={title}
           description="Rouška se musí nosit venku až na pár"
           validity="od 2. října do 6. listopadu"
-          area={item.relationships?.region[0]?.name}
+          area={relationships.region[0]?.name}
         />
       ))}
     </>
