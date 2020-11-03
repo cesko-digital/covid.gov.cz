@@ -25,6 +25,7 @@ const Home: React.FC<IProps> = ({ data }) => {
     relationships,
   } = homepage;
   const { measure_items, situation_items } = relationships;
+
   return (
     <>
       <Container>
