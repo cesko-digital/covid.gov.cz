@@ -1,4 +1,4 @@
-uuid: b11d160a-a700-40c5-b7d2-7f95e01bdd10
+uuid: f2f96d75-1269-4515-b4cf-957112ce2ca8
 langcode: cs
 status: true
 dependencies:
@@ -6,27 +6,27 @@ dependencies:
     - ctools
     - language
     - taxonomy
-id: situation_area
-label: 'Situation Area English'
+id: measure_type_czech
+label: 'Measure Type Czech'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'situations/[term:name]'
+pattern: 'opatreni/[term:name]'
 selection_criteria:
-  82c94c67-1891-4a59-873a-6e09dd58eaeb:
+  faf37907-2567-446c-86a9-be9ceac1a016:
     id: 'entity_bundle:taxonomy_term'
     bundles:
-      area: area
+      measure_type: measure_type
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 82c94c67-1891-4a59-873a-6e09dd58eaeb
-  f2c64043-433d-418c-8a07-099f3b8520ff:
+    uuid: faf37907-2567-446c-86a9-be9ceac1a016
+  6f79e2eb-3a02-46e4-b31c-e0d56a991718:
     id: language
     langcodes:
-      en: en
+      cs: cs
     negate: false
     context_mapping:
       language: 'taxonomy_term:langcode:language'
-    uuid: f2c64043-433d-418c-8a07-099f3b8520ff
+    uuid: 6f79e2eb-3a02-46e4-b31c-e0d56a991718
 selection_logic: and
 weight: -10
 relationships:

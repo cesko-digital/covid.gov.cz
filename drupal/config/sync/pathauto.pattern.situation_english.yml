@@ -8,24 +8,24 @@ dependencies:
 id: situation_english
 label: 'Situation English'
 type: 'canonical_entities:node'
-pattern: '/situation/[node:title]'
+pattern: '/situations/[node:field_situation_type:entity:name]/[node:title]'
 selection_criteria:
-  e5ffc286-9aa5-4e38-95cf-ecf640fb5fde:
+  13199d62-37ab-40fc-8fec-3cd9cb17d1fd:
     id: node_type
     bundles:
       situation: situation
     negate: false
     context_mapping:
       node: node
-    uuid: e5ffc286-9aa5-4e38-95cf-ecf640fb5fde
-  9a2d469f-bab5-42c5-af1e-9d2cc5377355:
+    uuid: 13199d62-37ab-40fc-8fec-3cd9cb17d1fd
+  91e03ff5-8e36-47e3-91f1-9d6f4d4af3bd:
     id: language
     langcodes:
       en: en
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 9a2d469f-bab5-42c5-af1e-9d2cc5377355
+    uuid: 91e03ff5-8e36-47e3-91f1-9d6f4d4af3bd
 selection_logic: and
 weight: -10
 relationships:

@@ -9,24 +9,24 @@ dependencies:
 id: situation_area_czech
 label: 'Situation Area Czech'
 type: 'canonical_entities:taxonomy_term'
-pattern: 'situace/okruh/[term:name]'
+pattern: 'situace/[term:name]'
 selection_criteria:
-  53b302de-97a3-4cb1-9564-086fedb20593:
+  cfc34e30-4e73-40db-a9fa-9d67b58d9ab6:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       area: area
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 53b302de-97a3-4cb1-9564-086fedb20593
-  a78d16b0-408e-470b-9918-1d99d6d29c68:
+    uuid: cfc34e30-4e73-40db-a9fa-9d67b58d9ab6
+  216312f9-e7db-4bd9-a4cb-e9466624a995:
     id: language
     langcodes:
       cs: cs
     negate: false
     context_mapping:
       language: 'taxonomy_term:langcode:language'
-    uuid: a78d16b0-408e-470b-9918-1d99d6d29c68
+    uuid: 216312f9-e7db-4bd9-a4cb-e9466624a995
 selection_logic: and
 weight: -10
 relationships:
