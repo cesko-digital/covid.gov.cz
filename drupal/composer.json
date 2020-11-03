@@ -21,6 +21,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/adminimal_admin_toolbar": "^1.11",
         "drupal/adminimal_theme": "^1.6",
+        "drupal/chosen": "^3.0",
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0",
         "drupal/devel": "^4.0",
@@ -32,6 +33,7 @@
         "drupal/paragraphs": "^1.12",
         "drupal/sqlsrv": "^4.0.3",
         "drush/drush": "^10.3",
+        "oomphinc/composer-installers-extender": "^1.0",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
     },
@@ -81,12 +83,15 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/{$name}": ["type:drupal-library", "harvesthq/chosen"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
         },
+        "installer-types": [
+            "library"
+        ],
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
             "drupal/core": "-p2"
