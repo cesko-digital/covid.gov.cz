@@ -9,7 +9,7 @@ import SituationsBox from '@/components/situations-box';
 import { IQuery } from 'graphql-types';
 
 interface IProps {
-  data: IQueryResult;
+  data: IQuery;
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
@@ -33,7 +33,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           buttonVariant="outline"
           buttonText={situation_link?.title}
         >
-          <SituationsBox />
+          <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
           title={measure_label}
@@ -80,11 +80,6 @@ export const query = graphql`
         situation_items {
           id
           title
-          relationships {
-            region {
-              name
-            }
-          }
         }
       }
     }
