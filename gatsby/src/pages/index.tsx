@@ -9,10 +9,10 @@ import Row from '@/components/row';
 import Container from '@/components/container';
 import { AlertContaner } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
-import { ILatest_Measures } from 'graphql-types';
+import { IHomepage } from 'graphql-types';
 
 interface IQueryResult {
-  latestMeasures?: ILatest_Measures;
+  homepage?: IHomepage;
 }
 
 interface IProps {
@@ -20,11 +20,11 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  const { latestMeasures } = data;
+  const { homepage } = data;
   return (
     <>
       <Container>
-        <Helmet title="Index Page" />
+        <Helmet title="Index | Covid Portál" />
         <Row>
           <SearchBox />
         </Row>
@@ -32,19 +32,20 @@ const Home: React.FC<IProps> = ({ data }) => {
       <AlertContaner />
       <Container>
         <ContentBox
-          title="Životní situace"
+          title={homepage?.situation_label}
           boldedTitleCount={2}
           buttonVariant="outline"
-          buttonText="Zobrazit všechny životní situace"
+          buttonText={homepage?.situation_link?.title}
         >
           <SituationsBox />
         </ContentBox>
         <ContentBox
-          title="Aktuální opatření"
+          title={homepage?.measure_label}
           boldedTitleCount={1}
-          buttonText="Zobrazit všechna opatření"
+          buttonText={homepage?.measure_link?.title}
         >
-          <MeasureList measures={latestMeasures.relationships.measures} />
+          {/* Waiting for measures to be implemented in query */}
+          <MeasureList measures={[]} />
         </ContentBox>
         <Link to="/" language="en" className="">
           English Page
@@ -57,18 +58,19 @@ export default Home;
 
 export const query = graphql`
   query IndexQuery {
-    latestMeasures {
-      relationships {
-        measures {
-          title
-          id
-          relationships {
-            region {
-              name
-            }
-          }
-        }
+    homepage {
+      measure_label
+      measure_link {
+        uri
+        title
       }
+      measure_text
+      situation_label
+      situation_link {
+        uri
+        title
+      }
+      situation_text
     }
   }
 `;
