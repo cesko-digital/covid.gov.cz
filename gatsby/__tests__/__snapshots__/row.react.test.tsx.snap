@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Row renders className correctly 1`] = `
+<div
+  className="row className"
+>
+  content
+</div>
+`;
+
+exports[`Row renders correctly 1`] = `
+<div
+  className="row "
+>
+  content
+</div>
+`;

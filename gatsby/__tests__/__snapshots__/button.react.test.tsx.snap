@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button does not render unknown variants 1`] = `
+<button
+  className="btn"
+  disabled={false}
+  onClick={null}
+  type="button"
+/>
+`;
+
+exports[`Button renders additional class correctly 1`] = `
+<button
+  className="btn btn-primary whatever-button"
+  disabled={false}
+  onClick={null}
+  type="button"
+/>
+`;
+
+exports[`Button renders additional class correctly 2`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button renders button element 1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+]
+`;
+
+exports[`Button renders correctly 1`] = `
+<button
+  className="btn btn-outline-primary"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  VÍCE
+</button>
+`;
+
+exports[`Button renders disabled state correctly  1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+]
+`;
+
+exports[`Button renders icon correctly 1`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Button renders link correctly 1`] = `
+<a
+  className="btn btn-primary"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Button renders onClick correctly 1`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button renders text correctly 1`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  VÍCE
+</button>
+`;
+
+exports[`Button renders variants correctly 1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-outline-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-secondary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-outline-dark text-black"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btnSmallBlack"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+]
+`;

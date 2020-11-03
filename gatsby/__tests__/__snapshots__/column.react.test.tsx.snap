@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Col renders className correctly 1`] = `
+<div
+  className="class"
+/>
+`;
+
+exports[`Column renders content correctly 1`] = `
+<div
+  className=""
+>
+  content
+</div>
+`;
+
+exports[`Column renders correctly 1`] = `
+<div
+  className=""
+/>
+`;
+
+exports[`Column renders responsive columns 1`] = `
+<div
+  className="col-11 col-sm-12 col-md-9 col-lg-6 col-xl-6"
+/>
+`;
+
+exports[`Column renders with align-self center property 1`] = `
+<div
+  className="align-self-center"
+/>
+`;
+
+exports[`Column renders with align-self end property 1`] = `
+<div
+  className="align-self-end"
+/>
+`;
+
+exports[`Column renders with align-self start property 1`] = `
+<div
+  className="align-self-start"
+/>
+`;
+
+exports[`Column renders with available align-self propertier 1`] = `
+Array [
+  <div
+    className="align-self-start"
+  />,
+  <div
+    className="align-self-center"
+  />,
+  <div
+    className="align-self-end"
+  />,
+]
+`;
+
+exports[`Column renders with available align-self properties 1`] = `
+Array [
+  <div
+    className="align-self-start"
+  />,
+  <div
+    className="align-self-center"
+  />,
+  <div
+    className="align-self-end"
+  />,
+]
+`;
