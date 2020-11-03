@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { Link as TranslateLink } from 'gatsby-plugin-react-i18next';
 
 interface Props {
-  label: string;
+  label?: string;
   to: string;
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;

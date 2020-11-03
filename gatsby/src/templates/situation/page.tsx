@@ -9,7 +9,7 @@ interface IProps {
 const Home: React.FC<IProps> = ({ data }) => {
   return (
     <>
-      <span className="text-white">{data.situation.title}</span>
+      <span className="text-white">{JSON.stringify(data.situation)}</span>
     </>
   );
 };
@@ -17,8 +17,37 @@ export default Home;
 
 export const query = graphql`
   query($slug: String!) {
-    situation(id: { eq: $slug }) {
+    situation(path: { alias: { eq: $slug } }) {
       title
+      status
+      content {
+        processed
+      }
+      questions_answers {
+        question
+        value
+      }
+      links {
+        uri
+        title
+      }
+      relationships {
+        region {
+          name
+        }
+        situation_type {
+          name
+        }
+        related_situations {
+          title
+        }
+      }
+      path {
+        alias
+      }
+      changed
+      valid_from
+      valid_to
     }
   }
 `;

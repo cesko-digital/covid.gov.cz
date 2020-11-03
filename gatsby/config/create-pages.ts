@@ -28,10 +28,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
         allArea {
           edges {
             node {
-              id
+              path {
+                alias
+              }
               relationships {
                 situation {
-                  id
+                  path {
+                    alias
+                  }
                 }
               }
             }
@@ -54,20 +58,20 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   posts.forEach((post, index) => {
     createPage({
-      path: '/s/' + post.node.id,
+      path: post.node.path.alias,
       component: situationListTemplate,
       context: {
-        slug: post.node.id,
+        slug: post.node.path.alias,
       },
     });
 
     if (post.node.relationships.situation !== null) {
       post.node.relationships.situation.forEach((situation, index) => {
         createPage({
-          path: '/s/' + post.node.id + '/' + situation.id,
+          path: situation.path.alias,
           component: situationPageTemplate,
           context: {
-            slug: situation.id,
+            slug: situation.path.alias,
           },
         });
       });
