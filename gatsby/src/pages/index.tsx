@@ -7,7 +7,7 @@ import MeasureList from '@/components/measure-list';
 import SearchBox from '@/components/search-box';
 import Row from '@/components/row';
 import Container from '@/components/container';
-import Alert, { AlertContaner } from '@/components/alert';
+import { AlertContaner } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import { ILatest_Measures } from 'graphql-types';
 

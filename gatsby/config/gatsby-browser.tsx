@@ -1,6 +1,6 @@
-import 'assets/scss/designsystem.scss';
+import 'assets/scss/custom-variables.scss';
 import React from 'react';
-import Layout from '../src/layouts/default-layout';
+import Layout from 'src/layouts/default-layout';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 
 export const wrapPageElement = ({ element }) => {
