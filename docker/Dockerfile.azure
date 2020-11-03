@@ -16,12 +16,17 @@ ENV DB_PORT="1433"
 ENV DB_SCHEMA="dbo"
 
 USER root
+
+RUN useradd -u 1001 -r -g 0 -d /app -s /sbin/nologin -c "Default Application User" default && \
+	mkdir -p /app && \
+	chown -R 1001:0 /app
+
 RUN apt-get update && apt-get install -y ca-certificates wget apt-transport-https gnupg apt-utils
 # Add Microsoft repositories
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 RUN curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list
 
-RUN chown www-data:www-data /var/www
+RUN chown 1001:1001 /var/www
 RUN apt-get update \
     && apt-get install -y libpng-dev libjpeg-dev libwebp-dev libpq-dev libmemcached-dev zlib1g-dev libicu-dev libzip-dev libxslt-dev libbz2-dev
 RUN ACCEPT_EULA=Y apt-get install -y msodbcsql17 mssql-tools unixodbc-dev g++ make
