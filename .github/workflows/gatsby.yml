@@ -11,12 +11,10 @@ defaults:
 
 jobs:
   validate:
-    name: Validate Gatsby Code Base
-
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v1
         id: yarn-cache
