@@ -11,6 +11,7 @@ defaults:
 
 jobs:
   validate:
+    name: Validate Gatsby Code Base
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
