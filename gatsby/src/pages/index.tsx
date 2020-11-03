@@ -46,6 +46,9 @@ const Home: React.FC<IProps> = ({ data }) => {
         >
           <MeasureList measures={latestMeasures.relationships.measures} />
         </ContentBox>
+        <Link to="/" language="en" className="">
+          English Page
+        </Link>
       </Container>
     </>
   );
