@@ -9,13 +9,13 @@ test('Column renders correctly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Column renders content correctly', () => {
+test('Column with content renders correctly', () => {
   const component = renderer.create(<Col>content</Col>);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Column renders responsive columns', () => {
+test('Column with responsive column classes renders correctly', () => {
   const component = renderer.create(
     <Col col={11} colSm={12} colMd={9} colLg={6} colXl={6} />,
   );
@@ -23,13 +23,13 @@ test('Column renders responsive columns', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Col renders className correctly', () => {
+test('Column with additional class names renders correctly', () => {
   const component = renderer.create(<Col className="class" />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Column renders with available align-self properties', () => {
+test('Column with available align-self properties renders correctly', () => {
   const component = renderer.create(
     <>
       <Col alignSelf="start" />
