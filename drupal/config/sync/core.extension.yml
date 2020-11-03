@@ -8,6 +8,7 @@ module:
   content_moderation: 0
   covid: 0
   covid_ui: 0
+  ctools: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -33,6 +34,10 @@ module:
   one_time_password: 0
   options: 0
   page_cache: 0
+  password_policy: 0
+  password_policy_character_types: 0
+  password_policy_consecutive: 0
+  password_policy_length: 0
   path_alias: 0
   serialization: 0
   system: 0
