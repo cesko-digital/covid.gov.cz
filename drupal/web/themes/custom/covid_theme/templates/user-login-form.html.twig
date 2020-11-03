@@ -1,0 +1,14 @@
+{{ form.form_build_id }}
+{{ form.form_id }}
+{{ form.form_token }}
+
+
+{{ form.name }}
+{{ form.pass }}
+
+<div class="one-time-password">
+  {{ form.one_time_password }}
+  <span>{{ "Vyplňte pouze v případě využití dvoufaktorového ověření." | t }}</span>
+</div>
+
+{{ form.actions.submit }}
