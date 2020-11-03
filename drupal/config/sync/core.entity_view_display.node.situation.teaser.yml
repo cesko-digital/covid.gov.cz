@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.situation.field_content
+    - field.field.node.situation.field_faq_parser
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_meta_description
     - field.field.node.situation.field_questions_answers
@@ -24,6 +25,11 @@ targetEntityType: node
 bundle: situation
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -31,6 +37,7 @@ content:
     region: content
 hidden:
   field_content: true
+  field_faq_parser: true
   field_internal_note: true
   field_meta_description: true
   field_questions_answers: true

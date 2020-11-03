@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.situation.field_content
+    - field.field.node.situation.field_faq_parser
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_meta_description
     - field.field.node.situation.field_questions_answers
@@ -78,6 +79,7 @@ third_party_settings:
       label: Reference
     group_faq:
       children:
+        - field_faq_parser
         - field_questions_answers
       parent_name: group_content
       weight: 22
@@ -138,6 +140,14 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_faq_parser:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_internal_note:
     weight: 13
     settings:
@@ -155,7 +165,7 @@ content:
     type: string_textarea
     region: content
   field_questions_answers:
-    weight: 11
+    weight: 27
     settings:
       rows: '3'
       placeholder: ''
@@ -164,19 +174,15 @@ content:
     region: content
   field_ref_icon:
     weight: 2
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
     region: content
   field_region:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: options_select
     region: content
   field_situation_link:
     weight: 10
@@ -190,7 +196,7 @@ content:
     weight: 8
     settings:
       match_operator: CONTAINS
-      match_limit: 10
+      match_limit: 20
       size: 60
       placeholder: ''
     third_party_settings: {  }
