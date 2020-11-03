@@ -3,9 +3,6 @@ on:
   push:
     paths:
       - "gatsby/*"
-  pull_request:
-    paths:
-      - "gatsby/*"
     
 defaults:
   run:
