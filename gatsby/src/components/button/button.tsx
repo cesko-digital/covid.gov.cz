@@ -43,7 +43,11 @@ const Button: React.FC<IProps> = ({
 }) => {
   if (href !== '' && !disabled) {
     return (
-      <a href={href} className={getClass(variant, className)}>
+      <a
+        href={href}
+        className={getClass(variant, className)}
+        data-testid="button-link"
+      >
         {text}
       </a>
     );

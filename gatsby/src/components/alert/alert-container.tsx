@@ -34,7 +34,7 @@ const AlertContaner: React.FC<IProps> = () => {
       {active.map((notice, i) => (
         <Alert
           key={`notice-box-${i}`}
-          message={notice.content}
+          message="{notice.content}"
           link={notice.link}
         />
       ))}
