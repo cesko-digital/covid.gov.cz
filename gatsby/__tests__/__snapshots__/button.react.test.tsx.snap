@@ -1,6 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button does not render unknown variants 1`] = `
+exports[`Anchor does not render unknown variants classes 1`] = `
+<a
+  className="btn"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Anchor element renders correctly 1`] = `
+<a
+  className="btn btn-primary"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Anchor renders with additional class correctly 1`] = `
+<a
+  className="btn btn-primary whatever-anchor"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Anchor with disabled state renders like button  1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+]
+`;
+
+exports[`Anchor with text inside renders correctly 1`] = `
+<a
+  className="btn btn-primary"
+  data-testid="button-link"
+  href="#"
+>
+  VÍCE
+</a>
+`;
+
+exports[`Anchors with variants render correctly 1`] = `
+Array [
+  <a
+    className="btn btn-primary"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btn btn-outline-primary"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btn btn-secondary"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btn btn-outline-dark text-black"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btnSmallBlack"
+    data-testid="button-link"
+    href="#"
+  />,
+]
+`;
+
+exports[`Button does not render unknown variants classes 1`] = `
 <button
   className="btn"
   disabled={false}
@@ -9,7 +90,24 @@ exports[`Button does not render unknown variants 1`] = `
 />
 `;
 
-exports[`Button renders additional class correctly 1`] = `
+exports[`Button renders HTML button element (not anchor element) 1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+]
+`;
+
+exports[`Button renders with additional class correctly 1`] = `
 <button
   className="btn btn-primary whatever-button"
   disabled={false}
@@ -18,67 +116,16 @@ exports[`Button renders additional class correctly 1`] = `
 />
 `;
 
-exports[`Button renders additional class correctly 2`] = `
+exports[`Button with disabled state renders correctly  1`] = `
 <button
   className="btn btn-primary"
-  disabled={false}
-  onClick={[Function]}
+  disabled={true}
+  onClick={null}
   type="button"
 />
 `;
 
-exports[`Button renders button element 1`] = `
-Array [
-  <button
-    className="btn btn-primary"
-    disabled={false}
-    onClick={null}
-    type="button"
-  />,
-  <button
-    className="btn btn-primary"
-    disabled={false}
-    onClick={null}
-    type="button"
-  />,
-]
-`;
-
-exports[`Button renders correctly 1`] = `
-<button
-  className="btn btn-outline-primary"
-  disabled={false}
-  onClick={null}
-  type="button"
->
-  VÍCE
-</button>
-`;
-
-exports[`Button renders disabled state correctly  1`] = `
-Array [
-  <button
-    className="btn btn-primary"
-    disabled={true}
-    onClick={null}
-    type="button"
-  />,
-  <button
-    className="btn btn-primary"
-    disabled={true}
-    onClick={null}
-    type="button"
-  />,
-  <button
-    className="btn btn-primary"
-    disabled={true}
-    onClick={null}
-    type="button"
-  />,
-]
-`;
-
-exports[`Button renders icon correctly 1`] = `
+exports[`Button with icon renders correctly 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -98,15 +145,7 @@ exports[`Button renders icon correctly 1`] = `
 </button>
 `;
 
-exports[`Button renders link correctly 1`] = `
-<a
-  className="btn btn-primary"
-  data-testid="button-link"
-  href="#"
-/>
-`;
-
-exports[`Button renders onClick correctly 1`] = `
+exports[`Button with onClick renders correctly 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -115,7 +154,7 @@ exports[`Button renders onClick correctly 1`] = `
 />
 `;
 
-exports[`Button renders text correctly 1`] = `
+exports[`Button with text renders correctly 1`] = `
 <button
   className="btn btn-primary"
   disabled={false}
@@ -126,7 +165,7 @@ exports[`Button renders text correctly 1`] = `
 </button>
 `;
 
-exports[`Button renders variants correctly 1`] = `
+exports[`Buttons with variants render correctly 1`] = `
 Array [
   <button
     className="btn btn-primary"
