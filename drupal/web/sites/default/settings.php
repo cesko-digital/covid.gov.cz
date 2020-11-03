@@ -765,17 +765,14 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 $settings['config_sync_directory'] = '../config/sync';
 
 $databases['default']['default'] = [
-  'database' => getenv('DB_NAME') ? getenv('DB_NAME') : 'msdb',
-  'username' => getenv('DB_USER') ? getenv('DB_USER') : 'sa',
-  'password' => getenv('DB_PASS') ? getenv('DB_PASS') : 'SuperDrupalSite8',
+  'database' => 'covid',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'host' => '127.0.0.1',
+  'port' => '',
   'prefix' => '',
-  'host' => getenv('DB_HOST') ? getenv('DB_HOST') : 'database',
-  'port' => getenv('DB_PORT') ? getenv('DB_PORT') : '1433',
-  'schema' => getenv('DB_SCHEMA') ? getenv('DB_SCHEMA') : 'dbo',
-  'cache_schema' => 0,
-  'autoload' => 'modules/contrib/sqlsrv/src/Driver/Database/sqlsrv/',
-  'namespace' => 'Drupal\\sqlsrv\\Driver\\Database\\sqlsrv',
-  'driver' => 'sqlsrv',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
 ];
 
 /**
