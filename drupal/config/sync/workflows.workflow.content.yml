@@ -17,41 +17,44 @@ type_settings:
     approved:
       published: false
       default_revision: false
-      label: Approved
+      label: Schváleno
       weight: 0
     archived:
       published: false
       default_revision: true
-      label: Archived
+      label: Archivováno
       weight: 2
     draft:
-      label: Draft
       published: false
       default_revision: false
+      label: Návrh
       weight: -2
     needs_review:
       published: false
       default_revision: false
-      label: 'Needs review'
+      label: 'Připraveno ke kontrole'
       weight: -1
     published:
-      label: Published
       published: true
       default_revision: true
+      label: Zveřejněno
       weight: 1
   transitions:
     approved:
       label: Approved
       from:
         - approved
+        - archived
         - draft
         - needs_review
+        - published
       to: approved
       weight: 0
     archive:
       label: Archive
       from:
         - approved
+        - archived
         - draft
         - needs_review
         - published
@@ -62,6 +65,7 @@ type_settings:
       to: draft
       weight: -2
       from:
+        - approved
         - archived
         - draft
         - needs_review
@@ -72,12 +76,18 @@ type_settings:
       weight: 1
       from:
         - approved
+        - archived
         - draft
         - needs_review
+        - published
     review:
       label: Review
       from:
+        - approved
+        - archived
         - draft
+        - needs_review
+        - published
       to: needs_review
       weight: -1
   entity_types:
