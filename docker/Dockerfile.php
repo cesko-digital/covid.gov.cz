@@ -8,12 +8,17 @@ COPY ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
 WORKDIR /var/www/html
 
 USER root
+
+RUN useradd -u 1001 -r -g 0 -d /app -s /sbin/nologin -c "Default Application User" default && \
+mkdir -p /app && \
+chown -R 1001:0 /app
+
 RUN apt-get update && apt-get install -y ca-certificates wget apt-transport-https gnupg apt-utils
 # Add Microsoft repositories
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
 
-RUN chown www-data:www-data /var/www
+RUN chown 1001:1001 /var/www
 RUN apt-get update
 RUN apt-get install -y libpng-dev libjpeg-dev libwebp-dev libpq-dev patch libzip-dev libfontconfig libxslt-dev lsof git git-core libbz2-dev vim mc libxrender1
 RUN ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated msodbcsql17 unixodbc-dev
@@ -38,4 +43,4 @@ RUN pecl install sqlsrv pdo_sqlsrv \
    && chmod 777 /.console \
    && rm -rf /var/lib/apt/lists/*
 
-USER www-data
+USER 1001
