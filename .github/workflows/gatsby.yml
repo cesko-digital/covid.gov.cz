@@ -1,27 +1,37 @@
-  
 name: Gatsby
-
 on:
   push:
     paths:
       - "gatsby/*"
-
+    
 defaults:
   run:
     working-directory: ./gatsby
-
 jobs:
   validate:
     name: Validate Gatsby Code Base
-
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-            
-      - run: yarn install
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - run: yarn test
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+            
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Run tests
+        run: yarn test
       
       - name: Publish code coverage
         uses: codecov/codecov-action@v1
@@ -29,12 +39,17 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
 
-      - run: yarn format
+      - name: Run prettier check
+        run: yarn format
 
-      - run: yarn lint
+      - name: Run eslint check
+        run: yarn lint
 
-      - run: yarn stylelint
-      
-      - run: yarn type-check
+      - name: Run stylelint check
+        run: yarn stylelint
+         
+      - name: Run typecheck
+        run: yarn type-check
 
-      - run: yarn build
+      - name: Build frontend
+        run: yarn build
