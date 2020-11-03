@@ -34,7 +34,6 @@
         "drupal/password_policy": "3.x-dev@dev",
         "drupal/sqlsrv": "^4.0.3",
         "drush/drush": "^10.3",
-        "oomphinc/composer-installers-extender": "^1.0",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
     },
