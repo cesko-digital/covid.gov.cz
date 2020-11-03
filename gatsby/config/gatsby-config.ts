@@ -1,5 +1,3 @@
-import { plugin as resolverPlugin } from '@graphql-codegen/typescript-resolvers';
-
 const config = {
   plugins: [
     {
