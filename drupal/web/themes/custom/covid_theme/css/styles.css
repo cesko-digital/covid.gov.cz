@@ -5,8 +5,8 @@ body {
 
 .layout-container > p {
   text-align: center;
-  font-size: 100px;
-  padding-top: 100px; }
+  font-size: 60px;
+  padding-top: 60px; }
 .layout-container img {
   width: 200px; }
 
@@ -14,14 +14,18 @@ body {
   width: 200px;
   margin-left: auto;
   margin-right: auto; }
-  .layout-content input {
+  .layout-content .user-login-form input {
     border-radius: 3px;
     border: white 2px;
     padding: 5px;
     width: 200px;
     display: block;
     margin: 1em 0; }
-  .layout-content .description {
+  .layout-content .user-login-form .description {
     display: none; }
+  .layout-content .user-login-form span {
+    font-size: small; }
+  .layout-content .user-login-form .one-time-password {
+    margin: 2em 0; }
 
 /*# sourceMappingURL=styles.css.map */

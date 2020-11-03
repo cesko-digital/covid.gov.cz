@@ -1,0 +1,40 @@
+uuid: 0541c702-082f-4273-b5d0-f9fa72ac3a4f
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_password_expiration
+  module:
+    - datetime
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: -10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_last_password_reset:
+    type: datetime_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_password_expiration:
+    type: boolean_checkbox
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  language:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
