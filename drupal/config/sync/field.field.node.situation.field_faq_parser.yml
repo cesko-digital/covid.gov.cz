@@ -1,0 +1,19 @@
+uuid: 783f6f2e-4b7e-4336-886a-c227c57035be
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq_parser
+    - node.type.situation
+id: node.situation.field_faq_parser
+field_name: field_faq_parser
+entity_type: node
+bundle: situation
+label: 'Otázky odpovědi Copy&Paste'
+description: "Vložte text s otázkami a odpovědmi z jiné aplikace. \r\nDvojice Otázka a Odpoveď odělujte novým řádkem. Jako otázka bude použito vše do prvního otazníku.\r\nScript se pouští při uložení stránky."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
