@@ -19,7 +19,6 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  *   data_table = "remote_node_field_data",
  *   translatable = FALSE,
  *   fieldable = FALSE,
- *   admin_permission = "access rapi configuration",
  *   entity_keys = {
  *     "id" = "id",
  *     "uuid" = "uuid",
