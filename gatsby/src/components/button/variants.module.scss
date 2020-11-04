@@ -1,14 +1,18 @@
 .btn-small-black {
-  border: 2px solid black;
+  border: 1px solid black;
   margin-left: 15px;
   border-radius: 3px;
-  padding: 4px 8px;
+  padding: 7px 8px;
   text-decoration: none;
   font-size: 12px;
+  line-height: 1;
   font-weight: 500;
   text-transform: uppercase;
+  color: black;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background: black;
+    color: white;
   }
 }
