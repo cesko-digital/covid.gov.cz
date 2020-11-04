@@ -66,6 +66,15 @@ const config = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'static/favicon.svg',
+        icon_options: {
+          purpose: 'maskable',
+        },
+      },
+    },
   ],
 };
 
