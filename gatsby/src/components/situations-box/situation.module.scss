@@ -8,13 +8,14 @@
   &Title {
     display: inline-flex;
     align-items: center;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
+    font-size: 15px;
+    line-height: 1.2;
     font-weight: 500;
-    color: #254e80;
+    color: white;
+    text-transform: uppercase;
 
     &Icon {
-      color: #ecae1a;
+      color: white;
       margin-right: 1.6rem;
     }
   }
