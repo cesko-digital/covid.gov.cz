@@ -8,6 +8,7 @@ const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
     { 'btn-primary': variant === 'contained' },
     { 'btn-outline-primary': variant === 'outline' },
     { 'btn-outline-dark': variant === 'outline-black' },
+    { 'btn-yellow': variant === 'yellow' },
     { 'text-black': variant === 'outline-black' },
     { 'btn-secondary': variant === 'secondary' },
     { [styles.btnSmallBlack]: variant === 'small-black' },
@@ -18,6 +19,7 @@ const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
 export type ButtonVariant =
   | 'contained'
   | 'outline'
+  | 'yellow'
   | 'secondary'
   | 'outline-black'
   | 'small-black';

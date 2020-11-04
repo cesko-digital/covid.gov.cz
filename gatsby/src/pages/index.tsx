@@ -74,6 +74,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           title={measure_label}
           boldedTitleCount={1}
           buttonText={measure_link?.title}
+          variant="white"
         >
           <MeasureList measures={measure_items} />
         </ContentBox>

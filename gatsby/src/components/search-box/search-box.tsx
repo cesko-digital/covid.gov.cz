@@ -56,7 +56,8 @@ const SearchBox: React.FC<IProps> = ({
         <Button
           icon={<GovIcon icon="search" className="search__button--icon" />}
           onClick={handleSearch}
-          className="search__button color-white"
+          variant="yellow"
+          className="search__button"
         />
       </div>
     </div>
