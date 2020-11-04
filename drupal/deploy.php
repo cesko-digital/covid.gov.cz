@@ -58,7 +58,7 @@ task('deploy:drush:updb', '{{drush}} updb -y;')->once();
 task('deploy:drush', [
   'deploy:drush:cr',
   'deploy:drush:updb',
-  'deploy:drush:cim',
+//  'deploy:drush:cim',
   'deploy:drush:cr',
 ]);
 
