@@ -22,7 +22,7 @@ const Situation: React.FC<Props> = ({ situation }) => {
         />
         {title}
       </span>
-      <KeyboardArrowRight style={{ fontSize: 16 }} />
+      <KeyboardArrowRight style={{ fontSize: 16 }} className="color-yellow" />
     </Link>
   );
 };

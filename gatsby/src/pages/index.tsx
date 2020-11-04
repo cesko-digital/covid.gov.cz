@@ -26,13 +26,13 @@ const Home: React.FC<IProps> = ({ data }) => {
 
   return (
     <>
-      <Helmet title="Index Page" />
+      <Helmet title="Covid Portál" />
       <Alert />
-      <Container>
+      <Container className="mt-3">
         <ContentBox
           title={situation_label}
           boldedTitleCount={2}
-          buttonVariant="outline"
+          buttonVariant=""
           buttonText={situation_link?.title}
         >
           <SituationsBox situations={situation_items} />
@@ -41,6 +41,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           title={measure_label}
           boldedTitleCount={1}
           buttonText={measure_link?.title}
+          variant="white"
         >
           <MeasureList measures={measure_items} />
         </ContentBox>

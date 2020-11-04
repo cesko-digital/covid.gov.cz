@@ -1,3 +1,18 @@
+$white: #fff;
+$black: #000;
+
+$theme-blue-lighten: #3375ae;
+$theme-blue-light: #337dbd;
+$theme-blue: #2362a2;
+$theme-blue-dark: #254e80;
+
+$theme-yellow: #ecae1a;
+$theme-red: #e04857;
+$theme-gray-dark: #3b3b3b;
+$theme-gray: #707070;
+$theme-gray-lighten: #e1e1e1;
+$theme-gray-light: #f5f5f5;
+
 $grid-gutter-width: 32px;
 $theme-path: '/ds';
 
@@ -5,4 +20,128 @@ $theme-path: '/ds';
 
 .form-control {
   cursor: auto;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.color-yellow {
+  color: $theme-yellow;
+}
+
+.btn {
+  &.btn-primary {
+    border-color: darken($theme-blue, 5%);
+    background-color: $theme-blue;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      &:not([disabled]) {
+        border-color: darken($theme-blue, 5%);
+        background-color: darken($theme-blue, 5%);
+      }
+    }
+
+    &:active {
+      &:not([disabled]) {
+        border-color: darken($theme-blue, 8%);
+        background-color: darken($theme-blue, 8%);
+        color: $white;
+      }
+    }
+  }
+
+  &.btn-outline-primary {
+    border-color: $theme-blue;
+    color: $theme-gray-dark;
+    text-align: left;
+    white-space: normal;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      &:not([disabled]) {
+        border-color: $theme-blue;
+        background-color: $theme-blue;
+      }
+    }
+
+    &:active {
+      &:not([disabled]) {
+        border-color: darken($theme-blue, 8%);
+        background-color: darken($theme-blue, 8%);
+        color: $theme-gray-dark;
+      }
+    }
+
+    &.btn-inverse {
+      color: $white;
+
+      &:not([disabled]) {
+        &:active,
+        &:hover,
+        &:focus {
+          color: $theme-gray-dark;
+        }
+      }
+    }
+  }
+
+  &.btn-yellow {
+    border-color: darken($theme-yellow, 5%);
+    background-color: $theme-yellow;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      &:not([disabled]) {
+        border-color: darken($theme-yellow, 5%);
+        background-color: darken($theme-yellow, 5%);
+      }
+    }
+
+    &:active {
+      &:not([disabled]) {
+        border-color: darken($theme-yellow, 8%);
+        background-color: darken($theme-yellow, 8%);
+        color: $white;
+      }
+    }
+  }
+
+  &.btn-outline-yellow {
+    border-color: $theme-yellow;
+    color: $theme-gray-dark;
+    text-align: left;
+    white-space: normal;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      &:not([disabled]) {
+        border-color: $theme-yellow;
+        background-color: $theme-yellow;
+      }
+    }
+
+    &:active {
+      &:not([disabled]) {
+        border-color: darken($theme-yellow, 8%);
+        background-color: darken($theme-yellow, 8%);
+        color: $theme-gray-dark;
+      }
+    }
+
+    &.btn-inverse {
+      color: $white;
+
+      &:not([disabled]) {
+        &:active,
+        &:hover,
+        &:focus {
+          color: $theme-gray-dark;
+        }
+      }
+    }
+  }
 }

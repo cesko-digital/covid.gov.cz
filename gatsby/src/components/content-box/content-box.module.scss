@@ -3,13 +3,13 @@
   margin: 0 0 1.6rem;
   border-radius: 0.3rem;
   overflow: hidden;
-  background: white;
+  background: #2362a2;
 }
 
 .contentBoxTitle {
   font-size: 2.3rem;
   font-weight: 300;
-  color: #2b4762;
+  color: white;
   margin-bottom: 0.8rem;
 }
 
@@ -19,8 +19,19 @@
 
 .contentBoxDescription {
   margin-bottom: 1.6rem;
+  color: white;
+  font-weight: 400;
 }
 
 .contentBoxButton {
   width: 100%;
+  margin-top: 3px;
+}
+
+.contentBox--white {
+  background: white;
+
+  .contentBoxTitle {
+    color: #2b4762;
+  }
 }
