@@ -7,7 +7,7 @@ dependencies:
 id: covid_translation--covid_translation
 disabled: false
 path: translation
-resourceType: covid_translation--covid_translation
+resourceType: translation
 resourceFields:
   id:
     fieldName: id
@@ -15,15 +15,21 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  source:
-    fieldName: source
-    publicName: source
+  uuid:
+    fieldName: uuid
+    publicName: uuid
     enhancer:
       id: ''
     disabled: false
-  language:
-    fieldName: language
-    publicName: language
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  source:
+    fieldName: source
+    publicName: source
     enhancer:
       id: ''
     disabled: false
