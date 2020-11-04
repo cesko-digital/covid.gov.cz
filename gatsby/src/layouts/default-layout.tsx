@@ -16,7 +16,7 @@ const DefaultLayout: React.FC = ({ children }) => {
           { label: 'Životní situace', to: '#' },
         ]}
       />
-      <div>{children}</div>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   );
