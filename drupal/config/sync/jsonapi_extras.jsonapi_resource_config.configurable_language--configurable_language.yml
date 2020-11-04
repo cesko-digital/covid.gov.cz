@@ -5,8 +5,8 @@ dependencies:
   module:
     - language
 id: configurable_language--configurable_language
-disabled: true
-path: configurable_language/configurable_language
+disabled: false
+path: language
 resourceType: configurable_language--configurable_language
 resourceFields:
   uuid:
@@ -28,23 +28,23 @@ resourceFields:
       id: ''
     disabled: false
   dependencies:
+    disabled: true
     fieldName: dependencies
     publicName: dependencies
     enhancer:
       id: ''
-    disabled: false
   third_party_settings:
+    disabled: true
     fieldName: third_party_settings
     publicName: third_party_settings
     enhancer:
       id: ''
-    disabled: false
   _core:
+    disabled: true
     fieldName: _core
     publicName: _core
     enhancer:
       id: ''
-    disabled: false
   id:
     fieldName: id
     publicName: id
@@ -70,8 +70,8 @@ resourceFields:
       id: ''
     disabled: false
   locked:
+    disabled: true
     fieldName: locked
     publicName: locked
     enhancer:
       id: ''
-    disabled: false
