@@ -15,6 +15,7 @@ interface Props {
   buttonText?: string;
   buttonHref?: string;
   variant?: string;
+  noPadding?: boolean;
 }
 
 const ContentBox: React.FC<Props> = ({
@@ -26,6 +27,7 @@ const ContentBox: React.FC<Props> = ({
   buttonText,
   buttonHref,
   variant = '',
+  noPadding,
 }) => {
   const boldedTitle = useMemo(() => {
     const splittedTitle: Array<JSX.Element | string> = title?.split(/(?= )/g);
@@ -51,6 +53,7 @@ const ContentBox: React.FC<Props> = ({
       className={classNames(
         styles.contentBox,
         styles[`contentBox--${variant}`],
+        noPadding && styles.contentBoxNoPadding,
         'row',
       )}
     >

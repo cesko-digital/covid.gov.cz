@@ -38,7 +38,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
         <Headline>Přehled aktuálních opatření</Headline>
       </Container>
       <Container className="mt-3">
-        <ContentBox>
+        <ContentBox noPadding>
           {/* TODO: Paging */}
           {nodes.map((n) => (
             <CategoryItem key={n.id} name={n.name} path={n.path.alias} />

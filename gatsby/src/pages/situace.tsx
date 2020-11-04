@@ -34,7 +34,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
       <Breadcrumb items={breadcrumbItems} variant="inverse" />
       <Headline>Přehled životních situací</Headline>
       <Container className="mt-3">
-        <ContentBox>
+        <ContentBox noPadding>
           {/* TODO: Paging */}
           {nodes.map((n) => (
             <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
