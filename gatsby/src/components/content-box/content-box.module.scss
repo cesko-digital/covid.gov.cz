@@ -4,14 +4,6 @@
   border-radius: 0.3rem;
   overflow: hidden;
   background: #2362a2;
-
-  &--white {
-    background: white;
-
-    .contentBoxTitle {
-      color: #2b4762;
-    }
-  }
 }
 
 .contentBoxTitle {
@@ -34,4 +26,12 @@
 .contentBoxButton {
   width: 100%;
   margin-top: 3px;
+}
+
+.contentBox--white {
+  background: white;
+
+  .contentBoxTitle {
+    color: #2b4762;
+  }
 }
