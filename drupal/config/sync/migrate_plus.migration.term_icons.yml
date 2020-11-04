@@ -1,0 +1,62 @@
+uuid: be713c48-b6a0-457f-b655-7f79f341754a
+langcode: en
+status: true
+dependencies: {  }
+id: term_icons
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: covid
+label: 'Term - Icons'
+source:
+  plugin: url
+  data_fetcher_plugin: file
+  data_parser_plugin: json
+  urls: 'modules/custom/covid/migrate/term_icons.json'
+  item_selector: ''
+  fields:
+    -
+      name: path
+      selector: path
+  ids:
+    path:
+      type: string
+  constants:
+    source_base: 'https://raw.githubusercontent.com/google/material-design-icons/master/src/'
+    destination_base: 'public://icons/'
+    destination_delimiter: /
+    destination_extension: .svg
+process:
+  _path_parts:
+    plugin: explode
+    source: path
+    delimiter: /
+  name: '@_path_parts/1'
+  field_icon_code: '@name'
+  field_icon_set:
+    plugin: default_value
+    default_value: materialicon
+  _source:
+    plugin: concat
+    source:
+      - constants/source_base
+      - path
+  _destination:
+    plugin: concat
+    source:
+      - constants/destination_base
+      - '@_path_parts/0'
+      - constants/destination_delimiter
+      - '@_path_parts/1'
+      - constants/destination_extension
+  field_icon_file:
+    plugin: file_import
+    source: '@_source'
+    destination: '@_destination'
+    uid: 1
+    reuse: true
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: icons
+migration_dependencies: {  }
