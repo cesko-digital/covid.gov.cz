@@ -52,11 +52,11 @@ class Translation extends ContentEntityBase implements TranslationInterface {
   }
 
   public function getSource(): string {
-    return $this->get('source')->value;
+    return $this->get('source')->value ?? '';
   }
 
   public function getLangcode(): string {
-    return $this->get('langcode')->value;
+    return $this->get('langcode')->value ?? '';
   }
 
   public function getTarget(): string {
