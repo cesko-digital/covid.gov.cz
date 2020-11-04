@@ -44,7 +44,10 @@ const SearchBox: React.FC<IProps> = ({
       >
         <input
           type="text"
-          className="form-control search__input"
+          className={classnames(
+            classes.searchBoxInput,
+            'form-control search__input',
+          )}
           placeholder={placeholder}
           onChange={(event) => setSearch(event.currentTarget.value)}
           value={search}
@@ -53,7 +56,7 @@ const SearchBox: React.FC<IProps> = ({
         <Button
           icon={<GovIcon icon="search" className="search__button--icon" />}
           onClick={handleSearch}
-          className="search__button"
+          className="search__button color-white"
         />
       </div>
     </div>
