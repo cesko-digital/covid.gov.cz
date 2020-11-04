@@ -1,0 +1,21 @@
+uuid: 89eb91a3-32e6-4449-9b85-299e8e263b68
+langcode: cs
+status: true
+dependencies:
+  config:
+    - block_content.type.basic_content
+    - field.storage.block_content.field_b_content
+  module:
+    - text
+id: block_content.basic_content.field_b_content
+field_name: field_b_content
+entity_type: block_content
+bundle: basic_content
+label: Obsah
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
