@@ -7,11 +7,8 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  return (
-    <>
-      <span className="text-white">{JSON.stringify(data.situation)}</span>
-    </>
-  );
+  const { situation } = data;
+  return <span className="text-white">{JSON.stringify(situation)}</span>;
 };
 export default Home;
 

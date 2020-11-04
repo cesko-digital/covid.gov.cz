@@ -1,38 +1,31 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IArea } from 'graphql-types';
+import { IQuery } from 'graphql-types';
 import Container from '@/components/container';
 import Headline from '@/components/headline';
 import ListCard from '@/components/list-card';
 
-interface IQueryResult {
-  area?: IArea;
-}
-
 interface IProps {
-  data: IQueryResult;
+  data: IQuery;
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
   const { area } = data;
   return (
-    <>
-      <Container>
-        <Headline>{area.name}</Headline>
-        <div>
-          {area.relationships.situation &&
-            area.relationships.situation.map((item, index) => {
-              return (
-                <ListCard
-                  title={item.title}
-                  key={index}
-                  link={item.path.alias}
-                />
-              );
-            })}
-        </div>
-      </Container>
-    </>
+    <Container>
+      <Headline>{area.name}</Headline>
+      <div>
+        {area.relationships?.situation?.map(({ id, title, path }, index) => {
+          return (
+            <ListCard
+              title={title}
+              key={`area-list-item-${id}`}
+              link={path?.alias}
+            />
+          );
+        })}
+      </div>
+    </Container>
   );
 };
 export default Home;
@@ -43,6 +36,7 @@ export const query = graphql`
       name
       relationships {
         situation {
+          id
           title
           path {
             alias

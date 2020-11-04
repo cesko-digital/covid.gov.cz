@@ -28,12 +28,16 @@ const Link: React.FC<Props> = ({ children, label, to, className, onClick }) => {
 
   const handleExternalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // TODO: Add Analytics {@link hooks/useAnalytics}
-    onClick?.(e);
+    if (onClick) {
+      onClick(e);
+    }
   };
 
   const handleInternalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Analytics is handled by Gatsby @see {@link config/gatsby-browser onRouteUpdate}
-    onClick?.(e);
+    if (onClick) {
+      onClick(e);
+    }
   };
 
   return !isExternal ? (
@@ -45,6 +49,7 @@ const Link: React.FC<Props> = ({ children, label, to, className, onClick }) => {
       href={to}
       onClick={handleExternalLinkClick}
       target="_blank"
+      rel="noreferrer"
       {...commonProps}
     >
       {children || label}

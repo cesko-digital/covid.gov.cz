@@ -29,4 +29,5 @@ const ListCard: React.FC<IProps> = ({
     </div>
   );
 };
+
 export default ListCard;
