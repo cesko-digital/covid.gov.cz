@@ -12,6 +12,7 @@ interface Props {
   boldedTitleCount?: number;
   buttonVariant?: ButtonVariant;
   buttonText?: string;
+  variant: string;
 }
 
 const ContentBox: React.FC<Props> = ({
@@ -21,6 +22,7 @@ const ContentBox: React.FC<Props> = ({
   description,
   buttonVariant,
   buttonText,
+  variant,
 }) => {
   const boldedTitle = useMemo(() => {
     const splittedTitle: Array<JSX.Element | string> = title.split(/(?= )/g);
@@ -41,7 +43,13 @@ const ContentBox: React.FC<Props> = ({
   }, [title]);
 
   return (
-    <div className={classNames(styles.contentBox, 'row')}>
+    <div
+      className={classNames(
+        styles.contentBox,
+        styles[`contentBox--${variant}`],
+        'row',
+      )}
+    >
       <Col col={12}>
         <h2 className={styles.contentBoxTitle}>{boldedTitle}</h2>
         {description && (
