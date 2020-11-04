@@ -27,7 +27,7 @@ const isDateBetween = (from: Date, to?: Date): boolean => {
   return (from <= now && now <= to) || (from <= now && !to);
 };
 
-const AlertContaner: React.FC<IProps> = () => {
+const AlertContainer: React.FC<IProps> = () => {
   const active = alerts.filter(({ from, to }) => isDateBetween(from, to));
   return (
     <>
@@ -42,4 +42,4 @@ const AlertContaner: React.FC<IProps> = () => {
   );
 };
 
-export default AlertContaner;
+export default AlertContainer;
