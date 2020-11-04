@@ -5,6 +5,7 @@ namespace Drupal\covid_ui\Form;
 
 
 use Drupal\Component\Transliteration\TransliterationInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\locale\SourceString;
@@ -19,21 +20,21 @@ class AddTranslationForm extends FormBase {
   private $transliteration;
 
   /**
-   * @var \Drupal\locale\StringDatabaseStorage
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  private $stringDatabaseStorage;
+  private $entityTypeManager;
 
 
   /**
    * AddTranslationForm constructor.
    */
-  public function __construct(TransliterationInterface $transliteration, StringDatabaseStorage $stringDatabaseStorage) {
+  public function __construct(TransliterationInterface $transliteration, EntityTypeManagerInterface $entityTypeManager) {
     $this->transliteration = $transliteration;
-    $this->stringDatabaseStorage = $stringDatabaseStorage;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   public static function create(ContainerInterface $container) {
-    return new static($container->get('transliteration'), $container->get('locale.storage'));
+    return new static($container->get('transliteration'), $container->get('entity_type.manager'));
   }
 
 
@@ -60,15 +61,14 @@ class AddTranslationForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $strings = $form_state->getValue('strings');
 
+    $storage = $this->entityTypeManager->getStorage('covid_translation');
+
     foreach (explode(PHP_EOL, $strings) as $string) {
+      $translation = $storage->create([
+        'source' => $this->parseString($string)
+      ]);
 
-      $string = $this->parseString($string);
-
-      $sourceString = new SourceString();
-      $sourceString->setString($string);
-      $sourceString->context = 'covid';
-      $sourceString->setStorage($this->stringDatabaseStorage);
-      $sourceString->save();
+      $translation->save();
     }
 
     $this->messenger()->addMessage('Řetězce byly přidány a jsou připraveny k překladu.');

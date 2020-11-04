@@ -4,35 +4,37 @@
 namespace Drupal\covid_ui\Form;
 
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\Language;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Url;
-use Drupal\locale\StringDatabaseStorage;
+use Drupal\covid\Entity\Translation;
+use Drupal\covid\Entity\TranslationInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class TranslateForm extends FormBase {
-
-  /**
-   * @var \Drupal\locale\StringDatabaseStorage
-   */
-  private $storage;
 
   /**
    * @var \Drupal\Core\Language\LanguageManagerInterface
    */
   private $languageManager;
 
-  public function __construct(StringDatabaseStorage $stringDatabaseStorage, LanguageManagerInterface $languageManager) {
-    $this->storage = $stringDatabaseStorage;
+  /**
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  private $entityTypeManager;
+
+  public function __construct(LanguageManagerInterface $languageManager, EntityTypeManagerInterface $entityTypeManager) {
     $this->languageManager = $languageManager;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('locale.storage'),
-      $container->get('language_manager')
+      $container->get('language_manager'),
+      $container->get('entity_type.manager')
     );
   }
 
@@ -48,39 +50,27 @@ class TranslateForm extends FormBase {
       '#url' => Url::fromRoute('covid_ui.translation_add'),
     ];
 
-    $strings = $this->storage->getStrings([
-      'context' => 'covid',
-    ]) ?? [];
-
-    $this->storage->getTranslations(['context' => 'covid']);
+    $data = $this->loadTranslations();
 
     $rows = [];
 
     $languages = $this->languageManager->getLanguages();
 
-    /** @var \Drupal\locale\SourceString $string */
-    foreach ($strings as $string) {
-      $translations = $this->storage->getTranslations([
-        'lid' => $string->getId()
-      ]);
-
-      $values = [];
-      foreach ($translations as $translation) {
-        $values[$translation->language] = $translation->getString();
-      }
+    /** @var \Drupal\covid\Entity\Translation $translation */
+    foreach ($data as $source => $values) {
 
       $row = [
-        'lid' => [
+        'source' => [
           '#type' => 'hidden',
-          '#value' => $string->getId(),
-          '#prefix' => $string->getString()
-        ]
+          '#value' => $source,
+          '#prefix' => $source
+        ],
       ];
 
       $row += array_map(function (Language $language) use ($values) {
         return [
           '#type' => 'textfield',
-          '#default_value' => $values[$language->getId()] ?? ''
+          '#default_value' => $values[$language->getId()] ?? '',
         ];
       }, $languages);
 
@@ -96,7 +86,7 @@ class TranslateForm extends FormBase {
 
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => 'Uložit'
+      '#value' => 'Uložit',
     ];
 
     return $form;
@@ -109,32 +99,63 @@ class TranslateForm extends FormBase {
 
     foreach ($values['table'] as $row) {
       foreach ($languages as $langcode => $language) {
-        $lid = $row['lid'];
+        $source = $row['source'];
         $value = $row[$langcode] ?? '';
 
-        $this->addTranslation($value, $lid, $langcode);
+        $this->setTranslation($source, $value, $langcode);
       }
-
     }
 
     $this->messenger()->addMessage('Překlady byly uloženy');
   }
 
-  protected function addTranslation(string $string, int $lid, string $langcode): void {
-    if (!$string) {
+  protected function setTranslation(string $source, string $target, string $langcode): void {
+    if (!$target) {
       return;
     }
 
-    $translation = $this->storage->findTranslation([
-      'lid' => $lid, 'language' => $langcode
-    ]);
+    $translation = $this->getTranslation($source, $langcode);
 
-    if ($translation->isNew() || $translation->getString() !== $string) {
-      $translation->setString($string);
-      $translation->language = $langcode;
+    if ($translation->getTarget() !== $target) {
+      $translation->setTarget($target);
 
       $translation->save();
     }
+  }
+
+  protected function loadTranslations(): array {
+    $storage = $this->entityTypeManager->getStorage('covid_translation');
+
+    $translations = $storage->loadMultiple(NULL);
+
+    $data = [];
+
+    /** @var \Drupal\covid\Entity\Translation $translation */
+    foreach ($translations as $translation) {
+      $data[$translation->getSource()][$translation->getLangcode()] = $translation->getTarget();
+    }
+
+    return $data;
+  }
+
+  private function getTranslation(string $source, string $langcode): TranslationInterface {
+    $storage = $this->entityTypeManager->getStorage('covid_translation');
+
+    $query = $storage->getQuery();
+
+    $query->condition('source', $source);
+    $query->condition('langcode', $langcode);
+
+    $result = $query->execute();
+
+    if (!$result) {
+      return $storage->create([
+        'source' => $source,
+        'langcode' => $langcode
+      ]);
+    }
+
+    return $storage->load(reset($result));
   }
 
 }
