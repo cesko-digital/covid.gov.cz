@@ -40,7 +40,9 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         <h2 className="text-white pt-2">{situation.title}</h2>
         <article className="bg-white rounded p-2 mb-1">
           <div
-            dangerouslySetInnerHTML={{ __html: situation?.content?.processed }}
+            dangerouslySetInnerHTML={{
+              __html: situation?.content?.processed.replace(/\n/g, '<br>'),
+            }}
           />
 
           {situation.links.length ? (
