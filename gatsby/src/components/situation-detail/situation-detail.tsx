@@ -6,6 +6,8 @@ import Container from '@/components/container';
 import Link from '@/components/link';
 
 import styles from './situation-detail.module.scss';
+import Accordion from '../accordion';
+import ContentBox from '../content-box';
 
 interface Region {
   name: string;
@@ -15,6 +17,24 @@ interface Link {
   uri: string;
   title?: string;
 }
+
+const data = [
+  {
+    title: 'Co když už mám STK propadlou?',
+    text:
+      'Nam quis ante id turpis tempus sagittis. Ut id libero quam. Pellentesque cursus nulla ut purus ultrices sagittis. Nam congue vehicula dolor. Aenean varius et est vitae aliquam. Sed scelerisque enim sed facilisis vehicula. Donec eget venenatis tellus.',
+  },
+  {
+    title: 'Musím mít na STK roušku?',
+    text:
+      'Nam quis ante id turpis tempus sagittis. Ut id libero quam. Pellentesque cursus nulla ut purus ultrices sagittis. Nam congue vehicula dolor. Aenean varius et est vitae aliquam. Sed scelerisque enim sed facilisis vehicula. Donec eget venenatis tellus.',
+  },
+  {
+    title: 'Vivamus tincidunt dolor ',
+    text:
+      'Nam quis ante id turpis tempus sagittis. Ut id libero quam. Pellentesque cursus nulla ut purus ultrices sagittis. Nam congue vehicula dolor. Aenean varius et est vitae aliquam. Sed scelerisque enim sed facilisis vehicula. Donec eget venenatis tellus.',
+  },
+];
 
 interface IProps {
   situation: {
@@ -106,6 +126,10 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             Naposledy bylo toto téma aktualizováno {situation.changed}
           </p>
         </article>
+
+        <ContentBox variant="blue" title="Časté dotazy k tomuto tématu" boldedTitleCount={2}>
+          <Accordion data={data} />
+        </ContentBox>
       </Container>
     </div>
   );
