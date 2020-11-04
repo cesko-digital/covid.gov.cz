@@ -4,3 +4,11 @@ covid_ui:
   route_name: covid_ui
   weight: 0
   menu_name: covid
+
+covid_ui.translation:
+  title: 'Překlad'
+  description: 'Překlad rozhraní COVID Portálu'
+  route_name: covid_ui.translation
+  parent: covid_ui
+  weight: 0
+  menu_name: covid
