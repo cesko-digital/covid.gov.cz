@@ -1,7 +1,7 @@
 const config = {
   plugins: [
     {
-      resolve: 'gatsby-source-drupal-multilanguage',
+      resolve: 'gatsby-source-drupal',
       options: {
         baseUrl: 'https://covid.pristup.net/',
         apiBase: 'api',
@@ -16,6 +16,7 @@ const config = {
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
+        documentPaths: ['./src/**/*.{ts,tsx}', './config/**/*.{ts,tsx}'],
         codegenConfig: {
           // key-value configs that will be applied to every plugins.
           // Note: The example below is completely unnecessary, just a demonstration.

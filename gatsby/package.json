@@ -36,7 +36,7 @@
     "gatsby-plugin-react-i18next": "^0.0.27",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "gatsby-plugin-typescript": "^2.4.25",
-    "gatsby-source-drupal-multilanguage": "^3.1.11",
+    "gatsby-source-drupal": "^3.6.0",
     "i18next": "^19.8.3",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",

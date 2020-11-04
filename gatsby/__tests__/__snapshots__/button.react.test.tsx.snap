@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor does not render unknown variants classes 1`] = `
+<a
+  className="btn"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Anchor element renders correctly 1`] = `
+<a
+  className="btn btn-primary"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Anchor renders with additional class correctly 1`] = `
+<a
+  className="btn btn-primary whatever-anchor"
+  data-testid="button-link"
+  href="#"
+/>
+`;
+
+exports[`Anchor with disabled state renders like button  1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={true}
+    onClick={null}
+    type="button"
+  />,
+]
+`;
+
+exports[`Anchor with text inside renders correctly 1`] = `
+<a
+  className="btn btn-primary"
+  data-testid="button-link"
+  href="#"
+>
+  VÍCE
+</a>
+`;
+
+exports[`Anchors with variants render correctly 1`] = `
+Array [
+  <a
+    className="btn btn-primary"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btn btn-outline-primary"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btn btn-secondary"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btn btn-outline-dark text-black"
+    data-testid="button-link"
+    href="#"
+  />,
+  <a
+    className="btnSmallBlack"
+    data-testid="button-link"
+    href="#"
+  />,
+]
+`;
+
+exports[`Button does not render unknown variants classes 1`] = `
+<button
+  className="btn"
+  disabled={false}
+  onClick={null}
+  type="button"
+/>
+`;
+
+exports[`Button renders HTML button element (not anchor element) 1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+]
+`;
+
+exports[`Button renders with additional class correctly 1`] = `
+<button
+  className="btn btn-primary whatever-button"
+  disabled={false}
+  onClick={null}
+  type="button"
+/>
+`;
+
+exports[`Button with disabled state renders correctly  1`] = `
+<button
+  className="btn btn-primary"
+  disabled={true}
+  onClick={null}
+  type="button"
+/>
+`;
+
+exports[`Button with icon renders correctly 1`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  <svg
+    aria-hidden={true}
+    className="MuiSvgIcon-root"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Button with onClick renders correctly 1`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button with text renders correctly 1`] = `
+<button
+  className="btn btn-primary"
+  disabled={false}
+  onClick={null}
+  type="button"
+>
+  VÍCE
+</button>
+`;
+
+exports[`Buttons with variants render correctly 1`] = `
+Array [
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-outline-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-secondary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btn btn-outline-dark text-black"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+  <button
+    className="btnSmallBlack"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />,
+]
+`;

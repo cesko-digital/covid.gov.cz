@@ -1,0 +1,8 @@
+uuid: 93c29841-cf11-4a49-acad-73ac3c23a448
+langcode: cs
+status: true
+dependencies: {  }
+id: basic_content
+label: Obsah
+revision: 0
+description: ''

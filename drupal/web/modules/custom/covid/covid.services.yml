@@ -1,4 +1,10 @@
 services:
+  covid.request_event_subscriber:
+    class: Drupal\covid\EventSubscriber\RequestEventSubscriber
+    arguments: ['@current_route_match', '@current_user', '@messenger']
+    tags:
+      - { name: event_subscriber }
+
   covid.normalizer:
     class: Drupal\covid\Normalizer
     tags:

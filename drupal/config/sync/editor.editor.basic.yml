@@ -17,6 +17,12 @@ settings:
           items:
             - Bold
             - Italic
+            - Format
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
         -
           name: Odkazy
           items:
@@ -27,13 +33,17 @@ settings:
           items:
             - PasteFromWord
             - Source
+        -
+          name: Media
+          items:
+            - DrupalImage
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''
