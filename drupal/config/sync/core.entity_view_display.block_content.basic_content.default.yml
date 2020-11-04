@@ -1,0 +1,23 @@
+uuid: 5b4e3c95-0906-41c7-ae4e-74709212f417
+langcode: cs
+status: true
+dependencies:
+  config:
+    - block_content.type.basic_content
+    - field.field.block_content.basic_content.field_b_content
+  module:
+    - text
+id: block_content.basic_content.default
+targetEntityType: block_content
+bundle: basic_content
+mode: default
+content:
+  field_b_content:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

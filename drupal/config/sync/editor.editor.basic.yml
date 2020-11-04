@@ -17,6 +17,12 @@ settings:
           items:
             - Bold
             - Italic
+            - Format
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
         -
           name: Odkazy
           items:
@@ -28,10 +34,10 @@ settings:
             - PasteFromWord
             - Source
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
 image_upload:
   status: false
   scheme: public
