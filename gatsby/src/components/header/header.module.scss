@@ -7,6 +7,9 @@
 .header {
   background-color: $theme-blue;
 
+  position: relative;
+  z-index: 1;
+
   color: $white;
 
   padding: 10px 0;

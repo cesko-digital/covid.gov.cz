@@ -3,7 +3,10 @@
 }
 
 .main {
-  background-image: url(/images/main-content-mobile-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  position: relative;
+}
+
+.mainInner {
+  position: relative;
+  z-index: 1;
 }
