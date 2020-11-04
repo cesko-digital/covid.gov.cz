@@ -1,0 +1,28 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.commonTopic {
+  padding: 2.2rem 0;
+  margin: 0 0 1.6rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  background: $theme-blue;
+}
+
+.commonTopicTitle {
+  font-size: 2.3rem;
+  font-weight: 300;
+  color: $theme-white;
+  margin-bottom: 0;
+}
+
+.commonTopicTitleBold {
+  font-weight: 700;
+}
+
+.commonTopicDescription {
+  margin-bottom: 1.6rem;
+}
+
+.commonTopicButton {
+  width: 100%;
+}
