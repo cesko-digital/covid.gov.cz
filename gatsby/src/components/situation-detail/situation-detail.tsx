@@ -79,13 +79,21 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             ''
           )}
 
-          {situation.valid_from && situation.valid_to ? (
+          {situation.valid_from || situation.valid_to ? (
             <div className="d-flex align-items-center color-blue">
               <Event />
               &nbsp;
               <span className="text-uppercase font-weight-medium">
-                Od {situation.valid_from}
-                Do {situation.valid_to}
+                {situation.valid_from ? (
+                  <span>Od {situation.valid_from}</span>
+                ) : (
+                  ''
+                )}
+                {situation.valid_to ? (
+                  <span>Do {situation.valid_to} </span>
+                ) : (
+                  ''
+                )}
               </span>
             </div>
           ) : (
