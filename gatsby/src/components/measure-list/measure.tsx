@@ -28,13 +28,12 @@ const Measure: React.FC<Props> = ({
           <div className={styles.measureDetail}>Platí pro: {area}</div>
           <div className={styles.measureDetail}>{validity}</div>
         </div>
-        <Link to={link}>
-          <Button
-            text="VÍCE"
-            variant="outline"
-            className={styles.measureButton}
-          />
-        </Link>
+        <Button
+          text="VÍCE"
+          variant="outline"
+          href={link}
+          className={styles.measureButton}
+        />
       </div>
     </div>
   );
