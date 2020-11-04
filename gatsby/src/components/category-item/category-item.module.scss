@@ -1,0 +1,17 @@
+.categoryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.8rem 0;
+  text-decoration: none;
+
+  &Title {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+  }
+}

@@ -34,6 +34,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           boldedTitleCount={2}
           buttonVariant=""
           buttonText={situation_link?.title}
+          buttonHref="/situace"
         >
           <SituationsBox situations={situation_items} />
         </ContentBox>
@@ -41,6 +42,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           title={measure_label}
           boldedTitleCount={1}
           buttonText={measure_link?.title}
+          buttonHref="/opatreni"
           variant="white"
         >
           <MeasureList measures={measure_items} />

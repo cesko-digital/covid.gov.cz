@@ -5,14 +5,16 @@ import Row from '@/components/row';
 import Col from '@/components/col';
 
 import styles from './content-box.module.scss';
+import { Link } from 'gatsby';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
   boldedTitleCount?: number;
   buttonVariant?: ButtonVariant;
   buttonText?: string;
-  variant: string;
+  buttonHref?: string;
+  variant?: string;
 }
 
 const ContentBox: React.FC<Props> = ({
@@ -22,10 +24,11 @@ const ContentBox: React.FC<Props> = ({
   description,
   buttonVariant,
   buttonText,
-  variant,
+  buttonHref,
+  variant = '',
 }) => {
   const boldedTitle = useMemo(() => {
-    const splittedTitle: Array<JSX.Element | string> = title.split(/(?= )/g);
+    const splittedTitle: Array<JSX.Element | string> = title?.split(/(?= )/g);
     if (boldedTitleCount) {
       return splittedTitle.map((item, index) => {
         if (index < boldedTitleCount) {
@@ -52,17 +55,21 @@ const ContentBox: React.FC<Props> = ({
       )}
     >
       <Col col={12}>
-        <h2 className={styles.contentBoxTitle}>{boldedTitle}</h2>
+        {boldedTitle && (
+          <h2 className={styles.contentBoxTitle}>{boldedTitle}</h2>
+        )}
         {description && (
           <p className={styles.contentBoxDescription}>{description}</p>
         )}
         {children}
         {buttonText && (
-          <Button
-            variant={buttonVariant}
-            text={buttonText}
-            className={styles.contentBoxButton}
-          />
+          <Link to={buttonHref}>
+            <Button
+              variant={buttonVariant}
+              text={buttonText}
+              className={styles.contentBoxButton}
+            />
+          </Link>
         )}
       </Col>
     </div>
