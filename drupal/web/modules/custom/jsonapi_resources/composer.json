@@ -1,0 +1,13 @@
+{
+    "name": "drupal/jsonapi_resources",
+    "type": "drupal-module",
+    "description": "This module let's you define custom resources at routes of your choice that use existing resource types.",
+    "keywords": ["Drupal", "JSON API"],
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/jsonapi_resources",
+    "minimum-stability": "dev",
+    "require": {
+      "drupal/core": "^8.8@alpha"
+    }
+  }
+

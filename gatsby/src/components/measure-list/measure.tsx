@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import styles from './measure.module.scss';
 import Button from '@/components/button';
@@ -8,9 +9,16 @@ interface Props {
   description: string;
   area: string;
   validity: string;
+  link: string;
 }
 
-const Measure: React.FC<Props> = ({ title, description, area, validity }) => {
+const Measure: React.FC<Props> = ({
+  title,
+  description,
+  area,
+  validity,
+  link,
+}) => {
   return (
     <div className={styles.measure}>
       <h3 className={styles.measureTitle}>{title}</h3>
@@ -23,6 +31,7 @@ const Measure: React.FC<Props> = ({ title, description, area, validity }) => {
         <Button
           text="VÍCE"
           variant="outline"
+          href={link}
           className={styles.measureButton}
         />
       </div>

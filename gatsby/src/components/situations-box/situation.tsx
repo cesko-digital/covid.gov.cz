@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import {
   AccountBalanceWalletOutlined,
   KeyboardArrowRight,
@@ -11,9 +12,9 @@ interface Props {
 }
 
 const Situation: React.FC<Props> = ({ situation }) => {
-  const { title } = situation;
+  const { title, path } = situation;
   return (
-    <li className={styles.situation}>
+    <Link to={path.alias} className={styles.situation}>
       <span className={styles.situationTitle}>
         <AccountBalanceWalletOutlined
           className={styles.situationTitleIcon}
@@ -22,7 +23,7 @@ const Situation: React.FC<Props> = ({ situation }) => {
         {title}
       </span>
       <KeyboardArrowRight style={{ fontSize: 16 }} />
-    </li>
+    </Link>
   );
 };
 

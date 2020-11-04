@@ -1,0 +1,76 @@
+# Defines a route where a particular user's articles can be found.
+jsonapi_resources_test.author_content:
+  # %jsonapi% is a placeholder for the JSON:API base path, which can be
+  # configured in a site's services.yml file.
+  path: '/%jsonapi%/user/{user}/content'
+  defaults:
+    # Every JSON:API resource route must declare a _jsonapi_resource. The
+    # value can either be a class or a service ID. Unlike the _controller
+    # route default, it is not possible to declare a method name to be called.
+    _jsonapi_resource: Drupal\jsonapi_resources_test\Resource\AuthorArticles
+    _jsonapi_resource_types: ['node--article']
+  requirements:
+    _permission: 'access content'
+    _entity_access: 'user.view'
+    # The following requirements will automatically be set for every JSON:API
+    # resource route and cannot be overridden here.
+    # _content_type_format: api_json
+    # _format: api_json
+    # _auth: all enabled authentication providers will automatically apply
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+# Defines a route where a reminder can be created for a particular user.
+jsonapi_resources_test.add_reminder:
+  path: '/%jsonapi%/user/{user}/reminders'
+  # By default, JSON:API resource accept only GET requests. For other methods
+  # this value must be declared.
+  methods: ['POST']
+  defaults:
+    _jsonapi_resource: Drupal\jsonapi_resources_test\Resource\AddReminder
+    # Every JSON:API resource must declare the resource types which can respond
+    # with, or, in the case of POST requests, which will be considered valid.
+    # This default is not required if the _jsonapi_resource above overrides
+    # \Drupal\jsonapi_resources\Resource\ResourceBase::getRouteResourceTypes().
+    _jsonapi_resource_types: ['node--reminder']
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    _entity_create_access: 'node:reminder'
+    # Custom route access works the same as it does for any other route
+    # definition.
+    _custom_access: Drupal\jsonapi_resources_test\Resource\AddReminder::access
+  options:
+    parameters:
+      user:
+        type: entity:user
+
+# Defines a route where a site's featured content can be found.
+jsonapi_resources_test.featured_content:
+  path: '/%jsonapi%/featured-content'
+  defaults:
+    _jsonapi_resource: Drupal\jsonapi_resources_test\Resource\FeaturedNodes
+  requirements:
+    # The same route requirements for any route definition may also be used
+    # by a JSON:API resource route.
+    _permission: 'access content'
+
+# Defines a route where a client can find information about the authenticated
+# user.
+jsonapi_resources_test.current_user:
+  path: '/%jsonapi%/me'
+  defaults:
+    _jsonapi_resource: Drupal\jsonapi_resources_test\Resource\CurrentUserInfo
+  requirements:
+    _user_is_logged_in: 'TRUE'
+
+# Defines a route where a comment can be created on an article.
+jsonapi_resources_test.add_comment:
+  path: '/%jsonapi%/comment/add'
+  methods: ['POST']
+  defaults:
+    _jsonapi_resource: Drupal\jsonapi_resources_test\Resource\AddComment
+    _jsonapi_resource_types: ['comment--comment']
+  requirements:
+    _entity_create_access: 'comment'
