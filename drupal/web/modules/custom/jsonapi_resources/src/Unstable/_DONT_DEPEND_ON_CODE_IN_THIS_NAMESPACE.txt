@@ -1,0 +1,12 @@
+The "Unstable" namespace is reserved for internal use by this module.
+
+Extensions which have the JSON:API Resources module as a dependency should not
+use, extend, implement or otherwise interact directly with any code in this
+namespace.
+
+Code in this namespace comes with *no* backwards-compatibility guarantees,
+without any regard for semantic versioning. In other words, breaking changes may
+be made to code in this namespace during any release.
+
+Code *outside* of the "Unstable" namespace comes with backwards-compatibility
+guarantees consistent with semantic versioning.
