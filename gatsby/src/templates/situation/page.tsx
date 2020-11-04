@@ -1,16 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
+import SituationDetail from '@/components/situation-detail/situation-detail';
 
 interface IProps {
   data: IQuery;
 }
 
-const Home: React.FC<IProps> = ({ data }) => {
-  const { situation } = data;
-  return <span className="text-white">{JSON.stringify(situation)}</span>;
+const Page: React.FC<IProps> = ({ data }) => {
+  return <SituationDetail situation={data.situation} />;
 };
-export default Home;
+export default Page;
 
 export const query = graphql`
   query($slug: String!) {
@@ -42,7 +42,7 @@ export const query = graphql`
       path {
         alias
       }
-      changed
+      changed(formatString: "D. MMMM YYYY HH:mm")
       valid_from
       valid_to
     }

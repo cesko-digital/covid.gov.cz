@@ -28,6 +28,19 @@ $theme-path: '/ds';
   color: $theme-yellow;
 }
 
+.color-blue {
+  color: $theme-blue;
+}
+
+.color-blue-dark {
+  color: $theme-blue-dark;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+// Button
 .btn {
   &.btn-primary {
     border-color: darken($theme-blue, 5%);
