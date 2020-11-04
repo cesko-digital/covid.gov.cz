@@ -1,13 +1,10 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
-import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
-import SearchBox from '@/components/search-box';
-import Row from '@/components/row';
 import Container from '@/components/container';
-import { AlertContaner } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import { IQuery } from 'graphql-types';
 
@@ -28,13 +25,7 @@ const Home: React.FC<IProps> = ({ data }) => {
 
   return (
     <>
-      <Container>
-        <Helmet title="Index | Covid Portál" />
-        <Row>
-          <SearchBox />
-        </Row>
-      </Container>
-      <AlertContaner />
+      <Helmet title="Index Page" />
       <Container>
         <ContentBox
           title={situation_label}
@@ -42,7 +33,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           buttonVariant="outline"
           buttonText={situation_link?.title}
         >
-          <SituationsBox />
+          <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
           title={measure_label}
@@ -89,11 +80,6 @@ export const query = graphql`
         situation_items {
           id
           title
-          relationships {
-            region {
-              name
-            }
-          }
         }
       }
     }

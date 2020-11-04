@@ -14,17 +14,15 @@ const MeasureList: React.FC<Props> = ({ measures }) => {
 
   return (
     <>
-      {measures
-        .slice(0, maxItems - 1)
-        .map(({ id, title, relationships }, i) => (
-          <Measure
-            key={id}
-            title={title}
-            description="Rouška se musí nosit venku až na pár"
-            validity="od 2. října do 6. listopadu"
-            area={relationships.region[0]?.name}
-          />
-        ))}
+      {measures.slice(0, maxItems).map(({ id, title, relationships }, i) => (
+        <Measure
+          key={id}
+          title={title}
+          description="Rouška se musí nosit venku až na pár"
+          validity="od 2. října do 6. listopadu"
+          area={relationships.region[0]?.name}
+        />
+      ))}
     </>
   );
 };
