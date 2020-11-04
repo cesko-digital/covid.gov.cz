@@ -64,8 +64,14 @@ class AddTranslationForm extends FormBase {
     $storage = $this->entityTypeManager->getStorage('covid_translation');
 
     foreach (explode(PHP_EOL, $strings) as $string) {
+      $string = $this->parseString($string);
+
+      if ($string === "") {
+        continue;
+      }
+
       $translation = $storage->create([
-        'source' => $this->parseString($string)
+        'source' => $string
       ]);
 
       $translation->save();
