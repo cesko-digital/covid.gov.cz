@@ -1,17 +1,13 @@
 @import '../../../assets/scss/design-system/base/variables';
-
 @import '../../../assets/scss/design-system/vendor/bootstrap/functions';
 @import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .header {
   background-color: $theme-blue;
-
   position: relative;
   z-index: 1;
-
   color: $white;
-
   padding: 10px 0;
 
   @include media-breakpoint-down(md) {
@@ -57,10 +53,12 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     transition: 0.2s ease-out;
+
     &:first-of-type {
       right: 12px;
       top: 10px;
     }
+
     &:last-of-type {
       top: 19px;
       width: 12px;
@@ -80,6 +78,7 @@
       top: 15px;
       transform: rotate(45deg);
     }
+
     &:last-of-type {
       width: 18px;
       top: 15px;
@@ -90,19 +89,15 @@
 
 .nav__mobile {
   background-color: $theme-blue;
-
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-
   transform: translateX(100%);
-
   display: flex;
   flex-direction: column;
-
   padding: 78px 0 50px;
 }
 
