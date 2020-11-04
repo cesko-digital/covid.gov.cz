@@ -15,6 +15,9 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  * @ContentEntityType(
  *   id = "covid_translation",
  *   label = @Translation("Translation"),
+ *   handlers = {
+ *     "access" = "Drupal\covid\TranslationAccessControlHandler",
+ *   },
  *   base_table = "covid_translation",
  *   data_table = "remote_node_field_data",
  *   translatable = FALSE,
