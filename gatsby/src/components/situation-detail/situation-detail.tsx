@@ -34,7 +34,6 @@ interface IProps {
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {
   // TODO: breadcrumb
-  console.log(situation);
   return (
     <div className={styles.situationDetail}>
       <Container>
@@ -80,7 +79,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             ''
           )}
 
-          {situation.valid_from && situation.valid_to && (
+          {situation.valid_from && situation.valid_to ? (
             <div className="d-flex align-items-center color-blue">
               <Event />
               &nbsp;
@@ -89,6 +88,8 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
                 Do {situation.valid_to}
               </span>
             </div>
+          ) : (
+            ''
           )}
 
           <p className="mt-2 text-muted font-italic">
