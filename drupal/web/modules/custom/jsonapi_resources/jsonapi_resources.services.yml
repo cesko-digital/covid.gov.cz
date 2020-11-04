@@ -1,0 +1,58 @@
+# Important:
+#   Even if the service is public, all services are for internal use only!
+services:
+  controller.jsonapi_resource:
+    class: Drupal\jsonapi_resources\Unstable\Controller\JsonapiResourceController
+    arguments: ['@jsonapi_resources.class_resolver', '@jsonapi_resources.controller.argument_resolver']
+
+  # Enhances http_kernel.controller.argument_resolver with the ability to
+  # resolve request payloads into a JSON:API resource processor argument.
+  jsonapi_resources.controller.argument_resolver:
+    class: Symfony\Component\HttpKernel\Controller\ArgumentResolver
+    arguments: ['@http_kernel.controller.argument_metadata_factory', ['@argument_resolver.request_attribute', '@argument_resolver.request', '@argument_resolver.psr7_request', '@argument_resolver.route_match', '@jsonapi_resources.argument_resolver.document', '@argument_resolver.default']]
+    public: false
+
+  jsonapi_resources.argument_resolver.document:
+    class: Drupal\jsonapi_resources\Unstable\Controller\ArgumentResolver\DocumentResolver
+    arguments: ['@jsonapi_resources.document_extractor']
+    public: false
+
+  jsonapi_resources.resource_response_factory:
+    class: Drupal\jsonapi_resources\Unstable\ResourceResponseFactory
+    arguments: ['@jsonapi.include_resolver']
+
+  jsonapi_resources.document_extractor:
+    class: Drupal\jsonapi_resources\Unstable\DocumentExtractor
+    arguments: ['@jsonapi.serializer', '@jsonapi.resource_type.repository', '@entity_type.manager']
+
+  route_subscriber.jsonapi_resource:
+    class: Drupal\jsonapi_resources\Unstable\Routing\ResourceRoutes
+    arguments: ['@jsonapi.resource_type.repository', '%authentication_providers%', '%jsonapi.base_path%', '@service_container']
+    tags:
+      - { name: event_subscriber }
+
+  route_enhancer.jsonapi_resource:
+    class: Drupal\jsonapi_resources\Unstable\Routing\Enhancer\ResourceEnhancer
+    arguments: ['@jsonapi_resources.class_resolver', '@current_route_match']
+    tags:
+      - { name: route_enhancer }
+
+  jsonapi_resources.class_resolver:
+    parent: class_resolver
+    class: Drupal\jsonapi_resources\Unstable\DependencyInjection\JsonapiResourceClassResolver
+    public: false
+
+  jsonapi_resources.resource_object_to_entity_mapper:
+    class: Drupal\jsonapi_resources\Unstable\Entity\ResourceObjectToEntityMapper
+    arguments: ['@jsonapi.serializer']
+
+  # Utility service for capturing leaked cacheability metadata from entity query executions.
+  jsonapi_resources.entity_query_executor:
+    class: Drupal\jsonapi_resources\Unstable\Entity\Query\CacheabilityCapturingExecutor
+    arguments: ['@renderer']
+
+  # Makes the JSON:API entity access checker public so it can be injected by EntityResourceBase::create().
+  jsonapi_resources.entity_access_checker:
+    parent: jsonapi.entity_access_checker
+    class: Drupal\jsonapi\Access\EntityAccessChecker
+    public: true
