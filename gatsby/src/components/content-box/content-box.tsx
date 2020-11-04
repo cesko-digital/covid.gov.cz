@@ -43,6 +43,7 @@ const ContentBox: React.FC<Props> = ({
   }, [title]);
 
   return (
+    // contentBox--white
     <div
       className={classNames(
         styles.contentBox,
