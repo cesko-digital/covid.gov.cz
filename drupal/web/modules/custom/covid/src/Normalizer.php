@@ -14,7 +14,14 @@ class Normalizer extends TypedDataNormalizer {
     $data = parent::normalize($object, $format, $context);
 
     if ($object instanceof StringData && ($parent = $object->getParent()) instanceof LinkItem && $object->getString() === "") {
-      return preg_replace('#^http(s)?://#', '', $parent->get('uri')->getValue());
+      $parsedUrl = parse_url($parent->get('uri')->getValue());
+      $url = '';
+      foreach (['host', 'path'] as $part) {
+        if (isset($parsedUrl[$part])) {
+          $url .= $parsedUrl[$part];
+        }
+      }
+      return $url;
     }
 
     return $data;
