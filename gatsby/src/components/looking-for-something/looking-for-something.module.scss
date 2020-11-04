@@ -1,0 +1,40 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.container {
+  color: #2362a2;
+  background: white;
+  padding: 5px 17px 16px 17px;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 11px 0;
+}
+
+.description {
+  min-width: 100%;
+  margin: 11px 0 0 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0.54px;
+}
+
+.header {
+  flex-grow: 1;
+  font-size: 2.3rem;
+  letter-spacing: 0.54px;
+}
+
+.phone-icon {
+  margin-right: 15px;
+}
+
+.separator {
+  margin: 16px 0;
+}
+
+.phone-number {
+  text-decoration: none;
+}
