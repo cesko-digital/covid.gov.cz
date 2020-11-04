@@ -1,7 +1,7 @@
 const config = {
   plugins: [
     {
-      resolve: 'gatsby-source-drupal-multilanguage',
+      resolve: 'gatsby-source-drupal',
       options: {
         baseUrl: 'https://covid.pristup.net/',
         apiBase: 'api',
