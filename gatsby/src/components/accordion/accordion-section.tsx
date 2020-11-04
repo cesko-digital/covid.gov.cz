@@ -8,10 +8,10 @@ import Button from '@/components/button';
 
 export interface Section {
   title: string;
-  items: Item[];
+  text: string;
 }
 
-const AccordionSection: React.FC<Section> = ({ title, items }) => {
+const AccordionSection: React.FC<Section> = ({ title, text }) => {
   const [opened, setOpened] = useState(false);
 
   const toggleSection = useCallback(() => {
@@ -38,13 +38,12 @@ const AccordionSection: React.FC<Section> = ({ title, items }) => {
             'align-items-center',
           )}
           onClick={toggleSection}
+          variant="yellow"
         />
       </div>
       {opened && (
         <div className={styles.sectionContent}>
-          {items.map((item, index) => (
-            <AccordionItem key={index} {...item} />
-          ))}
+          {text}
         </div>
       )}
     </div>

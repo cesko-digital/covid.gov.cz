@@ -9,11 +9,11 @@ interface Props {
 
 const Accordion: React.FC<Props> = ({ data }) => {
   return (
-    <div>
+    <>
       {data.map((item, index) => (
         <AccordionSection key={index} {...item} />
       ))}
-    </div>
+    </>
   );
 };
 
