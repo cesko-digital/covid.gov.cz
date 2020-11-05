@@ -25,7 +25,7 @@ const ContentBox: React.FC<Props> = ({
   variant,
 }) => {
   const boldedTitle = useMemo(() => {
-    const splittedTitle: Array<JSX.Element | string> = title.split(/(?= )/g);
+    const splittedTitle: (JSX.Element | string)[] = title.split(/(?= )/g);
     if (boldedTitleCount) {
       return splittedTitle.map((item, index) => {
         if (index < boldedTitleCount) {
