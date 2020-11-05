@@ -70,7 +70,6 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const customPages: IPageGroupConnection = result.data.allPage;
 
   customPages.nodes.forEach((page: IPage) => {
-    console.log(page.path.alias);
     createPage({
       path: page.path.alias,
       component: customPagesTemplate,
