@@ -71,14 +71,14 @@
     line-height: 32px;
   }
 }
-
+/* stylelint-disable no-descending-specificity */
 .nav__toggle--open {
   & > span {
     &:first-of-type {
       top: 15px;
       transform: rotate(45deg);
     }
-
+    /* stylelint-enable no-descending-specificity */
     &:last-of-type {
       width: 18px;
       top: 15px;

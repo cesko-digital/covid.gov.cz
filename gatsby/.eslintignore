@@ -1,1 +1,4 @@
 graphql-types.ts
+node_modules
+public
+gatsby-source-drupal

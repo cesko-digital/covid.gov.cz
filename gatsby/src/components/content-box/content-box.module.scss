@@ -1,17 +1,5 @@
 @import '../../../assets/scss/design-system/base/variables';
 
-.contentBox {
-  padding: 1.6rem 0;
-  margin: 0 0 1.6rem;
-  border-radius: 0.3rem;
-  overflow: hidden;
-  background: $theme-blue;
-
-  &NoPadding {
-    padding: 0;
-  }
-}
-
 .contentBoxTitle {
   font-size: 2.3rem;
   font-weight: 300;
@@ -31,6 +19,16 @@
 }
 
 .contentBox {
+  padding: 1.6rem 0;
+  margin: 0 0 1.6rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  background: $theme-blue;
+
+  &NoPadding {
+    padding: 0;
+  }
+
   &--white {
     background: $white;
 

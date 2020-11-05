@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
-import AccordionItem, { Item } from '@/components/accordion/accordion-item';
 import { Add, Clear } from '@material-ui/icons';
 
 import styles from './accordion-section.module.scss';

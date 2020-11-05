@@ -18,7 +18,8 @@
   },
   "rules": {
     "react/prop-types": "off",
-    "react/jsx-fragments": "off"
+    "react/jsx-fragments": "off",
+    "camelcase": "off"
   },
   "extends": [
     "standard",

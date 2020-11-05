@@ -45,6 +45,8 @@ const Situations: React.FC<IProps> = ({ data }) => {
       <Container className="mt-3">
         <ContentBox noPadding>
           {slicedItems.map((n) => (
+            // todo: add types somehow
+            // @ts-ignore
             <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
           ))}
         </ContentBox>

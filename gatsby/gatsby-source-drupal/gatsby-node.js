@@ -1,3 +1,5 @@
+//todo pls refactor in terms of eslint - remove this dir from .eslintignore file to continue
+
 'use strict';
 
 const axios = require(`axios`);
@@ -141,7 +143,7 @@ exports.sourceNodes = async (
   if (fastBuilds) {
     var _store$getState$statu3, _store$getState$statu4, _store$getState$statu5;
 
-    let lastFetched =
+    const lastFetched =
       (_store$getState$statu3 =
         (_store$getState$statu4 = store.getState().status.plugins) === null ||
         _store$getState$statu4 === void 0
@@ -188,7 +190,7 @@ exports.sourceNodes = async (
           }
         }); // Process sync data from Drupal.
 
-        let nodesToSync = data.data.entities;
+        const nodesToSync = data.data.entities;
 
         for (const nodeSyncData of nodesToSync) {
           if (nodeSyncData.action === `delete`) {
@@ -325,7 +327,7 @@ exports.sourceNodes = async (
             `This Drupal data source is configured as multilingual.`,
           );
           for (let i = 0; i < languageConfig.enabledLanguages.length; i++) {
-            let currentLanguage = languageConfig.enabledLanguages[i];
+            const currentLanguage = languageConfig.enabledLanguages[i];
             let dataForLanguage;
 
             if (currentLanguage === languageConfig.defaultLanguage) {
@@ -419,8 +421,6 @@ exports.sourceNodes = async (
     node.internal.contentDigest = createContentDigest(node);
     createNode(node);
   }
-
-  return;
 }; // This is maintained for legacy reasons and will eventually be removed.
 
 exports.onCreateDevServer = (
