@@ -1,0 +1,19 @@
+uuid: da9d2ece-7866-4c0e-bb5b-dce5dfc9f962
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_norm
+    - node.type.measure
+id: node.measure.field_norm
+field_name: field_norm
+entity_type: node
+bundle: measure
+label: Norma
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

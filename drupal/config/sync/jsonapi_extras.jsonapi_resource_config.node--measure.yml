@@ -117,6 +117,24 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  moderation_state:
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false
+  menu_link:
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+    disabled: false
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
@@ -135,9 +153,27 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_measure_type:
+    fieldName: field_measure_type
+    publicName: field_measure_type
+    enhancer:
+      id: ''
+    disabled: false
   field_meta_description:
     fieldName: field_meta_description
     publicName: meta_description
+    enhancer:
+      id: ''
+    disabled: false
+  field_norm:
+    fieldName: field_norm
+    publicName: norm
+    enhancer:
+      id: ''
+    disabled: false
+  field_ref_icon:
+    fieldName: field_ref_icon
+    publicName: field_ref_icon
     enhancer:
       id: ''
     disabled: false

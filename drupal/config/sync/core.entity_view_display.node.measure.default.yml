@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.measure.field_content
     - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
+    - field.field.node.measure.field_norm
     - field.field.node.measure.field_ref_icon
     - field.field.node.measure.field_region
     - field.field.node.measure.field_source
@@ -48,6 +49,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_norm:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_ref_icon:
     weight: 1
