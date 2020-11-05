@@ -114,6 +114,7 @@ const handleReferences = (node, languageConfig, {
         const isTranslatableReferencedNodeType = languageConfig.translatableEntities.some(entity => entity.id === v.data.type);
         const referenceLanguagePrefix = isTranslatableReferencedNodeType ? rootNodeLanguage : languageConfig.defaultLanguage;
         const referencedNodeId = createNodeId(`${referenceLanguagePrefix}${v.data.id}`);
+
         if (getNode(referencedNodeId)) {
           relationships[nodeFieldName] = referencedNodeId;
           referencedNodes.push(referencedNodeId);
