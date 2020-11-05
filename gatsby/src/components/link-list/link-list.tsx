@@ -6,7 +6,10 @@ import useMobile from '@/hooks/useMobile';
 
 interface Props {
   fallbackText?: string;
-  links: Array<{ title: string; path: { alias: string } }>;
+  links: Array<{
+    path?: { alias?: string; langcode?: string };
+    title?: string;
+  }>;
 }
 
 const LinkList: React.FC<Props> = ({ links, fallbackText }) => {
