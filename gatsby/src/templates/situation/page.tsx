@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
 import SituationDetail from '@/components/situation-detail/situation-detail';
-import CommonTopic from '@/components/common-topic';
+import ContentBox from '@/components/content-box';
 import LinkList from '@/components/link-list';
 import Container from '@/components/container';
 import linkListStyles from '@/components/link-list/link-list.module.scss';
@@ -16,13 +16,13 @@ const Page: React.FC<IProps> = ({ data }) => {
       <SituationDetail situation={data.situation} />
 
       <Container>
-        <CommonTopic title="Podobná témata" boldedTitleCount={1}>
+        <ContentBox title="Podobná témata" boldedTitleCount={1} variant="blue">
           <LinkList
             links={data.situation.relationships.related_situations}
             variant="secondary"
             fallbackClass={linkListStyles.linkListFallback}
           />
-        </CommonTopic>
+        </ContentBox>
       </Container>
     </>
   );
