@@ -5,7 +5,6 @@ const config = {
       options: {
         baseUrl: 'https://covid.pristup.net',
         apiBase: 'api',
-        translation: true,
       },
     },
     'gatsby-plugin-typescript',
@@ -64,6 +63,12 @@ const config = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ['G-GKH7GB76MH'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['material icons'],
       },
     },
   ],
