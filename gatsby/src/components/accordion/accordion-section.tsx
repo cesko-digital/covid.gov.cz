@@ -41,11 +41,7 @@ const AccordionSection: React.FC<Section> = ({ title, text }) => {
           variant="yellow"
         />
       </div>
-      {opened && (
-        <div className={styles.sectionContent}>
-          {text}
-        </div>
-      )}
+      {opened && <div className={styles.sectionContent}>{text}</div>}
     </div>
   );
 };
