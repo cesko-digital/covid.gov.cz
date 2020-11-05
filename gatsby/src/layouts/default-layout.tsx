@@ -1,36 +1,33 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from 'react'
+import classnames from 'classnames'
 
-import Header from '@/components/header';
-import Footer from '@/components/footer';
-import MainBackground from '@/components/main-background';
-import I18n from '@/components/i18n';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import MainBackground from '@/components/main-background'
+import I18n from '@/components/i18n'
 
-import styles from './default-layout.module.scss';
+import styles from './default-layout.module.scss'
 
 const DefaultLayout: React.FC = ({ children }) => {
-  const measuresRoute = I18n('slug_measures');
-  const situationsRoute = I18n('slug_situations');
-
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
       <Header
         navItems={[
-          { label: 'Úvod', to: '/' },
-          { label: 'Opatření', to: measuresRoute },
-          { label: 'Životní situace', to: situationsRoute },
+          { label: I18n('home'), to: '/' },
+          { label: I18n('life_situations'), to: I18n('slug_situations') },
+          { label: I18n('current_measures'), to: I18n('slug_measures') }
         ]}
       />
       <main>
         <MainBackground
-          src="/images/main-content-mobile-bg.jpg"
-          alt="Covid Portal"
+          src='/images/main-content-mobile-bg.jpg'
+          alt='Covid Portal'
         />
         <div className={styles.mainInner}>{children}</div>
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default DefaultLayout;
+export default DefaultLayout
