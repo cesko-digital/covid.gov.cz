@@ -4,7 +4,11 @@
   margin: 0 0 1.6rem;
   border-radius: 0.3rem;
   overflow: hidden;
-  background: $theme-blue;
+  background: #2362a2;
+
+  &NoPadding {
+    padding: 0;
+  }
 }
 
 .contentBoxTitle {

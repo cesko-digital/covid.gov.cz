@@ -1,4 +1,4 @@
-.situation {
+.categoryItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,10 +14,5 @@
     color: white;
     text-transform: uppercase;
     margin-right: 1rem;
-
-    &Icon {
-      color: white;
-      margin-right: 1.2rem;
-    }
   }
 }
