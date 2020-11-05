@@ -5,6 +5,7 @@ import SituationDetail from '@/components/situation-detail/situation-detail';
 import CommonTopic from '@/components/common-topic';
 import LinkList from '@/components/link-list';
 import Container from '@/components/container';
+import linkListStyles from '@/components/link-list/link-list.module.scss';
 interface IProps {
   data: IQuery;
 }
@@ -19,6 +20,7 @@ const Page: React.FC<IProps> = ({ data }) => {
           <LinkList
             links={data.situation.relationships.related_situations}
             variant="secondary"
+            fallbackClass={linkListStyles.linkListFallback}
           />
         </CommonTopic>
       </Container>
