@@ -1,5 +1,5 @@
-import { Helmet } from 'gatsby-plugin-react-i18next';
 import { IPage, IQuery } from 'graphql-types';
+import { Helmet } from 'react-helmet';
 import React from 'react';
 import Container from '@/components/container';
 import { graphql } from 'gatsby';

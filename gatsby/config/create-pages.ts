@@ -2,7 +2,6 @@ import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
 import { IQuery } from 'graphql-types';
 import { IPage, IPageGroupConnection } from '../graphql-types';
-import I18n, { TRoute } from '@/components/i18n';
 
 /**
  * Gatsby exposes interfaces for every lifecycle hook
@@ -42,11 +41,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
         allArea {
           edges {
             node {
+              langcode
               path {
                 alias
               }
               relationships {
                 situation {
+                  langcode
                   path {
                     alias
                   }
@@ -121,9 +122,10 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const customPages: IPageGroupConnection = result.data.allPage;
 
   customPages.nodes.forEach((page: IPage) => {
-    console.log(page.langcode);
+    const pathPrefix = page.langcode === 'cs' ? '' : '/' + page.langcode;
+    console.log(pathPrefix + page.path.alias);
     createPage({
-      path: page.path.alias,
+      path: pathPrefix + page.path.alias,
       component: customPagesTemplate,
       context: {
         slug: page.path.alias,
@@ -136,8 +138,10 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const posts = result.data.allArea.edges;
 
   posts.forEach((post, index) => {
+    const pathPrefix =
+      post.node.langcode === 'cs' ? '' : '/' + post.node.langcode;
     createPage({
-      path: post.node.path.alias,
+      path: pathPrefix + post.node.path.alias,
       component: situationListTemplate,
       context: {
         slug: post.node.path.alias,
@@ -147,12 +151,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
     if (post.node.relationships.situation !== null) {
       post.node.relationships.situation.forEach((situation, index) => {
+        const pathPrefix =
+          situation.langcode === 'cs' ? '' : '/' + situation.langcode;
         createPage({
-          path: situation.path.alias,
+          path: pathPrefix + situation.path.alias,
           component: situationPageTemplate,
           context: {
             slug: situation.path.alias,
-            langCode: situation.langcode,
+            langCode: situation.path.langcode,
           },
         });
       });

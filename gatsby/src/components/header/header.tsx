@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import classnames from 'classnames';
-import { Link } from 'gatsby';
+import Link from '@/components/link';
 
 import Container from '../container';
 import Row from '../row';
@@ -11,7 +11,7 @@ import classes from './header.module.scss';
 
 import headerLogo from './header-logo.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
-import I18n from '@/components/i18n';
+import I18n, { TRoute } from '@/components/i18n';
 
 interface NavItem {
   label: string;
@@ -22,7 +22,7 @@ interface Props {
   navItems: NavItem[];
 }
 
-export const locales = ['CZ', 'EN', 'DE'];
+export const locales = ['cs', 'en'];
 
 const Header: React.FC<Props> = ({ navItems }) => {
   const [isOpen, setOpen] = useState(false);
@@ -78,7 +78,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                           to={to}
                           className={classnames('nav__link', classes.nav__link)}
                           activeClassName="active"
-                          partiallyActive
+                          partiallyActive={to !== '/'}
                         >
                           {label}
                         </Link>
@@ -113,10 +113,10 @@ const Header: React.FC<Props> = ({ navItems }) => {
               </Link>
             ))}
             {locales.map((locale, index) => (
-              <a
-                key={index}
-                href="#"
+              <Link
+                to={TRoute('/', locale)}
                 onClick={() => setLocale(locale)}
+                key={index}
                 className={classnames(
                   classes.nav__mobileLink,
                   index === 0 && 'mt-auto',
@@ -124,7 +124,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 )}
               >
                 {locale}
-              </a>
+              </Link>
             ))}
           </div>
           {/* DESKTOP LOCALE SELECT */}

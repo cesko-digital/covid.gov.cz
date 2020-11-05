@@ -4,8 +4,7 @@ import Button, { ButtonVariant } from '@/components/button';
 import Col from '@/components/col';
 
 import styles from './content-box.module.scss';
-import { Link } from 'gatsby';
-import { BoldedTitle } from '../bolded-title';
+import Link from '@/components/link';
 
 interface Props {
   title?: string;

@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
-import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
 import { AlertContainer } from '@/components/alert';
@@ -16,14 +15,14 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  const { allHomepage } = data;
+  const { homepage } = data;
   const {
     situation_label,
     situation_link,
     measure_label,
     measure_link,
     relationships,
-  } = allHomepage.nodes[0];
+  } = homepage;
   const { measure_items, situation_items } = relationships;
 
   return (
@@ -35,7 +34,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           title={situation_label}
           boldedTitleCount={2}
           buttonText={situation_link?.title}
-          buttonHref="/situace"
+          buttonHref={I18n('slug_situations')}
         >
           <SituationsBox situations={situation_items} />
         </ContentBox>
@@ -44,14 +43,11 @@ const Home: React.FC<IProps> = ({ data }) => {
           boldedTitleCount={1}
           buttonVariant="contained"
           buttonText={measure_link?.title}
-          buttonHref="/opatreni"
+          buttonHref={I18n('slug_measures')}
           variant="white"
         >
           <MeasureList measures={measure_items} />
         </ContentBox>
-        <Link to="/" language="en" className="">
-          English Page
-        </Link>
       </Container>
     </Layout>
   );
@@ -60,37 +56,35 @@ export default Home;
 
 export const query = graphql`
   query IndexQuery($langCode: String!) {
-    allHomepage(filter: { langcode: { eq: $langCode } }) {
-      nodes {
-        measure_label
-        measure_link {
-          uri
+    homepage(langcode: { eq: $langCode }) {
+      measure_label
+      measure_link {
+        uri
+        title
+      }
+      moderation_state
+      measure_text
+      situation_label
+      situation_link {
+        uri
+        title
+      }
+      situation_text
+      relationships {
+        measure_items {
+          id
           title
-        }
-        moderation_state
-        measure_text
-        situation_label
-        situation_link {
-          uri
-          title
-        }
-        situation_text
-        relationships {
-          measure_items {
-            id
-            title
-            relationships {
-              region {
-                name
-              }
+          relationships {
+            region {
+              name
             }
           }
-          situation_items {
-            id
-            title
-            path {
-              alias
-            }
+        }
+        situation_items {
+          id
+          title
+          path {
+            alias
           }
         }
       }
