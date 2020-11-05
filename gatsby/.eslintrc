@@ -27,5 +27,5 @@
     "standard",
     "standard-react",
   ],
-  "plugins": ["@typescript-eslint"]
+  "plugins": ["@typescript-eslint", "prettier"]
 }

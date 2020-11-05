@@ -29,9 +29,11 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
             variant='inverse'
           />
         </div>
-        <h1 className='text-white mt-2 h2 font-weight-bold'>{page.title}</h1>
-        <article className='bg-white rounded p-2 mb-1'>
-          {page.content && <div dangerouslySetInnerHTML={{ __html: page.content.processed }} />}
+        <h1 className="text-white mt-2 h2 font-weight-bold">{page.title}</h1>
+        <article className="bg-white rounded p-2 mb-1">
+          {page.content && (
+            <div dangerouslySetInnerHTML={{ __html: page.content.processed }} />
+          )}
         </article>
       </Container>
     </Layout>

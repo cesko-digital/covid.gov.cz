@@ -28,11 +28,11 @@ resourceFields:
     enhancer:
       id: ''
   langcode:
-    disabled: true
     fieldName: langcode
     publicName: langcode
     enhancer:
       id: ''
+    disabled: false
   vid:
     disabled: true
     fieldName: vid
@@ -111,6 +111,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
