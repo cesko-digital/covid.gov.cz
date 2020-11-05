@@ -23,14 +23,14 @@ const defaultValues = {
   callDescription: 'Pro urychlení si prosím připravte svůj konkrétní dotaz.',
 };
 
-type Props = typeof defaultValues;
+type Props = Partial<typeof defaultValues>;
 
 const LookingForSomething = ({
-  searchingHeader,
-  searchingDescription,
-  callHeader,
-  callDescription,
-}: Props = defaultValues) => {
+  searchingHeader = defaultValues.searchingHeader,
+  searchingDescription = defaultValues.searchingDescription,
+  callHeader = defaultValues.callHeader,
+  callDescription = defaultValues.callDescription,
+}: Props) => {
   return (
     <div className={classes.container}>
       <section className={classes.section}>
@@ -42,7 +42,7 @@ const LookingForSomething = ({
       <hr className={classes.separator} />
 
       <section className={classes.section}>
-        <Phone fontSize={'large'} className={classes.phoneIcon} />
+        <Phone fontSize="large" className={classes.phoneIcon} />
         <header className={classes.header}>{callHeader}</header>
         <p className={classes.description}>{callDescription}</p>
       </section>

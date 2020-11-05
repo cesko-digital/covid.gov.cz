@@ -7,6 +7,9 @@ import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
+import LookingForSomething from '@/components/looking-for-something';
+import Pagination from '@/components/pagination';
+import usePagination from '@/hooks/usePagination';
 
 const breadcrumbItems = [
   {
@@ -28,18 +31,27 @@ const Situations: React.FC<IProps> = ({ data }) => {
     allArea: { nodes },
   } = data;
 
+  const { slicedItems, ...pagination } = usePagination(nodes);
+
   return (
     <>
       <Helmet title="Aktuální opatření" />
-      <Breadcrumb items={breadcrumbItems} variant="inverse" />
-      <Headline>Přehled životních situací</Headline>
+      <Container className="mt-3">
+        <Breadcrumb items={breadcrumbItems} variant="inverse" />
+      </Container>
+      <Container className="mt-3">
+        <Headline>Přehled životních situací</Headline>
+      </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
-          {/* TODO: Paging */}
-          {nodes.map((n) => (
+          {slicedItems.map((n) => (
             <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
           ))}
         </ContentBox>
+        <Pagination {...pagination} />
+      </Container>
+      <Container className="mt-3 mb-3">
+        <LookingForSomething />
       </Container>
     </>
   );
