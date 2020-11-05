@@ -1,17 +1,33 @@
-'use strict';
+"use strict";
 
-const { URL } = require(`url`);
+const {
+  URL
+} = require(`url`);
 
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
+const {
+  createRemoteFileNode
+} = require(`gatsby-source-filesystem`);
+
+const getHref = link => {
+  if (typeof link === `object`) {
+    return link.href;
+  }
+
+  return link;
+};
+
+exports.getHref = getHref;
 
 const nodeFromData = (datum, createNodeId) => {
-  const { attributes: { id: _attributes_id, ...attributes } = {} } = datum;
-  const preservedId =
-    typeof _attributes_id !== `undefined`
-      ? {
-          _attributes_id,
-        }
-      : {};
+  const {
+    attributes: {
+      id: _attributes_id,
+      ...attributes
+    } = {}
+  } = datum;
+  const preservedId = typeof _attributes_id !== `undefined` ? {
+    _attributes_id
+  } : {};
   return {
     id: createNodeId(`${datum.attributes.langcode}${datum.id}`),
     drupal_id: datum.id,
@@ -23,22 +39,29 @@ const nodeFromData = (datum, createNodeId) => {
     drupal_relationships: datum.relationships,
     relationships: {},
     internal: {
-      type: datum.type.replace(/-|__|:|\.|\s/g, `_`),
-    },
+      type: datum.type.replace(/-|__|:|\.|\s/g, `_`)
+    }
   };
 };
 
 exports.nodeFromData = nodeFromData;
 
-const isFileNode = (node) =>
-  node.internal.type === `files` || node.internal.type === `file__file`;
+const isFileNode = node => node.internal.type === `files` || node.internal.type === `file__file`;
 
 exports.isFileNode = isFileNode;
 
-exports.downloadFile = async (
-  { node, store, cache, createNode, createNodeId, getCache, reporter },
-  { basicAuth, baseUrl },
-) => {
+exports.downloadFile = async ({
+  node,
+  store,
+  cache,
+  createNode,
+  createNodeId,
+  getCache,
+  reporter
+}, {
+  basicAuth,
+  baseUrl
+}) => {
   // handle file downloads
   if (isFileNode(node)) {
     let fileNode;
@@ -55,16 +78,14 @@ exports.downloadFile = async (
         fileType = uri_prefix ? uri_prefix[0] : null;
       } // Resolve w/ baseUrl if node.uri isn't absolute.
 
+
       const url = new URL(fileUrl, baseUrl); // If we have basicAuth credentials, add them to the request.
 
       const basicAuthFileSystems = [`public:`, `private:`, `temporary:`];
-      const auth =
-        typeof basicAuth === `object` && basicAuthFileSystems.includes(fileType)
-          ? {
-              htaccess_user: basicAuth.username,
-              htaccess_pass: basicAuth.password,
-            }
-          : {};
+      const auth = typeof basicAuth === `object` && basicAuthFileSystems.includes(fileType) ? {
+        htaccess_user: basicAuth.username,
+        htaccess_pass: basicAuth.password
+      } : {};
       fileNode = await createRemoteFileNode({
         url: url.href,
         store,
@@ -74,10 +95,9 @@ exports.downloadFile = async (
         getCache,
         parentNodeId: node.id,
         auth,
-        reporter,
+        reporter
       });
-    } catch (e) {
-      // Ignore
+    } catch (e) {// Ignore
     }
 
     if (fileNode) {
