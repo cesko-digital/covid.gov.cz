@@ -106,6 +106,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         </article>
 
         {situation.questions_answers?.length ? (
+          // TODO: localize
           <ContentBox
             variant="blue"
             title="Časté dotazy k tomuto tématu"
