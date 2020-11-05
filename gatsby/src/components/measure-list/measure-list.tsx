@@ -14,7 +14,7 @@ const MeasureList: React.FC<Props> = ({ measures }) => {
 
   return (
     <>
-      {measures.slice(0, maxItems).map(({ id, title, relationships }, i) => (
+      {measures.slice(0, maxItems).map(({ id, title, relationships }) => (
         <Measure
           key={id}
           title={title}

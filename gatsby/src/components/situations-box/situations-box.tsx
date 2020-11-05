@@ -14,7 +14,7 @@ const SituationsBox: React.FC<IProps> = ({ situations }) => {
   const maxItems = isMobile ? 3 : 6;
   return (
     <div className={styles.situations}>
-      {situations.slice(0, maxItems).map((situation, i) => (
+      {situations.slice(0, maxItems).map((situation) => (
         <Situation situation={situation} key={`situation-${situation.id}`} />
       ))}
     </div>

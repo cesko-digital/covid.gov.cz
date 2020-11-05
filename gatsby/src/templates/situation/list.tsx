@@ -15,7 +15,7 @@ const Home: React.FC<IProps> = ({ data }) => {
     <Container>
       <Headline>{area.name}</Headline>
       <div>
-        {area.relationships?.situation?.map(({ id, title, path }, index) => {
+        {area.relationships?.situation?.map(({ id, title, path }) => {
           return (
             <ListCard
               title={title}

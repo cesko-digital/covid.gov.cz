@@ -59,8 +59,8 @@ const Header: React.FC<Props> = ({ navItems }) => {
               )}
               onClick={toggleOpen}
             >
-              <span></span>
-              <span></span>
+              <span />
+              <span />
               <div>{isOpen ? 'ZAVŘÍT' : 'MENU'}</div>
             </div>
           </Col>
@@ -113,7 +113,8 @@ const Header: React.FC<Props> = ({ navItems }) => {
             ))}
             {locales.map((locale, index) => (
               <a
-                href={'#'}
+                key={index}
+                href="#"
                 onClick={() => setLocale(locale)}
                 className={classnames(
                   classes.nav__mobileLink,
