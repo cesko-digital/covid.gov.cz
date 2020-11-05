@@ -1,17 +1,38 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
-import SituationDetail from '@/components/situation-detail';
 import Layout from '@/layouts/default-layout';
-
+import SituationDetail from '@/components/situation-detail/situation-detail';
+import ContentBox from '@/components/content-box';
+import LinkList from '@/components/link-list';
+import Container from '@/components/container';
 interface IProps {
   data: IQuery;
 }
 
 const Page: React.FC<IProps> = ({ data }) => {
+  const linksData = data.situation.relationships.related_situations;
   return (
     <Layout>
       <SituationDetail situation={data.situation} />
+      <Container>
+        {/* hide this box if no relevant topics exist */}
+        {linksData.length > 0 ? (
+          <ContentBox
+            title="Podobná témata"
+            boldedTitleCount={1}
+            variant="blue"
+          >
+            <LinkList
+              links={linksData}
+              fallbackText="Je nám líto, ale žádná podobná témata prozatím nejsou k dispozici."
+            />
+          </ContentBox>
+        ) : (
+          ''
+        )}
+        ;
+      </Container>
     </Layout>
   );
 };
@@ -45,6 +66,10 @@ export const query = graphql`
         }
         related_situations {
           title
+          path {
+            alias
+            langcode
+          }
         }
       }
       path {
