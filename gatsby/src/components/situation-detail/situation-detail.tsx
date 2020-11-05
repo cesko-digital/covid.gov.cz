@@ -4,6 +4,7 @@ import { Room, Event } from '@material-ui/icons';
 
 import Container from '@/components/container';
 import Link from '@/components/link';
+import Breadcrumb from '@/components/breadcrumb';
 
 import styles from './situation-detail.module.scss';
 import Accordion from '../accordion';
@@ -19,38 +20,34 @@ interface Link {
   title?: string;
 }
 
-const data = [
-  {
-    title: 'Co když už mám STK propadlou?',
-    text:
-      'Nam quis ante id turpis tempus sagittis. Ut id libero quam. Pellentesque cursus nulla ut purus ultrices sagittis. Nam congue vehicula dolor. Aenean varius et est vitae aliquam. Sed scelerisque enim sed facilisis vehicula. Donec eget venenatis tellus.',
-  },
-  {
-    title: 'Musím mít na STK roušku?',
-    text:
-      'Nam quis ante id turpis tempus sagittis. Ut id libero quam. Pellentesque cursus nulla ut purus ultrices sagittis. Nam congue vehicula dolor. Aenean varius et est vitae aliquam. Sed scelerisque enim sed facilisis vehicula. Donec eget venenatis tellus.',
-  },
-  {
-    title: 'Vivamus tincidunt dolor ',
-    text:
-      'Nam quis ante id turpis tempus sagittis. Ut id libero quam. Pellentesque cursus nulla ut purus ultrices sagittis. Nam congue vehicula dolor. Aenean varius et est vitae aliquam. Sed scelerisque enim sed facilisis vehicula. Donec eget venenatis tellus.',
-  },
-];
-
 interface IProps {
   situation: ISituation;
 }
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {
-  // TODO: breadcrumb
   return (
     <div className={styles.situationDetail}>
       <Container>
+        <div className="mt-1">
+          <Breadcrumb
+            items={[
+              // TODO: add localized title
+              { title: 'Domů', url: '/' },
+              {
+                title: situation.relationships?.situation_type?.name,
+                url: situation.relationships?.situation_type?.path?.alias,
+              },
+              situation.title,
+            ]}
+            variant="inverse"
+          />
+        </div>
+
         <h2 className="text-white pt-2">{situation.title}</h2>
-        <article className="bg-white rounded p-2 mb-1">
+        <article className="bg-white rounded p-2 pb-3 mb-1">
           <div
             dangerouslySetInnerHTML={{
-              __html: situation?.content?.processed.replace(/\n/g, '<br/>'),
+              __html: situation?.content?.processed,
             }}
           />
 
@@ -76,7 +73,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
           {situation.relationships.region.length ? (
             <div className="mt-2">
               <h3 className="mb-1 color-blue-dark">Lokalita a platnost</h3>
-              <div className="d-flex align-items-center color-blue">
+              <div className="d-flex align-items-center color-blue mb-1">
                 <Room />
                 &nbsp;
                 <span className="text-uppercase font-weight-medium">
@@ -101,7 +98,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
                   ''
                 )}
                 {situation.valid_to ? (
-                  <span>Do {situation.valid_to} </span>
+                  <span> Do {situation.valid_to} </span>
                 ) : (
                   ''
                 )}
@@ -111,18 +108,27 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             ''
           )}
 
-          <p className="mt-2 text-muted font-italic">
+          {/* <p className="mt-2 text-muted font-italic">
             Naposledy bylo toto téma aktualizováno {situation.changed}
-          </p>
+          </p> */}
         </article>
 
-        <ContentBox
-          variant="blue"
-          title="Časté dotazy k tomuto tématu"
-          boldedTitleCount={2}
-        >
-          <Accordion data={data} />
-        </ContentBox>
+        {situation.questions_answers.length ? (
+          <ContentBox
+            variant="blue"
+            title="Časté dotazy k tomuto tématu"
+            boldedTitleCount={2}
+          >
+            <Accordion
+              data={situation.questions_answers.map((item) => ({
+                title: item.question,
+                text: item.value,
+              }))}
+            />
+          </ContentBox>
+        ) : (
+          ''
+        )}
       </Container>
     </div>
   );
