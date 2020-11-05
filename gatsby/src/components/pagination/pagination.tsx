@@ -67,7 +67,12 @@ const Pagination: React.FC<IProps> = ({
       {shownChildren}
       <Col col={12}>
         <Row justify="center">
-          <div className={('paginator__holder', classes.paginationContainer)}>
+          <div
+            className={classNames(
+              'paginator__holder',
+              classes.paginationContainer,
+            )}
+          >
             <div className="paginator">
               <ul className="paginator__list">
                 <li className="paginator__item pr-0">
