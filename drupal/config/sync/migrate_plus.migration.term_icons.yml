@@ -13,7 +13,7 @@ source:
   plugin: url
   data_fetcher_plugin: file
   data_parser_plugin: json
-  urls: 'modules/custom/covid/migrate/term_icons.json'
+  urls: modules/custom/covid/migrate/term_icons.json
   item_selector: ''
   fields:
     -
