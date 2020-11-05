@@ -1,0 +1,73 @@
+label: 'tập tin'
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Lọc
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      pager:
+        options:
+          tags:
+            previous: '‹ trước'
+            next: 'sau ›'
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+      fields:
+        filename:
+          label: Tên
+        filemime:
+          label: 'Loại MIME'
+        filesize:
+          label: 'Dung lượng'
+        status:
+          label: 'Trạng thái'
+          settings:
+            format_custom_false: 'Tạm thời'
+            format_custom_true: 'Lâu dài'
+        created:
+          label: 'Ngày tải lên'
+        count:
+          label: 'Được dùng trong'
+      filters:
+        filename:
+          expose:
+            label: 'Tên tập tin'
+        filemime:
+          expose:
+            label: 'Loại MIME'
+        status:
+          expose:
+            label: 'Trạng thái'
+      title: 'tập tin'
+      empty:
+        area_text_custom:
+          content: 'Không có tệp nào.'
+  page_1:
+    display_options:
+      menu:
+        title: 'tập tin'
+  page_2:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ trước'
+            next: 'sau ›'
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+      fields:
+        count:
+          label: 'Số lần dùng'
+      arguments:
+        fid:
+          exception:
+            title: 'Tất cả'

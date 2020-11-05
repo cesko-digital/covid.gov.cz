@@ -1,0 +1,71 @@
+label: 'Mọi người'
+description: 'Tìm kiếm và quản lý tương tác giữa người dùng với trang web.'
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Lọc
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      pager:
+        options:
+          tags:
+            previous: '‹ trước'
+            next: 'sau ›'
+            first: '« đầu'
+            last: 'cuối »'
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+      fields:
+        user_bulk_form:
+          label: 'Cập nhật hàng loạt'
+        name:
+          label: 'Tên người dùng'
+        status:
+          label: 'Trạng thái'
+          settings:
+            format_custom_true: 'hoạt động'
+            format_custom_false: 'Đã khóa'
+        roles_target_id:
+          label: 'Vai trò'
+        created:
+          label: 'Đã tham gia được'
+        access:
+          label: 'Lần truy cập cuối'
+        operations:
+          label: 'Thao tác'
+      filters:
+        status:
+          group_info:
+            label: 'Trạng thái'
+            group_items:
+              1:
+                title: 'hoạt động'
+              2:
+                title: 'Đã khóa'
+        roles_target_id:
+          expose:
+            label: 'Vai trò'
+        permission:
+          expose:
+            label: Quyền
+      title: 'Mọi người'
+      empty:
+        area_text_custom:
+          content: 'Không có người dùng nào.'
+      use_more_text: Thêm
+  page_1:
+    display_title: Trang
+    display_options:
+      menu:
+        title: 'Danh sách'
+        description: 'Tìm kiếm và quản lý tương tác giữa người dùng với trang web.'
+      tab_options:
+        title: 'Mọi người'
+        description: 'Quản lý tài khoản người dùng, vai trò và quyền'

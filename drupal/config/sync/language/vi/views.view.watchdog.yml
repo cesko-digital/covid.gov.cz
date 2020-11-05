@@ -1,0 +1,51 @@
+label: Watchdog
+description: 'Các thông báo gần đây'
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Lọc
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        nothing:
+          admin_label: 'Biểu tượng'
+        severity:
+          label: 'Mức độ'
+        type:
+          label: Kiểu
+        timestamp:
+          label: 'Ngày tháng'
+        message:
+          label: 'Thông điệp'
+        name:
+          label: 'Người dùng'
+        link:
+          label: 'Thao tác'
+      filters:
+        type:
+          expose:
+            label: Kiểu
+        severity:
+          expose:
+            label: 'Mức độ'
+      title: 'Các thông báo gần đây'
+      empty:
+        area:
+          admin_label: 'Không có thông điệp bản ghi nào.'
+          content: 'Không có thông điệp bản ghi nào.'
+  page:
+    display_title: Trang
