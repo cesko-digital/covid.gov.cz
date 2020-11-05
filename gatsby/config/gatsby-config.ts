@@ -104,6 +104,12 @@ const config = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-GKH7GB76MH'],
+      },
+    },
   ],
 };
 
