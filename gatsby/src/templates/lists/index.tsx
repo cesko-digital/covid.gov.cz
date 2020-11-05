@@ -31,7 +31,7 @@ const Home: React.FC<IProps> = ({ data }) => {
       <AlertContainer />
       <Container className="mt-3">
         <ContentBox
-          title={situation_label}
+          title={situation_label.processed}
           boldedTitleCount={2}
           buttonText={situation_link?.title}
           buttonHref={I18n('slug_situations')}
@@ -39,7 +39,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
-          title={measure_label}
+          title={measure_label.processed}
           boldedTitleCount={1}
           buttonVariant="contained"
           buttonText={measure_link?.title}
@@ -63,7 +63,13 @@ export const query = graphql`
         title
       }
       moderation_state
+      measure_label {
+        processed
+      }
       measure_text
+      situation_label {
+        processed
+      }
       situation_link {
         uri
         title
