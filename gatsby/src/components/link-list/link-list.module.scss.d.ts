@@ -1,1 +1,1 @@
-export {};
+export const linkListFallback: string;

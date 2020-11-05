@@ -12,10 +12,18 @@ const LinkList: React.FC<Props> = ({ links, variant }) => {
 
   const maxItems = isMobile ? 3 : 6;
   return (
-    <div className={styles.linkList}>
-      {links.slice(0, maxItems).map((link, i) => (
-        <LinkStyled label={link.title} to={link.href} />
-      ))}
+    <div>
+      {links.length !== 0 ? (
+        links
+          .slice(0, maxItems)
+          .map((link, i) => (
+            <LinkStyled label={link.title} to={link.path.alias} />
+          ))
+      ) : (
+        <p className={styles.linkListFallback}>
+          Je nám líto, ale žádná podobná témata prozatím nejsou k dispozici.
+        </p>
+      )}
     </div>
   );
 };
