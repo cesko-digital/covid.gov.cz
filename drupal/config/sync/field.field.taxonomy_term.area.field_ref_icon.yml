@@ -1,0 +1,29 @@
+uuid: 2932e7d7-6e69-471a-8c65-df10e5a958f5
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ref_icon
+    - taxonomy.vocabulary.area
+    - taxonomy.vocabulary.icons
+id: taxonomy_term.area.field_ref_icon
+field_name: field_ref_icon
+entity_type: taxonomy_term
+bundle: area
+label: Ikona
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      icons: icons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
