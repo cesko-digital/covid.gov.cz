@@ -50,6 +50,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
           nodes {
             id
             title
+            langcode
             path {
               alias
             }
@@ -70,11 +71,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const customPages: IPageGroupConnection = result.data.allPage;
 
   customPages.nodes.forEach((page: IPage) => {
+    console.log(page.langcode);
     createPage({
       path: page.path.alias,
       component: customPagesTemplate,
       context: {
         slug: page.path.alias,
+        langCode: page.langcode,
       },
     });
   });

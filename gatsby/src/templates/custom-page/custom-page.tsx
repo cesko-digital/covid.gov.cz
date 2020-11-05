@@ -11,6 +11,7 @@ interface IProps {
 
 const CustomPage: React.FC<IProps> = ({ data }) => {
   const page: IPage = data.page;
+  const homeTranslation = data.translation;
 
   return (
     <>
@@ -21,7 +22,7 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
           <Breadcrumb
             items={[
               // Todo: add localized title
-              { title: 'Úvod', url: '/' },
+              { title: homeTranslation.target, url: '/' },
               page.title,
             ]}
             variant="inverse"
@@ -39,7 +40,7 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
 export default CustomPage;
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $langCode: String!) {
     page(path: { alias: { eq: $slug } }) {
       id
       content {
@@ -50,6 +51,9 @@ export const query = graphql`
       path {
         alias
       }
+    }
+    translation(langcode: { eq: $langCode }, source: { eq: "home" }) {
+      target
     }
   }
 `;
