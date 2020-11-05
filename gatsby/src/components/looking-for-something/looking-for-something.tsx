@@ -25,7 +25,7 @@ const LookingForSomething: React.FC<IProps> = ({
       <hr className={classes.separator} />
 
       <section className={classes.section}>
-        <Phone fontSize="large" className={classes.phoneIcon} />
+        <Phone fontSize="large" className="mr-2" />
         <header className={classes.header}>
           {callHeader}
           &nbsp;<strong>1121</strong>
