@@ -11,7 +11,7 @@ _core:
 id: covid_theme_messages
 theme: covid_theme
 region: content
-weight: 0
+weight: 2
 provider: null
 plugin: system_messages_block
 settings:
