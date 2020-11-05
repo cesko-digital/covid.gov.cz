@@ -2,29 +2,49 @@ import React from 'react';
 import classes from './looking-for-something.module.scss';
 import { ArrowForwardIos, Phone } from '@material-ui/icons';
 
-const LookingForSomething = () => {
+const defaultValues = {
+  searchingHeader: (
+    <>
+      <strong>Stále</strong> hledáte?
+    </>
+  ),
+  searchingDescription:
+    'Nenašli jste odpověď v žádné kategorii, tématu ani častých otázkách?',
+  callHeader: (
+    <>
+      Volejte{' '}
+      <strong>
+        <a className={classes.phoneNumber} href="tel:1221">
+          1221
+        </a>
+      </strong>
+    </>
+  ),
+  callDescription: 'Pro urychlení si prosím připravte svůj konkrétní dotaz.',
+};
+
+type Props = typeof defaultValues;
+
+const LookingForSomething = ({
+  searchingHeader,
+  searchingDescription,
+  callHeader,
+  callDescription,
+}: Props = defaultValues) => {
   return (
     <div className={classes.container}>
       <section className={classes.section}>
-        <header className={classes.header}>
-          <strong>Stále</strong> hledáte?
-        </header>
+        <header className={classes.header}>{searchingHeader}</header>
         <ArrowForwardIos />
-        <p className={classes.description}>
-          Nenašli jste odpověď v žádné kategorii, tématu ani častých otázkách?
-        </p>
+        <p className={classes.description}>{searchingDescription}</p>
       </section>
 
       <hr className={classes.separator} />
 
       <section className={classes.section}>
         <Phone fontSize={'large'} className={classes.phoneIcon} />
-        <header className={classes.header}>
-          Volejte <strong><a className={classes.phoneNumber} href="tel:1221">1221</a></strong>
-        </header>
-        <p className={classes.description}>
-          Pro urychlení si prosím připravte svůj konkrétní dotaz.
-        </p>
+        <header className={classes.header}>{callHeader}</header>
+        <p className={classes.description}>{callDescription}</p>
       </section>
     </div>
   );
