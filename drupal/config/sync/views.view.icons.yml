@@ -6,6 +6,7 @@ dependencies:
     - field.storage.taxonomy_term.field_icon_file
     - field.storage.taxonomy_term.field_icon_set
     - taxonomy.vocabulary.icons
+    - user.role.authenticated
   module:
     - file
     - options
@@ -26,9 +27,10 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            authenticated: authenticated
       cache:
         type: tag
         options: {  }
@@ -312,7 +314,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_icon_file'
         - 'config:field.storage.taxonomy_term.field_icon_set'
@@ -345,7 +347,174 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - user.roles
+      tags:
+        - 'config:field.storage.taxonomy_term.field_icon_file'
+        - 'config:field.storage.taxonomy_term.field_icon_set'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Stránka
+    position: 2
+    display_options:
+      display_extenders: {  }
+      pager:
+        type: full
+        options:
+          items_per_page: 400
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« První'
+            last: 'Poslední »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Položek na stránku'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Vše -'
+            offset: false
+            offset_label: Posun
+          quantity: 9
+      defaults:
+        pager: false
+        filters: false
+        filter_groups: false
+        use_ajax: false
+        css_class: false
+      path: ikony
+      filters:
+        status:
+          value: '1'
+          table: taxonomy_term_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: taxonomy_term
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+          group: 1
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          value:
+            icons: icons
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: name_op
+            label: Jméno
+            description: ''
+            use_operator: false
+            operator: name_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: name
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              reviewer: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: string
+        field_icon_set_value:
+          id: field_icon_set_value
+          table: taxonomy_term__field_icon_set
+          field: field_icon_set_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_icon_set_value_op
+            label: 'Sada ikon'
+            description: ''
+            use_operator: false
+            operator: field_icon_set_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_icon_set_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              reviewer: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      use_ajax: true
+      css_class: icons_list
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user.roles
       tags:
         - 'config:field.storage.taxonomy_term.field_icon_file'
         - 'config:field.storage.taxonomy_term.field_icon_set'
