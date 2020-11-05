@@ -145,7 +145,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
               </Link>
             ) : (
               <Link
-                to='/en'
+                to='/en/'
                 noTR
                 className={classnames(
                   classes.nav__mobileLink,

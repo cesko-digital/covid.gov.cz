@@ -25,7 +25,7 @@ export const HeaderLocaleSelect: React.FC<Props> = () => {
           </Link>
         </span>
       ) : (
-        <Link to='/en' noTR className='text-white'>
+        <Link to='/en/' noTR className='text-white'>
           EN
         </Link>
       )}
