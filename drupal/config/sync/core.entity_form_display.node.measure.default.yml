@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.measure.field_content
     - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
+    - field.field.node.measure.field_norm
     - field.field.node.measure.field_ref_icon
     - field.field.node.measure.field_region
     - field.field.node.measure.field_source
@@ -38,6 +39,7 @@ third_party_settings:
     group_content_content:
       children:
         - title
+        - field_norm
         - field_ref_icon
         - field_region
         - field_measure_type
@@ -74,7 +76,7 @@ third_party_settings:
         - field_valid_from
         - field_valid_to
       parent_name: group_content_content
-      weight: 6
+      weight: 7
       format_type: html_element
       region: content
       format_settings:
@@ -95,7 +97,7 @@ bundle: measure
 mode: default
 content:
   field_content:
-    weight: 7
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
@@ -103,7 +105,7 @@ content:
     type: text_textarea
     region: content
   field_measure_type:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -116,8 +118,16 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_ref_icon:
+  field_norm:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ref_icon:
+    weight: 3
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -127,13 +137,13 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_region:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_source:
-    weight: 5
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
