@@ -1,31 +1,217 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/roboto/roboto-thin.woff?v=1) format("woff"), url(../fontsroboto/roboto-thin.ttf?v=1) format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fontsroboto/roboto-light.woff?v=1) format("woff"), url(../fontsroboto/roboto-light.ttf?v=1) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fontsroboto/roboto-regular.woff?v=1) format("woff"), url(../fontsroboto/roboto-regular.ttf?v=1) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fontsroboto/roboto-medium.woff?v=1) format("woff"), url(../fontsroboto/roboto-medium.ttf?v=1) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fontsroboto/roboto-bold.woff?v=1) format("woff"), url(../fontsroboto/roboto-bold.ttf?v=1) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background: #2362A2;
   color: white;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
 
-.layout-container > p {
+body * {
+  box-sizing: border-box;
+}
+
+.layout-container>p {
   text-align: center;
   font-size: 60px;
-  padding-top: 60px; }
+  padding-top: 60px;
+}
+
 .layout-container img {
-  width: 200px; }
+  width: 200px;
+}
 
 .layout-content {
-  width: 200px;
+  width: 250px;
   margin-left: auto;
-  margin-right: auto; }
-  .layout-content .user-login-form input {
-    border-radius: 3px;
-    border: white 2px;
-    padding: 5px;
-    width: 200px;
-    display: block;
-    margin: 1em 0; }
-  .layout-content .user-login-form .description {
-    display: none; }
-  .layout-content .user-login-form span {
-    font-size: small; }
-  .layout-content .user-login-form .one-time-password {
-    margin: 2em 0; }
+  margin-right: auto;
+}
 
-/*# sourceMappingURL=styles.css.map */
+.layout-content .user-login-form input.form-text {
+  border-radius: 3px;
+  border: white 2px;
+  padding: 0.6rem;
+  width: 250px;
+  display: block;
+  margin: 1em 0;
+  font-size: 15px;
+}
+
+.layout-content .user-login-form .description {
+  display: none;
+}
+
+.layout-content .user-login-form span {
+  font-size: small;
+}
+
+.layout-content .user-login-form .one-time-password {
+  margin: 2em 0;
+}
+
+.layout-content .user-login-form .button {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 1.1rem 2rem;
+  line-height: 1.33333;
+  border-radius: 3px;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 250px;
+}
+
+.layout-content .user-login-form .button:hover,
+.layout-content .user-login-form .button:focus {
+  background-color: #e5ebf0;
+  color: #254e80;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  color: #707070;
+  padding: 1.6rem 30px;
+  border-radius: .3rem;
+}
+
+.container img {
+  width: 100%;
+}
+
+h1 {
+  color: #2b4762;
+  font-size: 23px;
+}
+
+h2 {
+  color: #2b4762;
+  font-size: 18px;
+}
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.field .field__label {
+  color: #2b4762;
+  font-weight: 800;
+}
+
+.node>.field--name-field-meta-description {
+  padding: 2rem;
+  background: #efefef;
+}
+
+div.tabs {
+  margin: 1em 0;
+  margin: 0 auto 2rem;
+  background: #ffc107;
+  color: #000000;
+  padding: .6rem 30px;
+  border-radius: .3rem;
+  text-align: center;
+}
+
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs>li {
+  display: inline-block;
+  margin-right: 0.3em;
+  /* LTR */
+}
+
+[dir="rtl"] .tabs>li {
+  margin-right: 0;
+  margin-left: 0.3em;
+}
+
+.tabs a {
+  display: block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  color: #000000;
+}
+
+.tabs a.is-active {
+  background-color: #2b4762;
+  color: #FFFFFF;
+}
+
+.tabs a:focus,
+.tabs a:hover {
+  background-color: #2b4762;
+  color: #FFFFFF;
+}
+
+.entity-moderation-form {
+  padding: 2rem;
+  background: #2362a2;
+  color: #FFFFFF;
+}
+
+.homepage-groups {
+  padding: 1rem;
+  background: #efefef;
+  margin-bottom: 2rem;
+}
+
+.field--name-field-hp-ref-measure .field__items,
+.field--name-field-hp-ref-situation .field__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field--name-field-hp-ref-measure .field__items>.field__item,
+.field--name-field-hp-ref-situation .field__items>.field__item {
+  padding: 1rem;
+  width: 50%;
+}

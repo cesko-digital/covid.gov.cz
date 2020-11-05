@@ -8,6 +8,7 @@ libraries:
   - covid_theme/global-styling
 
 regions:
+  tabs: Tabs
   content: Content
 
 version: '1.0.0'
