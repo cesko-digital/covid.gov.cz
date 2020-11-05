@@ -11,10 +11,12 @@ interface Props {
 
 const Situation: React.FC<Props> = ({ situation }) => {
   const { name, path } = situation;
+  const iconCode = situation?.relationships?.field_ref_icon?.code;
+
   return (
     <Link to={path.alias} className={styles.situation}>
       <span className={styles.situationTitle}>
-        <ContentIcon className={styles.situationTitleIcon} />
+        <ContentIcon className={styles.situationTitleIcon} code={iconCode} />
         {name}
       </span>
       <KeyboardArrowRight style={{ fontSize: 16 }} className="color-yellow" />

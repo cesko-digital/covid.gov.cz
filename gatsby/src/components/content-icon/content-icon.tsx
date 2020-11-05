@@ -1,11 +1,16 @@
 import React, { FC } from 'react';
+import classNames from 'classnames';
 
 interface IProps {
   className?: string;
+  code?: string;
 }
 
-export const ContentIcon: FC<IProps> = ({ className }) => (
-  <i className={className}>icon</i>
-);
+const DEFAULT_CODE = 'folder';
+
+export const ContentIcon: FC<IProps> = ({ className, code }) => {
+  const iconClassName = classNames(className, 'material-icons');
+  return <i className={iconClassName}>{code || DEFAULT_CODE}</i>;
+};
 
 export default ContentIcon;
