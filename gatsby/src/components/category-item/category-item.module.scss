@@ -1,9 +1,13 @@
 .categoryItem {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 1.8rem 0;
   text-decoration: none;
+
+  &Icon {
+    color: white;
+    margin-right: 1.2rem;
+    font-size: 2rem !important;
+  }
 
   &Title {
     display: inline-flex;
@@ -11,6 +15,7 @@
     font-size: 15px;
     line-height: 1.2;
     font-weight: 500;
+    flex-grow: 1;
     color: white;
     text-transform: uppercase;
     margin-right: 1rem;
