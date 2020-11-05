@@ -3,9 +3,7 @@ import { Helmet } from 'react-helmet';
 import TextBox from '@/components/text-box';
 import Headline from '@/components/headline';
 import Breadcrumb from '@/components/breadcrumb';
-import Accordion from '@/components/accordion';
 import Container from '@/components/container';
-import ContentBox from '@/components/content-box';
 
 const breadcrumbItems = [
   {

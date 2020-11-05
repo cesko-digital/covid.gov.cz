@@ -1,5 +1,4 @@
 import React from 'react';
-import Breadcrumb from '@/components/breadcrumb';
 import Link from '@/components/link';
 
 interface IProps {
@@ -13,16 +12,7 @@ interface IProps {
   validTo?: string;
 }
 
-const ListCard: React.FC<IProps> = ({
-  title,
-  icon,
-  link,
-  breadcrumbs,
-  description,
-  region,
-  validFrom,
-  validTo,
-}) => {
+const ListCard: React.FC<IProps> = ({ title, link }) => {
   return (
     <div className="card">
       <Link to={link}>{title}</Link>

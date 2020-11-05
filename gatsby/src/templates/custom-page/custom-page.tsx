@@ -1,4 +1,4 @@
-import { Helmet, Trans } from 'gatsby-plugin-react-i18next';
+import { Helmet } from 'gatsby-plugin-react-i18next';
 import { IPage, IQuery } from 'graphql-types';
 import React from 'react';
 import Container from '@/components/container';

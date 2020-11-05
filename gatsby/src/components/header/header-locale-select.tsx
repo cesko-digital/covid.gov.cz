@@ -41,8 +41,9 @@ export const HeaderLocaleSelect: React.FC<Props> = ({
         >
           {locales
             .filter((locale) => locale !== activeLocale)
-            .map((locale) => (
+            .map((locale, index) => (
               <a
+                key={index}
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
