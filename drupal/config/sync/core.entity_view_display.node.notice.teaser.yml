@@ -1,0 +1,29 @@
+uuid: 2afe0397-36be-4fb8-9a41-e4e696f299f8
+langcode: cs
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.notice.field_notice_content
+    - field.field.node.notice.field_notice_link
+    - field.field.node.notice.field_valid_from
+    - field.field.node.notice.field_valid_to
+    - node.type.notice
+  module:
+    - user
+id: node.notice.teaser
+targetEntityType: node
+bundle: notice
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_notice_content: true
+  field_notice_link: true
+  field_valid_from: true
+  field_valid_to: true
+  langcode: true

@@ -1,0 +1,23 @@
+uuid: 0003f473-a1a7-44c1-8e3c-bc1d6ff0944b
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notice_link
+    - node.type.notice
+  module:
+    - link
+id: node.notice.field_notice_link
+field_name: field_notice_link
+entity_type: node
+bundle: notice
+label: Odkaz
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
