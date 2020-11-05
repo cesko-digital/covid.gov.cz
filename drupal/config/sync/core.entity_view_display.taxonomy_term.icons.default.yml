@@ -9,42 +9,21 @@ dependencies:
     - taxonomy.vocabulary.icons
   module:
     - file
-    - options
-    - text
 id: taxonomy_term.icons.default
 targetEntityType: taxonomy_term
 bundle: icons
 mode: default
 content:
-  description:
-    label: hidden
-    type: text_default
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_icon_code:
-    weight: 1
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_icon_file:
-    weight: 3
-    label: above
+    weight: 0
+    label: hidden
     settings:
-      use_description_as_link_text: true
+      use_description_as_link_text: false
     third_party_settings: {  }
     type: file_default
     region: content
-  field_icon_set:
-    weight: 2
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
 hidden:
+  description: true
+  field_icon_code: true
+  field_icon_set: true
   langcode: true

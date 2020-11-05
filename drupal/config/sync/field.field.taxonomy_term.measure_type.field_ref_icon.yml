@@ -1,14 +1,14 @@
-uuid: f17ee2e3-1694-438b-ac3b-8521c8548166
+uuid: edfa6235-21ff-435f-b8fe-5e198c5a2737
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_ref_icon
-    - node.type.situation
-id: node.situation.field_ref_icon
+    - field.storage.taxonomy_term.field_ref_icon
+    - taxonomy.vocabulary.measure_type
+id: taxonomy_term.measure_type.field_ref_icon
 field_name: field_ref_icon
-entity_type: node
-bundle: situation
+entity_type: taxonomy_term
+bundle: measure_type
 label: Ikona
 description: 'Začněte psát název ikony. Všechny ikony k prohlédnutí jsou přístupné <a href="/ikony">zde</a>.'
 required: false
