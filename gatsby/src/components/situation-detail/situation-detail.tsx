@@ -113,7 +113,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
           </p> */}
         </article>
 
-        {situation.questions_answers.length ? (
+        {situation.questions_answers?.length ? (
           <ContentBox
             variant="blue"
             title="Časté dotazy k tomuto tématu"
