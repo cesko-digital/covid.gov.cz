@@ -8,6 +8,8 @@ import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
+import Pagination from '@/components/pagination';
+import usePagination from '@/hooks/usePagination';
 
 const breadcrumbItems = [
   {
@@ -29,6 +31,8 @@ const Measures: React.FC<IProps> = ({ data }) => {
     allTaxonomyTermMeasureType: { nodes },
   } = data;
 
+  const { slicedItems, ...pagination } = usePagination(nodes);
+
   return (
     <>
       <Helmet title="Aktuální opatření" />
@@ -40,11 +44,11 @@ const Measures: React.FC<IProps> = ({ data }) => {
       </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
-          {/* TODO: Paging */}
-          {nodes.map((n) => (
+          {slicedItems.map((n) => (
             <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
           ))}
         </ContentBox>
+        <Pagination {...pagination} />
       </Container>
       <Container className="mt-3 mb-3">
         <LookingForSomething />
