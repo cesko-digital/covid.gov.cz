@@ -41,7 +41,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         <article className="bg-white rounded p-2 mb-1">
           <div
             dangerouslySetInnerHTML={{
-              __html: situation?.content?.processed.replace(/\n/g, '<br>'),
+              __html: situation?.content?.processed.replace(/\n/g, '<br/>'),
             }}
           />
 
