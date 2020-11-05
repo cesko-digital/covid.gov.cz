@@ -15,7 +15,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest --passWithNoTests",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "postinstall": "cd gatsby-source-drupal && yarn link && cd .. && yarn link  gatsby-source-drupal"
   },
   "dependencies": {
     "@graphql-codegen/typescript-resolvers": "^1.17.10",
