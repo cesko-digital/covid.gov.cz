@@ -174,9 +174,13 @@ content:
     region: content
   field_ref_icon:
     weight: 2
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_buttons
+    type: entity_reference_autocomplete
     region: content
   field_region:
     weight: 4

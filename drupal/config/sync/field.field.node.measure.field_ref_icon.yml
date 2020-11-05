@@ -1,14 +1,14 @@
-uuid: f17ee2e3-1694-438b-ac3b-8521c8548166
+uuid: 1d4cbb2a-6bc8-4bff-8d2d-cd38e8d02182
 langcode: cs
 status: true
 dependencies:
   config:
     - field.storage.node.field_ref_icon
-    - node.type.situation
-id: node.situation.field_ref_icon
+    - node.type.measure
+id: node.measure.field_ref_icon
 field_name: field_ref_icon
 entity_type: node
-bundle: situation
+bundle: measure
 label: Ikona
 description: 'Začněte psát název ikony. Všechny ikony k prohlédnutí jsou přístupné <a href="/ikony">zde</a>.'
 required: false

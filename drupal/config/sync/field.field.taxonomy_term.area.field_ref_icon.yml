@@ -5,25 +5,21 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_ref_icon
     - taxonomy.vocabulary.area
-    - taxonomy.vocabulary.icons
 id: taxonomy_term.area.field_ref_icon
 field_name: field_ref_icon
 entity_type: taxonomy_term
 bundle: area
 label: Ikona
-description: ''
+description: 'Začněte psát název ikony. Všechny ikony k prohlédnutí jsou přístupné <a href="/ikony">zde</a>.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: views
   handler_settings:
-    target_bundles:
-      icons: icons
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: icons
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference

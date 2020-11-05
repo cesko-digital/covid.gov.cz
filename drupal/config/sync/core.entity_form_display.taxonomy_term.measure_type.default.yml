@@ -1,16 +1,16 @@
-uuid: 1a96bb64-f7b3-4164-a283-21f282d736a9
+uuid: a3bff832-d996-4b62-a425-0f7df99090d4
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.area.field_ref_icon
-    - taxonomy.vocabulary.area
+    - field.field.taxonomy_term.measure_type.field_ref_icon
+    - taxonomy.vocabulary.measure_type
   module:
     - path
     - text
-id: taxonomy_term.area.default
+id: taxonomy_term.measure_type.default
 targetEntityType: taxonomy_term
-bundle: area
+bundle: measure_type
 mode: default
 content:
   description:

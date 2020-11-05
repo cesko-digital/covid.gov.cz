@@ -1,0 +1,31 @@
+uuid: c3bc4786-8f5a-4e30-bde9-c9099b35e307
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.measure_type.field_ref_icon
+    - taxonomy.vocabulary.measure_type
+  module:
+    - text
+id: taxonomy_term.measure_type.default
+targetEntityType: taxonomy_term
+bundle: measure_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_icon:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

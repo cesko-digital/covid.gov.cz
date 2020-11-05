@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.measure.field_content
     - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
+    - field.field.node.measure.field_ref_icon
     - field.field.node.measure.field_region
     - field.field.node.measure.field_source
     - field.field.node.measure.field_valid_from
@@ -40,6 +41,7 @@ hidden:
   content_moderation_control: true
   field_content: true
   field_measure_type: true
+  field_ref_icon: true
   field_region: true
   field_source: true
   field_valid_from: true
