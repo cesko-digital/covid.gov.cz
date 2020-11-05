@@ -4,10 +4,11 @@ import LinkStyled from '@/components/link-styled';
 import useMobile from '@/hooks/useMobile';
 
 interface Props {
-  linkList: any;
+  fallbackClass?: string;
+  links: Array<{ title: string; path: { alias: string } }>;
 }
 
-const LinkList: React.FC<Props> = ({ links, variant, fallbackClass }) => {
+const LinkList: React.FC<Props> = ({ links, fallbackClass }) => {
   const isMobile = useMobile();
 
   const maxItems = isMobile ? 3 : 6;
@@ -17,7 +18,7 @@ const LinkList: React.FC<Props> = ({ links, variant, fallbackClass }) => {
         links
           .slice(0, maxItems)
           .map((link, i) => (
-            <LinkStyled label={link.title} to={link.path.alias} />
+            <LinkStyled key={i} label={link.title} to={link.path.alias} />
           ))
       ) : (
         <p className={fallbackClass}>
