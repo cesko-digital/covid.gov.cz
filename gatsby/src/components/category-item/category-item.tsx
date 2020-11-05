@@ -2,7 +2,7 @@ import {
   AccountBalanceWalletOutlined,
   KeyboardArrowRight,
 } from '@material-ui/icons';
-import { Link } from '@/components/link';
+import Link from '@/components/link';
 import React, { FC } from 'react';
 
 import styles from './category-item.module.scss';
