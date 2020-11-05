@@ -4,6 +4,7 @@ import { IQuery } from 'graphql-types';
 import Container from '@/components/container';
 import Headline from '@/components/headline';
 import ListCard from '@/components/list-card';
+import Layout from '@/layouts/default-layout';
 
 interface IProps {
   data: IQuery;
@@ -12,20 +13,22 @@ interface IProps {
 const Home: React.FC<IProps> = ({ data }) => {
   const { area } = data;
   return (
-    <Container>
-      <Headline>{area.name}</Headline>
-      <div>
-        {area.relationships?.situation?.map(({ id, title, path }) => {
-          return (
-            <ListCard
-              title={title}
-              key={`area-list-item-${id}`}
-              link={path?.alias}
-            />
-          );
-        })}
-      </div>
-    </Container>
+    <Layout>
+      <Container>
+        <Headline>{area.name}</Headline>
+        <div>
+          {area.relationships?.situation?.map(({ id, title, path }, index) => {
+            return (
+              <ListCard
+                title={title}
+                key={`area-list-item-${id}`}
+                link={path?.alias}
+              />
+            );
+          })}
+        </div>
+      </Container>
+    </Layout>
   );
 };
 export default Home;

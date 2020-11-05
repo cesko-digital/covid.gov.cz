@@ -11,6 +11,7 @@ import classes from './header.module.scss';
 
 import headerLogo from './header-logo.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
+import I18n from '@/components/i18n';
 
 interface NavItem {
   label: string;

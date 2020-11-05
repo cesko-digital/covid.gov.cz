@@ -8,6 +8,7 @@ import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
+import Layout from '@/layouts/default-layout';
 
 const breadcrumbItems = [
   {
@@ -30,7 +31,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
   } = data;
 
   return (
-    <>
+    <Layout>
       <Helmet title="Aktuální opatření" />
       <Container className="mt-3">
         <Breadcrumb items={breadcrumbItems} variant="inverse" />
@@ -50,7 +51,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
       <Container className="mt-3 mb-3">
         <LookingForSomething />
       </Container>
-    </>
+    </Layout>
   );
 };
 export default Situations;

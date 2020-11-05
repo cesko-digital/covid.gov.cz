@@ -9,24 +9,25 @@ import { AlertContainer } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
+import Layout from '@/layouts/default-layout';
 
 interface IProps {
   data: IQuery;
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  const { homepage } = data;
+  const { allHomepage } = data;
   const {
     situation_label,
     situation_link,
     measure_label,
     measure_link,
     relationships,
-  } = homepage;
+  } = allHomepage.nodes[0];
   const { measure_items, situation_items } = relationships;
 
   return (
-    <>
+    <Layout>
       <Helmet title="Covid Portál" />
       <AlertContainer />
       <Container className="mt-3">
@@ -36,7 +37,6 @@ const Home: React.FC<IProps> = ({ data }) => {
           buttonText={situation_link?.title}
           buttonHref="/situace"
         >
-          <I18n id="more" />
           <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
@@ -53,42 +53,44 @@ const Home: React.FC<IProps> = ({ data }) => {
           English Page
         </Link>
       </Container>
-    </>
+    </Layout>
   );
 };
 export default Home;
 
 export const query = graphql`
   query IndexQuery($langCode: String!) {
-    homepage(filter: { langcode: { eq: $langCode } }) {
-      measure_label
-      measure_link {
-        uri
-        title
-      }
-      moderation_state
-      measure_text
-      situation_label
-      situation_link {
-        uri
-        title
-      }
-      situation_text
-      relationships {
-        measure_items {
-          id
+    allHomepage(filter: { langcode: { eq: $langCode } }) {
+      nodes {
+        measure_label
+        measure_link {
+          uri
           title
-          relationships {
-            region {
-              name
+        }
+        moderation_state
+        measure_text
+        situation_label
+        situation_link {
+          uri
+          title
+        }
+        situation_text
+        relationships {
+          measure_items {
+            id
+            title
+            relationships {
+              region {
+                name
+              }
             }
           }
-        }
-        situation_items {
-          id
-          title
-          path {
-            alias
+          situation_items {
+            id
+            title
+            path {
+              alias
+            }
           }
         }
       }

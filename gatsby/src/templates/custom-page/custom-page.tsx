@@ -4,6 +4,7 @@ import React from 'react';
 import Container from '@/components/container';
 import { graphql } from 'gatsby';
 import Breadcrumb from '@/components/breadcrumb';
+import Layout from '@/layouts/default-layout';
 
 interface IProps {
   data: IQuery;
@@ -14,7 +15,7 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
   const homeTranslation = data.translation;
 
   return (
-    <>
+    <Layout>
       <Helmet title={page.title + ' | Covid Portal'} />
 
       <Container className="mb-4">
@@ -33,7 +34,7 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
           <div dangerouslySetInnerHTML={{ __html: page.content.processed }} />
         </article>
       </Container>
-    </>
+    </Layout>
   );
 };
 
