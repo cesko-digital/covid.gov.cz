@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import { Link as OriginalLink } from 'gatsby';
-import I18n, { TRoute } from '@/components/i18n';
+import { TRoute } from '@/components/i18n';
 
 interface Props {
   label?: string;

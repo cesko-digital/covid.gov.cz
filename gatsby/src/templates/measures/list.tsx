@@ -18,7 +18,7 @@ const Home: React.FC<IProps> = ({ data }) => {
         <Headline>{taxonomyTermMeasureType.name}</Headline>
         <div>
           {taxonomyTermMeasureType.relationships?.measure?.map(
-            ({ id, title, path }, index) => {
+            ({ id, title, path }) => {
               return (
                 <ListCard
                   title={title}
