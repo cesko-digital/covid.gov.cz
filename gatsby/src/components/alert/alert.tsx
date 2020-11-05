@@ -4,8 +4,6 @@ import GovIcon from '../gov-icon';
 import Row from '../row';
 import Col from '../col';
 
-import { useTranslation } from 'gatsby-plugin-react-i18next';
-
 interface IProps {
   message: string;
   link?: string;
@@ -15,7 +13,6 @@ const Alert: React.FC<IProps> = ({
   message = 'Probíhá aktualizace dat, prosím, berte na vědomí, že data nemusí být aktuální všude.',
   link,
 }) => {
-  const { t } = useTranslation();
   return (
     <>
       <Row
@@ -28,7 +25,7 @@ const Alert: React.FC<IProps> = ({
             <GovIcon icon="alert" size={20} />
             <span className="ml-2">{message}</span>
             {link != null ? (
-              <Button variant="small-black" text={t('Více')} href={link} />
+              <Button variant="small-black" text="Více" href={link} />
             ) : (
               <></>
             )}

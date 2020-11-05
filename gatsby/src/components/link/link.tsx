@@ -1,17 +1,28 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
-import { Link as TranslateLink } from 'gatsby-plugin-react-i18next';
+import { Link as OriginalLink } from 'gatsby';
+import I18n, { TRoute } from '@/components/i18n';
 
 interface Props {
   label?: string;
   to: string;
   className?: string;
+  activeClassName?: string;
+  partiallyActive?: boolean;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const ABSOLUTE_URL_REGEX = new RegExp('^(?:[a-z]+:)?//', 'i');
 
-const Link: React.FC<Props> = ({ children, label, to, className, onClick }) => {
+const Link: React.FC<Props> = ({
+  children,
+  label,
+  to,
+  className,
+  onClick,
+  activeClassName,
+  partiallyActive,
+}) => {
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
     return ABSOLUTE_URL_REGEX.test(to);
@@ -41,9 +52,15 @@ const Link: React.FC<Props> = ({ children, label, to, className, onClick }) => {
   };
 
   return !isExternal ? (
-    <TranslateLink onClick={handleInternalLinkClick} to={to} {...commonProps}>
+    <OriginalLink
+      onClick={handleInternalLinkClick}
+      to={TRoute(to)}
+      activeClassName={activeClassName}
+      partiallyActive={partiallyActive}
+      {...commonProps}
+    >
       {children || label}
-    </TranslateLink>
+    </OriginalLink>
   ) : (
     <a
       href={to}
