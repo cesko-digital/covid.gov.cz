@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import Button, { ButtonVariant } from '@/components/button';
-import Row from '@/components/row';
 import Col from '@/components/col';
 
 import styles from './content-box.module.scss';

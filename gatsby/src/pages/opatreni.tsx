@@ -7,6 +7,7 @@ import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
+import LookingForSomething from '@/components/looking-for-something';
 
 const breadcrumbItems = [
   {
@@ -44,6 +45,9 @@ const Measures: React.FC<IProps> = ({ data }) => {
             <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
           ))}
         </ContentBox>
+      </Container>
+      <Container className="mt-3 mb-3">
+        <LookingForSomething />
       </Container>
     </>
   );
