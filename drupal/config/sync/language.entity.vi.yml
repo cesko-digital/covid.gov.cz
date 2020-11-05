@@ -1,0 +1,9 @@
+uuid: 485cf76b-d30c-4ef4-a833-5f5398be5cc0
+langcode: vi
+status: true
+dependencies: {  }
+id: vi
+label: Vietnamsky
+direction: ltr
+weight: 2
+locked: false

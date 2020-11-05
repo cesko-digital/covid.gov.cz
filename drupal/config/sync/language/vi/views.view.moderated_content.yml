@@ -1,0 +1,43 @@
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Lọc
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      pager:
+        options:
+          tags:
+            previous: '‹ trước'
+            next: 'sau ›'
+            first: '« đầu'
+            last: 'cuối »'
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+      fields:
+        title:
+          label: 'Tiêu đề'
+        type:
+          label: 'Kiểu nội dung'
+        name:
+          label: 'Tác giả'
+        changed:
+          label: 'Đã cập nhật'
+        operations:
+          label: 'Thao tác'
+      filters:
+        title:
+          expose:
+            label: 'Tiêu đề'
+        type:
+          expose:
+            label: 'Kiểu nội dung'
+        langcode:
+          expose:
+            label: 'Ngôn ngữ'

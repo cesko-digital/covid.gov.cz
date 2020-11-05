@@ -1,0 +1,2 @@
+register_admin_created:
+  subject: 'Quản trị viên đã cấp tài khoản cho bạn trên website [site:name]'

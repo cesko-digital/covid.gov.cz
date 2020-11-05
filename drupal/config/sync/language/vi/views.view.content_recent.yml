@@ -1,0 +1,19 @@
+label: 'Nội dung mới'
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 'Áp dụng'
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      title: 'Nội dung mới'
+      empty:
+        area_text_custom:
+          content: 'Không có nội dung nào.'
+      use_more_text: Thêm
+  block_1:
+    display_title: Khối

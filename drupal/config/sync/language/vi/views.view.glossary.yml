@@ -1,0 +1,35 @@
+label: 'Bảng thuật ngữ'
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 'Áp dụng'
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        title:
+          label: 'Tiêu đề'
+        name:
+          label: 'Tác giả'
+        changed:
+          label: 'Lập cập nhật cuối'
+  attachment_1:
+    display_title: 'Đính kèm'
+  page_1:
+    display_title: Trang
+    display_options:
+      menu:
+        title: 'Bảng thuật ngữ'
