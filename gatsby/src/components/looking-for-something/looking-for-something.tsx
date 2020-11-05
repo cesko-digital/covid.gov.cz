@@ -28,7 +28,7 @@ const LookingForSomething: React.FC<IProps> = ({
         <Phone fontSize="large" className="mr-2" />
         <header className={classes.header}>
           {callHeader}
-          &nbsp;<strong>1121</strong>
+          &nbsp;<strong><a href="tel:1221">1121</a></strong>
         </header>
         <p className={classes.description}>{callDescription}</p>
       </section>
