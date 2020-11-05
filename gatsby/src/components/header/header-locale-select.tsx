@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
-import I18n, { TRoute } from '@/components/i18n';
-import Link from '@/components/link';
-
-import GovIcon from '../gov-icon';
+import { TRoute } from '@/components/i18n';
 
 import classes from './header-locale-select.module.scss';
-
-import { locales } from './header';
 
 interface Props {
   activeLocale: string;
   onLocaleChange: (locale: string) => void;
 }
 
-export const HeaderLocaleSelect: React.FC<Props> = ({
-  activeLocale,
-  onLocaleChange,
-}) => {
-  const [isOpen, setOpen] = useState(false);
-
+export const HeaderLocaleSelect: React.FC<Props> = () => {
   return (
     <div
       className={classnames(

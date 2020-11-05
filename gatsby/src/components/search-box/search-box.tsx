@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import I18n, { TRoute } from '@/components/i18n';
+import I18n from '@/components/i18n';
 
 import Button from '../button';
 import GovIcon from '../gov-icon';

@@ -54,17 +54,16 @@ const Home: React.FC<IProps> = ({ data }) => {
 };
 export default Home;
 
+// fix: pls fix query
 export const query = graphql`
   query IndexQuery($langCode: String!) {
     homepage(langcode: { eq: $langCode }) {
-      measure_label
       measure_link {
         uri
         title
       }
       moderation_state
       measure_text
-      situation_label
       situation_link {
         uri
         title
