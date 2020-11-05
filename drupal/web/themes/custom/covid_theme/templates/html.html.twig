@@ -16,7 +16,6 @@
  * - page: The rendered page markup.
  * - page_bottom: Closing rendered markup. This variable should be printed after
  *   'page'.
- * - db_offline: A flag indicating if the database is offline.
  * - placeholder_token: The token for generating head, css, js and js-bottom
  *   placeholders.
  *
@@ -25,6 +24,13 @@
  * @ingroup themeable
  */
 #}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+  ]
+%}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
@@ -34,7 +40,7 @@
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
   </head>
-  <body{{ attributes }}>
+  <body{{ attributes.addClass(body_classes) }}>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}

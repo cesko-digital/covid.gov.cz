@@ -46,11 +46,19 @@
  */
 #}
 <div class="layout-container">
+  {% if logged_in  %}
+  <div class="tabs">
+    {{ page.tabs }}
+  </div>
+  <div class="container">
+    {{ page.content }}
+  </div> 
+  {% else %}
   <p>
     <img src="/themes/custom/covid_theme/img/logo.svg" alt="COVID Portal logo">
   </p>
   <p>
     COVID PORTÁL
   </p>
-
+  {% endif %}
 </div>{# /.layout-container #}
