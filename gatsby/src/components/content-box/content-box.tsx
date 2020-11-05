@@ -6,6 +6,7 @@ import Col from '@/components/col';
 
 import styles from './content-box.module.scss';
 import { Link } from 'gatsby';
+import { BoldedTitle } from '../bolded-title';
 
 interface Props {
   title?: string;
@@ -29,26 +30,9 @@ const ContentBox: React.FC<Props> = ({
   variant = '',
   noPadding,
 }) => {
-  const boldedTitle = useMemo(() => {
-    const splittedTitle: Array<JSX.Element | string> = title?.split(/(?= )/g);
-    if (boldedTitleCount) {
-      return splittedTitle.map((item, index) => {
-        if (index < boldedTitleCount) {
-          return (
-            <span key={index} className={styles.contentBoxTitleBold}>
-              {item}
-            </span>
-          );
-        }
-
-        return item;
-      });
-    }
-    return splittedTitle;
-  }, [title]);
-
   return (
     // contentBox--white
+    // contentBox--blue
     <div
       className={classNames(
         styles.contentBox,
@@ -58,8 +42,10 @@ const ContentBox: React.FC<Props> = ({
       )}
     >
       <Col col={12}>
-        {boldedTitle && (
-          <h2 className={styles.contentBoxTitle}>{boldedTitle}</h2>
+        {title && (
+          <h2 className={styles.contentBoxTitle}>
+            <BoldedTitle title={title} count={boldedTitleCount} />
+          </h2>
         )}
         {description && (
           <p className={styles.contentBoxDescription}>{description}</p>

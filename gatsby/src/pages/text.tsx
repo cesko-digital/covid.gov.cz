@@ -22,35 +22,6 @@ const breadcrumbItems = [
   },
 ];
 
-const accordion = [
-  {
-    title: 'Nadpis',
-    items: [
-      {
-        text: 'První',
-        href: '#',
-      },
-      {
-        text: 'Druhý',
-        href: '#',
-      },
-    ],
-  },
-  {
-    title: 'Druhý nadpis',
-    items: [
-      {
-        text: 'První',
-        href: '#',
-      },
-      {
-        text: 'Druhý',
-        href: '#',
-      },
-    ],
-  },
-];
-
 const Text: React.FC = () => {
   return (
     <Container>
@@ -58,9 +29,6 @@ const Text: React.FC = () => {
       <Breadcrumb items={breadcrumbItems} variant="inverse" />
       <Headline>Headline #1</Headline>
       <TextBox />
-      <ContentBox title="Časté dotazy k tomuto tématu" boldedTitleCount={2}>
-        <Accordion data={accordion} />
-      </ContentBox>
     </Container>
   );
 };
