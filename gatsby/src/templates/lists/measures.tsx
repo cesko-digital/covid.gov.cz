@@ -45,9 +45,12 @@ const Measures: React.FC<IProps> = ({ data }) => {
       </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
-          {slicedItems.map((n) => (
-            <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
-          ))}
+          {slicedItems.map(
+            (n) =>
+              n.relationships.measure !== null && (
+                <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
+              ),
+          )}
         </ContentBox>
         <Pagination {...pagination} />
       </Container>
@@ -61,12 +64,20 @@ export default Measures;
 
 export const query = graphql`
   query MeasureTypeQuery($langCode: String!) {
-    allTaxonomyTermMeasureType(filter: { langcode: { eq: $langCode } }) {
+    allTaxonomyTermMeasureType(
+      filter: { langcode: { eq: $langCode } }
+      sort: { fields: name }
+    ) {
       nodes {
         id
         name
         path {
           alias
+        }
+        relationships {
+          measure {
+            id
+          }
         }
       }
     }
