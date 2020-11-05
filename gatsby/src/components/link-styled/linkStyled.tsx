@@ -4,7 +4,6 @@ import styles from './link-styled.module.scss';
 import { KeyboardArrowRight } from '@material-ui/icons';
 
 interface Props {
-  className?: string;
   label: string;
   to: string;
 }

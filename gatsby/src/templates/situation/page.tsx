@@ -5,7 +5,6 @@ import SituationDetail from '@/components/situation-detail/situation-detail';
 import ContentBox from '@/components/content-box';
 import LinkList from '@/components/link-list';
 import Container from '@/components/container';
-import linkListStyles from '@/components/link-list/link-list.module.scss';
 interface IProps {
   data: IQuery;
 }
@@ -19,8 +18,7 @@ const Page: React.FC<IProps> = ({ data }) => {
         <ContentBox title="Podobná témata" boldedTitleCount={1} variant="blue">
           <LinkList
             links={data.situation.relationships.related_situations}
-            variant="secondary"
-            fallbackClass={linkListStyles.linkListFallback}
+            fallbackText="Je nám líto, ale žádná podobná témata prozatím nejsou kdispozici."
           />
         </ContentBox>
       </Container>
