@@ -1,15 +1,17 @@
-uuid: 9732d157-956a-4fd4-b25c-21f8b8992500
+uuid: fb495dfe-dbfe-40af-89e9-b9fba01ea83a
 langcode: cs
 status: true
 dependencies:
   module:
     - node
-id: node.field_hp_ref_measure
-field_name: field_hp_ref_measure
+id: node.field_hp_measure_description
+field_name: field_hp_measure_description
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: node
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 6
