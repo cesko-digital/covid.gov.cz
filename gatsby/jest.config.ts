@@ -14,7 +14,7 @@ const config = {
     __PATH_PREFIX__: ``,
   },
   testURL: `http://localhost`,
-  setupFiles: [`<rootDir>/loadershim.ts`, `<rootDir>/setupTests.ts`],
+  setupFiles: [`<rootDir>/loadershim.ts`],
   collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/components/**/*.tsx'],
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.ts'],

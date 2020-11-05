@@ -80,28 +80,6 @@ const config = {
       },
     },
     {
-      resolve: 'gatsby-plugin-react-i18next',
-      options: {
-        path: `${__dirname}/locales`,
-        languages: ['cs', 'en'],
-        defaultLanguage: 'cs',
-        redirect: false,
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false,
-          },
-          keySeparator: false,
-          nsSeparator: false,
-        },
-        pages: [
-          {
-            matchPath: '/:lang?',
-            getLanguageFromPath: true,
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'static/favicon.svg',

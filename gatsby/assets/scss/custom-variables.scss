@@ -103,7 +103,7 @@ $theme-path: '/ds';
   &.btn-yellow {
     border-color: darken($theme-yellow, 5%);
     background-color: $theme-yellow;
-    color: $white;
+    color: $black;
 
     &:hover,
     &:focus {

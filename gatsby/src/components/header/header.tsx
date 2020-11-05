@@ -62,7 +62,12 @@ const Header: React.FC<Props> = ({ navItems }) => {
             >
               <span />
               <span />
-              <div>{isOpen ? 'ZAVŘÍT' : 'MENU'}</div>
+              <div>
+                {(isOpen
+                  ? I18n('menu_close')
+                  : I18n('menu_open')
+                ).toUpperCase()}
+              </div>
             </div>
           </Col>
           {/* DESKTOP NAV & SEARCH */}
@@ -105,16 +110,16 @@ const Header: React.FC<Props> = ({ navItems }) => {
               <Link
                 to={to}
                 key={label}
-                className={classes.nav__mobileLink}
+                className={classnames(classes.nav__mobileLink, 'container')}
                 activeClassName={classes['nav__mobileLink--active']}
                 partiallyActive
               >
                 {label}
               </Link>
             ))}
-            {locales.map((locale, index) => (
+            {/* {locales.map((locale, index) => (
               <Link
-                to={TRoute('/', locale)}
+                to="/"
                 onClick={() => setLocale(locale)}
                 key={index}
                 className={classnames(
@@ -125,7 +130,30 @@ const Header: React.FC<Props> = ({ navItems }) => {
               >
                 {locale}
               </Link>
-            ))}
+            ))} */}
+            {TRoute('/') !== '/' ? (
+              <a
+                href="/"
+                className={classnames(
+                  classes.nav__mobileLink,
+                  'mt-auto',
+                  'container',
+                )}
+              >
+                Čeština
+              </a>
+            ) : (
+              <a
+                href="/en"
+                className={classnames(
+                  classes.nav__mobileLink,
+                  'mt-auto',
+                  'container',
+                )}
+              >
+                English
+              </a>
+            )}
           </div>
           {/* DESKTOP LOCALE SELECT */}
           <HeaderLocaleSelect
