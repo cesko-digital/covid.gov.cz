@@ -442,7 +442,7 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: standard
-      title: 'Okruhy Životních Situací'
+      title: 'Okruhy opatření'
       header:
         area_text_custom:
           id: area_text_custom
@@ -467,17 +467,17 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
-  page_1:
+  page:
     display_plugin: page
-    id: page_1
+    id: page
     display_title: Page
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/covid/areas
+      path: admin/covid/measure-types
       menu:
         type: normal
-        title: 'Okruhy ŽS'
+        title: 'Okruhy Opatření'
         description: ''
         expanded: false
         parent: covid_ui
