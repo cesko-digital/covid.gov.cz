@@ -5,3 +5,19 @@ covid_ui:
     _title: 'COVID Portál'
   requirements:
     _permission: 'access administration pages'
+
+covid_ui.translation:
+  path: '/admin/covid/translate'
+  defaults:
+    _form: '\Drupal\covid_ui\Form\TranslateForm'
+    _title: 'Přeložit'
+  requirements:
+    _permission: 'translate any entity'
+
+covid_ui.translation_add:
+  path: '/admin/covid/translate/add'
+  defaults:
+    _form: '\Drupal\covid_ui\Form\AddTranslationForm'
+    _title: 'Přidat překlady'
+  requirements:
+    _permission: 'access administration pages'

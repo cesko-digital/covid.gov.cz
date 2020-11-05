@@ -1,0 +1,41 @@
+uuid: a86633ad-4cdc-4b42-8272-5759235220ee
+langcode: cs
+status: true
+dependencies:
+  module:
+    - covid
+id: covid_translation--covid_translation
+disabled: false
+path: translation
+resourceType: translation
+resourceFields:
+  id:
+    fieldName: id
+    publicName: id
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  source:
+    fieldName: source
+    publicName: source
+    enhancer:
+      id: ''
+    disabled: false
+  target:
+    fieldName: target
+    publicName: target
+    enhancer:
+      id: ''
+    disabled: false

@@ -24,7 +24,7 @@ const Alert: React.FC<IProps> = ({
         alignItems="center"
       >
         <Col col={11} colMd={9} colLg={6}>
-          <div className="d-flex align-items-center justify-content-center py-1">
+          <div className="d-flex align-items-center justify-content-center py-2">
             <GovIcon icon="alert" size={20} />
             <span className="ml-2">{message}</span>
             {link != null ? (

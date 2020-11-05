@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import MainBackground from '@/components/main-background';
 
 import styles from './default-layout.module.scss';
 
@@ -16,7 +17,13 @@ const DefaultLayout: React.FC = ({ children }) => {
           { label: 'Životní situace', to: '#' },
         ]}
       />
-      <div>{children}</div>
+      <main>
+        <MainBackground
+          src="/images/main-content-mobile-bg.jpg"
+          alt="Covid Portal"
+        />
+        <div className={styles.mainInner}>{children}</div>
+      </main>
       <Footer />
     </div>
   );

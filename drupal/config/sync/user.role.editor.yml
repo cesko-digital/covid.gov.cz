@@ -13,6 +13,8 @@ permissions:
   - 'access toolbar'
   - 'administer menu'
   - 'change own username'
+  - 'clone measure content'
+  - 'clone situation content'
   - 'create content translations'
   - 'create measure content'
   - 'create page content'
