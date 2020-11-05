@@ -12,7 +12,7 @@ bundle: situation
 label: 'Otázky odpovědi Copy&Paste'
 description: "Vložte text s otázkami a odpovědmi z jiné aplikace. \r\nDvojice Otázka a Odpoveď odělujte novým řádkem. Jako otázka bude použito vše do prvního otazníku.\r\nScript se pouští při uložení stránky."
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
