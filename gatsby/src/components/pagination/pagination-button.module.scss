@@ -1,0 +1,9 @@
+.paginationClickItem {
+  cursor: pointer;
+}
+
+.paginationInnerItem {
+ &::before {
+   display: none;
+ };
+}

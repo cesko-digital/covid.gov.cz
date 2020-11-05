@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import classes from './pagination-button.module.scss';
 
 interface IProps {
   index: number;
@@ -15,9 +16,19 @@ const PaginationButton: React.FC<IProps> = ({
 }) => {
   // paginator__link active
   return (
-    <li className="paginator__item" onClick={() => onClick(index)}>
-      <span className={classNames('paginator__link', { active: active })}>
+    <li
+      className={classNames('paginator__item', classes.paginationClickItem)}
+      onClick={() => onClick(index)}
+    >
+      <span
+        className={classNames(
+          'paginator__link',
+          { active: active },
+          classes.paginationInnerItem,
+        )}
+      >
         {index + 1}
+        {children}
       </span>
     </li>
   );

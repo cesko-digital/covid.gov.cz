@@ -5,6 +5,7 @@ import Container from '../container';
 import GovIcon from '../gov-icon';
 import Row from '../row';
 import PaginationButton from './pagination-button';
+import classes from './pagination.module.scss';
 
 interface IProps {
   /** How many items should be on one page.
@@ -66,15 +67,19 @@ const Pagination: React.FC<IProps> = ({
       {shownChildren}
       <Col col={12}>
         <Row justify="center">
-          <div className="paginator__holder">
+          <div className={('paginator__holder', classes.paginationContainer)}>
             <div className="paginator">
               <ul className="paginator__list">
                 <li className="paginator__item pr-0">
                   <a
                     onClick={() => handleChange(currentPage - 1)}
-                    className={classNames('paginator__link', {
-                      'paginator__link--disabled': currentPage === 0,
-                    })}
+                    className={classNames(
+                      'paginator__link',
+                      classes.paginationArrow,
+                      {
+                        'paginator__link--disabled': currentPage === 0,
+                      },
+                    )}
                   >
                     <GovIcon className="paginator__arrow" icon="arrow-left" />
                   </a>
@@ -83,10 +88,14 @@ const Pagination: React.FC<IProps> = ({
                 <li className="paginator__item pr-0">
                   <a
                     onClick={() => handleChange(currentPage + 1)}
-                    className={classNames('paginator__link', {
-                      'paginator__link--disabled':
-                        currentPage === pagesCount - 1,
-                    })}
+                    className={classNames(
+                      'paginator__link',
+                      classes.paginationArrow,
+                      {
+                        'paginator__link--disabled':
+                          currentPage === pagesCount - 1,
+                      },
+                    )}
                   >
                     <GovIcon className="paginator__arrow" icon="arrow-right" />
                   </a>
