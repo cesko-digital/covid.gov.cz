@@ -1,0 +1,19 @@
+uuid: 785e35b8-f19c-4947-ac71-f7015d31324d
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_f_hp_measure_label
+field_name: field_f_hp_measure_label
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
