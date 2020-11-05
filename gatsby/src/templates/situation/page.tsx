@@ -2,13 +2,28 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
 import SituationDetail from '@/components/situation-detail/situation-detail';
-
+import CommonTopic from '@/components/common-topic';
+import LinkList from '@/components/link-list';
+import Container from '@/components/container';
 interface IProps {
   data: IQuery;
 }
 
 const Page: React.FC<IProps> = ({ data }) => {
-  return <SituationDetail situation={data.situation} />;
+  return (
+    <>
+      <SituationDetail situation={data.situation} />
+
+      <Container>
+        <CommonTopic title="Podobná témata" boldedTitleCount={1}>
+          <LinkList
+            links={data.situation.relationships.related_situations}
+            variant="secondary"
+          />
+        </CommonTopic>
+      </Container>
+    </>
+  );
 };
 export default Page;
 
@@ -37,6 +52,10 @@ export const query = graphql`
         }
         related_situations {
           title
+          path {
+            alias
+            langcode
+          }
         }
       }
       path {
