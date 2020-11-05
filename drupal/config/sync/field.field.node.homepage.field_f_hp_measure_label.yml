@@ -1,12 +1,14 @@
-uuid: 70315cca-d3bf-4304-9956-8997281612e4
+uuid: 03237744-65cc-426a-ba88-460b0311869e
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hp_situation_label
+    - field.storage.node.field_f_hp_measure_label
     - node.type.homepage
-id: node.homepage.field_hp_situation_label
-field_name: field_hp_situation_label
+  module:
+    - text
+id: node.homepage.field_f_hp_measure_label
+field_name: field_f_hp_measure_label
 entity_type: node
 bundle: homepage
 label: 'Nadpis sekce'
@@ -16,4 +18,4 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: text_long

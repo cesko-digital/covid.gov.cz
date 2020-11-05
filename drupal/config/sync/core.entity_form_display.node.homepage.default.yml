@@ -3,12 +3,12 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.homepage.field_hp_measure_label
+    - field.field.node.homepage.field_f_hp_measure_label
+    - field.field.node.homepage.field_f_hp_situation_label
     - field.field.node.homepage.field_hp_measure_link
     - field.field.node.homepage.field_hp_measure_text
     - field.field.node.homepage.field_hp_ref_measure
     - field.field.node.homepage.field_hp_ref_situation
-    - field.field.node.homepage.field_hp_situation_label
     - field.field.node.homepage.field_hp_situation_link
     - field.field.node.homepage.field_hp_situation_text
     - field.field.node.homepage.field_meta_description
@@ -18,6 +18,8 @@ dependencies:
     - content_moderation
     - field_group
     - link
+    - path
+    - text
 third_party_settings:
   field_group:
     group_content:
@@ -65,7 +67,7 @@ third_party_settings:
       label: Meta
     group_situation:
       children:
-        - field_hp_situation_label
+        - field_f_hp_situation_label
         - field_hp_situation_text
         - field_hp_situation_link
         - field_hp_ref_situation
@@ -82,7 +84,7 @@ third_party_settings:
       label: 'Životní situace'
     group_measure:
       children:
-        - field_hp_measure_label
+        - field_f_hp_measure_label
         - field_hp_measure_text
         - field_hp_measure_link
         - field_hp_ref_measure
@@ -108,16 +110,24 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hp_measure_label:
-    weight: 30
+  field_f_hp_measure_label:
+    weight: 35
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: text_textarea
+    region: content
+  field_f_hp_situation_label:
+    weight: 36
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_hp_measure_link:
-    weight: 32
+    weight: 37
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -125,7 +135,7 @@ content:
     type: link_default
     region: content
   field_hp_measure_text:
-    weight: 31
+    weight: 36
     settings:
       rows: 5
       placeholder: ''
@@ -133,7 +143,7 @@ content:
     type: string_textarea
     region: content
   field_hp_ref_measure:
-    weight: 33
+    weight: 38
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -143,7 +153,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hp_ref_situation:
-    weight: 29
+    weight: 39
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -152,16 +162,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_hp_situation_label:
-    weight: 26
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_hp_situation_link:
-    weight: 28
+    weight: 38
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -169,7 +171,7 @@ content:
     type: link_default
     region: content
   field_hp_situation_text:
-    weight: 27
+    weight: 37
     settings:
       rows: 5
       placeholder: ''

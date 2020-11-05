@@ -3,12 +3,12 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.node.homepage.field_hp_measure_label
+    - field.field.node.homepage.field_f_hp_measure_label
+    - field.field.node.homepage.field_f_hp_situation_label
     - field.field.node.homepage.field_hp_measure_link
     - field.field.node.homepage.field_hp_measure_text
     - field.field.node.homepage.field_hp_ref_measure
     - field.field.node.homepage.field_hp_ref_situation
-    - field.field.node.homepage.field_hp_situation_label
     - field.field.node.homepage.field_hp_situation_link
     - field.field.node.homepage.field_hp_situation_text
     - field.field.node.homepage.field_meta_description
@@ -16,12 +16,13 @@ dependencies:
   module:
     - field_group
     - link
+    - text
     - user
 third_party_settings:
   field_group:
     group_situation:
       children:
-        - field_hp_situation_label
+        - field_f_hp_situation_label
         - field_hp_situation_text
         - field_hp_situation_link
         - field_hp_ref_situation
@@ -42,7 +43,7 @@ third_party_settings:
       label: 'Životní situace'
     group_measure:
       children:
-        - field_hp_measure_label
+        - field_f_hp_measure_label
         - field_hp_measure_text
         - field_hp_measure_link
         - field_hp_ref_measure
@@ -71,16 +72,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hp_measure_label:
-    weight: 4
+  field_f_hp_measure_label:
+    weight: 8
     label: above
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: text_default
+    region: content
+  field_f_hp_situation_label:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_hp_measure_link:
-    weight: 6
+    weight: 10
     label: above
     settings:
       trim_length: 80
@@ -92,14 +99,14 @@ content:
     type: link
     region: content
   field_hp_measure_text:
-    weight: 5
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_hp_ref_measure:
-    weight: 7
+    weight: 11
     label: above
     settings:
       view_mode: teaser
@@ -108,7 +115,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_hp_ref_situation:
-    weight: 6
+    weight: 12
     label: above
     settings:
       view_mode: teaser
@@ -116,16 +123,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_hp_situation_label:
-    weight: 3
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_hp_situation_link:
-    weight: 5
+    weight: 11
     label: above
     settings:
       trim_length: 80
@@ -137,7 +136,7 @@ content:
     type: link
     region: content
   field_hp_situation_text:
-    weight: 4
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
