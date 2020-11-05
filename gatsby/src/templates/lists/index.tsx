@@ -31,7 +31,7 @@ const Home: React.FC<IProps> = ({ data }) => {
       <AlertContainer />
       <Container className="mt-3">
         <ContentBox
-          title={situation_label}
+          title={situation_label.processed}
           boldedTitleCount={2}
           buttonText={situation_link?.title}
           buttonHref={I18n('slug_situations')}
@@ -39,7 +39,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
-          title={measure_label}
+          title={measure_label.processed}
           boldedTitleCount={1}
           buttonVariant="contained"
           buttonText={measure_link?.title}
@@ -57,14 +57,18 @@ export default Home;
 export const query = graphql`
   query IndexQuery($langCode: String!) {
     homepage(langcode: { eq: $langCode }) {
-      measure_label
+      measure_label {
+        processed
+      }
       measure_link {
         uri
         title
       }
       moderation_state
       measure_text
-      situation_label
+      situation_label {
+        processed
+      }
       situation_link {
         uri
         title
