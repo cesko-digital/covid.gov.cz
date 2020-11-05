@@ -215,3 +215,59 @@ ul.tabs {
   padding: 1rem;
   width: 50%;
 }
+
+.icons-list .views-content {
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  justify-content: space-between;
+}
+
+.icons-list .views-content .views-row {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 150px;
+  border: 1px solid #efefef;
+  text-align: center;
+  color: black;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.icons-list .views-content .views-field-field-icon-file {
+  padding: 1rem;
+}
+
+.icons-list .views-content .views-field-field-icon-file img {
+  width: 100%;
+}
+
+.icons-list .views-exposed-form {
+  display: flex;
+  padding: 1rem;
+}
+
+.icons-list .views-exposed-form .form-item {
+  margin-right: 2rem;
+}
+
+.pager ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.pager ul li a {
+  padding: 1rem 1.2rem;
+  background: #FFFFFF;
+  color: #000000;
+  border-right: 1px solid #2362A2;
+}
+
+.pager ul li a:hover,
+.pager ul li a:focus,
+.pager ul li.is-active a {
+  background: #2362A2;
+  color: #FFFFFF;
+}
