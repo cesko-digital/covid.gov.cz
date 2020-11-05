@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
+import Link from '../link';
+import classes from './breadcrumb.module.scss';
 
 interface INavItem {
   title: string;
@@ -16,14 +18,14 @@ const isNavItem = (item: any): item is INavItem => {
 };
 
 const getBreadcrumbClasses = (variant: IProps['variant']): string => {
-  return classNames('breadcrumb', {
+  return classNames('breadcrumb', classes.breadcrumbContainer, {
     'breadcrumb--inverse': variant === 'inverse',
   });
 };
 
 const Breadcrumb: React.FC<IProps> = ({ items, variant = 'normal' }) => {
   const getItemClasses = (index: number): string => {
-    return classNames('breadcrumb__item', {
+    return classNames('breadcrumb__item', classes.breadcrumbItem, {
       'breadcrumb__item--active': index === items.length - 1,
     });
   };
@@ -38,9 +40,11 @@ const Breadcrumb: React.FC<IProps> = ({ items, variant = 'normal' }) => {
               className={getItemClasses(index)}
             >
               {isNavItem(item) ? (
-                <a href={item.url} className="breadcrumb__link">
-                  {item.title}
-                </a>
+                <Link
+                  to={item.url}
+                  className="breadcrumb__link"
+                  label={item.title}
+                />
               ) : (
                 <span className="breadcrumb__link">{item}</span>
               )}
