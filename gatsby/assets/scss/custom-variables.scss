@@ -40,6 +40,11 @@ $theme-path: '/ds';
   font-weight: 500;
 }
 
+a.external,
+a.more {
+  padding-right: 15px;
+}
+
 // Button
 .btn {
   &.btn-primary {
