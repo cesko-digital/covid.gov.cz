@@ -42,9 +42,12 @@ const ContentBox: React.FC<Props> = ({
     >
       <Col col={12}>
         {title && (
-          <h2 className={styles.contentBoxTitle}>
-            <BoldedTitle title={title} count={boldedTitleCount} />
-          </h2>
+          <h2
+            className={styles.contentBoxTitle}
+            dangerouslySetInnerHTML={{
+              __html: title.replace(/<\/?p>/g, ''),
+            }}
+          />
         )}
         {description && (
           <p className={styles.contentBoxDescription}>{description}</p>
