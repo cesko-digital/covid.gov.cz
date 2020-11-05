@@ -8,6 +8,7 @@ const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
     { 'btn-primary': variant === 'contained' },
     { 'btn-outline-primary': variant === 'outline' },
     { 'btn-outline-dark': variant === 'outline-black' },
+    { 'btn-outline-yellow': variant === 'outline-yellow' },
     { 'btn-yellow': variant === 'yellow' },
     { 'text-black': variant === 'outline-black' },
     { 'btn-secondary': variant === 'secondary' },
@@ -22,6 +23,7 @@ export type ButtonVariant =
   | 'yellow'
   | 'secondary'
   | 'outline-black'
+  | 'outline-yellow'
   | 'small-black';
 
 interface IProps {

@@ -1,3 +1,4 @@
+@import '../../../assets/scss/design-system/base/variables';
 .contentBox {
   padding: 1.6rem 0;
   margin: 0 0 1.6rem;
@@ -13,17 +14,13 @@
 .contentBoxTitle {
   font-size: 2.3rem;
   font-weight: 300;
-  color: white;
+  color: $white;
   margin-bottom: 0.8rem;
-}
-
-.contentBoxTitleBold {
-  font-weight: 700;
 }
 
 .contentBoxDescription {
   margin-bottom: 1.6rem;
-  color: white;
+  color: $white;
   font-weight: 400;
 }
 
@@ -32,10 +29,17 @@
   margin-top: 3px;
 }
 
-.contentBox--white {
-  background: white;
+.contentBox {
+  &--white {
+    background: $white;
 
-  .contentBoxTitle {
-    color: #2b4762;
+    .contentBoxTitle {
+      color: #2b4762;
+    }
+  }
+
+  &--blue {
+    background: $theme-blue;
+    color: $white;
   }
 }

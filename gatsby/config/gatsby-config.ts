@@ -39,7 +39,7 @@ const config = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         // develop: true,
-        whitelist: ['pvs-theme', 'a'],
+        whitelist: ['pvs-theme', 'a', 'vh-90'],
         whitelistPatterns: [
           /^col/,
           /^justify-content/,
@@ -63,6 +63,15 @@ const config = {
           },
           keySeparator: false,
           nsSeparator: false,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'static/favicon.svg',
+        icon_options: {
+          purpose: 'maskable',
         },
       },
     },

@@ -1,20 +1,26 @@
+@import '../../../assets/scss/design-system/base/variables';
 .section {
   padding: 1.2rem 0;
-  border-bottom: 1px solid rgba(35, 98, 162, 0.3);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba($white, 0.4);
+  }
 
   &Heading {
     font-size: 1.6rem;
     line-height: 1.8rem;
     font-weight: 500;
-    color: #2b4762;
   }
 
-  &Button:global(.btn.btn-primary) {
+  &Button:global(.btn.btn-yellow) {
     padding: 0;
-    color: white;
     width: 2.4rem;
     height: 2.4rem;
     font-size: 1.6rem;
     line-height: 1em;
+  }
+
+  &Content {
+    margin-top: 10px;
   }
 }

@@ -44,6 +44,7 @@ module:
   password_policy_length: 0
   path: 0
   path_alias: 0
+  quick_node_clone: 0
   serialization: 0
   system: 0
   taxonomy: 0

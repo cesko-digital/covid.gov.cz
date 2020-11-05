@@ -30,7 +30,7 @@ const Measure: React.FC<Props> = ({
         </div>
         <Button
           text="VÍCE"
-          variant="outline"
+          variant="outline-yellow"
           href={link}
           className={styles.measureButton}
         />
