@@ -1,0 +1,19 @@
+uuid: 77428686-33c8-4978-98fc-5fccb0df2db3
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hp_measure_description
+    - node.type.homepage
+id: node.homepage.field_hp_measure_description
+field_name: field_hp_measure_description
+entity_type: node
+bundle: homepage
+label: Popisky
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
