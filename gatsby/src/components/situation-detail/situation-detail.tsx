@@ -127,7 +127,11 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
           </p>
         </article>
 
-        <ContentBox variant="blue" title="Časté dotazy k tomuto tématu" boldedTitleCount={2}>
+        <ContentBox
+          variant="blue"
+          title="Časté dotazy k tomuto tématu"
+          boldedTitleCount={2}
+        >
           <Accordion data={data} />
         </ContentBox>
       </Container>
