@@ -16,7 +16,6 @@
  * - page: The rendered page markup.
  * - page_bottom: Closing rendered markup. This variable should be printed after
  *   'page'.
- * - db_offline: A flag indicating if the database is offline.
  * - placeholder_token: The token for generating head, css, js and js-bottom
  *   placeholders.
  *
@@ -30,7 +29,6 @@
     logged_in ? 'user-logged-in',
     not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
     node_type ? 'page-node-type-' ~ node_type|clean_class,
-    db_offline ? 'db-offline',
   ]
 %}
 <!DOCTYPE html>
