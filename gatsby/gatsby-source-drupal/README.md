@@ -31,7 +31,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ### Filters
@@ -64,12 +64,12 @@ module.exports = {
         apiBase: `api`,
         filters: {
           // collection : filter
-          recipe: "filter[tags.name][value]=British",
+          recipe: 'filter[tags.name][value]=British',
         },
       },
     },
   ],
-}
+};
 ```
 
 Which would result in Gatsby using the filtered collection https://live-contentacms.pantheonsite.io/api/recipes?filter[tags.name][value]=British to retrieve data.
@@ -95,7 +95,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ### Fastbuilds
@@ -125,7 +125,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ## Request Headers
@@ -142,12 +142,12 @@ module.exports = {
         baseUrl: `https://live-contentacms.pantheonsite.io/`,
         apiBase: `api`, // optional, defaults to `jsonapi`
         headers: {
-          Host: "https://example.com", // any valid request header here
+          Host: 'https://example.com', // any valid request header here
         },
       },
     },
   ],
-}
+};
 ```
 
 ## GET Params
@@ -164,12 +164,12 @@ module.exports = {
         baseUrl: `https://live-contentacms.pantheonsite.io/`,
         apiBase: `api`, // optional, defaults to `jsonapi`
         params: {
-          "api-key": "your-api-key-header-here", // any valid key value pair here
+          'api-key': 'your-api-key-header-here', // any valid key value pair here
         },
       },
     },
   ],
-}
+};
 ```
 
 ### File Downloads
@@ -191,7 +191,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ## Concurrent File Requests
@@ -211,7 +211,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ## Disallowed Link Types
@@ -231,7 +231,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 _NOTES_:
@@ -258,12 +258,12 @@ module.exports = {
         ],
         filters: {
           // Use includes so only the news content paragraph components are fetched.
-          "node--news": "include=field_content",
+          'node--news': 'include=field_content',
         },
       },
     },
   ],
-}
+};
 ```
 
 ## Gatsby Preview (experimental)
@@ -292,7 +292,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 ```
 
 ## How to query
