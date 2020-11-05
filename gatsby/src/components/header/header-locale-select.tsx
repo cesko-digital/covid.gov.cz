@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import I18n, { TRoute } from '@/components/i18n';
+import Link from '@/components/link';
 
 import GovIcon from '../gov-icon';
 
@@ -22,16 +24,27 @@ export const HeaderLocaleSelect: React.FC<Props> = ({
     <div
       className={classnames(
         classes.localeSelect__wrapper,
-        'd-none d-md-flex align-items-center ',
+        'd-none d-md-flex align-items-center',
       )}
     >
-      <div className={classes.localeSelect__inner}>
-        {/* LABEL */}
+      {TRoute('/') !== '/' ? (
+        <span>
+          <a href="/" className="text-white">
+            CZ
+          </a>
+        </span>
+      ) : (
+        <a href="/en" className="text-white">
+          EN
+        </a>
+      )}
+      {/* <div className={classes.localeSelect__inner}>
+        LABEL
         <div className={classes.localeSelect} onClick={() => setOpen(!isOpen)}>
           <span>{activeLocale}</span>
           <GovIcon icon={isOpen ? 'arrow-up' : 'arrow-down'} size={10} />
         </div>
-        {/* SELECT BOX */}
+        SELECT BOX
         <div
           className={classnames(
             'd-none',
@@ -55,7 +68,7 @@ export const HeaderLocaleSelect: React.FC<Props> = ({
               </a>
             ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

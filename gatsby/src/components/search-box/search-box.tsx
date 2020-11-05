@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import I18n, { TRoute } from '@/components/i18n';
 
 import Button from '../button';
 import GovIcon from '../gov-icon';
@@ -12,7 +13,7 @@ interface IProps {
 }
 
 const SearchBox: React.FC<IProps> = ({
-  placeholder = 'Vyhledat',
+  placeholder = I18n('search_placeholder'),
   onSearch,
 }) => {
   const [search, setSearch] = useState('');

@@ -9,6 +9,7 @@ interface Props {
   className?: string;
   activeClassName?: string;
   partiallyActive?: boolean;
+  noTR?: boolean;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -22,6 +23,7 @@ const Link: React.FC<Props> = ({
   onClick,
   activeClassName,
   partiallyActive,
+  noTR,
 }) => {
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
@@ -54,7 +56,7 @@ const Link: React.FC<Props> = ({
   return !isExternal ? (
     <OriginalLink
       onClick={handleInternalLinkClick}
-      to={TRoute(to)}
+      to={noTR ? to : TRoute(to)}
       activeClassName={activeClassName}
       partiallyActive={partiallyActive}
       {...commonProps}
