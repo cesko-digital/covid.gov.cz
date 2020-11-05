@@ -39,7 +39,7 @@ const config = {
       resolve: 'gatsby-plugin-purgecss',
       options: {
         // develop: true,
-        whitelist: ['pvs-theme', 'a'],
+        whitelist: ['pvs-theme', 'a', 'vh-90'],
         whitelistPatterns: [
           /^col/,
           /^justify-content/,
