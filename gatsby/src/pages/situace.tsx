@@ -32,8 +32,12 @@ const Situations: React.FC<IProps> = ({ data }) => {
   return (
     <>
       <Helmet title="Aktuální opatření" />
-      <Breadcrumb items={breadcrumbItems} variant="inverse" />
-      <Headline>Přehled životních situací</Headline>
+      <Container className="mt-3">
+        <Breadcrumb items={breadcrumbItems} variant="inverse" />
+      </Container>
+      <Container className="mt-3">
+        <Headline>Přehled životních situací</Headline>
+      </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
           {/* TODO: Paging */}
