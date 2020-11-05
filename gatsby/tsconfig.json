@@ -17,6 +17,6 @@
     },
     "types": ["node", "react", "jest", "testing-library__jest-dom"]
   },
-  "include": ["./src/**/*", "./__tests__/**/*"],
+  "include": ["./src/**/*", "./__tests__/**/*", "./graphql-types.ts"],
   "exclude": ["node_modules", "public", ".cache"]
 }

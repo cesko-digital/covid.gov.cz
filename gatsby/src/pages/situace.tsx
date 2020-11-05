@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
 import Pagination from '@/components/pagination';
 import usePagination from '@/hooks/usePagination';
+import { IQuery } from 'graphql-types';
 
 const breadcrumbItems = [
   {

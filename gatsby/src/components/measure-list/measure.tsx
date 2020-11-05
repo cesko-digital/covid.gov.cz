@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import styles from './measure.module.scss';
 import Button from '@/components/button';
