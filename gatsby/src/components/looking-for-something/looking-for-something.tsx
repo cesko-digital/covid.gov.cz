@@ -1,41 +1,24 @@
+import { Phone } from '@material-ui/icons';
 import React from 'react';
 import classes from './looking-for-something.module.scss';
-import { ArrowForwardIos, Phone } from '@material-ui/icons';
 
-const defaultValues = {
-  searchingHeader: (
-    <>
-      <strong>Stále</strong> hledáte?
-    </>
-  ),
-  searchingDescription:
-    'Nenašli jste odpověď v žádné kategorii, tématu ani častých otázkách?',
-  callHeader: (
-    <>
-      Volejte{' '}
-      <strong>
-        <a className={classes.phoneNumber} href="tel:1221">
-          1221
-        </a>
-      </strong>
-    </>
-  ),
-  callDescription: 'Pro urychlení si prosím připravte svůj konkrétní dotaz.',
-};
+interface IProps {
+  searchingHeader: string;
+  searchingDescription: string;
+  callHeader: string;
+  callDescription: string;
+}
 
-type Props = Partial<typeof defaultValues>;
-
-const LookingForSomething = ({
-  searchingHeader = defaultValues.searchingHeader,
-  searchingDescription = defaultValues.searchingDescription,
-  callHeader = defaultValues.callHeader,
-  callDescription = defaultValues.callDescription,
-}: Props) => {
+const LookingForSomething: React.FC<IProps> = ({
+  searchingHeader,
+  searchingDescription,
+  callHeader,
+  callDescription,
+}: IProps) => {
   return (
     <div className={classes.container}>
       <section className={classes.section}>
         <header className={classes.header}>{searchingHeader}</header>
-        <ArrowForwardIos />
         <p className={classes.description}>{searchingDescription}</p>
       </section>
 
@@ -43,7 +26,10 @@ const LookingForSomething = ({
 
       <section className={classes.section}>
         <Phone fontSize="large" className={classes.phoneIcon} />
-        <header className={classes.header}>{callHeader}</header>
+        <header className={classes.header}>
+          {callHeader}
+          &nbsp;<strong>1121</strong>
+        </header>
         <p className={classes.description}>{callDescription}</p>
       </section>
     </div>

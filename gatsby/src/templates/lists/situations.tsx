@@ -7,8 +7,8 @@ import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
-import LookingForSomething from '@/components/looking-for-something';
 import Layout from '@/layouts/default-layout';
+import LookingForSomething from '@/components/looking-for-something';
 
 const breadcrumbItems = [
   {
@@ -29,6 +29,12 @@ const Situations: React.FC<IProps> = ({ data }) => {
   const {
     allArea: { nodes },
   } = data;
+  const {
+    searchingTitle,
+    searchingDescription,
+    callTitle,
+    callDescription,
+  } = data as any;
 
   return (
     <Layout>
@@ -52,11 +58,18 @@ const Situations: React.FC<IProps> = ({ data }) => {
         </div>
       </Container>
       <Container className="mt-3 mb-3">
-        <LookingForSomething />
+        <LookingForSomething
+          searchingHeader={searchingTitle.target}
+          searchingDescription={searchingDescription.target}
+          callHeader={callTitle.target}
+          callDescription={callDescription.target}
+        />
       </Container>
     </Layout>
   );
 };
+// add looking for something component
+
 export default Situations;
 
 export const query = graphql`
@@ -74,6 +87,30 @@ export const query = graphql`
           }
         }
       }
+    }
+    searchingTitle: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "still_searching_title" }
+    ) {
+      target
+    }
+    searchingDescription: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "still_searching_description" }
+    ) {
+      target
+    }
+    callTitle: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "call_title" }
+    ) {
+      target
+    }
+    callDescription: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "call_description" }
+    ) {
+      target
     }
   }
 `;
