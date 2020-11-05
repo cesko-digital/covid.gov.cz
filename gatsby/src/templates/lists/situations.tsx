@@ -56,8 +56,8 @@ const Situations: React.FC<IProps> = ({ data }) => {
 export default Situations;
 
 export const query = graphql`
-  query SituationTypeQuery {
-    allArea {
+  query SituationTypeQuery($langCode: String!) {
+    allArea(filter: { langcode: { eq: $langCode } }) {
       nodes {
         name
         id

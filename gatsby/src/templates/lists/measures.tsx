@@ -59,8 +59,8 @@ const Measures: React.FC<IProps> = ({ data }) => {
 export default Measures;
 
 export const query = graphql`
-  query MeasureTypeQuery {
-    allTaxonomyTermMeasureType {
+  query MeasureTypeQuery($langCode: String!) {
+    allTaxonomyTermMeasureType(filter: { langcode: { eq: $langCode } }) {
       nodes {
         id
         name

@@ -7,6 +7,7 @@ import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
 import { AlertContainer } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
+import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
 
 interface IProps {
@@ -35,6 +36,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           buttonText={situation_link?.title}
           buttonHref="/situace"
         >
+          <I18n id="more" />
           <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
@@ -57,8 +59,8 @@ const Home: React.FC<IProps> = ({ data }) => {
 export default Home;
 
 export const query = graphql`
-  query IndexQuery {
-    homepage {
+  query IndexQuery($langCode: String!) {
+    homepage(filter: { langcode: { eq: $langCode } }) {
       measure_label
       measure_link {
         uri
