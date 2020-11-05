@@ -1,12 +1,12 @@
-uuid: 5db0fa5f-2377-4ec0-b074-1c653fccf599
+uuid: 14cf050d-1580-4b5e-9f2f-33b284d9dc5f
 langcode: cs
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_field_f_hp_ref_situation
-field_name: field_field_f_hp_ref_situation
+id: node.field_f_hp_ref_situation
+field_name: field_f_hp_ref_situation
 entity_type: node
 type: entity_reference
 settings:

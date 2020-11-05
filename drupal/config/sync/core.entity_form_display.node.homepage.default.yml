@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.homepage.field_f_hp_measure_label
+    - field.field.node.homepage.field_f_hp_ref_situation
     - field.field.node.homepage.field_f_hp_situation_label
-    - field.field.node.homepage.field_field_f_hp_ref_situation
     - field.field.node.homepage.field_hp_measure_link
     - field.field.node.homepage.field_hp_measure_text
     - field.field.node.homepage.field_hp_ref_measure
@@ -70,7 +70,7 @@ third_party_settings:
         - field_f_hp_situation_label
         - field_hp_situation_text
         - field_hp_situation_link
-        - field_field_f_hp_ref_situation
+        - field_f_hp_ref_situation
       parent_name: group_content
       weight: 21
       format_type: tab
@@ -118,15 +118,7 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_f_hp_situation_label:
-    weight: 36
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_field_f_hp_ref_situation:
+  field_f_hp_ref_situation:
     weight: 39
     settings:
       match_operator: CONTAINS
@@ -135,6 +127,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_f_hp_situation_label:
+    weight: 36
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   field_hp_measure_link:
     weight: 37

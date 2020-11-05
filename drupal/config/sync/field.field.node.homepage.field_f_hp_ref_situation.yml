@@ -1,13 +1,13 @@
-uuid: 4f6d5344-6f92-4e67-902b-0cafa245038e
+uuid: ca9b5d8c-d27c-4b15-90fe-432f3b9b3ece
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_field_f_hp_ref_situation
+    - field.storage.node.field_f_hp_ref_situation
     - node.type.homepage
     - taxonomy.vocabulary.area
-id: node.homepage.field_field_f_hp_ref_situation
-field_name: field_field_f_hp_ref_situation
+id: node.homepage.field_f_hp_ref_situation
+field_name: field_f_hp_ref_situation
 entity_type: node
 bundle: homepage
 label: 'Vybrané situace'
