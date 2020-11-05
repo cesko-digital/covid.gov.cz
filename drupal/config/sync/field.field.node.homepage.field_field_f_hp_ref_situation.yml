@@ -1,13 +1,13 @@
-uuid: a3cb73bb-7fe6-4901-aee7-bba7db645cfc
+uuid: 4f6d5344-6f92-4e67-902b-0cafa245038e
 langcode: cs
 status: true
 dependencies:
   config:
-    - field.storage.node.field_hp_ref_situation
+    - field.storage.node.field_field_f_hp_ref_situation
     - node.type.homepage
-    - node.type.situation
-id: node.homepage.field_hp_ref_situation
-field_name: field_hp_ref_situation
+    - taxonomy.vocabulary.area
+id: node.homepage.field_field_f_hp_ref_situation
+field_name: field_field_f_hp_ref_situation
 entity_type: node
 bundle: homepage
 label: 'Vybrané situace'
@@ -17,12 +17,13 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      situation: situation
+      area: area
     sort:
-      field: _none
+      field: name
+      direction: asc
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

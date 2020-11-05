@@ -1,15 +1,16 @@
-uuid: d492647d-3e41-4175-926b-357041e5ea08
+uuid: 5db0fa5f-2377-4ec0-b074-1c653fccf599
 langcode: cs
 status: true
 dependencies:
   module:
     - node
-id: node.field_hp_ref_situation
-field_name: field_hp_ref_situation
+    - taxonomy
+id: node.field_field_f_hp_ref_situation
+field_name: field_field_f_hp_ref_situation
 entity_type: node
 type: entity_reference
 settings:
-  target_type: node
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: -1
