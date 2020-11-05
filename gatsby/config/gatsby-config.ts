@@ -93,6 +93,12 @@ const config = {
           keySeparator: false,
           nsSeparator: false,
         },
+        pages: [
+          {
+            matchPath: '/:lang?',
+            getLanguageFromPath: true,
+          },
+        ],
       },
     },
     {

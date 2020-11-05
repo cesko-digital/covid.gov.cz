@@ -10,6 +10,7 @@ import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
 import Pagination from '@/components/pagination';
 import usePagination from '@/hooks/usePagination';
+import Layout from '@/layouts/default-layout';
 
 const breadcrumbItems = [
   {
@@ -34,7 +35,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
   const { slicedItems, ...pagination } = usePagination(nodes);
 
   return (
-    <>
+    <Layout>
       <Helmet title="Aktuální opatření" />
       <Container className="mt-3">
         <Breadcrumb items={breadcrumbItems} variant="inverse" />
@@ -53,7 +54,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
       <Container className="mt-3 mb-3">
         <LookingForSomething />
       </Container>
-    </>
+    </Layout>
   );
 };
 export default Measures;

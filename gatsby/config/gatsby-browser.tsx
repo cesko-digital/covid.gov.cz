@@ -2,12 +2,6 @@ import 'assets/scss/custom-variables.scss';
 import React from 'react';
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 
-import Layout from '../src/layouts/default-layout';
-
-export const wrapPageElement = ({ element }) => {
-  return <Layout>{element}</Layout>;
-};
-
 const appInsights =
   process.env.NODE_ENV !== 'development' && process.env.GATSBY_APPINSIGHTS_KEY
     ? new ApplicationInsights({

@@ -2,13 +2,18 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
 import SituationDetail from '@/components/situation-detail/situation-detail';
+import Layout from '@/layouts/default-layout';
 
 interface IProps {
   data: IQuery;
 }
 
 const Page: React.FC<IProps> = ({ data }) => {
-  return <SituationDetail situation={data.situation} />;
+  return (
+    <Layout>
+      <SituationDetail situation={data.situation} />
+    </Layout>
+  );
 };
 export default Page;
 

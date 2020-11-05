@@ -1,13 +1,11 @@
-import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { I18nextContext } from 'gatsby-plugin-react-i18next';
 
-interface IProps {
-  id: String;
+var language = 'cs';
+if (location.pathname.replace(/^\/(\w\w)(\/.*)?/g, '$1') === 'en') {
+  language = 'en';
 }
 
-const I18n: React.FC<IProps> = ({ id }) => {
-  const context = React.useContext(I18nextContext);
+export default function I18n(id: String) {
   const I18nObject = useStaticQuery(
     graphql`
       query I18nQuery {
@@ -23,14 +21,17 @@ const I18n: React.FC<IProps> = ({ id }) => {
   );
   var I18nArray = I18nObject.allTranslation.nodes;
   I18nArray = I18nArray.filter((item) => {
-    return item.langcode === context.language && item.source === id;
+    return item.langcode === language && item.source === id;
   });
   if (!I18nArray.length) {
-    console.error('translation not found for ' + context.language + '/' + id);
+    console.error('translation not found for ' + language + '/' + id);
     I18nArray = [{ target: '' }];
   }
 
-  return <span>{I18nArray[0].target}</span>;
-};
+  return I18nArray[0].target;
+}
 
-export default I18n;
+export function TRoute(route: String) {
+  const add = language === 'cs' ? '' : '/' + language;
+  return add + route;
+}

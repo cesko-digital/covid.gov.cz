@@ -2,6 +2,7 @@ import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
 import { IQuery } from 'graphql-types';
 import { IPage, IPageGroupConnection } from '../graphql-types';
+import I18n, { TRoute } from '@/components/i18n';
 
 /**
  * Gatsby exposes interfaces for every lifecycle hook
