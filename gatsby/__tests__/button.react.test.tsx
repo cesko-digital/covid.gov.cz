@@ -46,8 +46,8 @@ test('Buttons with variants render correctly', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-
 test('Button does not render unknown variants classes', () => {
+  // @ts-ignore
   const component = renderer.create(<Button variant="whatever-button" />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -75,6 +75,7 @@ test('Anchors with variants render correctly', () => {
 
 test('Anchor does not render unknown variants classes', () => {
   const component = renderer.create(
+    // @ts-ignore
     <Button variant="whatever-anchor" href="#" />,
   );
   const tree = component.toJSON();

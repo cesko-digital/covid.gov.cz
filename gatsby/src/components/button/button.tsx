@@ -37,7 +37,7 @@ interface IProps {
 }
 
 const Button: React.FC<IProps> = ({
-  variant = 'contained',
+  variant,
   onClick,
   text,
   href = '',

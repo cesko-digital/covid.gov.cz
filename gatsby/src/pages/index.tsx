@@ -5,7 +5,7 @@ import ContentBox from '@/components/content-box';
 import { Link } from 'gatsby-plugin-react-i18next';
 import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
-import { Alert } from '@/components/alert';
+import { AlertContainer } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import { IQuery } from 'graphql-types';
 
@@ -27,12 +27,11 @@ const Home: React.FC<IProps> = ({ data }) => {
   return (
     <>
       <Helmet title="Covid Portál" />
-      <Alert />
+      <AlertContainer />
       <Container className="mt-3">
         <ContentBox
           title={situation_label}
           boldedTitleCount={2}
-          buttonVariant=""
           buttonText={situation_link?.title}
           buttonHref="/situace"
         >
@@ -41,6 +40,7 @@ const Home: React.FC<IProps> = ({ data }) => {
         <ContentBox
           title={measure_label}
           boldedTitleCount={1}
+          buttonVariant="contained"
           buttonText={measure_link?.title}
           buttonHref="/opatreni"
           variant="white"

@@ -8,6 +8,7 @@ import Link from '@/components/link';
 import styles from './situation-detail.module.scss';
 import Accordion from '../accordion';
 import ContentBox from '../content-box';
+import { ISituation } from '../../../graphql-types';
 
 interface Region {
   name: string;
@@ -37,19 +38,7 @@ const data = [
 ];
 
 interface IProps {
-  situation: {
-    title: string;
-    content: {
-      processed: string;
-    };
-    relationships: {
-      region: Region[];
-    };
-    links: Link[];
-    valid_from: string;
-    valid_to: string;
-    changed: string;
-  };
+  situation: ISituation;
 }
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {

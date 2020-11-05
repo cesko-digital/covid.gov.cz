@@ -22,8 +22,8 @@ const fetchLanguageConfig = ({
   }
 
   let next = `${baseUrl}/${apiBase}/configurable_language/configurable_language?sort=weight`;
-  let availableLanguagesResponses = [];
-  let translatableEntitiesResponses = [];
+  const availableLanguagesResponses = [];
+  const translatableEntitiesResponses = [];
 
   while (next) {
     const response = axios.get(next, {
