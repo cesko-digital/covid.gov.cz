@@ -1,0 +1,11 @@
+.paginationArrow {
+  cursor: pointer;
+  &::before {
+    display: none;
+  };
+}
+
+.paginationContainer {
+  border-top: none;
+}
+
