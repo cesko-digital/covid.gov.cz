@@ -12,7 +12,7 @@ field_name: field_content
 entity_type: node
 bundle: situation
 label: Obsah
-description: ''
+description: "Nadpisy pište jako <i>Formát -> Nadpis 2</i> ideálně bez čísel na začátku<br>\r\nSeznamy, například výjimek označujte jako <i>Odrážky s tečkou</i><br>\r\nMezi bloky textu vždy jen jeden enter<br>\r\n<br>\r\nText je možné vkládat pomocí <i>Vložit z Wordu</i>"
 required: false
 translatable: true
 default_value: {  }
