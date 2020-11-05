@@ -1,15 +1,35 @@
-import { Container } from '@material-ui/core';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import Col from '../col';
+import Container from '../container';
 import GovIcon from '../gov-icon';
+import Row from '../row';
 import PaginationButton from './pagination-button';
 
 interface IProps {
+  /** How many items should be on one page.
+   * ```25 | 50 | 75 | 100``` are recommended
+   * but you can pass any number.
+   */
   perPage?: 25 | 50 | 75 | 100 | number;
+  /** Class applied to container */
+  className?: string;
+  /** Class applied to ```<Col>``` for each children */
+  childClassName?: string;
 }
 
-const Pagination: React.FC<IProps> = ({ children, perPage = 25 }) => {
+/**
+ * Pass any components inside as children.
+ * Component will automatically create pagination for them.
+ * Component is wrapped in ```<Container>``` and each child will
+ * be wrapped in ```<Col col={12}>{child}</Col>```
+ */
+const Pagination: React.FC<IProps> = ({
+  children,
+  perPage = 25,
+  className = '',
+  childClassName = '',
+}) => {
   const count = React.Children.count(children);
 
   const pagesCount = Math.ceil(count / perPage);
@@ -29,7 +49,11 @@ const Pagination: React.FC<IProps> = ({ children, perPage = 25 }) => {
     const startIndex = endIndex - perPage;
 
     if (index >= startIndex && index < endIndex) {
-      return child;
+      return (
+        <Col col={12} className={childClassName}>
+          {child}
+        </Col>
+      );
     }
   });
 
@@ -38,10 +62,10 @@ const Pagination: React.FC<IProps> = ({ children, perPage = 25 }) => {
    * paginator__link--disabled
    */
   return (
-    <>
-      <Container>
-        {shownChildren}
-        <Col col={12}>
+    <Container className={className}>
+      {shownChildren}
+      <Col col={12}>
+        <Row justify="center">
           <div className="paginator__holder">
             <div className="paginator">
               <ul className="paginator__list">
@@ -70,9 +94,9 @@ const Pagination: React.FC<IProps> = ({ children, perPage = 25 }) => {
               </ul>
             </div>
           </div>
-        </Col>
-      </Container>
-    </>
+        </Row>
+      </Col>
+    </Container>
   );
 };
 
@@ -80,7 +104,7 @@ const getPages = (
   current: number,
   max: number,
   handleChange: (index: number) => void,
-) => {
+): JSX.Element[] => {
   const pags: JSX.Element[] = [];
   for (let i = 0; i < max; i++) {
     pags.push(
