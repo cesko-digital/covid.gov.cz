@@ -13,28 +13,35 @@ dependencies:
     - field.field.node.measure.field_valid_to
     - node.type.measure
   module:
+    - datetime
     - user
 id: node.measure.teaser
 targetEntityType: node
 bundle: measure
 mode: teaser
 content:
-  content_moderation_control:
-    weight: -20
+  field_meta_description:
+    type: basic_string
+    weight: 1
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
+  field_valid_to:
+    type: datetime_default
+    weight: 0
     region: content
-  links:
-    weight: 100
-    settings: {  }
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: nice_date_short
     third_party_settings: {  }
-    region: content
 hidden:
+  content_moderation_control: true
   field_content: true
   field_measure_type: true
-  field_meta_description: true
   field_region: true
   field_source: true
   field_valid_from: true
-  field_valid_to: true
   langcode: true
+  links: true

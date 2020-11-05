@@ -28,63 +28,41 @@ bundle: situation
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_content:
-    weight: 104
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
-  field_faq_parser:
-    weight: 114
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
     region: content
   field_internal_note:
-    weight: 107
+    type: text_default
+    weight: 10
+    region: content
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
   field_meta_description:
-    weight: 108
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
-  field_questions_answers:
-    weight: 105
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_ref_icon:
-    weight: 112
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_region:
-    weight: 111
+    weight: 3
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_situation_link:
-    weight: 106
+    weight: 8
     label: above
     settings:
       trim_length: 80
@@ -96,7 +74,7 @@ content:
     type: link
     region: content
   field_situation_ref_measures:
-    weight: 105
+    weight: 2
     label: above
     settings:
       link: true
@@ -104,15 +82,15 @@ content:
     type: entity_reference_label
     region: content
   field_situation_type:
-    weight: 102
+    weight: 1
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_situations:
-    weight: 113
+    weight: 7
     label: above
     settings:
       link: true
@@ -120,27 +98,26 @@ content:
     type: entity_reference_label
     region: content
   field_valid_from:
-    weight: 109
+    weight: 4
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: nice_date_long
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_valid_to:
-    weight: 110
+    weight: 5
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: nice_date_long
     third_party_settings: {  }
     type: datetime_default
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
+  field_faq_parser: true
+  field_questions_answers: true
+  field_ref_icon: true
   langcode: true
+  links: true
