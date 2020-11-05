@@ -17,8 +17,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
   );
 
   // Ensure the path now points to TSX template
-  const situationListTemplate = path.resolve(`./src/templates/pages/list.tsx`);
-  const situationPageTemplate = path.resolve(`./src/templates/pages/page.tsx`);
+  const listTemplate = [
+    path.resolve(`./src/templates/situations/list.tsx`),
+    path.resolve(`./src/templates/measures/list.tsx`),
+  ];
+  const pageTemplate = [
+    path.resolve(`./src/templates/situations/page.tsx`),
+    path.resolve(`./src/templates/measures/page.tsx`),
+  ];
   const indexTemplate = path.resolve(`./src/templates/lists/index.tsx`);
   const situationTemplate = path.resolve(
     `./src/templates/lists/situations.tsx`,
@@ -47,6 +53,24 @@ export const createPages: GatsbyNode['createPages'] = async ({
               }
               relationships {
                 situation {
+                  langcode
+                  path {
+                    alias
+                  }
+                }
+              }
+            }
+          }
+        }
+        allTaxonomyTermMeasureType {
+          edges {
+            node {
+              langcode
+              path {
+                alias
+              }
+              relationships {
+                measure {
                   langcode
                   path {
                     alias
@@ -123,7 +147,6 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   customPages.nodes.forEach((page: IPage) => {
     const pathPrefix = page.langcode === 'cs' ? '' : '/' + page.langcode;
-    console.log(pathPrefix + page.path.alias);
     createPage({
       path: pathPrefix + page.path.alias,
       component: customPagesTemplate,
@@ -135,33 +158,40 @@ export const createPages: GatsbyNode['createPages'] = async ({
   });
 
   // Create blog posts pages.
-  const posts = result.data.allArea.edges;
+  const posts = [
+    result.data.allArea.edges,
+    result.data.allTaxonomyTermMeasureType.edges,
+  ];
 
-  posts.forEach((post, index) => {
-    const pathPrefix =
-      post.node.langcode === 'cs' ? '' : '/' + post.node.langcode;
-    createPage({
-      path: pathPrefix + post.node.path.alias,
-      component: situationListTemplate,
-      context: {
-        slug: post.node.path.alias,
-        langCode: post.node.langcode,
-      },
-    });
+  const itemNames = ['situation', 'measure'];
 
-    if (post.node.relationships.situation !== null) {
-      post.node.relationships.situation.forEach((situation, index) => {
-        const pathPrefix =
-          situation.langcode === 'cs' ? '' : '/' + situation.langcode;
-        createPage({
-          path: pathPrefix + situation.path.alias,
-          component: situationPageTemplate,
-          context: {
-            slug: situation.path.alias,
-            langCode: situation.path.langcode,
-          },
-        });
+  for (let i = 0; i < 2; i++) {
+    posts[i].forEach((post, index) => {
+      const pathPrefix =
+        post.node.langcode === 'cs' ? '' : '/' + post.node.langcode;
+      createPage({
+        path: pathPrefix + post.node.path.alias,
+        component: listTemplate[i],
+        context: {
+          slug: post.node.path.alias,
+          langCode: post.node.langcode,
+        },
       });
-    }
-  });
+
+      if (post.node.relationships[itemNames[i]] !== null) {
+        post.node.relationships[itemNames[i]].forEach((situation, index) => {
+          const pathPrefix =
+            situation.langcode === 'cs' ? '' : '/' + situation.langcode;
+          createPage({
+            path: pathPrefix + situation.path.alias,
+            component: pageTemplate[i],
+            context: {
+              slug: situation.path.alias,
+              langCode: situation.path.langcode,
+            },
+          });
+        });
+      }
+    });
+  }
 };

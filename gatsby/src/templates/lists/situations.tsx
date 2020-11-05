@@ -33,20 +33,23 @@ const Situations: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Aktuální opatření" />
-      <Container className="mt-3">
-        <Breadcrumb items={breadcrumbItems} variant="inverse" />
-      </Container>
-      <Container className="mt-3">
-        <Headline>Přehled životních situací</Headline>
-      </Container>
-      <Container className="mt-3">
-        <ContentBox noPadding>
-          {nodes.map((n) => (
-            // todo: add types somehow
-            // @ts-ignore
-            <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
-          ))}
-        </ContentBox>
+      <Container>
+        <div className="mt-3">
+          <Breadcrumb items={breadcrumbItems} variant="inverse" />
+        </div>
+        <div className="mt-3">
+          <Headline>Přehled životních situací</Headline>
+        </div>
+        <div className="mt-3">
+          <ContentBox noPadding>
+            {nodes.map(
+              (n) =>
+                n.relationships.situation !== null && (
+                  <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
+                ),
+            )}
+          </ContentBox>
+        </div>
       </Container>
       <Container className="mt-3 mb-3">
         <LookingForSomething />
@@ -58,12 +61,17 @@ export default Situations;
 
 export const query = graphql`
   query SituationTypeQuery($langCode: String!) {
-    allArea(filter: { langcode: { eq: $langCode } }) {
+    allArea(filter: { langcode: { eq: $langCode } }, sort: { fields: name }) {
       nodes {
         name
         id
         path {
           alias
+        }
+        relationships {
+          situation {
+            id
+          }
         }
       }
     }

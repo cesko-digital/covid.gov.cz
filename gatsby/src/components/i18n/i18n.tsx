@@ -1,7 +1,9 @@
 import { useStaticQuery, graphql } from 'gatsby';
+import { globalHistory } from '@reach/router';
 
 var glang = 'cs';
-if (location.pathname.replace(/^\/(\w\w)(\/.*)?$/g, '$1') === 'en') {
+const path = globalHistory.location.pathname;
+if (path.replace(/^\/(\w\w)(\/.*)?$/g, '$1') === 'en') {
   glang = 'en';
 }
 
@@ -34,7 +36,6 @@ export default function I18n(id: string, lang?: string) {
 
 export function TRoute(route: string, lang?: string) {
   lang = lang || glang;
-  console.log(lang);
   route = route === '' ? '/' : route; // todo: translate current page using drupal_internal__tid
   route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2');
   const add = lang === 'cs' ? '' : '/' + lang;
