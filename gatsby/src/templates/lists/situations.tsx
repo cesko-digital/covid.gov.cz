@@ -45,7 +45,21 @@ const Situations: React.FC<IProps> = ({ data }) => {
             {nodes.map(
               (n) =>
                 n.relationships.situation !== null && (
-                  <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
+                  <CategoryItem
+                    key={n.id}
+                    name={n.name}
+                    path={n.path.alias}
+                    iconCode={
+                      n.relationships.field_ref_icon
+                        ? n.relationships.field_ref_icon.code
+                        : 'chevron_right'
+                    }
+                    iconFamily={
+                      n.relationships.field_ref_icon
+                        ? n.relationships.field_ref_icon.source
+                        : 'materialicon'
+                    }
+                  />
                 ),
             )}
           </ContentBox>
@@ -71,6 +85,10 @@ export const query = graphql`
         relationships {
           situation {
             id
+          }
+          field_ref_icon {
+            source
+            code
           }
         }
       }

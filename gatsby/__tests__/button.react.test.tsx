@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import Button from '@/components/button';
-import { Add } from '@material-ui/icons';
+import MdIcon from '@/components/md-icon';
 
 test('Button renders HTML button element (not anchor element)', () => {
   const component = renderer.create(
@@ -31,7 +31,7 @@ test('Anchor with text inside renders correctly', () => {
 
 test('Button with icon renders correctly', () => {
   const component = renderer.create(
-    <Button icon={<Add />} variant="contained" />,
+    <Button icon={<MdIcon icon="add" />} variant="contained" />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

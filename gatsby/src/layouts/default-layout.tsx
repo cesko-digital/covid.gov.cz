@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-
+import { Helmet } from 'react-helmet';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import MainBackground from '@/components/main-background';
@@ -14,6 +14,12 @@ const DefaultLayout: React.FC = ({ children }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+          rel="stylesheet"
+        />
+      </Helmet>
       <Header
         navItems={[
           { label: 'Úvod', to: '/' },

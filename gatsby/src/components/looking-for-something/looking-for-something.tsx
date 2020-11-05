@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './looking-for-something.module.scss';
-import { ArrowForwardIos, Phone } from '@material-ui/icons';
+import MdIcon from '@/components/md-icon';
 
 const defaultValues = {
   searchingHeader: (
@@ -35,14 +35,13 @@ const LookingForSomething = ({
     <div className={classes.container}>
       <section className={classes.section}>
         <header className={classes.header}>{searchingHeader}</header>
-        <ArrowForwardIos />
         <p className={classes.description}>{searchingDescription}</p>
       </section>
 
       <hr className={classes.separator} />
 
       <section className={classes.section}>
-        <Phone fontSize="large" className={classes.phoneIcon} />
+        <MdIcon icon="phone" size={32} className={classes.phoneIcon} />
         <header className={classes.header}>{callHeader}</header>
         <p className={classes.description}>{callDescription}</p>
       </section>

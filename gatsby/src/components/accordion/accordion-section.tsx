@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
-import { Add, Clear } from '@material-ui/icons';
+import MdIcon from '@/components/md-icon';
 
 import styles from './accordion-section.module.scss';
 import Button from '@/components/button';
@@ -29,7 +29,7 @@ const AccordionSection: React.FC<Section> = ({ title, text }) => {
       >
         {title}
         <Button
-          icon={opened ? <Clear /> : <Add />}
+          icon={opened ? <MdIcon icon="clear" /> : <MdIcon icon="add" />}
           className={classNames(
             styles.sectionButton,
             'd-flex',

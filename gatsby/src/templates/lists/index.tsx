@@ -91,6 +91,12 @@ export const query = graphql`
           path {
             alias
           }
+          relationships {
+            field_ref_icon {
+              source
+              code
+            }
+          }
         }
       }
     }

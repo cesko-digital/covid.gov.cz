@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Room, Event } from '@material-ui/icons';
+import MdIcon from '@/components/md-icon';
 
 import Container from '@/components/container';
 import Link from '@/components/link';
@@ -77,7 +77,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             <div className="mt-2">
               <h3 className="mb-1 color-blue-dark">Lokalita a platnost</h3>
               <div className="d-flex align-items-center color-blue">
-                <Room />
+                <MdIcon icon="room" />
                 &nbsp;
                 <span className="text-uppercase font-weight-medium">
                   {situation.relationships.region
@@ -92,7 +92,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
 
           {situation.valid_from || situation.valid_to ? (
             <div className="d-flex align-items-center color-blue">
-              <Event />
+              <MdIcon icon="event" />
               &nbsp;
               <span className="text-uppercase font-weight-medium">
                 {situation.valid_from ? (
