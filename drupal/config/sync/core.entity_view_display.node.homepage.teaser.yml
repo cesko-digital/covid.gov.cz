@@ -5,8 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.homepage.field_f_hp_measure_label
+    - field.field.node.homepage.field_f_hp_ref_situation
     - field.field.node.homepage.field_f_hp_situation_label
-    - field.field.node.homepage.field_field_f_hp_ref_situation
     - field.field.node.homepage.field_hp_measure_link
     - field.field.node.homepage.field_hp_measure_text
     - field.field.node.homepage.field_hp_ref_measure
@@ -33,8 +33,8 @@ content:
     region: content
 hidden:
   field_f_hp_measure_label: true
+  field_f_hp_ref_situation: true
   field_f_hp_situation_label: true
-  field_field_f_hp_ref_situation: true
   field_hp_measure_link: true
   field_hp_measure_text: true
   field_hp_ref_measure: true
