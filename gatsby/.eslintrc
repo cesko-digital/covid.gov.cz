@@ -19,15 +19,16 @@
   "rules": {
     "react/prop-types": "off",
     "react/jsx-fragments": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   },
   "extends": [
     "standard",
     "standard-react",
     "plugin:prettier/recommended",
     "prettier/standard",
-    "prettier/react",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "prettier/react"
   ],
-  "plugins": ["prettier"]
+  "plugins": ["prettier", "@typescript-eslint"]
 }
