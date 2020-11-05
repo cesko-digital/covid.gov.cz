@@ -1,6 +1,7 @@
 import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
 import { IQuery } from 'graphql-types';
+import { IPage, IPageGroupConnection } from '../graphql-types';
 
 /**
  * Gatsby exposes interfaces for every lifecycle hook
@@ -10,6 +11,10 @@ export const createPages: GatsbyNode['createPages'] = async ({
   actions,
 }) => {
   const { createPage } = actions;
+
+  const customPagesTemplate = path.resolve(
+    `./src/templates/custom-page/custom-page.tsx`,
+  );
 
   // Ensure the path now points to TSX template
   const situationListTemplate = path.resolve(
@@ -41,6 +46,15 @@ export const createPages: GatsbyNode['createPages'] = async ({
             }
           }
         }
+        allPage {
+          nodes {
+            id
+            title
+            path {
+              alias
+            }
+          }
+        }
       }
     `,
   );
@@ -52,6 +66,19 @@ export const createPages: GatsbyNode['createPages'] = async ({
   if (!result.data) {
     throw new Error('ERROR: Could not fetch posts on build');
   }
+
+  const customPages: IPageGroupConnection = result.data.allPage;
+
+  customPages.nodes.forEach((page: IPage) => {
+    console.log(page.path.alias);
+    createPage({
+      path: page.path.alias,
+      component: customPagesTemplate,
+      context: {
+        slug: page.path.alias,
+      },
+    });
+  });
 
   // Create blog posts pages.
   const posts = result.data.allArea.edges;
