@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Col from '../col';
 import Container from '../container';
 import GovIcon from '../gov-icon';
@@ -9,15 +9,21 @@ import classes from './pagination.module.scss';
 
 interface IProps {
   /** How many items should be on one page.
-   * ```25 | 50 | 75 | 100``` are recommended
-   * but you can pass any number.
+   * ```25 | 50 | 75 | 100``` are recommended,
+   * however default is **10**.
+   * You can pass any number.
    */
-  perPage?: 25 | 50 | 75 | 100 | number;
+  perPage?: 10 | 25 | 50 | 75 | 100 | number;
   /** Class applied to container */
   className?: string;
   /** Class applied to ```<Col>``` for each children */
   childClassName?: string;
 }
+
+/**
+ * This is a complete mess. I hope this code is so
+ * awful I'm never allowed to write code again.
+ */
 
 /**
  * Pass any components inside as children.
@@ -27,7 +33,7 @@ interface IProps {
  */
 const Pagination: React.FC<IProps> = ({
   children,
-  perPage = 25,
+  perPage = 10,
   className = '',
   childClassName = '',
 }) => {
@@ -37,14 +43,21 @@ const Pagination: React.FC<IProps> = ({
 
   const [currentPage, setCurrentPage] = useState(0);
 
-  const handleChange = (newIndex: number) => {
-    if (newIndex < 0 || newIndex > pagesCount - 1) {
-      return;
-    }
-    setCurrentPage(newIndex);
-  };
+  const handleChange = (newIndex: number) =>
+    useCallback(() => {
+      if (newIndex < 0 || newIndex > pagesCount - 1) {
+        return;
+      }
+      setCurrentPage(newIndex);
+    }, [currentPage]);
 
-  // Get children that should be visible
+  /**
+   * TODO: [Not important at the moment]
+   * Update component so it doesn't list all pages, but only chunks
+   * Instead of listing all 20 pages
+   * < 1 ... 10 11 *12* 13 14 ... 20 >
+   */
+
   const shownChildren = React.Children.map(children, (child, index) => {
     const endIndex = currentPage * perPage + perPage;
     const startIndex = endIndex - perPage;
@@ -65,51 +78,56 @@ const Pagination: React.FC<IProps> = ({
   return (
     <Container className={className}>
       {shownChildren}
-      <Col col={12}>
-        <Row justify="center">
-          <div
-            className={classNames(
-              'paginator__holder',
-              classes.paginationContainer,
-            )}
-          >
-            <div className="paginator">
-              <ul className="paginator__list">
-                <li className="paginator__item pr-0">
-                  <a
-                    onClick={() => handleChange(currentPage - 1)}
-                    className={classNames(
-                      'paginator__link',
-                      classes.paginationArrow,
-                      {
-                        'paginator__link--disabled': currentPage === 0,
-                      },
-                    )}
-                  >
-                    <GovIcon className="paginator__arrow" icon="arrow-left" />
-                  </a>
-                </li>
-                {getPages(currentPage, pagesCount, handleChange)}
-                <li className="paginator__item pr-0">
-                  <a
-                    onClick={() => handleChange(currentPage + 1)}
-                    className={classNames(
-                      'paginator__link',
-                      classes.paginationArrow,
-                      {
-                        'paginator__link--disabled':
-                          currentPage === pagesCount - 1,
-                      },
-                    )}
-                  >
-                    <GovIcon className="paginator__arrow" icon="arrow-right" />
-                  </a>
-                </li>
-              </ul>
+      {pagesCount > 1 && (
+        <Col col={12}>
+          <Row justify="center">
+            <div
+              className={classNames(
+                'paginator__holder',
+                classes.paginationContainer,
+              )}
+            >
+              <div className="paginator">
+                <ul className="paginator__list">
+                  <li className="paginator__item pr-0">
+                    <a
+                      onClick={() => handleChange(currentPage - 1)}
+                      className={classNames(
+                        'paginator__link',
+                        classes.paginationArrow,
+                        {
+                          'paginator__link--disabled': currentPage === 0,
+                        },
+                      )}
+                    >
+                      <GovIcon className="paginator__arrow" icon="arrow-left" />
+                    </a>
+                  </li>
+                  {getPages(currentPage, pagesCount, handleChange)}
+                  <li className="paginator__item pr-0">
+                    <a
+                      onClick={() => handleChange(currentPage + 1)}
+                      className={classNames(
+                        'paginator__link',
+                        classes.paginationArrow,
+                        {
+                          'paginator__link--disabled':
+                            currentPage === pagesCount - 1,
+                        },
+                      )}
+                    >
+                      <GovIcon
+                        className="paginator__arrow"
+                        icon="arrow-right"
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </Row>
-      </Col>
+          </Row>
+        </Col>
+      )}
     </Container>
   );
 };
