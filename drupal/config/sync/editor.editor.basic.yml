@@ -38,10 +38,10 @@ settings:
           items:
             - DrupalImage
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
 image_upload:
   status: true
   scheme: public
