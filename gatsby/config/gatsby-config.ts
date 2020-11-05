@@ -102,6 +102,19 @@ const config = {
         fonts: ['material icons'],
       },
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [`id`, `title`, `content`],
+        resolvers: {
+          situation: {
+            id: (node) => node.id,
+            title: (node) => node.title,
+            content: (node) => node.content.value,
+          },
+        },
+      },
+    },
   ],
 };
 

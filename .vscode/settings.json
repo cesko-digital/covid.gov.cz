@@ -1,6 +1,5 @@
 {
     "editor.tabSize": 2,
-    "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
@@ -46,5 +45,6 @@
     "eslint.lintTask.enable": true,
     "eslint.workingDirectories": ["gatsby"],
     "eslint.packageManager": "yarn",
+    "editor.formatOnSave": true,
   }
   
