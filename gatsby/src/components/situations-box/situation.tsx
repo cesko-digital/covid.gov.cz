@@ -5,14 +5,14 @@ import {
   KeyboardArrowRight,
 } from '@material-ui/icons';
 import styles from './situation.module.scss';
-import { ISituation } from 'graphql-types';
+import { IArea } from 'graphql-types';
 
 interface Props {
-  situation: ISituation;
+  situation: IArea;
 }
 
 const Situation: React.FC<Props> = ({ situation }) => {
-  const { title, path } = situation;
+  const { name, path } = situation;
   return (
     <Link to={path.alias} className={styles.situation}>
       <span className={styles.situationTitle}>
@@ -20,7 +20,7 @@ const Situation: React.FC<Props> = ({ situation }) => {
           className={styles.situationTitleIcon}
           style={{ fontSize: 24 }}
         />
-        {title}
+        {name}
       </span>
       <KeyboardArrowRight style={{ fontSize: 16 }} className="color-yellow" />
     </Link>

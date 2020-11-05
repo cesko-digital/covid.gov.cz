@@ -87,7 +87,7 @@ export const query = graphql`
         }
         situation_items {
           id
-          title
+          name
           path {
             alias
           }
