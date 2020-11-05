@@ -1,7 +1,9 @@
 uuid: 0fba5ce4-011a-46be-936e-5ddb1279461d
 langcode: cs
-status: false
+status: true
 dependencies:
+  module:
+    - user
   theme:
     - covid_theme
 _core:
@@ -9,7 +11,7 @@ _core:
 id: covid_theme_page_title
 theme: covid_theme
 region: content
-weight: -30
+weight: -2
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,13 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      editor: editor
+      reviewer: reviewer
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

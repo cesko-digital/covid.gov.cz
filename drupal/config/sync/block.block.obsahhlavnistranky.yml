@@ -1,26 +1,23 @@
-uuid: 34c17480-cdb5-41eb-b9b1-c380a8f7736a
+uuid: b529ff25-1205-419b-a54d-b5d464624556
 langcode: cs
 status: true
 dependencies:
   module:
+    - system
     - user
   theme:
     - covid_theme
-_core:
-  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
-id: covid_theme_local_tasks
+id: obsahhlavnistranky
 theme: covid_theme
-region: tabs
-weight: -2
+region: content
+weight: -1
 provider: null
-plugin: local_tasks_block
+plugin: system_main_block
 settings:
-  id: local_tasks_block
-  label: Záložky
-  provider: core
+  id: system_main_block
+  label: 'Obsah hlavní stránky'
+  provider: system
   label_display: '0'
-  primary: true
-  secondary: true
 visibility:
   user_role:
     id: user_role
