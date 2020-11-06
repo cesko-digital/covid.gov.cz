@@ -1,8 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
@@ -31,14 +31,23 @@ const Measures: React.FC<IProps> = ({ data }) => {
 
   const { slicedItems, ...pagination } = usePagination(nodes);
 
+  // todo add meta description
   return (
     <Layout>
-      <Helmet
-        title={
-          I18n('current_measures_overview') +
-          ' | ' +
-          I18n('covid_portal').toUpperCase()
-        }
+      <Seo
+        title={I18n('current_measures')}
+        description={I18n('current_measures_overview_meta')}
+        pagePath={I18n('slug_measures')}
+        htmlLanguage={searchingTitle.langcode}
+        schema={`{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#website",
+          "url": "https://covid.gov.cz/measures",
+          "name": "Current Measures | Covid Portál",
+          "publisher": {
+            "@id": "https://gov.cz"
+          }
+        }`}
       />
       <Container className="pt-1">
         <Breadcrumb
@@ -107,6 +116,7 @@ export const query = graphql`
       langcode: { eq: $langCode }
       source: { eq: "still_searching_title" }
     ) {
+      langcode
       target
     }
     searchingDescription: translation(
