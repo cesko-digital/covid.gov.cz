@@ -18,7 +18,8 @@ const breadcrumbItems = [
     url: '/',
   },
   {
-    title: 'aktuální opatření',
+    // TODO: translate
+    title: 'Aktuální opatření',
     url: '/opatreni',
   },
 ];

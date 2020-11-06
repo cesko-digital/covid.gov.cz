@@ -16,6 +16,7 @@ const breadcrumbItems = [
     url: '/',
   },
   {
+    // TODO: translate
     title: 'Životní události',
     url: '/situace',
   },

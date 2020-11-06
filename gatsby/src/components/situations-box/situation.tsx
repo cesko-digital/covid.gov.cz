@@ -16,6 +16,7 @@ const Situation: React.FC<Props> = ({ situation }) => {
   return (
     <Link to={path.alias} className={styles.situation}>
       <span className={styles.situationTitle}>
+        {/* TODO: Actual icons */}
         <AccountBalanceWalletOutlined
           className={styles.situationTitleIcon}
           style={{ fontSize: 24 }}

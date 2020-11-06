@@ -10,6 +10,7 @@ import styles from './situation-detail.module.scss';
 import Accordion from '../accordion';
 import ContentBox from '../content-box';
 import { ISituation } from '../../../graphql-types';
+import validFromTo from '@/utility/validFromTo';
 
 interface Region {
   name: string;
@@ -92,8 +93,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
               <Event />
               &nbsp;
               <span className="text-uppercase font-weight-medium">
-                {situation.valid_from && `Od ${situation.valid_from} `}
-                {situation.valid_to && `Do ${situation.valid_to}`}
+                {validFromTo(situation.valid_from, situation.valid_to)}
               </span>
             </div>
           ) : (
