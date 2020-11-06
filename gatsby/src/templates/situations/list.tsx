@@ -9,6 +9,7 @@ import ContentBox from '@/components/content-box';
 import Pagination from '@/components/pagination';
 import usePagination from '@/hooks/usePagination';
 import SituationListItem from '@/components/situation-list-item';
+import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -26,20 +27,12 @@ const Home: React.FC<IProps> = ({ data }) => {
       <Container className="mt-3">
         <Breadcrumb
           items={[
+            { title: I18n('home'), url: '/' },
             {
-              // TODO: translate
-              title: 'domů',
-              url: '/',
+              title: I18n('life_situations'),
+              url: I18n('slug_situations'),
             },
-            {
-              // TODO: translate
-              title: 'Životní události',
-              url: '/opatreni',
-            },
-            {
-              title: area.name,
-              url: area.path.alias,
-            },
+            area.name,
           ]}
           variant="inverse"
         />

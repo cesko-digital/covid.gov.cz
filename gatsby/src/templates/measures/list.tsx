@@ -10,6 +10,7 @@ import Pagination from '@/components/pagination';
 import ContentBox from '@/components/content-box';
 import Measure from '@/components/measure-list/measure';
 import validFromTo from '@/utility/validFromTo';
+import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -27,20 +28,9 @@ const Home: React.FC<IProps> = ({ data }) => {
       <Container className="mt-3">
         <Breadcrumb
           items={[
-            {
-              // TODO: translate
-              title: 'domů',
-              url: '/',
-            },
-            {
-              // TODO: translate
-              title: 'Aktuální opatření',
-              url: '/opatreni',
-            },
-            {
-              title: taxonomyTermMeasureType.name,
-              url: taxonomyTermMeasureType.path.alias,
-            },
+            { title: I18n('home'), url: '/' },
+            { title: I18n('current_measures'), url: I18n('slug_measures') },
+            taxonomyTermMeasureType.name,
           ]}
           variant="inverse"
         />

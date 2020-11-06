@@ -5,6 +5,7 @@ import { Room, Event } from '@material-ui/icons';
 import Container from '@/components/container';
 import Link from '@/components/link';
 import Breadcrumb from '@/components/breadcrumb';
+import I18n from '@/components/i18n';
 
 import styles from './situation-detail.module.scss';
 import Accordion from '../accordion';
@@ -23,17 +24,23 @@ interface Link {
 
 interface IProps {
   situation: ISituation;
+  type: string;
 }
 
-const SituationDetail: React.FC<IProps> = ({ situation }) => {
+const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
   return (
     <div className={styles.situationDetail}>
       <Container>
-        <div className="mt-1">
+        <div className="pt-1">
           <Breadcrumb
             items={[
-              // TODO: add localized title
-              { title: 'Domů', url: '/' },
+              { title: I18n('home'), url: '/' },
+              {
+                title: I18n(
+                  type === 'measure' ? 'current_measures' : 'life_situations',
+                ),
+                url: I18n(`slug_${type}s`),
+              },
               {
                 title: situation.relationships?.situation_type?.name,
                 url: situation.relationships?.situation_type?.path?.alias,

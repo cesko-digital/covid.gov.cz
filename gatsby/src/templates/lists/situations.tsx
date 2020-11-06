@@ -9,18 +9,7 @@ import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
 import Layout from '@/layouts/default-layout';
-
-const breadcrumbItems = [
-  {
-    title: 'domů',
-    url: '/',
-  },
-  {
-    // TODO: translate
-    title: 'Životní události',
-    url: '/situace',
-  },
-];
+import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -35,8 +24,14 @@ const Situations: React.FC<IProps> = ({ data }) => {
     <Layout>
       <Helmet title="Aktuální opatření" />
       <Container>
-        <div className="mt-3">
-          <Breadcrumb items={breadcrumbItems} variant="inverse" />
+        <div className="pt-1">
+          <Breadcrumb
+            items={[
+              { title: I18n('home'), url: '/' },
+              { title: I18n('life_situations'), url: I18n('slug_situations') },
+            ]}
+            variant="inverse"
+          />
         </div>
         <div className="mt-3">
           <Headline>Přehled životních situací</Headline>
