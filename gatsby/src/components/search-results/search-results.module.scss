@@ -1,0 +1,26 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.search-results-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: (21/18);
+  margin-bottom: 0.9rem;
+}
+
+.search-results-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &:hover,
+  &:focus,
+  &:visited:hover,
+  &:visited:focus {
+    color: $theme-yellow !important;
+  }
+}
+
+.search-results-desc {
+  margin-bottom: 0;
+}
