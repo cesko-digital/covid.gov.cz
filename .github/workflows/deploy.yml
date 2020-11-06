@@ -31,7 +31,8 @@ jobs:
           rm -rf gh-pages/* gh-pages/.github
       - name: Move new build
         run: |
-          mv gatsby/public/* gh-pages
+          mv gatsby/public/* gh-pages \
+          && cp .gitattributes gh-pages
       - name: Set identity
         run: |
           git config --global user.email "bot@cesko.digital" && git config --global user.name "Bot Cesko.Digital"
