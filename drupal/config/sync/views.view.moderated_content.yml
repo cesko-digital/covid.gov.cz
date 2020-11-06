@@ -92,7 +92,10 @@ display:
             title: title
             type: type
             name: name
+            moderation_state_1: moderation_state_1
             moderation_state: moderation_state
+            status: status
+            langcode: langcode
             changed: changed
             operations: operations
           info:
@@ -117,7 +120,28 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            moderation_state_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             moderation_state:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            status:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            langcode:
               sortable: true
               default_sort_order: asc
               align: ''

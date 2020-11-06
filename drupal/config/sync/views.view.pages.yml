@@ -65,9 +65,17 @@ display:
           description: ''
           columns:
             title: title
+            langcode: langcode
             operations: operations
           info:
             title:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            langcode:
               sortable: true
               default_sort_order: asc
               align: ''

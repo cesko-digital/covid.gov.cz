@@ -86,6 +86,7 @@ display:
           description: ''
           columns:
             title: title
+            field_situation_type: field_situation_type
             field_valid_from: field_valid_from
             field_valid_to: field_valid_to
             field_region: field_region
@@ -95,6 +96,13 @@ display:
           info:
             title:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_situation_type:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
@@ -125,7 +133,7 @@ display:
               empty_column: false
               responsive: ''
             langcode:
-              sortable: false
+              sortable: true
               default_sort_order: asc
               align: ''
               separator: ''

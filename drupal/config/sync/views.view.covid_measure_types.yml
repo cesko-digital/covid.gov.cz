@@ -65,19 +65,14 @@ display:
           description: ''
           columns:
             name: name
-            parent_target_id: parent_target_id
             status: status
             langcode: langcode
+            field_ref_icon: field_ref_icon
             operations: operations
           info:
             name:
               sortable: true
               default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            parent_target_id:
               align: ''
               separator: ''
               empty_column: false
@@ -90,6 +85,13 @@ display:
               empty_column: false
               responsive: ''
             langcode:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_ref_icon:
               sortable: false
               default_sort_order: asc
               align: ''
