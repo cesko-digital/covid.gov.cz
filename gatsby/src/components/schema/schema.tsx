@@ -79,9 +79,8 @@ export const SchemaComp: React.FC<IProps> = ({
 
   return (
     <Helmet>
-      {/* Schema.org tags */}
       <meta property="og:url" content={url} />
-      {isBlogPost ? <meta property="og:type" content="article" /> : null}
+      <meta property="og:type" content="article" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>

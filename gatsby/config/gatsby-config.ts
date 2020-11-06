@@ -43,8 +43,8 @@ const config = {
       resolve: 'gatsby-plugin-seo',
       options: {
         siteName: 'Covid Portál',
-        defaultSiteImage: '/ds/images/meta/favicon-32x32.png',
-        siteUrl: 'https://covid.gov.cz',
+        defaultSiteImage: '/images/ogimage.png',
+        siteUrl: 'https://covidportal.dev',
         globalSchema: `{
           "@type": "WebSite",
           "@id": "https://covid.gov.cz/#website",
@@ -56,7 +56,7 @@ const config = {
           "image": {
             "@type": "ImageObject",
             "@id": "https://covid.gov.cz/#logo",
-            "url": "/ds/images/meta/favicon-32x32.png",
+            "url": "/images/image.png",
             "caption": "gov.cz logo"
           }
         }
@@ -125,12 +125,23 @@ const config = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ['G-GKH7GB76MH'],
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-N5LCQHK',
+        includeInDevelopment: false,
       },
     },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['material icons'],
+        fonts: ['material icons', 'roboto'],
       },
     },
   ],
