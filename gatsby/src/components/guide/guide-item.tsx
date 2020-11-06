@@ -12,6 +12,9 @@ interface IProps {
   variant?: 'white' | 'blue';
   buttonText: string;
   iconCode?: string;
+  area?: string;
+  validFrom?: string;
+  validTo?: string;
 }
 
 const GuideItem: React.FC<IProps> = ({
@@ -21,21 +24,44 @@ const GuideItem: React.FC<IProps> = ({
   iconCode,
   variant,
   description,
+  area,
+  validFrom,
 }) => {
   return (
     <>
       <Col col={12} colSm={6} colLg={4} className="box">
         <div className="box__inner">
-          <h3
-            className={classNames(classes.title, {
-              [classes.titleBlue]: variant === 'white',
-            })}
-            style={{ height: '78px' }}
-          >
-            {iconCode && <ContentIcon code={iconCode} />}
-
-            {title}
-          </h3>
+          <div style={{ height: '74px' }} className="d-flex flex-row">
+            {iconCode && (
+              <ContentIcon
+                code={iconCode}
+                className={classNames(classes.icon, {
+                  [classes.iconBlue]: variant === 'white',
+                })}
+              />
+            )}
+            <h3
+              className={classNames(classes.title, {
+                [classes.titleBlue]: variant === 'white',
+              })}
+            >
+              {title}
+            </h3>
+          </div>
+          {(area || validFrom) && (
+            <div
+              className={classNames(
+                'd-flex',
+                'flex-row',
+                'justify-space-between',
+                classes.subTitle,
+                { [classes.subTitleBlue]: variant === 'white' },
+              )}
+            >
+              <p>{area}</p>
+              <p>{validFrom}</p>
+            </div>
+          )}
           {description && (
             <p
               className={classNames(classes.descriptionText, {
@@ -49,8 +75,9 @@ const GuideItem: React.FC<IProps> = ({
             variant="outline-yellow"
             href={buttonUrl}
             text={buttonText}
-            className={classNames(classes.title, {
-              [classes.titleBlue]: variant === 'white',
+            linkTitle={title}
+            className={classNames(classes.btn, {
+              [classes.btnBlue]: variant === 'white',
             })}
           />
         </div>

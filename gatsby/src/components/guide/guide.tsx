@@ -100,6 +100,10 @@ const Guide: React.FC<IProps> = ({
                           variant={variant}
                           buttonText={I18n('more')}
                           description={x.norm}
+                          area={x.relationships?.region
+                            ?.map((item) => item.name)
+                            .join(', ')}
+                          validFrom={x.valid_from}
                         />
                       );
                     })}

@@ -1,5 +1,25 @@
 .title {
   color: #fff !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  &--blue {
+    color: #2b4762 !important;
+  }
+}
+
+.icon {
+  color: #fff;
+  margin-right: 5px;
+  &--blue {
+    color: #2b4762 !important;
+  }
+}
+
+.btn {
+  color: #fff !important;
 
   &--blue {
     color: #2b4762 !important;
@@ -7,10 +27,8 @@
 }
 
 .subTitle {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   color: #fff;
+  height: 24px;
   &--blue {
     color: #2362a2;
   }
@@ -22,7 +40,6 @@
 
 .descriptionText {
   color: #fff;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

@@ -34,6 +34,7 @@ interface IProps {
   href?: string;
   disabled?: boolean;
   icon?: React.ReactNode;
+  linkTitle?: string;
 }
 
 const Button: React.FC<IProps> = ({
@@ -44,11 +45,13 @@ const Button: React.FC<IProps> = ({
   className,
   disabled = false,
   icon,
+  linkTitle = '',
 }) => {
   if (href !== '' && !disabled) {
     return (
       <a
         href={href}
+        title={linkTitle}
         className={getClass(variant, className)}
         data-testid="button-link"
       >
