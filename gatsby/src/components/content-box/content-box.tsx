@@ -4,7 +4,6 @@ import Button, { ButtonVariant } from '@/components/button';
 import Col from '@/components/col';
 
 import styles from './content-box.module.scss';
-import Link from '@/components/link';
 
 interface Props {
   title?: string;
@@ -52,15 +51,14 @@ const ContentBox: React.FC<Props> = ({
         )}
         {children}
         {buttonText && (
-          <Link to={buttonHref}>
-            <Button
-              variant={buttonVariant}
-              text={buttonText}
-              className={classNames(styles.contentBoxBtn, {
-                [styles.contentBoxBtnBlue]: variant === 'white',
-              })}
-            />
-          </Link>
+          <Button
+            href={buttonHref}
+            variant={buttonVariant}
+            text={buttonText}
+            className={classNames(styles.contentBoxBtn, {
+              [styles.contentBoxBtnBlue]: variant === 'white',
+            })}
+          />
         )}
       </Col>
     </div>

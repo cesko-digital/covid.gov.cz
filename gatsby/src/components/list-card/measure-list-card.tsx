@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from '@/components/link';
 import Button from '@/components/button';
 import I18n from '@/components/i18n';
 import styles from './measure-list-card.module.scss';
@@ -38,9 +37,7 @@ const MeasureListCard: React.FC<IProps> = ({
           </div>
         </div>
         <div>
-          <Link to={link}>
-            <Button text={I18n('detail')} variant="outline" />
-          </Link>
+          <Button href={link} text={I18n('detail')} variant="outline" />
         </div>
       </div>
     </div>
