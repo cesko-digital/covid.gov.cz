@@ -12,16 +12,18 @@ const DefaultLayout: React.FC = ({ children }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
-      <Header
-        navItems={[
-          { label: I18n('home'), to: '/' },
-          { label: I18n('life_situations'), to: I18n('slug_situations') },
-          { label: I18n('current_measures'), to: I18n('slug_measures') },
-        ]}
-      />
-      <main className={styles.main} style={backgroundImageStyle}>
-        <div className={styles.mainInner}>{children}</div>
-      </main>
+      <div style={backgroundImageStyle} className={styles.bkgPhoto}>
+        <Header
+          navItems={[
+            { label: I18n('home'), to: '/' },
+            { label: I18n('life_situations'), to: I18n('slug_situations') },
+            { label: I18n('current_measures'), to: I18n('slug_measures') },
+          ]}
+        />
+        <main className={styles.main}>
+          <div className={styles.mainInner}>{children}</div>
+        </main>
+      </div>
       <Footer />
     </div>
   );

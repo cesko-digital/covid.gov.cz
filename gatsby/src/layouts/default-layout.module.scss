@@ -1,3 +1,8 @@
+@import '../../assets/scss/design-system/base/variables';
+@import '../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .wrapper {
   background: #e5e5e5;
   display: flex;
@@ -12,4 +17,16 @@
 
 .mainInner {
   position: relative;
+}
+
+.bkgPhoto {
+  @include media-breakpoint-up(xl) {
+    background-position: center -100px !important;
+  }
+  @include media-breakpoint-up(md) {
+    background-position: center -50 !important;
+  }
+  @include media-breakpoint-up(xs) {
+    background-position: center top !important;
+  }
 }
