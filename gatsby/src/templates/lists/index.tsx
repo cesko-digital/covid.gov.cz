@@ -79,6 +79,12 @@ export const query = graphql`
         measure_items {
           id
           title
+          norm
+          valid_from(formatString: "D. M. YYYY")
+          valid_to(formatString: "D. M. YYYY")
+          path {
+            alias
+          }
           relationships {
             region {
               name
