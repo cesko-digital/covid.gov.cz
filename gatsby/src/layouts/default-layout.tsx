@@ -16,15 +16,15 @@ const DefaultLayout: React.FC = ({ children }) => {
     <div className={classnames('body__wrapper', styles.wrapper)}>
       <Header
         navItems={[
-          { label: 'Úvod', to: '/' },
-          { label: 'Životní situace', to: situationsRoute },
-          { label: 'Opatření', to: measuresRoute },
+          { label: I18n('home'), to: '/' },
+          { label: I18n('life_situations'), to: situationsRoute },
+          { label: I18n('life_situations'), to: measuresRoute },
         ]}
       />
       <main className={styles.main}>
         <MainBackground
           src="/images/main-content-mobile-bg.jpg"
-          alt="Covid Portal"
+          alt={I18n('covid_portal')}
         />
         <div className={styles.mainInner}>{children}</div>
       </main>

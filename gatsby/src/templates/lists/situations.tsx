@@ -22,7 +22,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title="Aktuální opatření" />
+      <Helmet title={I18n('situations_overview')} />
       <Container>
         <div className="pt-1">
           <Breadcrumb
@@ -34,7 +34,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
           />
         </div>
         <div className="mt-3">
-          <Headline>Přehled životních situací</Headline>
+          <Headline>{I18n('situations_overview')}</Headline>
         </div>
         <div className="mt-3">
           <ContentBox noPadding>

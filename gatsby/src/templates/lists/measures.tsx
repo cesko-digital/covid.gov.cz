@@ -26,7 +26,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title="Aktuální opatření" />
+      <Helmet title={I18n('current_measures_overview')} />
       <Container className="pt-1">
         <Breadcrumb
           items={[
@@ -37,7 +37,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
         />
       </Container>
       <Container className="mt-3">
-        <Headline>Přehled aktuálních opatření</Headline>
+        <Headline>{I18n('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
