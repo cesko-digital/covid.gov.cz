@@ -34,7 +34,11 @@
 
 .guide-item-sub-title {
   color: #fff;
-  height: 24px;
+
+  /*! purgecss ignore */
+  p {
+    margin-bottom: 0.5rem;
+  }
 
   &--blue {
     color: #2362a2;
