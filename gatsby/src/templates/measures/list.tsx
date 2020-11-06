@@ -27,13 +27,16 @@ const Home: React.FC<IProps> = ({ data }) => {
             variant="inverse"
           />
         </div>
-        <Headline>{taxonomyTermMeasureType.name}</Headline>
+        <div className="mt-3">
+          <Headline>{taxonomyTermMeasureType.name}</Headline>
+        </div>
         <div>
           {taxonomyTermMeasureType.relationships?.measure?.map(
-            ({ id, title, path }) => {
+            ({ id, title, norm, path }) => {
               return (
                 <ListCard
                   title={title}
+                  description={norm}
                   key={`taxonomyTermMeasureType-list-item-${id}`}
                   link={path?.alias}
                 />
@@ -55,6 +58,7 @@ export const query = graphql`
         measure {
           id
           title
+          norm
           path {
             alias
           }

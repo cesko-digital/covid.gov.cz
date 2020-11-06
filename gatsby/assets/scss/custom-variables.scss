@@ -16,6 +16,9 @@ $theme-gray-light: #f5f5f5;
 $grid-gutter-width: 32px;
 $theme-path: '/ds';
 
+$h2-font-size: 23px;
+$h2-font-size-mobile: 18px;
+
 @import 'design-system/front';
 
 .form-control {
@@ -45,6 +48,33 @@ a.more {
   padding-right: 15px;
 }
 
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+
+  margin-left: 15px;
+
+  & > li,
+  & > li {
+    margin-bottom: 4px;
+  }
+}
+
+ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box) > li::before {
+  left: -10px;
+}
+
+ol > li::before {
+  left: -17px;
+}
+
+
+h2,
+.h2 {
+  margin-bottom: 10px;
+}
+
 // Button
 .btn {
   &.btn-primary {
@@ -71,7 +101,7 @@ a.more {
 
   &.btn-outline-primary {
     border-color: $theme-blue;
-    color: $theme-gray-dark;
+    color: $theme-blue-dark;
     text-align: left;
     white-space: normal;
     font-weight: 500;
@@ -81,6 +111,7 @@ a.more {
       &:not([disabled]) {
         border-color: $theme-blue;
         background-color: $theme-blue;
+        color: $white;
       }
     }
 
