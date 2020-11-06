@@ -33,8 +33,13 @@ const Measures: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={I18n('current_measures_overview')} />
-
+      <Helmet
+        title={
+          I18n('current_measures_overview') +
+          ' | ' +
+          I18n('covid_portal').toUpperCase()
+        }
+      />
       <Container className="pt-1">
         <Breadcrumb
           items={[

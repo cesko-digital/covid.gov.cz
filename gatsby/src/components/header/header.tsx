@@ -40,7 +40,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
         <Row alignItems="center" className={classes.header__inner}>
           {/* LOGO */}
           <Col col={7} colMd={3} colLg={3}>
-            <Link to="/" label={I18n('covid_portal')}>
+            <Link to="/" label={'COVID PORTAL - ' + I18n('home')}>
               <img src={headerLogo} />
             </Link>
           </Col>
