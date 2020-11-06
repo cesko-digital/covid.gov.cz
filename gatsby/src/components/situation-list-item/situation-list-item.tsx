@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './situation-list-item.module.scss';
 import Button from '@/components/button';
+import I18n from '@/components/i18n';
 
 interface Props {
   title: string;
@@ -16,8 +17,7 @@ const SituationListItem: React.FC<Props> = ({ title, description, link }) => {
       <div className={styles.situationDetails}>
         <p className={styles.situationDescription}>{description}</p>
         <Button
-          // TODO: Localize
-          text="VÍCE"
+          text={I18n('more')}
           variant="outline-yellow"
           href={link}
           className={styles.situationButton}

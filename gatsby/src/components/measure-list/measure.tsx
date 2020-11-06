@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './measure.module.scss';
 import Button from '@/components/button';
+import I18n from '@/components/i18n';
 
 interface Props {
   title: string;
@@ -28,7 +29,7 @@ const Measure: React.FC<Props> = ({
           <div className={styles.measureDetail}>{validity}</div>
         </div>
         <Button
-          text="VÍCE"
+          text={I18n('more')}
           variant="outline-yellow"
           href={link}
           className={styles.measureButton}
