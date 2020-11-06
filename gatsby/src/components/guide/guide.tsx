@@ -20,6 +20,7 @@ interface IProps {
   buttonText: string;
   description?: string;
   variant?: 'white' | 'blue';
+  itemDescriptions?: string[];
 }
 
 const Guide: React.FC<IProps> = ({
@@ -29,6 +30,7 @@ const Guide: React.FC<IProps> = ({
   description,
   buttonHref = '',
   variant = 'blue',
+  itemDescriptions,
 }) => {
   const isMobile = useMobile();
 
@@ -76,14 +78,15 @@ const Guide: React.FC<IProps> = ({
                 <Row className="boxes boxes--light boxes--eq">
                   {/* If is situation */}
                   {isSituationBox &&
-                    (items as IArea[]).map((x) => {
+                    (items as IArea[]).map((x, i) => {
+                      const desc = itemDescriptions[i] ?? '';
                       return (
                         <GuideItem
                           key={x.id}
                           title={x.name}
                           buttonUrl={x.path.alias}
                           buttonText={I18n('more')}
-                          description=""
+                          description={desc}
                           variant={variant}
                           iconCode={x.relationships?.field_ref_icon?.code}
                         />
@@ -91,7 +94,8 @@ const Guide: React.FC<IProps> = ({
                     })}
                   {/* If is measure */}
                   {!isSituationBox &&
-                    (items as IMeasure[]).map((x) => {
+                    (items as IMeasure[]).map((x, i) => {
+                      const desc = itemDescriptions[i];
                       return (
                         <GuideItem
                           key={x.id}
@@ -99,7 +103,7 @@ const Guide: React.FC<IProps> = ({
                           buttonUrl={x.path.alias}
                           variant={variant}
                           buttonText={I18n('more')}
-                          description={x.norm}
+                          description={desc}
                           area={x.relationships?.region
                             ?.map((item) => item.name)
                             .join(', ')}

@@ -16,6 +16,8 @@ const Home: React.FC<IProps> = ({ data }) => {
   const {
     situation_label,
     situation_text,
+    measure_description,
+    situation_description,
     situation_link,
     measure_label,
     measure_link,
@@ -37,6 +39,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           buttonHref={I18n('slug_situations')}
           buttonText={situation_link?.title}
           variant="blue"
+          itemDescriptions={situation_description}
         />
         <Guide
           items={measure_items}
@@ -45,6 +48,7 @@ const Home: React.FC<IProps> = ({ data }) => {
           buttonHref={I18n('slug_measures')}
           buttonText={measure_link?.title}
           variant="white"
+          itemDescriptions={measure_description}
         />
       </Container>
     </Layout>
@@ -56,6 +60,8 @@ export default Home;
 export const query = graphql`
   query IndexQuery($langCode: String!) {
     homepage(langcode: { eq: $langCode }) {
+      measure_description
+      situation_description
       measure_link {
         uri
         title
