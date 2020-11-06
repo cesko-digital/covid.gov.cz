@@ -57,6 +57,15 @@ a.more {
   padding-right: 15px;
 }
 
+// TODO: Remove in future
+
+/* purgecss start ignore */
+[lang="en"] [role="banner"] [href="/en/measures"] {
+  visibility: hidden;
+}
+
+/* purgecss end ignore */
+
 ul,
 ol {
   margin: 0;
