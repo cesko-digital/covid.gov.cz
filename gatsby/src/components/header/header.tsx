@@ -129,7 +129,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                       key={label}
                       className={classnames(
                         classes.nav__mobileLink,
-                        'container',
+                        'container nav__link--mobile',
                       )}
                       activeClassName={classes['nav__mobileLink--active']}
                       partiallyActive={to !== '/'}

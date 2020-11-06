@@ -55,7 +55,6 @@ const Page: React.FC<IProps> = ({ data }) => {
         ) : (
           ''
         )}
-        ;
       </Container>
     </Layout>
   );
