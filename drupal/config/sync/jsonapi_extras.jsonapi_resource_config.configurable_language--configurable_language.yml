@@ -6,7 +6,7 @@ dependencies:
     - language
 id: configurable_language--configurable_language
 disabled: false
-path: language
+path: configurable_language/configurable_language
 resourceType: configurable_language--configurable_language
 resourceFields:
   uuid:

@@ -5,7 +5,7 @@ dependencies:
   module:
     - language
 id: language_content_settings--language_content_settings
-disabled: true
+disabled: false
 path: language_content_settings/language_content_settings
 resourceType: language_content_settings--language_content_settings
 resourceFields:
