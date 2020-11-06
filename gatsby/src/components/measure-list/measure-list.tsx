@@ -22,6 +22,7 @@ const MeasureList: React.FC<Props> = ({ measures }) => {
           validity="od 2. října do 6. listopadu"
           link="/opatreni/rouska-se-musi-nosti-venku-az-na-par"
           area={relationships.region[0]?.name}
+          borderTop
         />
       ))}
     </>

@@ -8,8 +8,6 @@ import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
-import Pagination from '@/components/pagination';
-import usePagination from '@/hooks/usePagination';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
@@ -22,17 +20,12 @@ const Measures: React.FC<IProps> = ({ data }) => {
     allTaxonomyTermMeasureType: { nodes },
   } = data;
 
-  const { slicedItems, ...pagination } = usePagination(nodes);
-
   return (
     <Layout>
-      <Helmet title="Aktuální opatření" />
+      <Helmet title={I18n('current_measures')} />
       <Container className="pt-1">
         <Breadcrumb
-          items={[
-            { title: I18n('home'), url: '/' },
-            { title: I18n('current_measures'), url: I18n('slug_measures') },
-          ]}
+          items={[{ title: I18n('home'), url: '/' }, I18n('current_measures')]}
           variant="inverse"
         />
       </Container>
@@ -41,14 +34,13 @@ const Measures: React.FC<IProps> = ({ data }) => {
       </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
-          {slicedItems.map(
+          {nodes.map(
             (n) =>
               n.relationships.measure !== null && (
                 <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
               ),
           )}
         </ContentBox>
-        <Pagination {...pagination} />
       </Container>
       <Container className="mt-3 mb-3">
         <LookingForSomething />

@@ -12,15 +12,15 @@ interface Props {
 
 const SituationListItem: React.FC<Props> = ({ title, description, link }) => {
   return (
-    <div className={styles.situation}>
-      <h3 className={styles.situationTitle}>{title}</h3>
-      <div className={styles.situationDetails}>
-        <p className={styles.situationDescription}>{description}</p>
+    <div className={styles.situationListItem}>
+      <h3 className={styles.situationListItemTitle}>{title}</h3>
+      <div className={styles.situationListItemDetails}>
+        <p className={styles.situationListItemDescription}>{description}</p>
         <Button
           text={I18n('more')}
           variant="outline-yellow"
           href={link}
-          className={styles.situationButton}
+          className={styles.situationListItemButton}
         />
       </div>
     </div>

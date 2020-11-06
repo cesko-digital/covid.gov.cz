@@ -10,13 +10,14 @@ import Pagination from '@/components/pagination';
 import usePagination from '@/hooks/usePagination';
 import SituationListItem from '@/components/situation-list-item';
 import I18n from '@/components/i18n';
+import { Helmet } from 'react-helmet';
 
 interface IProps {
   data: IQuery;
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  const { area, allArea } = data;
+  const { area } = data;
 
   const situations = area.relationships?.situation ?? [];
 
@@ -24,7 +25,8 @@ const Home: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Container className="mt-3">
+      <Helmet title={I18n('life_situations')} />
+      <Container className="pt-1">
         <Breadcrumb
           items={[
             { title: I18n('home'), url: '/' },
@@ -58,23 +60,18 @@ const Home: React.FC<IProps> = ({ data }) => {
 export default Home;
 
 export const query = graphql`
-  query($slug: String!) {
-    area(path: { alias: { eq: $slug } }) {
+  query($slug: String!, $langCode: String!) {
+    area(path: { alias: { eq: $slug } }, langcode: { eq: $langCode }) {
       name
       relationships {
         situation {
           id
           title
+          meta_description
           path {
             alias
           }
         }
-      }
-    }
-    allArea {
-      nodes {
-        id
-        name
       }
     }
   }

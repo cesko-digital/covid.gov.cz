@@ -11,13 +11,14 @@ import ContentBox from '@/components/content-box';
 import Measure from '@/components/measure-list/measure';
 import validFromTo from '@/utility/validFromTo';
 import I18n from '@/components/i18n';
+import { Helmet } from 'react-helmet';
 
 interface IProps {
   data: IQuery;
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  const { taxonomyTermMeasureType, allTaxonomyTermMeasureType } = data;
+  const { taxonomyTermMeasureType } = data;
 
   const measures = taxonomyTermMeasureType.relationships?.measure ?? [];
 
@@ -25,7 +26,8 @@ const Home: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Container className="mt-3">
+      <Helmet title={I18n('current_measures')} />
+      <Container className="pt-1">
         <Breadcrumb
           items={[
             { title: I18n('home'), url: '/' },
@@ -49,7 +51,7 @@ const Home: React.FC<IProps> = ({ data }) => {
               description={n.meta_description}
               validity={validFromTo(n.valid_from, n.valid_to)}
               link={n.path?.alias}
-              area={n.relationships.region[0]?.name}
+              area={taxonomyTermMeasureType.name}
             />
           </ContentBox>
         ))}
@@ -62,25 +64,21 @@ export default Home;
 
 export const query = graphql`
   query($slug: String!, $langCode: String!) {
-    taxonomyTermMeasureType(path: { alias: { eq: $slug } }) {
+    taxonomyTermMeasureType(
+      path: { alias: { eq: $slug }, langcode: { eq: $langCode } }
+    ) {
       name
       relationships {
         measure {
           id
           title
-          norm
+          meta_description
           valid_from
           valid_to
           path {
             alias
           }
         }
-      }
-    }
-    allTaxonomyTermMeasureType {
-      nodes {
-        name
-        id
       }
     }
   }

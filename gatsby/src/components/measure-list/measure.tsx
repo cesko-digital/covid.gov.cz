@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './measure.module.scss';
 import Button from '@/components/button';
 import I18n from '@/components/i18n';
+import classNames from 'classnames';
 
 interface Props {
   title: string;
@@ -10,6 +11,7 @@ interface Props {
   area: string;
   validity: string;
   link: string;
+  borderTop?: boolean;
 }
 
 const Measure: React.FC<Props> = ({
@@ -18,9 +20,15 @@ const Measure: React.FC<Props> = ({
   area,
   validity,
   link,
+  borderTop,
 }) => {
   return (
-    <div className={styles.measure}>
+    <div
+      className={classNames(
+        styles.measure,
+        borderTop && styles.measureBorderTop,
+      )}
+    >
       <h3 className={styles.measureTitle}>{title}</h3>
       <p className={styles.measureDescription}>{description}</p>
       <div className={styles.measureDetails}>

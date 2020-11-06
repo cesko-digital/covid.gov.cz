@@ -1,6 +1,9 @@
 .measure {
-  border-top: 1px solid rgba(35, 98, 162, 0.3);
   padding: 1.6rem 0;
+}
+
+.measureBorderTop {
+  border-top: 1px solid rgba(35, 98, 162, 0.3);
 }
 
 .measureTitle {
@@ -26,6 +29,7 @@
   font-size: 1.3rem;
   line-height: 2rem;
   font-weight: 500;
+  margin-right: 1.2rem;
   color: #2362a2;
 }
 

@@ -1,9 +1,8 @@
-.measure {
-  border-top: 1px solid rgba(35, 98, 162, 0.3);
+.situationListItem {
   padding: 1.6rem 0;
 }
 
-.measureTitle {
+.situationListItemTitle {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 2.1rem;
@@ -11,18 +10,19 @@
   margin-bottom: 0.8rem;
 }
 
-.measureDescription {
+.situationListItemDescription {
   color: #707070;
   margin-bottom: 1.2rem;
+  margin-right: 1.2rem;
 }
 
-.measureDetails {
+.situationListItemDetails {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.measureButton:global(.btn.btn-outline-primary) {
+.situationListItemButton:global(.btn.btn-outline-primary) {
   border-color: #2362a2;
   color: #2362a2;
 
