@@ -33,7 +33,7 @@ const LookingForSomething: React.FC<IProps> = ({
           {callHeader}
           &nbsp;
           <strong>
-            <a href="tel:1221" className="text-decoration-none">
+            <a href="tel:1221" className={classes.link}>
               1121
             </a>
           </strong>
