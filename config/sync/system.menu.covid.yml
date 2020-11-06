@@ -1,8 +1,0 @@
-uuid: a55fc283-faf4-4816-b85d-85cb4bc2fcbb
-langcode: und
-status: true
-dependencies: {  }
-id: covid
-label: 'Administrace COVID Portálu'
-description: 'Položky administrace COVID Portálu'
-locked: false

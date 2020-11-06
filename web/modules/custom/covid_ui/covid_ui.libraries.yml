@@ -1,5 +1,0 @@
-toolbar:
-  version: VERSION
-  css:
-    theme:
-      css/covid_ui.toolbar.theme.css: {}

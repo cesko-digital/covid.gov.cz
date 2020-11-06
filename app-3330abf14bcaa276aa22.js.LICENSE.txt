@@ -1,0 +1,24 @@
+/*!
+ * Application Insights JavaScript SDK - Channel, 2.5.9
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
+/*!
+ * Application Insights JavaScript SDK - Dependencies Plugin, 2.5.9
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
+/*!
+ * Application Insights JavaScript SDK - Web, 2.5.9
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
+/*!
+ * Microsoft Dynamic Proto Utility, 1.1.0
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
+/*!
+ * domready (c) Dustin Diaz 2014 - License MIT
+ * ie10 fix - Mikael Kristiansson 2019
+ */

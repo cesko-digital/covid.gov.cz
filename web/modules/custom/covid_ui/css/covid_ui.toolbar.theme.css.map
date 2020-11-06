@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,gDAAgD;EAC9C,gBAAgB,EAAE,8BAA8B;;AAElD;iDACkD;EAChD,gBAAgB,EAAE,8BAA8B;;AAK9C,sCAAG;EACD,MAAM,EAAE,CAAC",
-"sources": ["covid_ui.toolbar.theme.scss"],
-"names": [],
-"file": "covid_ui.toolbar.theme.css"
-}

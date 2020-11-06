@@ -1,6 +1,0 @@
-covid_ui:
-  title: 'COVID Portál'
-  description: 'Administrace COVID Portálu'
-  route_name: covid_ui
-  weight: 0
-  menu_name: covid
