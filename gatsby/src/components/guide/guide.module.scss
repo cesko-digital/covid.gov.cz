@@ -27,11 +27,10 @@
 }
 
 .guide-btn {
-  & > button {
-    color: #2362a2;
-    background-color: #fff;
-  }
-  &--blue > button {
+  color: #2362a2 !important;
+  background-color: #fff;
+
+  &--blue {
     color: #fff !important;
     background-color: #2362a2;
   }
