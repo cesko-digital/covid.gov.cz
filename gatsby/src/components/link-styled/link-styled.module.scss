@@ -1,0 +1,27 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.linkStyled {
+  margin: 1rem 0 0;
+}
+
+.linkStyledLink {
+  display: flex;
+  color: $theme-white;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 0.7rem 0 0.7rem 1.2rem;
+
+  // overriding complement-visited-links mixin
+  &:visited {
+    color: $theme-white !important;
+
+    &:hover,
+    &:focus {
+      color: $theme-yellow !important;
+    }
+  }
+}
+
+.linkStyledIcon {
+  color: #ecae1a;
+}

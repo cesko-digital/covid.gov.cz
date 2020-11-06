@@ -1,10 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
+import Layout from '@/layouts/default-layout';
+import SituationDetail from '@/components/situation-detail/situation-detail';
+import ContentBox from '@/components/content-box';
+import LinkList from '@/components/link-list';
+import Container from '@/components/container';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import SituationDetail from '@/components/situation-detail';
-import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
 interface IProps {
@@ -12,6 +15,7 @@ interface IProps {
 }
 
 const Page: React.FC<IProps> = ({ data }) => {
+  const linksData = data.situation.relationships.related_situations;
   return (
     <Layout>
       <Seo
@@ -38,6 +42,21 @@ const Page: React.FC<IProps> = ({ data }) => {
         }}
       />
       <SituationDetail situation={data.situation} type="situation" />
+      <Container className="pt-1">
+        {/* hide this box if no relevant topics exist */}
+        {linksData.length > 0 ? (
+          <ContentBox
+            title={I18n('similar_topics')}
+            boldedTitleCount={1}
+            variant="blue"
+          >
+            <LinkList links={linksData} />
+          </ContentBox>
+        ) : (
+          ''
+        )}
+        ;
+      </Container>
     </Layout>
   );
 };
@@ -72,6 +91,10 @@ export const query = graphql`
         }
         related_situations {
           title
+          path {
+            alias
+            langcode
+          }
         }
       }
       path {
