@@ -35,12 +35,13 @@ const Header: React.FC<Props> = ({ navItems }) => {
 
   return (
     <div className={classes.header} role="banner">
+      <div className={classes.gradient} />
       <Container>
         <Row alignItems="center" className={classes.header__inner}>
           {/* LOGO */}
           <Col col={7} colMd={3} colLg={3}>
             <Link to="/" label={'COVID PORTAL - ' + I18n('home')}>
-              <img src={headerLogo} />
+              <img src={headerLogo} alt="Covid Portal logo" />
             </Link>
           </Col>
           {/* MOBILE TOGGLE */}

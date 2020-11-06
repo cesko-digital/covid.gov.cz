@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
+
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import Container from '@/components/container';
 import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
@@ -11,11 +13,25 @@ import MeasureListCard from '@/components/list-card/measure-list-card';
 interface IProps {
   data: IQuery;
 }
-
+// todo add meta description
 const Home: React.FC<IProps> = ({ data }) => {
   const { taxonomyTermMeasureType } = data;
   return (
     <Layout>
+      <Seo
+        title={taxonomyTermMeasureType.name}
+        description={I18n('current_measures_overview_meta')}
+        pagePath="/measures"
+        schema={`{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#measures",
+          "url": "https://covid.gov.cz/measures",
+          "name": "Current Measures",
+          "publisher": {
+            "@id": "https://gov.cz"
+          }
+        }`}
+      />
       <Container>
         <div className="pt-1">
           <Breadcrumb

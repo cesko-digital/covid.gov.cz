@@ -6,6 +6,10 @@ import SituationDetail from '@/components/situation-detail/situation-detail';
 import ContentBox from '@/components/content-box';
 import LinkList from '@/components/link-list';
 import Container from '@/components/container';
+import { SchemaComp } from '@/components/schema/schema';
+import { SEO as Seo } from 'gatsby-plugin-seo';
+import I18n from '@/components/i18n';
+
 interface IProps {
   data: IQuery;
 }
@@ -14,6 +18,29 @@ const Page: React.FC<IProps> = ({ data }) => {
   const linksData = data.situation.relationships.related_situations;
   return (
     <Layout>
+      <Seo
+        title={data.situation.title}
+        description={
+          data.situation.meta_description ||
+          I18n('current_measures_overview_meta')
+        }
+        pagePath={data.situation.path.alias}
+        htmlLanguage={data.situation.langcode}
+      />
+      <SchemaComp
+        canonicalUrl={'https://covid.gov.cz' + data.situation.path.alias}
+        datePublished={data.situation.valid_from}
+        defaultTitle={data.situation.title}
+        isBlogPost
+        description={data.situation.meta_description}
+        body={data.situation.content.processed}
+        title={data.situation.title}
+        url={'https://covid.gov.cz' + data.situation.path.alias}
+        organization={{
+          url: 'https://gov.cz',
+          name: 'Portál veřejné správy',
+        }}
+      />
       <SituationDetail situation={data.situation} type="situation" />
       <Container>
         {/* hide this box if no relevant topics exist */}
@@ -43,6 +70,7 @@ export const query = graphql`
     situation(path: { alias: { eq: $slug } }) {
       title
       status
+      meta_description
       content {
         processed
       }
@@ -75,9 +103,9 @@ export const query = graphql`
       path {
         alias
       }
-      changed(formatString: "D. M. YYYY HH:mm")
-      valid_from(formatString: "D. M. YYYY")
-      valid_to(formatString: "D. M. YYYY")
+      changed
+      valid_from
+      valid_to
     }
   }
 `;

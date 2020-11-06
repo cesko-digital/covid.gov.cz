@@ -1,3 +1,8 @@
+@import '../../assets/scss/design-system/base/variables';
+@import '../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .wrapper {
   background: #e5e5e5;
   display: flex;
@@ -8,16 +13,20 @@
 .main {
   position: relative;
   flex-grow: 1;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/images/main-bg_1920px.jpg');
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100%;
-  backface-visibility: hidden;
-  // background-blend-mode: ;
-  transform: translate3d(0, 0, 0);
 }
 
 .mainInner {
   position: relative;
+}
+
+.bkgPhoto {
+  @include media-breakpoint-up(xl) {
+    background-position: center -100px !important;
+  }
+  @include media-breakpoint-up(md) {
+    background-position: center -50 !important;
+  }
+  @include media-breakpoint-up(xs) {
+    background-position: center top !important;
+  }
 }

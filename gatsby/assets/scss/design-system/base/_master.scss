@@ -439,10 +439,12 @@ a {
 		display: inline-block;
 		position: relative;
 
-		&::before {
+		&::before, &::after {
 			@include icon-mix();
 			color: $theme-yellow;
 			@include font-size(10);
+		}
+		&::before {
 			position: absolute;
 			top: 50%;
 			margin-top: -( 10px / 2 );
@@ -489,7 +491,6 @@ a {
 		padding-right: ( $spacer / 6 );
 	}
 
-	&.external,
 	&.more {
 		padding-right: ( $spacer / 3 );
 
@@ -507,7 +508,8 @@ a {
 	}
 
 	&.external {
-		&::before {
+		&::after {
+			margin-left: ( $spacer / 6 );
 			content: '\e909';
 		}
 	}

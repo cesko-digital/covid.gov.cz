@@ -7,6 +7,7 @@ interface Props {
   label?: string;
   to: string;
   className?: string;
+  dataTestId?: string;
   activeClassName?: string;
   partiallyActive?: boolean;
   noTR?: boolean;
@@ -19,6 +20,7 @@ const Link: React.FC<Props> = ({
   children,
   label,
   to,
+  dataTestId,
   className,
   onClick,
   activeClassName,
@@ -37,6 +39,7 @@ const Link: React.FC<Props> = ({
     }),
     title: label,
     'aria-label': label,
+    'data-testid': dataTestId,
   };
 
   const handleExternalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

@@ -4,11 +4,27 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .header {
-  background-color: $theme-blue;
+  // background: linear-gradient(180deg, #000000 -64.66%, rgba(0, 0, 0, 0) 64.66%);
   position: relative;
   z-index: 100;
   color: $white;
   padding: 10px 0;
+
+  @include media-breakpoint-down(sm) {
+    background-color: $theme-blue;
+  }
+}
+
+.gradient {
+  background: linear-gradient(180deg, #000000 -64.66%, rgba(0, 0, 0, 0) 64.66%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100px;
+  @include media-breakpoint-down(sm) {
+    background: transparent !important;
+  }
 }
 
 .header__inner {
@@ -18,6 +34,12 @@
 .navigation {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   overflow: unset !important;
+
+  &::after {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: unset !important;
+    width: 400px;
+  }
 }
 
 .nav__link {
