@@ -18,7 +18,7 @@ const DefaultLayout: React.FC = ({ children }) => {
         navItems={[
           { label: I18n('home'), to: '/' },
           { label: I18n('life_situations'), to: situationsRoute },
-          { label: I18n('life_situations'), to: measuresRoute },
+          { label: I18n('header_headline'), to: measuresRoute },
         ]}
       />
       <main className={styles.main}>

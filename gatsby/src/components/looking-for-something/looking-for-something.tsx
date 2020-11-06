@@ -1,3 +1,4 @@
+import { Phone } from '@material-ui/icons';
 import React from 'react';
 import classes from './looking-for-something.module.scss';
 import { ArrowForwardIos, Phone } from '@material-ui/icons';
