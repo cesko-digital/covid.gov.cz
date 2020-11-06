@@ -42,18 +42,15 @@ const Page: React.FC<IProps> = ({ data }) => {
         }}
       />
       <SituationDetail situation={data.situation} type="situation" />
-      <Container>
+      <Container className="pt-1">
         {/* hide this box if no relevant topics exist */}
         {linksData.length > 0 ? (
           <ContentBox
-            title="Podobná témata"
+            title={I18n('similar_topics')}
             boldedTitleCount={1}
             variant="blue"
           >
-            <LinkList
-              links={linksData}
-              fallbackText="Je nám líto, ale žádná podobná témata prozatím nejsou k dispozici."
-            />
+            <LinkList links={linksData} />
           </ContentBox>
         ) : (
           ''
