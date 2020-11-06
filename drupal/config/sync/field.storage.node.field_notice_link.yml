@@ -1,0 +1,19 @@
+uuid: e9051bcb-ebb6-42d9-ac8b-2dd27fee7da3
+langcode: cs
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_notice_link
+field_name: field_notice_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

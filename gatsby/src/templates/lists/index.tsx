@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
-import { AlertContainer } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
@@ -18,8 +17,10 @@ const Home: React.FC<IProps> = ({ data }) => {
   const { homepage } = data;
   const {
     situation_label,
+    situation_text,
     situation_link,
     measure_label,
+    measure_text,
     measure_link,
     relationships,
   } = homepage;
@@ -28,10 +29,12 @@ const Home: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Covid Portál" />
-      <AlertContainer />
-      <Container className="mt-3">
+      <Container className="pt-3">
         <ContentBox
-          title={situation_label.processed}
+          title={situation_label.processed
+            .replace('<p>', '')
+            .replace('</p>', '')}
+          description={situation_text}
           boldedTitleCount={2}
           buttonText={situation_link?.title}
           buttonHref={I18n('slug_situations')}
@@ -39,7 +42,8 @@ const Home: React.FC<IProps> = ({ data }) => {
           <SituationsBox situations={situation_items} />
         </ContentBox>
         <ContentBox
-          title={measure_label.processed}
+          title={measure_label.processed.replace('<p>', '').replace('</p>', '')}
+          description={measure_text}
           boldedTitleCount={1}
           buttonVariant="contained"
           buttonText={measure_link?.title}
@@ -79,6 +83,12 @@ export const query = graphql`
         measure_items {
           id
           title
+          norm
+          valid_from(formatString: "D. M. YYYY")
+          valid_to(formatString: "D. M. YYYY")
+          path {
+            alias
+          }
           relationships {
             region {
               name

@@ -12,6 +12,18 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang aria-label class title target rel> <em> <strong> <ul> <li> <ol> <p> <h2> <img src alt data-entity-type data-entity-uuid>'
+      allowed_html: '<a href hreflang aria-label title target rel class=""> <em> <strong> <ul> <li> <ol> <p> <h2> <img src alt data-entity-type data-entity-uuid>'
       filter_html_help: true
-      filter_html_nofollow: false
+      filter_html_nofollow: true
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

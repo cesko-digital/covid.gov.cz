@@ -1,0 +1,11 @@
+.breadcrumbContainer {
+  flex-wrap: wrap;
+}
+
+.breadcrumbItem {
+  display: block !important;
+
+  &.breadcrumbItemActive {
+    color: #ecae1a;
+  }
+}

@@ -1,13 +1,13 @@
-uuid: a3dd19ae-5236-4597-ba10-0522ff1b05b9
+uuid: 5a8c379a-e0ec-48de-a9ab-c823d71c6f6f
 langcode: cs
 status: true
 dependencies:
   config:
-    - node.type.homepage
-id: node--homepage
+    - node.type.notice
+id: node--notice
 disabled: false
-path: node/homepage
-resourceType: homepage
+path: node/notice
+resourceType: notice
 resourceFields:
   nid:
     fieldName: nid
@@ -34,11 +34,11 @@ resourceFields:
       id: ''
     disabled: false
   type:
+    disabled: true
     fieldName: type
     publicName: type
     enhancer:
       id: ''
-    disabled: false
   revision_timestamp:
     disabled: true
     fieldName: revision_timestamp
@@ -70,11 +70,11 @@ resourceFields:
       id: ''
     disabled: false
   title:
+    disabled: true
     fieldName: title
     publicName: title
     enhancer:
       id: ''
-    disabled: false
   created:
     fieldName: created
     publicName: created
@@ -124,17 +124,17 @@ resourceFields:
       id: ''
     disabled: false
   path:
+    disabled: true
     fieldName: path
     publicName: path
     enhancer:
       id: ''
-    disabled: false
   menu_link:
+    disabled: true
     fieldName: menu_link
     publicName: menu_link
     enhancer:
       id: ''
-    disabled: false
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
@@ -147,69 +147,27 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
-  field_f_hp_measure_label:
-    fieldName: field_f_hp_measure_label
-    publicName: measure_label
+  field_notice_content:
+    fieldName: field_notice_content
+    publicName: notice_content
     enhancer:
       id: ''
     disabled: false
-  field_f_hp_ref_situation:
-    fieldName: field_f_hp_ref_situation
-    publicName: situation_items
+  field_notice_link:
+    fieldName: field_notice_link
+    publicName: link
     enhancer:
       id: ''
     disabled: false
-  field_f_hp_situation_label:
-    fieldName: field_f_hp_situation_label
-    publicName: situation_label
+  field_valid_from:
+    fieldName: field_valid_from
+    publicName: valid_from
     enhancer:
       id: ''
     disabled: false
-  field_hp_measure_description:
-    fieldName: field_hp_measure_description
-    publicName: measure_description
-    enhancer:
-      id: ''
-    disabled: false
-  field_hp_measure_link:
-    fieldName: field_hp_measure_link
-    publicName: measure_link
-    enhancer:
-      id: ''
-    disabled: false
-  field_hp_measure_text:
-    fieldName: field_hp_measure_text
-    publicName: measure_text
-    enhancer:
-      id: ''
-    disabled: false
-  field_hp_ref_measure:
-    fieldName: field_hp_ref_measure
-    publicName: measure_items
-    enhancer:
-      id: ''
-    disabled: false
-  field_hp_situation_description:
-    fieldName: field_hp_situation_description
-    publicName: situation_description
-    enhancer:
-      id: ''
-    disabled: false
-  field_hp_situation_link:
-    fieldName: field_hp_situation_link
-    publicName: situation_link
-    enhancer:
-      id: ''
-    disabled: false
-  field_hp_situation_text:
-    fieldName: field_hp_situation_text
-    publicName: situation_text
-    enhancer:
-      id: ''
-    disabled: false
-  field_meta_description:
-    fieldName: field_meta_description
-    publicName: meta_description
+  field_valid_to:
+    fieldName: field_valid_to
+    publicName: valid_to
     enhancer:
       id: ''
     disabled: false

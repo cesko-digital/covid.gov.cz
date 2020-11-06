@@ -1,0 +1,21 @@
+uuid: ef4ab27c-e912-4fd5-926b-d32506bbb8b6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notice_content
+    - node.type.notice
+  module:
+    - text
+id: node.notice.field_notice_content
+field_name: field_notice_content
+entity_type: node
+bundle: notice
+label: 'Obsah notifikace'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

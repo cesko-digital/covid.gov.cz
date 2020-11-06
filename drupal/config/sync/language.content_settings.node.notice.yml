@@ -1,0 +1,16 @@
+uuid: d3c8c374-37d2-4994-9824-da083bc09a69
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.notice
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.notice
+target_entity_type_id: node
+target_bundle: notice
+default_langcode: site_default
+language_alterable: false
