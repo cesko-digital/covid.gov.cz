@@ -35,14 +35,14 @@ const GuideItem: React.FC<IProps> = ({
             {iconCode && (
               <ContentIcon
                 code={iconCode}
-                className={classNames(classes.icon, {
-                  [classes.iconBlue]: variant === 'white',
+                className={classNames(classes.guideItemIcon, {
+                  [classes.guideItemIconBlue]: variant === 'white',
                 })}
               />
             )}
             <h3
-              className={classNames(classes.title, {
-                [classes.titleBlue]: variant === 'white',
+              className={classNames(classes.guideItemTitle, {
+                [classes.guideItemTitleBlue]: variant === 'white',
               })}
             >
               {title}
@@ -54,8 +54,8 @@ const GuideItem: React.FC<IProps> = ({
                 'd-flex',
                 'flex-row',
                 'justify-space-between',
-                classes.subTitle,
-                { [classes.subTitleBlue]: variant === 'white' },
+                classes.guideItemSubTitle,
+                { [classes.guideItemSubTitleBlue]: variant === 'white' },
               )}
             >
               <p>{area}</p>
@@ -64,8 +64,8 @@ const GuideItem: React.FC<IProps> = ({
           )}
           {description && (
             <p
-              className={classNames(classes.descriptionText, {
-                [classes.descriptionTextBlue]: variant === 'white',
+              className={classNames(classes.guideItemDescriptionTextBlue, {
+                [classes.guideItemDescriptionTextBlue]: variant === 'white',
               })}
             >
               {description}
@@ -76,8 +76,8 @@ const GuideItem: React.FC<IProps> = ({
             href={buttonUrl}
             text={buttonText}
             linkTitle={title}
-            className={classNames(classes.btn, {
-              [classes.btnBlue]: variant === 'white',
+            className={classNames(classes.guideItemBtn, {
+              [classes.guideItemBtnBlue]: variant === 'white',
             })}
           />
         </div>

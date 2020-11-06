@@ -57,15 +57,15 @@ const Guide: React.FC<IProps> = ({
                 <div>
                   <h2
                     className={classNames('guide__title', {
-                      [classes.titleBlue]: variant === 'white',
+                      [classes.guideTitle]: variant === 'white',
                     })}
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 </div>
                 <div>
                   <p
-                    className={classNames(classes.descriptionText, {
-                      [classes.descriptionTextBlue]: variant === 'white',
+                    className={classNames(classes.guideDescriptionText, {
+                      [classes.guideDescriptionTextBlue]: variant === 'white',
                     })}
                   >
                     {description}
@@ -85,7 +85,7 @@ const Guide: React.FC<IProps> = ({
                           buttonText={I18n('more')}
                           description=""
                           variant={variant}
-                          iconCode={x?.relationships?.field_ref_icon?.code}
+                          iconCode={x.relationships?.field_ref_icon?.code}
                         />
                       );
                     })}
@@ -115,9 +115,13 @@ const Guide: React.FC<IProps> = ({
                 <div className="guide__more">
                   <Link
                     to={buttonHref}
-                    className={classNames('btn--color-white', classes.button, {
-                      [classes.buttonBlue]: variant === 'white',
-                    })}
+                    className={classNames(
+                      'btn--color-white',
+                      classes.guideBtn,
+                      {
+                        [classes.guideBtnBlue]: variant === 'white',
+                      },
+                    )}
                   >
                     <Button text={buttonText} />
                   </Link>

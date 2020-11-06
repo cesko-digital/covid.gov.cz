@@ -1,5 +1,5 @@
 /* purgecss start ignore */
-.title {
+.guide-item-title {
   color: #fff !important;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -11,7 +11,7 @@
   }
 }
 
-.icon {
+.guide-item-icon {
   color: #fff;
   margin-right: 5px;
   &--blue {
@@ -19,7 +19,7 @@
   }
 }
 
-.btn {
+.guide-item-btn {
   color: #fff !important;
 
   &--blue {
@@ -27,7 +27,7 @@
   }
 }
 
-.subTitle {
+.guide-item-sub-title {
   color: #fff;
   height: 24px;
   &--blue {
@@ -39,7 +39,7 @@
  * Probably shouldn't be ellipsis, but it will work for now
  */
 
-.descriptionText {
+.guide-item-description-text {
   color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
