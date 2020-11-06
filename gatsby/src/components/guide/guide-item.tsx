@@ -30,7 +30,6 @@ const GuideItem: React.FC<IProps> = ({
   area,
   validTo,
   validFrom,
-  validTo,
 }) => {
   return (
     <>
