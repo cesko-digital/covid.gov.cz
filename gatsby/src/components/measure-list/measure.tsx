@@ -4,6 +4,7 @@ import styles from './measure.module.scss';
 import Button from '@/components/button';
 import I18n from '@/components/i18n';
 import classNames from 'classnames';
+import validFromTo from '@/utility/validFromTo';
 
 interface Props {
   title: string;
@@ -38,8 +39,7 @@ const Measure: React.FC<Props> = ({
         <div>
           <div className={styles.measureDetail}>Platí pro: {area}</div>
           <div className={styles.measureDetail}>
-            {validFrom && `Od ${validFrom} `}
-            {validTo && `Do ${validTo}`}
+            {validFromTo(validFrom, validTo)}
           </div>
         </div>
         <Button

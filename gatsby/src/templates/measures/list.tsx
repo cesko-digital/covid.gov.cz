@@ -9,7 +9,6 @@ import Breadcrumb from '@/components/breadcrumb';
 import Pagination from '@/components/pagination';
 import ContentBox from '@/components/content-box';
 import Measure from '@/components/measure-list/measure';
-import validFromTo from '@/utility/validFromTo';
 import I18n from '@/components/i18n';
 import { Helmet } from 'react-helmet';
 
@@ -49,7 +48,8 @@ const Home: React.FC<IProps> = ({ data }) => {
             <Measure
               title={n.title}
               description={n.meta_description}
-              validity={validFromTo(n.valid_from, n.valid_to)}
+              validFrom={n.valid_from}
+              validTo={n.valid_to}
               link={n.path?.alias}
               area={taxonomyTermMeasureType.name}
             />
@@ -73,8 +73,8 @@ export const query = graphql`
           id
           title
           meta_description
-          valid_from
-          valid_to
+          valid_from(formatString: "D. M. YYYY")
+          valid_to(formatString: "D. M. YYYY")
           path {
             alias
           }
