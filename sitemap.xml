@@ -171,6 +171,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/offices-and-institutions/execution-sentence-imprisonment</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/offices-and-institutions/courts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/stress-and-handling-impacts-pandemic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/stress-and-handling-impacts-pandemic/pomoc-blizkemu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/education</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/education/kindergartens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/education/primary-schools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -335,7 +336,7 @@
 <url> <loc>https://covid.gov.cz/situace/hygiena/kaslani-smrkani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-osobnich-veci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/nadchazejici-oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-oslavy-17-listopadu/oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/prevence-domaciho-nasili</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -360,7 +361,7 @@
 <url> <loc>https://covid.gov.cz/situace/cizinci/turistika-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/obchodni-cesty-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/studovani-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-novy-rok</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/novy-rok</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-novy-rok/venkovni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-novy-rok/setkavani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -398,7 +399,7 @@
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/filmovy-prumysl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/fotografovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/ubytovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-tri-kralove/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy/rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -428,13 +429,13 @@
 <url> <loc>https://covid.gov.cz/situace/urady-instituce/soudy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/dopady-pandemie-na-psychiku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/pomoc-blizkemu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/psychologicka-pomoc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/dusevni-hygiena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/doma-behem-nouzoveho-stavu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/alkohol-drogy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/dusevni-hygiena-zdravotniku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/umrti-blizkeho-na-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/pomoc-blizkemu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/ustavni-vychova</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/statnice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -541,7 +542,7 @@
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/opatreni-ve-znakovem-jazyce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/pomoc-pro-osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/informace-pro-intelektove-znevyhodnene</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-vanoce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/vanoce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/mikulas-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/vanocni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/navsteva-rodiny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
