@@ -8,4 +8,10 @@
 #toolbar-item-covid-tray .item-list li {
   margin: 0; }
 
+.toolbar .toolbar-tray-vertical .toolbar-right {
+  text-align: right;
+  padding: 1em; }
+.toolbar .toolbar-tray-horizontal .toolbar-right {
+  float: right; }
+
 /*# sourceMappingURL=covid_ui.toolbar.theme.css.map */
