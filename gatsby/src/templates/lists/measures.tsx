@@ -19,12 +19,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
     allTaxonomyTermMeasureType: { nodes },
   } = data;
 
-  const {
-    searchingTitle,
-    searchingDescription,
-    callTitle,
-    callDescription,
-  } = data as any;
+  const { searchingTitle } = data as any;
 
   // todo add meta description
   return (

@@ -8,7 +8,7 @@ import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
-import LookingForSomething from '@/components/looking-for-something';
+
 import I18n from '@/components/i18n';
 
 interface IProps {
@@ -19,12 +19,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
   const {
     allArea: { nodes },
   } = data;
-  const {
-    searchingTitle,
-    searchingDescription,
-    callTitle,
-    callDescription,
-  } = data as any;
+  const { searchingTitle } = data as any;
 
   // todo: add meta description
   return (
