@@ -55,8 +55,8 @@ export const query = graphql`
       name
       relationships {
         measure {
-          valid_from
-          valid_to
+          valid_from(formatString: "D. M. YYYY HH:mm")
+          valid_to(formatString: "D. M. YYYY HH:mm")
           id
           norm
           title

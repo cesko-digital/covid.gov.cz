@@ -51,8 +51,8 @@ export const query = graphql`
         alias
       }
       changed(formatString: "D. M. YYYY HH:mm")
-      valid_from(formatString: "D. M. YYYY")
-      valid_to(formatString: "D. M. YYYY")
+      valid_from(formatString: "D. M. YYYY HH:mm")
+      valid_to(formatString: "D. M. YYYY HH:mm")
     }
   }
 `;
