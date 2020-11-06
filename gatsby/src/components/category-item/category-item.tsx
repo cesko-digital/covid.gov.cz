@@ -13,7 +13,7 @@ type Props = {
 
 const CategoryItem: FC<Props> = ({ name, path, iconCode }) => {
   return (
-    <Link to={path} className={styles.categoryItem}>
+    <Link to={path} className={styles.categoryItem + ' py-1'}>
       <ContentIcon className={styles.categoryItemIcon} code={iconCode} />
       <span className={styles.categoryItemTitle}>{name}</span>
       <KeyboardArrowRight style={{ fontSize: 16 }} className="color-yellow" />
