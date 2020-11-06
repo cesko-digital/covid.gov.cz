@@ -5,6 +5,7 @@ import Container from '@/components/container';
 import Headline from '@/components/headline';
 import ListCard from '@/components/list-card';
 import Layout from '@/layouts/default-layout';
+import BgImg from '@/components/bg-img';
 
 interface IProps {
   data: IQuery;
@@ -14,8 +15,13 @@ const Home: React.FC<IProps> = ({ data }) => {
   const { taxonomyTermMeasureType } = data;
   return (
     <Layout>
+      <BgImg>
+        <Container className="pt-3">
+          <Headline>{taxonomyTermMeasureType.name}</Headline>
+        </Container>
+      </BgImg>
+
       <Container>
-        <Headline>{taxonomyTermMeasureType.name}</Headline>
         <div>
           {taxonomyTermMeasureType.relationships?.measure?.map(
             ({ id, title, path }) => {

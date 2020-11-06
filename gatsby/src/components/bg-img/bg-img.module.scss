@@ -1,0 +1,26 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.bg-img {
+  padding-bottom: 6rem;
+  margin-bottom: -6rem;
+  background-image: linear-gradient(45deg, #555, #aaa);
+  background-image: url('#{$theme-path}/images/covid-portal-cz-sm.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 190px;
+}
+
+.bg-img-overlap-lg {
+  padding-bottom: 18.5rem;
+  margin-bottom: -18.5rem;
+}
+
+.bg-img-overlap-md {
+  padding-bottom: 13rem;
+  margin-bottom: -13rem;
+}
+
+.bg-img-overlap-sm {
+  padding-bottom: 8.5rem;
+  margin-bottom: -8.5rem;
+}

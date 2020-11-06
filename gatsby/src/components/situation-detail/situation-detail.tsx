@@ -9,6 +9,7 @@ import styles from './situation-detail.module.scss';
 import Accordion from '../accordion';
 import ContentBox from '../content-box';
 import { ISituation } from '../../../graphql-types';
+import BgImg from '@/components/bg-img';
 
 interface Region {
   name: string;
@@ -45,8 +46,13 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
   // TODO: breadcrumb
   return (
     <div className={styles.situationDetail}>
+      <BgImg>
+        <Container className="pt-3">
+          <h2 className="text-white">{situation.title}</h2>
+        </Container>
+      </BgImg>
+
       <Container>
-        <h2 className="text-white pt-2">{situation.title}</h2>
         <article className="bg-white rounded p-2 mb-1">
           <div
             dangerouslySetInnerHTML={{

@@ -9,6 +9,7 @@ import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
+import BgImg from '@/components/bg-img';
 
 interface IProps {
   data: IQuery;
@@ -29,7 +30,8 @@ const Home: React.FC<IProps> = ({ data }) => {
     <Layout>
       <Helmet title="Covid Portál" />
       <AlertContainer />
-      <Container className="mt-3">
+      <BgImg overlap="sm" />
+      <Container className="pt-3">
         <ContentBox
           title={situation_label.processed}
           boldedTitleCount={2}
@@ -38,6 +40,8 @@ const Home: React.FC<IProps> = ({ data }) => {
         >
           <SituationsBox situations={situation_items} />
         </ContentBox>
+      </Container>
+      <Container>
         <ContentBox
           title={measure_label.processed}
           boldedTitleCount={1}

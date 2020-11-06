@@ -11,6 +11,7 @@ import LookingForSomething from '@/components/looking-for-something';
 import Pagination from '@/components/pagination';
 import usePagination from '@/hooks/usePagination';
 import Layout from '@/layouts/default-layout';
+import BgImg from '@/components/bg-img';
 
 const breadcrumbItems = [
   {
@@ -37,24 +38,32 @@ const Measures: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Aktuální opatření" />
-      <Container className="mt-3">
-        <Breadcrumb items={breadcrumbItems} variant="inverse" />
-      </Container>
-      <Container className="mt-3">
-        <Headline>Přehled aktuálních opatření</Headline>
-      </Container>
-      <Container className="mt-3">
-        <ContentBox noPadding>
-          {slicedItems.map(
-            (n) =>
-              n.relationships.measure !== null && (
-                <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
-              ),
-          )}
-        </ContentBox>
-        <Pagination {...pagination} />
-      </Container>
-      <Container className="mt-3 mb-3">
+      <BgImg>
+        <Container className="pt-3">
+          <Breadcrumb items={breadcrumbItems} variant="inverse" />
+        </Container>
+        <Container className="mt-3">
+          <Headline>Přehled aktuálních opatření</Headline>
+        </Container>
+      </BgImg>
+      {slicedItems.length > 0 ? (
+        // I added condition to hide empty box - it looked weird
+        // but in this case we should later provide empty state, too. It assures her that it is right place, and there's no need to look for that info elsewhere
+        <Container>
+          <ContentBox noPadding>
+            {slicedItems.map(
+              (n) =>
+                n.relationships.measure !== null && (
+                  <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
+                ),
+            )}
+          </ContentBox>
+          <Pagination {...pagination} />
+        </Container>
+      ) : (
+        ''
+      )}
+      <Container className="mb-3">
         <LookingForSomething />
       </Container>
     </Layout>

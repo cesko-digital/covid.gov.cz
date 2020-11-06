@@ -9,6 +9,7 @@ import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
 import Layout from '@/layouts/default-layout';
+import BgImg from '@/components/bg-img';
 
 const breadcrumbItems = [
   {
@@ -33,25 +34,32 @@ const Situations: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Aktuální opatření" />
-      <Container>
-        <div className="mt-3">
-          <Breadcrumb items={breadcrumbItems} variant="inverse" />
-        </div>
-        <div className="mt-3">
-          <Headline>Přehled životních situací</Headline>
-        </div>
-        <div className="mt-3">
-          <ContentBox noPadding>
-            {nodes.map(
-              (n) =>
-                n.relationships.situation !== null && (
-                  <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
-                ),
-            )}
-          </ContentBox>
-        </div>
-      </Container>
-      <Container className="mt-3 mb-3">
+      <BgImg>
+        <Container>
+          <div className="mt-3">
+            <Breadcrumb items={breadcrumbItems} variant="inverse" />
+          </div>
+          <div className="mt-3">
+            <Headline>Přehled životních situací</Headline>
+          </div>
+          <div className="mt-3">
+            <ContentBox noPadding>
+              {nodes.map(
+                (n) =>
+                  n.relationships.situation !== null && (
+                    <CategoryItem
+                      key={n.id}
+                      name={n.name}
+                      path={n.path.alias}
+                    />
+                  ),
+              )}
+            </ContentBox>
+          </div>
+        </Container>
+      </BgImg>
+
+      <Container className="mb-3">
         <LookingForSomething />
       </Container>
     </Layout>
