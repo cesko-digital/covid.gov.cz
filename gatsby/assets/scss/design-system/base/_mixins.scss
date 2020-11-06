@@ -193,7 +193,7 @@
 	background-color: $box-border-color;
 
 	.boxes--light & {
-		background-color: $box-border-color-white;
+		background-color: $guide-border;
 	}
 }
 
@@ -206,7 +206,7 @@
 	border-top: 1px solid $box-border-color;
 
 	.boxes--light & {
-		border-top-color: $box-border-color-white;
+		border-top-color: $guide-border;
 	}
 }
 
