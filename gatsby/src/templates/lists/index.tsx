@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Container from '@/components/container';
 import I18n from '@/components/i18n';
@@ -7,6 +6,7 @@ import { IQuery } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
 import DesktopTopContent from '@/components/desktop-top-content';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 
 interface IProps {
   data: IQuery;
@@ -17,6 +17,7 @@ const Home: React.FC<IProps> = ({ data }) => {
   const {
     situation_label,
     situation_text,
+    langcode,
     measure_description,
     situation_description,
     situation_link,
@@ -27,10 +28,23 @@ const Home: React.FC<IProps> = ({ data }) => {
   } = homepage;
   const { measure_items, situation_items } = relationships;
 
+  // todo add meta description
   return (
     <Layout>
-      <Helmet
-        title={I18n('home') + ' | ' + I18n('covid_portal').toUpperCase()}
+      <Seo
+        title={I18n('home')}
+        description="meta desc"
+        pagePath="/"
+        htmlLanguage={langcode}
+        schema={`{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#website",
+          "url": "https://covid.gov.cz",
+          "name": "Home | Covid Portál",
+          "publisher": {
+            "@id": "https://gov.cz"
+          }
+        }`}
       />
       <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
       <Container className="pt-2">
@@ -62,8 +76,10 @@ export default Home;
 export const query = graphql`
   query IndexQuery($langCode: String!) {
     homepage(langcode: { eq: $langCode }) {
+      langcode
       measure_description
       situation_description
+      meta_description
       measure_link {
         uri
         title

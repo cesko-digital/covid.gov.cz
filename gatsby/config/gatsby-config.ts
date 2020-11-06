@@ -1,4 +1,7 @@
 const config = {
+  siteMetadata: {
+    siteUrl: `https://www.covid.gov.cz`,
+  },
   plugins: [
     {
       resolve: 'gatsby-source-drupal',
@@ -36,6 +39,34 @@ const config = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-seo',
+      options: {
+        siteName: 'Covid Portál',
+        defaultSiteImage: '/ds/images/meta/favicon-32x32.png',
+        siteUrl: 'https://covid.gov.cz',
+        globalSchema: `{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#website",
+          "url": "https://covid.gov.cz",
+          "name": "Covid Portál",
+          "publisher": {
+            "@id": "https://gov.cz"
+          },
+          "image": {
+            "@type": "ImageObject",
+            "@id": "https://covid.gov.cz/#logo",
+            "url": "/ds/images/meta/favicon-32x32.png",
+            "caption": "gov.cz logo"
+          }
+        }
+        `,
+        appleTouch: '/ds/images/meta/apple-touch-icon.png',
+        favicon32: '/ds/images/meta/favicon-32x32.png',
+        favicon16: '/ds/images/meta/favicon-16x16.png',
+      },
+    },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-typescript',
     'gatsby-plugin-stylelint',
     'gatsby-plugin-scss-typescript',
