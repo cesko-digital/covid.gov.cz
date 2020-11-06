@@ -21,11 +21,11 @@ jobs:
           && sudo apt update && sudo apt install yarn -y
       - run: |
           yarn install \
-          && yarn build
+          && yarn build \
         working-directory: gatsby
       - uses: EndBug/add-and-commit@v5.1.0
         with:
-          add: gatsby/public
+          add: "gatsby/public --force"
           branch: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
