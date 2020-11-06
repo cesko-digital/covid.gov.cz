@@ -7,7 +7,6 @@ import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
-import LookingForSomething from '@/components/looking-for-something';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
@@ -71,14 +70,6 @@ const Measures: React.FC<IProps> = ({ data }) => {
               ),
           )}
         </ContentBox>
-      </Container>
-      <Container className="mt-3 mb-3">
-        <LookingForSomething
-          searchingHeader={searchingTitle.target}
-          searchingDescription={searchingDescription.target}
-          callHeader={callTitle.target}
-          callDescription={callDescription.target}
-        />
       </Container>
     </Layout>
   );
