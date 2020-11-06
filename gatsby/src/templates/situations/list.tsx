@@ -30,17 +30,22 @@ const Home: React.FC<IProps> = ({ data }) => {
             variant="inverse"
           />
         </div>
-        <Headline>{area.name}</Headline>
+        <div className="mt-3">
+          <Headline>{area.name}</Headline>
+        </div>
         <div>
-          {area.relationships?.situation?.map(({ id, title, path }) => {
-            return (
-              <ListCard
-                title={title}
-                key={`area-list-item-${id}`}
-                link={path?.alias}
-              />
-            );
-          })}
+          {area.relationships?.situation?.map(
+            ({ id, title, meta_description, path }) => {
+              return (
+                <ListCard
+                  title={title}
+                  description={meta_description}
+                  key={`area-list-item-${id}`}
+                  link={path?.alias}
+                />
+              );
+            },
+          )}
         </div>
       </Container>
     </Layout>
@@ -56,6 +61,7 @@ export const query = graphql`
         situation {
           id
           title
+          meta_description
           path {
             alias
           }

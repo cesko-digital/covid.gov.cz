@@ -5,6 +5,7 @@ import { Room, Event } from '@material-ui/icons';
 import Container from '@/components/container';
 import Link from '@/components/link';
 import Breadcrumb from '@/components/breadcrumb';
+import Headline from '@/components/headline';
 import I18n from '@/components/i18n';
 
 import styles from './situation-detail.module.scss';
@@ -49,8 +50,9 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
             variant="inverse"
           />
         </div>
-
-        <h2 className="text-white pt-2">{situation.title}</h2>
+        <div className="mt-3">
+          <Headline>{situation.title}</Headline>
+        </div>
         <article className="bg-white rounded p-2 pb-3 mb-1">
           <div
             dangerouslySetInnerHTML={{
