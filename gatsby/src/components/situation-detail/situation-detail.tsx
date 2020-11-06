@@ -58,7 +58,7 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
             }}
           />
 
-          {situation.links.length ? (
+          {situation.links?.length ? (
             <div className="mt-1">
               <h3 className="mb-1 color-blue-dark">
                 Související odkazy a zdroje
@@ -77,7 +77,7 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
             ''
           )}
 
-          {situation.relationships.region.length ? (
+          {situation.relationships?.region.length ? (
             <div className="mt-2">
               <h3 className="mb-1 color-blue-dark">Lokalita a platnost</h3>
               <div className="d-flex align-items-center color-blue mb-1">
