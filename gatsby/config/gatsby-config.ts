@@ -1,6 +1,6 @@
 const config = {
   siteMetadata: {
-    siteUrl: `https://www.covid.gov.cz`,
+    siteUrl: `https://covid.gov.cz`,
   },
   plugins: [
     {
