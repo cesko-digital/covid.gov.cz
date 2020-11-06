@@ -31,19 +31,12 @@ const DesktopTopContent: React.FC<IProps> = ({
           'flex-column',
           'justify-content-center',
           'align-items-center',
-          'pt-4',
-          'pb-2',
         )}
+        style={{ height: 250 }}
       >
-        <h2 className={classes.title}>{title}</h2>
+        {title && <h2 className={classes.title}>{title}</h2>}
         {showSearch && (
-          <Col
-            col={10}
-            colMd={8}
-            colLg={4}
-            colXl={3}
-            className={classNames('mt-1', 'mb-3')}
-          >
+          <Col col={10} colMd={8} colLg={4} colXl={3}>
             <SearchBox />
           </Col>
         )}

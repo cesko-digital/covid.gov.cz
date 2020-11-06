@@ -6,7 +6,6 @@ import Button from '../button';
 import Col from '../col';
 import ContentBox from '../content-box';
 import I18n from '../i18n';
-import Link from '../link';
 import MeasureList from '../measure-list';
 import Row from '../row';
 import SituationsBox from '../situations-box';
@@ -115,8 +114,8 @@ const Guide: React.FC<IProps> = ({
             <Row>
               <Col col={12} colLg={3}>
                 <div className="guide__more">
-                  <Link
-                    to={buttonHref}
+                  <Button
+                    href={buttonHref}
                     className={classNames(
                       'btn--color-white',
                       classes.guideBtn,
@@ -124,9 +123,8 @@ const Guide: React.FC<IProps> = ({
                         [classes.guideBtnBlue]: variant === 'white',
                       },
                     )}
-                  >
-                    <Button text={buttonText} />
-                  </Link>
+                    text={buttonText}
+                  />
                 </div>
               </Col>
             </Row>

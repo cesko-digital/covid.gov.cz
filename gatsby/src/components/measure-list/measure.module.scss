@@ -1,3 +1,5 @@
+@import '../../../assets/scss/design-system/base/variables';
+
 .measure {
   border-top: 1px solid rgba(35, 98, 162, 0.3);
   padding: 1.6rem 0;
@@ -29,9 +31,9 @@
   color: #2362a2;
 }
 
-.measureButton:global(.btn.btn-outline-primary) {
-  border-color: #2362a2;
-  color: #2362a2;
+.measureButton {
+  color: $theme-blue;
+  background-color: #fff;
 
   &:hover,
   &:focus {

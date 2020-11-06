@@ -4,6 +4,7 @@ import styles from './measure.module.scss';
 import Button from '@/components/button';
 import I18n from '@/components/i18n';
 import Time from '@/components/time';
+import Link from '@/components/link';
 
 interface Props {
   title: string;
@@ -40,12 +41,13 @@ const Measure: React.FC<Props> = ({
             )}
           </div>
         </div>
-        <Button
-          text={I18n('more')}
-          variant="outline-yellow"
-          href={link}
-          className={styles.measureButton}
-        />
+        <Link to={link} label={I18n('more')}>
+          <Button
+            text={I18n('more')}
+            variant="outline-yellow"
+            className={styles.measureButton}
+          />
+        </Link>
       </div>
     </div>
   );

@@ -10,9 +10,32 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - uses: enriikke/gatsby-gh-pages-action@v2
-        working-directory: "gatsby"
+      - uses: actions/setup-node@v2.1.2
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: "gh-pages"
+          node-version: 14
 
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y ca-certificates wget apt-transport-https gnupg apt-utils curl git g++ \
+          && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
+          && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
+          && sudo apt update && sudo apt install yarn -y
+      - name: Build Gatsby
+        run: |
+          yarn install \
+          && yarn build \
+        working-directory: gatsby
+      - name: Checkout gh-pages
+        run: |
+          git clone https://git:${{ secrets.GITHUB_TOKEN }}@github.com/cesko-digital/covid.gov.cz.git --branch gh-pages gh-pages &&
+          rm -rf gh-pages/* gh-pages/.github
+      - name: Move new build
+        run: |
+          mv gatsby/public/* gh-pages
+      - name: Set identity
+        run: |
+          git config --global user.email "bot@cesko.digital" && git config --global user.name "Bot Cesko.Digital"
+      - name: Commit && move on
+        working-directory: gh-pages
+        run: |
+          git add -A && git commit -m "Build" && git push --force

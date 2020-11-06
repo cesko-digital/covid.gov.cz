@@ -4,7 +4,6 @@
 ## Links
 
  - [Trello](https://trello.com/b/XOOBy51q/covidgovcz)
- - [Frontend on Vercel](https://covid-gov-cz.ceskodigital.vercel.app/)
 
 ## Getting started
 
