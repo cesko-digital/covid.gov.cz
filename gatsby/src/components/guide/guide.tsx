@@ -104,7 +104,7 @@ const Guide: React.FC<IProps> = ({
                           area={x.relationships?.region
                             ?.map((item) => item.name)
                             .join(', ')}
-                          validFrom={x.valid_from}
+                          validTo={x.valid_to}
                         />
                       );
                     })}

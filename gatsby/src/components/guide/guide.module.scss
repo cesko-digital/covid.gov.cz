@@ -1,3 +1,5 @@
+@import '../../../assets/scss/design-system/base/variables';
+
 /* purgecss start ignore */
 .guide {
   margin: initial;
@@ -12,7 +14,7 @@
   font-size: 40px;
   color: #fff;
   &--blue {
-    color: #2b4762 !important;
+    color: $theme-blue !important;
   }
 }
 
@@ -20,7 +22,7 @@
   font-size: 15px;
   color: #fff;
   &--blue {
-    color: #2b4762;
+    color: $theme-blue;
   }
 }
 

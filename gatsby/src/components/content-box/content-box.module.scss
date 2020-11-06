@@ -13,11 +13,6 @@
   font-weight: 400;
 }
 
-.contentBoxButton {
-  width: 100%;
-  margin-top: 3px;
-}
-
 .contentBox {
   padding: 1.6rem 0;
   margin: 0 0 1.6rem;
@@ -44,5 +39,16 @@
   &--blue {
     background: $theme-blue;
     color: $white;
+  }
+}
+
+.content-box-btn {
+  width: 100%;
+  margin-top: 3px;
+  color: $theme-blue;
+  background-color: #fff;
+  &--blue {
+    color: #fff !important;
+    background-color: $theme-blue;
   }
 }

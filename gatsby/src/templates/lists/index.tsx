@@ -32,8 +32,8 @@ const Home: React.FC<IProps> = ({ data }) => {
       <Helmet
         title={I18n('home') + ' | ' + I18n('covid_portal').toUpperCase()}
       />
-      <DesktopTopContent title={I18n('header_headline')} />
-      <Container className="pt-3">
+      <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
+      <Container className="pt-2">
         <Guide
           items={situation_items}
           title={situation_label.processed}
