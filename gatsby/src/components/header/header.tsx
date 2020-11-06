@@ -5,7 +5,6 @@ import Link from '@/components/link';
 import Container from '../container';
 import Row from '../row';
 import Col from '../col';
-import SearchBox from '../search-box';
 
 import classes from './header.module.scss';
 
@@ -93,9 +92,6 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 </div>
               </Col>
               {/* SEARCH */}
-              <Col col={12} colLg={4} className="ml-auto">
-                <SearchBox onSearch={() => {}} />
-              </Col>
             </Row>
           </Col>
           {/* MOBILE NAV */}
