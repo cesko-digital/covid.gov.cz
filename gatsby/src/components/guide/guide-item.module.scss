@@ -8,6 +8,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
   &--blue {
     color: #2b4762 !important;
   }
@@ -16,6 +17,7 @@
 .guide-item-icon {
   color: #fff;
   margin-right: 5px;
+
   &--blue {
     color: $theme-blue !important;
   }
@@ -33,6 +35,7 @@
 .guide-item-sub-title {
   color: #fff;
   height: 24px;
+
   &--blue {
     color: #2362a2;
   }
