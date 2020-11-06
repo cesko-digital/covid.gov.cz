@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
@@ -26,14 +26,23 @@ const Situations: React.FC<IProps> = ({ data }) => {
     callDescription,
   } = data as any;
 
+  // todo: add meta description
   return (
     <Layout>
-      <Helmet
-        title={
-          I18n('situations_overview') +
-          ' | ' +
-          I18n('covid_portal').toUpperCase()
-        }
+      <Seo
+        title={I18n('life_situations')}
+        description={I18n('situations_overview_meta')}
+        pagePath={I18n('slug_situations')}
+        htmlLanguage={searchingTitle.langcode}
+        schema={`{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#website",
+          "url": "https://covid.gov.cz/situations",
+          "name": "Life Situations | Covid Portál",
+          "publisher": {
+            "@id": "https://gov.cz"
+          }
+        }`}
       />
       <Container>
         <div className="pt-1">

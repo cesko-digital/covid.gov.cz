@@ -1,9 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
+import { SchemaComp } from '@/components/schema/schema';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import SituationDetail from '@/components/situation-detail';
 import Layout from '@/layouts/default-layout';
-
+import I18n from '@/components/i18n';
 interface IProps {
   data: IQuery;
 }
@@ -11,6 +13,33 @@ interface IProps {
 const Page: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
+      <Seo
+        title={data.measure.title}
+        description={
+          data.measure.meta_description ||
+          I18n('current_measures_overview_meta')
+        }
+        pagePath={data.measure.path.alias}
+        htmlLanguage={data.measure.langcode}
+      />
+      <SchemaComp
+        canonicalUrl={'https://covid.gov.cz' + data.measure.path.alias}
+        datePublished={data.measure.valid_from}
+        defaultTitle={data.measure.title}
+        isBlogPost
+        body={
+          (data.measure as any).content
+            ? (data.measure as any).content.processed
+            : data.measure.meta_description
+        }
+        description={data.measure.meta_description}
+        title={data.measure.title}
+        url={'https://covid.gov.cz' + data.measure.path.alias}
+        organization={{
+          url: 'https://gov.cz',
+          name: 'Portál veřejné správy',
+        }}
+      />
       <SituationDetail situation={data.measure} type="measure" />
     </Layout>
   );
@@ -46,6 +75,7 @@ export const query = graphql`
       path {
         alias
       }
+      langcode
       changed
       valid_from
       valid_to

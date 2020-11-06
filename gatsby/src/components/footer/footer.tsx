@@ -9,13 +9,16 @@ import { graphql, useStaticQuery } from 'gatsby';
 const Footer: React.FC = () => {
   const { mainLinks, infoLinks, govLinks, copyright } = useStaticQuery(query);
   return (
-    <div className={classnames(styles.footer, 'footer')} role="contentinfo">
+    <div
+      className={classnames(styles.footer, 'footer mt-md-4')}
+      role="contentinfo"
+    >
       <div className="container">
-        <div className="footer__inner">
+        <div className="footer__inner pt-md-2">
           <div className="footer__links">
             <div className="row">
               <div className="col-12 col-sm-6 col-lg-3">
-                <div className="footer__box pb-4 pb-lg-0">
+                <div className="footer__box pb-md-4 pb-lg-0">
                   <h3>{I18n('useful_links')}</h3>
                 </div>
               </div>
