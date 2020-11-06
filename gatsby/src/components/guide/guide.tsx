@@ -145,7 +145,7 @@ const Guide: React.FC<IProps> = ({
 };
 
 const isSituation = (x: any): x is IArea => {
-  return (x as IArea).name !== undefined;
+  return (x as IArea)?.name !== undefined;
 };
 
 export default Guide;
