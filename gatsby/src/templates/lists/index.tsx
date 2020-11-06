@@ -1,10 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import ContentBox from '@/components/content-box';
-import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
-import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
@@ -21,8 +18,8 @@ const Home: React.FC<IProps> = ({ data }) => {
     situation_text,
     situation_link,
     measure_label,
-    measure_text,
     measure_link,
+    measure_text,
     relationships,
   } = homepage;
   const { measure_items, situation_items } = relationships;
@@ -33,33 +30,22 @@ const Home: React.FC<IProps> = ({ data }) => {
         title={I18n('home') + ' | ' + I18n('covid_portal').toUpperCase()}
       />
       <Container className="pt-3">
-        <ContentBox
-          title={situation_label.processed
-            .replace('<p>', '')
-            .replace('</p>', '')}
+        <Guide
+          items={situation_items}
+          title={situation_label.processed}
           description={situation_text}
-          boldedTitleCount={2}
+          buttonHref={I18n('slug_situations')}
           buttonText={situation_link?.title}
           variant="blue"
         />
         <Guide
           items={measure_items}
           title={measure_label.processed}
-          buttonHref={I18n('slug_situations')}
-          buttonText={situation_link?.title}
-          variant="blue"
-        />
-        <ContentBox
-          title={measure_label.processed.replace('<p>', '').replace('</p>', '')}
           description={measure_text}
-          boldedTitleCount={1}
-          buttonVariant="contained"
-          buttonText={measure_link?.title}
           buttonHref={I18n('slug_measures')}
+          buttonText={measure_link?.title}
           variant="white"
-        >
-          <MeasureList measures={measure_items} />
-        </ContentBox>
+        />
       </Container>
     </Layout>
   );

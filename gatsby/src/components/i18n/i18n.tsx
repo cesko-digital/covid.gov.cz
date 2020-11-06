@@ -34,7 +34,7 @@ export default function I18n(id: string, lang?: string) {
   return I18nArray[0].target;
 }
 
-export function TRoute(route: string, lang?: string) {
+export function TRoute(route: string = '', lang?: string) {
   lang = lang || glang;
   route = route === '' ? '/' : route; // todo: translate current page using drupal_internal__tid
   route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2');

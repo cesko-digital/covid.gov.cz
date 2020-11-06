@@ -3,9 +3,12 @@ import classNames from 'classnames';
 import { IArea, IMeasure } from 'graphql-types';
 import React from 'react';
 import Button from '../button';
+import Col from '../col';
 import ContentBox from '../content-box';
+import I18n from '../i18n';
 import Link from '../link';
 import MeasureList from '../measure-list';
+import Row from '../row';
 import SituationsBox from '../situations-box';
 import GuideItem from './guide-item';
 import classes from './guide.module.scss';
@@ -15,10 +18,18 @@ interface IProps {
   title: string;
   buttonHref: string;
   buttonText: string;
-  variant?: 'white' | string;
+  description?: string;
+  variant?: 'white' | 'blue';
 }
 
-const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
+const Guide: React.FC<IProps> = ({
+  items,
+  title,
+  buttonText,
+  description,
+  buttonHref = '',
+  variant = 'blue',
+}) => {
   const isMobile = useMobile();
 
   const isSituationBox = isSituation(items[0]);
@@ -35,21 +46,34 @@ const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
             'guide',
             'guide--visible',
             'mt-0',
+            'mb-2',
+            { [classes.guideWhite]: variant === 'white' },
             classes.guide,
           )}
         >
           <div className="guide__inner">
-            <div className="row">
-              <div className="col-12 col-lg-3">
+            <Row>
+              <Col col={12} colLg={3}>
                 <div>
                   <h2
-                    className="guide__title"
+                    className={classNames('guide__title', {
+                      [classes.titleBlue]: variant === 'white',
+                    })}
                     dangerouslySetInnerHTML={{ __html: title }}
                   />
                 </div>
-              </div>
-              <div className="col-12 col-lg-9">
-                <div className="row boxes boxes--light boxes--eq">
+                <div>
+                  <p
+                    className={classNames(classes.descriptionText, {
+                      [classes.descriptionTextBlue]: variant === 'white',
+                    })}
+                  >
+                    {description}
+                  </p>
+                </div>
+              </Col>
+              <Col col={12} colLg={9}>
+                <Row className="boxes boxes--light boxes--eq">
                   {/* If is situation */}
                   {isSituationBox &&
                     (items as IArea[]).map((x) => {
@@ -58,8 +82,10 @@ const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
                           key={x.id}
                           title={x.name}
                           buttonUrl={x.path.alias}
-                          buttonText="Detail"
+                          buttonText={I18n('more')}
                           description=""
+                          variant={variant}
+                          iconCode={x?.relationships?.field_ref_icon?.code}
                         />
                       );
                     })}
@@ -70,23 +96,30 @@ const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
                         <GuideItem
                           key={x.id}
                           title={x.title}
-                          buttonUrl=""
-                          buttonText="Detail"
+                          buttonUrl={x.path.alias}
+                          variant={variant}
+                          buttonText={I18n('more')}
+                          description={x.norm}
                         />
                       );
                     })}
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12 col-lg-3">
+                </Row>
+              </Col>
+            </Row>
+            <Row>
+              <Col col={12} colLg={3}>
                 <div className="guide__more">
-                  <Link to={buttonHref} className="btn--color-white">
+                  <Link
+                    to={buttonHref}
+                    className={classNames('btn--color-white', classes.button, {
+                      [classes.buttonBlue]: variant === 'white',
+                    })}
+                  >
                     <Button text={buttonText} />
                   </Link>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </div>
         </div>
       </div>
@@ -99,7 +132,7 @@ const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
       boldedTitleCount={2}
       buttonText={buttonText}
       buttonHref={buttonHref}
-      variant={!isSituationBox ? 'white' : ''}
+      variant={variant}
     >
       {isSituationBox && <SituationsBox situations={items} />}
       {!isSituationBox && <MeasureList measures={items} />}

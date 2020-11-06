@@ -1,0 +1,35 @@
+.title {
+  color: #fff !important;
+
+  &--blue {
+    color: #2b4762 !important;
+  }
+}
+
+.subTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  &--blue {
+    color: #2362a2;
+  }
+}
+
+/**
+ * Probably shouldn't be ellipsis, but it will work for now
+ */
+
+.descriptionText {
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #fff;
+  &--blue {
+    color: #808080;
+  }
+}

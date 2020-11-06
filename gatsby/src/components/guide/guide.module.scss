@@ -1,3 +1,35 @@
 .guide {
   margin: initial;
+  background-image: none;
+  background-color: #2362a2;
+  &--white {
+    background-color: #fff;
+  }
+}
+
+.title {
+  font-size: 16px;
+  color: #fff;
+  &--blue {
+    color: #2b4762 !important;
+  }
+}
+
+.descriptionText {
+  font-size: 15px;
+  color: #fff;
+  &--blue {
+    color: #2b4762;
+  }
+}
+
+.button {
+  & > button {
+    color: #2362a2;
+    background-color: #fff;
+  }
+  &--blue > button {
+    color: #fff !important;
+    background-color: #2362a2;
+  }
 }
