@@ -32,7 +32,7 @@ jobs:
       - name: Move new build
         run: |
           mv gatsby/public/* gh-pages
-      -name: Set identity
+      - name: Set identity
         run: |
           git config user.email "bot@cesko.digital" && git config user.name "Bot Cesko.Digital"
       - name: Commit && move on
