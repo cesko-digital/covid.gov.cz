@@ -12,12 +12,13 @@ interface IProps {
 }
 
 const CustomPage: React.FC<IProps> = ({ data }) => {
-  const page: IPage = data.page;
+  const page: IPage = data.page
+  const homeTranslation = data.translation
+
 
   return (
     <Layout>
       <Helmet title={page.title + ' | ' + I18n('covid_portal').toUpperCase()} />
-
       <Container className="mb-4">
         <div className="pt-1">
           <Breadcrumb
@@ -33,10 +34,10 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
         </article>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default CustomPage;
+export default CustomPage
 
 export const query = graphql`
   query($slug: String!, $langCode: String!) {
@@ -55,4 +56,4 @@ export const query = graphql`
       target
     }
   }
-`;
+`

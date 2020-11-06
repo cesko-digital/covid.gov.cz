@@ -9,10 +9,6 @@
   z-index: 100;
   color: $white;
   padding: 10px 0;
-
-  @include media-breakpoint-down(md) {
-    padding: 22px 0 8px;
-  }
 }
 
 .header__inner {
