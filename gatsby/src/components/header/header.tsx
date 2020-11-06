@@ -1,16 +1,16 @@
-import React, { useCallback, useState } from 'react'
-import classnames from 'classnames'
-import Link from '@/components/link'
+import React, { useCallback, useState } from 'react';
+import classnames from 'classnames';
+import Link from '@/components/link';
 
 import Container from '../container';
 import Row from '../row';
 import Col from '../col';
 
-import classes from './header.module.scss'
+import classes from './header.module.scss';
 
-import headerLogo from './header-logo.svg'
-import { HeaderLocaleSelect } from './header-locale-select'
-import I18n, { TRoute } from '@/components/i18n'
+import headerLogo from './header-logo.svg';
+import { HeaderLocaleSelect } from './header-locale-select';
+import I18n, { TRoute } from '@/components/i18n';
 
 interface NavItem {
   label: string;
@@ -21,22 +21,22 @@ interface Props {
   navItems: NavItem[];
 }
 
-export const locales = ['cs', 'en']
+export const locales = ['cs', 'en'];
 
 const Header: React.FC<Props> = ({ navItems }) => {
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
-    setOpen(!isOpen)
-    document.body.style.overflow = isOpen ? 'unset' : 'hidden'
-  }, [isOpen])
+    setOpen(!isOpen);
+    document.body.style.overflow = isOpen ? 'unset' : 'hidden';
+  }, [isOpen]);
 
-  const [activeLocale, setLocale] = useState(locales[0])
+  const [activeLocale, setLocale] = useState(locales[0]);
 
   return (
-    <div className={classes.header} role='banner'>
+    <div className={classes.header} role="banner">
       <Container>
-        <Row alignItems='center' className={classes.header__inner}>
+        <Row alignItems="center" className={classes.header__inner}>
           {/* LOGO */}
           <Col col={7} colMd={3} colLg={3}>
             <Link to="/" label={'COVID PORTAL - ' + I18n('home')}>
@@ -48,14 +48,14 @@ const Header: React.FC<Props> = ({ navItems }) => {
             col={5}
             className={classnames(
               classes.nav__toggleWrapper,
-              'd-md-none text-right'
+              'd-md-none text-right',
             )}
           >
             {/* MENU */}
             <div
               className={classnames(
                 classes.nav__toggle,
-                isOpen && classes['nav__toggle--open']
+                isOpen && classes['nav__toggle--open'],
               )}
               onClick={toggleOpen}
             >
@@ -71,9 +71,9 @@ const Header: React.FC<Props> = ({ navItems }) => {
           </Col>
           {/* DESKTOP NAV & SEARCH */}
           <Col col={12} colMd={8} colLg={9}>
-            <Row alignItems='center'>
+            <Row alignItems="center">
               {/* NAVIGATION */}
-              <Col col={12} colLg={8} className='d-none d-md-block'>
+              <Col col={12} colLg={8} className="d-none d-md-block">
                 <div className={classnames(classes.navigation, 'navigation')}>
                   <ul className={classnames('nav nav--primary')}>
                     {navItems.map(({ label, to }) => (
@@ -81,7 +81,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                         <Link
                           to={to}
                           className={classnames('nav__link', classes.nav__link)}
-                          activeClassName='active'
+                          activeClassName="active"
                           partiallyActive={to !== '/'}
                         >
                           {label}
@@ -99,7 +99,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
             className={classnames(
               classes.nav__mobile,
               isOpen && classes['nav__mobile--open'],
-              'd-md-none'
+              'd-md-none',
             )}
           >
             {navItems.map(({ label, to }) => (
@@ -129,24 +129,24 @@ const Header: React.FC<Props> = ({ navItems }) => {
             ))} */}
             {TRoute('/') !== '/' ? (
               <Link
-                to='/'
+                to="/"
                 noTR
                 className={classnames(
                   classes.nav__mobileLink,
                   'mt-auto',
-                  'container'
+                  'container',
                 )}
               >
                 Čeština
               </Link>
             ) : (
               <Link
-                to='/en/'
+                to="/en/"
                 noTR
                 className={classnames(
                   classes.nav__mobileLink,
                   'mt-auto',
-                  'container'
+                  'container',
                 )}
               >
                 English
@@ -161,7 +161,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

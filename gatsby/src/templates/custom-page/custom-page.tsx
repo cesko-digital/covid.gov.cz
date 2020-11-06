@@ -12,9 +12,7 @@ interface IProps {
 }
 
 const CustomPage: React.FC<IProps> = ({ data }) => {
-  const page: IPage = data.page
-  const homeTranslation = data.translation
-
+  const page: IPage = data.page;
 
   return (
     <Layout>
@@ -34,10 +32,10 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
         </article>
       </Container>
     </Layout>
-  )
-}
+  );
+};
 
-export default CustomPage
+export default CustomPage;
 
 export const query = graphql`
   query($slug: String!, $langCode: String!) {
@@ -56,4 +54,4 @@ export const query = graphql`
       target
     }
   }
-`
+`;
