@@ -18,7 +18,7 @@ function covid_ui_toolbar() {
 
     'publish' => [
       '#type' => 'link',
-      '#title' => t('Publish'),
+      '#title' => 'Aktualizovat testovací prostředí',
       '#url' => Url::fromRoute('covid_ui.publish'),
       '#options' => [
         'attributes' => ['class' => ['toolbar-right']]
