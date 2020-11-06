@@ -1,10 +1,14 @@
 import React from 'react';
+import classnames from 'classnames';
+
 import Link from '@/components/link';
 import I18n from '../i18n';
 
+import styles from './footer.module.scss';
+
 const Footer: React.FC = () => {
   return (
-    <div className="footer" role="contentinfo">
+    <div className={classnames(styles.footer, 'footer')} role="contentinfo">
       <div className="container">
         <div className="footer__inner">
           <div className="footer__links">
