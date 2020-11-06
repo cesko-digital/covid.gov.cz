@@ -143,7 +143,7 @@
 }
 
 // Temporarily hide menu link for English measure page.
-.nav__link[href="/en/measures"],
-.nav__mobileLink[href="/en/measures"] {
-  display: none !important; //We need to be sure it not gets overriden.
+.nav__link[href='/en/measures'],
+.nav__mobileLink[href='/en/measures'] {
+  visibility: hidden;
 }
