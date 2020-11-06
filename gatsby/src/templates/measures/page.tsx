@@ -11,7 +11,7 @@ interface IProps {
 const Page: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
-      <SituationDetail situation={data.measure} />
+      <SituationDetail situation={data.measure} type="measure" />
     </Layout>
   );
 };
