@@ -34,7 +34,7 @@ jobs:
           mv gatsby/public/* gh-pages
       - name: Set identity
         run: |
-          git config user.email "bot@cesko.digital" && git config user.name "Bot Cesko.Digital"
+          git config --global user.email "bot@cesko.digital" && git config --global user.name "Bot Cesko.Digital"
       - name: Commit && move on
         working-directory: gh-pages
         run: |
