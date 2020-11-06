@@ -17,7 +17,7 @@ const DefaultLayout: React.FC = ({ children }) => {
           navItems={[
             { label: I18n('home'), to: '/' },
             { label: I18n('life_situations'), to: I18n('slug_situations') },
-            { label: I18n('current_measures'), to: I18n('slug_measures') },
+            { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
           ]}
         />
         <main className={styles.main}>

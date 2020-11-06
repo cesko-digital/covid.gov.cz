@@ -48,24 +48,33 @@ const Home: React.FC<IProps> = ({ data }) => {
       />
       <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
       <Container className="pt-2">
-        <Guide
-          items={situation_items}
-          title={situation_label.processed}
-          description={situation_text}
-          buttonHref={I18n('slug_situations')}
-          buttonText={situation_link?.title}
-          variant="blue"
-          itemDescriptions={situation_description}
-        />
-        <Guide
-          items={measure_items}
-          title={measure_label.processed}
-          description={measure_text}
-          buttonHref={I18n('slug_measures')}
-          buttonText={measure_link?.title}
-          variant="white"
-          itemDescriptions={measure_description}
-        />
+        {situation_items?.length ? (
+          <Guide
+            items={situation_items}
+            title={situation_label.processed}
+            description={situation_text}
+            buttonHref={I18n('slug_situations')}
+            buttonText={situation_link?.title}
+            variant="blue"
+            itemDescriptions={situation_description}
+          />
+        ) : (
+          ''
+        )}
+
+        {measure_items?.length ? (
+          <Guide
+            items={measure_items}
+            title={measure_label.processed}
+            description={measure_text}
+            buttonHref={I18n('slug_measures')}
+            buttonText={measure_link?.title}
+            variant="white"
+            itemDescriptions={measure_description}
+          />
+        ) : (
+          ''
+        )}
       </Container>
     </Layout>
   );
