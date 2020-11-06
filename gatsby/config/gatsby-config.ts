@@ -43,7 +43,7 @@ const config = {
       resolve: 'gatsby-plugin-seo',
       options: {
         siteName: 'Covid Portál',
-        defaultSiteImage: '/ds/images/meta/favicon-32x32.png',
+        defaultSiteImage: '/images/image.png',
         siteUrl: 'https://covid.gov.cz',
         globalSchema: `{
           "@type": "WebSite",
@@ -56,7 +56,7 @@ const config = {
           "image": {
             "@type": "ImageObject",
             "@id": "https://covid.gov.cz/#logo",
-            "url": "/ds/images/meta/favicon-32x32.png",
+            "url": "/images/image.png",
             "caption": "gov.cz logo"
           }
         }
