@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import styles from './variants.module.scss';
 
+import Link from '@/components/link';
+
 const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
   return classNames(
     { btn: variant !== 'small-black' },
@@ -49,14 +51,17 @@ const Button: React.FC<IProps> = ({
 }) => {
   if (href !== '' && !disabled) {
     return (
-      <a
-        href={href}
-        title={linkTitle}
-        className={getClass(variant, className)}
-        data-testid="button-link"
-      >
-        {text}
-      </a>
+      <Link to={href} label={linkTitle} dataTestId="button-link">
+        <button
+          type="button"
+          className={getClass(variant, className)}
+          onClick={onClick || null}
+          disabled={disabled}
+        >
+          {text}
+          {icon}
+        </button>
+      </Link>
     );
   }
 

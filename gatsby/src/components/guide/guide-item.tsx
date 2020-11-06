@@ -3,7 +3,6 @@ import React from 'react';
 import Button from '../button';
 import Col from '../col';
 import ContentIcon from '../content-icon';
-import Link from '../link';
 import classes from './guide-item.module.scss';
 
 interface IProps {
@@ -81,16 +80,15 @@ const GuideItem: React.FC<IProps> = ({
               {description}
             </p>
           )}
-          <Link to={buttonUrl} label={buttonText}>
-            <Button
-              variant="outline-yellow"
-              text={buttonText}
-              linkTitle={title}
-              className={classNames(classes.guideItemBtn, {
-                [classes.guideItemBtnBlue]: variant === 'white',
-              })}
-            />
-          </Link>
+          <Button
+            variant="outline-yellow"
+            text={buttonText}
+            href={buttonUrl}
+            linkTitle={title}
+            className={classNames(classes.guideItemBtn, {
+              [classes.guideItemBtnBlue]: variant === 'white',
+            })}
+          />
         </div>
       </Col>
     </>
