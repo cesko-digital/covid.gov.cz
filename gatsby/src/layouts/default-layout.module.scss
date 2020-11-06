@@ -1,9 +1,19 @@
 .wrapper {
   background: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main {
   position: relative;
+  flex-grow: 1;
+  background-image: url('/images/main-bg_1920px.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100%;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .mainInner {
