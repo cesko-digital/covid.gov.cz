@@ -8,11 +8,13 @@
 .main {
   position: relative;
   flex-grow: 1;
-  background-image: url('/images/main-bg_1920px.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('/images/main-bg_1920px.jpg');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100%;
   backface-visibility: hidden;
+  // background-blend-mode: ;
   transform: translate3d(0, 0, 0);
 }
 
