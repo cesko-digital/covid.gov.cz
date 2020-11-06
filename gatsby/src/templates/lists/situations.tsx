@@ -7,19 +7,9 @@ import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
-import LookingForSomething from '@/components/looking-for-something';
 import Layout from '@/layouts/default-layout';
-
-const breadcrumbItems = [
-  {
-    title: 'domů',
-    url: '/',
-  },
-  {
-    title: 'Životní události',
-    url: '/situace',
-  },
-];
+import LookingForSomething from '@/components/looking-for-something';
+import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -29,34 +19,63 @@ const Situations: React.FC<IProps> = ({ data }) => {
   const {
     allArea: { nodes },
   } = data;
+  const {
+    searchingTitle,
+    searchingDescription,
+    callTitle,
+    callDescription,
+  } = data as any;
 
   return (
     <Layout>
-      <Helmet title="Aktuální opatření" />
+      <Helmet
+        title={
+          I18n('situations_overview') +
+          ' | ' +
+          I18n('covid_portal').toUpperCase()
+        }
+      />
       <Container>
-        <div className="mt-3">
-          <Breadcrumb items={breadcrumbItems} variant="inverse" />
+        <div className="pt-1">
+          <Breadcrumb
+            items={[
+              { title: I18n('home'), url: '/' },
+              { title: I18n('life_situations'), url: I18n('slug_situations') },
+            ]}
+            variant="inverse"
+          />
         </div>
         <div className="mt-3">
-          <Headline>Přehled životních situací</Headline>
+          <Headline>{I18n('situations_overview')}</Headline>
         </div>
         <div className="mt-3">
           <ContentBox noPadding>
             {nodes.map(
               (n) =>
                 n.relationships.situation !== null && (
-                  <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
+                  <CategoryItem
+                    key={n.id}
+                    name={n.name}
+                    path={n.path.alias}
+                    iconCode={n.relationships.field_ref_icon?.code}
+                  />
                 ),
             )}
           </ContentBox>
         </div>
       </Container>
       <Container className="mt-3 mb-3">
-        <LookingForSomething />
+        <LookingForSomething
+          searchingHeader={searchingTitle.target}
+          searchingDescription={searchingDescription.target}
+          callHeader={callTitle.target}
+          callDescription={callDescription.target}
+        />
       </Container>
     </Layout>
   );
 };
+
 export default Situations;
 
 export const query = graphql`
@@ -72,8 +91,35 @@ export const query = graphql`
           situation {
             id
           }
+          field_ref_icon {
+            code
+          }
         }
       }
+    }
+    searchingTitle: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "still_searching_title" }
+    ) {
+      target
+    }
+    searchingDescription: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "still_searching_description" }
+    ) {
+      target
+    }
+    callTitle: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "call_title" }
+    ) {
+      target
+    }
+    callDescription: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "call_description" }
+    ) {
+      target
     }
   }
 `;

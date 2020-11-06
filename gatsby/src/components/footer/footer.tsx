@@ -1,16 +1,21 @@
 import React from 'react';
+import classnames from 'classnames';
+
 import Link from '@/components/link';
+import I18n from '../i18n';
+
+import styles from './footer.module.scss';
 
 const Footer: React.FC = () => {
   return (
-    <div className="footer" role="contentinfo">
+    <div className={classnames(styles.footer, 'footer')} role="contentinfo">
       <div className="container">
         <div className="footer__inner">
           <div className="footer__links">
             <div className="row">
               <div className="col-12 col-sm-6 col-lg-3">
                 <div className="footer__box pb-4 pb-lg-0">
-                  <h3>Užitečné odkazy</h3>
+                  <h3>{I18n('useful_links')}</h3>
                   <ul>
                     <li>
                       <Link label="Opatření v rámci celé ČR" to="#" />

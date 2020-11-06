@@ -29,10 +29,6 @@
 
 		&--active {
 			color: $theme-gray-dark;
-
-			& > a.breadcrumb__link {
-				color: $theme-yellow !important;
-			}
 		}
 
 		&::before {
