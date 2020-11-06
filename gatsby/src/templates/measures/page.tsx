@@ -6,7 +6,6 @@ import { SEO as Seo } from 'gatsby-plugin-seo';
 import SituationDetail from '@/components/situation-detail';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
-
 interface IProps {
   data: IQuery;
 }
@@ -29,8 +28,9 @@ const Page: React.FC<IProps> = ({ data }) => {
         defaultTitle={data.measure.title}
         isBlogPost
         body={
-          (data.measure as any).content!.processed ||
-          data.measure.meta_description
+          (data.measure as any).content
+            ? (data.measure as any).content.processed
+            : data.measure.meta_description
         }
         description={data.measure.meta_description}
         title={data.measure.title}
