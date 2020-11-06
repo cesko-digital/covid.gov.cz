@@ -73,14 +73,6 @@ const Situations: React.FC<IProps> = ({ data }) => {
           </ContentBox>
         </div>
       </Container>
-      <Container className="mt-3 mb-3">
-        <LookingForSomething
-          searchingHeader={searchingTitle.target}
-          searchingDescription={searchingDescription.target}
-          callHeader={callTitle.target}
-          callDescription={callDescription.target}
-        />
-      </Container>
     </Layout>
   );
 };
