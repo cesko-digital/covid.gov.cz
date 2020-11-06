@@ -27,8 +27,8 @@ jobs:
         working-directory: gatsby
       - name: Checkout gh-pages
         run: |
-          git clone https://git:${{ secrets.GITHUB_TOKEN }}@github.com/miromichalicka/covid.gov.cz.git --branch gh-pages gh-pages &&
-          rm -rf gh-pages/*
+          git clone https://git:${{ secrets.GITHUB_TOKEN }}@github.com/cesko-digital/covid.gov.cz.git --branch gh-pages gh-pages &&
+          rm -rf gh-pages/* gh-pages/.github
       - name: Move new build
         run: |
           mv gatsby/public/* gh-pages
