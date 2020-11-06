@@ -5,8 +5,11 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
+import { useBackgroundImageStyle } from '@/hooks/useBackgroundImageStyle';
 
 const DefaultLayout: React.FC = ({ children }) => {
+  const backgroundImageStyle = useBackgroundImageStyle();
+
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
       <Header
@@ -16,7 +19,7 @@ const DefaultLayout: React.FC = ({ children }) => {
           { label: I18n('current_measures'), to: I18n('slug_measures') },
         ]}
       />
-      <main className={styles.main}>
+      <main className={styles.main} style={backgroundImageStyle}>
         <div className={styles.mainInner}>{children}</div>
       </main>
       <Footer />
