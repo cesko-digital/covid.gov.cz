@@ -13,6 +13,10 @@
   @include media-breakpoint-down(sm) {
     background-color: $theme-blue;
   }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 25px;
+  }
 }
 
 .gradient {
