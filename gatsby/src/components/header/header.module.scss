@@ -13,6 +13,10 @@
   @include media-breakpoint-down(sm) {
     background-color: $theme-blue;
   }
+
+  @include media-breakpoint-up(md) {
+    margin-top: 25px;
+  }
 }
 
 .gradient {
@@ -34,12 +38,6 @@
 .navigation {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   overflow: unset !important;
-
-  &::after {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    overflow: unset !important;
-    width: 400px;
-  }
 }
 
 .nav__link {
@@ -114,13 +112,15 @@
   right: 0;
   z-index: 1000;
   transform: translateX(100%);
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 78px 0 50px;
+  height: 100vh;
 }
 
 .nav__mobile--open {
   transform: translateX(0);
+  display: flex;
 }
 
 .nav__mobileLink {

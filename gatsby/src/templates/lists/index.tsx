@@ -20,6 +20,7 @@ const Home: React.FC<IProps> = ({ data }) => {
     langcode,
     measure_description,
     situation_description,
+    meta_description,
     situation_link,
     measure_label,
     measure_link,
@@ -33,7 +34,7 @@ const Home: React.FC<IProps> = ({ data }) => {
     <Layout>
       <Seo
         title={I18n('home')}
-        description="meta desc"
+        description={meta_description ?? 'CovidPortal'}
         pagePath="/"
         htmlLanguage={langcode}
         schema={`{
