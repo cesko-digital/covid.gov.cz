@@ -14,6 +14,7 @@ export const query = graphql`
 interface SearchResult {
   id: string;
   title: string;
+  path: string;
 }
 
 interface IProps {
@@ -35,7 +36,6 @@ const SearchEngine: React.FC<IProps> = ({ children }) => {
     const results = index.current
       .search(term, { expand: true })
       .map(({ ref }) => index.current.documentStore.getDoc(ref));
-    console.log(results);
     setResults(results);
   };
 

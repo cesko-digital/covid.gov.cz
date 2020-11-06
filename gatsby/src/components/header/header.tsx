@@ -96,7 +96,20 @@ const Header: React.FC<Props> = ({ navItems }) => {
               {/* SEARCH */}
               <Col col={12} colLg={4} className="ml-auto">
                 <SearchEngine>
-                  {({ onSearch }) => <SearchBox onSearch={onSearch} />}
+                  {({ onSearch, searchResults }) => (
+                    <div style={{ position: 'relative' }}>
+                      <SearchBox onSearch={onSearch} />
+                      <div
+                        style={{ position: 'absolute', background: 'white' }}
+                      >
+                        {searchResults.map((searchItem) => (
+                          <div key={searchItem.id}>
+                            <Link to={searchItem.path}>{searchItem.title}</Link>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </SearchEngine>
               </Col>
             </Row>

@@ -105,12 +105,12 @@ const config = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: [`id`, `title`, `content`],
+        fields: [`id`, `title`, `path`],
         resolvers: {
           situation: {
             id: (node) => node.id,
             title: (node) => node.title,
-            content: (node) => node.content.value,
+            path: (node) => node.path.alias,
           },
         },
       },

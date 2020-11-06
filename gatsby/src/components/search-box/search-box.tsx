@@ -26,7 +26,6 @@ const SearchBox: React.FC<IProps> = ({
     if (onSearch) {
       onSearch(search);
     }
-    console.log('Search:', search);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -50,7 +49,10 @@ const SearchBox: React.FC<IProps> = ({
             'form-control search__input',
           )}
           placeholder={placeholder}
-          onChange={(event) => setSearch(event.currentTarget.value)}
+          onChange={(event) => {
+            setSearch(event.currentTarget.value);
+            handleSearch();
+          }}
           value={search}
           onKeyDown={handleKeyDown}
         />
