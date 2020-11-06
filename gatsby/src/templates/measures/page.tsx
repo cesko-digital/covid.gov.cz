@@ -28,7 +28,10 @@ const Page: React.FC<IProps> = ({ data }) => {
         datePublished={data.measure.valid_from}
         defaultTitle={data.measure.title}
         isBlogPost
-        body={(data.measure as any).content.processed}
+        body={
+          (data.measure as any).content!.processed ||
+          data.measure.meta_description
+        }
         description={data.measure.meta_description}
         title={data.measure.title}
         url={'https://covid.gov.cz' + data.measure.path.alias}
