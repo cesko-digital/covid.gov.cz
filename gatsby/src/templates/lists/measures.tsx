@@ -22,6 +22,13 @@ const Measures: React.FC<IProps> = ({ data }) => {
     allTaxonomyTermMeasureType: { nodes },
   } = data;
 
+  const {
+    searchingTitle,
+    searchingDescription,
+    callTitle,
+    callDescription,
+  } = data as any;
+
   const { slicedItems, ...pagination } = usePagination(nodes);
 
   return (
@@ -51,7 +58,12 @@ const Measures: React.FC<IProps> = ({ data }) => {
         <Pagination {...pagination} />
       </Container>
       <Container className="mt-3 mb-3">
-        <LookingForSomething />
+        <LookingForSomething
+          searchingHeader={searchingTitle.target}
+          searchingDescription={searchingDescription.target}
+          callHeader={callTitle.target}
+          callDescription={callDescription.target}
+        />
       </Container>
     </Layout>
   );
@@ -76,6 +88,30 @@ export const query = graphql`
           }
         }
       }
+    }
+    searchingTitle: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "still_searching_title" }
+    ) {
+      target
+    }
+    searchingDescription: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "still_searching_description" }
+    ) {
+      target
+    }
+    callTitle: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "call_title" }
+    ) {
+      target
+    }
+    callDescription: translation(
+      langcode: { eq: $langCode }
+      source: { eq: "call_description" }
+    ) {
+      target
     }
   }
 `;
