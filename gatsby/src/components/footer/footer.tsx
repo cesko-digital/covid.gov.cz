@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from '@/components/link';
+import I18n from '../i18n';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Footer: React.FC = () => {
             <div className="row">
               <div className="col-12 col-sm-6 col-lg-3">
                 <div className="footer__box pb-4 pb-lg-0">
-                  <h3>Užitečné odkazy</h3>
+                  <h3>{I18n('useful_links')}</h3>
                   <ul>
                     <li>
                       <Link label="Opatření v rámci celé ČR" to="#" />

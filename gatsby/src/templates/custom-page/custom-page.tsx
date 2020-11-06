@@ -16,7 +16,7 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={page.title + ' | Covid Portal'} />
+      <Helmet title={page.title + ' | ' + I18n('covid_portal').toUpperCase()} />
 
       <Container className="mb-4">
         <div className="pt-1">
