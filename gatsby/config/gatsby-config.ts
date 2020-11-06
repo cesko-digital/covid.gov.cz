@@ -43,7 +43,7 @@ const config = {
       resolve: 'gatsby-plugin-seo',
       options: {
         siteName: 'Covid Portál',
-        defaultSiteImage: '/images/image.png',
+        defaultSiteImage: '/images/ogimage.png',
         siteUrl: 'https://covidportal.dev',
         globalSchema: `{
           "@type": "WebSite",
