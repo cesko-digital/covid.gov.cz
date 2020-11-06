@@ -8,6 +8,7 @@ import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
+import { Guide } from '@/components/guide';
 
 interface IProps {
   data: IQuery;
@@ -39,10 +40,15 @@ const Home: React.FC<IProps> = ({ data }) => {
           description={situation_text}
           boldedTitleCount={2}
           buttonText={situation_link?.title}
+          variant="blue"
+        />
+        <Guide
+          items={measure_items}
+          title={measure_label.processed}
           buttonHref={I18n('slug_situations')}
-        >
-          <SituationsBox situations={situation_items} />
-        </ContentBox>
+          buttonText={situation_link?.title}
+          variant="blue"
+        />
         <ContentBox
           title={measure_label.processed.replace('<p>', '').replace('</p>', '')}
           description={measure_text}
