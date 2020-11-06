@@ -1,38 +1,36 @@
 import { Phone } from '@material-ui/icons';
 import React from 'react';
 import classes from './looking-for-something.module.scss';
-import { ArrowForwardIos, Phone } from '@material-ui/icons';
-import I18n from '@/components/i18n';
 
-const LookingForSomething = () => {
+interface IProps {
+  searchingHeader: string;
+  searchingDescription: string;
+  callHeader: string;
+  callDescription: string;
+}
+
+const LookingForSomething: React.FC<IProps> = ({
+  searchingHeader,
+  searchingDescription,
+  callHeader,
+  callDescription,
+}: IProps) => {
   return (
     <div className={classes.container}>
       <section className={classes.section}>
-        <header
-          className={classes.header}
-          dangerouslySetInnerHTML={{
-            __html: I18n('still_searching_title'),
-          }}
-        />
-        <ArrowForwardIos />
-        <p className={classes.description}>
-          {I18n('still_searching_description')}
-        </p>
+        <header className={classes.header}>{searchingHeader}</header>
+        <p className={classes.description}>{searchingDescription}</p>
       </section>
 
       <hr className={classes.separator} />
 
       <section className={classes.section}>
-        <Phone fontSize="large" className={classes.phoneIcon} />
+        <Phone fontSize="large" className="mr-2" />
         <header className={classes.header}>
-          {I18n('call_title')}{' '}
-          <strong>
-            <a className={classes.phoneNumber} href="tel:1221">
-              1221
-            </a>
-          </strong>
+          {callHeader}
+          &nbsp;<strong><a href="tel:1221">1121</a></strong>
         </header>
-        <p className={classes.description}>{I18n('call_description')}</p>
+        <p className={classes.description}>{callDescription}</p>
       </section>
     </div>
   );
