@@ -31,7 +31,7 @@ jobs:
           rm -rf gh-pages/*
       - name: Move new build
         run: |
-          mv gatsby/public/* gh-pages && mv gatsby/public/.* gh-pages
+          mv gatsby/public/* gh-pages
       - name: Commit && move on
         working-directory: gh-pages
         run: |
