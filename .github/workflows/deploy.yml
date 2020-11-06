@@ -35,4 +35,4 @@ jobs:
       - name: Commit && move on
         working-directory: gh-pages
         run: |
-          git add -A && git commit -m "Build" --force && git push --force
+          git add -A && git commit -m "Build" && git push --force
