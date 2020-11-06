@@ -9,7 +9,8 @@ interface Props {
   title: string;
   description: string;
   area: string;
-  validity: string;
+  validFrom: string;
+  validTo: string;
   link: string;
   borderTop?: boolean;
 }
@@ -18,10 +19,12 @@ const Measure: React.FC<Props> = ({
   title,
   description,
   area,
-  validity,
+  validFrom,
+  validTo,
   link,
   borderTop,
 }) => {
+  // TODO: Localize
   return (
     <div
       className={classNames(
@@ -34,7 +37,10 @@ const Measure: React.FC<Props> = ({
       <div className={styles.measureDetails}>
         <div>
           <div className={styles.measureDetail}>Platí pro: {area}</div>
-          <div className={styles.measureDetail}>{validity}</div>
+          <div className={styles.measureDetail}>
+            {validFrom && `Od ${validFrom} `}
+            {validTo && `Do ${validTo}`}
+          </div>
         </div>
         <Button
           text={I18n('more')}
