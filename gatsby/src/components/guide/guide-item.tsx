@@ -5,6 +5,9 @@ import Col from '../col';
 import ContentIcon from '../content-icon';
 import classes from './guide-item.module.scss';
 
+import Time from '@/components/time';
+import I18n from '@/components/i18n';
+
 interface IProps {
   title: string;
   description?: string;
@@ -27,6 +30,7 @@ const GuideItem: React.FC<IProps> = ({
   area,
   validTo,
   validFrom,
+  validTo,
 }) => {
   return (
     <>
@@ -66,8 +70,14 @@ const GuideItem: React.FC<IProps> = ({
                * and show end date during the mesurement?
                */}
               <p>{area}</p>
-              {validFrom && <p>Od {validFrom}</p>}
-              {validTo && !validFrom && <p>Do {validTo}</p>}
+              <p>
+                {validFrom && (
+                  <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+                )}
+                {validTo && (
+                  <Time datetime={validTo} prefix={`${I18n('to')} `} />
+                )}
+              </p>
             </div>
           )}
           {description && (

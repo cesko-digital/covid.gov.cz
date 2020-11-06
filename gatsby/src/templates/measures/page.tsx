@@ -76,9 +76,9 @@ export const query = graphql`
         alias
       }
       langcode
-      changed(formatString: "D. MMMM YYYY HH:mm")
-      valid_from(formatString: "D. M. YYYY")
-      valid_to(formatString: "D. M. YYYY")
+      changed
+      valid_from
+      valid_to
     }
   }
 `;
