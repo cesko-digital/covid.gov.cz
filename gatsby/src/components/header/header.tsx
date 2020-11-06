@@ -33,6 +33,10 @@ const Header: React.FC<Props> = ({ navItems }) => {
 
   const [activeLocale, setLocale] = useState(locales[0]);
 
+  const onUseLink = () => {
+    document.body.style.overflow = 'unset';
+  };
+
   return (
     <div className={classes.header} role="banner">
       <div className={classes.gradient} />
@@ -103,56 +107,46 @@ const Header: React.FC<Props> = ({ navItems }) => {
               'd-md-none',
             )}
           >
-            {navItems.map(({ label, to }) => (
-              <Link
-                to={to}
-                key={label}
-                className={classnames(classes.nav__mobileLink, 'container')}
-                activeClassName={classes['nav__mobileLink--active']}
-                partiallyActive={to !== '/'}
-              >
-                {label}
-              </Link>
-            ))}
-            {/* {locales.map((locale, index) => (
-              <Link
-                to="/"
-                onClick={() => setLocale(locale)}
-                key={index}
-                className={classnames(
-                  classes.nav__mobileLink,
-                  index === 0 && 'mt-auto',
-                  locale === activeLocale && classes['nav__mobileLink--active'],
+            <div
+              className="d-flex flex-column justify-content-between"
+              style={{ height: '100%' }}
+            >
+              <div>
+                {navItems.map(({ label, to }) => (
+                  <Link
+                    onClick={onUseLink}
+                    to={to}
+                    key={label}
+                    className={classnames(classes.nav__mobileLink, 'container')}
+                    activeClassName={classes['nav__mobileLink--active']}
+                    partiallyActive={to !== '/'}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-auto">
+                {TRoute('/') !== '/' ? (
+                  <Link
+                    to="/"
+                    noTR
+                    onClick={onUseLink}
+                    className={classnames(classes.nav__mobileLink, 'container')}
+                  >
+                    Čeština
+                  </Link>
+                ) : (
+                  <Link
+                    to="/en/"
+                    noTR
+                    onClick={onUseLink}
+                    className={classnames(classes.nav__mobileLink, 'container')}
+                  >
+                    English
+                  </Link>
                 )}
-              >
-                {locale}
-              </Link>
-            ))} */}
-            {TRoute('/') !== '/' ? (
-              <Link
-                to="/"
-                noTR
-                className={classnames(
-                  classes.nav__mobileLink,
-                  'mt-auto',
-                  'container',
-                )}
-              >
-                Čeština
-              </Link>
-            ) : (
-              <Link
-                to="/en/"
-                noTR
-                className={classnames(
-                  classes.nav__mobileLink,
-                  'mt-auto',
-                  'container',
-                )}
-              >
-                English
-              </Link>
-            )}
+              </div>
+            </div>
           </div>
           {/* DESKTOP LOCALE SELECT */}
           <HeaderLocaleSelect
