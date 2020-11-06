@@ -45,7 +45,6 @@ const Guide: React.FC<IProps> = ({
         <div
           className={classNames(
             'guide',
-            'guide',
             'guide--visible',
             'mt-0',
             'mb-2',
@@ -79,14 +78,13 @@ const Guide: React.FC<IProps> = ({
                   {/* If is situation */}
                   {isSituationBox &&
                     (items as IArea[]).map((x, i) => {
-                      const desc = itemDescriptions[i] ?? '';
                       return (
                         <GuideItem
                           key={x.id}
                           title={x.name}
                           buttonUrl={x.path.alias}
                           buttonText={I18n('more')}
-                          description={desc}
+                          description={itemDescriptions[i] ?? ''}
                           variant={variant}
                           iconCode={x.relationships?.field_ref_icon?.code}
                         />
@@ -95,7 +93,6 @@ const Guide: React.FC<IProps> = ({
                   {/* If is measure */}
                   {!isSituationBox &&
                     (items as IMeasure[]).map((x, i) => {
-                      const desc = itemDescriptions[i];
                       return (
                         <GuideItem
                           key={x.id}
@@ -103,7 +100,7 @@ const Guide: React.FC<IProps> = ({
                           buttonUrl={x.path.alias}
                           variant={variant}
                           buttonText={I18n('more')}
-                          description={desc}
+                          description={itemDescriptions[i] ?? ''}
                           area={x.relationships?.region
                             ?.map((item) => item.name)
                             .join(', ')}
@@ -146,8 +143,11 @@ const Guide: React.FC<IProps> = ({
       buttonHref={buttonHref}
       variant={variant}
     >
-      {isSituationBox && <SituationsBox situations={items} />}
-      {!isSituationBox && <MeasureList measures={items} />}
+      {isSituationBox ? (
+        <SituationsBox situations={items} />
+      ) : (
+        <MeasureList measures={items} />
+      )}
     </ContentBox>
   );
 };
