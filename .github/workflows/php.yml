@@ -8,29 +8,6 @@ on:
     - 'docker/**'
 
 jobs:
-#  build:
-#
-#    runs-on: ubuntu-latest
-
-#    steps:
-#    - uses: actions/checkout@v2
-#
-#    - name: Validate composer.json and composer.lock
-#      run: composer validate
-#
-#    - name: Cache Composer packages
-#      id: composer-cache
-#      uses: actions/cache@v2
-#      with:
-#        path: vendor
-#        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-#        restore-keys: |
-#          ${{ runner.os }}-php-
-#
-#    - name: Install dependencies
-#      if: steps.composer-cache.outputs.cache-hit != 'true'
-#      run: composer install --prefer-dist --no-progress --no-suggest
-
   deploy:
     name: Deploy to Staging
 
@@ -46,8 +23,21 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS_STAGE }}
 
-      - name: Install composer
-        run: cd drupal && composer install
+      - name: Validate composer.json and composer.lock
+        run: cd drupal && composer validate
+
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: drupal/vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: Install dependencies
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: cd drupal && composer install --no-progress --no-suggest
 
       - name: Deploy to stage
         run: cd drupal && vendor/bin/dep deploy staging
