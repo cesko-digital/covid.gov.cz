@@ -1,10 +1,10 @@
 @import '../../../assets/scss/design-system/base/variables';
 
-.link-styled {
+.linkStyled {
   margin: 1rem 0 0;
 }
 
-.link-styled-link {
+.linkStyledLink {
   display: flex;
   color: $theme-white;
   justify-content: space-between;
@@ -22,6 +22,6 @@
   }
 }
 
-.link-styled-icon {
+.linkStyledIcon {
   color: #ecae1a;
 }
