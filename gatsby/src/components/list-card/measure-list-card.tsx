@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@/components/button';
+import Link from '@/components/link';
 import I18n from '@/components/i18n';
 import styles from './measure-list-card.module.scss';
 
@@ -21,10 +22,10 @@ const MeasureListCard: React.FC<IProps> = ({
   validTo,
 }) => {
   return (
-    <div className="card p-2 mb-2">
+    <Link to={link} className="card p-2 mb-2 text-decoration-none">
       {/* TODO: Add icon */}
       <h2 className="font-weight-medium mb-1">{title}</h2>
-      <p className="mt-0">{description}</p>
+      <p className="mt-0 color-gray">{description}</p>
       <div className="d-flex justify-content-between align-items-end">
         <div>
           <div className={styles.measureListCardDetail}>
@@ -37,10 +38,10 @@ const MeasureListCard: React.FC<IProps> = ({
           </div>
         </div>
         <div>
-          <Button href={link} text={I18n('detail')} variant="outline" />
+          <Button text={I18n('detail')} variant="outline" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

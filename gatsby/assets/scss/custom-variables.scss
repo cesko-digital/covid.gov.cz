@@ -43,6 +43,14 @@ $h2-font-size-mobile: 18px;
   font-weight: 500;
 }
 
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.color-gray {
+  color: $theme-gray;
+}
+
 a.external,
 a.more {
   padding-right: 15px;
