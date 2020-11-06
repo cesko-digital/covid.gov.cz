@@ -13,7 +13,6 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  console.log(data);
   const { taxonomyTermMeasureType } = data;
   return (
     <Layout>
