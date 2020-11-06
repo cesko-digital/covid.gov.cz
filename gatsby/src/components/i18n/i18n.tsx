@@ -1,20 +1,20 @@
-import { useStaticQuery, graphql } from 'gatsby'
-import { useLocation } from '@reach/router'
+import { useStaticQuery, graphql } from 'gatsby';
+import { useLocation } from '@reach/router';
 
-function gLang () {
-  var glang = 'cs'
-  const location = useLocation()
-  const path = location.pathname
+const gLang = (): string => {
+  var glang = 'cs';
+  const location = useLocation();
+  const path = location.pathname;
 
   if (path.replace(/^\/(\w\w)(\/.*)?$/g, '$1') === 'en') {
-    glang = 'en'
+    glang = 'en';
   }
 
-  return glang
-}
+  return glang;
+};
 
-export default function I18n (id: string, lang?: string) {
-  lang = lang || gLang()
+const I18n = (id: string, lang?: string) => {
+  lang = lang || gLang();
   const I18nObject = useStaticQuery(
     graphql`
       query I18nQuery {
@@ -26,24 +26,26 @@ export default function I18n (id: string, lang?: string) {
           }
         }
       }
-    `
-  )
-  var I18nArray = I18nObject.allTranslation.nodes
+    `,
+  );
+  var I18nArray = I18nObject.allTranslation.nodes;
   I18nArray = I18nArray.filter((item) => {
-    return item.langcode === lang && item.source === id
-  })
+    return item.langcode === lang && item.source === id;
+  });
   if (!I18nArray.length) {
-    console.error('translation not found for ' + lang + '/' + id)
-    I18nArray = [{ target: id }]
+    console.error('translation not found for ' + lang + '/' + id);
+    I18nArray = [{ target: id }];
   }
 
-  return I18nArray[0].target
-}
+  return I18nArray[0].target;
+};
 
-export function TRoute (route: string, lang?: string) {
-  lang = lang || gLang()
-  route = route === '' ? '/' : route // todo: translate current page using drupal_internal__tid
-  route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2')
-  const add = lang === 'cs' ? '' : '/' + lang
-  return add + route
-}
+export default I18n;
+
+export const TRoute = (route: string, lang?: string): string => {
+  lang = lang || gLang();
+  route = route === '' ? '/' : route; // todo: translate current page using drupal_internal__tid
+  route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2');
+  const add = lang === 'cs' ? '' : '/' + lang;
+  return add + route;
+};
