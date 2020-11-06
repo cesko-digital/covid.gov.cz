@@ -44,7 +44,12 @@ const Measures: React.FC<IProps> = ({ data }) => {
           {slicedItems.map(
             (n) =>
               n.relationships.measure !== null && (
-                <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
+                <CategoryItem
+                  key={n.id}
+                  name={n.name}
+                  path={n.path.alias}
+                  iconCode={n.relationships.field_ref_icon?.code}
+                />
               ),
           )}
         </ContentBox>
@@ -71,6 +76,9 @@ export const query = graphql`
           alias
         }
         relationships {
+          field_ref_icon {
+            code
+          }
           measure {
             id
           }
