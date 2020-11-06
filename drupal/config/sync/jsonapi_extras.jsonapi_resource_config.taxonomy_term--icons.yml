@@ -28,7 +28,7 @@ resourceFields:
     enhancer:
       id: ''
   langcode:
-    disabled: true
+    disabled: false
     fieldName: langcode
     publicName: langcode
     enhancer:
