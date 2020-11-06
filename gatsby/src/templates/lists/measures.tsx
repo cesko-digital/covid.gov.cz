@@ -1,15 +1,13 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import { IQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
-import Pagination from '@/components/pagination';
-import usePagination from '@/hooks/usePagination';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
@@ -29,16 +27,23 @@ const Measures: React.FC<IProps> = ({ data }) => {
     callDescription,
   } = data as any;
 
-  const { slicedItems, ...pagination } = usePagination(nodes);
-
+  // todo add meta description
   return (
     <Layout>
-      <Helmet
-        title={
-          I18n('current_measures_overview') +
-          ' | ' +
-          I18n('covid_portal').toUpperCase()
-        }
+      <Seo
+        title={I18n('current_measures')}
+        description={I18n('current_measures_overview_meta')}
+        pagePath={I18n('slug_measures')}
+        htmlLanguage={searchingTitle.langcode}
+        schema={`{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#website",
+          "url": "https://covid.gov.cz/measures",
+          "name": "Current Measures | Covid Portál",
+          "publisher": {
+            "@id": "https://gov.cz"
+          }
+        }`}
       />
       <Container className="pt-1">
         <Breadcrumb
@@ -54,7 +59,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
       </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
-          {slicedItems.map(
+          {nodes.map(
             (n) =>
               n.relationships.measure !== null && (
                 <CategoryItem
@@ -66,7 +71,6 @@ const Measures: React.FC<IProps> = ({ data }) => {
               ),
           )}
         </ContentBox>
-        <Pagination {...pagination} />
       </Container>
       <Container className="mt-3 mb-3">
         <LookingForSomething
@@ -107,6 +111,7 @@ export const query = graphql`
       langcode: { eq: $langCode }
       source: { eq: "still_searching_title" }
     ) {
+      langcode
       target
     }
     searchingDescription: translation(

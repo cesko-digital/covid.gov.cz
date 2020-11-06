@@ -2,6 +2,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
 import Container from '@/components/container';
+
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import Headline from '@/components/headline';
 import ListCard from '@/components/list-card';
 import Layout from '@/layouts/default-layout';
@@ -16,6 +18,20 @@ const Home: React.FC<IProps> = ({ data }) => {
   const { area } = data;
   return (
     <Layout>
+      <Seo
+        title={area.name}
+        description={I18n('situations_overview_meta')}
+        pagePath="/situations"
+        schema={`{
+          "@type": "WebSite",
+          "@id": "https://covid.gov.cz/#situations",
+          "url": "https://covid.gov.cz/situations",
+          "name": "Life Situations",
+          "publisher": {
+            "@id": "https://gov.cz"
+          }
+        }`}
+      />
       <Container>
         <div className="pt-1">
           <Breadcrumb
