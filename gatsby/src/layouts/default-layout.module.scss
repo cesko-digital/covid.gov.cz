@@ -24,10 +24,12 @@
     background-position: center -100px !important;
   }
   @include media-breakpoint-up(md) {
-    background-position: center -50 !important;
+    background-position: center -50px !important;
+    background-size: 100% !important;
   }
   @include media-breakpoint-up(xs) {
-    background-position: center top !important;
+    background-position: center top 75px !important;
+    background-size: 130% !important;
   }
   z-index: 20;
 }
