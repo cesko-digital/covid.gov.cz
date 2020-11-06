@@ -22,9 +22,7 @@ jobs:
           && sudo apt update && sudo apt install yarn -y
       - name: Build Gatsby
         run: |
-          export GATSBY_APPINSIGHTS_KEY=${{ secrets.GATSBY_APPINSIGHTS_KEY }} \
-          && export NODE_ENV=production \
-          && yarn install \
+          yarn install \
           && yarn build \
         working-directory: gatsby
       - name: Checkout gh-pages
