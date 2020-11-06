@@ -57,6 +57,7 @@ const GuideItem: React.FC<IProps> = ({
               className={classNames(
                 'd-flex',
                 'flex-row',
+                'flex-wrap',
                 'justify-content-between',
                 classes.guideItemSubTitle,
                 { [classes.guideItemSubTitleBlue]: variant === 'white' },
