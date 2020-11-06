@@ -8,7 +8,8 @@ import Col from '../col';
 
 import classes from './header.module.scss';
 
-import headerLogo from './header-logo.svg';
+import headerLogoCS from './header-logo-cs.svg';
+import headerLogoEN from './header-logo-en.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
 import I18n, { TRoute } from '@/components/i18n';
 
@@ -47,7 +48,11 @@ const Header: React.FC<Props> = ({ navItems }) => {
             {/* LOGO */}
             <Col col={7} colMd={3} colLg={3}>
               <Link to="/" label={'COVID PORTAL - ' + I18n('home')}>
-                <img src={headerLogo} alt="Covid Portal logo" />
+                {TRoute('/') === '/' ? (
+                  <img src={headerLogoCS} alt="Covid Portál" />
+                ) : (
+                  <img src={headerLogoEN} alt="Covid Portal" />
+                )}
               </Link>
             </Col>
             {/* MOBILE TOGGLE */}
