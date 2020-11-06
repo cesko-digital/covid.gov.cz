@@ -16,7 +16,7 @@ const Time: React.FC<Props> = ({ datetime, prefix, suffix = ' ' }) => {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        timeZone: 'GMT',
+        timeZone: 'CET',
       })}
       {suffix}
     </time>
