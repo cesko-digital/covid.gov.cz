@@ -40,7 +40,6 @@ const I18n = (id: string, lang?: string) => {
   return I18nArray[0].target;
 };
 
-
 export default I18n;
 
 export const TRoute = (route: string = '', lang?: string): string => {
@@ -50,4 +49,3 @@ export const TRoute = (route: string = '', lang?: string): string => {
   const add = lang === 'cs' ? '' : '/' + lang;
   return add + route;
 };
-
