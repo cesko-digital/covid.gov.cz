@@ -1,5 +1,7 @@
 import { IPage, IQuery } from 'graphql-types';
-import { Helmet } from 'react-helmet';
+
+import { SchemaComp } from '@/components/schema/schema';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import React from 'react';
 import Container from '@/components/container';
 import { graphql } from 'gatsby';
@@ -16,7 +18,26 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={page.title + ' | ' + I18n('covid_portal').toUpperCase()} />
+      <Seo
+        title={page.title}
+        description={page.meta_description ?? 'Custom page meta description.'}
+        pagePath={page.path.alias}
+        htmlLanguage={page.langcode}
+      />
+      <SchemaComp
+        canonicalUrl={'https://covid.gov.cz' + page.path.alias}
+        datePublished={page.changed}
+        defaultTitle={page.title}
+        isBlogPost
+        description={page.meta_description}
+        body={page.content.processed}
+        title={page.title}
+        url={'https://covid.gov.cz' + page.path.alias}
+        organization={{
+          url: 'https://gov.cz',
+          name: 'Portál veřejné správy',
+        }}
+      />
       <Container className="mb-4">
         <div className="pt-1">
           <Breadcrumb
@@ -44,8 +65,10 @@ export const query = graphql`
       content {
         processed
       }
+      langcode
       title
       changed
+      meta_description
       path {
         alias
       }

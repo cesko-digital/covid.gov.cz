@@ -7,6 +7,7 @@ import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
 import DesktopTopContent from '@/components/desktop-top-content';
 import { SEO as Seo } from 'gatsby-plugin-seo';
+import { Helmet } from 'react-helmet';
 
 interface IProps {
   data: IQuery;
@@ -33,7 +34,7 @@ const Home: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
       <Seo
-        title={I18n('home')}
+        title={I18n('homepage_meta_title')}
         description={meta_description ?? 'CovidPortal'}
         pagePath="/"
         htmlLanguage={langcode}
@@ -41,12 +42,13 @@ const Home: React.FC<IProps> = ({ data }) => {
           "@type": "WebSite",
           "@id": "https://covid.gov.cz/#website",
           "url": "https://covid.gov.cz",
-          "name": "Home | Covid Portál",
+          "name": "Covid Portál",
           "publisher": {
             "@id": "https://gov.cz"
           }
         }`}
       />
+      <Helmet title={I18n('homepage_meta_title')} />
       <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
       <Container className="pt-2">
         {situation_items?.length ? (
