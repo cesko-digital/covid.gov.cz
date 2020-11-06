@@ -94,6 +94,12 @@ const config = {
         trackingIds: ['G-GKH7GB76MH'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['material icons'],
+      },
+    },
   ],
 };
 
