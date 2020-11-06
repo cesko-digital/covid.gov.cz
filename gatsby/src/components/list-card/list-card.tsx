@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@/components/button';
+import Link from '@/components/link';
 import I18n from '@/components/i18n';
 
 interface IProps {
@@ -9,15 +10,15 @@ interface IProps {
 }
 
 const ListCard: React.FC<IProps> = ({ title, description, link }) => (
-  <div className="card p-2 mb-2">
+  <Link to={link} className="card p-2 mb-2  text-decoration-none">
     <h2 className="font-weight-medium mb-1">{title}</h2>
     <div className="d-flex justify-content-between align-items-end">
-      <p className="m-0">{description}</p>
+      <p className="m-0 color-gray">{description}</p>
       <div>
-        <Button href={link} text={I18n('detail')} variant="outline" />
+        <Button text={I18n('detail')} variant="outline" />
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 export default ListCard;
