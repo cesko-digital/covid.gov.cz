@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
-import { AlertContainer } from '@/components/alert';
 import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
@@ -28,8 +27,7 @@ const Home: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
       <Helmet title="Covid Portál" />
-      <AlertContainer />
-      <Container className="mt-3">
+      <Container className="pt-3">
         <ContentBox
           title={situation_label.processed}
           boldedTitleCount={2}

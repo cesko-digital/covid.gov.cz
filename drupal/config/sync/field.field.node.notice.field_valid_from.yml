@@ -1,0 +1,24 @@
+uuid: 9b95f0e3-603e-40ff-aa3b-efdf0efecd19
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valid_from
+    - node.type.notice
+  module:
+    - datetime
+id: node.notice.field_valid_from
+field_name: field_valid_from
+entity_type: node
+bundle: notice
+label: 'Zobrazit od'
+description: 'Pokud zvolíte datum v budoucnu, notifikace bude automaticky zveřejněna až k danému datu.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

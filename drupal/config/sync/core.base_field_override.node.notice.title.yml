@@ -1,0 +1,18 @@
+uuid: 974bc85b-f435-4f51-bbbd-4032e3953a19
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.notice
+id: node.notice.title
+field_name: title
+entity_type: node
+bundle: notice
+label: 'Nadpis pro administraci'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -17,11 +17,11 @@ const DefaultLayout: React.FC = ({ children }) => {
       <Header
         navItems={[
           { label: 'Úvod', to: '/' },
-          { label: 'Opatření', to: measuresRoute },
           { label: 'Životní situace', to: situationsRoute },
+          { label: 'Opatření', to: measuresRoute },
         ]}
       />
-      <main>
+      <main className={styles.main}>
         <MainBackground
           src="/images/main-content-mobile-bg.jpg"
           alt="Covid Portal"

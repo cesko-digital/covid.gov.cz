@@ -16,7 +16,9 @@
   &Button:global(.btn.btn-yellow) {
     padding: 0;
     width: 2.4rem;
+    min-width: 2.4rem;
     height: 2.4rem;
+    min-height: 2.4rem;
     font-size: 1.6rem;
     line-height: 1em;
   }

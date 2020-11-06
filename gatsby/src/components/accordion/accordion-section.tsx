@@ -26,6 +26,7 @@ const AccordionSection: React.FC<Section> = ({ title, text }) => {
           'justify-content-between',
           'align-items-center',
         )}
+        onClick={toggleSection}
       >
         {title}
         <Button
@@ -36,7 +37,6 @@ const AccordionSection: React.FC<Section> = ({ title, text }) => {
             'justify-content-center',
             'align-items-center',
           )}
-          onClick={toggleSection}
           variant="yellow"
         />
       </div>

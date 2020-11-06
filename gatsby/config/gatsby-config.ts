@@ -5,6 +5,7 @@ const config = {
       options: {
         baseUrl: 'https://covid.pristup.net',
         apiBase: 'api',
+        translation: true,
       },
     },
     'gatsby-plugin-typescript',

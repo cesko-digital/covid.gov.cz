@@ -11,7 +11,7 @@ interface IProps {
 const Page: React.FC<IProps> = ({ data }) => {
   return (
     <Layout>
-      <SituationDetail situation={data.measure} />
+      <SituationDetail situation={data.measure} type="measure" />
     </Layout>
   );
 };
@@ -35,6 +35,9 @@ export const query = graphql`
         }
         situation_type: field_measure_type {
           name
+          path {
+            alias
+          }
         }
         related_situations: situation {
           title
@@ -44,8 +47,8 @@ export const query = graphql`
         alias
       }
       changed(formatString: "D. MMMM YYYY HH:mm")
-      valid_from
-      valid_to
+      valid_from(formatString: "D. M. YYYY")
+      valid_to(formatString: "D. M. YYYY")
     }
   }
 `;

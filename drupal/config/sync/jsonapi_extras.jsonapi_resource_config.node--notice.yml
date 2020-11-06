@@ -1,98 +1,104 @@
-uuid: 36b4fa09-67e4-4c6a-80c6-45231b56ece1
+uuid: 5a8c379a-e0ec-48de-a9ab-c823d71c6f6f
 langcode: cs
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.icons
-id: taxonomy_term--icons
+    - node.type.notice
+id: node--notice
 disabled: false
-path: term/icons
-resourceType: taxonomy_term--icons
+path: node/notice
+resourceType: notice
 resourceFields:
-  tid:
-    disabled: true
-    fieldName: tid
-    publicName: tid
+  nid:
+    fieldName: nid
+    publicName: nid
     enhancer:
       id: ''
+    disabled: false
   uuid:
     fieldName: uuid
     publicName: uuid
     enhancer:
       id: ''
     disabled: false
-  revision_id:
-    disabled: true
-    fieldName: revision_id
-    publicName: revision_id
-    enhancer:
-      id: ''
-  langcode:
-    disabled: true
-    fieldName: langcode
-    publicName: langcode
-    enhancer:
-      id: ''
   vid:
     disabled: true
     fieldName: vid
     publicName: vid
     enhancer:
       id: ''
-  revision_created:
-    disabled: true
-    fieldName: revision_created
-    publicName: revision_created
+  langcode:
+    fieldName: langcode
+    publicName: langcode
     enhancer:
       id: ''
-  revision_user:
+    disabled: false
+  type:
     disabled: true
-    fieldName: revision_user
-    publicName: revision_user
+    fieldName: type
+    publicName: type
     enhancer:
       id: ''
-  revision_log_message:
+  revision_timestamp:
     disabled: true
-    fieldName: revision_log_message
-    publicName: revision_log_message
+    fieldName: revision_timestamp
+    publicName: revision_timestamp
+    enhancer:
+      id: ''
+  revision_uid:
+    disabled: true
+    fieldName: revision_uid
+    publicName: revision_uid
+    enhancer:
+      id: ''
+  revision_log:
+    disabled: true
+    fieldName: revision_log
+    publicName: revision_log
     enhancer:
       id: ''
   status:
-    disabled: true
     fieldName: status
     publicName: status
     enhancer:
       id: ''
-  name:
-    disabled: true
-    fieldName: name
-    publicName: name
+    disabled: false
+  uid:
+    fieldName: uid
+    publicName: uid
     enhancer:
       id: ''
-  description:
+    disabled: false
+  title:
     disabled: true
-    fieldName: description
-    publicName: description
+    fieldName: title
+    publicName: title
     enhancer:
       id: ''
-  weight:
-    disabled: true
-    fieldName: weight
-    publicName: weight
+  created:
+    fieldName: created
+    publicName: created
     enhancer:
       id: ''
-  parent:
-    disabled: true
-    fieldName: parent
-    publicName: parent
-    enhancer:
-      id: ''
+    disabled: false
   changed:
-    disabled: true
     fieldName: changed
     publicName: changed
     enhancer:
       id: ''
+    disabled: false
+  promote:
+    fieldName: promote
+    publicName: promote
+    enhancer:
+      id: ''
+    disabled: false
+  sticky:
+    fieldName: sticky
+    publicName: sticky
+    enhancer:
+      id: ''
+    disabled: false
   default_langcode:
     disabled: true
     fieldName: default_langcode
@@ -111,6 +117,24 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  moderation_state:
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    disabled: true
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+  menu_link:
+    disabled: true
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
@@ -123,33 +147,27 @@ resourceFields:
     publicName: content_translation_outdated
     enhancer:
       id: ''
-  content_translation_uid:
-    disabled: true
-    fieldName: content_translation_uid
-    publicName: content_translation_uid
-    enhancer:
-      id: ''
-  content_translation_created:
-    disabled: true
-    fieldName: content_translation_created
-    publicName: content_translation_created
-    enhancer:
-      id: ''
-  field_icon_code:
-    fieldName: field_icon_code
-    publicName: code
+  field_notice_content:
+    fieldName: field_notice_content
+    publicName: notice_content
     enhancer:
       id: ''
     disabled: false
-  field_icon_file:
-    disabled: true
-    fieldName: field_icon_file
-    publicName: field_icon_file
+  field_notice_link:
+    fieldName: field_notice_link
+    publicName: link
     enhancer:
       id: ''
-  field_icon_set:
-    fieldName: field_icon_set
-    publicName: source
+    disabled: false
+  field_valid_from:
+    fieldName: field_valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
+  field_valid_to:
+    fieldName: field_valid_to
+    publicName: valid_to
     enhancer:
       id: ''
     disabled: false

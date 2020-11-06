@@ -1,0 +1,60 @@
+uuid: 0724ce86-df16-4f51-934c-b8b86319a7f6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.node.notice.field_notice_content
+    - field.field.node.notice.field_notice_link
+    - field.field.node.notice.field_valid_from
+    - field.field.node.notice.field_valid_to
+    - node.type.notice
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.notice.default
+targetEntityType: node
+bundle: notice
+mode: default
+content:
+  field_notice_content:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_notice_link:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
+    region: content
+  field_valid_from:
+    weight: 0
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 1
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  langcode: true
+  links: true

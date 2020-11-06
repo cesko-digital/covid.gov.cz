@@ -165,6 +165,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hp_measure_description:
+    fieldName: field_hp_measure_description
+    publicName: measure_description
+    enhancer:
+      id: ''
+    disabled: false
   field_hp_measure_link:
     fieldName: field_hp_measure_link
     publicName: measure_link
@@ -180,6 +186,12 @@ resourceFields:
   field_hp_ref_measure:
     fieldName: field_hp_ref_measure
     publicName: measure_items
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_situation_description:
+    fieldName: field_hp_situation_description
+    publicName: situation_description
     enhancer:
       id: ''
     disabled: false
