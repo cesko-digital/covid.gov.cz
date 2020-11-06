@@ -15,7 +15,7 @@
   color: #fff;
   margin-right: 5px;
   &--blue {
-    color: #2b4762 !important;
+    color: $theme-blue !important;
   }
 }
 
@@ -24,7 +24,7 @@
   color: #fff !important;
 
   &--blue {
-    color: #2b4762 !important;
+    color: $theme-blue !important;
   }
 }
 

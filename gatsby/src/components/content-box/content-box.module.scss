@@ -45,10 +45,10 @@
 .content-box-btn {
   width: 100%;
   margin-top: 3px;
-  color: #2362a2;
+  color: $theme-blue;
   background-color: #fff;
   &--blue {
     color: #fff !important;
-    background-color: #2362a2;
+    background-color: $theme-blue;
   }
 }

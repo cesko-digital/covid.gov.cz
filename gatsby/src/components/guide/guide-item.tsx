@@ -55,14 +55,20 @@ const GuideItem: React.FC<IProps> = ({
               className={classNames(
                 'd-flex',
                 'flex-row',
-                'justify-space-between',
+                'justify-content-between',
                 classes.guideItemSubTitle,
                 { [classes.guideItemSubTitleBlue]: variant === 'white' },
               )}
             >
+              {/**
+               * There must be a better way of handling which date to show
+               * It will not layout correctly if showing both
+               * Maybe show start date before it actually starts
+               * and show end date during the mesurement?
+               */}
               <p>{area}</p>
-              <p>{validFrom}</p>
-              <p>{validTo}</p>
+              {validFrom && <p>Od {validFrom}</p>}
+              {validTo && !validFrom && <p>Do {validTo}</p>}
             </div>
           )}
           {description && (
