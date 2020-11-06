@@ -1,13 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import ContentBox from '@/components/content-box';
-import MeasureList from '@/components/measure-list';
 import Container from '@/components/container';
-import SituationsBox from '@/components/situations-box';
 import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
+import { Guide } from '@/components/guide';
 
 interface IProps {
   data: IQuery;
@@ -18,10 +16,12 @@ const Home: React.FC<IProps> = ({ data }) => {
   const {
     situation_label,
     situation_text,
+    measure_description,
+    situation_description,
     situation_link,
     measure_label,
-    measure_text,
     measure_link,
+    measure_text,
     relationships,
   } = homepage;
   const { measure_items, situation_items } = relationships;
@@ -32,28 +32,24 @@ const Home: React.FC<IProps> = ({ data }) => {
         title={I18n('home') + ' | ' + I18n('covid_portal').toUpperCase()}
       />
       <Container className="pt-3">
-        <ContentBox
-          title={situation_label.processed
-            .replace('<p>', '')
-            .replace('</p>', '')}
+        <Guide
+          items={situation_items}
+          title={situation_label.processed}
           description={situation_text}
-          boldedTitleCount={2}
-          buttonText={situation_link?.title}
           buttonHref={I18n('slug_situations')}
-        >
-          <SituationsBox situations={situation_items} />
-        </ContentBox>
-        <ContentBox
-          title={measure_label.processed.replace('<p>', '').replace('</p>', '')}
+          buttonText={situation_link?.title}
+          variant="blue"
+          itemDescriptions={situation_description}
+        />
+        <Guide
+          items={measure_items}
+          title={measure_label.processed}
           description={measure_text}
-          boldedTitleCount={1}
-          buttonVariant="contained"
-          buttonText={measure_link?.title}
           buttonHref={I18n('slug_measures')}
+          buttonText={measure_link?.title}
           variant="white"
-        >
-          <MeasureList measures={measure_items} />
-        </ContentBox>
+          itemDescriptions={measure_description}
+        />
       </Container>
     </Layout>
   );
@@ -64,6 +60,8 @@ export default Home;
 export const query = graphql`
   query IndexQuery($langCode: String!) {
     homepage(langcode: { eq: $langCode }) {
+      measure_description
+      situation_description
       measure_link {
         uri
         title

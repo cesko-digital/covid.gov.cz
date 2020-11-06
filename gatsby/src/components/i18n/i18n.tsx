@@ -40,12 +40,14 @@ const I18n = (id: string, lang?: string) => {
   return I18nArray[0].target;
 };
 
+
 export default I18n;
 
-export const TRoute = (route: string, lang?: string): string => {
+export const TRoute = (route: string = '', lang?: string): string => {
   lang = lang || gLang();
   route = route === '' ? '/' : route; // todo: translate current page using drupal_internal__tid
   route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2');
   const add = lang === 'cs' ? '' : '/' + lang;
   return add + route;
 };
+
