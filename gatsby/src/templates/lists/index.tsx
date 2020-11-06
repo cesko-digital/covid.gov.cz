@@ -6,6 +6,7 @@ import I18n from '@/components/i18n';
 import { IQuery } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
+import DesktopTopContent from '@/components/desktop-top-content';
 
 interface IProps {
   data: IQuery;
@@ -31,6 +32,7 @@ const Home: React.FC<IProps> = ({ data }) => {
       <Helmet
         title={I18n('home') + ' | ' + I18n('covid_portal').toUpperCase()}
       />
+      <DesktopTopContent title={I18n('header_headline')} />
       <Container className="pt-3">
         <Guide
           items={situation_items}
