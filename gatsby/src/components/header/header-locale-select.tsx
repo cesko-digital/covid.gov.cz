@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { TRoute } from '@/components/i18n';
+import Link from '@/components/link';
 
 import classes from './header-locale-select.module.scss';
 
@@ -19,14 +20,14 @@ export const HeaderLocaleSelect: React.FC<Props> = () => {
     >
       {TRoute('/') !== '/' ? (
         <span>
-          <a href="/" className="text-white">
+          <Link to="/" noTR className="text-white">
             CZ
-          </a>
+          </Link>
         </span>
       ) : (
-        <a href="/en" className="text-white">
+        <Link to="/en/" noTR className="text-white">
           EN
-        </a>
+        </Link>
       )}
       {/* <div className={classes.localeSelect__inner}>
         LABEL

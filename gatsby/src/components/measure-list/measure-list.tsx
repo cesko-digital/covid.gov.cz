@@ -5,25 +5,29 @@ import Measure from './measure';
 
 interface Props {
   measures: IMeasure[];
+  descriptions?: string[];
 }
 
-const MeasureList: React.FC<Props> = ({ measures }) => {
+const MeasureList: React.FC<Props> = ({ measures, descriptions }) => {
   const isMobile = useMobile();
 
   const maxItems = isMobile ? 3 : 6;
 
   return (
     <>
-      {measures.slice(0, maxItems).map(({ id, title, relationships }) => (
-        <Measure
-          key={id}
-          title={title}
-          description="Rouška se musí nosit venku až na pár"
-          validity="od 2. října do 6. listopadu"
-          link="/opatreni/rouska-se-musi-nosti-venku-az-na-par"
-          area={relationships.region[0]?.name}
-        />
-      ))}
+      {measures
+        .slice(0, maxItems)
+        .map(({ id, title, path, valid_from, valid_to, relationships }, i) => (
+          <Measure
+            key={id}
+            title={title}
+            description={descriptions[i] ?? ''}
+            validFrom={valid_from}
+            validTo={valid_to}
+            link={path.alias}
+            area={relationships.region.map((item) => item.name).join(', ')}
+          />
+        ))}
     </>
   );
 };

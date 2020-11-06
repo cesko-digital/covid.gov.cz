@@ -5,7 +5,6 @@ import Link from '@/components/link';
 import Container from '../container';
 import Row from '../row';
 import Col from '../col';
-import SearchBox from '../search-box';
 
 import classes from './header.module.scss';
 
@@ -40,7 +39,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
         <Row alignItems="center" className={classes.header__inner}>
           {/* LOGO */}
           <Col col={7} colMd={3} colLg={3}>
-            <Link to="/" label="COVID PORTÁL - úvodní strana">
+            <Link to="/" label={'COVID PORTAL - ' + I18n('home')}>
               <img src={headerLogo} />
             </Link>
           </Col>
@@ -93,9 +92,6 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 </div>
               </Col>
               {/* SEARCH */}
-              <Col col={12} colLg={4} className="ml-auto">
-                <SearchBox onSearch={() => {}} />
-              </Col>
             </Row>
           </Col>
           {/* MOBILE NAV */}
@@ -112,7 +108,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 key={label}
                 className={classnames(classes.nav__mobileLink, 'container')}
                 activeClassName={classes['nav__mobileLink--active']}
-                partiallyActive
+                partiallyActive={to !== '/'}
               >
                 {label}
               </Link>
@@ -132,8 +128,9 @@ const Header: React.FC<Props> = ({ navItems }) => {
               </Link>
             ))} */}
             {TRoute('/') !== '/' ? (
-              <a
-                href="/"
+              <Link
+                to="/"
+                noTR
                 className={classnames(
                   classes.nav__mobileLink,
                   'mt-auto',
@@ -141,10 +138,11 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 )}
               >
                 Čeština
-              </a>
+              </Link>
             ) : (
-              <a
-                href="/en"
+              <Link
+                to="/en/"
+                noTR
                 className={classnames(
                   classes.nav__mobileLink,
                   'mt-auto',
@@ -152,7 +150,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 )}
               >
                 English
-              </a>
+              </Link>
             )}
           </div>
           {/* DESKTOP LOCALE SELECT */}

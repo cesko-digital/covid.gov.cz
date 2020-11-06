@@ -12,7 +12,7 @@ field_name: field_content
 entity_type: node
 bundle: situation
 label: Obsah
-description: "Nadpisy pište jako <i>Formát -> Nadpis 2</i> ideálně bez čísel na začátku<br>\r\nSeznamy, například výjimek označujte jako <i>Odrážky s tečkou</i><br>\r\nMezi bloky textu vždy jen jeden enter<br>\r\n<br>\r\nText je možné vkládat pomocí <i>Vložit z Wordu</i>"
+description: "Nadpisy pište jako <i>Formát -> Nadpis 2</i> ideálně bez čísel na začátku<br>\r\nSeznamy, například výjimek označujte jako <i>Odrážky s tečkou</i><br>\r\nMezi bloky textu vždy jen jeden enter<br>\r\n<br>\r\nText je možné vkládat pomocí <i>Vložit z Wordu</i><br>\r\n<br>\r\n<b>Odkazy</b><br>\r\nodkazem označujte text, který odkaz popisuje; vyhněte se používání slova \"zde\" (proč?)<br>\r\n<b>špatně:</b> Pro cizince vstupující na území ČR se vztahuje celá řada pravidel a výjimek, které popisuje na svých stránkách Ministerstvo vnitra ČR. Naleznete je <a href=\"#\">zde</a>. Přehled v angličtině je <a href=\"#\">zde</a>.<br>\r\n<b>dobře: </b> Pro cizince vstupující na území ČR se vztahuje <a href=\"#\">celá řada pravidel a výjimek</a> (<a href=\"#\">anglicky</a>), které popisuje na svých stránkách Ministerstvo vnitra ČR."
 required: false
 translatable: true
 default_value: {  }

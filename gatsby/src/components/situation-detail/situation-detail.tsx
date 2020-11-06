@@ -5,6 +5,8 @@ import { Room, Event } from '@material-ui/icons';
 import Container from '@/components/container';
 import Link from '@/components/link';
 import Breadcrumb from '@/components/breadcrumb';
+import Headline from '@/components/headline';
+import I18n from '@/components/i18n';
 
 import styles from './situation-detail.module.scss';
 import Accordion from '../accordion';
@@ -22,17 +24,23 @@ interface Link {
 
 interface IProps {
   situation: ISituation;
+  type: string;
 }
 
-const SituationDetail: React.FC<IProps> = ({ situation }) => {
+const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
   return (
     <div className={styles.situationDetail}>
       <Container>
-        <div className="mt-1">
+        <div className="pt-1">
           <Breadcrumb
             items={[
-              // TODO: add localized title
-              { title: 'Domů', url: '/' },
+              { title: I18n('home'), url: '/' },
+              {
+                title: I18n(
+                  type === 'measure' ? 'current_measures' : 'life_situations',
+                ),
+                url: I18n(`slug_${type}s`),
+              },
               {
                 title: situation.relationships?.situation_type?.name,
                 url: situation.relationships?.situation_type?.path?.alias,
@@ -42,8 +50,9 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             variant="inverse"
           />
         </div>
-
-        <h2 className="text-white pt-2">{situation.title}</h2>
+        <div className="mt-3">
+          <Headline>{situation.title}</Headline>
+        </div>
         <article className="bg-white rounded p-2 pb-3 mb-1">
           <div
             dangerouslySetInnerHTML={{
@@ -51,7 +60,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             }}
           />
 
-          {situation.links.length ? (
+          {situation.links?.length ? (
             <div className="mt-1">
               <h3 className="mb-1 color-blue-dark">
                 Související odkazy a zdroje
@@ -70,9 +79,11 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             ''
           )}
 
-          {situation.relationships.region.length ? (
+          {situation.relationships?.region.length ? (
             <div className="mt-2">
-              <h3 className="mb-1 color-blue-dark">Lokalita a platnost</h3>
+              <h3 className="mb-1 color-blue-dark">
+                {I18n('location_validity')}
+              </h3>
               <div className="d-flex align-items-center color-blue mb-1">
                 <Room />
                 &nbsp;
@@ -107,11 +118,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
 
         {situation.questions_answers?.length ? (
           // TODO: localize
-          <ContentBox
-            variant="blue"
-            title="Časté dotazy k tomuto tématu"
-            boldedTitleCount={2}
-          >
+          <ContentBox variant="blue" title={I18n('faq')} boldedTitleCount={2}>
             <Accordion
               data={situation.questions_answers.map((item) => ({
                 title: item.question,

@@ -1,8 +1,6 @@
-import {
-  AccountBalanceWalletOutlined,
-  KeyboardArrowRight,
-} from '@material-ui/icons';
+import { KeyboardArrowRight } from '@material-ui/icons';
 import Link from '@/components/link';
+import ContentIcon from '@/components/content-icon/content-icon';
 import React, { FC } from 'react';
 
 import styles from './category-item.module.scss';
@@ -10,13 +8,13 @@ import styles from './category-item.module.scss';
 type Props = {
   name: string;
   path: string;
+  iconCode: string;
 };
 
-const CategoryItem: FC<Props> = ({ name, path }) => {
+const CategoryItem: FC<Props> = ({ name, path, iconCode }) => {
   return (
-    <Link to={path} className={styles.categoryItem}>
-      {/* TODO: Replace with actual icons */}
-      <AccountBalanceWalletOutlined className={styles.categoryItemIcon} />
+    <Link to={path} className={styles.categoryItem + ' py-1'}>
+      <ContentIcon className={styles.categoryItemIcon} code={iconCode} />
       <span className={styles.categoryItemTitle}>{name}</span>
       <KeyboardArrowRight style={{ fontSize: 16 }} className="color-yellow" />
     </Link>

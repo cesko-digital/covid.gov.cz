@@ -1,0 +1,18 @@
+name: "Deploy"
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    name: Build Gatsby
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        working-directory: "gatsby"
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: "gh-pages"
+

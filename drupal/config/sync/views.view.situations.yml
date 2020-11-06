@@ -5,13 +5,16 @@ dependencies:
   config:
     - field.storage.node.field_region
     - field.storage.node.field_situation_ref_measures
+    - field.storage.node.field_situation_type
     - field.storage.node.field_valid_from
     - field.storage.node.field_valid_to
     - node.type.situation
     - system.menu.covid
+    - taxonomy.vocabulary.area
   module:
     - datetime
     - node
+    - taxonomy
     - user
 id: situations
 label: 'Covid - Situations'
@@ -202,6 +205,69 @@ display:
           field_api_classes: false
           entity_type: node
           entity_field: title
+          plugin_id: field
+        field_situation_type:
+          id: field_situation_type
+          table: node__field_situation_type
+          field: field_situation_type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Okruh
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
         field_valid_from:
           id: field_valid_from
@@ -600,6 +666,7 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
+          group: 1
         title:
           id: title
           table: node_field_data
@@ -645,6 +712,55 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: string
+        field_situation_type_target_id:
+          id: field_situation_type_target_id
+          table: node__field_situation_type
+          field: field_situation_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_situation_type_target_id_op
+            label: Okruh
+            description: ''
+            use_operator: false
+            operator: field_situation_type_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: area
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+              reviewer: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: textfield
+          limit: true
+          vid: area
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
         langcode:
           id: langcode
           table: node_field_data
@@ -711,6 +827,10 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -718,11 +838,13 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_region'
         - 'config:field.storage.node.field_situation_ref_measures'
+        - 'config:field.storage.node.field_situation_type'
         - 'config:field.storage.node.field_valid_from'
         - 'config:field.storage.node.field_valid_to'
   page:
@@ -749,10 +871,12 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_region'
         - 'config:field.storage.node.field_situation_ref_measures'
+        - 'config:field.storage.node.field_situation_type'
         - 'config:field.storage.node.field_valid_from'
         - 'config:field.storage.node.field_valid_to'

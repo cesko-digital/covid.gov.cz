@@ -14,7 +14,7 @@ const Page: React.FC<IProps> = ({ data }) => {
   const linksData = data.situation.relationships.related_situations;
   return (
     <Layout>
-      <SituationDetail situation={data.situation} />
+      <SituationDetail situation={data.situation} type="situation" />
       <Container>
         {/* hide this box if no relevant topics exist */}
         {linksData.length > 0 ? (

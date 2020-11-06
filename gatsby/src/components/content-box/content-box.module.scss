@@ -33,7 +33,11 @@
     background: $white;
 
     .contentBoxTitle {
-      color: #2b4762;
+      color: $theme-blue-dark;
+    }
+
+    .contentBoxDescription {
+      color: $theme-blue-dark;
     }
   }
 

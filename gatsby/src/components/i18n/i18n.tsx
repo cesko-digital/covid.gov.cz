@@ -1,14 +1,20 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { globalHistory } from '@reach/router';
+import { useLocation } from '@reach/router';
 
-var glang = 'cs';
-const path = globalHistory.location.pathname;
-if (path.replace(/^\/(\w\w)(\/.*)?$/g, '$1') === 'en') {
-  glang = 'en';
-}
+const gLang = (): string => {
+  var glang = 'cs';
+  const location = useLocation();
+  const path = location.pathname;
 
-export default function I18n(id: string, lang?: string) {
-  lang = lang || glang;
+  if (path.replace(/^\/(\w\w)(\/.*)?$/g, '$1') === 'en') {
+    glang = 'en';
+  }
+
+  return glang;
+};
+
+const I18n = (id: string, lang?: string) => {
+  lang = lang || gLang();
   const I18nObject = useStaticQuery(
     graphql`
       query I18nQuery {
@@ -32,12 +38,14 @@ export default function I18n(id: string, lang?: string) {
   }
 
   return I18nArray[0].target;
-}
+};
 
-export function TRoute(route: string, lang?: string) {
-  lang = lang || glang;
+export default I18n;
+
+export const TRoute = (route: string = '', lang?: string): string => {
+  lang = lang || gLang();
   route = route === '' ? '/' : route; // todo: translate current page using drupal_internal__tid
   route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2');
   const add = lang === 'cs' ? '' : '/' + lang;
   return add + route;
-}
+};

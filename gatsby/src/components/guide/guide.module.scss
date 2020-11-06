@@ -1,0 +1,37 @@
+/* purgecss start ignore */
+.guide {
+  margin: initial;
+  background-image: none;
+  background-color: #2362a2;
+  &--white {
+    background-color: #fff;
+  }
+}
+
+.guide-title {
+  font-size: 40px;
+  color: #fff;
+  &--blue {
+    color: #2b4762 !important;
+  }
+}
+
+.guide-description-text {
+  font-size: 15px;
+  color: #fff;
+  &--blue {
+    color: #2b4762;
+  }
+}
+
+.guide-btn {
+  & > button {
+    color: #2362a2;
+    background-color: #fff;
+  }
+  &--blue > button {
+    color: #fff !important;
+    background-color: #2362a2;
+  }
+}
+/* purgecss end ignore */
