@@ -7,6 +7,7 @@ import ContentBox from '../content-box';
 import Link from '../link';
 import MeasureList from '../measure-list';
 import SituationsBox from '../situations-box';
+import GuideItem from './guide-item';
 import classes from './guide.module.scss';
 
 interface IProps {
@@ -31,7 +32,7 @@ const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
         <div
           className={classNames(
             'guide',
-            'guide--hp',
+            'guide',
             'guide--visible',
             'mt-0',
             classes.guide,
@@ -49,110 +50,38 @@ const Guide: React.FC<IProps> = ({ items, title, buttonText, buttonHref }) => {
               </div>
               <div className="col-12 col-lg-9">
                 <div className="row boxes boxes--light boxes--eq">
-                  <div className="col-12 col-sm-6 col-lg-4 box">
-                    <div className="box__inner">
-                      <h3 className="box__title" style={{ height: '78px' }}>
-                        <a href="#" className="inverse">
-                          Odchod do&nbsp;starobního důchodu
-                        </a>
-                      </h3>
-                      <a
-                        href="#"
-                        className="btn btn-inverse btn--raw btn--more box__more"
-                      >
-                        Rodina
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-6 col-lg-4 box">
-                    <div className="box__inner">
-                      <h3 className="box__title" style={{ height: '78px' }}>
-                        <a href="#" className="inverse">
-                          Invalidita a&nbsp;žádost o&nbsp;invalidní důchod
-                        </a>
-                      </h3>
-                      <a
-                        href="#"
-                        className="btn btn-inverse btn--raw btn--more box__more"
-                      >
-                        Sociální zabezpečení
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-6 col-lg-4 box">
-                    <div className="box__inner">
-                      <h3 className="box__title" style={{ height: '78px' }}>
-                        <a href="#" className="inverse">
-                          Rodičovský příspěvek
-                        </a>
-                      </h3>
-                      <a
-                        href="#"
-                        className="btn btn-inverse btn--raw btn--more box__more"
-                      >
-                        Rodina
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-6 col-lg-4 box">
-                    <div className="box__inner">
-                      <h3 className="box__title" style={{ height: '78px' }}>
-                        <a href="#" className="inverse">
-                          Peněžitá pomoc v&nbsp;mateřství
-                        </a>
-                      </h3>
-                      <a
-                        href="#"
-                        className="btn btn-inverse btn--raw btn--more box__more"
-                      >
-                        Rodina
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-6 col-lg-4 box">
-                    <div className="box__inner">
-                      <h3 className="box__title" style={{ height: '78px' }}>
-                        <a href="#" className="inverse">
-                          Nemocenské - dočasná pracovní neschopnost zaměstnance
-                        </a>
-                      </h3>
-                      <a
-                        href="#"
-                        className="btn btn-inverse btn--raw btn--more box__more"
-                      >
-                        Sociální zabezpečení
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-12 col-sm-6 col-lg-4 box">
-                    <div className="box__inner">
-                      <h3 className="box__title" style={{ height: '78px' }}>
-                        <a href="#" className="inverse">
-                          Vydání cestovního dokladu
-                        </a>
-                      </h3>
-                      <a
-                        href="#"
-                        className="btn btn-inverse btn--raw btn--more box__more"
-                      >
-                        Občan a&nbsp;stát
-                      </a>
-                    </div>
-                  </div>
+                  {/* If is situation */}
+                  {isSituationBox &&
+                    (items as IArea[]).map((x) => {
+                      return (
+                        <GuideItem
+                          key={x.id}
+                          title={x.name}
+                          buttonUrl={x.path.alias}
+                          buttonText="Detail"
+                          description=""
+                        />
+                      );
+                    })}
+                  {/* If is measure */}
+                  {!isSituationBox &&
+                    (items as IMeasure[]).map((x) => {
+                      return (
+                        <GuideItem
+                          key={x.id}
+                          title={x.title}
+                          buttonUrl=""
+                          buttonText="Detail"
+                        />
+                      );
+                    })}
                 </div>
               </div>
             </div>
             <div className="row">
               <div className="col-12 col-lg-3">
                 <div className="guide__more">
-                  <a
-                    href="#"
-                    className="btn btn-outline-primary btn--color-white"
-                  >
-                    Zobrazit vše
-                  </a>
-
-                  <Link to={buttonHref}>
+                  <Link to={buttonHref} className="btn--color-white">
                     <Button text={buttonText} />
                   </Link>
                 </div>

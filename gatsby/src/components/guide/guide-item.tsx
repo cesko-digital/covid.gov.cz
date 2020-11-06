@@ -3,33 +3,28 @@ import Button from '../button';
 
 interface IProps {
   title: string;
-  description: string;
+  description?: string;
   buttonUrl: string;
-  varint: 'normal' | 'inverse';
+  varint?: 'normal' | 'inverse';
   buttonText: string;
 }
 
-const GuideItem: React.FC<IProps> = ({
-  title,
-  description,
-  buttonUrl,
-  buttonText,
-}) => {
+const GuideItem: React.FC<IProps> = ({ title, buttonUrl, buttonText }) => {
   return (
     <>
       <div className="col-12 col-sm-6 col-lg-4 box">
         <div className="box__inner">
           <h3 className="box__title" style={{ height: '78px' }}>
             <a href="#" className="inverse">
-              Odchod do&nbsp;starobního důchodu
+              {title}
             </a>
           </h3>
-          <Button variant="outline-yellow" href={buttonUrl}>
-            {buttonText}
-          </Button>
-          {/* <a href="#" className="btn btn-inverse btn--raw btn--more box__more">
-            Rodina
-          </a> */}
+          <Button
+            variant="outline-yellow"
+            href={buttonUrl}
+            text={buttonText}
+            className="btn-inverse"
+          />
         </div>
       </div>
     </>
