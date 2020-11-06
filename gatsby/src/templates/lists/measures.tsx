@@ -8,8 +8,6 @@ import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import LookingForSomething from '@/components/looking-for-something';
-import Pagination from '@/components/pagination';
-import usePagination from '@/hooks/usePagination';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
@@ -28,8 +26,6 @@ const Measures: React.FC<IProps> = ({ data }) => {
     callTitle,
     callDescription,
   } = data as any;
-
-  const { slicedItems, ...pagination } = usePagination(nodes);
 
   // todo add meta description
   return (
@@ -63,7 +59,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
       </Container>
       <Container className="mt-3">
         <ContentBox noPadding>
-          {slicedItems.map(
+          {nodes.map(
             (n) =>
               n.relationships.measure !== null && (
                 <CategoryItem
@@ -75,7 +71,6 @@ const Measures: React.FC<IProps> = ({ data }) => {
               ),
           )}
         </ContentBox>
-        <Pagination {...pagination} />
       </Container>
       <Container className="mt-3 mb-3">
         <LookingForSomething
