@@ -23,7 +23,7 @@ const SearchResults: React.FC<Props> = ({ results }) => {
               </a>
             </h3>
             {/* TODO: breadcrumbs */}
-            <p className={styles.searchResultsDesc}>{result.text}</p>
+            <p className={styles.searchResultsDesc}>HOla{result.text}</p>
           </ContentBox>
         );
       })}

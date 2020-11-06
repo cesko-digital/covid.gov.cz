@@ -112,6 +112,16 @@ const config = {
             title: (node) => node.title,
             path: (node) => node.path.alias,
           },
+          area: {
+            id: (node) => node.id,
+            title: (node) => node.name,
+            path: (node) => node.path.alias
+          },
+          measure: {
+            id: (node) => node.id,
+            title: (node) => node.title,
+            path: (node) => node.path.alias
+          }
         },
       },
     },

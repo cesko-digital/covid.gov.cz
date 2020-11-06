@@ -33,10 +33,12 @@ const SearchEngine: React.FC<IProps> = ({ children }) => {
   const index = useRef(Index.load<SearchResult>(data.siteSearchIndex.index));
 
   const handleSearch = (term: string) => {
-    const results = index.current
-      .search(term, { expand: true })
-      .map(({ ref }) => index.current.documentStore.getDoc(ref));
-    setResults(results);
+    if (data) {
+      const results = index.current
+        .search(term, { expand: true })
+        .map(({ ref }) => index.current.documentStore.getDoc(ref));
+      setResults(results);
+    }
   };
 
   return children({ onSearch: handleSearch, searchResults: results });

@@ -25,6 +25,22 @@ interface Props {
 
 export const locales = ['cs', 'en'];
 
+// const checkSearchResults = () => {
+//   const searchInput = document.querySelector('.search__input');
+//   const searchInputValue = searchInput[0].value;
+//   const searchList = document.querySelector('.search__results');
+
+//   if (searchInput) {
+//     searchInput.addEventListener('keyup', function () {
+//       if (searchInputValue === '') {
+//         searchList.classList.add('hidden');
+//       }
+//     });
+//   }
+// };
+
+// checkSearchResults();
+
 const Header: React.FC<Props> = ({ navItems }) => {
   const [isOpen, setOpen] = useState(false);
 
@@ -100,13 +116,18 @@ const Header: React.FC<Props> = ({ navItems }) => {
                     <div style={{ position: 'relative' }}>
                       <SearchBox onSearch={onSearch} />
                       <div
-                        style={{ position: 'absolute', background: 'white' }}
+                        className={classnames(
+                          'search__results',
+                          classes.search__results,
+                        )}
                       >
-                        {searchResults.map((searchItem) => (
-                          <div key={searchItem.id}>
-                            <Link to={searchItem.path}>{searchItem.title}</Link>
-                          </div>
-                        ))}
+                        {searchResults
+                          ? searchResults.map((searchItem) => (
+                              <Link key={searchItem.id} to={searchItem.path}>
+                                {searchItem.title}
+                              </Link>
+                            ))
+                          : ''}
                       </div>
                     </div>
                   )}
