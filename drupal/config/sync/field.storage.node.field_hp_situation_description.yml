@@ -1,0 +1,21 @@
+uuid: 9a2db0d1-51fa-407e-b571-a0d6321025fc
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_hp_situation_description
+field_name: field_hp_situation_description
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

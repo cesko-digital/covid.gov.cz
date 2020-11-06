@@ -1,10 +1,11 @@
-import { IPage, IQuery } from 'graphql-types'
-import { Helmet } from 'react-helmet'
-import React from 'react'
-import Container from '@/components/container'
-import { graphql } from 'gatsby'
-import Breadcrumb from '@/components/breadcrumb'
-import Layout from '@/layouts/default-layout'
+import { IPage, IQuery } from 'graphql-types';
+import { Helmet } from 'react-helmet';
+import React from 'react';
+import Container from '@/components/container';
+import { graphql } from 'gatsby';
+import Breadcrumb from '@/components/breadcrumb';
+import Layout from '@/layouts/default-layout';
+import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -14,19 +15,15 @@ const CustomPage: React.FC<IProps> = ({ data }) => {
   const page: IPage = data.page
   const homeTranslation = data.translation
 
+
   return (
     <Layout>
-      <Helmet title={page.title + ' | Covid Portal'} />
-
-      <Container className='mb-4'>
-        <div className='mt-2'>
+      <Helmet title={page.title + ' | ' + I18n('covid_portal').toUpperCase()} />
+      <Container className="mb-4">
+        <div className="pt-1">
           <Breadcrumb
-            items={[
-              // Todo: add localized title
-              { title: homeTranslation.target, url: '/' },
-              page.title
-            ]}
-            variant='inverse'
+            items={[{ title: I18n('home'), url: '/' }, page.title]}
+            variant="inverse"
           />
         </div>
         <h1 className="text-white mt-2 h2 font-weight-bold">{page.title}</h1>

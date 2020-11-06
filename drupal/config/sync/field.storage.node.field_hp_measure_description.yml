@@ -1,0 +1,21 @@
+uuid: fb495dfe-dbfe-40af-89e9-b9fba01ea83a
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_hp_measure_description
+field_name: field_hp_measure_description
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 6
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

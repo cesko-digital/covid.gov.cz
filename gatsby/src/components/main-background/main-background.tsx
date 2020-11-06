@@ -8,7 +8,11 @@ interface IProps {
 }
 
 const MainBackground: React.FC<IProps> = ({ src, alt }) => {
-  return <img className={styles.mainBackground} src={src} alt={alt} />;
+  return (
+    <div className={styles.mainBackground}>
+      <img src={src} alt={alt} />
+    </div>
+  );
 };
 
 export default MainBackground;

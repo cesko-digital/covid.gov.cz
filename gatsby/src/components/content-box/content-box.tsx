@@ -43,7 +43,7 @@ const ContentBox: React.FC<Props> = ({
           <h2
             className={styles.contentBoxTitle}
             dangerouslySetInnerHTML={{
-              __html: title.replace(/<\/?p>/g, ''),
+              __html: title,
             }}
           />
         )}

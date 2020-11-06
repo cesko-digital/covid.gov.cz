@@ -18,11 +18,8 @@ const DefaultLayout: React.FC = ({ children }) => {
           { label: I18n('current_measures'), to: I18n('slug_measures') }
         ]}
       />
-      <main>
-        <MainBackground
-          src='/images/main-content-mobile-bg.jpg'
-          alt='Covid Portal'
-        />
+      <main className={styles.main}>
+        <MainBackground src="/images/main-bg_1920px.jpg" alt="COVID PORTAL IMG" />
         <div className={styles.mainInner}>{children}</div>
       </main>
       <Footer />
