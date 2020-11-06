@@ -56,8 +56,8 @@ const Guide: React.FC<IProps> = ({
               <Col col={12} colLg={3}>
                 <div>
                   <h2
-                    className={classNames('guide__title', {
-                      [classes.guideTitle]: variant === 'white',
+                    className={classNames('guide__title', classes.guideTitle, {
+                      [classes.guideTitleBlue]: variant === 'white',
                     })}
                     dangerouslySetInnerHTML={{ __html: title }}
                   />

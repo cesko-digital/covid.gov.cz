@@ -64,7 +64,7 @@ const GuideItem: React.FC<IProps> = ({
           )}
           {description && (
             <p
-              className={classNames(classes.guideItemDescriptionTextBlue, {
+              className={classNames(classes.guideItemDescriptionText, {
                 [classes.guideItemDescriptionTextBlue]: variant === 'white',
               })}
             >
