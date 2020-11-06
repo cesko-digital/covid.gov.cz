@@ -5,6 +5,9 @@ import Col from '../col';
 import ContentIcon from '../content-icon';
 import classes from './guide-item.module.scss';
 
+import Time from '@/components/time';
+import I18n from '@/components/i18n';
+
 interface IProps {
   title: string;
   description?: string;
@@ -26,6 +29,7 @@ const GuideItem: React.FC<IProps> = ({
   description,
   area,
   validFrom,
+  validTo,
 }) => {
   return (
     <>
@@ -48,7 +52,7 @@ const GuideItem: React.FC<IProps> = ({
               {title}
             </h3>
           </div>
-          {(area || validFrom) && (
+          {(area || validFrom || validTo) && (
             <div
               className={classNames(
                 'd-flex',
@@ -59,7 +63,14 @@ const GuideItem: React.FC<IProps> = ({
               )}
             >
               <p>{area}</p>
-              <p>{validFrom}</p>
+              <p>
+                {validFrom && (
+                  <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+                )}
+                {validTo && (
+                  <Time datetime={validTo} prefix={`${I18n('to')} `} />
+                )}
+              </p>
             </div>
           )}
           {description && (

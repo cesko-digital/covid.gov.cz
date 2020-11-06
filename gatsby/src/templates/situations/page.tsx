@@ -50,9 +50,9 @@ export const query = graphql`
       path {
         alias
       }
-      changed(formatString: "D. M. YYYY HH:mm")
-      valid_from(formatString: "D. M. YYYY HH:mm")
-      valid_to(formatString: "D. M. YYYY HH:mm")
+      changed
+      valid_from
+      valid_to
     }
   }
 `;

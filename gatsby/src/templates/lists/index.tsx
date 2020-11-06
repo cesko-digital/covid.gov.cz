@@ -86,8 +86,8 @@ export const query = graphql`
           id
           title
           norm
-          valid_from(formatString: "D. M. YYYY HH:mm")
-          valid_to(formatString: "D. M. YYYY HH:mm")
+          valid_from
+          valid_to
           path {
             alias
           }

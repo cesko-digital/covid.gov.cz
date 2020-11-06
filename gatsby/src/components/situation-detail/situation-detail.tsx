@@ -6,6 +6,7 @@ import Container from '@/components/container';
 import Link from '@/components/link';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
+import Time from '@/components/time';
 import I18n from '@/components/i18n';
 
 import styles from './situation-detail.module.scss';
@@ -61,10 +62,8 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
           />
 
           {situation.links?.length ? (
-            <div className="mt-1">
-              <h3 className="mb-1 color-blue-dark">
-                Související odkazy a zdroje
-              </h3>
+            <div className="mt-2">
+              <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
               <div>
                 {situation.links.map((link, index) => (
                   <div key={index}>
@@ -103,8 +102,19 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
               <Event />
               &nbsp;
               <span className="text-uppercase font-weight-medium">
-                {situation.valid_from && `Od ${situation.valid_from} `}
-                {situation.valid_to && `Do ${situation.valid_to}`}
+                {situation.valid_from && (
+                  <Time
+                    datetime={situation.valid_from}
+                    prefix={`${I18n('from')} `}
+                  />
+                )}
+
+                {situation.valid_to && (
+                  <Time
+                    datetime={situation.valid_to}
+                    prefix={`${I18n('to')} `}
+                  />
+                )}
               </span>
             </div>
           ) : (

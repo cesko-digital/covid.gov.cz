@@ -2,6 +2,7 @@ import React from 'react';
 import Link from '@/components/link';
 import Button from '@/components/button';
 import I18n from '@/components/i18n';
+import Time from '@/components/time';
 import styles from './measure-list-card.module.scss';
 
 interface IProps {
@@ -32,9 +33,10 @@ const MeasureListCard: React.FC<IProps> = ({
             {I18n('applies_for')} {area}
           </div>
           <div className={styles.measureListCardDetail}>
-            {`${validFrom ? `${I18n('from')} ${validFrom} ` : ''}${
-              validTo ? `${I18n('to')} ${validTo}` : ''
-            }`}
+            {validFrom && (
+              <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+            )}
+            {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
           </div>
         </div>
         <div>
