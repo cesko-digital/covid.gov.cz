@@ -3,10 +3,10 @@ import { graphql } from 'gatsby';
 import { IQuery } from 'graphql-types';
 import Container from '@/components/container';
 import Headline from '@/components/headline';
-import ListCard from '@/components/list-card';
 import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
+import MeasureListCard from '@/components/list-card/measure-list-card';
 
 interface IProps {
   data: IQuery;
@@ -31,18 +31,17 @@ const Home: React.FC<IProps> = ({ data }) => {
           <Headline>{taxonomyTermMeasureType.name}</Headline>
         </div>
         <div>
-          {taxonomyTermMeasureType.relationships?.measure?.map(
-            ({ id, title, norm, path }) => {
-              return (
-                <ListCard
-                  title={title}
-                  description={norm}
-                  key={`taxonomyTermMeasureType-list-item-${id}`}
-                  link={path?.alias}
-                />
-              );
-            },
-          )}
+          {taxonomyTermMeasureType.relationships?.measure?.map((m) => (
+            <MeasureListCard
+              key={`taxonomyTermMeasureType-list-item-${m.id}`}
+              title={m.title}
+              description={m.norm}
+              link={m.path?.alias}
+              validFrom={m.valid_from}
+              validTo={m.valid_to}
+              area={m.relationships?.region?.map((r) => r.name).join(' ,')}
+            />
+          ))}
         </div>
       </Container>
     </Layout>
@@ -56,9 +55,16 @@ export const query = graphql`
       name
       relationships {
         measure {
+          valid_from
+          valid_to
           id
-          title
           norm
+          title
+          relationships {
+            region {
+              name
+            }
+          }
           path {
             alias
           }
