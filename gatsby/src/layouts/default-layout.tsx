@@ -24,7 +24,7 @@ const DefaultLayout: React.FC = ({ children }) => {
       <main className={styles.main}>
         <MainBackground
           src="/images/main-content-mobile-bg.jpg"
-          alt="Covid Portal"
+          alt={I18n('covid_portal')}
         />
         <div className={styles.mainInner}>{children}</div>
       </main>

@@ -28,13 +28,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet
-        title={
-          I18n('situations_overview') +
-          ' | ' +
-          I18n('covid_portal').toUpperCase()
-        }
-      />
+      <Helmet title={I18n('situations_overview')} />
       <Container>
         <div className="pt-1">
           <Breadcrumb

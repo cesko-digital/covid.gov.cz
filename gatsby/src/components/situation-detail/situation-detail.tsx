@@ -79,7 +79,9 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
 
           {situation.relationships?.region.length ? (
             <div className="mt-2">
-              <h3 className="mb-1 color-blue-dark">Lokalita a platnost</h3>
+              <h3 className="mb-1 color-blue-dark">
+                {I18n('location_validity')}
+              </h3>
               <div className="d-flex align-items-center color-blue mb-1">
                 <Room />
                 &nbsp;
@@ -114,11 +116,7 @@ const SituationDetail: React.FC<IProps> = ({ situation, type }) => {
 
         {situation.questions_answers?.length ? (
           // TODO: localize
-          <ContentBox
-            variant="blue"
-            title="Časté dotazy k tomuto tématu"
-            boldedTitleCount={2}
-          >
+          <ContentBox variant="blue" title={I18n('faq')} boldedTitleCount={2}>
             <Accordion
               data={situation.questions_answers.map((item) => ({
                 title: item.question,

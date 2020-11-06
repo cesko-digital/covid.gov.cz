@@ -28,9 +28,7 @@ const Home: React.FC<IProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet
-        title={I18n('home') + ' | ' + I18n('covid_portal').toUpperCase()}
-      />
+      <Helmet title={I18n('covid_portal')} />
       <Container className="pt-3">
         <ContentBox
           title={situation_label.processed
