@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ data }) => {
-  const { area } = data;
+  const { area, allArea } = data;
 
   const situations = area.relationships?.situation ?? [];
 
@@ -76,6 +76,12 @@ export const query = graphql`
             alias
           }
         }
+      }
+    }
+    allArea {
+      nodes {
+        id
+        name
       }
     }
   }
