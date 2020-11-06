@@ -36,9 +36,7 @@ const Measure: React.FC<Props> = ({
             {validFrom && (
               <Time datetime={validFrom} prefix={`${I18n('from')} `} />
             )}
-            {validTo && (
-              <Time datetime={validFrom} prefix={`${I18n('from')} `} />
-            )}
+            {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
           </div>
         </div>
         <Link to={link} label={I18n('more')}>
