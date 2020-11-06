@@ -18,17 +18,23 @@ const LookingForSomething: React.FC<IProps> = ({
   return (
     <div className={classes.container}>
       <section className={classes.section}>
-        <header className={classes.header}>{searchingHeader}</header>
+        <header
+          className={classes.header}
+          dangerouslySetInnerHTML={{ __html: searchingHeader }}
+        />
         <p className={classes.description}>{searchingDescription}</p>
       </section>
 
       <hr className={classes.separator} />
 
       <section className={classes.section}>
-        <Phone fontSize="large" className="mr-2" />
+        <Phone fontSize="large" className="mr-2 text-decoration-none" />
         <header className={classes.header}>
           {callHeader}
-          &nbsp;<strong><a href="tel:1221">1121</a></strong>
+          &nbsp;
+          <strong>
+            <a href="tel:1221">1121</a>
+          </strong>
         </header>
         <p className={classes.description}>{callDescription}</p>
       </section>
