@@ -67,6 +67,7 @@ display:
             name: name
             status: status
             langcode: langcode
+            field_ref_icon: field_ref_icon
             operations: operations
           info:
             name:
@@ -84,6 +85,13 @@ display:
               empty_column: false
               responsive: ''
             langcode:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_ref_icon:
               sortable: false
               default_sort_order: asc
               align: ''
