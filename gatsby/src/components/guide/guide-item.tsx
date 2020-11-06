@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '../button';
 import Col from '../col';
 import ContentIcon from '../content-icon';
+import Link from '../link';
 import classes from './guide-item.module.scss';
 
 interface IProps {
@@ -25,6 +26,7 @@ const GuideItem: React.FC<IProps> = ({
   variant,
   description,
   area,
+  validTo,
   validFrom,
 }) => {
   return (
@@ -48,7 +50,7 @@ const GuideItem: React.FC<IProps> = ({
               {title}
             </h3>
           </div>
-          {(area || validFrom) && (
+          {(area || validFrom || validTo) && (
             <div
               className={classNames(
                 'd-flex',
@@ -60,6 +62,7 @@ const GuideItem: React.FC<IProps> = ({
             >
               <p>{area}</p>
               <p>{validFrom}</p>
+              <p>{validTo}</p>
             </div>
           )}
           {description && (
@@ -72,15 +75,16 @@ const GuideItem: React.FC<IProps> = ({
               {description}
             </p>
           )}
-          <Button
-            variant="outline-yellow"
-            href={buttonUrl}
-            text={buttonText}
-            linkTitle={title}
-            className={classNames(classes.guideItemBtn, {
-              [classes.guideItemBtnBlue]: variant === 'white',
-            })}
-          />
+          <Link to={buttonUrl} label={buttonText}>
+            <Button
+              variant="outline-yellow"
+              text={buttonText}
+              linkTitle={title}
+              className={classNames(classes.guideItemBtn, {
+                [classes.guideItemBtnBlue]: variant === 'white',
+              })}
+            />
+          </Link>
         </div>
       </Col>
     </>
