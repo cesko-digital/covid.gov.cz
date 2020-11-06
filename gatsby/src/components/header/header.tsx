@@ -35,6 +35,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
 
   return (
     <div className={classes.header} role="banner">
+      <div className={classes.gradient} />
       <Container>
         <Row alignItems="center" className={classes.header__inner}>
           {/* LOGO */}

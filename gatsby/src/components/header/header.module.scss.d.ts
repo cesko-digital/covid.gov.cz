@@ -1,4 +1,5 @@
 export const header: string;
+export const gradient: string;
 export const header__inner: string;
 export const headerInner: string;
 export const navigation: string;
