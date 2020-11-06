@@ -13,7 +13,6 @@ interface IProps {
 
 const CustomPage: React.FC<IProps> = ({ data }) => {
   const page: IPage = data.page;
-  // const homeTranslation = data.translation;
 
   return (
     <Layout>
