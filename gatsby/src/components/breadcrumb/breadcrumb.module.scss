@@ -4,4 +4,8 @@
 
 .breadcrumbItem {
   display: block !important;
+
+  &.breadcrumbItemActive {
+    color: #ecae1a;
+  }
 }
