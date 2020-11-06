@@ -146,7 +146,7 @@ const Guide: React.FC<IProps> = ({
       {isSituationBox ? (
         <SituationsBox situations={items} />
       ) : (
-        <MeasureList measures={items} />
+        <MeasureList measures={items} descriptions={itemDescriptions} />
       )}
     </ContentBox>
   );

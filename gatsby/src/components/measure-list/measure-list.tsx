@@ -5,9 +5,10 @@ import Measure from './measure';
 
 interface Props {
   measures: IMeasure[];
+  descriptions?: string[];
 }
 
-const MeasureList: React.FC<Props> = ({ measures }) => {
+const MeasureList: React.FC<Props> = ({ measures, descriptions }) => {
   const isMobile = useMobile();
 
   const maxItems = isMobile ? 3 : 6;
@@ -16,19 +17,17 @@ const MeasureList: React.FC<Props> = ({ measures }) => {
     <>
       {measures
         .slice(0, maxItems)
-        .map(
-          ({ id, title, path, valid_from, valid_to, norm, relationships }) => (
-            <Measure
-              key={id}
-              title={title}
-              description={norm}
-              validFrom={valid_from}
-              validTo={valid_to}
-              link={path.alias}
-              area={relationships.region.map((item) => item.name).join(', ')}
-            />
-          ),
-        )}
+        .map(({ id, title, path, valid_from, valid_to, relationships }, i) => (
+          <Measure
+            key={id}
+            title={title}
+            description={descriptions[i] ?? ''}
+            validFrom={valid_from}
+            validTo={valid_to}
+            link={path.alias}
+            area={relationships.region.map((item) => item.name).join(', ')}
+          />
+        ))}
     </>
   );
 };
