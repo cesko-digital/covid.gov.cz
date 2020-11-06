@@ -1,7 +1,8 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
 
-function gLang() {
+
+const gLang = (): string => {
   var glang = 'cs';
   const location = useLocation();
   const path = location.pathname;
@@ -11,9 +12,10 @@ function gLang() {
   }
 
   return glang;
-}
+};
 
-export default function I18n(id: string, lang?: string) {
+const I18n = (id: string, lang?: string) => {
+
   lang = lang || gLang();
   const I18nObject = useStaticQuery(
     graphql`
@@ -38,12 +40,15 @@ export default function I18n(id: string, lang?: string) {
   }
 
   return I18nArray[0].target;
-}
+};
 
-export function TRoute(route: string, lang?: string) {
+export default I18n;
+
+export const TRoute = (route: string, lang?: string): string => {
+
   lang = lang || gLang();
   route = route === '' ? '/' : route; // todo: translate current page using drupal_internal__tid
   route = route.replace(/^\/(\w\w)(\/.*)?$/g, '$2');
   const add = lang === 'cs' ? '' : '/' + lang;
   return add + route;
-}
+};
