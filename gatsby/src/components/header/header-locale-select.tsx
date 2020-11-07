@@ -5,12 +5,20 @@ import Link from '@/components/link';
 
 import classes from './header-locale-select.module.scss';
 
-interface Props {
-  activeLocale: string;
-  onLocaleChange: (locale: string) => void;
+export interface ILanguageVariants {
+  [key: string]: string;
 }
 
-export const HeaderLocaleSelect: React.FC<Props> = () => {
+interface IProps {
+  languageVariants: ILanguageVariants;
+
+  /* activeLocale: string;
+  onLocaleChange: (locale: string) => void; */
+}
+
+export const HeaderLocaleSelect: React.FC<IProps> = ({ languageVariants }) => {
+  const variants = languageVariants || {};
+  console.log(variants);
   return (
     <div
       className={classnames(
@@ -20,12 +28,12 @@ export const HeaderLocaleSelect: React.FC<Props> = () => {
     >
       {TRoute('/') !== '/' ? (
         <span>
-          <Link to="/" noTR className="text-white">
+          <Link to={variants.cs || '/'} noTR className="text-white">
             CZ
           </Link>
         </span>
       ) : (
-        <Link to="/en/" noTR className="text-white">
+        <Link to={variants.en || '/en/'} noTR className="text-white">
           EN
         </Link>
       )}

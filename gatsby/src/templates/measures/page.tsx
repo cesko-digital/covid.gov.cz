@@ -1,18 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IMeasurePageQueryQuery } from 'graphql-types';
+import { IMeasurePageQueryQuery, ISitePageContext } from 'graphql-types';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import MeasureDetail from '@/components/measure-detail';
+
 interface IProps {
   data: IMeasurePageQueryQuery;
+  pageContext: ISitePageContext;
 }
 
-const Page: React.FC<IProps> = ({ data }) => {
+const Page: React.FC<IProps> = ({ data, pageContext }) => {
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={data.measure.title}
         description={
