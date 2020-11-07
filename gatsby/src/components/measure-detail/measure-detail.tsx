@@ -29,6 +29,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         measure.title,
       ]}
       title={measure.title}
+      subtitle={measure.norm}
       processedContent={measure?.content?.processed}
     >
       {measure.relationships.region.length ? (
@@ -70,6 +71,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
 export const query = graphql`
   fragment MeasureDetail on measure {
     title
+    norm
     content: description {
       processed
     }
