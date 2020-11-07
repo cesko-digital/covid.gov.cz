@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery } from 'graphql-types';
+import { IMeasurePageQueryQuery } from 'graphql-types';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import SituationDetail from '@/components/situation-detail';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
+import MeasureDetail from '@/components/measure-detail';
 interface IProps {
-  data: IQuery;
+  data: IMeasurePageQueryQuery;
 }
 
 const Page: React.FC<IProps> = ({ data }) => {
@@ -28,8 +28,8 @@ const Page: React.FC<IProps> = ({ data }) => {
         defaultTitle={data.measure.title}
         isBlogPost
         body={
-          (data.measure as any).content
-            ? (data.measure as any).content.processed
+          data.measure.content
+            ? data.measure.content.processed
             : data.measure.meta_description
         }
         description={data.measure.meta_description}
@@ -40,45 +40,26 @@ const Page: React.FC<IProps> = ({ data }) => {
           name: 'Portál veřejné správy',
         }}
       />
-      <SituationDetail situation={data.measure} type="measure" />
+      <MeasureDetail measure={data.measure} />
     </Layout>
   );
 };
 export default Page;
 
 export const query = graphql`
-  query($slug: String!) {
+  query MeasurePageQuery($slug: String!) {
     measure(path: { alias: { eq: $slug } }) {
       title
-      status
+      meta_description
       content: description {
         processed
-      }
-      links: source {
-        uri
-        title
-      }
-      relationships {
-        region {
-          name
-        }
-        situation_type: field_measure_type {
-          name
-          path {
-            alias
-          }
-        }
-        related_situations: situation {
-          title
-        }
       }
       path {
         alias
       }
       langcode
-      changed
       valid_from
-      valid_to
+      ...MeasureDetail
     }
   }
 `;

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import { IQuery } from 'graphql-types';
+import { IMeasureTypeQueryQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
@@ -11,7 +11,7 @@ import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
 interface IProps {
-  data: IQuery;
+  data: IMeasureTypeQueryQuery;
 }
 
 const Measures: React.FC<IProps> = ({ data }) => {
@@ -19,7 +19,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
     allTaxonomyTermMeasureType: { nodes },
   } = data;
 
-  const { searchingTitle } = data as any;
+  const { searchingTitle } = data;
 
   // todo add meta description
   return (

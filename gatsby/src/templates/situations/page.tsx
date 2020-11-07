@@ -41,7 +41,7 @@ const Page: React.FC<IProps> = ({ data }) => {
           name: 'Portál veřejné správy',
         }}
       />
-      <SituationDetail situation={data.situation} type="situation" />
+      <SituationDetail situation={data.situation} />
       <Container className="pt-1">
         {/* hide this box if no relevant topics exist */}
         {linksData.length > 0 ? (

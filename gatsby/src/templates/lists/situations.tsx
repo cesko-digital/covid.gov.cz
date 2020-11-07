@@ -3,7 +3,7 @@ import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { IQuery } from 'graphql-types';
+import { ISituationTypeQueryQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
@@ -12,14 +12,14 @@ import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 
 interface IProps {
-  data: IQuery;
+  data: ISituationTypeQueryQuery;
 }
 
 const Situations: React.FC<IProps> = ({ data }) => {
   const {
     allArea: { nodes },
   } = data;
-  const { searchingTitle } = data as any;
+  const { searchingTitle } = data;
 
   // todo: add meta description
   return (
@@ -98,6 +98,7 @@ export const query = graphql`
       source: { eq: "still_searching_title" }
     ) {
       target
+      langcode
     }
     searchingDescription: translation(
       langcode: { eq: $langCode }
