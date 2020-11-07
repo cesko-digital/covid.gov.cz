@@ -1,0 +1,12 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.wrapper {
+  background-color: $theme-blue;
+  padding: 12px 0;
+  &.isMobile {
+    border-radius: 3px;
+  }
+  &.isDesktop {
+    max-width: 316px;
+  }
+}

@@ -1,16 +1,15 @@
 import React from 'react';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
-import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
 import { ISituationTypeQueryQuery, ISitePageContext } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
-import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
 
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
+import CategoryItemList from '@/components/category-item-list';
 
 interface IProps {
   data: ISituationTypeQueryQuery;
@@ -24,6 +23,16 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
 
   const collator = new Intl.Collator([pageContext.langCode]);
   nodes.sort((a, b) => collator.compare(a.name, b.name));
+
+  const listItems = nodes
+    .filter(({ relationships }) => relationships.situation !== null)
+    .map(({ id, name, path, relationships }) => ({
+      id,
+      name,
+      path: path.alias,
+      iconCode: relationships.field_ref_icon?.code,
+      isActive: path.alias === pageContext.slug,
+    }));
 
   // todo: add meta description
   return (
@@ -55,19 +64,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
           <Headline>{I18n('situations_overview')}</Headline>
         </div>
         <div className="mt-3">
-          <ContentBox noPadding>
-            {nodes.map(
-              (n) =>
-                n.relationships.situation !== null && (
-                  <CategoryItem
-                    key={n.id}
-                    name={n.name}
-                    path={n.path.alias}
-                    iconCode={n.relationships.field_ref_icon?.code}
-                  />
-                ),
-            )}
-          </ContentBox>
+          <CategoryItemList items={listItems} />
         </div>
       </Container>
     </Layout>
