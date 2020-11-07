@@ -1,3 +1,4 @@
+import * as path from 'path';
 const config = {
   siteMetadata: {
     siteUrl: `https://covid.gov.cz`,
@@ -39,6 +40,16 @@ const config = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(`src`, `images`),
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+
     {
       resolve: 'gatsby-plugin-seo',
       options: {
@@ -129,13 +140,6 @@ const config = {
           // Puts tracking script in the head instead of the body
           head: true,
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-N5LCQHK',
-        includeInDevelopment: false,
       },
     },
     {
