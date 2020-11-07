@@ -1,5 +1,7 @@
 name: "Deploy"
-on: [workflow_dispatch]
+on:
+  schedule:
+    - cron: '0 */2 * * *'
 
 jobs:
   build:
@@ -22,7 +24,8 @@ jobs:
           && sudo apt update && sudo apt install yarn -y
       - name: Build Gatsby
         run: |
-          yarn install \
+          export GATSBY_APPINSIGHTS_KEY=${{ secrets.GATSBY_APPINSIGHTS_KEY }} \
+          && yarn install \
           && yarn build \
         working-directory: gatsby
       - name: Checkout gh-pages
