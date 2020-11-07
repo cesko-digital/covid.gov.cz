@@ -4,21 +4,15 @@ import { TRoute } from '@/components/i18n';
 import Link from '@/components/link';
 
 import classes from './header-locale-select.module.scss';
-
-export interface ILanguageVariants {
-  [key: string]: string;
-}
+import {ISitePageContextLanguageVariants} from "graphql-types";
 
 interface IProps {
-  languageVariants: ILanguageVariants;
-
-  /* activeLocale: string;
-  onLocaleChange: (locale: string) => void; */
+  languageVariants: ISitePageContextLanguageVariants;
 }
 
 export const HeaderLocaleSelect: React.FC<IProps> = ({ languageVariants }) => {
   const variants = languageVariants || {};
-  console.log(variants);
+
   return (
     <div
       className={classnames(
