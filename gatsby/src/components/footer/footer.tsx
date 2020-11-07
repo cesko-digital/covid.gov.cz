@@ -1,13 +1,32 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import I18n from '../i18n';
+import I18n, { gLang } from '@/components/i18n';
 
 import styles from './footer.module.scss';
 import { graphql, useStaticQuery } from 'gatsby';
+import { IFooterLinksQuery } from 'graphql-types';
+
+const DRUPAL_INTERNAL_IDS = {
+  USEFUL_LINKS_1: '1',
+  USEFUL_LINKS_2: '2',
+  USEFUL_LINKS_3: '4',
+  COPYRIGHT: '3',
+};
 
 const Footer: React.FC = () => {
-  const { mainLinks, infoLinks, govLinks, copyright } = useStaticQuery(query);
+  const result = useStaticQuery<IFooterLinksQuery>(query);
+
+  const getContentByDrupalInternalId = (internalId: string) => {
+    const edge = result.allBlockContentBasicContent.edges.find(({ node }) => {
+      const matchesLanguage = node.langcode === gLang();
+      const matchesId = node.drupal_internal__id === internalId;
+      return matchesLanguage && matchesId;
+    });
+
+    return edge.node.content.processed;
+  };
+
   return (
     <div
       className={classnames(styles.footer, 'footer mt-md-4')}
@@ -27,7 +46,9 @@ const Footer: React.FC = () => {
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: mainLinks.content.processed,
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_2,
+                      ),
                     }}
                   />
                 </div>
@@ -37,7 +58,9 @@ const Footer: React.FC = () => {
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: infoLinks.content.processed,
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_1,
+                      ),
                     }}
                   />
                 </div>
@@ -47,7 +70,9 @@ const Footer: React.FC = () => {
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: govLinks.content.processed,
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_3,
+                      ),
                     }}
                   />
                 </div>
@@ -61,7 +86,9 @@ const Footer: React.FC = () => {
                   <div
                     className="footer__brand"
                     dangerouslySetInnerHTML={{
-                      __html: copyright.content.processed,
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.COPYRIGHT,
+                      ),
                     }}
                   />
                 </div>
@@ -77,37 +104,16 @@ const Footer: React.FC = () => {
 export default Footer;
 
 export const query = graphql`
-  query {
-    mainLinks: blockContentBasicContent(
-      drupal_id: { eq: "d7854489-f3b4-4d59-a81d-45bb85160a4c" }
-    ) {
-      drupal_id
-      content {
-        processed
-      }
-    }
-    infoLinks: blockContentBasicContent(
-      drupal_id: { eq: "c2dad689-63bf-4264-90da-f5ddbb782f4a" }
-    ) {
-      drupal_id
-      content {
-        processed
-      }
-    }
-    govLinks: blockContentBasicContent(
-      drupal_id: { eq: "9e2c7a80-53a8-41d5-991e-1b4ef5e980f9" }
-    ) {
-      drupal_id
-      content {
-        processed
-      }
-    }
-    copyright: blockContentBasicContent(
-      drupal_id: { eq: "b31103c8-7b58-414a-9911-9e537691fb43" }
-    ) {
-      drupal_id
-      content {
-        processed
+  query FooterLinks {
+    allBlockContentBasicContent {
+      edges {
+        node {
+          drupal_internal__id
+          langcode
+          content {
+            processed
+          }
+        }
       }
     }
   }
