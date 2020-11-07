@@ -1,8 +1,9 @@
 name: "Deploy"
 on:
-  - schedule:
-     - cron: '0 */2 * * *'
-  - workflow_dispatch
+  workflow_dispatch
+  schedule:
+   - cron: '0 */2 * * *'
+  
 
 jobs:
   build:
