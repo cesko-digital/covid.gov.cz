@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
 
 /**
@@ -39,4 +42,18 @@ function covid_node_presave(NodeInterface $entity) {
       $entity->set('field_faq_parser', NULL);
     }
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function covid_node_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  /** @var NodeInterface $entity */
+  // If node is already published, then allow only admins to delete it.
+  if ($operation === 'delete' && !in_array('administrator', $account->getRoles()) && $entity->isPublished()) {
+    return AccessResult::forbidden()
+      ->cachePerPermissions()
+      ->cachePerUser();
+  }
+  return AccessResult::neutral();
 }
