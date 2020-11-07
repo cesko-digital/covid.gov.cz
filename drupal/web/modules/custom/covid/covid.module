@@ -66,3 +66,14 @@ function covid_node_access(EntityInterface $entity, $operation, AccountInterface
   }
   return AccessResult::neutral();
 }
+
+/**
+ * Implements hook_editor_js_settings_alter
+ */
+function covid_editor_js_settings_alter(array &$settings) {
+  foreach ($settings['editor']['formats'] as $name => $value) {
+    $settings['editor']['formats'][$name]['editorSettings']['disableNativeSpellChecker'] = FALSE;
+    $settings['editor']['formats'][$name]['editorSettings']['removePlugins'] = 'liststyle,tabletools,scayt,menubutton,contextmenu,tableresize';
+    $settings['editor']['formats'][$name]['editorSettings']['browserContextMenuOnCtrl'] = FALSE;
+  }
+}
