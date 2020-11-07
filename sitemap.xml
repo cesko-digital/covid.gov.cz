@@ -253,6 +253,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/compensation/compensation-bonus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-culture-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-tourism</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/covid-bus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/impossibility-repay-loan-or-mortgage-citizen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-christmas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -271,7 +272,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/tracing-and-testing-faq/second-hand-contact</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/pravni-pomoc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/zamestnani/ztrata-zamestnani-socialni-situace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/eneschopenka</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -319,6 +319,7 @@
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/pravni-pomoc-socialni-situace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/osetrovne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/podpora-zamestnanosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/socialni-situace/ztrata-zamestnani-socialni-situace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kultura</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kultura/vouchery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kultura/divadla</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -544,7 +545,6 @@
 <url> <loc>https://covid.gov.cz/situace/restaurace/zahradky-terasy-zimni-zahrady</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-najemne-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/covid-bus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-sport-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/velky-liberacni-danovy-balicek</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/odlozeni-eet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -560,6 +560,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/kompenzacni-bonus-pro-osvc-dpp-dpc-male-sro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kultura-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-cestovni-ruch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/covid-bus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/nemoznost-splacet-uver-ci-hypoteku-kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/testovani-odber-vzorku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -605,6 +606,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/omezeni-prava-pokojne-se-shromazdovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/obecne-doporuceni-zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-zamestnavatelum-o-vyuzivani-prace-na-dalku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/zakaz-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/zakaz-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
