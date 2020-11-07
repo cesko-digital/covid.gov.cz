@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
 
-const gLang = (): string => {
+export const gLang = (): string => {
   var glang = 'cs';
   const location = useLocation();
   const path = location.pathname;
