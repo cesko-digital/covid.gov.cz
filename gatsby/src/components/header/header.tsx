@@ -10,7 +10,7 @@ import classes from './header.module.scss';
 
 import headerLogoCS from './header-logo-cs.svg';
 import headerLogoEN from './header-logo-en.svg';
-import { HeaderLocaleSelect, ILanguageVariants } from './header-locale-select';
+import { HeaderLocaleSelect } from './header-locale-select';
 import I18n, { TRoute } from '@/components/i18n';
 import { ISitePageContext } from 'graphql-types';
 
@@ -33,9 +33,6 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
     setOpen(!isOpen);
     document.body.style.overflow = isOpen ? 'unset' : 'hidden';
   }, [isOpen]);
-
-  const languageVariants = (pageContext as any)
-    .languageVariants as ILanguageVariants;
 
   const onUseLink = () => {
     document.body.style.overflow = 'unset';
@@ -171,7 +168,9 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
               </div>
             </div>
             {/* DESKTOP LOCALE SELECT */}
-            <HeaderLocaleSelect languageVariants={languageVariants} />
+            <HeaderLocaleSelect
+              languageVariants={pageContext.languageVariants}
+            />
           </Row>
         </Container>
       </div>
