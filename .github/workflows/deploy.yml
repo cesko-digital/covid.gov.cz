@@ -48,7 +48,9 @@ jobs:
         uses: rtCamp/action-slack-notify@master
         env:
           SLACK_COLOR: '#3278BD'
-          SLACK_ICON: https://covid.gov.cz/favicon-32x32.png
+          SLACK_ICON: https://covid.gov.cz/favicon.svg
           SLACK_USERNAME: "Nový build"
+          SLACK_MESSAGE: "Mame nový build @Honza Vlasák :tada:"
+          SLACK_FOOTER: ""
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: true
