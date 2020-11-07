@@ -15,14 +15,26 @@ const DefaultLayout: React.FC = ({ children }) => {
       mobileImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 80) {
-            ...GatsbyImageSharpFluid_withWebp
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }
       desktopImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }
