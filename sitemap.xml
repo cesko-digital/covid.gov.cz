@@ -234,9 +234,17 @@
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/students-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors/shopping</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/protection-virus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/mental-support-elderly</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/journeys-tests-or-doctor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/keeping-touch-family</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/dealing-official-matters</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/cviceni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/informovanost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/restaurants</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-self-employed-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-full-time-employeespeople-work-agreements</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/impossibility-repay-loan-or-mortgage-citizen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-christmas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -515,6 +523,7 @@
 <url> <loc>https://covid.gov.cz/situace/zahranici/prechod-zelene-hranice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/studenti-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/seniori/nakupy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/ochrana-pred-virem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/psychologicka-pomoc-pro-seniory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/cesta-na-testy-ci-za-lekarem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -522,12 +531,10 @@
 <url> <loc>https://covid.gov.cz/situace/seniori/vyrizovani-urednich-zalezitosti-seniori</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/cviceni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/informovanost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/seniori/nakupy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace/rezim-provozu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace/zahradky-terasy-zimni-zahrady</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-zamestnance-vcetne-dpp-dpc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/kompenzacni-bonus-pro-osvc-dpp-dpc-male-sro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kultura-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-cestovni-ruch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -544,6 +551,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/hmotna-nouze</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/najemne-prispevky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-osvc-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-zamestnance-vcetne-dpp-dpc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/nemoznost-splacet-uver-ci-hypoteku-kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/testovani-odber-vzorku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
