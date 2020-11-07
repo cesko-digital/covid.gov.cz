@@ -1,10 +1,7 @@
 import React from 'react';
 
-import { Room, Event } from '@material-ui/icons';
-
 import Container from '@/components/container';
 import Link from '@/components/link';
-import Time from '@/components/time';
 import I18n from '@/components/i18n';
 
 import Accordion from '../accordion';
@@ -12,12 +9,15 @@ import ContentBox from '../content-box';
 import { ISituationDetailFragment } from 'graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
+import RelatedMeasure from '../related-measure';
 
 interface IProps {
   situation: ISituationDetailFragment;
 }
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {
+  const hasRelatedLinks = Boolean(situation.links.length);
+  const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
   return (
     <>
       <TopicDetail
@@ -36,8 +36,18 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         title={situation.title}
         processedContent={situation?.content?.processed}
       >
-        {situation.links.length ? (
+        {hasRelatedMeasures && (
           <div className="mt-2">
+            <hr />
+            <h3 className="mb-1 color-blue-dark">Související opatření</h3>
+            {situation.relationships.measures.map((measure) => (
+              <RelatedMeasure key={measure.path.alias} measure={measure} />
+            ))}
+          </div>
+        )}
+        {hasRelatedLinks && (
+          <div className="mt-2">
+            <hr />
             <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
             <div>
               {situation.links.map((link, index) => (
@@ -49,48 +59,6 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
               ))}
             </div>
           </div>
-        ) : (
-          ''
-        )}
-
-        {situation.relationships?.region.length ? (
-          <div className="mt-2">
-            <h3 className="mb-1 color-blue-dark">
-              {I18n('location_validity')}
-            </h3>
-            <div className="d-flex align-items-center color-blue mb-1">
-              <Room />
-              &nbsp;
-              <span className="text-uppercase font-weight-medium">
-                {situation.relationships.region
-                  .map((item) => item.name)
-                  .join(', ')}
-              </span>
-            </div>
-          </div>
-        ) : (
-          ''
-        )}
-
-        {situation.valid_from || situation.valid_to ? (
-          <div className="d-flex align-items-center color-blue">
-            <Event />
-            &nbsp;
-            <span className="text-uppercase font-weight-medium">
-              {situation.valid_from && (
-                <Time
-                  datetime={situation.valid_from}
-                  prefix={`${I18n('from')} `}
-                />
-              )}
-
-              {situation.valid_to && (
-                <Time datetime={situation.valid_to} prefix={`${I18n('to')} `} />
-              )}
-            </span>
-          </div>
-        ) : (
-          ''
         )}
       </TopicDetail>
       <Container>
@@ -131,6 +99,9 @@ export const query = graphql`
         path {
           alias
         }
+      }
+      measures {
+        ...RelatedMeasure
       }
     }
     path {
