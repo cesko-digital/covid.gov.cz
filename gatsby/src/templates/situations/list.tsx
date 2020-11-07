@@ -9,6 +9,8 @@ import ListCard from '@/components/list-card';
 import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
+import useDesktop from '@/hooks/useDesktop';
+import ContentAccordionList from '@/components/content-accordion-list/content-accordion-list';
 
 interface IProps {
   data: IQuery;
@@ -16,6 +18,9 @@ interface IProps {
 
 const Home: React.FC<IProps> = ({ data }) => {
   const { area } = data;
+
+  const isDesktop = useDesktop();
+
   return (
     <Layout>
       <Seo
@@ -49,18 +54,23 @@ const Home: React.FC<IProps> = ({ data }) => {
         <div className="mt-3">
           <Headline>{area.name}</Headline>
         </div>
+
         <div>
-          {area.relationships?.situation?.map(
-            ({ id, title, meta_description, path }) => {
-              return (
-                <ListCard
-                  title={title}
-                  description={meta_description}
-                  key={`area-list-item-${id}`}
-                  link={path?.alias}
-                />
-              );
-            },
+          {isDesktop ? (
+            <ContentAccordionList items={area.relationships?.situation} />
+          ) : (
+            area.relationships?.situation?.map(
+              ({ id, title, meta_description, path }) => {
+                return (
+                  <ListCard
+                    title={title}
+                    description={meta_description}
+                    key={`area-list-item-${id}`}
+                    link={path?.alias}
+                  />
+                );
+              },
+            )
           )}
         </div>
       </Container>
@@ -80,6 +90,9 @@ export const query = graphql`
           meta_description
           path {
             alias
+          }
+          content {
+            processed
           }
         }
       }

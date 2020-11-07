@@ -5,13 +5,14 @@ import AccordionSection, {
 
 interface Props {
   data: Section[];
+  className?: string;
 }
 
-const Accordion: React.FC<Props> = ({ data }) => {
+const Accordion: React.FC<Props> = ({ data, className }) => {
   return (
     <>
       {data.map((item, index) => (
-        <AccordionSection key={index} {...item} />
+        <AccordionSection className={className} key={index} {...item} />
       ))}
     </>
   );

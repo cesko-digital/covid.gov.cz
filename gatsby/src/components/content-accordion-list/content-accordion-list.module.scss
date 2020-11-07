@@ -1,0 +1,15 @@
+.accordion-section {
+  &:not(:last-child) {
+    border-bottom: 1px solid #c7d5e1;
+  }
+}
+
+.accordion-list-title {
+  color: #2362a2;
+}
+
+.accordion-list-content {
+  h2 {
+    font-size: 1.8rem;
+  }
+}

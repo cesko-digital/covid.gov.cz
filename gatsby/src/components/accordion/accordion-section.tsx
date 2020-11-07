@@ -6,11 +6,12 @@ import styles from './accordion-section.module.scss';
 import Button from '@/components/button';
 
 export interface Section {
-  title: string;
-  text: string;
+  title: React.ReactChild;
+  text: React.ReactChild;
+  className?: string;
 }
 
-const AccordionSection: React.FC<Section> = ({ title, text }) => {
+const AccordionSection: React.FC<Section> = ({ title, text, className }) => {
   const [opened, setOpened] = useState(false);
 
   const toggleSection = useCallback(() => {
@@ -18,7 +19,7 @@ const AccordionSection: React.FC<Section> = ({ title, text }) => {
   }, [opened]);
 
   return (
-    <div className={styles.section}>
+    <div className={classNames(styles.section, className)}>
       <div
         className={classNames(
           styles.sectionHeading,
