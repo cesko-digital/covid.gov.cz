@@ -44,3 +44,11 @@ jobs:
         working-directory: gh-pages
         run: |
           git add -A && git commit -m "Build" && git push --force
+      - name: Send notification to Slack
+        uses: rtCamp/action-slack-notify@master
+        env:
+          SLACK_COLOR: '#3278BD'
+          SLACK_ICON: https://covid.gov.cz/favicon-32x32.png
+          SLACK_USERNAME: "Nový build"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          MSG_MINIMAL: true
