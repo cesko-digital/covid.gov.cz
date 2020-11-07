@@ -1,1 +1,1 @@
-export { default, PlaceMarker, TimeMarker } from './marker';
+export { default, RegionsMarker, TimeMarker } from './marker';

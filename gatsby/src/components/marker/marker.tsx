@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Room, Event } from '@material-ui/icons';
+import { IRegion } from 'graphql-types';
 import Time from '../time';
 import I18n from '../i18n';
 
@@ -18,8 +19,14 @@ const Marker: React.FC<IProps> = ({ icon, children }) => {
   );
 };
 
-export const PlaceMarker: React.FC = ({ children }) => (
-  <Marker icon={<Room />}>{children}</Marker>
+interface IRegionsMarkerProps {
+  regions: Pick<IRegion, 'name'>[];
+}
+
+export const RegionsMarker: React.FC<IRegionsMarkerProps> = ({ regions }) => (
+  <Marker icon={<Room />}>
+    {regions.map((region) => region.name).join(',')}
+  </Marker>
 );
 
 interface ITimeProps {

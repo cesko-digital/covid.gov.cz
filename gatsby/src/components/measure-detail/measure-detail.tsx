@@ -5,7 +5,7 @@ import I18n from '@/components/i18n';
 import { IMeasureDetailFragment } from 'graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
-import { PlaceMarker, TimeMarker } from '../marker';
+import { RegionsMarker, TimeMarker } from '../marker';
 
 interface IProps {
   measure: IMeasureDetailFragment;
@@ -36,9 +36,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         <div className="mt-2">
           <h3 className="mb-1 color-blue-dark">{I18n('location_validity')}</h3>
           {hasRegion && (
-            <PlaceMarker>
-              {measure.relationships.region.map((item) => item.name).join(', ')}
-            </PlaceMarker>
+            <RegionsMarker regions={measure.relationships.region} />
           )}
           {hasTimeConstraint && (
             <TimeMarker
