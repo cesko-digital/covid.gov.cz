@@ -103,8 +103,12 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 
   // index
-  var trArray = result.data.allTranslation.nodes;
+  const trArray = result.data.allTranslation.nodes;
   const languages = ['cs', 'en'];
+  const pageSpecs = [
+    ['slug_situations', situationTemplate],
+    ['slug_measures', measureTemplate],
+  ];
 
   languages.forEach((lang) => {
     const pathPrefix = lang === 'cs' ? '' : '/' + lang;
@@ -117,28 +121,26 @@ export const createPages: GatsbyNode['createPages'] = async ({
       },
     });
 
-    const situationSlug = trArray.filter((item) => {
-      return item.langcode === lang && item.source === 'slug_situations';
-    });
+    pageSpecs.forEach(([source, template]) => {
+      const slug = trArray.filter((item) => {
+        return item.langcode === lang && item.source === source;
+      })[0].target;
 
-    const measureSlug = trArray.filter((item) => {
-      return item.langcode === lang && item.source === 'slug_measures';
-    });
+      const languageVariants = trArray
+        .filter((item) => item.langcode != lang && item.source === source)
+        .reduce((acc, item) => {
+          acc[item.langcode] = (item.langcode === 'cs' ? '' : '/' + item.langcode) + item.target;
+          return acc;
+        }, {});
 
-    createPage({
-      path: pathPrefix + measureSlug[0].target,
-      component: measureTemplate,
-      context: {
-        langCode: lang,
-      },
-    });
-
-    createPage({
-      path: pathPrefix + situationSlug[0].target,
-      component: situationTemplate,
-      context: {
-        langCode: lang,
-      },
+      createPage({
+        path: pathPrefix + slug,
+        component: template,
+        context: {
+          langCode: lang,
+          languageVariants,
+        },
+      });
     });
   });
 
