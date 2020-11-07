@@ -52,20 +52,16 @@ function covid_node_access(EntityInterface $entity, $operation, AccountInterface
   // If node is already published, then allow only admins to delete it.
   if ($operation === 'delete' && !in_array('administrator', $account->getRoles()) && $entity->isPublished()) {
     // Check if any previous revision has been published, we want to restrict access in that case as well.
-    $revisionIds = \Drupal::entityTypeManager()->getStorage('node')->revisionIds($entity);
-    $publishedRevisions = [];
+    $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+    $revisionIds = $nodeStorage->revisionIds($entity);
     foreach ($revisionIds as $revisionId) {
       /** @var NodeInterface $revision */
-      $revision = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($revisionId);
+      $revision = $nodeStorage->loadRevision($revisionId);
       if ($revision->isPublished()) {
-        $publishedRevisions[] = $revision;
-        break;
+        return AccessResult::forbidden()
+          ->cachePerPermissions()
+          ->cachePerUser();
       }
-    }
-    if (!empty($publishedRevisions)) {
-      return AccessResult::forbidden()
-        ->cachePerPermissions()
-        ->cachePerUser();
     }
   }
   return AccessResult::neutral();
