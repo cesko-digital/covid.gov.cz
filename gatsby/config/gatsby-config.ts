@@ -19,7 +19,7 @@ const config = {
               bundle: 'basic_content',
               id: 'block_content--basic_content',
             },
-            { type: 'file', bundle: 'file', id: 'file--file' },
+            { type: 'file', bundle: 'file', id: 'drupal-file' },
             { type: 'node', bundle: 'homepage', id: 'homepage' },
             { type: 'node', bundle: 'measure', id: 'measure' },
             { type: 'node', bundle: 'page', id: 'page' },

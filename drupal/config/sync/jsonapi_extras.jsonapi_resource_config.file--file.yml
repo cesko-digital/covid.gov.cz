@@ -6,8 +6,8 @@ dependencies:
     - file
 id: file--file
 disabled: false
-path: file
-resourceType: file
+path: drupal-file
+resourceType: drupal-file
 resourceFields:
   fid:
     fieldName: fid
