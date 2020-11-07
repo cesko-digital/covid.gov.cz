@@ -3,7 +3,7 @@ import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { ISituationTypeQueryQuery } from 'graphql-types';
+import { ISitePageContext, ISituationTypeQueryQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
@@ -13,13 +13,16 @@ import I18n from '@/components/i18n';
 
 interface IProps {
   data: ISituationTypeQueryQuery;
+  pageContext: ISitePageContext;
 }
 
-const Situations: React.FC<IProps> = ({ data }) => {
+const Situations: React.FC<IProps> = ({ data, pageContext: { langCode } }) => {
   const {
     allArea: { nodes },
   } = data;
-  const { searchingTitle } = data;
+
+  const collator = new Intl.Collator([langCode]);
+  nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   // todo: add meta description
   return (
@@ -28,7 +31,7 @@ const Situations: React.FC<IProps> = ({ data }) => {
         title={I18n('life_situations')}
         description={I18n('situations_overview_meta')}
         pagePath={I18n('slug_situations')}
-        htmlLanguage={searchingTitle.langcode}
+        htmlLanguage={langCode}
         schema={`{
           "@type": "WebSite",
           "@id": "https://covid.gov.cz/#website",

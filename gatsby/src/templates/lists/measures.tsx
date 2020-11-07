@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import { IMeasureTypeQueryQuery } from 'graphql-types';
+import { IMeasureTypeQueryQuery, ISitePageContext } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
@@ -12,14 +12,16 @@ import I18n from '@/components/i18n';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
+  pageContext: ISitePageContext;
 }
 
-const Measures: React.FC<IProps> = ({ data }) => {
+const Measures: React.FC<IProps> = ({ data, pageContext: { langCode } }) => {
   const {
     allTaxonomyTermMeasureType: { nodes },
   } = data;
 
-  const { searchingTitle } = data;
+  const collator = new Intl.Collator([langCode]);
+  nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   // todo add meta description
   return (
@@ -28,7 +30,7 @@ const Measures: React.FC<IProps> = ({ data }) => {
         title={I18n('current_measures')}
         description={I18n('current_measures_overview_meta')}
         pagePath={I18n('slug_measures')}
-        htmlLanguage={searchingTitle.langcode}
+        htmlLanguage={langCode}
         schema={`{
           "@type": "WebSite",
           "@id": "https://covid.gov.cz/#website",
