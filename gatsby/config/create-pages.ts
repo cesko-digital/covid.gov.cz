@@ -110,8 +110,10 @@ export const createPages: GatsbyNode['createPages'] = async ({
     ['slug_measures', measureTemplate],
   ];
 
+  const pathLangPrefix = (lang) => (lang === 'cs' ? '' : '/' + lang);
+
   languages.forEach((lang) => {
-    const pathPrefix = lang === 'cs' ? '' : '/' + lang;
+    const pathPrefix = pathLangPrefix(lang);
 
     createPage({
       path: pathPrefix + '/',
@@ -129,7 +131,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
       const languageVariants = trArray
         .filter((item) => item.langcode != lang && item.source === source)
         .reduce((acc, item) => {
-          acc[item.langcode] = (item.langcode === 'cs' ? '' : '/' + item.langcode) + item.target;
+          acc[item.langcode] = pathLangPrefix(item.langcode) + item.target;
           return acc;
         }, {});
 
@@ -148,7 +150,8 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const customPages: IPageGroupConnection = result.data.allPage;
 
   customPages.nodes.forEach((page: IPage) => {
-    const pathPrefix = page.langcode === 'cs' ? '' : '/' + page.langcode;
+    const pathPrefix = pathLangPrefix(page.langcode);
+
     createPage({
       path: pathPrefix + page.path.alias,
       component: customPagesTemplate,
@@ -169,8 +172,8 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   for (let i = 0; i < 2; i++) {
     posts[i].forEach((post, index) => {
-      const pathPrefix =
-        post.node.langcode === 'cs' ? '' : '/' + post.node.langcode;
+      const pathPrefix = pathLangPrefix(post.node.langcode);
+
       createPage({
         path: pathPrefix + post.node.path.alias,
         component: listTemplate[i],
@@ -182,8 +185,8 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
       if (post.node.relationships[itemNames[i]] !== null) {
         post.node.relationships[itemNames[i]].forEach((situation, index) => {
-          const pathPrefix =
-            situation.langcode === 'cs' ? '' : '/' + situation.langcode;
+          const pathPrefix = pathLangPrefix(situation.langcode);
+
           createPage({
             path: pathPrefix + situation.path.alias,
             component: pageTemplate[i],
