@@ -102,9 +102,9 @@ const config = {
           'prefetch-src':
             "'self' fonts.googleapis.com www.googletagmanager.com",
           'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
-          'img-src': "'self' www.google.cz data:",
+          'img-src': "'self' www.google.cz stats.g.doubleclick.net data:",
           'connect-src':
-            "'self' analytics.google.com dc.services.visualstudio.com dc.applicationinsights.microsoft.com dc.applicationinsights.azure.com",
+            "'self' analytics.google.com dc.services.visualstudio.com dc.applicationinsights.microsoft.com dc.applicationinsights.azure.com stats.g.doubleclick.net",
           'default-src': "'self' www.googletagmanager.com fonts.googleapis.com",
         },
       },
