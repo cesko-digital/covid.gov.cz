@@ -132,15 +132,16 @@ const config = {
         background_color: '#2362a2',
         lang: `cs`,
         display: 'standalone',
-        icon: '/ds/images/layout/meta/android-chrome-256x256.png',
+
+        icon: 'static/ds/images/meta/android-chrome-256x256.png',
         icons: [
           {
-            src: `/ds/images/layout/meta/android-chrome-192x192.png`,
+            src: `static/ds/images/meta/android-chrome-192x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/ds/images/layout/meta/android-chrome-256x256.png`,
+            src: `static/ds/images/meta/android-chrome-256x256.png`,
             sizes: `256x256`,
             type: `image/png`,
           },
