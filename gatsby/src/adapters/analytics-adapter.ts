@@ -19,6 +19,6 @@ export default class AnalyticsAdapter {
   }
 
   event(event: IEventTelemetry, customProperties?: Record<string, any>) {
-    this.ai?.trackEvent(event, customProperties);
+    return this.ai?.trackEvent(event, customProperties);
   }
 }
