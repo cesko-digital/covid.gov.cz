@@ -1,0 +1,24 @@
+uuid: cc04015b-6145-47a3-80a6-09594045aa7c
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_updated
+    - node.type.homepage
+  module:
+    - datetime
+id: node.homepage.field_last_updated
+field_name: field_last_updated
+entity_type: node
+bundle: homepage
+label: 'Naposledy aktualizováno'
+description: 'Vyplňte datum a čas kdy došlo k poseldní faktické aktualizaci obsahu? Překlepy a pod se nepočítají.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

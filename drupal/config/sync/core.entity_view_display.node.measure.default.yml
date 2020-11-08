@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.measure.field_content
+    - field.field.node.measure.field_last_updated
     - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
     - field.field.node.measure.field_norm
@@ -29,14 +30,23 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_content:
-    weight: 7
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_last_updated:
+    weight: 1
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_measure_type:
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: false
@@ -44,14 +54,14 @@ content:
     type: entity_reference_label
     region: content
   field_meta_description:
-    weight: 8
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_norm:
-    weight: 9
+    weight: 10
     label: above
     settings:
       link_to_entity: false
@@ -59,7 +69,7 @@ content:
     type: string
     region: content
   field_ref_icon:
-    weight: 1
+    weight: 2
     label: above
     settings:
       link: false
@@ -67,7 +77,7 @@ content:
     type: entity_reference_label
     region: content
   field_region:
-    weight: 4
+    weight: 5
     label: inline
     settings:
       link: false
@@ -75,7 +85,7 @@ content:
     type: entity_reference_label
     region: content
   field_source:
-    weight: 2
+    weight: 3
     label: above
     settings:
       trim_length: 80
@@ -87,7 +97,7 @@ content:
     type: link
     region: content
   field_valid_from:
-    weight: 5
+    weight: 6
     label: inline
     settings:
       format_type: medium
@@ -96,7 +106,7 @@ content:
     type: datetime_default
     region: content
   field_valid_to:
-    weight: 6
+    weight: 7
     label: inline
     settings:
       format_type: medium
