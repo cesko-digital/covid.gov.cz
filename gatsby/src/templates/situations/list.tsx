@@ -53,12 +53,10 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
             variant="inverse"
           />
         </div>
-        <div className="mt-3">
-          <Headline>{area.name}</Headline>
-        </div>
         <DesktopLeftMenuLayout
           menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
         >
+          <Headline className="d-block d-md-none">{area.name}</Headline>
           {situations.map(({ id, title, meta_description, path }) => {
             return (
               <ListCard

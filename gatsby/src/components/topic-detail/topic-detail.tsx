@@ -8,12 +8,14 @@ import styles from './topic-detail.module.scss';
 
 interface IProps {
   title: string;
+  titleIconCode?: string;
   processedContent: string;
   subtitle?: string;
 }
 
 const TopicDetail: React.FC<IProps> = ({
   title,
+  titleIconCode,
   processedContent,
   children,
   subtitle,
@@ -21,9 +23,7 @@ const TopicDetail: React.FC<IProps> = ({
   return (
     <div className={styles.topicDetail}>
       <Container>
-        <div className="mt-3">
-          <Headline>{title}</Headline>
-        </div>
+        <Headline iconCode={titleIconCode}>{title}</Headline>
         <article className="bg-white rounded p-2 pb-3 mb-1">
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
           <div

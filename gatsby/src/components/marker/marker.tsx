@@ -25,7 +25,7 @@ interface IRegionsMarkerProps {
 
 export const RegionsMarker: React.FC<IRegionsMarkerProps> = ({ regions }) => (
   <Marker icon={<Room />}>
-    {regions.map((region) => region.name).join(',')}
+    {regions.map((region) => region.name).join(', ')}
   </Marker>
 );
 

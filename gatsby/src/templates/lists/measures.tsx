@@ -41,7 +41,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
           variant="inverse"
         />
       </Container>
-      <Container className="mt-3">
+      <Container className="mt-3 d-block d-sm-none">
         <Headline>{I18n('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">

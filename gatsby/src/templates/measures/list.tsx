@@ -55,7 +55,9 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           }
         >
           <>
-            <Headline>{taxonomyTermMeasureType.name}</Headline>
+            <Headline className="d-block d-sm-none">
+              {taxonomyTermMeasureType.name}
+            </Headline>
             {measures.map((m) => (
               <MeasureListCard
                 key={`taxonomyTermMeasureType-list-item-${m.id}`}

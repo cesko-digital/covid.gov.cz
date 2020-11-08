@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import styles from './desktop-left-menu-layout.module.scss';
 
@@ -8,7 +9,7 @@ interface IProps {
 
 const DesktopLeftMenuLayout: React.FC<IProps> = ({ menu, children }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={classNames(styles.wrapper, 'mt-3')}>
       <nav>{menu}</nav>
       <div className={styles.main}>{children}</div>
     </div>

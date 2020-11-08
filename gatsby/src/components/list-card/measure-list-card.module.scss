@@ -10,7 +10,7 @@
   color: #2362a2;
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(md) {
   .listItem {
     margin-bottom: 0 !important;
     border-radius: 0;

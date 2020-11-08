@@ -22,6 +22,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
     <>
       <TopicDetail
         title={situation.title}
+        titleIconCode={situation.relationships?.icon?.code}
         processedContent={situation?.content?.processed}
       >
         {hasRelatedMeasures && (
@@ -81,6 +82,9 @@ export const query = graphql`
     relationships {
       region {
         name
+      }
+      icon {
+        code
       }
       situation_type {
         name

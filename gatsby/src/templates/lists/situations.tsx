@@ -43,7 +43,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
             variant="inverse"
           />
         </div>
-        <div className="mt-3">
+        <div className="mt-3 d-block d-sm-none">
           <Headline>{I18n('situations_overview')}</Headline>
         </div>
         <div className="mt-3">
