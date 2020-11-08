@@ -153,6 +153,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_last_updated:
+    fieldName: field_last_updated
+    publicName: last_updated
+    enhancer:
+      id: ''
+    disabled: false
   field_measure_type:
     fieldName: field_measure_type
     publicName: measure_type

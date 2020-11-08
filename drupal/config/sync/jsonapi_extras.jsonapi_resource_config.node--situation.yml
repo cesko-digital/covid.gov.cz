@@ -117,6 +117,24 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  moderation_state:
+    fieldName: moderation_state
+    publicName: moderation_state
+    enhancer:
+      id: ''
+    disabled: false
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false
+  menu_link:
+    fieldName: menu_link
+    publicName: menu_link
+    enhancer:
+      id: ''
+    disabled: false
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
@@ -135,12 +153,24 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_faq_parser:
+    fieldName: field_faq_parser
+    publicName: field_faq_parser
+    enhancer:
+      id: ''
+    disabled: false
   field_internal_note:
     disabled: true
     fieldName: field_internal_note
     publicName: field_internal_note
     enhancer:
       id: ''
+  field_last_updated:
+    fieldName: field_last_updated
+    publicName: last_updated
+    enhancer:
+      id: ''
+    disabled: false
   field_meta_description:
     fieldName: field_meta_description
     publicName: meta_description
@@ -165,12 +195,6 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_situations:
-    fieldName: field_situations
-    publicName: related_situations
-    enhancer:
-      id: ''
-    disabled: false
   field_situation_link:
     fieldName: field_situation_link
     publicName: links
@@ -186,6 +210,12 @@ resourceFields:
   field_situation_type:
     fieldName: field_situation_type
     publicName: situation_type
+    enhancer:
+      id: ''
+    disabled: false
+  field_situations:
+    fieldName: field_situations
+    publicName: related_situations
     enhancer:
       id: ''
     disabled: false
