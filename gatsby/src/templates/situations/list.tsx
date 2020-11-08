@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from 'graphql-types';
+import { ISituationsListQuery, ISitePageContext } from 'graphql-types';
 import Container from '@/components/container';
 
 import { SEO as Seo } from 'gatsby-plugin-seo';
@@ -10,9 +10,11 @@ import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
+import { SituationAreaList } from '@/components/category-item-list';
+import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
-  data: IQuery;
+  data: ISituationsListQuery;
   pageContext: ISitePageContext;
 }
 
@@ -54,20 +56,20 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
         <div className="mt-3">
           <Headline>{area.name}</Headline>
         </div>
-        <div>
-          {situations.map(
-            ({ id, title, meta_description, path }) => {
-              return (
-                <ListCard
-                  title={title}
-                  description={meta_description}
-                  key={`area-list-item-${id}`}
-                  link={path?.alias}
-                />
-              );
-            },
-          )}
-        </div>
+        <DesktopLeftMenuLayout
+          menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
+        >
+          {situations.map(({ id, title, meta_description, path }) => {
+            return (
+              <ListCard
+                title={title}
+                description={meta_description}
+                key={`area-list-item-${id}`}
+                link={path?.alias}
+              />
+            );
+          })}
+        </DesktopLeftMenuLayout>
       </Container>
     </Layout>
   );
@@ -75,7 +77,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
 export default SituationList;
 
 export const query = graphql`
-  query($slug: String!) {
+  query SituationsList($slug: String!, $langCode: String!) {
     area(path: { alias: { eq: $slug } }) {
       name
       relationships {
@@ -87,6 +89,14 @@ export const query = graphql`
             alias
           }
         }
+      }
+    }
+    allSituationAreas: allArea(
+      filter: { langcode: { eq: $langCode } }
+      sort: { fields: name }
+    ) {
+      nodes {
+        ...SituationArea
       }
     }
   }

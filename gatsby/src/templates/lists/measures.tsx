@@ -54,38 +54,10 @@ export default Measures;
 
 export const query = graphql`
   query MeasureTypeQuery($langCode: String!) {
-    allTaxonomyTermMeasureType(
-      filter: { langcode: { eq: $langCode } }
-      sort: { fields: name }
-    ) {
+    allTaxonomyTermMeasureType(filter: { langcode: { eq: $langCode } }) {
       nodes {
         ...MeasureArea
       }
-    }
-    searchingTitle: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "still_searching_title" }
-    ) {
-      langcode
-      target
-    }
-    searchingDescription: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "still_searching_description" }
-    ) {
-      target
-    }
-    callTitle: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "call_title" }
-    ) {
-      target
-    }
-    callDescription: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "call_description" }
-    ) {
-      target
     }
   }
 `;

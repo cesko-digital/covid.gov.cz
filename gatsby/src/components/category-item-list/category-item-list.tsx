@@ -20,7 +20,6 @@ const CategoryItemList: FC<Props> = ({ items }) => {
     <div
       className={classNames(styles.wrapper, {
         [styles.isMobile]: isMobile,
-        [styles.isDesktop]: !isMobile,
       })}
     >
       {items.map((item, i) => (

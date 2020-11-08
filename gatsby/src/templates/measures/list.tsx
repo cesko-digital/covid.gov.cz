@@ -9,6 +9,8 @@ import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
 import MeasureListCard from '@/components/list-card/measure-list-card';
 import SchemaComp from '@/components/schema';
+import { MeasureAreaList } from '@/components/category-item-list';
+import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
   pageContext: ISitePageContext;
@@ -50,7 +52,11 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         <div className="mt-3">
           <Headline>{taxonomyTermMeasureType.name}</Headline>
         </div>
-        <div>
+        <DesktopLeftMenuLayout
+          menu={
+            <MeasureAreaList data={data.allTaxonomyTermMeasureType.nodes} />
+          }
+        >
           {measures.map((m) => (
             <MeasureListCard
               key={`taxonomyTermMeasureType-list-item-${m.id}`}
@@ -62,7 +68,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
               area={m.relationships?.region?.map((r) => r.name).join(' ,')}
             />
           ))}
-        </div>
+        </DesktopLeftMenuLayout>
       </Container>
     </Layout>
   );
@@ -70,7 +76,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
 export default Home;
 
 export const query = graphql`
-  query MeasureList($slug: String!) {
+  query MeasureList($slug: String!, $langCode: String!) {
     taxonomyTermMeasureType(path: { alias: { eq: $slug } }) {
       name
       relationships {
@@ -89,6 +95,11 @@ export const query = graphql`
             alias
           }
         }
+      }
+    }
+    allTaxonomyTermMeasureType(filter: { langcode: { eq: $langCode } }) {
+      nodes {
+        ...MeasureArea
       }
     }
   }
