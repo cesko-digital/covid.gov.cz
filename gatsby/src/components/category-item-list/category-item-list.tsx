@@ -1,10 +1,16 @@
 import React, { FC } from 'react';
 import styles from './category-item-list.module.scss';
 import CategoryItem from '../category-item/category-item';
-import { gLang } from '@/components/i18n';
+import I18n, { gLang } from '@/components/i18n';
+import Link from '@/components/link';
+import { KeyboardArrowLeft } from '@material-ui/icons';
 
 type Props = {
   title: string;
+  linkBack?: {
+    title: string;
+    slug: string;
+  };
   items: React.ComponentProps<typeof CategoryItem>[];
 };
 
@@ -16,7 +22,7 @@ const makeFirstWordBold = (sentence: string) =>
     return (acc += ' ' + curr);
   }, '');
 
-const CategoryItemList: FC<Props> = ({ items, title }) => {
+const CategoryItemList: FC<Props> = ({ items, title, linkBack }) => {
   const lang = gLang();
   const collator = new Intl.Collator([lang]);
   items.sort((a, b) => collator.compare(a.name, b.name));
@@ -27,7 +33,19 @@ const CategoryItemList: FC<Props> = ({ items, title }) => {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <h2 dangerouslySetInnerHTML={{ __html: styledTitle }} />
-        <hr />
+        {linkBack ? (
+          <Link className={styles.linkBack} to={linkBack.slug}>
+            <KeyboardArrowLeft
+              style={{ fontSize: 18 }}
+              className={styles.chevron}
+            />{' '}
+            <span>
+              {I18n('back_to')}&nbsp;{linkBack.title}
+            </span>
+          </Link>
+        ) : (
+          <hr />
+        )}
       </div>
       {items.map((item, i) => (
         <CategoryItem key={`${item.iconCode}${i}`} {...item} />

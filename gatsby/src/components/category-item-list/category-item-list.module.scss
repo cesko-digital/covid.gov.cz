@@ -14,10 +14,31 @@
       color: $white;
       padding: 12px 24px 8px 24px;
       letter-spacing: normal;
+      margin: 0;
     }
     @include media-breakpoint-down(sm) {
       display: none;
       visibility: hidden;
+    }
+    .chevron {
+      color: $theme-yellow;
+    }
+    .linkBack {
+      text-transform: uppercase;
+      padding: 0 24px;
+      color: $theme-yellow !important;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

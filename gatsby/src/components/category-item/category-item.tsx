@@ -10,7 +10,7 @@ type Props = {
   id: string;
   name: string;
   path: string;
-  iconCode: string;
+  iconCode?: string;
   isActive: boolean;
 };
 
@@ -22,7 +22,9 @@ const CategoryItem: FC<Props> = ({ name, path, iconCode, isActive }) => {
         [styles.isActive]: isActive,
       })}
     >
-      <ContentIcon className={styles.categoryItemIcon} code={iconCode} />
+      {iconCode && (
+        <ContentIcon className={styles.categoryItemIcon} code={iconCode} />
+      )}
       <span className={styles.categoryItemTitle}>{name}</span>
       <div className={styles.chevron}>
         <KeyboardArrowRight style={{ fontSize: 18 }} className="color-yellow" />
