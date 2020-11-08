@@ -1,0 +1,11 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.relatedMeasure {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  a {
+    margin-bottom: 8px;
+    display: block;
+  }
+}
