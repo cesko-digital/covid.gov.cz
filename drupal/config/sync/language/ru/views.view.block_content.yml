@@ -1,0 +1,49 @@
+label: 'Пользовательские блоки'
+description: 'Поиск и управление пользовательскими блоками.'
+display:
+  default:
+    display_title: Основной
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: убыв.
+      pager:
+        options:
+          tags:
+            previous: '‹ Предыдущий'
+            next: 'Следующий ›'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      fields:
+        info:
+          label: 'Описание блока'
+          separator: ', '
+        type:
+          label: 'Тип блока'
+          separator: ', '
+        changed:
+          label: Обновлено
+        operations:
+          label: Операции
+      filters:
+        info:
+          expose:
+            label: 'Описание блока'
+        type:
+          expose:
+            label: 'Тип блока'
+      title: 'Пользовательские блоки'
+      empty:
+        area_text_custom:
+          content: 'Нет доступных пользовательских блоков.'
+  page_1:
+    display_title: Страница
+    display_options:
+      menu:
+        title: 'Пользовательские блоки'

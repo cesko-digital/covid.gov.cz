@@ -7,5 +7,5 @@ _core:
 id: und
 label: Nespecifikováno
 direction: ltr
-weight: 3
+weight: 5
 locked: true
