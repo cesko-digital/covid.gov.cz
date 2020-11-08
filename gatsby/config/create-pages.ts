@@ -185,7 +185,6 @@ export const createPages: GatsbyNode['createPages'] = async ({
     ['situation', result.data.allArea.edges, listTemplate[0], pageTemplate[0]],
     ['measure', result.data.allTaxonomyTermMeasureType.edges, listTemplate[1], pageTemplate[1]],
   ];
-
   blogPostSpecs.forEach((spec) => {
     const [key, posts, itemTmpl, subTmpl] = spec;
     const nodes = posts.map(p => p.node);

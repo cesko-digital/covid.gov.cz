@@ -4,7 +4,7 @@
   "description": "Frontend vládního webu pro srozumitelný přehled informací a opatření ohledně pandemie koronaviru.",
   "version": "0.1.0",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "dev": "gatsby develop",
     "dev:local": "gatsby develop -H 0.0.0.0",
     "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
