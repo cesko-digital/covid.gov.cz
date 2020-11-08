@@ -130,7 +130,7 @@ export const query = graphql`
             alias
           }
           relationships {
-            field_ref_icon {
+            icon {
               code
             }
           }

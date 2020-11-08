@@ -63,7 +63,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext: { langCode } }) => {
                     key={n.id}
                     name={n.name}
                     path={n.path.alias}
-                    iconCode={n.relationships.field_ref_icon?.code}
+                    iconCode={n.relationships.icon?.code}
                   />
                 ),
             )}
@@ -89,7 +89,7 @@ export const query = graphql`
           situation {
             id
           }
-          field_ref_icon {
+          icon {
             code
           }
         }

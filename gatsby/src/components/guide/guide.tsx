@@ -85,7 +85,7 @@ const Guide: React.FC<IProps> = ({
                           buttonText={I18n('more')}
                           description={itemDescriptions[i] ?? ''}
                           variant={variant}
-                          iconCode={x.relationships?.field_ref_icon?.code}
+                          iconCode={x.relationships?.icon?.code}
                         />
                       );
                     })}
