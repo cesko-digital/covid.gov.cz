@@ -23,9 +23,10 @@ const Page: React.FC<IProps> = ({ data }) => {
         htmlLanguage={data.measure.langcode}
       />
       <SchemaComp
-        canonicalUrl={'https://covid.gov.cz' + data.measure.path.alias}
+        url={'https://covid.gov.cz' + data.measure.path.alias}
         datePublished={data.measure.valid_from}
-        defaultTitle={data.measure.title}
+        title={data.measure.title}
+        langCode={data.measure.langcode}
         isBlogPost
         body={
           data.measure.content
@@ -33,12 +34,6 @@ const Page: React.FC<IProps> = ({ data }) => {
             : data.measure.meta_description
         }
         description={data.measure.meta_description}
-        title={data.measure.title}
-        url={'https://covid.gov.cz' + data.measure.path.alias}
-        organization={{
-          url: 'https://gov.cz',
-          name: 'Portál veřejné správy',
-        }}
       />
       <MeasureDetail measure={data.measure} />
     </Layout>

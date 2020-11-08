@@ -4,6 +4,7 @@
 
 .breadcrumbItem {
   display: block !important;
+  z-index: 2;
 
   &.breadcrumbItemActive {
     color: #ecae1a;

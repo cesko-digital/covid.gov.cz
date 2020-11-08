@@ -19,17 +19,58 @@
   position: relative;
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 .bkgPhoto {
-  @include media-breakpoint-up(xl) {
-    background-position: center -100px !important;
+  overflow: auto;
+  position: absolute !important;
+  width: 100vw !important;
+  height: auto !important;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+
+  [aria-hidden='true'] {
+    top: 0;
+    position: absolute !important;
   }
-  @include media-breakpoint-up(md) {
-    background-position: center -50px !important;
-    background-size: 100% !important;
-  }
+
   @include media-breakpoint-up(xs) {
-    background-position: center top 75px !important;
-    background-size: 130% !important;
+    height: 55vh !important;
   }
-  z-index: 20;
+
+  @include media-breakpoint-up(md) {
+    height: auto !important;
+  }
+
+  picture {
+    position: relative;
+
+    img {
+      width: 100% !important;
+      object-fit: cover !important;
+      position: relative !important;
+      top: 0;
+
+      @include media-breakpoint-up(xl) {
+        width: 100% !important;
+        object-position: center -100px !important;
+        top: 0 !important;
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 100% !important;
+        object-position: center -50px !important;
+        top: 0 !important;
+      }
+
+      @include media-breakpoint-up(xs) {
+        object-position: center -75px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 85px !important;
+      }
+    }
+  }
 }

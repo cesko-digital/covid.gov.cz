@@ -8,17 +8,17 @@ import { Guide } from '@/components/guide';
 import DesktopTopContent from '@/components/desktop-top-content';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import { Helmet } from 'react-helmet';
+import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: IQuery;
 }
 
-const Home: React.FC<IProps> = ({ data }) => {
+const Home: React.FC<IProps> = ({ data, pageContext }) => {
   const { homepage } = data;
   const {
     situation_label,
     situation_text,
-    langcode,
     measure_description,
     situation_description,
     meta_description,
@@ -37,16 +37,14 @@ const Home: React.FC<IProps> = ({ data }) => {
         title={I18n('homepage_meta_title')}
         description={meta_description ?? 'CovidPortal'}
         pagePath="/"
-        htmlLanguage={langcode}
-        schema={`{
-          "@type": "WebSite",
-          "@id": "https://covid.gov.cz/#website",
-          "url": "https://covid.gov.cz",
-          "name": "Covid Portál",
-          "publisher": {
-            "@id": "https://gov.cz"
-          }
-        }`}
+        htmlLanguage={pageContext.langCode}
+      />
+      <SchemaComp
+        url="https://covid.gov.cz/"
+        langCode={pageContext.langCode}
+        isBlogPost={false}
+        title={I18n('homepage_meta_title')}
+        description={meta_description}
       />
       <Helmet title={I18n('homepage_meta_title')} />
       <DesktopTopContent title={I18n('header_headline')} showSearch={false} />

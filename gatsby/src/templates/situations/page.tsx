@@ -14,7 +14,7 @@ interface IProps {
   data: IQuery;
 }
 
-const Page: React.FC<IProps> = ({ data }) => {
+const Page: React.FC<IProps> = ({ data, pageContext }) => {
   const linksData = data.situation.relationships.related_situations;
   return (
     <Layout>
@@ -25,21 +25,20 @@ const Page: React.FC<IProps> = ({ data }) => {
           I18n('current_measures_overview_meta')
         }
         pagePath={data.situation.path.alias}
-        htmlLanguage={data.situation.langcode}
+        htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        canonicalUrl={'https://covid.gov.cz' + data.situation.path.alias}
-        datePublished={data.situation.valid_from}
-        defaultTitle={data.situation.title}
-        isBlogPost
-        description={data.situation.meta_description}
-        body={data.situation.content.processed}
-        title={data.situation.title}
         url={'https://covid.gov.cz' + data.situation.path.alias}
-        organization={{
-          url: 'https://gov.cz',
-          name: 'Portál veřejné správy',
-        }}
+        datePublished={data.situation.valid_from}
+        title={data.situation.title}
+        langCode={pageContext.langCode}
+        isBlogPost
+        body={
+          data.situation.content
+            ? data.situation.content.processed
+            : data.situation.meta_description
+        }
+        description={data.situation.meta_description}
       />
       <SituationDetail situation={data.situation} />
       <Container className="pt-1">

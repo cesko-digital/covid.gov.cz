@@ -1,3 +1,4 @@
+import * as path from 'path';
 const config = {
   siteMetadata: {
     siteUrl: `https://covid.gov.cz`,
@@ -40,6 +41,16 @@ const config = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(`src`, `images`),
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+
+    {
       resolve: 'gatsby-plugin-seo',
       options: {
         siteName: 'Covid Portál',
@@ -74,6 +85,30 @@ const config = {
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://covid.gov.cz/',
+        sitemap: 'https://covid.gov.cz/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        mergeStyleHashes: false,
+        directives: {
+          'script-src': "'self' www.googletagmanager.com",
+          'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+          'prefetch-src':
+            "'self' fonts.googleapis.com www.googletagmanager.com",
+          'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
+          'img-src': "'self' data:",
+          'connect-src': "'self' analytics.google.com",
+          'default-src': "'self' www.googletagmanager.com fonts.googleapis.com",
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
         documentPaths: ['./src/**/*.{ts,tsx}', './config/**/*.{ts,tsx}'],
@@ -93,6 +128,13 @@ const config = {
             },
           },
         ],
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://covid.gov.cz`,
       },
     },
     {
@@ -115,12 +157,47 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'static/favicon.svg',
+        name: `Covid Portál - Vládní opatření`,
+        short_name: 'Covid Portál',
+        theme_color: '#2362a2',
+        background_color: '#2362a2',
+        lang: `cs`,
+        start_url: `/`,
+        display: 'standalone',
+        icon: 'static/ds/images/meta/maskable_icon.png',
         icon_options: {
-          purpose: 'maskable',
+          purpose: 'any maskable',
         },
+        icons: [
+          {
+            src: `static/ds/images/meta/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `static/ds/images/meta/android-chrome-256x256.png`,
+            sizes: `256x256`,
+            type: `image/png`,
+          },
+        ],
+        localize: [
+          {
+            start_url: `/en/`,
+            lang: `en`,
+            name: `Covid Portal - Government measures`,
+            short_name: `Covid Portal`,
+          },
+        ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['material icons'],
+        display: 'block',
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -129,19 +206,6 @@ const config = {
           // Puts tracking script in the head instead of the body
           head: true,
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-N5LCQHK',
-        includeInDevelopment: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['material icons', 'roboto'],
       },
     },
   ],

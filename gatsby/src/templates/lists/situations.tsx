@@ -10,6 +10,7 @@ import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
 
 import I18n from '@/components/i18n';
+import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: ISituationTypeQueryQuery;
@@ -32,15 +33,13 @@ const Situations: React.FC<IProps> = ({ data, pageContext: { langCode } }) => {
         description={I18n('situations_overview_meta')}
         pagePath={I18n('slug_situations')}
         htmlLanguage={langCode}
-        schema={`{
-          "@type": "WebSite",
-          "@id": "https://covid.gov.cz/#website",
-          "url": "https://covid.gov.cz/situations",
-          "name": "Life Situations | Covid Portál",
-          "publisher": {
-            "@id": "https://gov.cz"
-          }
-        }`}
+      />
+      <SchemaComp
+        url={'https://covid.gov.cz' + I18n('slug_situations')}
+        langCode={langCode}
+        description={I18n('current_situations_overview_meta')}
+        isBlogPost={false}
+        title={I18n('life_situations')}
       />
       <Container>
         <div className="pt-1">

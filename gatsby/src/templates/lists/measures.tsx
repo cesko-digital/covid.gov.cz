@@ -9,6 +9,8 @@ import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
+import SchemaComp from '@/components/schema';
+import { FlashOnRounded } from '@material-ui/icons';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
@@ -27,19 +29,17 @@ const Measures: React.FC<IProps> = ({ data, pageContext: { langCode } }) => {
   return (
     <Layout>
       <Seo
-        title={I18n('current_measures')}
+        title={I18n('current_measures_overview')}
         description={I18n('current_measures_overview_meta')}
         pagePath={I18n('slug_measures')}
         htmlLanguage={langCode}
-        schema={`{
-          "@type": "WebSite",
-          "@id": "https://covid.gov.cz/#website",
-          "url": "https://covid.gov.cz/measures",
-          "name": "Current Measures | Covid Portál",
-          "publisher": {
-            "@id": "https://gov.cz"
-          }
-        }`}
+      />
+      <SchemaComp
+        url={'https://covid.gov.cz' + I18n('slug_measures')}
+        langCode={langCode}
+        description={I18n('current_measures_overview_meta')}
+        isBlogPost={false}
+        title={I18n('current_measures_overview')}
       />
       <Container className="pt-1">
         <Breadcrumb

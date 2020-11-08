@@ -1,29 +1,22 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import I18n from '../i18n';
 
-interface IOrganization {
-  url: string;
-  name: string;
-}
 interface IProps {
-  canonicalUrl: string;
-  body: string;
-  datePublished: string;
-  defaultTitle: string;
+  body?: string;
+  langCode: string;
+  datePublished?: string;
   description: string;
   isBlogPost: boolean;
-  organization: IOrganization;
   title: string;
   url: string;
 }
 export const SchemaComp: React.FC<IProps> = ({
-  canonicalUrl,
   datePublished,
-  defaultTitle,
   description,
   isBlogPost,
-  organization,
   title,
+  langCode,
   body,
   url,
 }) => {
@@ -33,7 +26,6 @@ export const SchemaComp: React.FC<IProps> = ({
       '@type': 'WebSite',
       url,
       name: title,
-      alternateName: defaultTitle,
     },
   ];
 
@@ -54,35 +46,48 @@ export const SchemaComp: React.FC<IProps> = ({
             },
           ],
         },
-        {
-          '@context': 'http://schema.org',
-          '@type': 'BlogPosting',
-          url,
-          name: title,
-          articleBody: body,
-          alternateName: defaultTitle,
-          headline: title,
-          description,
-          publisher: {
-            '@type': 'Organization',
-            url: organization.url,
-            name: organization.name,
-          },
-          mainEntityOfPage: {
-            '@type': 'WebSite',
-            '@id': canonicalUrl,
-          },
-          datePublished,
-        },
+        isBlogPost
+          ? {
+              '@context': 'http://schema.org',
+              '@type': 'BlogPosting',
+              url,
+              name: title,
+              articleBody: body,
+              headline: title,
+              description,
+              publisher: {
+                '@type': 'Organization',
+                url: 'https://gov.cz',
+              },
+              mainEntityOfPage: {
+                '@type': 'WebSite',
+                '@id': { url },
+              },
+              datePublished,
+            }
+          : '',
       ]
     : baseSchema;
 
   return (
     <Helmet>
       <meta property="og:url" content={url} />
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content={title} />
+      <meta
+        property="og:title"
+        content={title + ' · ' + I18n('covid_portal')}
+      />
+      <meta
+        property="og:locale"
+        content={langCode === 'en' ? 'en_GB' : 'cs_CZ'}
+      />
+      {isBlogPost ? (
+        <meta property="og:type" content="article" />
+      ) : (
+        <meta property="og:type" content="website" />
+      )}
+      <meta property="og:image" content="/images/ogimage.jpg" />
       <meta property="og:description" content={description} />
+      <meta property="og:site_name" content={I18n('covid_portal')} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );
