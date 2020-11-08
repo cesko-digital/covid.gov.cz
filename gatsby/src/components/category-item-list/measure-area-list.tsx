@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { IMeasureAreaFragment } from 'graphql-types';
 import CategoryItemList from './category-item-list';
+import I18n from '../i18n';
 
 interface IProps {
   data: IMeasureAreaFragment[];
@@ -20,7 +21,9 @@ const MeasureAreaList: React.FC<IProps> = ({ data }) => {
       iconCode: relationships.field_ref_icon?.code,
       isActive: path.alias === location.pathname,
     }));
-  return <CategoryItemList items={listItems} />;
+  return (
+    <CategoryItemList items={listItems} title={I18n('current_measures')} />
+  );
 };
 
 export const query = graphql`

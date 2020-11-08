@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { ISituationAreaFragment } from 'graphql-types';
 import { useLocation } from '@reach/router';
 import CategoryItemList from './category-item-list';
+import I18n from '../i18n';
 
 interface IProps {
   data: ISituationAreaFragment[];
@@ -20,7 +21,7 @@ const SituationAreaList: React.FC<IProps> = ({ data }) => {
       iconCode: relationships.field_ref_icon?.code,
       isActive: path.alias === location.pathname,
     }));
-  return <CategoryItemList items={listItems} />;
+  return <CategoryItemList items={listItems} title={I18n('life_situations')} />;
 };
 
 export const query = graphql`

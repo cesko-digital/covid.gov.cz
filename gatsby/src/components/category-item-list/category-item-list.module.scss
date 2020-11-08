@@ -1,9 +1,23 @@
 @import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .wrapper {
   background-color: $theme-blue;
   padding: 12px 0;
-  &.isMobile {
+  @include media-breakpoint-down(md) {
     border-radius: 3px;
+  }
+  .header {
+    > h2 {
+      color: $white;
+      padding: 12px 24px 8px 24px;
+      letter-spacing: normal;
+    }
+    @include media-breakpoint-down(sm) {
+      display: none;
+      visibility: hidden;
+    }
   }
 }

@@ -7,6 +7,10 @@
   display: flex;
   > nav {
     background-color: $theme-blue;
+    hr {
+      margin: 12px 24px;
+      opacity: 0.3;
+    }
     @include media-breakpoint-up(xl) {
       max-width: 320px;
     }
