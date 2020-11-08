@@ -1,18 +1,30 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IMeasurePageQueryQuery, ISitePageContext } from 'graphql-types';
+import { IMeasurePageQuery, ISitePageContext } from 'graphql-types';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import MeasureDetail from '@/components/measure-detail';
-
+import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
+import CategoryItemList from '@/components/category-item-list';
+import Container from '@/components/container';
+import Breadcrumb from '@/components/breadcrumb';
 interface IProps {
-  data: IMeasurePageQueryQuery;
+  data: IMeasurePageQuery;
   pageContext: ISitePageContext;
 }
 
 const Page: React.FC<IProps> = ({ data, pageContext }) => {
+  const relatedMeasures: React.ComponentProps<
+    typeof CategoryItemList
+  >['items'] = data.measureArea.relationships.measure.map((measure) => ({
+    id: measure.id,
+    name: measure.title,
+    path: measure.path.alias,
+    isActive: measure.path.alias === pageContext.slug,
+  }));
+
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -37,14 +49,46 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         }
         description={data.measure.meta_description}
       />
-      <MeasureDetail measure={data.measure} />
+      <Container>
+        <div className="pt-1">
+          <Breadcrumb
+            items={[
+              { title: I18n('home'), url: '/' },
+              {
+                title: I18n('current_measures'),
+                url: I18n(`slug_measures`),
+              },
+              {
+                title: data.measure.relationships?.situation_type?.name,
+                url: data.measure.relationships?.situation_type?.path?.alias,
+              },
+              data.measure.title,
+            ]}
+            variant="inverse"
+          />
+        </div>
+        <DesktopLeftMenuLayout
+          menu={
+            <CategoryItemList
+              items={relatedMeasures}
+              linkBack={{
+                slug: I18n('slug_measures'),
+                title: I18n('current_measures'),
+              }}
+              title={data.measureArea.name}
+            />
+          }
+        >
+          <MeasureDetail measure={data.measure} />
+        </DesktopLeftMenuLayout>
+      </Container>
     </Layout>
   );
 };
 export default Page;
 
 export const query = graphql`
-  query MeasurePageQuery($slug: String!) {
+  query MeasurePage($slug: String!, $listSlug: String!) {
     measure(path: { alias: { eq: $slug } }) {
       title
       meta_description
@@ -56,7 +100,36 @@ export const query = graphql`
       }
       langcode
       valid_from
+      relationships {
+        region {
+          name
+        }
+        situation_type: field_measure_type {
+          name
+          path {
+            alias
+          }
+        }
+        related_situations: situation {
+          title
+        }
+      }
       ...MeasureDetail
+    }
+    measureArea: taxonomyTermMeasureType(path: { alias: { eq: $listSlug } }) {
+      name
+      path {
+        alias
+      }
+      relationships {
+        measure {
+          id
+          title
+          path {
+            alias
+          }
+        }
+      }
     }
   }
 `;
