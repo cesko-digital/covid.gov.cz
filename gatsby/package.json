@@ -72,6 +72,7 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-google-gtag": "^2.1.13",
     "gatsby-plugin-google-tagmanager": "^2.4.0",
+    "gatsby-plugin-offline": "^3.3.2",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-sharp": "^2.7.1",
     "gatsby-plugin-sitemap": "^2.5.0",

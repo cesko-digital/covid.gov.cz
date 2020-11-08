@@ -126,12 +126,36 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'static/favicon.svg',
-        icon_options: {
-          purpose: 'maskable',
-        },
+        name: `Covid Portál - Vládní opatření`,
+        short_name: 'Covid Portál',
+        theme_color: '#2362a2',
+        background_color: '#2362a2',
+        lang: `cs`,
+        display: 'standalone',
+        icon: '/ds/images/layout/favicons/android-chrome-512x512.png',
+        icons: [
+          {
+            src: `/ds/images/layout/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/ds/images/layout/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+        localize: [
+          {
+            start_url: `/en/`,
+            lang: `en`,
+            name: `Covid Portal - Government measures`,
+            short_name: `Covid Portal`,
+          },
+        ],
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

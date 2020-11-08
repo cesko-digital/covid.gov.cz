@@ -18,9 +18,11 @@
 .mainInner {
   position: relative;
 }
+
 .overflow {
   overflow: hidden;
 }
+
 .bkgPhoto {
   overflow: auto;
   position: absolute !important;
@@ -28,6 +30,7 @@
   height: auto !important;
 
   [aria-hidden='true'] {
+    top: 0;
     position: absolute !important;
   }
 
