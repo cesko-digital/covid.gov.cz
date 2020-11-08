@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - "gatsby/*"
-    
+
 defaults:
   run:
     working-directory: ./gatsby
@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -26,18 +26,9 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-            
+
       - name: Install dependencies
         run: yarn install
-      
-      - name: Run tests
-        run: yarn test
-      
-      - name: Publish code coverage
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
 
       - name: Run prettier check
         run: yarn format
@@ -46,7 +37,7 @@ jobs:
         run: yarn lint
 
       - name: Run stylelint check
-        run: yarn stylelint       
+        run: yarn stylelint
 
       - name: Build frontend
         run: yarn build
