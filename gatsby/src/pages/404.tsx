@@ -4,7 +4,7 @@ import React from 'react';
 import { vh90 } from './404.module.scss';
 import Layout from '@/layouts/default-layout';
 import { Helmet } from 'react-helmet';
-import { ISitePageContext } from '../../graphql-types';
+import { ISitePageContext } from 'graphql-types';
 
 interface IProps {
   pageContext: ISitePageContext;
