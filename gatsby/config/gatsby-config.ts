@@ -95,6 +95,8 @@ const config = {
     {
       resolve: `gatsby-plugin-csp`,
       options: {
+        disableOnDev: false,
+        mergeStyleHashes: false,
         directives: {
           'script-src': "'self' www.googletagmanager.com",
           'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
