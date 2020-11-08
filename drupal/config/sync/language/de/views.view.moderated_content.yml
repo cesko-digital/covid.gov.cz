@@ -1,0 +1,61 @@
+label: 'Moderierter Inhalt'
+description: 'Inhalte ausfindig machen und verwalten.'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ Vorherige Seite'
+            next: 'Nächste Seite ›'
+            first: '« Anfang'
+            last: 'Ende »'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      fields:
+        title:
+          label: Titel
+          separator: ', '
+        type:
+          label: Inhaltstyp
+          separator: ', '
+        name:
+          label: Autor
+          separator: ', '
+        moderation_state:
+          label: Moderationsstatus
+          separator: ', '
+        changed:
+          label: Aktualisiert
+          separator: ', '
+        operations:
+          label: Aktionen
+      filters:
+        title:
+          expose:
+            label: Titel
+        type:
+          expose:
+            label: Inhaltstyp
+        moderation_state:
+          expose:
+            label: Moderationsstatus
+        langcode:
+          expose:
+            label: Sprache
+      title: 'Moderierter Inhalt'
+      empty:
+        area_text_custom:
+          content: 'Es stehen keine moderierten Inhalte zur Verfügung. In diesem Bereich werden ausschließlich ausstehende Inhaltsversion, z. B. Entwürfe, angezeigt.'
+  moderated_content:
+    display_title: 'Moderierter Inhalt'

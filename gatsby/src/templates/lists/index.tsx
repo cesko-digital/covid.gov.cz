@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Container from '@/components/container';
 import I18n from '@/components/i18n';
-import { IQuery } from 'graphql-types';
+import { IQuery, ISitePageContext } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
 import DesktopTopContent from '@/components/desktop-top-content';
@@ -12,6 +12,7 @@ import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: IQuery;
+  pageContext: ISitePageContext;
 }
 
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
@@ -32,7 +33,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
 
   // todo add meta description
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={I18n('homepage_meta_title')}
         description={meta_description ?? 'CovidPortal'}
@@ -130,7 +131,7 @@ export const query = graphql`
             alias
           }
           relationships {
-            field_ref_icon {
+            icon {
               code
             }
           }

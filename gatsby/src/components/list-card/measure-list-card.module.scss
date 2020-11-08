@@ -1,6 +1,46 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .measure-list-card-detail {
   font-size: 1.3rem;
   line-height: 2rem;
   font-weight: 500;
   color: #2362a2;
+}
+
+@include media-breakpoint-up(lg) {
+  .listItem {
+    margin-bottom: 0 !important;
+    border-radius: 0;
+    border-color: transparent;
+    border-bottom-color: #c7d5e1;
+    position: relative;
+
+    &:last-child {
+      border-bottom-color: transparent;
+    }
+
+    h2 {
+      font-weight: 400;
+      color: #2362a2;
+      font-size: 18px;
+      line-height: 32px;
+
+      &::after {
+        content: '\E912';
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+        font-family: 'pvs-icons', serif !important;
+        color: $theme-yellow;
+        float: right;
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  .buttonWrapper {
+    display: none;
+  }
 }

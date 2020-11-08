@@ -4,6 +4,7 @@ import Link from '@/components/link';
 import I18n from '@/components/i18n';
 import Time from '@/components/time';
 import styles from './measure-list-card.module.scss';
+import classNames from 'classnames';
 
 interface IProps {
   title: string;
@@ -23,7 +24,13 @@ const MeasureListCard: React.FC<IProps> = ({
   validTo,
 }) => {
   return (
-    <Link to={link} className="card p-2 mb-2 text-decoration-none">
+    <Link
+      to={link}
+      className={classNames(
+        'card p-2 mb-2 text-decoration-none',
+        styles.listItem,
+      )}
+    >
       {/* TODO: Add icon */}
       <h2 className="font-weight-medium mb-1">{title}</h2>
       <p className="mt-0 color-gray">{description}</p>
@@ -39,7 +46,7 @@ const MeasureListCard: React.FC<IProps> = ({
             {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
           </div>
         </div>
-        <div>
+        <div className={styles.buttonWrapper}>
           <Button text={I18n('detail')} variant="outline" />
         </div>
       </div>

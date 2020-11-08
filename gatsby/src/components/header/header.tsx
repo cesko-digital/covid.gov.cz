@@ -12,6 +12,7 @@ import headerLogoCS from './header-logo-cs.svg';
 import headerLogoEN from './header-logo-en.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
 import I18n, { TRoute } from '@/components/i18n';
+import { ISitePageContext } from 'graphql-types';
 
 interface NavItem {
   label: string;
@@ -20,11 +21,12 @@ interface NavItem {
 
 interface Props {
   navItems: NavItem[];
+  pageContext: ISitePageContext;
 }
 
 export const locales = ['cs', 'en'];
 
-const Header: React.FC<Props> = ({ navItems }) => {
+const Header: React.FC<Props> = ({ navItems, pageContext }) => {
   const [isOpen, setOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
@@ -32,11 +34,11 @@ const Header: React.FC<Props> = ({ navItems }) => {
     document.body.style.overflow = isOpen ? 'unset' : 'hidden';
   }, [isOpen]);
 
-  const [activeLocale, setLocale] = useState(locales[0]);
-
   const onUseLink = () => {
     document.body.style.overflow = 'unset';
   };
+
+  const languageVariants = pageContext.languageVariants || {};
 
   return (
     <div>
@@ -141,7 +143,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 <div className="mt-auto">
                   {TRoute('/') !== '/' ? (
                     <Link
-                      to="/"
+                      to={languageVariants.cs || '/'}
                       noTR
                       onClick={onUseLink}
                       className={classnames(
@@ -153,7 +155,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                     </Link>
                   ) : (
                     <Link
-                      to="/en/"
+                      to={languageVariants.en || '/en/'}
                       noTR
                       onClick={onUseLink}
                       className={classnames(
@@ -168,10 +170,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
               </div>
             </div>
             {/* DESKTOP LOCALE SELECT */}
-            <HeaderLocaleSelect
-              activeLocale={activeLocale}
-              onLocaleChange={setLocale}
-            />
+            <HeaderLocaleSelect languageVariants={languageVariants} />
           </Row>
         </Container>
       </div>

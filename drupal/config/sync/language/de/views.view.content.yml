@@ -1,0 +1,69 @@
+label: Inhalt
+description: 'Inhalte finden und verwalten.'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ Vorherige Seite'
+            next: 'Nächste Seite ›'
+            first: '« Anfang'
+            last: 'Ende »'
+      fields:
+        title:
+          label: Titel
+        type:
+          label: Inhaltstyp
+          separator: ', '
+        name:
+          label: Autor
+        status:
+          label: Status
+          settings:
+            format_custom_true: Veröffentlicht
+            format_custom_false: 'Nicht veröffentlicht'
+        changed:
+          label: Aktualisiert
+        operations:
+          label: Aktionen
+      filters:
+        title:
+          expose:
+            label: Titel
+        type:
+          expose:
+            label: Inhaltstyp
+        status:
+          expose:
+            label: Status
+          group_info:
+            label: Veröffentlichungsstatus
+            group_items:
+              1:
+                title: Veröffentlicht
+              2:
+                title: 'Nicht veröffentlicht'
+        langcode:
+          expose:
+            label: Sprache
+      title: Inhalt
+      empty:
+        area_text_custom:
+          content: 'Kein Inhalt verfügbar.'
+    display_title: Master
+  page_1:
+    display_options:
+      menu:
+        title: Inhalt
+      tab_options:
+        title: Inhalt
+        description: 'Inhalte finden und verwalten'
+    display_title: Seite

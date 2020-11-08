@@ -1,0 +1,9 @@
+uuid: 748d6bad-6e64-492e-81d8-184b5359f7f1
+langcode: ru
+status: true
+dependencies: {  }
+id: ru
+label: Rusky
+direction: ltr
+weight: 3
+locked: false

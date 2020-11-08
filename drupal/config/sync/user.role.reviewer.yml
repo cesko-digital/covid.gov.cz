@@ -11,6 +11,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'change own username'
+  - 'create url aliases'
   - 'delete any measure content'
   - 'delete any page content'
   - 'delete any situation content'
