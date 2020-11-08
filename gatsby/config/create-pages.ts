@@ -117,9 +117,11 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const pathLangPrefix = (lang) => (lang === 'cs' ? '' : '/' + lang);
 
   const generateLanguageVariants = (nodes, toLanguage, filter) => nodes
+    // include variants with different language and matching node filter (drupal_id/target)
     .filter((item) => item.langcode != toLanguage && filter(item))
+    // reduce variants to mapping {[language]: /path}
     .reduce((acc, item) => {
-      acc[item.langcode] = pathLangPrefix(item.langcode) + item.target;
+      acc[item.langcode] = pathLangPrefix(item.langcode) + (item.target || item.path?.alias);
       return acc;
     }, {});
 
@@ -187,13 +189,17 @@ export const createPages: GatsbyNode['createPages'] = async ({
   blogPostSpecs.forEach((spec) => {
     const [key, posts, itemTmpl, subTmpl] = spec;
     const nodes = posts.map(p => p.node);
+
+    // extract all subnodes from all nodes and flats them to one dimensional array
+    const flattenedSubNodes = nodes.map(n => n.relationships[key]).flat().filter(Boolean);
+
     nodes.forEach((node) => {
       const pathPrefix = pathLangPrefix(node.langcode);
 
       const languageVariants = generateLanguageVariants(
         nodes,
         node.langcode,
-        (n) => n.drupal_id === node.drupal_i
+        (n) => n.drupal_id === node.drupal_id
       )
 
       createPage({
@@ -206,20 +212,25 @@ export const createPages: GatsbyNode['createPages'] = async ({
         },
       });
 
-      (node.relationships[key] || []).forEach((subItem) => {
-        const pathPrefix = pathLangPrefix(subItem.langcode);
+      (node.relationships[key] || []).forEach((subNode) => {
+        const pathPrefix = pathLangPrefix(subNode.langcode);
+
+        const languageVariants = generateLanguageVariants(
+          flattenedSubNodes,
+          subNode.langcode,
+          (n) => n.drupal_id === subNode.drupal_id
+        );
 
         createPage({
-          path: pathPrefix + subItem.path.alias,
+          path: pathPrefix + subNode.path.alias,
           component: subTmpl,
           context: {
-            slug: subItem.path.alias,
-            langCode: subItem.path.langcode,
-            languageVariants: {wtf: 'second'}
+            slug: subNode.path.alias,
+            langCode: subNode.path.langcode,
+            languageVariants,
           },
         });
       });
-
     });
   });
 };
