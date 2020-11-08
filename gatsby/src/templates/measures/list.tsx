@@ -49,25 +49,25 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
             variant="inverse"
           />
         </div>
-        <div className="mt-3">
-          <Headline>{taxonomyTermMeasureType.name}</Headline>
-        </div>
         <DesktopLeftMenuLayout
           menu={
             <MeasureAreaList data={data.allTaxonomyTermMeasureType.nodes} />
           }
         >
-          {measures.map((m) => (
-            <MeasureListCard
-              key={`taxonomyTermMeasureType-list-item-${m.id}`}
-              title={m.title}
-              description={m.norm}
-              link={m.path?.alias}
-              validFrom={m.valid_from}
-              validTo={m.valid_to}
-              area={m.relationships?.region?.map((r) => r.name).join(' ,')}
-            />
-          ))}
+          <>
+            <Headline>{taxonomyTermMeasureType.name}</Headline>
+            {measures.map((m) => (
+              <MeasureListCard
+                key={`taxonomyTermMeasureType-list-item-${m.id}`}
+                title={m.title}
+                description={m.norm}
+                link={m.path?.alias}
+                validFrom={m.valid_from}
+                validTo={m.valid_to}
+                area={m.relationships?.region?.map((r) => r.name).join(' ,')}
+              />
+            ))}
+          </>
         </DesktopLeftMenuLayout>
       </Container>
     </Layout>

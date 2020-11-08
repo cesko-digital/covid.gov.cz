@@ -1,7 +1,19 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .headline {
   font-size: 2.3rem;
   line-height: 3.2rem;
   font-weight: 500;
-  color: white;
   margin-bottom: 2.7rem;
+
+  @include media-breakpoint-down(md) {
+    color: white;
+    .headlineIcon {
+      display: none;
+      visibility: hidden;
+    }
+  }
 }
