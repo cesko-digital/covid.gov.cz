@@ -10,14 +10,20 @@ import { ISituationDetailFragment } from 'graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';
+import LinkList from '../link-list';
 
 interface IProps {
   situation: ISituationDetailFragment;
 }
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {
+  const relatedSituations = situation.relationships.related_situations;
+  const faq = situation.questions_answers;
+
+  const hasFaq = Boolean(faq.length);
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
+  const hasRelatedSituations = Boolean(relatedSituations.length);
   return (
     <>
       <TopicDetail
@@ -51,8 +57,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         )}
       </TopicDetail>
       <Container>
-        {situation.questions_answers?.length ? (
-          // TODO: localize
+        {hasFaq && (
           <ContentBox variant="blue" title={I18n('faq')} boldedTitleCount={2}>
             <Accordion
               data={situation.questions_answers.map((item) => ({
@@ -61,8 +66,15 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
               }))}
             />
           </ContentBox>
-        ) : (
-          ''
+        )}
+        {hasRelatedSituations && (
+          <ContentBox
+            title={I18n('similar_topics')}
+            boldedTitleCount={1}
+            variant="blue"
+          >
+            <LinkList links={relatedSituations} />
+          </ContentBox>
         )}
       </Container>
     </>
@@ -94,6 +106,13 @@ export const query = graphql`
       }
       measures {
         ...RelatedMeasure
+      }
+      related_situations {
+        title
+        path {
+          alias
+          langcode
+        }
       }
     }
     path {

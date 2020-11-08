@@ -19,7 +19,6 @@ interface IProps {
 }
 
 const Page: React.FC<IProps> = ({ data, pageContext }) => {
-  const linksData = data.situation.relationships.related_situations;
   const relatedSituations: React.ComponentProps<
     typeof CategoryItemList
   >['items'] = data.situationArea.relationships.situation.map((situation) => ({
@@ -58,8 +57,8 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
             items={[
               { title: I18n('home'), url: '/' },
               {
-                title: I18n('current_measures'),
-                url: I18n(`slug_measures`),
+                title: I18n('life_situations'),
+                url: I18n(`slug_situations`),
               },
               {
                 title: data.situation.relationships?.situation_type?.name,
@@ -86,21 +85,6 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           <SituationDetail situation={data.situation} />
         </DesktopLeftMenuLayout>
       </Container>
-
-      <Container className="pt-1">
-        {/* hide this box if no relevant topics exist */}
-        {linksData.length > 0 ? (
-          <ContentBox
-            title={I18n('similar_topics')}
-            boldedTitleCount={1}
-            variant="blue"
-          >
-            <LinkList links={linksData} />
-          </ContentBox>
-        ) : (
-          ''
-        )}
-      </Container>
     </Layout>
   );
 };
@@ -114,23 +98,9 @@ export const query = graphql`
       content {
         processed
       }
-      questions_answers {
-        question
-        value
-      }
-      relationships {
-        related_situations {
-          title
-          path {
-            alias
-            langcode
-          }
-        }
-      }
       path {
         alias
       }
-      changed
       valid_from
       ...SituationDetail
     }
