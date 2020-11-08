@@ -54,8 +54,32 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
       media: `(min-width: 768px)`,
     },
   ];
+  const date = useStaticQuery(graphql`
+    query {
+      currentBuildDate {
+        currentDate
+      }
+    }
+  `);
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
+      {process.env.GATSBY_VERCEL ? (
+        <Alert
+          message={
+            'Poslední úspěšný build proběhl v ' +
+            new Date(date.currentBuildDate.currentDate).toLocaleTimeString(
+              'cs-CZ',
+              {
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'Europe/Prague',
+              },
+            )
+          }
+        />
+      ) : (
+        <></>
+      )}
       <div>
         <div className={styles.overflow}>
           <Img fluid={sources} className={styles.bkgPhoto} />
@@ -68,21 +92,6 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
             { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
           ]}
         />
-        {console.log('vercel url', process.env.VERCEL_URL)}
-        {process.env.VERCEL_URL ? (
-          <Alert
-            message={
-              'Poslední úspěšný build proběhl v ' +
-              new Date().toLocaleTimeString('cs-CZ', {
-                hour: '2-digit',
-                minute: '2-digit',
-                timeZone: 'Europe/Prague',
-              })
-            }
-          />
-        ) : (
-          <></>
-        )}
 
         <main className={styles.main}>
           <div className={styles.mainInner}>{children}</div>
@@ -95,3 +104,10 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 };
 
 export default DefaultLayout;
+export const query = graphql`
+  query {
+    currentBuildDate {
+      currentDate
+    }
+  }
+`;
