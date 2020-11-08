@@ -10,6 +10,11 @@ type Props = {
 
 const CategoryItemList: FC<Props> = ({ items }) => {
   const isMobile = useMobile();
+
+  // todo add correct language
+  const collator = new Intl.Collator(['cs']);
+  items.sort((a, b) => collator.compare(a.name, b.name));
+
   return (
     <div
       className={classNames(styles.wrapper, {

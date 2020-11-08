@@ -2,38 +2,21 @@ import React from 'react';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
 import Container from '@/components/container';
-import { ISituationTypeQueryQuery, ISitePageContext } from 'graphql-types';
+import { ISitePageContext, ISituationsAreasListQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
 
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
-import CategoryItemList from '@/components/category-item-list';
+import { SituationAreaList } from '@/components/category-item-list';
 
 interface IProps {
-  data: ISituationTypeQueryQuery;
+  data: ISituationsAreasListQuery;
   pageContext: ISitePageContext;
 }
 
 const Situations: React.FC<IProps> = ({ data, pageContext }) => {
-  const {
-    allArea: { nodes },
-  } = data;
-
-  const collator = new Intl.Collator([pageContext.langCode]);
-  nodes.sort((a, b) => collator.compare(a.name, b.name));
-
-  const listItems = nodes
-    .filter(({ relationships }) => relationships.situation !== null)
-    .map(({ id, name, path, relationships }) => ({
-      id,
-      name,
-      path: path.alias,
-      iconCode: relationships.field_ref_icon?.code,
-      isActive: path.alias === pageContext.slug,
-    }));
-
   // todo: add meta description
   return (
     <Layout pageContext={pageContext}>
@@ -64,7 +47,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
           <Headline>{I18n('situations_overview')}</Headline>
         </div>
         <div className="mt-3">
-          <CategoryItemList items={listItems} />
+          <SituationAreaList data={data.allSituationAreas.nodes} />
         </div>
       </Container>
     </Layout>
@@ -74,48 +57,14 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
 export default Situations;
 
 export const query = graphql`
-  query SituationTypeQuery($langCode: String!) {
-    allArea(filter: { langcode: { eq: $langCode } }, sort: { fields: name }) {
+  query SituationsAreasList($langCode: String!) {
+    allSituationAreas: allArea(
+      filter: { langcode: { eq: $langCode } }
+      sort: { fields: name }
+    ) {
       nodes {
-        name
-        id
-        path {
-          alias
-        }
-        relationships {
-          situation {
-            id
-          }
-          field_ref_icon {
-            code
-          }
-        }
+        ...SituationArea
       }
-    }
-    searchingTitle: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "still_searching_title" }
-    ) {
-      target
-      langcode
-    }
-    searchingDescription: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "still_searching_description" }
-    ) {
-      target
-    }
-    callTitle: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "call_title" }
-    ) {
-      target
-    }
-    callDescription: translation(
-      langcode: { eq: $langCode }
-      source: { eq: "call_description" }
-    ) {
-      target
     }
   }
 `;

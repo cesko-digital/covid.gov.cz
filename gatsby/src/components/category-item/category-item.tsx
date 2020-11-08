@@ -15,7 +15,6 @@ type Props = {
 };
 
 const CategoryItem: FC<Props> = ({ name, path, iconCode, isActive }) => {
-  console.log({ isActive });
   return (
     <Link
       to={path}

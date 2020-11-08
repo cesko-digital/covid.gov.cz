@@ -8,7 +8,7 @@ import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
-import CategoryItemList from '@/components/category-item-list';
+import { MeasureAreaList } from '@/components/category-item-list';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
@@ -16,23 +16,6 @@ interface IProps {
 }
 
 const Measures: React.FC<IProps> = ({ data, pageContext }) => {
-  const {
-    allTaxonomyTermMeasureType: { nodes },
-  } = data;
-
-  const collator = new Intl.Collator([pageContext.langCode]);
-  nodes.sort((a, b) => collator.compare(a.name, b.name));
-
-  const listItems = nodes
-    .filter(({ relationships }) => relationships.measure !== null)
-    .map(({ id, name, path, relationships }) => ({
-      id,
-      name,
-      path: path.alias,
-      iconCode: relationships.field_ref_icon?.code,
-      isActive: path.alias === pageContext.slug,
-    }));
-
   // todo add meta description
   return (
     <Layout pageContext={pageContext}>
@@ -62,7 +45,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         <Headline>{I18n('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">
-        <CategoryItemList items={listItems} />
+        <MeasureAreaList data={data.allTaxonomyTermMeasureType.nodes} />
       </Container>
     </Layout>
   );
@@ -76,19 +59,7 @@ export const query = graphql`
       sort: { fields: name }
     ) {
       nodes {
-        id
-        name
-        path {
-          alias
-        }
-        relationships {
-          field_ref_icon {
-            code
-          }
-          measure {
-            id
-          }
-        }
+        ...MeasureArea
       }
     }
     searchingTitle: translation(

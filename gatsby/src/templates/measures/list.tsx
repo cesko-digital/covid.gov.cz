@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from 'graphql-types';
-
+import { IMeasureListQuery, ISitePageContext } from 'graphql-types';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Container from '@/components/container';
 import Headline from '@/components/headline';
@@ -12,8 +11,8 @@ import MeasureListCard from '@/components/list-card/measure-list-card';
 import SchemaComp from '@/components/schema';
 
 interface IProps {
-  data: IQuery;
   pageContext: ISitePageContext;
+  data: IMeasureListQuery;
 }
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
@@ -71,7 +70,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
 export default Home;
 
 export const query = graphql`
-  query($slug: String!) {
+  query MeasureList($slug: String!) {
     taxonomyTermMeasureType(path: { alias: { eq: $slug } }) {
       name
       relationships {
