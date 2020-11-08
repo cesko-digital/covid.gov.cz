@@ -62,7 +62,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
             }
           }
         }
-        allTaxonomyTermMeasureType {
+        allMeasureType {
           edges {
             node {
               langcode
@@ -160,7 +160,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // Create blog posts pages.
   const posts = [
     result.data.allArea.edges,
-    result.data.allTaxonomyTermMeasureType.edges,
+    result.data.allMeasureType.edges,
   ];
 
   const itemNames = ['situation', 'measure'];
