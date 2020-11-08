@@ -38,6 +38,8 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
     document.body.style.overflow = 'unset';
   };
 
+  const languageVariants = pageContext.languageVariants || {};
+
   return (
     <div>
       <div className={classes.gradient} />
@@ -141,7 +143,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                 <div className="mt-auto">
                   {TRoute('/') !== '/' ? (
                     <Link
-                      to="/"
+                      to={languageVariants.cs || '/'}
                       noTR
                       onClick={onUseLink}
                       className={classnames(
@@ -153,7 +155,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                     </Link>
                   ) : (
                     <Link
-                      to="/en/"
+                      to={languageVariants.en || '/en/'}
                       noTR
                       onClick={onUseLink}
                       className={classnames(
@@ -168,9 +170,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
               </div>
             </div>
             {/* DESKTOP LOCALE SELECT */}
-            <HeaderLocaleSelect
-              languageVariants={pageContext.languageVariants}
-            />
+            <HeaderLocaleSelect languageVariants={languageVariants} />
           </Row>
         </Container>
       </div>
