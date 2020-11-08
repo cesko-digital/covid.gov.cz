@@ -1,7 +1,6 @@
 import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
-import { IQuery } from 'graphql-types';
-import { IPage, IPageGroupConnection } from '../graphql-types';
+import { IPage, IQuery } from 'graphql-types';
 
 /**
  * Gatsby exposes interfaces for every lifecycle hook
@@ -85,6 +84,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
             id
             title
             langcode
+            drupal_id
             path {
               alias
             }
@@ -103,7 +103,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 
   // index
-  const trArray = result.data.allTranslation.nodes;
+  const translations = result.data.allTranslation.nodes;
   const languages = ['cs', 'en'];
   const pageSpecs = [
     ['slug_situations', situationTemplate],
@@ -124,11 +124,11 @@ export const createPages: GatsbyNode['createPages'] = async ({
     });
 
     pageSpecs.forEach(([source, template]) => {
-      const slug = trArray.filter((item) => {
+      const slug = translations.filter((item) => {
         return item.langcode === lang && item.source === source;
       })[0].target;
 
-      const languageVariants = trArray
+      const languageVariants = translations
         .filter((item) => item.langcode != lang && item.source === source)
         .reduce((acc, item) => {
           acc[item.langcode] = pathLangPrefix(item.langcode) + item.target;
@@ -147,17 +147,26 @@ export const createPages: GatsbyNode['createPages'] = async ({
   });
 
   // custom pages
-  const customPages: IPageGroupConnection = result.data.allPage;
+  const customPages: IPage[] = result.data.allPage.nodes;
 
-  customPages.nodes.forEach((page: IPage) => {
+  customPages.forEach((page) => {
+    const languageVariants = customPages
+      .filter(
+        (p) => p.langcode !== page.langcode && p.drupal_id == page.drupal_id,
+      )
+      .reduce((acc, page) => {
+        acc[page.langcode] = pathLangPrefix(page.langcode) + page.path.alias;
+        return acc;
+      }, {});
+
     const pathPrefix = pathLangPrefix(page.langcode);
-
     createPage({
       path: pathPrefix + page.path.alias,
       component: customPagesTemplate,
       context: {
         slug: page.path.alias,
         langCode: page.langcode,
+        languageVariants,
       },
     });
   });
