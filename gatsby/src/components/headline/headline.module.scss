@@ -7,6 +7,7 @@
   hr {
     display: none;
   }
+
   padding: 16px 0;
   // desktop
   @include media-breakpoint-up(md) {
@@ -20,6 +21,7 @@
   font-weight: 500;
   color: white;
   margin: 0;
+
   .headlineIcon {
     display: none;
   }
@@ -28,11 +30,13 @@
     margin-top: 16px;
     color: $theme-blue;
     display: flex;
+
     .headlineIcon {
       display: inline-block;
       margin-top: 4px;
       margin-right: 16px;
     }
+
     hr {
       display: block;
     }
