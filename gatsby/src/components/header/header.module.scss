@@ -20,12 +20,13 @@
 }
 
 .gradient {
-  background: linear-gradient(180deg, #000000 -64.66%, rgba(0, 0, 0, 0) 64.66%);
+  background: linear-gradient(180deg, #000 -64.66%, rgba(0, 0, 0, 0) 64.66%);
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   height: 100px;
+
   @include media-breakpoint-down(sm) {
     background: transparent !important;
   }
