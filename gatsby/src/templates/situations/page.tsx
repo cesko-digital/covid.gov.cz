@@ -64,7 +64,6 @@ export const query = graphql`
   query($slug: String!) {
     situation(path: { alias: { eq: $slug } }) {
       title
-      status
       meta_description
       content {
         processed
@@ -73,20 +72,7 @@ export const query = graphql`
         question
         value
       }
-      links {
-        uri
-        title
-      }
       relationships {
-        region {
-          name
-        }
-        situation_type {
-          name
-          path {
-            alias
-          }
-        }
         related_situations {
           title
           path {
@@ -100,7 +86,7 @@ export const query = graphql`
       }
       changed
       valid_from
-      valid_to
+      ...SituationDetail
     }
   }
 `;

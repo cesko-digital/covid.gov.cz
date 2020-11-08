@@ -65,6 +65,7 @@ const DefaultLayout: React.FC = ({ children }) => {
           <div className={styles.mainInner}>{children}</div>
         </main>
       </div>
+
       <Footer />
     </div>
   );

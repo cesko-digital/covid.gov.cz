@@ -1,0 +1,1 @@
+export const relatedMeasure: string;

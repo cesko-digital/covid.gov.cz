@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { Room, Event } from '@material-ui/icons';
-
-import Time from '@/components/time';
 import I18n from '@/components/i18n';
 
 import { IMeasureDetailFragment } from 'graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
+import { RegionsMarker, TimeMarker } from '../marker';
 
 interface IProps {
   measure: IMeasureDetailFragment;
 }
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
+  const hasRegion = Boolean(measure.relationships.region.length);
+  const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
     <TopicDetail
       breadcrumbItems={[
@@ -32,37 +32,19 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
       subtitle={measure.norm}
       processedContent={measure?.content?.processed}
     >
-      {measure.relationships.region.length ? (
+      {(hasRegion || hasTimeConstraint) && (
         <div className="mt-2">
           <h3 className="mb-1 color-blue-dark">{I18n('location_validity')}</h3>
-          <div className="d-flex align-items-center color-blue mb-1">
-            <Room />
-            &nbsp;
-            <span className="text-uppercase font-weight-medium">
-              {measure.relationships.region.map((item) => item.name).join(', ')}
-            </span>
-          </div>
+          {hasRegion && (
+            <RegionsMarker regions={measure.relationships.region} />
+          )}
+          {hasTimeConstraint && (
+            <TimeMarker
+              validFrom={measure.valid_from}
+              validTo={measure.valid_to}
+            />
+          )}
         </div>
-      ) : (
-        ''
-      )}
-
-      {measure.valid_from || measure.valid_to ? (
-        <div className="d-flex align-items-center color-blue">
-          <Event />
-          &nbsp;
-          <span className="text-uppercase font-weight-medium">
-            {measure.valid_from && (
-              <Time datetime={measure.valid_from} prefix={`${I18n('from')} `} />
-            )}
-
-            {measure.valid_to && (
-              <Time datetime={measure.valid_to} prefix={`${I18n('to')} `} />
-            )}
-          </span>
-        </div>
-      ) : (
-        ''
       )}
     </TopicDetail>
   );
