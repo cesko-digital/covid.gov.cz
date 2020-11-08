@@ -10,6 +10,7 @@ import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 import { SituationAreaList } from '@/components/category-item-list';
+import { useNavigateToFirstItemOnDesktop } from '@/hooks/useNavigateToFirstItem';
 
 interface IProps {
   data: ISituationsAreasListQuery;
@@ -17,6 +18,10 @@ interface IProps {
 }
 
 const Situations: React.FC<IProps> = ({ data, pageContext }) => {
+  useNavigateToFirstItemOnDesktop(
+    data.allSituationAreas.nodes,
+    pageContext.langCode,
+  );
   // todo: add meta description
   return (
     <Layout pageContext={pageContext}>

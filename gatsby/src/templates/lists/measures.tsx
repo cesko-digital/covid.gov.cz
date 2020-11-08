@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import Container from '@/components/container';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import { IMeasureTypeQueryQuery, ISitePageContext } from 'graphql-types';
@@ -9,6 +9,7 @@ import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 import { MeasureAreaList } from '@/components/category-item-list';
+import { useNavigateToFirstItemOnDesktop } from '@/hooks/useNavigateToFirstItem';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
@@ -16,6 +17,10 @@ interface IProps {
 }
 
 const Measures: React.FC<IProps> = ({ data, pageContext }) => {
+  useNavigateToFirstItemOnDesktop(
+    data.allTaxonomyTermMeasureType.nodes,
+    pageContext.langCode,
+  );
   // todo add meta description
   return (
     <Layout pageContext={pageContext}>
