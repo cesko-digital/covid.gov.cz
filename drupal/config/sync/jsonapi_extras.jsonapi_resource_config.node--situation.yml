@@ -154,11 +154,11 @@ resourceFields:
       id: ''
     disabled: false
   field_faq_parser:
+    disabled: true
     fieldName: field_faq_parser
     publicName: field_faq_parser
     enhancer:
       id: ''
-    disabled: false
   field_internal_note:
     disabled: true
     fieldName: field_internal_note
