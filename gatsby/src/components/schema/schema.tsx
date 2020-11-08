@@ -10,6 +10,7 @@ interface IProps {
   isBlogPost: boolean;
   title: string;
   url: string;
+  isHomePage?: boolean;
 }
 export const SchemaComp: React.FC<IProps> = ({
   datePublished,
@@ -19,6 +20,7 @@ export const SchemaComp: React.FC<IProps> = ({
   langCode,
   body,
   url,
+  isHomePage,
 }) => {
   const baseSchema = [
     {
@@ -69,13 +71,12 @@ export const SchemaComp: React.FC<IProps> = ({
       ]
     : baseSchema;
 
+  const ogTitle = isHomePage ? title : `${title} · ${I18n('covid_portal')}`;
+
   return (
     <Helmet>
       <meta property="og:url" content={url} />
-      <meta
-        property="og:title"
-        content={title + ' · ' + I18n('covid_portal')}
-      />
+      <meta property="og:title" content={ogTitle} />
       <meta
         property="og:locale"
         content={langCode === 'en' ? 'en_GB' : 'cs_CZ'}
@@ -86,7 +87,9 @@ export const SchemaComp: React.FC<IProps> = ({
         <meta property="og:type" content="website" />
       )}
       <meta property="og:image" content="/images/ogimage.jpg" />
+      <meta property="twitter:image" content="/images/ogimage.jpg" />
       <meta property="og:description" content={description} />
+      <meta name="description" content={description} />
       <meta property="og:site_name" content={I18n('covid_portal')} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
