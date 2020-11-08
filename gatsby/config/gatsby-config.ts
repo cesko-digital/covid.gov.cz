@@ -197,7 +197,8 @@ const config = {
         display: 'block',
       },
     },
-    `gatsby-plugin-offline`,
+    // TODO: enable after resolving /sw.js mimetype problem
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
