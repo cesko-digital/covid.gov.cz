@@ -18,7 +18,7 @@ interface IProps {
 
 const Measures: React.FC<IProps> = ({ data, pageContext }) => {
   useNavigateToFirstItemOnDesktop(
-    data.allTaxonomyTermMeasureType.nodes,
+    data.allMeasureType.nodes,
     pageContext.langCode,
   );
   // todo add meta description
@@ -50,7 +50,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         <Headline>{I18n('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">
-        <MeasureAreaList data={data.allTaxonomyTermMeasureType.nodes} />
+        <MeasureAreaList data={data.allMeasureType.nodes} />
       </Container>
     </Layout>
   );

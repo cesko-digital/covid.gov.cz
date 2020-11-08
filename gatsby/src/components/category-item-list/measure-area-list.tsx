@@ -18,7 +18,7 @@ const MeasureAreaList: React.FC<IProps> = ({ data }) => {
       id,
       name,
       path: path.alias,
-      iconCode: relationships.field_ref_icon?.code,
+      iconCode: relationships.icon?.code,
       isActive: path.alias === location.pathname,
     }));
   return (
@@ -27,7 +27,7 @@ const MeasureAreaList: React.FC<IProps> = ({ data }) => {
 };
 
 export const query = graphql`
-  fragment MeasureArea on taxonomy_term__measure_type {
+  fragment MeasureArea on measure_type {
     id
     name
     path {
@@ -37,7 +37,7 @@ export const query = graphql`
       measure {
         id
       }
-      field_ref_icon {
+      icon {
         code
       }
     }

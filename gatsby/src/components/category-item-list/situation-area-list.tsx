@@ -18,7 +18,7 @@ const SituationAreaList: React.FC<IProps> = ({ data }) => {
       id,
       name,
       path: path.alias,
-      iconCode: relationships.field_ref_icon?.code,
+      iconCode: relationships.icon?.code,
       isActive: path.alias === location.pathname,
     }));
   return <CategoryItemList items={listItems} title={I18n('life_situations')} />;
@@ -35,7 +35,7 @@ export const query = graphql`
       situation {
         id
       }
-      field_ref_icon {
+      icon {
         code
       }
     }

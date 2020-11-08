@@ -18,7 +18,7 @@ interface IProps {
 const Page: React.FC<IProps> = ({ data, pageContext }) => {
   const relatedMeasures: React.ComponentProps<
     typeof CategoryItemList
-  >['items'] = data.measureArea.relationships.measure.map((measure) => ({
+  >['items'] = data.measureType.relationships.measure.map((measure) => ({
     id: measure.id,
     name: measure.title,
     path: measure.path.alias,
@@ -59,8 +59,8 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
                 url: I18n(`slug_measures`),
               },
               {
-                title: data.measure.relationships?.situation_type?.name,
-                url: data.measure.relationships?.situation_type?.path?.alias,
+                title: data.measure.relationships?.measure_type?.name,
+                url: data.measure.relationships?.measure_type?.path?.alias,
               },
               data.measure.title,
             ]}
@@ -75,7 +75,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
                 slug: I18n('slug_measures'),
                 title: I18n('current_measures'),
               }}
-              title={data.measureArea.name}
+              title={data.measureType.name}
             />
           }
         >
@@ -104,7 +104,7 @@ export const query = graphql`
         region {
           name
         }
-        situation_type: field_measure_type {
+        measure_type {
           name
           path {
             alias
@@ -116,7 +116,7 @@ export const query = graphql`
       }
       ...MeasureDetail
     }
-    measureArea: taxonomyTermMeasureType(path: { alias: { eq: $listSlug } }) {
+    measureType(path: { alias: { eq: $listSlug } }) {
       name
       path {
         alias
