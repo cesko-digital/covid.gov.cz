@@ -7,7 +7,7 @@ const useMobile = (
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down(key), options);
   // return true during SSR
-  if (typeof window !== 'object') {
+  if (typeof window === 'undefined') {
     return true;
   }
   return matches;
