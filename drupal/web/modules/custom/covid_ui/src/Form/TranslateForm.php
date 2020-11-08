@@ -63,7 +63,7 @@ class TranslateForm extends FormBase {
         'source' => [
           '#type' => 'hidden',
           '#value' => $source,
-          '#prefix' => $source
+          '#prefix' => $source,
         ],
       ];
 
@@ -79,6 +79,7 @@ class TranslateForm extends FormBase {
 
     $form['table'] = [
       '#type' => 'table',
+      '#sticky' => TRUE,
       '#header' => ['lid' => 'klíč'] + array_map(function(Language $language) {
         return $language->getName();
       }, $languages),
