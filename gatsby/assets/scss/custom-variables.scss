@@ -78,14 +78,14 @@ ol {
   }
 }
 
-ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box) > li::before {
+ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box)
+  > li::before {
   left: -10px;
 }
 
 ol > li::before {
   left: -17px;
 }
-
 
 h2,
 .h2 {

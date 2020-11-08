@@ -9,12 +9,13 @@ import ListCard from '@/components/list-card';
 import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
+import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: IQuery;
 }
 
-const Home: React.FC<IProps> = ({ data }) => {
+const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
   const { area } = data;
   return (
     <Layout>
@@ -22,15 +23,13 @@ const Home: React.FC<IProps> = ({ data }) => {
         title={area.name}
         description={I18n('situations_overview_meta')}
         pagePath="/situations"
-        schema={`{
-          "@type": "WebSite",
-          "@id": "https://covid.gov.cz/#situations",
-          "url": "https://covid.gov.cz/situations",
-          "name": "Life Situations",
-          "publisher": {
-            "@id": "https://gov.cz"
-          }
-        }`}
+      />
+      <SchemaComp
+        url={'https://covid.gov.cz' + pageContext.slug}
+        langCode={pageContext.langCode}
+        isBlogPost={false}
+        title={area.name}
+        description={I18n('situations_overview_meta')}
       />
       <Container>
         <div className="pt-1">
@@ -67,7 +66,7 @@ const Home: React.FC<IProps> = ({ data }) => {
     </Layout>
   );
 };
-export default Home;
+export default SituationList;
 
 export const query = graphql`
   query($slug: String!) {

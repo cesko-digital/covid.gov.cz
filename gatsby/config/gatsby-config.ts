@@ -85,6 +85,24 @@ const config = {
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://covid.gov.cz/',
+        sitemap: 'https://covid.gov.cz/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        directives: {
+          'script-src': "'self' www.google-analytics.com",
+          'style-src': "'self' 'unsafe-inline'",
+          'img-src': "'self' data: www.google-analytics.com",
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
         documentPaths: ['./src/**/*.{ts,tsx}', './config/**/*.{ts,tsx}'],
@@ -104,6 +122,13 @@ const config = {
             },
           },
         ],
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://covid.gov.cz`,
       },
     },
     {
@@ -131,9 +156,12 @@ const config = {
         theme_color: '#2362a2',
         background_color: '#2362a2',
         lang: `cs`,
+        start_url: `/`,
         display: 'standalone',
-
-        icon: 'static/ds/images/meta/android-chrome-256x256.png',
+        icon: 'static/ds/images/meta/maskable_icon.png',
+        icon_options: {
+          purpose: 'any maskable',
+        },
         icons: [
           {
             src: `static/ds/images/meta/android-chrome-192x192.png`,
@@ -156,6 +184,13 @@ const config = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['material icons'],
+        display: 'block',
+      },
+    },
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-gtag`,
@@ -165,12 +200,6 @@ const config = {
           // Puts tracking script in the head instead of the body
           head: true,
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['material icons', 'roboto'],
       },
     },
   ],

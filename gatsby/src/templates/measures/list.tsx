@@ -9,28 +9,28 @@ import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
 import MeasureListCard from '@/components/list-card/measure-list-card';
+import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: IQuery;
 }
 // todo add meta description
-const Home: React.FC<IProps> = ({ data }) => {
+const Home: React.FC<IProps> = ({ data, pageContext }) => {
+  console.log(pageContext);
   const { taxonomyTermMeasureType } = data;
   return (
     <Layout>
       <Seo
         title={taxonomyTermMeasureType.name}
         description={I18n('current_measures_overview_meta')}
-        pagePath="/measures"
-        schema={`{
-          "@type": "WebSite",
-          "@id": "https://covid.gov.cz/#measures",
-          "url": "https://covid.gov.cz/measures",
-          "name": "Current Measures",
-          "publisher": {
-            "@id": "https://gov.cz"
-          }
-        }`}
+        pagePath={pageContext.slug}
+      />
+      <SchemaComp
+        url={'https://covid.gov.cz' + pageContext.slug}
+        langCode={pageContext.langCode}
+        isBlogPost={false}
+        title={taxonomyTermMeasureType.name}
+        description={I18n('current_measures_overview_meta')}
       />
       <Container>
         <div className="pt-1">
