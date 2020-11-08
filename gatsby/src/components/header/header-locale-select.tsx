@@ -4,13 +4,15 @@ import { TRoute } from '@/components/i18n';
 import Link from '@/components/link';
 
 import classes from './header-locale-select.module.scss';
+import { ISitePageContextLanguageVariants } from 'graphql-types';
 
-interface Props {
-  activeLocale: string;
-  onLocaleChange: (locale: string) => void;
+interface IProps {
+  languageVariants: ISitePageContextLanguageVariants;
 }
 
-export const HeaderLocaleSelect: React.FC<Props> = () => {
+export const HeaderLocaleSelect: React.FC<IProps> = ({ languageVariants }) => {
+  const variants = languageVariants || {};
+
   return (
     <div
       className={classnames(
@@ -20,12 +22,12 @@ export const HeaderLocaleSelect: React.FC<Props> = () => {
     >
       {TRoute('/') !== '/' ? (
         <span>
-          <Link to="/" noTR className="text-white">
+          <Link to={variants.cs || '/'} noTR className="text-white">
             CZ
           </Link>
         </span>
       ) : (
-        <Link to="/en/" noTR className="text-white">
+        <Link to={variants.en || '/en/'} noTR className="text-white">
           EN
         </Link>
       )}

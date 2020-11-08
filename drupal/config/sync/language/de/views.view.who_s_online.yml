@@ -1,0 +1,30 @@
+label: 'Wer ist online Block'
+description: 'Zeigt die Benutzernamen der zuletzt aktiven Benutzer und die Gesamtzahl der aktiven Benutzer.'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      filters:
+        access:
+          expose:
+            label: 'Letzter Zugriff'
+            description: 'Ein Benutzer gilt für diesen Zeitraum als „online“, nachdem er das letzte Mal eine Seite betrachtet hat.'
+      title: 'Wer ist online'
+      header:
+        result:
+          content: 'Momentan sind @total Benutzer online.'
+      empty:
+        area_text_custom:
+          content: 'Momentan sind keine Benutzer online.'
+  who_s_online_block:
+    display_title: 'Wer ist online'
+    display_options:
+      block_description: 'Wer ist online'
+      display_description: 'Eine Liste der derzeit angemeldeten Benutzer.'

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import { useStaticQuery, graphql } from 'gatsby';
@@ -8,8 +8,14 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
+import { ISitePageContext } from 'graphql-types';
 
-const DefaultLayout: React.FC = ({ children }) => {
+interface IProps {
+  children: ReactElement[];
+  pageContext: ISitePageContext;
+}
+
+const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
   const data = useStaticQuery(graphql`
     query {
       mobileImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
@@ -54,6 +60,7 @@ const DefaultLayout: React.FC = ({ children }) => {
           <Img fluid={sources} className={styles.bkgPhoto} />
         </div>
         <Header
+          pageContext={pageContext}
           navItems={[
             { label: I18n('home'), to: '/' },
             { label: I18n('life_situations'), to: I18n('slug_situations') },

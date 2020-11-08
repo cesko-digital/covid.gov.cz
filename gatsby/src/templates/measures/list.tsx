@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery } from 'graphql-types';
+import { IQuery, ISitePageContext } from 'graphql-types';
 
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Container from '@/components/container';
@@ -13,12 +13,18 @@ import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: IQuery;
+  pageContext: ISitePageContext;
 }
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
   const { measureType } = data;
+  const measures = measureType.relationships?.measure || [];
+
+  const collator = new Intl.Collator([pageContext.langCode]);
+  measures.sort((a, b) => collator.compare(a.title, b.title));
+
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={measureType.name}
         description={I18n('current_measures_overview_meta')}
@@ -46,7 +52,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           <Headline>{measureType.name}</Headline>
         </div>
         <div>
-          {measureType.relationships?.measure?.map((m) => (
+          {measures.map((m) => (
             <MeasureListCard
               key={`taxonomyTermMeasureType-list-item-${m.id}`}
               title={m.title}
