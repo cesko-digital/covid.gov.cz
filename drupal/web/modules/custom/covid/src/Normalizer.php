@@ -8,7 +8,6 @@ use Drupal\link\Plugin\Field\FieldType\LinkItem;
 use Drupal\serialization\Normalizer\TypedDataNormalizer;
 use Drupal\text\Plugin\Field\FieldType\TextLongItem;
 use Drupal\text\TextProcessed;
-use Psy\Util\Str;
 
 /**
  * Class Normalizer.
