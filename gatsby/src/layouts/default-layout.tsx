@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import { Alert } from '@/components/alert';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
 
@@ -50,6 +51,20 @@ const DefaultLayout: React.FC = ({ children }) => {
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
       <div>
+        {process.env.VERCEL_URL ? (
+          <Alert
+            message={
+              'Poslední úspěšný build proběhl v ' +
+              new Date().toLocaleTimeString('cs-CZ', {
+                hour: '2-digit',
+                minute: '2-digit',
+                timeZone: 'Europe/Prague',
+              })
+            }
+          />
+        ) : (
+          <></>
+        )}
         <div className={styles.overflow}>
           <Img fluid={sources} className={styles.bkgPhoto} />
         </div>
