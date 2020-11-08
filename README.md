@@ -25,9 +25,9 @@ Install dependencies
 
 -  `docker-compose exec drupal composer install` 
 
-Install Drupal with existing config
+Install Drupal with existing config, database connection is already injected in settings.php file
 
-- `docker-compose exec drupal drush si --db-url=mysql://root:password@mysql:3306/covid --existing-config -y`
+- `docker-compose exec drupal drush si --existing-config -y`
 
 Access site on `http://localhost:1577` if you didn't change
 
