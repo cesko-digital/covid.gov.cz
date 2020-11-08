@@ -18,6 +18,11 @@ interface IProps {
 
 const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
   const { area } = data;
+  const situations = area.relationships?.situation || [];
+
+  const collator = new Intl.Collator([pageContext.langCode]);
+  situations.sort((a, b) => collator.compare(a.title, b.title));
+
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -50,7 +55,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           <Headline>{area.name}</Headline>
         </div>
         <div>
-          {area.relationships?.situation?.map(
+          {situations.map(
             ({ id, title, meta_description, path }) => {
               return (
                 <ListCard
