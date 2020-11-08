@@ -18,7 +18,7 @@ const config = {
             {
               type: 'block_content',
               bundle: 'basic_content',
-              id: 'block_content--basic_content',
+              id: 'blocks',
             },
             { type: 'file', bundle: 'file', id: 'drupal-file' },
             { type: 'node', bundle: 'homepage', id: 'homepage' },
@@ -27,14 +27,14 @@ const config = {
             {
               type: 'path_alias',
               bundle: 'path_alias',
-              id: 'path_alias--path_alias',
+              id: 'path_alias',
             },
             { type: 'taxonomy_term', bundle: 'region', id: 'region' },
             { type: 'node', bundle: 'situation', id: 'situation' },
             {
               type: 'taxonomy_term',
               bundle: 'measure_type',
-              id: 'taxonomy_term--measure_type',
+              id: 'measure_type',
             },
           ],
         },

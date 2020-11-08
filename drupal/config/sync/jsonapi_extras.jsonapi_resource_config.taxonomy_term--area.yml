@@ -113,6 +113,12 @@ resourceFields:
     publicName: revision_translation_affected
     enhancer:
       id: ''
+  path:
+    fieldName: path
+    publicName: path
+    enhancer:
+      id: ''
+    disabled: false
   content_translation_source:
     disabled: true
     fieldName: content_translation_source
@@ -137,3 +143,9 @@ resourceFields:
     publicName: content_translation_created
     enhancer:
       id: ''
+  field_ref_icon:
+    fieldName: field_ref_icon
+    publicName: icon
+    enhancer:
+      id: ''
+    disabled: false

@@ -65,7 +65,7 @@ export const query = graphql`
       region {
         name
       }
-      situation_type: field_measure_type {
+      situation_type: measure_type {
         name
         path {
           alias

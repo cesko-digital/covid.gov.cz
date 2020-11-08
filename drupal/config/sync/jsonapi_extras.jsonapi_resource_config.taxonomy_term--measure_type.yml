@@ -7,7 +7,7 @@ dependencies:
 id: taxonomy_term--measure_type
 disabled: false
 path: term/measure_type
-resourceType: taxonomy_term--measure_type
+resourceType: measure_type
 resourceFields:
   tid:
     fieldName: tid
@@ -141,3 +141,9 @@ resourceFields:
     publicName: content_translation_created
     enhancer:
       id: ''
+  field_ref_icon:
+    fieldName: field_ref_icon
+    publicName: icon
+    enhancer:
+      id: ''
+    disabled: false

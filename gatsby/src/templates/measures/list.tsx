@@ -17,8 +17,8 @@ interface IProps {
 }
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
-  const { taxonomyTermMeasureType } = data;
-  const measures = taxonomyTermMeasureType.relationships?.measure || [];
+  const { measureType } = data;
+  const measures = measureType.relationships?.measure || [];
 
   const collator = new Intl.Collator([pageContext.langCode]);
   measures.sort((a, b) => collator.compare(a.title, b.title));
@@ -26,7 +26,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
   return (
     <Layout pageContext={pageContext}>
       <Seo
-        title={taxonomyTermMeasureType.name}
+        title={measureType.name}
         description={I18n('current_measures_overview_meta')}
         pagePath={pageContext.slug}
       />
@@ -34,7 +34,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         url={'https://covid.gov.cz' + pageContext.slug}
         langCode={pageContext.langCode}
         isBlogPost={false}
-        title={taxonomyTermMeasureType.name}
+        title={measureType.name}
         description={I18n('current_measures_overview_meta')}
       />
       <Container>
@@ -43,13 +43,13 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
             items={[
               { title: I18n('home'), url: '/' },
               { title: I18n('current_measures'), url: I18n('slug_measures') },
-              taxonomyTermMeasureType.name,
+              measureType.name,
             ]}
             variant="inverse"
           />
         </div>
         <div className="mt-3">
-          <Headline>{taxonomyTermMeasureType.name}</Headline>
+          <Headline>{measureType.name}</Headline>
         </div>
         <div>
           {measures.map((m) => (
@@ -72,7 +72,7 @@ export default Home;
 
 export const query = graphql`
   query($slug: String!) {
-    taxonomyTermMeasureType(path: { alias: { eq: $slug } }) {
+    measureType(path: { alias: { eq: $slug } }) {
       name
       relationships {
         measure {

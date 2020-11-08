@@ -11,7 +11,7 @@ interface Props {
 
 const Situation: React.FC<Props> = ({ situation }) => {
   const { name, path } = situation;
-  const iconCode = situation?.relationships?.field_ref_icon?.code;
+  const iconCode = situation?.relationships?.icon?.code;
 
   return (
     <Link to={path.alias} className={styles.situation}>

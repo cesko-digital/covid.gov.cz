@@ -6,8 +6,8 @@ dependencies:
     - block_content.type.basic_content
 id: block_content--basic_content
 disabled: false
-path: block/content
-resourceType: block_content--basic_content
+path: blocks
+resourceType: blocks
 resourceFields:
   id:
     fieldName: id

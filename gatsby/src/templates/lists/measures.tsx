@@ -18,7 +18,7 @@ interface IProps {
 
 const Measures: React.FC<IProps> = ({ data, pageContext }) => {
   const {
-    allTaxonomyTermMeasureType: { nodes },
+    allMeasureType: { nodes },
   } = data;
 
   const collator = new Intl.Collator([pageContext.langCode]);
@@ -61,7 +61,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
                   key={n.id}
                   name={n.name}
                   path={n.path.alias}
-                  iconCode={n.relationships.field_ref_icon?.code}
+                  iconCode={n.relationships.icon?.code}
                 />
               ),
           )}
@@ -74,7 +74,7 @@ export default Measures;
 
 export const query = graphql`
   query MeasureTypeQuery($langCode: String!) {
-    allTaxonomyTermMeasureType(
+    allMeasureType(
       filter: { langcode: { eq: $langCode } }
       sort: { fields: name }
     ) {
@@ -85,7 +85,7 @@ export const query = graphql`
           alias
         }
         relationships {
-          field_ref_icon {
+          icon {
             code
           }
           measure {
