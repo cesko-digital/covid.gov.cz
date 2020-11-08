@@ -73,6 +73,8 @@ export const SchemaComp: React.FC<IProps> = ({
 
   const ogTitle = isHomePage ? title : `${title} · ${I18n('covid_portal')}`;
 
+  const { origin } = new URL(url);
+
   return (
     <Helmet>
       <meta property="og:url" content={url} />
@@ -86,8 +88,8 @@ export const SchemaComp: React.FC<IProps> = ({
       ) : (
         <meta property="og:type" content="website" />
       )}
-      <meta property="og:image" content="/images/ogimage.jpg" />
-      <meta property="twitter:image" content="/images/ogimage.jpg" />
+      <meta property="og:image" content={`${origin}/images/ogimage.jpg`} />
+      <meta property="twitter:image" content={`${origin}/images/ogimage.jpg`} />
       <meta property="og:description" content={description} />
       <meta name="description" content={description} />
       <meta property="og:site_name" content={I18n('covid_portal')} />
