@@ -211,11 +211,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
         (n) => n.drupal_id === node.drupal_id,
       );
 
+      const listSlug = node.path.alias;
+
       createPage({
-        path: pathPrefix + node.path.alias,
+        path: pathPrefix + listSlug,
         component: itemTmpl,
         context: {
-          slug: node.path.alias,
+          slug: listSlug,
           langCode: node.langcode,
           languageVariants,
         },
@@ -236,6 +238,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
           context: {
             slug: subNode.path.alias,
             langCode: subNode.path.langcode,
+            listSlug,
             languageVariants,
           },
         });
