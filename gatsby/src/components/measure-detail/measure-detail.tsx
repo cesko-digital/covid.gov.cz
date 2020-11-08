@@ -1,6 +1,7 @@
 import React from 'react';
 
 import I18n from '@/components/i18n';
+import Link from '@/components/link';
 
 import { IMeasureDetailFragment } from 'graphql-types';
 import { graphql } from 'gatsby';
@@ -12,6 +13,10 @@ interface IProps {
 }
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
+  if (measure.links && !Array.isArray(measure.links)) {
+    measure.links = [measure.links];
+  }
+  const hasRelatedLinks = Boolean(measure.links.length);
   const hasRegion = Boolean(measure.relationships.region.length);
   const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
@@ -44,6 +49,21 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
               validTo={measure.valid_to}
             />
           )}
+        </div>
+      )}
+      {hasRelatedLinks && (
+        <div className="mt-2">
+          <hr />
+          <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
+          <div>
+            {measure.links.map((link, index) => (
+              <div key={index}>
+                <Link className="color-blue mb-1" to={link.uri}>
+                  {link.title}
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </TopicDetail>
