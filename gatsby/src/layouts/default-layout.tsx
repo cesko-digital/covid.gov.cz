@@ -68,6 +68,7 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
             { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
           ]}
         />
+        {console.log('vercel url', process.env.VERCEL_URL)}
         {process.env.VERCEL_URL ? (
           <Alert
             message={
