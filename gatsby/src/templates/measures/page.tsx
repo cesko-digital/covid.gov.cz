@@ -78,6 +78,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               title={data.measureType.name}
             />
           }
+          hideMenuOnMobile
         >
           <MeasureDetail measure={data.measure} />
         </DesktopLeftMenuLayout>

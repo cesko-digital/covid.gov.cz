@@ -81,6 +81,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               title={data.situationArea.name}
             />
           }
+          hideMenuOnMobile
         >
           <SituationDetail situation={data.situation} />
         </DesktopLeftMenuLayout>

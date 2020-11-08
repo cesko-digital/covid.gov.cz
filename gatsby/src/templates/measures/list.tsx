@@ -51,9 +51,10 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         </div>
         <DesktopLeftMenuLayout
           menu={<MeasureAreaList data={data.allMeasureType.nodes} />}
+          hideMenuOnMobile
         >
           <>
-            <Headline className="d-block d-sm-none">
+            <Headline className="d-block d-lg-none">
               {measureType.name}
             </Headline>
             {measures.map((m) => (

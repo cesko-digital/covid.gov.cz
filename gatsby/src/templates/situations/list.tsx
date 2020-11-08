@@ -55,8 +55,9 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
         </div>
         <DesktopLeftMenuLayout
           menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
+          hideMenuOnMobile
         >
-          <Headline className="d-block d-md-none">{area.name}</Headline>
+          <Headline className="d-block d-lg-none">{area.name}</Headline>
           {situations.map(({ id, title, meta_description, path }) => {
             return (
               <ListCard

@@ -23,8 +23,14 @@
     }
 
     @include media-breakpoint-down(sm) {
-      display: none;
-      visibility: hidden;
+      width: 100%;
+    }
+
+    &.hideOnMobile {
+      @include media-breakpoint-down(sm) {
+        display: none;
+        visibility: hidden;
+      }
     }
   }
 
