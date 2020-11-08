@@ -11,6 +11,7 @@ import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 import { SituationAreaList } from '@/components/category-item-list';
 import { useNavigateToFirstItemOnDesktop } from '@/hooks/useNavigateToFirstItem';
+import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
   data: ISituationsAreasListQuery;
@@ -38,22 +39,22 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
         isBlogPost={false}
         title={I18n('life_situations')}
       />
-      <Container>
-        <div className="pt-1">
-          <Breadcrumb
-            items={[
-              { title: I18n('home'), url: '/' },
-              { title: I18n('life_situations'), url: I18n('slug_situations') },
-            ]}
-            variant="inverse"
-          />
-        </div>
-        <div className="mt-3 d-block d-sm-none">
-          <Headline>{I18n('situations_overview')}</Headline>
-        </div>
-        <div className="mt-3">
-          <SituationAreaList data={data.allSituationAreas.nodes} />
-        </div>
+      <Container className="pt-1">
+        <Breadcrumb
+          items={[
+            { title: I18n('home'), url: '/' },
+            { title: I18n('life_situations'), url: I18n('slug_situations') },
+          ]}
+          variant="inverse"
+        />
+      </Container>
+      <Container className="mt-3 d-block d-sm-none">
+        <Headline>{I18n('situations_overview')}</Headline>
+      </Container>
+      <Container className="mt-3">
+        <DesktopLeftMenuLayout
+          menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
+        />
       </Container>
     </Layout>
   );
