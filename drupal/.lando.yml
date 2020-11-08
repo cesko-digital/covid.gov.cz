@@ -24,3 +24,5 @@ services:
     type: mssql
     creds:
       password: SuperDrupalSite8
+    overrides:
+      image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu

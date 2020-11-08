@@ -59,7 +59,7 @@ export default Measures;
 
 export const query = graphql`
   query MeasureTypeQuery($langCode: String!) {
-    allTaxonomyTermMeasureType(filter: { langcode: { eq: $langCode } }) {
+    allMeasureType(filter: { langcode: { eq: $langCode } }) {
       nodes {
         ...MeasureArea
       }

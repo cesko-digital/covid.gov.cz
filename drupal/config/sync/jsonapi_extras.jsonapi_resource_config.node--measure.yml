@@ -155,7 +155,7 @@ resourceFields:
     disabled: false
   field_measure_type:
     fieldName: field_measure_type
-    publicName: field_measure_type
+    publicName: measure_type
     enhancer:
       id: ''
     disabled: false
@@ -173,7 +173,7 @@ resourceFields:
     disabled: false
   field_ref_icon:
     fieldName: field_ref_icon
-    publicName: field_ref_icon
+    publicName: icon
     enhancer:
       id: ''
     disabled: false

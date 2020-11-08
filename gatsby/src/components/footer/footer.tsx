@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
   const result = useStaticQuery<IFooterLinksQuery>(query);
 
   const getContentByDrupalInternalId = (internalId: string) => {
-    const edge = result.allBlockContentBasicContent.edges.find(({ node }) => {
+    const edge = result.allBlocks.edges.find(({ node }) => {
       const matchesLanguage = node.langcode === gLang();
       const matchesId = node.drupal_internal__id === internalId;
       return matchesLanguage && matchesId;
@@ -105,7 +105,7 @@ export default Footer;
 
 export const query = graphql`
   query FooterLinks {
-    allBlockContentBasicContent {
+    allBlocks {
       edges {
         node {
           drupal_internal__id
