@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './category-item-list.module.scss';
 import CategoryItem from '../category-item/category-item';
 import useMobile from '@/hooks/useMobile';
+import { gLang } from '@/components/i18n';
 
 type Props = {
   items: React.ComponentProps<typeof CategoryItem>[];
@@ -11,8 +12,8 @@ type Props = {
 const CategoryItemList: FC<Props> = ({ items }) => {
   const isMobile = useMobile();
 
-  // todo add correct language
-  const collator = new Intl.Collator(['cs']);
+  const lang = gLang();
+  const collator = new Intl.Collator([lang]);
   items.sort((a, b) => collator.compare(a.name, b.name));
 
   return (
