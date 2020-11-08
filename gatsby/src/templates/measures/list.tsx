@@ -16,7 +16,6 @@ interface IProps {
 }
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
-  console.log(pageContext);
   const { taxonomyTermMeasureType } = data;
   return (
     <Layout>
