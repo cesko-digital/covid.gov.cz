@@ -24,6 +24,7 @@ permissions:
   - 'create terms in measure_type'
   - 'create terms in region'
   - 'create terms in situation_type'
+  - 'create url aliases'
   - 'delete any measure content'
   - 'delete any page content'
   - 'delete any situation content'
