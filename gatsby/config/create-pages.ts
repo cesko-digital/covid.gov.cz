@@ -47,12 +47,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
           edges {
             node {
               langcode
+              drupal_id
               path {
                 alias
               }
               relationships {
                 situation {
                   langcode
+                  drupal_id
                   path {
                     alias
                   }
@@ -65,12 +67,14 @@ export const createPages: GatsbyNode['createPages'] = async ({
           edges {
             node {
               langcode
+              drupal_id
               path {
                 alias
               }
               relationships {
                 measure {
                   langcode
+                  drupal_id
                   path {
                     alias
                   }
@@ -112,6 +116,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   const pathLangPrefix = (lang) => (lang === 'cs' ? '' : '/' + lang);
 
+  const generateLanguageVariants = (nodes, toLanguage, filter) => nodes
+    .filter((item) => item.langcode != toLanguage && filter(item))
+    .reduce((acc, item) => {
+      acc[item.langcode] = pathLangPrefix(item.langcode) + item.target;
+      return acc;
+    }, {});
+
   languages.forEach((lang) => {
     const pathPrefix = pathLangPrefix(lang);
 
@@ -128,12 +139,11 @@ export const createPages: GatsbyNode['createPages'] = async ({
         return item.langcode === lang && item.source === source;
       })[0].target;
 
-      const languageVariants = translations
-        .filter((item) => item.langcode != lang && item.source === source)
-        .reduce((acc, item) => {
-          acc[item.langcode] = pathLangPrefix(item.langcode) + item.target;
-          return acc;
-        }, {});
+      const languageVariants = generateLanguageVariants(
+        translations,
+        lang,
+        (i) => i.source === source
+      );
 
       createPage({
         path: pathPrefix + slug,
@@ -150,14 +160,11 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const customPages: IPage[] = result.data.allPage.nodes;
 
   customPages.forEach((page) => {
-    const languageVariants = customPages
-      .filter(
-        (p) => p.langcode !== page.langcode && p.drupal_id == page.drupal_id,
-      )
-      .reduce((acc, page) => {
-        acc[page.langcode] = pathLangPrefix(page.langcode) + page.path.alias;
-        return acc;
-      }, {});
+    const languageVariants = generateLanguageVariants(
+      customPages,
+      page.langcode,
+      (p) => p.drupal_id == page.drupal_id
+    );
 
     const pathPrefix = pathLangPrefix(page.langcode);
     createPage({
@@ -172,40 +179,47 @@ export const createPages: GatsbyNode['createPages'] = async ({
   });
 
   // Create blog posts pages.
-  const posts = [
-    result.data.allArea.edges,
-    result.data.allTaxonomyTermMeasureType.edges,
+  const blogPostSpecs = [
+    ['situation', result.data.allArea.edges, listTemplate[0], pageTemplate[0]],
+    ['measure', result.data.allTaxonomyTermMeasureType.edges, listTemplate[1], pageTemplate[1]],
   ];
 
-  const itemNames = ['situation', 'measure'];
+  blogPostSpecs.forEach((spec) => {
+    const [key, posts, itemTmpl, subTmpl] = spec;
+    const nodes = posts.map(p => p.node);
+    nodes.forEach((node) => {
+      const pathPrefix = pathLangPrefix(node.langcode);
 
-  for (let i = 0; i < 2; i++) {
-    posts[i].forEach((post, index) => {
-      const pathPrefix = pathLangPrefix(post.node.langcode);
+      const languageVariants = generateLanguageVariants(
+        nodes,
+        node.langcode,
+        (n) => n.drupal_id === node.drupal_i
+      )
 
       createPage({
-        path: pathPrefix + post.node.path.alias,
-        component: listTemplate[i],
+        path: pathPrefix + node.path.alias,
+        component: itemTmpl,
         context: {
-          slug: post.node.path.alias,
-          langCode: post.node.langcode,
+          slug: node.path.alias,
+          langCode: node.langcode,
+          languageVariants,
         },
       });
 
-      if (post.node.relationships[itemNames[i]] !== null) {
-        post.node.relationships[itemNames[i]].forEach((situation, index) => {
-          const pathPrefix = pathLangPrefix(situation.langcode);
+      (node.relationships[key] || []).forEach((subItem) => {
+        const pathPrefix = pathLangPrefix(subItem.langcode);
 
-          createPage({
-            path: pathPrefix + situation.path.alias,
-            component: pageTemplate[i],
-            context: {
-              slug: situation.path.alias,
-              langCode: situation.path.langcode,
-            },
-          });
+        createPage({
+          path: pathPrefix + subItem.path.alias,
+          component: subTmpl,
+          context: {
+            slug: subItem.path.alias,
+            langCode: subItem.path.langcode,
+            languageVariants: {wtf: 'second'}
+          },
         });
-      }
+      });
+
     });
-  }
+  });
 };
