@@ -135,12 +135,12 @@ const config = {
         icon: '/ds/images/layout/favicons/android-chrome-512x512.png',
         icons: [
           {
-            src: `/ds/images/layout/android-chrome-192x192.png`,
+            src: `/ds/images/layout/meta/android-chrome-192x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/ds/images/layout/favicons/android-chrome-512x512.png`,
+            src: `/ds/images/layout/meta/android-chrome-512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
