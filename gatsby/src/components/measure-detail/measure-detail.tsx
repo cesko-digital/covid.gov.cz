@@ -14,9 +14,9 @@ interface IProps {
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   if (measure.links && !Array.isArray(measure.links)) {
-    measure.links = [measure.links];
+    measure.links = [measure?.links];
   }
-  const hasRelatedLinks = Boolean(measure.links.length);
+  const hasRelatedLinks = Boolean(measure.links?.length);
   const hasRegion = Boolean(measure.relationships.region.length);
   const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
