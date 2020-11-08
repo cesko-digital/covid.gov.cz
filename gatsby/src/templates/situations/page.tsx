@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery } from 'graphql-types';
+import { IQuery, ISitePageContext } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
 import SituationDetail from '@/components/situation-detail/situation-detail';
 import ContentBox from '@/components/content-box';
@@ -12,12 +12,13 @@ import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
+  pageContext: ISitePageContext;
 }
 
 const Page: React.FC<IProps> = ({ data, pageContext }) => {
   const linksData = data.situation.relationships.related_situations;
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={data.situation.title}
         description={

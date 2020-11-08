@@ -3,7 +3,7 @@ import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { ISitePageContext, ISituationTypeQueryQuery } from 'graphql-types';
+import { ISituationTypeQueryQuery, ISitePageContext } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
@@ -17,26 +17,26 @@ interface IProps {
   pageContext: ISitePageContext;
 }
 
-const Situations: React.FC<IProps> = ({ data, pageContext: { langCode } }) => {
+const Situations: React.FC<IProps> = ({ data, pageContext }) => {
   const {
     allArea: { nodes },
   } = data;
 
-  const collator = new Intl.Collator([langCode]);
+  const collator = new Intl.Collator([pageContext.langCode]);
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   // todo: add meta description
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={I18n('life_situations')}
         description={I18n('situations_overview_meta')}
         pagePath={I18n('slug_situations')}
-        htmlLanguage={langCode}
+        htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
         url={'https://covid.gov.cz' + I18n('slug_situations')}
-        langCode={langCode}
+        langCode={pageContext.langCode}
         description={I18n('current_situations_overview_meta')}
         isBlogPost={false}
         title={I18n('life_situations')}

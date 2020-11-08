@@ -1,4 +1,4 @@
-import { IPage, IQuery } from 'graphql-types';
+import { IPage, IQuery, ISitePageContext } from 'graphql-types';
 
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
@@ -11,13 +11,14 @@ import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
+  pageContext: ISitePageContext;
 }
 
-const CustomPage: React.FC<IProps> = ({ data }) => {
+const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
   const page: IPage = data.page;
 
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={page.title}
         description={page.meta_description ?? 'Custom page meta description.'}

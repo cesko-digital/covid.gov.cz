@@ -4,10 +4,16 @@ import React from 'react';
 import { vh90 } from './404.module.scss';
 import Layout from '@/layouts/default-layout';
 import { Helmet } from 'react-helmet';
+import { ISitePageContext } from 'graphql-types';
+
+interface IProps {
+  pageContext: ISitePageContext;
+}
+
 // todo: add localized title for button
-const PageNotFound: React.FC = () => {
+const PageNotFound: React.FC<IProps> = ({ pageContext }) => {
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Helmet title="Page not found | COVID PORTAL" />
       <Row
         className={'bg-light flex-column p-5 mx-0 ' + vh90}

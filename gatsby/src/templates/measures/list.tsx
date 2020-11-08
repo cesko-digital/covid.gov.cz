@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery } from 'graphql-types';
+import { IQuery, ISitePageContext } from 'graphql-types';
 
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Container from '@/components/container';
@@ -13,12 +13,13 @@ import SchemaComp from '@/components/schema';
 
 interface IProps {
   data: IQuery;
+  pageContext: ISitePageContext;
 }
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
   const { taxonomyTermMeasureType } = data;
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <Seo
         title={taxonomyTermMeasureType.name}
         description={I18n('current_measures_overview_meta')}
