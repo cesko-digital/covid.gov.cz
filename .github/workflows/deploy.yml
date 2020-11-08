@@ -43,7 +43,7 @@ jobs:
       - name: Commit && move on
         working-directory: gh-pages
         run: |
-          git add -A && git commit -m "Build" && git push --force
+          git add -A && git commit -m "Build" --allow-empty && git push --force
       - name: Send notification to Slack
         uses: rtCamp/action-slack-notify@master
         env:
