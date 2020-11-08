@@ -10,7 +10,6 @@ import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
-import { FlashOnRounded } from '@material-ui/icons';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
