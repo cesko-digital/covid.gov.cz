@@ -21,25 +21,13 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
   return (
     <>
       <TopicDetail
-        breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
-          {
-            title: I18n('life_situations'),
-            url: I18n(`slug_situations`),
-          },
-          {
-            title: situation.relationships?.situation_type?.name,
-            url: situation.relationships?.situation_type?.path?.alias,
-          },
-          situation.title,
-        ]}
         title={situation.title}
         processedContent={situation?.content?.processed}
       >
         {hasRelatedMeasures && (
           <div className="mt-2">
             <hr />
-            <h3 className="mb-1 color-blue-dark">Související opatření</h3>
+            <h3 className="mb-1 color-blue-dark">{I18n('related_measures')}</h3>
             {situation.relationships.measures.map((measure) => (
               <RelatedMeasure key={measure.path.alias} measure={measure} />
             ))}
