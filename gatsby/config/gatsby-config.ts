@@ -97,7 +97,8 @@ const config = {
       options: {
         directives: {
           'script-src': "'self' www.google-analytics.com",
-          'style-src': "'self' 'unsafe-inline'",
+          'style-src': "'self' fonts.googleapis.com",
+          'font-src': "'self' fonts.googleapis.com",
           'img-src': "'self' data: www.google-analytics.com",
         },
       },
