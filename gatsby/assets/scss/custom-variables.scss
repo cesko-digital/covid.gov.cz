@@ -69,17 +69,15 @@ ul,
 ol {
   margin: 0;
   padding: 0;
-
   margin-left: 15px;
 
-  & > li,
   & > li {
     margin-bottom: 4px;
   }
 }
 
-ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box)
-  > li::before {
+/* stylelint-disable-next-line prettier/prettier */
+ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box) > li::before {
   left: -10px;
 }
 

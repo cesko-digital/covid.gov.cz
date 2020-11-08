@@ -28,9 +28,10 @@
       font-size: 18px;
       line-height: 32px;
 
-      &:after {
+      &::after {
         content: '\E912';
-        font-family: 'pvs-icons' !important;
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+        font-family: 'pvs-icons', serif !important;
         color: $theme-yellow;
         float: right;
         font-size: 12px;
@@ -38,6 +39,7 @@
       }
     }
   }
+
   .buttonWrapper {
     display: none;
   }
