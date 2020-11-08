@@ -4,6 +4,8 @@
 
 const axios = require(`axios`);
 
+const fs = require('fs')
+
 const _ = require(`lodash`);
 
 const { nodeFromData, downloadFile, isFileNode } = require(`./normalize`);
@@ -12,6 +14,7 @@ const {
   handleReferences,
   handleWebhookUpdate,
   fetchLanguageConfig,
+  saveApiFile
 } = require(`./utils`);
 
 const asyncPool = require(`tiny-async-pool`);
@@ -255,7 +258,8 @@ exports.sourceNodes = async (
       auth: basicAuth,
       headers,
       params,
-    });
+    })
+    const path = process.cwd() + "/public/api";
     allData = await Promise.all(
       _.map(data.data.links, async (url, type) => {
         if (disallowedLinkTypes.includes(type)) return;
@@ -315,6 +319,11 @@ exports.sourceNodes = async (
             data = await getNext(d.data.links.next, data);
           }
 
+          const pathname = new URL(url).pathname;
+          const filename = pathname.split("/").pop()
+          let path_subfolder = pathname.replace("api/", "");
+          path_subfolder = path_subfolder.replace(filename, "");
+          saveApiFile(baseUrl, path + path_subfolder, filename, data);
           return data;
         };
 

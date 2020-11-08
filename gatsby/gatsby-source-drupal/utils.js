@@ -1,6 +1,7 @@
 const _ = require(`lodash`);
 const axios = require(`axios`);
 const { nodeFromData, downloadFile, isFileNode } = require(`./normalize`);
+const fs = require('fs');
 
 const backRefsNamesLookup = new WeakMap();
 const referencedNodesLookup = new WeakMap();
@@ -268,3 +269,10 @@ const handleWebhookUpdate = async (
 };
 
 exports.handleWebhookUpdate = handleWebhookUpdate;
+
+const saveApiFile = (baseUrl, path, filename, data) => {
+  fs.mkdirSync(path, { recursive: true });
+  fs.writeFileSync(`${path}/${filename}`, JSON.stringify(data, null, 2).replace(baseUrl, ""));
+};
+
+exports.saveApiFile = saveApiFile;
