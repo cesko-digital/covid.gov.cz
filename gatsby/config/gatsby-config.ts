@@ -101,7 +101,8 @@ const config = {
           'prefetch-src':
             "'self' fonts.googleapis.com www.googletagmanager.com",
           'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
-          'img-src': "'self'",
+          'img-src': "'self' data:",
+          'connect-src': "'self' analytics.google.com",
         },
       },
     },
