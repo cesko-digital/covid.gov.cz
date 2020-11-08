@@ -17,11 +17,9 @@
   &:hover {
     background-color: rgba(255, 255, 255, 0.05);
     transition: all 0.2s;
-    &:not(.isActive) {
-      .chevron {
-        transition: all 0.2s;
-        right: 16px;
-      }
+    .chevron {
+      transition: all 0.2s;
+      right: 16px;
     }
   }
 
@@ -45,7 +43,9 @@
 
   &.isActive {
     background: white;
-
+    .chevron {
+      display: none;
+    }
     .categoryItemTitle,
     .categoryItemIcon {
       color: $theme-blue-dark;
