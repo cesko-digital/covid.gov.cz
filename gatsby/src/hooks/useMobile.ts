@@ -6,6 +6,10 @@ const useMobile = (
 ): boolean => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down(key), options);
+  // return true during SSR
+  if (typeof window !== 'object') {
+    return true;
+  }
   return matches;
 };
 
