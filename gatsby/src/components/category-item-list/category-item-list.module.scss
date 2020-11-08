@@ -6,9 +6,11 @@
 .wrapper {
   background-color: $theme-blue;
   padding: 12px 0;
+
   @include media-breakpoint-down(md) {
     border-radius: 3px;
   }
+
   .header {
     > h2 {
       color: $white;
@@ -16,13 +18,16 @@
       letter-spacing: normal;
       margin: 0;
     }
+
     @include media-breakpoint-down(sm) {
       display: none;
       visibility: hidden;
     }
+
     .chevron {
       color: $theme-yellow;
     }
+
     .linkBack {
       text-transform: uppercase;
       padding: 0 24px;
@@ -34,6 +39,7 @@
       font-weight: 500;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
+
       &:hover {
         span {
           text-decoration: underline;
