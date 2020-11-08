@@ -5,6 +5,10 @@
 
 .wrapper {
   display: flex;
+  @include media-breakpoint-up(md) {
+    margin-top: 26px;
+  }
+
   > nav {
     background-color: $theme-blue;
     hr {
@@ -12,10 +16,10 @@
       opacity: 0.3;
     }
     @include media-breakpoint-up(xl) {
-      max-width: 320px;
+      width: 320px;
     }
     @include media-breakpoint-up(md) {
-      max-width: 280px;
+      width: 280px;
     }
     @include media-breakpoint-down(sm) {
       display: none;
