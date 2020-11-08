@@ -6,11 +6,14 @@ url:
     en: en
     cs: ''
     vi: vi
-    '': null
+    ru: ru
+    de: de
   domains:
     en: ''
     cs: ''
     vi: ''
+    ru: ''
+    de: ''
 selected_langcode: site_default
 _core:
   default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM

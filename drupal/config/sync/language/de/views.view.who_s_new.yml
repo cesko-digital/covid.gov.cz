@@ -1,0 +1,20 @@
+label: 'Neue Benutzer'
+description: 'Zeigt eine Liste der neuesten Benutzerkonten der Website.'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      title: 'Neue Benutzer'
+  block_1:
+    display_title: 'Neue Benutzer'
+    display_options:
+      display_description: 'Eine Liste der neuen Benutzer'
+      block_description: 'Neue Benutzer'
+      block_category: Benutzer

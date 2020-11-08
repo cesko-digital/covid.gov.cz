@@ -1,0 +1,36 @@
+label: Glossar
+description: 'Gesamter Inhalt, alphabetisch'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Anwenden
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        title:
+          label: Titel
+        name:
+          label: Autor
+        changed:
+          label: 'Letzte Aktualisierung'
+  attachment_1:
+    display_title: Anhang
+  page_1:
+    display_title: Seite
+    display_options:
+      menu:
+        title: Glossar
