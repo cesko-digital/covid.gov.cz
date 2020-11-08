@@ -46,6 +46,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         isBlogPost={false}
         title={I18n('homepage_meta_title')}
         description={meta_description}
+        isHomePage
       />
       <Helmet title={I18n('homepage_meta_title')} />
       <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
