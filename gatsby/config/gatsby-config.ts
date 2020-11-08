@@ -96,10 +96,12 @@ const config = {
       resolve: `gatsby-plugin-csp`,
       options: {
         directives: {
-          'script-src': "'self' www.google-analytics.com",
-          'style-src': "'self' fonts.googleapis.com",
-          'font-src': "'self' fonts.googleapis.com",
-          'img-src': "'self' data: www.google-analytics.com",
+          'script-src': "'self' www.googletagmanager.com",
+          'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+          'prefetch-src':
+            "'self' fonts.googleapis.com www.googletagmanager.com",
+          'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
+          'img-src': "'self'",
         },
       },
     },

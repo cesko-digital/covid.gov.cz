@@ -76,7 +76,6 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "gatsby-plugin-google-gtag": "^2.1.13",
     "gatsby-plugin-google-tagmanager": "^2.4.0",
-    "gatsby-plugin-next-seo": "^1.6.1",
     "gatsby-plugin-offline": "^3.3.2",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
