@@ -94,7 +94,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/volunteering/support-and-delivery-services-risk-groups-and-those-infected</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/hand-washing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/hygiene/desinfectant-gel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/hygiene/hand-sanitizer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/means-transport</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/coughing-runny-nose</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/room-desinfection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -369,7 +369,7 @@
 <url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/podpora-donaskova-sluzba-rizikovym-skupinam-ci-nakazenym</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/myti-rukou</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekcni-gel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/hygiena/vyroba-dezinfekce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/dopravni-prostredky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/kaslani-smrkani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -583,7 +583,7 @@
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/mikulas-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/vanocni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/navsteva-rodiny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/nakup-darku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/vanoce/nakup-darku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/prodej-kapru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/prodej-vanocnich-stromku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/peceni-cukrovi-pro-rodinu-zname</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
