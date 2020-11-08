@@ -18,6 +18,11 @@ interface IProps {
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
   const { taxonomyTermMeasureType } = data;
+  const measures = taxonomyTermMeasureType.relationships?.measure || [];
+
+  const collator = new Intl.Collator([pageContext.langCode]);
+  measures.sort((a, b) => collator.compare(a.title, b.title));
+
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -47,7 +52,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           <Headline>{taxonomyTermMeasureType.name}</Headline>
         </div>
         <div>
-          {taxonomyTermMeasureType.relationships?.measure?.map((m) => (
+          {measures.map((m) => (
             <MeasureListCard
               key={`taxonomyTermMeasureType-list-item-${m.id}`}
               title={m.title}
