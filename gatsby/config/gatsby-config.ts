@@ -95,7 +95,6 @@ const config = {
     {
       resolve: `gatsby-plugin-csp`,
       options: {
-        disableOnDev: false,
         mergeStyleHashes: false,
         directives: {
           'script-src': "'self' www.googletagmanager.com",
