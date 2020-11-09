@@ -34,10 +34,13 @@ jobs:
         run: yarn format
 
       - name: Run eslint check
-        run: yarn lint
+        run: yarn lint:eslint
+
+      - name: Run typescript check
+        run: yarn lint:tsc
 
       - name: Run stylelint check
-        run: yarn stylelint
+        run: yarn lint:styles
 
       - name: Build frontend
         run: yarn build
