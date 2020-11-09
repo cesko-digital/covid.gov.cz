@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import RobotoRegular from 'assets/fonts/roboto-regular.woff2';
 // @ts-ignore
 import RobotoBold from 'assets/fonts/roboto-bold.woff2';
+// @ts-ignore
+import MaterialIcons from 'assets/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -82,13 +84,11 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
         />
 
         <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block"
-          media="print"
-          // @ts-ignore
-          onLoad="this.media='all'"
-          // @ts-ignore
-          crossOrigin
+          rel="preload"
+          as="font"
+          href={MaterialIcons}
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
       </Helmet>
       {process.env.GATSBY_VERCEL ? (
