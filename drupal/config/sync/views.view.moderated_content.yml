@@ -18,7 +18,7 @@ dependencies:
 _core:
   default_config_hash: Kjqf5d4F134C3zua0tXV7LA3m5OEeS_Fowa2dP9kk2I
 id: moderated_content
-label: 'Covid - Moderovaný obsah'
+label: 'Moderovaný obsah'
 module: views
 description: 'Find and moderate content.'
 tag: ''
