@@ -10,12 +10,7 @@ services:
     tags:
       - { name: normalizer, priority: 10 }
 
-  covid.normalizer_linkit:
-    class: Drupal\covid\Normalizer\LinkitNormalizer
+  covid.normalizer_text_processed:
+    class: Drupal\covid\Normalizer\TextProcessedNormalizer
     tags:
       - { name: normalizer, priority: 20 }
-
-  covid.normalizer_external_link:
-    class: Drupal\covid\Normalizer\ExternalLinkNormalizer
-    tags:
-      - { name: normalizer, priority: 30 }
