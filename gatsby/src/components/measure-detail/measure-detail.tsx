@@ -13,10 +13,7 @@ interface IProps {
 }
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
-  if (measure.links && !Array.isArray(measure.links)) {
-    measure.links = [measure?.links];
-  }
-  const hasRelatedLinks = Boolean(measure.links?.length);
+  const hasSourceLink = Boolean(measure.source);
   const hasRegion = Boolean(measure.relationships.region.length);
   const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
@@ -51,18 +48,14 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
           )}
         </div>
       )}
-      {hasRelatedLinks && (
+      {hasSourceLink && (
         <div className="mt-2">
           <hr />
           <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
           <div>
-            {measure.links.map((link, index) => (
-              <div key={index}>
-                <Link className="color-blue mb-1" to={link.uri}>
-                  {link.title}
-                </Link>
-              </div>
-            ))}
+            <Link className="color-blue mb-1" to={measure.source.uri}>
+              {measure.source.title}
+            </Link>
           </div>
         </div>
       )}
@@ -77,7 +70,7 @@ export const query = graphql`
     content: description {
       processed
     }
-    links: source {
+    source {
       uri
       title
     }
