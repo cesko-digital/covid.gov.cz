@@ -97,10 +97,3 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 };
 
 export default DefaultLayout;
-export const query = graphql`
-  query {
-    currentBuildDate {
-      currentDate
-    }
-  }
-`;
