@@ -99,8 +99,6 @@ const config = {
         directives: {
           'script-src': "'self' www.googletagmanager.com",
           'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
-          'prefetch-src':
-            "'self' fonts.googleapis.com www.googletagmanager.com",
           'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
           'img-src': "'self' www.google.cz stats.g.doubleclick.net data:",
           'connect-src':
