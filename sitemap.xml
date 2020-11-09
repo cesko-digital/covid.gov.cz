@@ -661,6 +661,8 @@
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/prijem-novych-osob-do-socialnich-zarizeni-zakazan-praha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/podminky-pritomnosti-tretich-osob-pri-porodu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/provadeni-pravidelnych-poc-antigennich-testu-u-zamestnancu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/provadeni-pravidelnych-poc-antigennich-testu-u-uzivatelu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/provadeni-pravidelnych-poc-antigennich-testu-u-zamestnancu-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/zakaz-koncertu-predstaveni-v-divadlech-atd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
