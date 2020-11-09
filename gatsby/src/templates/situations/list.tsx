@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from 'graphql-types';
+import { IQuery, ISitePageContext } from '@graphql-types';
 import Container from '@/components/container';
 
 import { SEO as Seo } from 'gatsby-plugin-seo';
@@ -55,18 +55,16 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           <Headline>{area.name}</Headline>
         </div>
         <div>
-          {situations.map(
-            ({ id, title, meta_description, path }) => {
-              return (
-                <ListCard
-                  title={title}
-                  description={meta_description}
-                  key={`area-list-item-${id}`}
-                  link={path?.alias}
-                />
-              );
-            },
-          )}
+          {situations.map(({ id, title, meta_description, path }) => {
+            return (
+              <ListCard
+                title={title}
+                description={meta_description}
+                key={`area-list-item-${id}`}
+                link={path?.alias}
+              />
+            );
+          })}
         </div>
       </Container>
     </Layout>

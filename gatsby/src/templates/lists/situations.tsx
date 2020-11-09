@@ -3,7 +3,7 @@ import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { ISituationTypeQueryQuery, ISitePageContext } from 'graphql-types';
+import { ISituationTypeQueryQuery, ISitePageContext } from '@graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';

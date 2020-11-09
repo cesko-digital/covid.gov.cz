@@ -1,4 +1,4 @@
-import { IPage, IQuery, ISitePageContext } from 'graphql-types';
+import { IPage, IQuery, ISitePageContext } from '@graphql-types';
 
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
@@ -26,18 +26,13 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={page.langcode}
       />
       <SchemaComp
-        canonicalUrl={'https://covid.gov.cz' + page.path.alias}
         datePublished={page.changed}
-        defaultTitle={page.title}
         isBlogPost
         description={page.meta_description}
         body={page.content.processed}
         title={page.title}
         url={'https://covid.gov.cz' + page.path.alias}
-        organization={{
-          url: 'https://gov.cz',
-          name: 'Portál veřejné správy',
-        }}
+        langCode={pageContext.langCode}
       />
       <Container className="mb-4">
         <div className="pt-1">
