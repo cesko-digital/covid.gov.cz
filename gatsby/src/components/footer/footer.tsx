@@ -5,7 +5,7 @@ import I18n, { gLang } from '@/components/i18n';
 
 import styles from './footer.module.scss';
 import { graphql, useStaticQuery } from 'gatsby';
-import { IFooterLinksQuery } from 'graphql-types';
+import { IFooterLinksQuery } from '@/graphql-types';
 
 const DRUPAL_INTERNAL_IDS = {
   USEFUL_LINKS_1: '1',

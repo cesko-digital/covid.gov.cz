@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Container from '@/components/container';
 import I18n from '@/components/i18n';
-import { IQuery, ISitePageContext } from 'graphql-types';
+import { IQuery, ISitePageContext } from '@/graphql-types';
 import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
 import DesktopTopContent from '@/components/desktop-top-content';

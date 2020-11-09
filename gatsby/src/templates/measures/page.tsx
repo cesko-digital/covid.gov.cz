@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IMeasurePageQueryQuery, ISitePageContext } from 'graphql-types';
+import { IMeasurePageQueryQuery, ISitePageContext } from '@/graphql-types';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Layout from '@/layouts/default-layout';

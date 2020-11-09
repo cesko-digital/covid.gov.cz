@@ -13,7 +13,8 @@
     "downlevelIteration": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/graphql-types": ["./graphql-types.ts"]
     },
     "types": ["node", "react", "jest", "testing-library__jest-dom"]
   },

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '@/components/link';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import styles from './situation.module.scss';
-import { IArea } from 'graphql-types';
+import { IArea } from '@/graphql-types';
 import ContentIcon from '@/components/content-icon/content-icon';
 
 interface Props {

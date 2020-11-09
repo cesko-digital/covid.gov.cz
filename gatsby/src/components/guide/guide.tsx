@@ -1,6 +1,6 @@
 import useMobile from '@/hooks/useMobile';
 import classNames from 'classnames';
-import { IArea, IMeasure } from 'graphql-types';
+import { IArea, IMeasure } from '@/graphql-types';
 import React from 'react';
 import Button from '../button';
 import Col from '../col';

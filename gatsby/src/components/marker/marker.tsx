@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Room, Event } from '@material-ui/icons';
-import { IRegion } from 'graphql-types';
+import { IRegion } from '@/graphql-types';
 import Time from '../time';
 import I18n from '../i18n';
 

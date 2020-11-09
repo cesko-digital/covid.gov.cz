@@ -6,7 +6,7 @@ import I18n from '@/components/i18n';
 
 import Accordion from '../accordion';
 import ContentBox from '../content-box';
-import { ISituationDetailFragment } from 'graphql-types';
+import { ISituationDetailFragment } from '@/graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';

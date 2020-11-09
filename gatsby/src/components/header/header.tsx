@@ -12,7 +12,7 @@ import headerLogoCS from './header-logo-cs.svg';
 import headerLogoEN from './header-logo-en.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
 import I18n, { TRoute } from '@/components/i18n';
-import { ISitePageContext } from 'graphql-types';
+import { ISitePageContext } from '@/graphql-types';
 
 interface NavItem {
   label: string;

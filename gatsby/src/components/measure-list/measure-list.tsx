@@ -1,5 +1,5 @@
 import useMobile from '@/hooks/useMobile';
-import { IMeasure } from 'graphql-types';
+import { IMeasure } from '@/graphql-types';
 import React from 'react';
 import Measure from './measure';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Situation from '@/components/situations-box/situation';
 import styles from './situations-box.module.scss';
-import { ISituation } from 'graphql-types';
+import { ISituation } from '@/graphql-types';
 
 interface IProps {
   situations: ISituation[];
