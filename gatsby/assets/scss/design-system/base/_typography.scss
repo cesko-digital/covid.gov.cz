@@ -86,7 +86,7 @@ $version: '1';
 
 @font-face {
   font-family: 'Material Icons';
-  src: url('../../../fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2')
+  src: url('#{$theme-path}/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2')
     format('woff2');
 
   font-display: block;
