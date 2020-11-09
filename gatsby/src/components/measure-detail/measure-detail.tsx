@@ -3,7 +3,7 @@ import React from 'react';
 import I18n from '@/components/i18n';
 import Link from '@/components/link';
 
-import { IMeasureDetailFragment } from 'graphql-types';
+import { IMeasureDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import { RegionsMarker, TimeMarker } from '../marker';

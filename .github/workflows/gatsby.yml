@@ -36,11 +36,11 @@ jobs:
       - name: Run eslint check
         run: yarn lint:eslint
 
-      - name: Run typescript check
-        run: yarn lint:tsc
-
       - name: Run stylelint check
         run: yarn lint:styles
 
       - name: Build frontend
         run: yarn build
+
+      - name: Run typescript check
+        run: yarn lint:tsc

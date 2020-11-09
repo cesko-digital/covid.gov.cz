@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IRelatedMeasureFragment } from 'graphql-types';
+import { IRelatedMeasureFragment } from '@graphql-types';
 import { graphql, Link } from 'gatsby';
 import { RegionsMarker, TimeMarker } from '../marker';
 
