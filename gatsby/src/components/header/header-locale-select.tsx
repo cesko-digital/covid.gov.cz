@@ -4,7 +4,7 @@ import { TRoute } from '@/components/i18n';
 import Link from '@/components/link';
 
 import classes from './header-locale-select.module.scss';
-import { ISitePageContextLanguageVariants } from 'graphql-types';
+import { ISitePageContextLanguageVariants } from '@graphql-types';
 
 interface IProps {
   languageVariants: ISitePageContextLanguageVariants;

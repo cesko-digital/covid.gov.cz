@@ -8,7 +8,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
-import { ISitePageContext } from 'graphql-types';
+import { ISitePageContext } from '@graphql-types';
 
 interface IProps {
   children: ReactElement[];

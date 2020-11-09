@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from 'graphql-types';
+import { IQuery, ISitePageContext } from '@graphql-types';
 import Layout from '@/layouts/default-layout';
 import SituationDetail from '@/components/situation-detail/situation-detail';
 import ContentBox from '@/components/content-box';

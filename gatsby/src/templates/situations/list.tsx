@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from 'graphql-types';
+import { IQuery, ISitePageContext } from '@graphql-types';
 import Container from '@/components/container';
 
 import { SEO as Seo } from 'gatsby-plugin-seo';

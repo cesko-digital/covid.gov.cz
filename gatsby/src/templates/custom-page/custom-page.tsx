@@ -1,4 +1,4 @@
-import { IPage, IQuery, ISitePageContext } from 'graphql-types';
+import { IPage, IQuery, ISitePageContext } from '@graphql-types';
 
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
