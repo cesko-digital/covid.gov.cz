@@ -60,7 +60,7 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
-      {true ? (
+      {process.env.GATSBY_VERCEL ? (
         <Alert
           isInfo
           message={
