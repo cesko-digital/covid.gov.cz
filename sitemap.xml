@@ -320,7 +320,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/tracing-and-testing-faq/delays-tracing-and-testing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/tracing-and-testing-faq/second-hand-contact</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/svatba</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/svatby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/pohrby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/poute</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/bohosluzby-nabozenska-shromazdeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -691,12 +691,12 @@
 <url> <loc>https://covid.gov.cz/opatreni/urady-instituce/omezeni-osobniho-kontaktu-zamestnancu-s-adresaty-verejne-spravy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/urady-instituce/zakaz-navstev-ve-vazebnich-veznicich-veznicich-v-ustavech-pro-vykon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zahranici/vstup-na-uzemi-cr-s-priznaky-infekcniho-onemocneni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/navrat-ze-zahranici-z-mista-s-vyssim-rizikem-nakazy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-vstupu-do-cr-pro-obcany-tretich-zemi-ktere-jsou-rizikove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zahranici/povinnosti-pro-zamestnavatele-cizincu-provozovatele-vzdelavacich-aktivit</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/policii-zajisteny-cizinec-strpi-provedeni-pcr-testu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-volneho-pohybu-osob-ktere-prijely-ze-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/vstup-na-uzemi-cr-s-priznaky-infekcniho-onemocneni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-vstupu-do-cr-pro-obcany-tretich-zemi-ktere-jsou-rizikove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/povinnosti-pro-zamestnavatele-cizincu-provozovatele-vzdelavacich-aktivit</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-neprijimat-zadosti-o-viza-prechodne-trvale-pobyty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-dopravcum-neumoznit-cestu-cestujicim-s-povinnosti-vyplnit-prijezdovy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
