@@ -41,7 +41,6 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url="https://covid.gov.cz/"
         langCode={pageContext.langCode}
         isBlogPost={false}
         title={I18n('homepage_meta_title')}

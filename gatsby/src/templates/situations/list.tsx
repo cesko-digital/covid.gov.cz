@@ -31,7 +31,6 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
         pagePath="/situations"
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + pageContext.slug}
         langCode={pageContext.langCode}
         isBlogPost={false}
         title={area.name}
