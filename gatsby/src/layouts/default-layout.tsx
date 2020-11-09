@@ -60,14 +60,17 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
-      {process.env.GATSBY_VERCEL ? (
+      {true ? (
         <Alert
           isInfo
           message={
             'Poslední úspěšný build proběhl v ' +
-            new Date(data.currentBuildDate.currentDate).toLocaleTimeString(
+            new Date(data.currentBuildDate.currentDate).toLocaleString(
               'cs-CZ',
               {
+                day: 'numeric',
+                month: 'numeric',
+                weekday: 'long',
                 hour: '2-digit',
                 minute: '2-digit',
                 timeZone: 'Europe/Prague',
