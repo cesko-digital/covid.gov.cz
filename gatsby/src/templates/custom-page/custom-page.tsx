@@ -31,7 +31,6 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         description={page.meta_description}
         body={page.content.processed}
         title={page.title}
-        url={'https://covid.gov.cz' + page.path.alias}
         langCode={pageContext.langCode}
       />
       <Container className="mb-4">

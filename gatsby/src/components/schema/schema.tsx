@@ -1,6 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { useLocation } from '@reach/router';
 import I18n from '../i18n';
+
+const BASE_URL = 'https://covid.gov.cz';
 
 interface IProps {
   body?: string;
@@ -9,9 +12,9 @@ interface IProps {
   description: string;
   isBlogPost: boolean;
   title: string;
-  url: string;
   isHomePage?: boolean;
 }
+
 export const SchemaComp: React.FC<IProps> = ({
   datePublished,
   description,
@@ -19,9 +22,11 @@ export const SchemaComp: React.FC<IProps> = ({
   title,
   langCode,
   body,
-  url,
   isHomePage,
 }) => {
+  const { pathname } = useLocation();
+  const url = `${BASE_URL}${pathname}`;
+
   const baseSchema = [
     {
       '@context': 'http://schema.org',

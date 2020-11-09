@@ -31,7 +31,6 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         pagePath={pageContext.slug}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + pageContext.slug}
         langCode={pageContext.langCode}
         isBlogPost={false}
         title={measureType.name}

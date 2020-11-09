@@ -24,7 +24,6 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
   const collator = new Intl.Collator([pageContext.langCode]);
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
-  // todo add meta description
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -34,7 +33,6 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + I18n('slug_measures')}
         langCode={pageContext.langCode}
         description={I18n('current_measures_overview_meta')}
         isBlogPost={false}

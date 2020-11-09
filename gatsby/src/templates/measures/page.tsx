@@ -25,7 +25,6 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={data.measure.langcode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + data.measure.path.alias}
         datePublished={data.measure.valid_from}
         title={data.measure.title}
         langCode={data.measure.langcode}
