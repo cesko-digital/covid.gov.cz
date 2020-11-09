@@ -69,7 +69,4 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# GraphQL Generated Types
-graphql-types.ts
-
 .vercel
