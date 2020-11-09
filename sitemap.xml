@@ -280,8 +280,8 @@
 <url> <loc>https://covid.gov.cz/en/situations/seniors/journeys-tests-or-doctor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors/keeping-touch-family</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors/dealing-official-matters</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/seniors/cviceni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/seniors/informovanost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/exercise</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/seniors/how-treat-information</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/restaurants</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-self-employed-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -323,8 +323,8 @@
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/svatba</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/pohrby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/poute</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/bohosluzby-nabozenska-shromazdeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/navstevy-svatostanku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/bohosluzby-nabozenska-shromazdeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/zpovedi-individualni-duchovni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -695,8 +695,8 @@
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/navrat-ze-zahranici-z-mista-s-vyssim-rizikem-nakazy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-vstupu-do-cr-pro-obcany-tretich-zemi-ktere-jsou-rizikove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/povinnosti-pro-zamestnavatele-cizincu-provozovatele-vzdelavacich-aktivit</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-neprijimat-zadosti-o-viza-prechodne-trvale-pobyty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/policii-zajisteny-cizinec-strpi-provedeni-pcr-testu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-dopravcum-neumoznit-cestu-cestujicim-s-povinnosti-vyplnit-prijezdovy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-volneho-pohybu-osob-ktere-prijely-ze-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-neprijimat-zadosti-o-viza-prechodne-trvale-pobyty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-dopravcum-neumoznit-cestu-cestujicim-s-povinnosti-vyplnit-prijezdovy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
