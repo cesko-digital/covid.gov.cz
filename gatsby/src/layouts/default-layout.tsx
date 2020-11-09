@@ -81,23 +81,21 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
       ) : (
         <></>
       )}
-      <div>
-        <div className={styles.overflow}>
-          <Img fluid={sources} className={styles.bkgPhoto} />
-        </div>
-        <Header
-          pageContext={pageContext}
-          navItems={[
-            { label: I18n('home'), to: '/' },
-            { label: I18n('life_situations'), to: I18n('slug_situations') },
-            { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
-          ]}
-        />
-
-        <main className={styles.main}>
-          <div className={styles.mainInner}>{children}</div>
-        </main>
+      <div className={styles.overflow}>
+        <Img fluid={sources} className={styles.bkgPhoto} />
       </div>
+      <Header
+        pageContext={pageContext}
+        navItems={[
+          { label: I18n('home'), to: '/' },
+          { label: I18n('life_situations'), to: I18n('slug_situations') },
+          { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
+        ]}
+      />
+
+      <main className={styles.main}>
+        <div className={styles.mainInner}>{children}</div>
+      </main>
       <Footer />
     </div>
   );
