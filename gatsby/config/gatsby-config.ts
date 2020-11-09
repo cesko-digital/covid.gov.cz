@@ -189,13 +189,7 @@ const config = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: ['material icons'],
-        display: 'block',
-      },
-    },
+
     {
       resolve: `gatsby-plugin-build-date`,
       options: {
