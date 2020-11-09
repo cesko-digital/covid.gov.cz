@@ -35,7 +35,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
       />
       <SchemaComp
         langCode={pageContext.langCode}
-        description={I18n('current_situations_overview_meta')}
+        description={I18n('situations_overview_meta')}
         isBlogPost={false}
         title={I18n('life_situations')}
       />
