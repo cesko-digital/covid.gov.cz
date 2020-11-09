@@ -1,0 +1,39 @@
+uuid: 90a1fc58-70c8-46a0-8436-1847aa1b36dc
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: Tt8DtxZ3Nooo0PoWPpJvszA3R_5d8MmpUW7LM_R-BzY
+id: default
+label: Default
+description: 'A default Linkit profile'
+matchers:
+  556010a3-e317-48b3-b4ed-854c10f4b950:
+    uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
+    id: 'entity:node'
+    weight: 0
+    settings:
+      metadata: ' – [node:langcode] ([node:nid])'
+      bundles:
+        measure: measure
+        page: page
+        situation: situation
+      group_by_bundle: true
+      include_unpublished: false
+      substitution_type: canonical
+      limit: 100
+  bc5820d7-3890-418a-8056-431c0de29a59:
+    uuid: bc5820d7-3890-418a-8056-431c0de29a59
+    id: 'entity:taxonomy_term'
+    weight: 0
+    settings:
+      metadata: '– ([term:tid])'
+      bundles:
+        area: area
+        measure_type: measure_type
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
