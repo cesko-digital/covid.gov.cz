@@ -33,8 +33,17 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
       <SchemaComp
         langCode={pageContext.langCode}
         isBlogPost={false}
+        isBlogList
         title={area.name}
         description={I18n('situations_overview_meta')}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          {
+            title: I18n('life_situations'),
+            url: I18n('slug_situations'),
+          },
+          area.name,
+        ]}
       />
       <Container>
         <div className="pt-1">
