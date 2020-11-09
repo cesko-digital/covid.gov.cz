@@ -28,6 +28,7 @@
         "drupal/devel_entity_updates": "^3.0",
         "drupal/field_group": "^3.1",
         "drupal/jsonapi_extras": "^3.16",
+        "drupal/linkit": "^6.0",
         "drupal/migrate_plus": "^5.1",
         "drupal/migrate_tools": "^5.0",
         "drupal/one_time_password": "^1.0@RC",
