@@ -45,6 +45,9 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           }
         }
       }
+      currentBuildDate {
+        currentDate
+      }
     }
   `);
   const sources = [
@@ -54,20 +57,14 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
       media: `(min-width: 768px)`,
     },
   ];
-  const date = useStaticQuery(graphql`
-    query {
-      currentBuildDate {
-        currentDate
-      }
-    }
-  `);
+
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
       {process.env.GATSBY_VERCEL ? (
         <Alert
           message={
             'Poslední úspěšný build proběhl v ' +
-            new Date(date.currentBuildDate.currentDate).toLocaleTimeString(
+            new Date(data.currentBuildDate.currentDate).toLocaleTimeString(
               'cs-CZ',
               {
                 hour: '2-digit',
