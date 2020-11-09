@@ -97,7 +97,7 @@ const config = {
       options: {
         mergeStyleHashes: false,
         directives: {
-          'script-src': "'self' www.googletagmanager.com",
+          'script-src': "'self' 'unsafe-inline' www.googletagmanager.com",
           'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
           'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
           'img-src': "'self' www.google.cz stats.g.doubleclick.net data:",
