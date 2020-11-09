@@ -35,7 +35,7 @@ const GuideItem: React.FC<IProps> = ({
     <>
       <Col col={12} colSm={6} colLg={4} className="box">
         <div className="box__inner">
-          <div style={{ height: '74px' }} className="d-flex flex-row">
+          <div className="d-flex flex-row">
             {iconCode && (
               <ContentIcon
                 code={iconCode}
@@ -85,7 +85,6 @@ const GuideItem: React.FC<IProps> = ({
               className={classNames(classes.guideItemDescriptionText, {
                 [classes.guideItemDescriptionTextBlue]: variant === 'white',
               })}
-              style={{ height: '40px' }}
             >
               {description}
             </p>
