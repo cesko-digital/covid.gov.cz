@@ -6,6 +6,16 @@ services:
       - { name: event_subscriber }
 
   covid.normalizer:
-    class: Drupal\covid\Normalizer
+    class: Drupal\covid\Normalizer\Normalizer
     tags:
       - { name: normalizer, priority: 10 }
+
+  covid.normalizer_linkit:
+    class: Drupal\covid\Normalizer\LinkitNormalizer
+    tags:
+      - { name: normalizer, priority: 20 }
+
+  covid.normalizer_external_link:
+    class: Drupal\covid\Normalizer\ExternalLinkNormalizer
+    tags:
+      - { name: normalizer, priority: 30 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\covid;
+namespace Drupal\covid\Normalizer;
 
 use Drupal\Core\Field\Plugin\Field\FieldType\StringLongItem;
 use Drupal\Core\TypedData\Plugin\DataType\StringData;
