@@ -60,23 +60,20 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
-      {process.env.GATSBY_VERCEL ? (
-        <Alert
-          message={
-            'Poslední úspěšný build proběhl v ' +
-            new Date(data.currentBuildDate.currentDate).toLocaleTimeString(
-              'cs-CZ',
-              {
-                hour: '2-digit',
-                minute: '2-digit',
-                timeZone: 'Europe/Prague',
-              },
-            )
-          }
-        />
-      ) : (
-        <></>
-      )}
+      <Alert
+        message={
+          'Poslední úspěšný build proběhl v ' +
+          new Date(data.currentBuildDate.currentDate).toLocaleTimeString(
+            'cs-CZ',
+            {
+              hour: '2-digit',
+              minute: '2-digit',
+              timeZone: 'Europe/Prague',
+            },
+          )
+        }
+      />
+      )
       <div>
         <div className={styles.overflow}>
           <Img fluid={sources} className={styles.bkgPhoto} />
@@ -94,7 +91,6 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           <div className={styles.mainInner}>{children}</div>
         </main>
       </div>
-
       <Footer />
     </div>
   );
