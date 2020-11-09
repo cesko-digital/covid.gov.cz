@@ -1,6 +1,11 @@
 import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
+// @ts-ignore
+import RobotoRegular from 'assets/fonts/roboto-regular.woff2';
+// @ts-ignore
+import RobotoBold from 'assets/fonts/roboto-bold.woff2';
+
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -10,6 +15,7 @@ import { Alert } from '@/components/alert';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
 import { ISitePageContext } from '@graphql-types';
+import { Helmet } from 'react-helmet';
 
 interface IProps {
   children: ReactElement[];
@@ -60,6 +66,22 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
+      <Helmet>
+        <link
+          rel="preload"
+          as="font"
+          href={RobotoRegular}
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          href={RobotoBold}
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </Helmet>
       {process.env.GATSBY_VERCEL ? (
         <Alert
           isInfo
