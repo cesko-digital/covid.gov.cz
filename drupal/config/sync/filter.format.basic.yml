@@ -1,7 +1,10 @@
 uuid: fc1e972d-f0ef-4357-bf6b-2cec9884a99a
 langcode: cs
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - editor
+    - linkit
 name: Basic
 format: basic
 weight: 0
@@ -10,20 +13,64 @@ filters:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -49
     settings:
-      allowed_html: '<a href hreflang aria-label title target rel class=""> <em> <strong> <ul> <li> <ol> <p> <h2> <img src alt data-entity-type data-entity-uuid> <i class>'
+      allowed_html: '<em> <strong> <ul> <li> <ol> <p> <h2> <img src alt data-entity-type data-entity-uuid> <i class=""> <a href hreflang aria-label title target rel class="">'
       filter_html_help: true
       filter_html_nofollow: true
   filter_autop:
     id: filter_autop
     provider: filter
     status: true
-    weight: 0
+    weight: -48
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 10
+    weight: -47
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -50
+    settings:
+      title: true
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -45
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -44
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -46
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -42
+    settings:
+      filter_url_length: 72
