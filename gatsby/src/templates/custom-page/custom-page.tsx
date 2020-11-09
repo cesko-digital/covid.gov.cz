@@ -26,12 +26,14 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={page.langcode}
       />
       <SchemaComp
-        datePublished={page.changed}
+        datePublished={page.created}
+        dateModified={page.changed}
         isBlogPost
         description={page.meta_description}
         body={page.content.processed}
         title={page.title}
         langCode={pageContext.langCode}
+        breadcrumbItems={[{ title: I18n('home'), url: '/' }, page.title]}
       />
       <Container className="mb-4">
         <div className="pt-1">

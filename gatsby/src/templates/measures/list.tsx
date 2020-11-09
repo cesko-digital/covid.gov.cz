@@ -33,8 +33,14 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
       <SchemaComp
         langCode={pageContext.langCode}
         isBlogPost={false}
+        isBlogList
         title={measureType.name}
         description={I18n('current_measures_overview_meta')}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          { title: I18n('current_measures'), url: I18n('slug_measures') },
+          measureType.name,
+        ]}
       />
       <Container>
         <div className="pt-1">

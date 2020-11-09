@@ -30,6 +30,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
       />
       <SchemaComp
         datePublished={data.situation.valid_from}
+        dateModified={data.situation.changed}
         title={data.situation.title}
         langCode={pageContext.langCode}
         isBlogPost
@@ -39,6 +40,18 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
             : data.situation.meta_description
         }
         description={data.situation.meta_description}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          {
+            title: I18n('life_situations'),
+            url: I18n(`slug_situations`),
+          },
+          {
+            title: data.situation.relationships?.situation_type?.name,
+            url: data.situation.relationships?.situation_type?.path?.alias,
+          },
+          data.situation.title,
+        ]}
       />
       <SituationDetail situation={data.situation} />
       <Container className="pt-1">
