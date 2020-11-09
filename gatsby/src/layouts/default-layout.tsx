@@ -80,12 +80,15 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+
         <link
-          rel="preload"
-          as="style"
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=block"
+          media="print"
           // @ts-ignore
-          onLoad="this.rel = 'stylesheet'"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block"
+          onLoad="this.media='all'"
+          // @ts-ignore
+          crossOrigin
         />
       </Helmet>
       {process.env.GATSBY_VERCEL ? (
