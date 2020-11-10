@@ -116,10 +116,6 @@
     "patchLevel": {
       "drupal/core": "-p2"
     },
-    "patches": {
-      "drupal/core": {
-        "Upcast node and node_revision parameters of node revision routes": "https://www.drupal.org/files/issues/2020-06-19/2730631-103.patch"
-      }
-    }
+    "patches": {}
   }
 }
