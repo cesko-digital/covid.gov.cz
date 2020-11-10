@@ -3,27 +3,13 @@
  *
  *	This file contains @font-face declarations.
  */
-
-/*
 $version: '1';
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('#{$theme-path}/fonts/roboto/roboto-thin.woff?v=#{$version}')
-      format('woff'),
-    url('#{$theme-path}/fonts/roboto/roboto-thin.ttf?v=#{$version}')
-      format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
 
 /**
  *	Roboto
  */
 
 // Thin 100
-/*
 @font-face {
   font-family: 'Roboto';
   src: url('#{$theme-path}/fonts/roboto/roboto-thin.woff?v=#{$version}')
@@ -82,7 +68,6 @@ $version: '1';
   font-style: normal;
   font-display: swap;
 }
-*/
 
 @font-face {
   font-family: 'Material Icons';
