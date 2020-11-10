@@ -10,8 +10,6 @@ import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 import { SituationAreaList } from '@/components/category-item-list';
-import { useNavigateToFirstItemOnDesktop } from '@/hooks/useNavigateToFirstItem';
-import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
   data: ISituationsAreasListQuery;
@@ -19,11 +17,6 @@ interface IProps {
 }
 
 const Situations: React.FC<IProps> = ({ data, pageContext }) => {
-  useNavigateToFirstItemOnDesktop(
-    data.allSituationAreas.nodes,
-    pageContext.langCode,
-  );
-  // todo: add meta description
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -52,13 +45,11 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
           variant="inverse"
         />
       </Container>
-      <Container className="mt-3 d-block d-sm-none">
+      <Container className="mt-3 d-block d-md-none">
         <Headline>{I18n('situations_overview')}</Headline>
       </Container>
       <Container className="mt-3">
-        <DesktopLeftMenuLayout
-          menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
-        />
+        <SituationAreaList data={data.allSituationAreas.nodes} />
       </Container>
     </Layout>
   );

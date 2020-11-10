@@ -9,8 +9,6 @@ import Layout from '@/layouts/default-layout';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 import { MeasureAreaList } from '@/components/category-item-list';
-import { useNavigateToFirstItemOnDesktop } from '@/hooks/useNavigateToFirstItem';
-import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
@@ -18,11 +16,6 @@ interface IProps {
 }
 
 const Measures: React.FC<IProps> = ({ data, pageContext }) => {
-  useNavigateToFirstItemOnDesktop(
-    data.allMeasureType.nodes,
-    pageContext.langCode,
-  );
-  // todo add meta description
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -51,13 +44,11 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
           variant="inverse"
         />
       </Container>
-      <Container className="mt-3 d-block d-sm-none">
+      <Container className="mt-3 d-block d-md-none">
         <Headline>{I18n('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">
-        <DesktopLeftMenuLayout
-          menu={<MeasureAreaList data={data.allMeasureType.nodes} />}
-        />
+        <MeasureAreaList data={data.allMeasureType.nodes} />
       </Container>
     </Layout>
   );

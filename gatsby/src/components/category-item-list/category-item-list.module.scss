@@ -7,6 +7,13 @@
   background-color: $theme-blue;
   padding: 12px 0;
 
+  max-width: 800px;
+
+  hr {
+    margin: 12px 24px;
+    opacity: 0.3;
+  }
+
   @include media-breakpoint-down(md) {
     border-radius: 3px;
   }
