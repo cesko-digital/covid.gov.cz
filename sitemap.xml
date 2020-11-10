@@ -320,8 +320,8 @@
 <url> <loc>https://covid.gov.cz/en/situations/tracing-and-testing-faq/delays-tracing-and-testing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/tracing-and-testing-faq/second-hand-contact</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/weddings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/funerals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/weddings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/funerals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/pilgrimages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/services-and-religious-gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/visit-churchsynagoguemoque</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
