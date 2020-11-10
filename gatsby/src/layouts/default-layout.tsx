@@ -119,6 +119,7 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
             fluid={sources}
             className={styles.bkgPhoto}
             alt="Background image"
+            loading="eager"
           />
         </div>
         <Header
