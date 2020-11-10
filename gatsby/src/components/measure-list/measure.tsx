@@ -45,7 +45,7 @@ const Measure: React.FC<Props> = ({
             )}
           </div>
         </div>
-        <Link to={link} label={I18n('more')}>
+        <Link to={link} title={I18n('more')}>
           <Button
             text={I18n('more')}
             variant="outline-yellow"

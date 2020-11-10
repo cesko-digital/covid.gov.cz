@@ -4,7 +4,16 @@ import styles from './variants.module.scss';
 
 import Link from '@/components/link';
 
-const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
+export type ButtonVariant =
+  | 'contained'
+  | 'outline'
+  | 'yellow'
+  | 'secondary'
+  | 'outline-black'
+  | 'outline-yellow'
+  | 'small-black';
+
+const getButtonClassName = (variant?: ButtonVariant): string => {
   return classNames(
     { btn: variant !== 'small-black' },
     { 'btn-primary': variant === 'contained' },
@@ -15,63 +24,56 @@ const getClass = (variant: ButtonVariant, additionalClass?: string): string => {
     { 'text-black': variant === 'outline-black' },
     { 'btn-secondary': variant === 'secondary' },
     { [styles.btnSmallBlack]: variant === 'small-black' },
-    { [additionalClass]: additionalClass },
   );
 };
 
-export type ButtonVariant =
-  | 'contained'
-  | 'outline'
-  | 'yellow'
-  | 'secondary'
-  | 'outline-black'
-  | 'outline-yellow'
-  | 'small-black';
-
-interface IProps {
+type IButtonBase = {
   text?: string;
   variant?: ButtonVariant;
   className?: string;
-  onClick?: () => void;
-  href?: string;
-  disabled?: boolean;
   icon?: React.ReactNode;
-  linkTitle?: string;
-}
+};
 
-const Button: React.FC<IProps> = ({
-  variant,
-  onClick,
-  text,
-  href = '',
-  className,
-  disabled = false,
-  icon,
-  linkTitle = '',
-}) => {
-  if (href !== '' && !disabled) {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  IButtonBase & { href?: undefined };
+
+type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  IButtonBase & { href: string };
+
+// Input/output options
+type Overload = {
+  (props: ButtonProps): JSX.Element;
+  (props: AnchorProps): JSX.Element;
+};
+
+// Guard to check if href exists in props
+const hasHref = (props: ButtonProps | AnchorProps): props is AnchorProps =>
+  'href' in props;
+
+const Button: Overload = (props: ButtonProps | AnchorProps) => {
+  const { className, variant, ...restCommonProps } = props;
+
+  const composedClassName = classNames(getButtonClassName(variant), className);
+
+  if (hasHref(restCommonProps)) {
+    const { href, text, icon, ...rest } = restCommonProps;
     return (
-      <Link to={href} label={linkTitle} dataTestId="button-link">
-        <button
-          type="button"
-          className={getClass(variant, className)}
-          onClick={onClick || null}
-          disabled={disabled}
-        >
-          {text}
-          {icon}
-        </button>
+      <Link
+        dataTestId="button-link"
+        to={href}
+        className={composedClassName}
+        {...rest}
+      >
+        {text}
+        {icon}
       </Link>
     );
   }
 
+  const { text, icon, ...rest } = restCommonProps as ButtonProps;
+
   return (
-    <button
-      type="button"
-      className={getClass(variant, className)}
-      onClick={onClick || null}
-      disabled={disabled}
-    >
+    <button type="button" className={composedClassName} {...rest}>
       {text}
       {icon}
     </button>
