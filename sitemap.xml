@@ -285,6 +285,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/seniors/exercise</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors/how-treat-information</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/restaurants</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/restaurants/outside-seating-terraces-indoor-gardens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-self-employed-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-full-time-employeespeople-work-agreements</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
