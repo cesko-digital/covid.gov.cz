@@ -60,6 +60,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/visits-social-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/social-situations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/social-situations/grief-and-loss</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/social-situations/job-loss-social-situation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/culture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/culture/theater</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/culture/cinemas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -164,7 +165,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/e-shop</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/fairs-markets-farmers-markets</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/theatre-film-and-other-artistic-performances</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/shops-and-services/photography</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/accommodations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-three-kings-day-parade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-three-kings-day-parade/three-kings-day-parade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -324,7 +324,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/weddings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/funerals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/pilgrimages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/services-and-religious-gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/services-and-religious-gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/visit-churchsynagoguemoque</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/cirkve-nabozenstvi/confessions-and-individual-spiritual-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -376,8 +376,8 @@
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/pravni-pomoc-socialni-situace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/osetrovne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/podpora-zamestnanosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/socialni-situace/ztrata-zamestnani-socialni-situace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/socialni-situace/umrti-blizkeho-na-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/socialni-situace/ztrata-zamestnani-socialni-situace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kultura</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kultura/vouchery</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kultura/divadla</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
