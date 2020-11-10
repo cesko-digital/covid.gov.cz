@@ -5,6 +5,8 @@ import classnames from 'classnames';
 import RobotoRegular from 'assets/fonts/roboto-regular.woff2';
 // @ts-ignore
 import RobotoBold from 'assets/fonts/roboto-bold.woff2';
+// @ts-ignore
+import PvsIcons from 'assets/fonts/pvs-icons.woff';
 
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -79,6 +81,13 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           as="font"
           href={RobotoBold}
           type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          href={PvsIcons}
+          type="font/woff"
           crossOrigin="anonymous"
         />
       </Helmet>
