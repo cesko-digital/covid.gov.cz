@@ -41,6 +41,7 @@
     "gatsby-plugin-react-i18next": "^0.0.27",
     "gatsby-plugin-scss-typescript": "^4.0.13",
     "gatsby-plugin-seo": "^0.0.2",
+    "@wardpeet/gatsby-image-nextgen": "^0.0.2",
     "gatsby-plugin-typescript": "^2.4.25",
     "gatsby-source-drupal": "^3.6.0",
     "i18next": "^19.8.3",
