@@ -139,7 +139,7 @@ export const SchemaComp: React.FC<IProps> = ({
   const { origin } = new URL(url);
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: langCode }}>
       <meta property="og:url" content={url} />
       <meta property="og:title" content={ogTitle} />
       <meta
