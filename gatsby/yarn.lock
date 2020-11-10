@@ -2718,6 +2718,13 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
+"@wardpeet/gatsby-image-nextgen@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@wardpeet/gatsby-image-nextgen/-/gatsby-image-nextgen-0.0.2.tgz#99d2bb10afc5644c60f351a5315f23bea66a4f92"
+  integrity sha512-B3zr6k0xLSzPJ+Vm1VVOStz2J/+kCVYUKUywKF1Cg6KM+QY4yg92eVVky3sr6UJokqYrwPCPw+eAwba6KeSwcQ==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"
@@ -5549,6 +5556,11 @@ dataloader@2.0.0:
   resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-2.0.0.tgz#41eaf123db115987e21ca93c005cd7753c55fe6f"
   integrity sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==
 
+date-and-time@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.11.1.tgz#0c3c8b21811562c53345b497c5e1c731b12e99eb"
+  integrity sha512-+1JkWME+UWRpCfvE1T0Vfbw629Ego0IcfHH0qtP4KhAXs7IJT2qsg1hNePqZhyD8Wby46HlW393lSL5PZSzDsA==
+
 date-fns@^2.14.0:
   version "2.16.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
@@ -7687,6 +7699,13 @@ gatsby-page-utils@^0.2.29:
     glob "^7.1.6"
     lodash "^4.17.20"
     micromatch "^4.0.2"
+
+gatsby-plugin-build-date@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-build-date/-/gatsby-plugin-build-date-1.0.0.tgz#2582133699c947adb0ec921f0d5e7e04f0ac4e25"
+  integrity sha512-XlR4w3mQqhRE241Kx4/0lFY78/TnY1IDqgvKzgk17RZUcM13QYk7GyuN5Ifx96NMbMEwUUeal4lDqSigfr2Ydw==
+  dependencies:
+    date-and-time "^0.11.1"
 
 gatsby-plugin-canonical-urls@^2.3.13:
   version "2.3.13"

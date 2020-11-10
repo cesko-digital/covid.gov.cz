@@ -6,6 +6,11 @@ services:
       - { name: event_subscriber }
 
   covid.normalizer:
-    class: Drupal\covid\Normalizer
+    class: Drupal\covid\Normalizer\Normalizer
     tags:
       - { name: normalizer, priority: 10 }
+
+  covid.normalizer_text_processed:
+    class: Drupal\covid\Normalizer\TextProcessedNormalizer
+    tags:
+      - { name: normalizer, priority: 20 }

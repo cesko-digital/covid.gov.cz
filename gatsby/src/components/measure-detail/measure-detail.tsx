@@ -1,8 +1,9 @@
 import React from 'react';
 
 import I18n from '@/components/i18n';
+import Link from '@/components/link';
 
-import { IMeasureDetailFragment } from 'graphql-types';
+import { IMeasureDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import { RegionsMarker, TimeMarker } from '../marker';
@@ -12,6 +13,7 @@ interface IProps {
 }
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
+  const hasSourceLink = Boolean(measure.source);
   const hasRegion = Boolean(measure.relationships.region.length);
   const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
@@ -34,6 +36,17 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
           )}
         </div>
       )}
+      {hasSourceLink && (
+        <div className="mt-2">
+          <hr />
+          <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
+          <div>
+            <Link className="color-blue mb-1" to={measure.source.uri}>
+              {measure.source.title}
+            </Link>
+          </div>
+        </div>
+      )}
     </TopicDetail>
   );
 };
@@ -45,7 +58,7 @@ export const query = graphql`
     content: description {
       processed
     }
-    links: source {
+    source {
       uri
       title
     }

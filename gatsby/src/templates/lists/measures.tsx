@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql, navigate } from 'gatsby';
+import { graphql } from 'gatsby';
 import Container from '@/components/container';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import { IMeasureTypeQueryQuery, ISitePageContext } from 'graphql-types';
+import { IMeasureTypeQueryQuery, ISitePageContext } from '@graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
@@ -32,11 +32,15 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + I18n('slug_measures')}
         langCode={pageContext.langCode}
         description={I18n('current_measures_overview_meta')}
         isBlogPost={false}
+        isSpecialList
         title={I18n('current_measures_overview')}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          { title: I18n('current_measures'), url: I18n('slug_measures') },
+        ]}
       />
       <Container className="pt-1">
         <Breadcrumb

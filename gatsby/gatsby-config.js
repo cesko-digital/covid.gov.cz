@@ -1,6 +1,7 @@
-const { generateConfig } = require('gatsby-plugin-ts-config');
+module.exports = {
+  plugins: [
+    '@wardpeet/gatsby-image-nextgen',
 
-module.exports = generateConfig({
-  configDir: 'config',
-  projectRoot: __dirname,
-});
+    { resolve: 'gatsby-plugin-ts-config', options: { configDir: 'config' } },
+  ],
+};

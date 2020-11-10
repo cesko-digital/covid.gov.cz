@@ -2,7 +2,7 @@ name: "Deploy"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 * * * *'
 
 jobs:
   build:
@@ -50,7 +50,7 @@ jobs:
           SLACK_COLOR: '#3278BD'
           SLACK_ICON: https://covid.gov.cz/favicon.svg
           SLACK_USERNAME: "Nový build"
-          SLACK_MESSAGE: "Mame nový build <@U01CY3E4WMD> :tada:"
+          SLACK_MESSAGE: "Máme nový build :tada:, deploy na produkci probíhá 20 minut po celé hodině."
           SLACK_FOOTER: ""
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: true

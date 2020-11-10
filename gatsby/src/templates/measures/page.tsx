@@ -37,8 +37,8 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={data.measure.langcode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + data.measure.path.alias}
         datePublished={data.measure.valid_from}
+        dateModified={data.measure.changed}
         title={data.measure.title}
         langCode={data.measure.langcode}
         isBlogPost
@@ -48,6 +48,18 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
             : data.measure.meta_description
         }
         description={data.measure.meta_description}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          {
+            title: I18n('current_measures'),
+            url: I18n(`slug_measures`),
+          },
+          {
+            title: data.measure.relationships?.situation_type?.name,
+            url: data.measure.relationships?.situation_type?.path?.alias,
+          },
+          data.measure.title,
+        ]}
       />
       <Container>
         <div className="pt-1">

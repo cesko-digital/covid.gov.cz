@@ -33,11 +33,15 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + I18n('slug_situations')}
         langCode={pageContext.langCode}
-        description={I18n('current_situations_overview_meta')}
+        description={I18n('situations_overview_meta')}
         isBlogPost={false}
+        isSpecialList
         title={I18n('life_situations')}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          { title: I18n('life_situations'), url: I18n('slug_situations') },
+        ]}
       />
       <Container className="pt-1">
         <Breadcrumb

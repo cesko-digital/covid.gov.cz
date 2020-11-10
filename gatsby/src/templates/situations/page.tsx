@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 import { ISituationPageQuery, ISitePageContext } from 'graphql-types';
 import Layout from '@/layouts/default-layout';
 import SituationDetail from '@/components/situation-detail/situation-detail';
-import ContentBox from '@/components/content-box';
-import LinkList from '@/components/link-list';
 import Container from '@/components/container';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
@@ -39,8 +37,8 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + data.situation.path.alias}
         datePublished={data.situation.valid_from}
+        dateModified={data.situation.changed}
         title={data.situation.title}
         langCode={pageContext.langCode}
         isBlogPost
@@ -50,6 +48,18 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
             : data.situation.meta_description
         }
         description={data.situation.meta_description}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          {
+            title: I18n('life_situations'),
+            url: I18n(`slug_situations`),
+          },
+          {
+            title: data.situation.relationships?.situation_type?.name,
+            url: data.situation.relationships?.situation_type?.path?.alias,
+          },
+          data.situation.title,
+        ]}
       />
       <Container>
         <div className="pt-1">

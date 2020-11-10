@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Container from '@/components/container';
 import I18n from '@/components/i18n';
-import { IQuery, ISitePageContext } from 'graphql-types';
+import { IQuery, ISitePageContext } from '@graphql-types';
 import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
 import DesktopTopContent from '@/components/desktop-top-content';
@@ -41,11 +41,11 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url="https://covid.gov.cz/"
         langCode={pageContext.langCode}
         isBlogPost={false}
         title={I18n('homepage_meta_title')}
         description={meta_description}
+        isHomePage
       />
       <Helmet title={I18n('homepage_meta_title')} />
       <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
