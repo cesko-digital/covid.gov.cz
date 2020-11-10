@@ -1,106 +1,125 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 9 projects with Composer",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "authors": [
-        {
-            "name": "",
-            "role": ""
-        }
-    ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    ],
-    "require": {
-        "php": ">=7.3",
-        "composer/installers": "^1.9",
-        "cweagans/composer-patches": "^1.6",
-        "drupal/adminimal_admin_toolbar": "^1.11",
-        "drupal/adminimal_theme": "^1.6",
-        "drupal/chosen": "^3.0",
-        "drupal/core-composer-scaffold": "^9.0",
-        "drupal/core-recommended": "^9.0",
-        "drupal/devel": "^4.0",
-        "drupal/devel_entity_updates": "^3.0",
-        "drupal/field_group": "^3.1",
-        "drupal/jsonapi_extras": "^3.16",
-        "drupal/linkit": "^6.0",
-        "drupal/migrate_plus": "^5.1",
-        "drupal/migrate_tools": "^5.0",
-        "drupal/one_time_password": "^1.0@RC",
-        "drupal/paragraphs": "^1.12",
-        "drupal/password_policy": "3.x-dev@dev",
-        "drupal/pathauto": "^1.8",
-        "drupal/quick_node_clone": "^1.13",
-        "drupal/sqlsrv": "^4.0.3",
-        "drush/drush": "^10.3",
-        "vlucas/phpdotenv": "^5.1",
-        "webflo/drupal-finder": "^1.2"
-    },
-    "require-dev": {
-        "deployer/deployer": "^6.8",
-        "drupal/core-dev": "^9.0",
-        "zaporylie/composer-drupal-optimizations": "^1.1"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "discard-changes": true,
-        "sort-packages": true,
-        "optimize-autoloader": true
-    },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ],
-        "files": ["load.environment.php"]
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
-    },
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            },
-            "file-mapping": {
-                "[web-root]/sites/default/settings.php": false
-            }
-        },
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library", "harvesthq/chosen"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
-        },
-        "installer-types": [
-            "library"
-        ],
-        "composer-exit-on-patch-failure": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "patches": {
-        }
+  "name": "drupal-composer/drupal-project",
+  "description": "Project template for Drupal 9 projects with Composer",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "",
+      "role": ""
     }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "php": ">=7.3",
+    "composer/installers": "^1.9",
+    "cweagans/composer-patches": "^1.6",
+    "drupal/adminimal_admin_toolbar": "^1.11",
+    "drupal/adminimal_theme": "^1.6",
+    "drupal/chosen": "^3.0",
+    "drupal/core-composer-scaffold": "^9.0",
+    "drupal/core-recommended": "^9.0",
+    "drupal/devel": "^4.0",
+    "drupal/devel_entity_updates": "^3.0",
+    "drupal/diff": "^1.0",
+    "drupal/field_group": "^3.1",
+    "drupal/jsonapi_extras": "^3.16",
+    "drupal/linkit": "^6.0",
+    "drupal/migrate_plus": "^5.1",
+    "drupal/migrate_tools": "^5.0",
+    "drupal/one_time_password": "^1.0@RC",
+    "drupal/paragraphs": "^1.12",
+    "drupal/password_policy": "3.x-dev@dev",
+    "drupal/pathauto": "^1.8",
+    "drupal/quick_node_clone": "^1.13",
+    "drupal/sqlsrv": "^4.0.3",
+    "drush/drush": "^10.3",
+    "vlucas/phpdotenv": "^5.1",
+    "webflo/drupal-finder": "^1.2"
+  },
+  "require-dev": {
+    "deployer/deployer": "^6.8",
+    "drupal/core-dev": "^9.0",
+    "zaporylie/composer-drupal-optimizations": "^1.1"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "discard-changes": true,
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ],
+    "files": [
+      "load.environment.php"
+    ]
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ]
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      },
+      "file-mapping": {
+        "[web-root]/sites/default/settings.php": false
+      }
+    },
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library",
+        "harvesthq/chosen"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
+    },
+    "installer-types": [
+      "library"
+    ],
+    "composer-exit-on-patch-failure": true,
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "patches": {
+      "drupal/core": {
+        "Upcast node and node_revision parameters of node revision routes": "https://www.drupal.org/files/issues/2020-06-19/2730631-103.patch"
+      }
+    }
+  }
 }
