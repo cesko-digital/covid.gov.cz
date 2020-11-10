@@ -23,6 +23,8 @@
   overflow: hidden;
 }
 
+/*! purgecss start ignore */
+
 .bkgPhoto {
   overflow: auto;
   position: absolute !important;
@@ -71,3 +73,5 @@
     }
   }
 }
+
+/*! purgecss end ignore */
