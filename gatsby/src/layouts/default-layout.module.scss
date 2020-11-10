@@ -34,6 +34,12 @@
   [aria-hidden='true'] {
     top: 0;
     position: absolute !important;
+    display: none;
+    padding: 0 !important;
+  }
+
+  & > div {
+    padding: 0 !important;
   }
 
   @include media-breakpoint-up(xs) {

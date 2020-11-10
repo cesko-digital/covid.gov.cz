@@ -9,7 +9,8 @@ import RobotoBold from 'assets/fonts/roboto-bold.woff2';
 import PvsIcons from 'assets/fonts/pvs-icons.woff';
 
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+
+import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -114,7 +115,11 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
       )}
       <div>
         <div className={styles.overflow}>
-          <Img fluid={sources} className={styles.bkgPhoto} />
+          <GatsbyImage
+            fluid={sources}
+            className={styles.bkgPhoto}
+            alt="Background image"
+          />
         </div>
         <Header
           pageContext={pageContext}
