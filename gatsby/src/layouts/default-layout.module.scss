@@ -26,7 +26,7 @@
 .bkgPhoto {
   overflow: auto;
   position: absolute !important;
-  width: 100vw !important;
+  width: 100%;
   height: auto !important;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);

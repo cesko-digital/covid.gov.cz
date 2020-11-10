@@ -96,14 +96,14 @@ const config = {
       resolve: `gatsby-plugin-csp`,
       options: {
         mergeStyleHashes: false,
+        mergeScriptHashes: false,
         directives: {
-          'script-src': "'self' www.googletagmanager.com",
+          'script-src': "'self' 'unsafe-inline' www.googletagmanager.com",
           'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
-          'prefetch-src':
-            "'self' fonts.googleapis.com www.googletagmanager.com",
           'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
-          'img-src': "'self' data:",
-          'connect-src': "'self' analytics.google.com",
+          'img-src': "'self' www.google.cz stats.g.doubleclick.net data:",
+          'connect-src':
+            "'self' analytics.google.com dc.services.visualstudio.com dc.applicationinsights.microsoft.com dc.applicationinsights.azure.com stats.g.doubleclick.net",
           'default-src': "'self' www.googletagmanager.com fonts.googleapis.com",
         },
       },
@@ -190,11 +190,11 @@ const config = {
         ],
       },
     },
+
     {
-      resolve: 'gatsby-plugin-google-fonts',
+      resolve: `gatsby-plugin-build-date`,
       options: {
-        fonts: ['material icons'],
-        display: 'block',
+        formatAsDateString: false, // boolean, defaults to true - if false API will return unformatted string from new Date()// string, defaults to null, which date-and-time defaults as "en" - whether to localize the date or not, can use any available date-and-time localization
       },
     },
     `gatsby-plugin-offline`,

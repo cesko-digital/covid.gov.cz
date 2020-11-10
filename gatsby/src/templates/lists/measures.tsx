@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import { IMeasureTypeQueryQuery, ISitePageContext } from 'graphql-types';
+import { IMeasureTypeQueryQuery, ISitePageContext } from '@graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
@@ -24,7 +24,6 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
   const collator = new Intl.Collator([pageContext.langCode]);
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
-  // todo add meta description
   return (
     <Layout pageContext={pageContext}>
       <Seo
@@ -34,11 +33,15 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        url={'https://covid.gov.cz' + I18n('slug_measures')}
         langCode={pageContext.langCode}
         description={I18n('current_measures_overview_meta')}
         isBlogPost={false}
+        isSpecialList
         title={I18n('current_measures_overview')}
+        breadcrumbItems={[
+          { title: I18n('home'), url: '/' },
+          { title: I18n('current_measures'), url: I18n('slug_measures') },
+        ]}
       />
       <Container className="pt-1">
         <Breadcrumb

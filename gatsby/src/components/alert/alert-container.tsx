@@ -36,6 +36,7 @@ const AlertContainer: React.FC<IProps> = () => {
           key={`notice-box-${i}`}
           message={notice.content}
           link={notice.link}
+          isInfo={false}
         />
       ))}
     </>
