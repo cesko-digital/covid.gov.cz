@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Prefill field_last_updated for situations.
+ */
+function covid_update_9001() {
+  _covid_update_last_updated('situation');
+}
+
+/**
+ * Prefill field_last_updated for measures.
+ */
+function covid_update_9002() {
+  _covid_update_last_updated('measure');
+}
+
+/**
+ * Updates field_last_updated for provided node type.
+ *
+ * @param string $node_type
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function _covid_update_last_updated(string $node_type): void {
+  /** @var \Drupal\node\NodeStorage $nodeStorage */
+  $nodeStorage = \Drupal::service('entity_type.manager')->getStorage('node');
+  /** @var \Drupal\node\NodeInterface[] $nodes */
+  $nodes = $nodeStorage->loadByProperties([
+    'type' => $node_type,
+  ]);
+  foreach ($nodes as $node) {
+    // Skip nodes with existing value.
+    if (!empty($node->get('field_last_updated')->getValue())) {
+      continue;
+    }
+    $node->set('field_last_updated', date('Y-m-d\TH:i:s',$node->getChangedTime()))
+      ->save();
+    $translations = $node->getTranslationLanguages(FALSE);
+    foreach ($translations as $code => $language) {
+      if ($node->hasTranslation($code)) {
+        $translation = $node->getTranslation($code);
+        $translation->set('field_last_updated', date('Y-m-d\TH:i:s',$translation->getChangedTime()))
+          ->save();
+      }
+    }
+  }
+}
