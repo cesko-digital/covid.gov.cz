@@ -635,8 +635,8 @@
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/vanocni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/navsteva-rodiny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/vanoce/nakup-darku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/prodej-kapru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/prodej-vanocnich-stromku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/vanoce/prodej-kapru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/vanoce/prodej-vanocnich-stromku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/aktualni-vanoce/peceni-cukrovi-pro-rodinu-zname</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nejcastejsi-problemy-pri-trasovani-testovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nejcastejsi-problemy-pri-trasovani-testovani/vztah-se-zamestnavatelem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
