@@ -2,6 +2,8 @@ import { Alert } from '@/components/alert';
 import React from 'react';
 import { render } from '@testing-library/react';
 
+jest.mock('@/components/i18n');
+
 describe('alert.tsx', () => {
   const message = 'Testovací message';
   it('message renders correctly', () => {
