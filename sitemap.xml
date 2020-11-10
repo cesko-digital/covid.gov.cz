@@ -52,6 +52,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/compensation-bussines</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/trainings-business</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/general-or-holding-meetings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/business-activities/data-boxes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/visits-hospitals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/non-emergency-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -352,7 +353,6 @@
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/skauti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/vcelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/datove-schranky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/sankce-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/nemoznost-splacet-uver-ci-hypoteku-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/prace-u-klienta</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -365,6 +365,7 @@
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/kompenzace-podnikatele</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/skoleni-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/konani-valnych-hromad-clenskych-schuzi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/datove-schranky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/navstevy-nemocnic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/neakutni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
