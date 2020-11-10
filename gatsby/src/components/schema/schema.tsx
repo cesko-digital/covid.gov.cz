@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
 import I18n from '../i18n';
+import { ISituation, IMeasure } from '@graphql-types';
 
 const BASE_URL = 'https://covid.gov.cz';
 
@@ -17,6 +18,8 @@ interface IProps {
   title: string;
   isHomePage?: boolean;
   breadcrumbItems?: Array<Object | string>;
+  situations?: ISituation[];
+  measures?: IMeasure[];
 }
 
 export const SchemaComp: React.FC<IProps> = ({
@@ -31,6 +34,8 @@ export const SchemaComp: React.FC<IProps> = ({
   body,
   isHomePage,
   breadcrumbItems,
+  situations,
+  measures,
 }) => {
   const { pathname } = useLocation();
   const url = `${BASE_URL}${pathname}`;
@@ -39,7 +44,7 @@ export const SchemaComp: React.FC<IProps> = ({
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: 'https://covid.gov.cz',
+      url: `${BASE_URL}/${langCode !== 'cs' ? langCode + '/' : ''}`,
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
     },
@@ -95,6 +100,39 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
+  let situationsList = null;
+  if (typeof situations !== 'undefined') {
+    situationsList = [];
+    situations.forEach((situation) => {
+      situationsList.push({
+        '@type': 'Question',
+        name: situation.title,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: situation.content.processed,
+        },
+      });
+    });
+  }
+
+  let measuresList = null;
+  if (typeof measures !== 'undefined') {
+    measuresList = [];
+    measures.forEach((measure) => {
+      measuresList.push({
+        '@type': 'Question',
+        name: measure.title,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text:
+            measure.description !== null
+              ? measure.description.processed
+              : measure.norm,
+        },
+      });
+    });
+  }
+
   const schema =
     isBlogPost || isBlogList || isSpecialList
       ? [
@@ -104,6 +142,20 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
+          isBlogList && situationsList !== null
+            ? {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: situationsList,
+              }
+            : '',
+          isBlogList && measuresList !== null
+            ? {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: measuresList,
+              }
+            : '',
           isBlogPost
             ? {
                 '@context': 'http://schema.org',
@@ -126,7 +178,7 @@ export const SchemaComp: React.FC<IProps> = ({
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
-                image: 'https://covid.gov.cz/images/ogimage.jpg',
+                image: `${BASE_URL}/images/ogimage.jpg`,
                 datePublished,
                 dateModified,
               }
