@@ -420,7 +420,7 @@
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-osobnich-veci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nadchazejici-oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/aktualni-oslavy-17-listopadu/oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/nadchazejici-oslavy-17-listopadu/oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/prevence-domaciho-nasili</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/souziti-v-dobe-nouzoveho-stavu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
