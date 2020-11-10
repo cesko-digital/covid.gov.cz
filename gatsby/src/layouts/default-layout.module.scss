@@ -42,6 +42,14 @@
     padding: 0 !important;
   }
 
+  @include media-breakpoint-up(xs) {
+    height: 55vh !important;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: auto !important;
+  }
+
   picture {
     position: relative;
 
