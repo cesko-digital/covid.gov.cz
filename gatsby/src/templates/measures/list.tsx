@@ -58,7 +58,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           menu={<MeasureAreaList data={data.allMeasureType.nodes} />}
           hideMenuOnMobile
         >
-          <Headline iconCode={data.measureType.relationships.icon.code}>
+          <Headline iconCode={data.measureType?.relationships?.icon?.code}>
             {measureType.name}
           </Headline>
           {measures.map((m) => (
