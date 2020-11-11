@@ -41,7 +41,6 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           { title: I18n('current_measures'), url: I18n('slug_measures') },
           measureType.name,
         ]}
-        measures={measures}
       />
       <Container>
         <div className="pt-1">
@@ -94,9 +93,6 @@ export const query = graphql`
           }
           path {
             alias
-          }
-          description {
-            processed
           }
         }
       }

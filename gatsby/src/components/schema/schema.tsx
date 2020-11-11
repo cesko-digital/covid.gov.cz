@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
 import I18n from '../i18n';
-import { ISituation, IMeasure } from '@graphql-types';
+import { ISituation } from '@graphql-types';
 
 const BASE_URL = 'https://covid.gov.cz';
 
@@ -19,7 +19,6 @@ interface IProps {
   isHomePage?: boolean;
   breadcrumbItems?: Array<Object | string>;
   situations?: ISituation[];
-  measures?: IMeasure[];
 }
 
 export const SchemaComp: React.FC<IProps> = ({
@@ -35,7 +34,6 @@ export const SchemaComp: React.FC<IProps> = ({
   isHomePage,
   breadcrumbItems,
   situations,
-  measures,
 }) => {
   const { pathname } = useLocation();
   const url = `${BASE_URL}${pathname}`;
@@ -44,7 +42,11 @@ export const SchemaComp: React.FC<IProps> = ({
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: `${BASE_URL}/${langCode !== 'cs' ? langCode + '/' : ''}`,
+      url: `${BASE_URL}/${
+        langCode !== 'cs' && typeof langCode !== 'undefined'
+          ? langCode + '/'
+          : ''
+      }`,
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
     },
@@ -115,24 +117,6 @@ export const SchemaComp: React.FC<IProps> = ({
     });
   }
 
-  let measuresList = null;
-  if (typeof measures !== 'undefined') {
-    measuresList = [];
-    measures.forEach((measure) => {
-      measuresList.push({
-        '@type': 'Question',
-        name: measure.title,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text:
-            measure.description !== null
-              ? measure.description.processed
-              : measure.norm,
-        },
-      });
-    });
-  }
-
   const schema =
     isBlogPost || isBlogList || isSpecialList
       ? [
@@ -147,13 +131,6 @@ export const SchemaComp: React.FC<IProps> = ({
                 '@context': 'https://schema.org',
                 '@type': 'FAQPage',
                 mainEntity: situationsList,
-              }
-            : '',
-          isBlogList && measuresList !== null
-            ? {
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: measuresList,
               }
             : '',
           isBlogPost
