@@ -84,7 +84,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
             <CategoryItemList
               items={relatedMeasures}
               linkBack={{
-                slug: I18n('slug_measures'),
+                slug: pageContext.listSlug,
                 title: I18n('current_measures'),
               }}
               title={data.measureType.name}

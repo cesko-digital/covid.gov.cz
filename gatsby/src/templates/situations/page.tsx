@@ -84,7 +84,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
             <CategoryItemList
               items={relatedSituations}
               linkBack={{
-                slug: I18n('slug_situations'),
+                slug: pageContext.listSlug,
                 title: I18n('life_situations'),
               }}
               title={data.situationArea.name}
