@@ -449,6 +449,11 @@ a {
 			top: 50%;
 			margin-top: -( 10px / 2 );
 		}
+		&::after {
+			position: absolute;
+			bottom: 0.5em;
+			margin-top: -( 10px / 2 );
+		}
 	}
 
 	&.with-icon,
@@ -511,6 +516,7 @@ a {
 		&::after {
 			margin-left: ( $spacer / 6 );
 			content: '\e909';
+      display: inline-block;
 		}
 	}
 
