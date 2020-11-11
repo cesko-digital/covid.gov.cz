@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.situation.field_content
     - field.field.node.situation.field_faq_parser
     - field.field.node.situation.field_internal_note
+    - field.field.node.situation.field_last_updated
     - field.field.node.situation.field_meta_description
     - field.field.node.situation.field_questions_answers
     - field.field.node.situation.field_ref_icon
@@ -24,6 +25,7 @@ dependencies:
     - datetime
     - field_group
     - link
+    - path
     - text
 third_party_settings:
   field_group:
@@ -50,6 +52,7 @@ third_party_settings:
         - field_region
         - group_flex
         - field_content
+        - field_last_updated
       parent_name: group_content
       weight: 20
       format_type: tab
@@ -155,6 +158,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_last_updated:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_meta_description:
     weight: 12

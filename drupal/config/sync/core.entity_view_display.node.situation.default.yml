@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.situation.field_content
     - field.field.node.situation.field_faq_parser
     - field.field.node.situation.field_internal_note
+    - field.field.node.situation.field_last_updated
     - field.field.node.situation.field_meta_description
     - field.field.node.situation.field_questions_answers
     - field.field.node.situation.field_ref_icon
@@ -33,7 +34,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_content:
-    weight: 7
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -41,13 +42,22 @@ content:
     region: content
   field_internal_note:
     type: text_default
-    weight: 11
+    weight: 12
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_last_updated:
+    weight: 1
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_meta_description:
-    weight: 10
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -55,14 +65,14 @@ content:
     region: content
   field_ref_icon:
     type: entity_reference_label
-    weight: 1
+    weight: 2
     region: content
     label: above
     settings:
       link: false
     third_party_settings: {  }
   field_region:
-    weight: 4
+    weight: 5
     label: above
     settings:
       link: false
@@ -70,7 +80,7 @@ content:
     type: entity_reference_label
     region: content
   field_situation_link:
-    weight: 9
+    weight: 10
     label: above
     settings:
       trim_length: 80
@@ -82,7 +92,7 @@ content:
     type: link
     region: content
   field_situation_ref_measures:
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: true
@@ -90,7 +100,7 @@ content:
     type: entity_reference_label
     region: content
   field_situation_type:
-    weight: 2
+    weight: 3
     label: above
     settings:
       link: false
@@ -98,7 +108,7 @@ content:
     type: entity_reference_label
     region: content
   field_situations:
-    weight: 8
+    weight: 9
     label: above
     settings:
       link: true
@@ -106,7 +116,7 @@ content:
     type: entity_reference_label
     region: content
   field_valid_from:
-    weight: 5
+    weight: 6
     label: above
     settings:
       timezone_override: ''
@@ -115,7 +125,7 @@ content:
     type: datetime_default
     region: content
   field_valid_to:
-    weight: 6
+    weight: 7
     label: above
     settings:
       timezone_override: ''

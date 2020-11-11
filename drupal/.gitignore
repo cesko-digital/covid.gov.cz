@@ -22,3 +22,5 @@
 /.env
 /.editorconfig
 /.gitattributes
+
+*.bak
