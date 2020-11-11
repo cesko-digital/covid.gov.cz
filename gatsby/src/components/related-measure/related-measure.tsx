@@ -17,7 +17,11 @@ const RelatedMeasure: React.FC<IProps> = ({ measure }) => {
         {measure.title}
       </Link>
       <RegionsMarker regions={measure.relationships.region} />
-      <TimeMarker validFrom={measure.valid_from} validTo={measure.valid_to} />
+      <TimeMarker
+        displayTime={false}
+        validFrom={measure.valid_from}
+        validTo={measure.valid_to}
+      />
     </div>
   );
 };

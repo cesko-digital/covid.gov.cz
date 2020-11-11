@@ -32,12 +32,29 @@ export const RegionsMarker: React.FC<IRegionsMarkerProps> = ({ regions }) => (
 interface ITimeProps {
   validFrom: string;
   validTo: string;
+  displayTime: boolean;
 }
 
-export const TimeMarker: React.FC<ITimeProps> = ({ validFrom, validTo }) => (
+export const TimeMarker: React.FC<ITimeProps> = ({
+  validFrom,
+  validTo,
+  displayTime,
+}) => (
   <Marker icon={<Event />}>
-    {validFrom && <Time datetime={validFrom} prefix={`${I18n('from')} `} />}
-    {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
+    {validFrom && (
+      <Time
+        displayTime={displayTime}
+        datetime={validFrom}
+        prefix={`${I18n('from')} `}
+      />
+    )}
+    {validTo && (
+      <Time
+        displayTime={displayTime}
+        datetime={validTo}
+        prefix={`${I18n('to')} `}
+      />
+    )}
   </Marker>
 );
 

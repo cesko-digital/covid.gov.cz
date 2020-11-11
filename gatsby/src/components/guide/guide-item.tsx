@@ -72,10 +72,18 @@ const GuideItem: React.FC<IProps> = ({
               <p>{area}</p>
               <p>
                 {validFrom && (
-                  <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+                  <Time
+                    displayTime
+                    datetime={validFrom}
+                    prefix={`${I18n('from')} `}
+                  />
                 )}
                 {validTo && (
-                  <Time datetime={validTo} prefix={`${I18n('to')} `} />
+                  <Time
+                    displayTime
+                    datetime={validTo}
+                    prefix={`${I18n('to')} `}
+                  />
                 )}
               </p>
             </div>
