@@ -58,22 +58,20 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           menu={<MeasureAreaList data={data.allMeasureType.nodes} />}
           hideMenuOnMobile
         >
-          <>
-            <Headline className="d-block d-lg-none">
-              {measureType.name}
-            </Headline>
-            {measures.map((m) => (
-              <MeasureListCard
-                key={`taxonomyTermMeasureType-list-item-${m.id}`}
-                title={m.title}
-                description={m.norm}
-                link={m.path?.alias}
-                validFrom={m.valid_from}
-                validTo={m.valid_to}
-                area={m.relationships?.region?.map((r) => r.name).join(' ,')}
-              />
-            ))}
-          </>
+          <Headline iconCode={data.measureType.relationships.icon.code}>
+            {measureType.name}
+          </Headline>
+          {measures.map((m) => (
+            <MeasureListCard
+              key={`taxonomyTermMeasureType-list-item-${m.id}`}
+              title={m.title}
+              description={m.norm}
+              link={m.path?.alias}
+              validFrom={m.valid_from}
+              validTo={m.valid_to}
+              area={m.relationships?.region?.map((r) => r.name).join(' ,')}
+            />
+          ))}
         </DesktopLeftMenuLayout>
       </Container>
     </Layout>
@@ -86,6 +84,9 @@ export const query = graphql`
     measureType(path: { alias: { eq: $slug } }) {
       name
       relationships {
+        icon {
+          code
+        }
         measure {
           valid_from
           valid_to

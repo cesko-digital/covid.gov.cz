@@ -10,16 +10,30 @@
   color: #2362a2;
 }
 
-@include media-breakpoint-up(md) {
-  .listItem {
-    margin-bottom: 0 !important;
+.listItem {
+  padding: 16px;
+  margin-bottom: 16px;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
     border-radius: 0;
     border-color: transparent;
     border-bottom-color: #c7d5e1;
     position: relative;
+    padding: 16px 32px;
 
     &:last-child {
       border-bottom-color: transparent;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.02);
+      transition: all 0.2s;
+
+      h2::after {
+        right: 24px;
+        transition: all 0.2s;
+      }
     }
 
     h2 {
@@ -27,6 +41,7 @@
       color: #2362a2;
       font-size: 18px;
       line-height: 32px;
+      padding-right: 12px;
 
       &::after {
         content: '\E912';
@@ -36,6 +51,9 @@
         float: right;
         font-size: 12px;
         line-height: 32px;
+        position: absolute;
+        right: 32px;
+        transition: all 0.2s;
       }
     }
   }

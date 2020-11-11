@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 
   return (
     <div
-      className={classnames(styles.footer, 'footer mt-md-4')}
+      className={classnames(styles.footer, 'footer mt-4')}
       role="contentinfo"
     >
       <div className="container">
