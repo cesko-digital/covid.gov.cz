@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer';
 import Button from '@/components/button';
 import { Add } from '@material-ui/icons';
 
+jest.mock('@/components/i18n');
+
 test('Button renders HTML button element (not anchor element)', () => {
   const component = renderer.create(
     <>
