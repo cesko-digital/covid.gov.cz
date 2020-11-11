@@ -2,26 +2,53 @@
 
 exports[`Anchor does not render unknown variants classes 1`] = `
 <a
-  className="btn"
+  aria-label=""
+  className=""
   data-testid="button-link"
-  href="#"
-/>
+  onClick={[Function]}
+  title=""
+>
+  <button
+    className="btn"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />
+</a>
 `;
 
 exports[`Anchor element renders correctly 1`] = `
 <a
-  className="btn btn-primary"
+  aria-label=""
+  className=""
   data-testid="button-link"
-  href="#"
-/>
+  onClick={[Function]}
+  title=""
+>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />
+</a>
 `;
 
 exports[`Anchor renders with additional class correctly 1`] = `
 <a
-  className="btn btn-primary whatever-anchor"
+  aria-label=""
+  className=""
   data-testid="button-link"
-  href="#"
-/>
+  onClick={[Function]}
+  title=""
+>
+  <button
+    className="btn btn-primary whatever-anchor"
+    disabled={false}
+    onClick={null}
+    type="button"
+  />
+</a>
 `;
 
 exports[`Anchor with disabled state renders like button  1`] = `
@@ -43,41 +70,95 @@ Array [
 
 exports[`Anchor with text inside renders correctly 1`] = `
 <a
-  className="btn btn-primary"
+  aria-label=""
+  className=""
   data-testid="button-link"
-  href="#"
+  onClick={[Function]}
+  title=""
 >
-  VÍCE
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={null}
+    type="button"
+  >
+    VÍCE
+  </button>
 </a>
 `;
 
 exports[`Anchors with variants render correctly 1`] = `
 Array [
   <a
-    className="btn btn-primary"
+    aria-label=""
+    className=""
     data-testid="button-link"
-    href="#"
-  />,
+    onClick={[Function]}
+    title=""
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={null}
+      type="button"
+    />
+  </a>,
   <a
-    className="btn btn-outline-primary"
+    aria-label=""
+    className=""
     data-testid="button-link"
-    href="#"
-  />,
+    onClick={[Function]}
+    title=""
+  >
+    <button
+      className="btn btn-outline-primary"
+      disabled={false}
+      onClick={null}
+      type="button"
+    />
+  </a>,
   <a
-    className="btn btn-secondary"
+    aria-label=""
+    className=""
     data-testid="button-link"
-    href="#"
-  />,
+    onClick={[Function]}
+    title=""
+  >
+    <button
+      className="btn btn-secondary"
+      disabled={false}
+      onClick={null}
+      type="button"
+    />
+  </a>,
   <a
-    className="btn btn-outline-dark text-black"
+    aria-label=""
+    className=""
     data-testid="button-link"
-    href="#"
-  />,
+    onClick={[Function]}
+    title=""
+  >
+    <button
+      className="btn btn-outline-dark text-black"
+      disabled={false}
+      onClick={null}
+      type="button"
+    />
+  </a>,
   <a
-    className="btnSmallBlack"
+    aria-label=""
+    className=""
     data-testid="button-link"
-    href="#"
-  />,
+    onClick={[Function]}
+    title=""
+  >
+    <button
+      className="btnSmallBlack"
+      disabled={false}
+      onClick={null}
+      type="button"
+    />
+  </a>,
 ]
 `;
 
