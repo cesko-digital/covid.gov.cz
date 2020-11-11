@@ -1,0 +1,31 @@
+uuid: 9b47ad8f-6d2b-45ab-8757-116590230bf8
+langcode: cs
+status: true
+dependencies: {  }
+id: translator
+label: Překladatel
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'change own username'
+  - 'create content translations'
+  - 'translate any entity'
+  - 'translate area taxonomy_term'
+  - 'translate block_content'
+  - 'translate measure node'
+  - 'translate measure_type taxonomy_term'
+  - 'translate notice node'
+  - 'translate page node'
+  - 'translate region taxonomy_term'
+  - 'translate situation node'
+  - 'update content translations'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view measure revisions'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view situation revisions'
+  - 'view the administration theme'
