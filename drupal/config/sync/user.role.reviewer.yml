@@ -20,6 +20,7 @@ permissions:
   - 'edit any page content'
   - 'edit any situation content'
   - 'use content transition approved'
+  - 'use content transition archive'
   - 'use content transition create_new_draft'
   - 'use content transition publish'
   - 'use content transition review'
