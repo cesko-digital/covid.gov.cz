@@ -27,10 +27,10 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-91d9c00d161aecfbf827.js"
+    "url": "webpack-runtime-a409427ea40122f442fb.js"
   },
   {
-    "url": "styles.7a03f6d5ecd47da1d534.css"
+    "url": "styles.f034473606536765c0ea.css"
   },
   {
     "url": "styles-407fe62976dc5310c43e.js"
@@ -43,7 +43,23 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "3dd8e5c189e4390adb6905d6cfba6b7c"
+    "revision": "fd8ab5a6fa7a0236e2665c822383473d"
+  },
+  {
+    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4.woff2",
+    "revision": "020c97dc8e0463259c2f9df929bb0c69"
+  },
+  {
+    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4.woff2",
+    "revision": "ef7c6637c68f269a882e73bcb57a7f6a"
+  },
+  {
+    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4.woff2",
+    "revision": "2735a3a69b509faf3577afd25bdf552e"
+  },
+  {
+    "url": "google-fonts/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2",
+    "revision": "479970ffb74f2117317f9d24d9e317fe"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
