@@ -88,6 +88,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
                 title: I18n('current_measures'),
               }}
               title={data.measureType.name}
+              titleIconCode={data.measureType?.relationships?.icon?.code}
             />
           }
           hideMenuOnMobile
@@ -135,6 +136,9 @@ export const query = graphql`
         alias
       }
       relationships {
+        icon {
+          code
+        }
         measure {
           id
           title

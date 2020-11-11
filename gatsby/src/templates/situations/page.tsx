@@ -88,6 +88,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
                 title: I18n('life_situations'),
               }}
               title={data.situationArea.name}
+              titleIconCode={data.situationArea?.relationships?.icon?.code}
             />
           }
           hideMenuOnMobile
@@ -120,6 +121,9 @@ export const query = graphql`
         alias
       }
       relationships {
+        icon {
+          code
+        }
         situation {
           id
           title

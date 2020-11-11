@@ -4,9 +4,11 @@ import CategoryItem from '../category-item/category-item';
 import I18n, { gLang } from '@/components/i18n';
 import Link from '@/components/link';
 import { KeyboardArrowLeft } from '@material-ui/icons';
+import ContentIcon from '../content-icon';
 
 type Props = {
   title: string;
+  titleIconCode?: string;
   linkBack?: {
     title: string;
     slug: string;
@@ -22,7 +24,12 @@ const makeFirstWordBold = (sentence: string) =>
     return (acc += ' ' + curr);
   }, '');
 
-const CategoryItemList: FC<Props> = ({ items, title, linkBack }) => {
+const CategoryItemList: FC<Props> = ({
+  items,
+  title,
+  titleIconCode,
+  linkBack,
+}) => {
   const lang = gLang();
   const collator = new Intl.Collator([lang]);
   items.sort((a, b) => collator.compare(a.name, b.name));
@@ -32,7 +39,12 @@ const CategoryItemList: FC<Props> = ({ items, title, linkBack }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <h2 dangerouslySetInnerHTML={{ __html: styledTitle }} />
+        <h2>
+          {titleIconCode && (
+            <ContentIcon code={titleIconCode} className={styles.icon} />
+          )}
+          <span dangerouslySetInnerHTML={{ __html: styledTitle }} />
+        </h2>
         {linkBack ? (
           <Link className={styles.linkBack} to={linkBack.slug}>
             <KeyboardArrowLeft

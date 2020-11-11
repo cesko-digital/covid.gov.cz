@@ -24,11 +24,16 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
   const hasRelatedSituations = Boolean(relatedSituations.length);
+
+  const iconCode =
+    situation.relationships?.icon?.code ||
+    situation.relationships?.situation_type?.relationships?.icon?.code;
+
   return (
     <>
       <TopicDetail
         title={situation.title}
-        titleIconCode={situation.relationships?.icon?.code}
+        titleIconCode={iconCode}
         processedContent={situation?.content?.processed}
       >
         {hasRelatedMeasures && (
@@ -102,6 +107,11 @@ export const query = graphql`
         name
         path {
           alias
+        }
+        relationships {
+          icon {
+            code
+          }
         }
       }
       measures {
