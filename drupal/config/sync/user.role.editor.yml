@@ -42,6 +42,7 @@ permissions:
   - 'edit terms in region'
   - 'edit terms in situation_type'
   - 'translate any entity'
+  - 'translate interface'
   - 'update content translations'
   - 'use content transition approved'
   - 'use content transition archive'

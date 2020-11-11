@@ -22,6 +22,8 @@ permissions:
   - 'translate region taxonomy_term'
   - 'translate situation node'
   - 'update content translations'
+  - 'use content transition create_new_draft'
+  - 'use text format basic'
   - 'view any unpublished content'
   - 'view latest version'
   - 'view measure revisions'
