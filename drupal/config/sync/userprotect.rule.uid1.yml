@@ -1,0 +1,39 @@
+uuid: 834e57e8-7c39-4664-9c16-bcfde67fe349
+langcode: cs
+status: true
+dependencies:
+  module:
+    - user
+name: uid1
+label: UID1
+protectedEntityTypeId: user
+protectedEntityId: '1'
+protections:
+  user_roles:
+    id: user_roles
+    provider: userprotect
+    status: true
+  user_mail:
+    id: user_mail
+    provider: userprotect
+    status: true
+  user_name:
+    id: user_name
+    provider: userprotect
+    status: true
+  user_pass:
+    id: user_pass
+    provider: userprotect
+    status: true
+  user_status:
+    id: user_status
+    provider: userprotect
+    status: true
+  user_delete:
+    id: user_delete
+    provider: userprotect
+    status: true
+  user_edit:
+    id: user_edit
+    provider: userprotect
+    status: true

@@ -1,0 +1,14 @@
+uuid: 02d4fa57-a156-4b3d-8379-2500b9699390
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.user_manager
+  module:
+    - user
+id: user_add_role_action.user_manager
+label: 'Přidat vybraným uživatelům roli User manager'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: user_manager

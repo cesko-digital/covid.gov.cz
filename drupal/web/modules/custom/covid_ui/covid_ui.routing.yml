@@ -12,7 +12,7 @@ covid_ui.translation:
     _form: '\Drupal\covid_ui\Form\TranslateForm'
     _title: 'Přeložit'
   requirements:
-    _permission: 'translate any entity'
+    _permission: 'translate interface'
 
 covid_ui.translation_add:
   path: '/admin/covid/translate/add'
@@ -20,7 +20,7 @@ covid_ui.translation_add:
     _form: '\Drupal\covid_ui\Form\AddTranslationForm'
     _title: 'Přidat překlady'
   requirements:
-    _permission: 'access administration pages'
+    _permission: 'translate interface'
 
 covid_ui.publish:
   path: '/admin/covid/publish'
