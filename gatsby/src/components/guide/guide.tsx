@@ -5,7 +5,7 @@ import React from 'react';
 import Button from '../button';
 import Col from '../col';
 import ContentBox from '../content-box';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 import MeasureList from '../measure-list';
 import Row from '../row';
 import SituationsBox from '../situations-box';

@@ -6,7 +6,7 @@ import ContentIcon from '../content-icon';
 import classes from './guide-item.module.scss';
 
 import Time from '@/components/time';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   title: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 
 const BASE_URL = 'https://covid.gov.cz';
 

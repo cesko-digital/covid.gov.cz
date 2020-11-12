@@ -4,7 +4,7 @@ import Link from '@/components/link';
 import Time from '@/components/time';
 import styles from './measure-list-card.module.scss';
 import classNames from 'classnames';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   title: string;

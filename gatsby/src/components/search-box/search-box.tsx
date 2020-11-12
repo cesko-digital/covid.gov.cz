@@ -5,7 +5,7 @@ import Button from '../button';
 import GovIcon from '../gov-icon';
 
 import classes from './search-box.module.scss';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   placeholder?: string;

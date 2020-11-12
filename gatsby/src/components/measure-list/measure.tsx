@@ -4,7 +4,7 @@ import styles from './measure.module.scss';
 import Button from '@/components/button';
 import Time from '@/components/time';
 import Link from '@/components/link';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 
 interface Props {
   title: string;

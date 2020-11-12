@@ -3,7 +3,7 @@ import React from 'react';
 import { Room, Event } from '@material-ui/icons';
 import { IRegion } from '@graphql-types';
 import Time from '../time';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   icon: React.ReactNode;
