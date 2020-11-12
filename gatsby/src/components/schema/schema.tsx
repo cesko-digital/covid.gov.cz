@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
 import I18n from '../i18n';
-import { ISituation } from '@graphql-types';
+import { ISituationQuestions_Answers } from '@graphql-types';
 
 const BASE_URL = 'https://covid.gov.cz';
 
@@ -18,7 +18,7 @@ interface IProps {
   title: string;
   isHomePage?: boolean;
   breadcrumbItems?: Array<Object | string>;
-  situations?: ISituation[];
+  questions_answers?: ISituationQuestions_Answers[];
 }
 
 export const SchemaComp: React.FC<IProps> = ({
@@ -33,7 +33,7 @@ export const SchemaComp: React.FC<IProps> = ({
   body,
   isHomePage,
   breadcrumbItems,
-  situations,
+  questions_answers,
 }) => {
   const { pathname } = useLocation();
   const url = `${BASE_URL}${pathname}`;
@@ -102,16 +102,16 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
-  let situationsList = null;
-  if (typeof situations !== 'undefined') {
-    situationsList = [];
-    situations.forEach((situation) => {
-      situationsList.push({
+  let faqList = null;
+  if (typeof questions_answers !== 'undefined') {
+    faqList = [];
+    questions_answers.forEach((questions_answer) => {
+      faqList.push({
         '@type': 'Question',
-        name: situation.title,
+        name: questions_answer.question,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: situation.content.processed,
+          text: questions_answer.value,
         },
       });
     });
@@ -126,11 +126,11 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
-          isBlogList && situationsList !== null
+          isBlogPost && faqList !== null && faqList.length > 0
             ? {
                 '@context': 'https://schema.org',
                 '@type': 'FAQPage',
-                mainEntity: situationsList,
+                mainEntity: faqList,
               }
             : '',
           isBlogPost

@@ -58,6 +58,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           },
           data.situation.title,
         ]}
+        questions_answers={data.situation.questions_answers}
       />
       <SituationDetail situation={data.situation} />
       <Container className="pt-1">

@@ -44,7 +44,6 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           },
           area.name,
         ]}
-        situations={situations}
       />
       <Container>
         <div className="pt-1">
@@ -92,9 +91,6 @@ export const query = graphql`
           meta_description
           path {
             alias
-          }
-          content {
-            processed
           }
         }
       }
