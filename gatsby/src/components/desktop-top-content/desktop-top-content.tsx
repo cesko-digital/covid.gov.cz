@@ -1,4 +1,3 @@
-import useMobile from '@/hooks/useMobile';
 import classNames from 'classnames';
 import React from 'react';
 import Col from '../col';
@@ -17,12 +16,6 @@ const DesktopTopContent: React.FC<IProps> = ({
   subtitle,
   showSearch = true,
 }) => {
-  const isMobile = useMobile();
-
-  if (isMobile) {
-    return null;
-  }
-
   return (
     <>
       <div

@@ -1,5 +1,7 @@
 .desktopTopContent {
-  height: 250px;
+  @media (min-width: 992px) and (min-height: 450px) {
+    height: 250px;
+  }
 }
 
 .title {
