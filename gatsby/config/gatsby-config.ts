@@ -215,6 +215,7 @@ const config = {
           {
             family: `Roboto`,
             variants: ['300', '400', '500', '700'],
+            subsets: ['latin-ext'],
           },
         ],
       },
