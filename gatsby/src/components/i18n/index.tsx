@@ -4,4 +4,3 @@ export {
   isLanguageSupported,
   LanguageKey,
 } from './TranslatorContext';
-export { default, TRoute, gLang } from './i18n';

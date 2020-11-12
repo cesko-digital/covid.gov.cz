@@ -11,7 +11,7 @@ import classes from './header.module.scss';
 import headerLogoCS from './header-logo-cs.svg';
 import headerLogoEN from './header-logo-en.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
-import I18n, { useCurrentLanguage } from '@/components/i18n';
+import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
 
 interface NavItem {
@@ -29,6 +29,7 @@ export const locales = ['cs', 'en'];
 const Header: React.FC<Props> = ({ navItems, pageContext }) => {
   const [isOpen, setOpen] = useState(false);
   const currentLanguage = useCurrentLanguage();
+  const { t } = useTranslation();
 
   const toggleOpen = useCallback(() => {
     setOpen(!isOpen);
@@ -50,7 +51,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
           <Row alignItems="center" className={classes.header__inner}>
             {/* LOGO */}
             <Col col={7} colMd={3} colLg={3}>
-              <Link to="/" title={'COVID PORTAL - ' + I18n('home')}>
+              <Link to="/" title={'COVID PORTAL - ' + t('home')}>
                 {currentLanguage === 'cs' ? (
                   <img src={headerLogoCS} alt="Covid Portál" />
                 ) : (
@@ -77,10 +78,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                 <span />
                 <span />
                 <div>
-                  {(isOpen
-                    ? I18n('menu_close')
-                    : I18n('menu_open')
-                  ).toUpperCase()}
+                  {(isOpen ? t('menu_close') : t('menu_open')).toUpperCase()}
                 </div>
               </div>
             </Col>

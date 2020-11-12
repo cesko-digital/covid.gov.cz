@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
-import I18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 
 const BASE_URL = 'https://covid.gov.cz';
 
@@ -33,6 +33,7 @@ export const SchemaComp: React.FC<IProps> = ({
   breadcrumbItems,
 }) => {
   const { pathname } = useLocation();
+  const { t } = useTranslation();
   const url = `${BASE_URL}${pathname}`;
 
   const baseSchema = [
@@ -134,7 +135,7 @@ export const SchemaComp: React.FC<IProps> = ({
         ]
       : baseSchema;
 
-  const ogTitle = isHomePage ? title : `${title} · ${I18n('covid_portal')}`;
+  const ogTitle = isHomePage ? title : `${title} · ${t('covid_portal')}`;
 
   const { origin } = new URL(url);
 
@@ -155,7 +156,7 @@ export const SchemaComp: React.FC<IProps> = ({
       <meta property="twitter:image" content={`${origin}/images/ogimage.png`} />
       <meta property="og:description" content={description} />
       <meta name="description" content={description} />
-      <meta property="og:site_name" content={I18n('covid_portal')} />
+      <meta property="og:site_name" content={t('covid_portal')} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );

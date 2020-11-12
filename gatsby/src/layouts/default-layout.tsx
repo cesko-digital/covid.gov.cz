@@ -10,7 +10,8 @@ import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import I18n from '@/components/i18n';
+import { useTranslation } from '@/components/i18n';
+import { Alert } from '@/components/alert';
 import styles from './default-layout.module.scss';
 import { ISitePageContext, IDefaultLayoutQuery } from '@graphql-types';
 import { Helmet } from 'react-helmet';
@@ -22,6 +23,7 @@ interface IProps {
 }
 
 const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
+  const { t } = useTranslation();
   const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
     query DefaultLayout {
       mobileImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
@@ -106,9 +108,9 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
         <Header
           pageContext={pageContext}
           navItems={[
-            { label: I18n('home'), to: '/' },
-            { label: I18n('life_situations'), to: I18n('slug_situations') },
-            { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
+            { label: t('home'), to: '/' },
+            { label: t('life_situations'), to: t('slug_situations') },
+            { label: t('current_measures'), to: t('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
           ]}
         />
 

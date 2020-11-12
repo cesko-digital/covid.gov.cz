@@ -6,10 +6,10 @@ import SituationDetail from '@/components/situation-detail/situation-detail';
 import Container from '@/components/container';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import I18n from '@/components/i18n';
 import Breadcrumb from '@/components/breadcrumb';
 import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 import CategoryItemList from '@/components/category-item-list';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   data: ISituationPageQuery;
@@ -25,13 +25,13 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
     path: situation.path.alias,
     isActive: situation.path.alias === pageContext.slug,
   }));
+  const { t } = useTranslation();
   return (
     <Layout pageContext={pageContext}>
       <Seo
         title={data.situation.title}
         description={
-          data.situation.meta_description ||
-          I18n('current_measures_overview_meta')
+          data.situation.meta_description || t('current_measures_overview_meta')
         }
         pagePath={data.situation.path.alias}
         htmlLanguage={pageContext.langCode}
@@ -49,10 +49,10 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         }
         description={data.situation.meta_description}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
+          { title: t('home'), url: '/' },
           {
-            title: I18n('life_situations'),
-            url: I18n(`slug_situations`),
+            title: t('life_situations'),
+            url: t(`slug_situations`),
           },
           {
             title: data.situation.relationships?.situation_type?.name,
@@ -65,10 +65,10 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         <div className="pt-1">
           <Breadcrumb
             items={[
-              { title: I18n('home'), url: '/' },
+              { title: t('home'), url: '/' },
               {
-                title: I18n('life_situations'),
-                url: I18n(`slug_situations`),
+                title: t('life_situations'),
+                url: t(`slug_situations`),
               },
               {
                 title: data.situation.relationships?.situation_type?.name,
@@ -85,7 +85,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               items={relatedSituations}
               linkBack={{
                 slug: pageContext.listSlug,
-                title: I18n('life_situations'),
+                title: t('life_situations'),
               }}
               title={data.situationArea.name}
               titleIconCode={data.situationArea?.relationships?.icon?.code}

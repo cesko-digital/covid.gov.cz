@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import I18n from '@/components/i18n';
 
 import Button from '../button';
 import GovIcon from '../gov-icon';
 
 import classes from './search-box.module.scss';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   placeholder?: string;
   onSearch?: (term: string) => void;
 }
 
-const SearchBox: React.FC<IProps> = ({
-  placeholder = I18n('search_placeholder'),
-  onSearch,
-}) => {
+const SearchBox: React.FC<IProps> = ({ placeholder, onSearch }) => {
+  const { t } = useTranslation();
   const [search, setSearch] = useState('');
 
   const handleSearch = () => {
@@ -49,7 +47,7 @@ const SearchBox: React.FC<IProps> = ({
             classes.searchBoxInput,
             'form-control search__input',
           )}
-          placeholder={placeholder}
+          placeholder={placeholder ?? t('search_placeholder')}
           onChange={(event) => setSearch(event.currentTarget.value)}
           value={search}
           onKeyDown={handleKeyDown}

@@ -4,18 +4,20 @@ import { IMeasurePageQuery, ISitePageContext } from 'graphql-types';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Layout from '@/layouts/default-layout';
-import I18n from '@/components/i18n';
 import MeasureDetail from '@/components/measure-detail';
 import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 import CategoryItemList from '@/components/category-item-list';
 import Container from '@/components/container';
 import Breadcrumb from '@/components/breadcrumb';
+import { useTranslation } from '@/components/i18n';
+
 interface IProps {
   data: IMeasurePageQuery;
   pageContext: ISitePageContext;
 }
 
 const Page: React.FC<IProps> = ({ data, pageContext }) => {
+  const { t } = useTranslation();
   const relatedMeasures: React.ComponentProps<
     typeof CategoryItemList
   >['items'] = data.measureType.relationships.measure.map((measure) => ({
@@ -30,8 +32,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
       <Seo
         title={data.measure.title}
         description={
-          data.measure.meta_description ||
-          I18n('current_measures_overview_meta')
+          data.measure.meta_description || t('current_measures_overview_meta')
         }
         pagePath={data.measure.path.alias}
         htmlLanguage={data.measure.langcode}
@@ -49,10 +50,10 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         }
         description={data.measure.meta_description}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
+          { title: t('home'), url: '/' },
           {
-            title: I18n('current_measures'),
-            url: I18n(`slug_measures`),
+            title: t('current_measures'),
+            url: t(`slug_measures`),
           },
           {
             title: data.measure.relationships?.situation_type?.name,
@@ -65,10 +66,10 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         <div className="pt-1">
           <Breadcrumb
             items={[
-              { title: I18n('home'), url: '/' },
+              { title: t('home'), url: '/' },
               {
-                title: I18n('current_measures'),
-                url: I18n(`slug_measures`),
+                title: t('current_measures'),
+                url: t(`slug_measures`),
               },
               {
                 title: data.measure.relationships?.measure_type?.name,
@@ -85,7 +86,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               items={relatedMeasures}
               linkBack={{
                 slug: pageContext.listSlug,
-                title: I18n('current_measures'),
+                title: t('current_measures'),
               }}
               title={data.measureType.name}
               titleIconCode={data.measureType?.relationships?.icon?.code}
