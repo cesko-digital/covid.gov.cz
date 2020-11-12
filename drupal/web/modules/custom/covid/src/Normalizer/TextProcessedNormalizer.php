@@ -59,7 +59,7 @@ class TextProcessedNormalizer extends TypedDataNormalizer {
       foreach ($matches[0] as $match) {
 
         // When external keyword is already there, I guess we can presume that's the class and we can skip it.
-        if (str_contains($match, 'external')) {
+        if (strpos($match, 'external') !== FALSE) {
           continue;
         }
 
@@ -71,7 +71,7 @@ class TextProcessedNormalizer extends TypedDataNormalizer {
           $replacement = str_replace('>', ' class="external">', $match);
         }
 
-        $data = mb_ereg_replace($match, $replacement, $data);
+        $data = str_replace($match, $replacement, $data);
       }
     }
 
