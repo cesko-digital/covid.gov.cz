@@ -2,7 +2,7 @@ import React from 'react';
 
 import Container from '@/components/container';
 import Link from '@/components/link';
-import I18n from '@/components/i18n';
+import I18n, { gLang } from '@/components/i18n';
 
 import Accordion from '../accordion';
 import ContentBox from '../content-box';
@@ -22,7 +22,9 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
 
   const hasFaq = Boolean(faq.length);
   const hasRelatedLinks = Boolean(situation.links.length);
-  const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
+  const hasRelatedMeasures = Boolean(
+    situation.relationships.measures.length && gLang() !== 'en', // Temporarily hide measures for English page.
+  );
   const hasRelatedSituations = Boolean(relatedSituations.length);
 
   const iconCode =
