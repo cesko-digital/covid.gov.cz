@@ -5,6 +5,7 @@ export interface BoldedTitleProps {
   count?: number;
 }
 
+/* global JSX */
 export const BoldedTitle: React.FC<BoldedTitleProps> = ({ title, count }) => {
   const splittedTitle: Array<JSX.Element | string> = title.split(/(?= )/g);
   return (

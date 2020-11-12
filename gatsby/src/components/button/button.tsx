@@ -41,6 +41,7 @@ type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
   IButtonBase & { href: string };
 
 // Input/output options
+/* global JSX */
 type Overload = {
   (props: ButtonProps): JSX.Element;
   (props: AnchorProps): JSX.Element;

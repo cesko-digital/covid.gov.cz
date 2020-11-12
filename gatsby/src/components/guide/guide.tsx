@@ -22,6 +22,10 @@ interface IProps {
   itemDescriptions?: string[];
 }
 
+const isSituation = (x: any): x is IArea => {
+  return (x as IArea)?.name !== undefined;
+};
+
 const Guide: React.FC<IProps> = ({
   items,
   title,
@@ -150,10 +154,6 @@ const Guide: React.FC<IProps> = ({
       )}
     </ContentBox>
   );
-};
-
-const isSituation = (x: any): x is IArea => {
-  return (x as IArea)?.name !== undefined;
 };
 
 export default Guide;

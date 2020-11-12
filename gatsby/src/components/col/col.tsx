@@ -36,7 +36,7 @@ const Col: React.FC<IProps> = ({
   alignSelf,
 }) => {
   const getClassNames = (): string => {
-    var strng = '';
+    let strng = '';
     if (col) {
       strng += typeof col === 'boolean' ? 'col ' : `col-${col} `;
     }
