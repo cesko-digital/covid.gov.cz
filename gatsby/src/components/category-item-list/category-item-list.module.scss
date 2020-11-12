@@ -1,0 +1,63 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
+  background-color: $theme-blue;
+  padding: 12px 0;
+  max-width: 800px;
+
+  hr {
+    margin: 12px 24px;
+    opacity: 0.3;
+  }
+
+  @include media-breakpoint-down(md) {
+    border-radius: 3px;
+  }
+
+  .header {
+    > h2 {
+      color: $white;
+      padding: 12px 24px 8px 24px;
+      letter-spacing: normal;
+      margin: 0;
+
+      .icon {
+        vertical-align: middle;
+        margin-top: -5px;
+        margin-right: 10px;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+      visibility: hidden;
+    }
+
+    .chevron {
+      color: $theme-yellow;
+      margin-left: -4px;
+    }
+
+    .linkBack {
+      text-transform: uppercase;
+      padding: 0 24px;
+      color: $theme-yellow !important;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

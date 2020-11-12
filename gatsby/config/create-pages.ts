@@ -1,6 +1,6 @@
 import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
-import { IPage, IQuery } from 'graphql-types';
+import { IPage, ICreatePagesQuery } from 'graphql-types';
 
 /**
  * Gatsby exposes interfaces for every lifecycle hook
@@ -33,9 +33,9 @@ export const createPages: GatsbyNode['createPages'] = async ({
   /**
    * Pass the query structure generic for complete type-check coverage
    */
-  const result = await graphql<IQuery>(
+  const result = await graphql<ICreatePagesQuery>(
     `
-      {
+      query CreatePages {
         allTranslation {
           nodes {
             langcode
@@ -161,7 +161,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   });
 
   // custom pages
-  const customPages: IPage[] = result.data.allPage.nodes;
+  const customPages = result.data.allPage.nodes;
 
   customPages.forEach((page) => {
     const languageVariants = generateLanguageVariants(
@@ -211,11 +211,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
         (n) => n.drupal_id === node.drupal_id,
       );
 
+      const listSlug = node.path.alias;
+
       createPage({
-        path: pathPrefix + node.path.alias,
+        path: pathPrefix + listSlug,
         component: itemTmpl,
         context: {
-          slug: node.path.alias,
+          slug: listSlug,
           langCode: node.langcode,
           languageVariants,
         },
@@ -236,6 +238,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
           context: {
             slug: subNode.path.alias,
             langCode: subNode.langcode,
+            listSlug,
             languageVariants,
           },
         });

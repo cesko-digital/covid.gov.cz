@@ -26,12 +26,8 @@ const MeasureListCard: React.FC<IProps> = ({
   return (
     <Link
       to={link}
-      className={classNames(
-        'card p-2 mb-2 text-decoration-none',
-        styles.listItem,
-      )}
+      className={classNames('card text-decoration-none', styles.listItem)}
     >
-      {/* TODO: Add icon */}
       <h2 className="font-weight-medium mb-1">{title}</h2>
       <p className="mt-0 color-gray">{description}</p>
       <div className="d-flex justify-content-between align-items-end">

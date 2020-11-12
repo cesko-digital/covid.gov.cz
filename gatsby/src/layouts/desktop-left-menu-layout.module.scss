@@ -1,0 +1,39 @@
+@import '../../assets/scss/design-system/base/variables';
+@import '../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
+  display: flex;
+
+  > nav {
+    background-color: $theme-blue;
+
+    @include media-breakpoint-up(xl) {
+      width: 320px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 280px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    &.hideOnMobile {
+      @include media-breakpoint-down(sm) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+
+  .main {
+    flex: 1;
+
+    @include media-breakpoint-up(md) {
+      background-color: $white;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from '@graphql-types';
-
+import { IMeasureListQuery, ISitePageContext } from 'graphql-types';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Container from '@/components/container';
 import Headline from '@/components/headline';
@@ -10,10 +9,12 @@ import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
 import MeasureListCard from '@/components/list-card/measure-list-card';
 import SchemaComp from '@/components/schema';
+import { MeasureAreaList } from '@/components/category-item-list';
+import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
-  data: IQuery;
   pageContext: ISitePageContext;
+  data: IMeasureListQuery;
 }
 // todo add meta description
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
@@ -53,10 +54,13 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
             variant="inverse"
           />
         </div>
-        <div className="mt-3">
-          <Headline>{measureType.name}</Headline>
-        </div>
-        <div>
+        <DesktopLeftMenuLayout
+          menu={<MeasureAreaList data={data.allMeasureType.nodes} />}
+          hideMenuOnMobile
+        >
+          <Headline iconCode={data.measureType?.relationships?.icon?.code}>
+            {measureType.name}
+          </Headline>
           {measures.map((m) => (
             <MeasureListCard
               key={`taxonomyTermMeasureType-list-item-${m.id}`}
@@ -68,7 +72,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
               area={m.relationships?.region?.map((r) => r.name).join(' ,')}
             />
           ))}
-        </div>
+        </DesktopLeftMenuLayout>
       </Container>
     </Layout>
   );
@@ -76,10 +80,13 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
 export default Home;
 
 export const query = graphql`
-  query MeasuresListQuery($slug: String!, $langCode: String!) {
+  query MeasureList($slug: String!, $langCode: String!) {
     measureType(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       name
       relationships {
+        icon {
+          code
+        }
         measure {
           valid_from
           valid_to
@@ -95,6 +102,11 @@ export const query = graphql`
             alias
           }
         }
+      }
+    }
+    allMeasureType(filter: { langcode: { eq: $langCode } }) {
+      nodes {
+        ...MeasureArea
       }
     }
   }

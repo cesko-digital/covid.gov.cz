@@ -18,18 +18,6 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
     <TopicDetail
-      breadcrumbItems={[
-        { title: I18n('home'), url: '/' },
-        {
-          title: I18n('current_measures'),
-          url: I18n(`slug_measures`),
-        },
-        {
-          title: measure.relationships?.situation_type?.name,
-          url: measure.relationships?.situation_type?.path?.alias,
-        },
-        measure.title,
-      ]}
       title={measure.title}
       subtitle={measure.norm}
       processedContent={measure?.content?.processed}
