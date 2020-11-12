@@ -93,6 +93,25 @@ const Footer: React.FC = () => {
                   />
                 </div>
               </div>
+              {process.env.GATSBY_VERCEL && (
+                <div className="col-12 col-sm-6">
+                  <div className="footer__box">
+                    <div className="footer__brand">
+                      {'Poslední úspěšný build proběhl v ' +
+                        new Date(
+                          result.currentBuildDate.currentDate,
+                        ).toLocaleString('cs-CZ', {
+                          day: 'numeric',
+                          month: 'numeric',
+                          weekday: 'long',
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          timeZone: 'Europe/Prague',
+                        })}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -115,6 +134,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    currentBuildDate {
+      currentDate
     }
   }
 `;
