@@ -38,7 +38,7 @@ We try to localize all of the strings in this app. All of the strings are transl
 3. Use the translation:
 
 ```tsx
-import I18n, { gLang } from '@/components/i18n';
+import I18n from '@/components/i18n';
 
 //...
 <h3>{I18n('useful_links')}</h3>;
