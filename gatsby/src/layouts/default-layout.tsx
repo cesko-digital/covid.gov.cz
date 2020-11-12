@@ -10,10 +10,9 @@ import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Alert } from '@/components/alert';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
-import { ISitePageContext } from '@graphql-types';
+import { ISitePageContext, IDefaultLayoutQuery } from '@graphql-types';
 import { Helmet } from 'react-helmet';
 
 interface IProps {
@@ -22,8 +21,8 @@ interface IProps {
 }
 
 const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
-  const data = useStaticQuery(graphql`
-    query {
+  const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
+    query DefaultLayout {
       mobileImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 80) {
@@ -50,9 +49,6 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           }
         }
       }
-      currentBuildDate {
-        currentDate
-      }
     }
   `);
   const sources = [
@@ -74,27 +70,6 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      {process.env.GATSBY_VERCEL ? (
-        <Alert
-          isInfo
-          message={
-            'Poslední úspěšný build proběhl v ' +
-            new Date(data.currentBuildDate.currentDate).toLocaleString(
-              'cs-CZ',
-              {
-                day: 'numeric',
-                month: 'numeric',
-                weekday: 'long',
-                hour: '2-digit',
-                minute: '2-digit',
-                timeZone: 'Europe/Prague',
-              },
-            )
-          }
-        />
-      ) : (
-        <></>
-      )}
       <div>
         <div className={styles.overflow}>
           <GatsbyImage
