@@ -197,7 +197,7 @@ const config = {
         formatAsDateString: false, // boolean, defaults to true - if false API will return unformatted string from new Date()// string, defaults to null, which date-and-time defaults as "en" - whether to localize the date or not, can use any available date-and-time localization
       },
     },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
