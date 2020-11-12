@@ -38,15 +38,15 @@ export const SchemaComp: React.FC<IProps> = ({
   const { pathname } = useLocation();
   const url = `${BASE_URL}${pathname}`;
 
+  const websiteUrl = `${BASE_URL}/${
+    langCode !== 'cs' && typeof langCode !== 'undefined' ? langCode + '/' : ''
+  }`;
+
   const baseSchema = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: `${BASE_URL}/${
-        langCode !== 'cs' && typeof langCode !== 'undefined'
-          ? langCode + '/'
-          : ''
-      }`,
+      url: websiteUrl,
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
     },
@@ -69,7 +69,9 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'ListItem',
             position: breadcrumbItemsListIter,
             item: {
-              '@id': breadcrumbItem.url,
+              '@id': `${
+                websiteUrl.endsWith('/') ? websiteUrl.slice(0, -1) : websiteUrl
+              }${breadcrumbItem.url}`,
               name: breadcrumbItem.title,
             },
           });
