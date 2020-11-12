@@ -43,23 +43,23 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "123f564e606d7bf2b6cd4898e33b94d9"
+    "revision": "78db4f4e2799998352b8739eae98b85f"
   },
   {
-    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fBBc4.woff2",
-    "revision": "020c97dc8e0463259c2f9df929bb0c69"
+    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmEU9fChc4.woff2",
+    "revision": "15431381890720a5a4b62b33c8ae06c5"
   },
   {
-    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fBBc4.woff2",
-    "revision": "ef7c6637c68f269a882e73bcb57a7f6a"
+    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmSU5fChc4.woff2",
+    "revision": "56ecfc67855e255d92db6f6fcb97143e"
   },
   {
-    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfBBc4.woff2",
-    "revision": "2735a3a69b509faf3577afd25bdf552e"
+    "url": "google-fonts/s/roboto/v20/KFOlCnqEu92Fr1MmWUlfChc4.woff2",
+    "revision": "52bb58c8cb04cf3eea4f9ac0afa1d1f6"
   },
   {
-    "url": "google-fonts/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxK.woff2",
-    "revision": "479970ffb74f2117317f9d24d9e317fe"
+    "url": "google-fonts/s/roboto/v20/KFOmCnqEu92Fr1Mu7GxK.woff2",
+    "revision": "c5bf51b68dc9fd7fe944d8947fe12518"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
