@@ -32,7 +32,7 @@ const DesktopTopContent: React.FC<IProps> = ({
           'justify-content-center',
           'align-items-center',
         )}
-        style={{ height: 250 }}
+        style={{ height: '250px' }}
       >
         {title && <h2 className={classes.title}>{title}</h2>}
         {showSearch && (
