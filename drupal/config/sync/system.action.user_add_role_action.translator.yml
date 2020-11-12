@@ -1,0 +1,14 @@
+uuid: 772f1a6e-b69a-491a-b16d-f55513f1ae20
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.translator
+  module:
+    - user
+id: user_add_role_action.translator
+label: 'Přidat vybraným uživatelům roli Překladatel'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: translator
