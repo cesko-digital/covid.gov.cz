@@ -57,7 +57,7 @@ export default CustomPage;
 
 export const query = graphql`
   query($slug: String!, $langCode: String!) {
-    page(path: { alias: { eq: $slug } }) {
+    page(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       id
       content {
         processed

@@ -1,6 +1,7 @@
 name: Gatsby
 on:
   push:
+  pull_request:
     paths:
       - "gatsby/*"
 

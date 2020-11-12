@@ -49,7 +49,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
           <Row alignItems="center" className={classes.header__inner}>
             {/* LOGO */}
             <Col col={7} colMd={3} colLg={3}>
-              <Link to="/" label={'COVID PORTAL - ' + I18n('home')}>
+              <Link to="/" title={'COVID PORTAL - ' + I18n('home')}>
                 {TRoute('/') === '/' ? (
                   <img src={headerLogoCS} alt="Covid Portál" />
                 ) : (
@@ -87,9 +87,19 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
             <Col col={12} colMd={8} colLg={9}>
               <Row alignItems="center">
                 {/* NAVIGATION */}
-                <Col col={12} colLg={8} className="d-none d-md-block">
-                  <div className={classnames(classes.navigation, 'navigation')}>
-                    <ul className={classnames('nav nav--primary')}>
+                <Col
+                  col={12}
+                  colLg={10}
+                  colXl={8}
+                  className="d-none d-md-block"
+                >
+                  <div className={classnames('navigation')}>
+                    <ul
+                      className={classnames(
+                        classes.navigation,
+                        'nav nav--primary',
+                      )}
+                    >
                       {navItems.map(({ label, to }) => (
                         <li className={classnames('nav__item')} key={label}>
                           <Link
