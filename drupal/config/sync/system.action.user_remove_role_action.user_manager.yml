@@ -1,0 +1,14 @@
+uuid: 4c2909c4-8d47-4c56-af19-7ddb996a7fcc
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.user_manager
+  module:
+    - user
+id: user_remove_role_action.user_manager
+label: 'Odebrat vybraným uživatelům roli User manager'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: user_manager
