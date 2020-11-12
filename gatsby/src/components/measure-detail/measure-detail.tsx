@@ -30,6 +30,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
           )}
           {hasTimeConstraint && (
             <TimeMarker
+              displayTime
               validFrom={measure.valid_from}
               validTo={measure.valid_to}
             />

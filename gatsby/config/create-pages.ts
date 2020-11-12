@@ -237,7 +237,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
           component: subTmpl,
           context: {
             slug: subNode.path.alias,
-            langCode: subNode.path.langcode,
+            langCode: subNode.langcode,
             listSlug,
             languageVariants,
           },

@@ -37,9 +37,15 @@ const MeasureListCard: React.FC<IProps> = ({
           </div>
           <div className={styles.measureListCardDetail}>
             {validFrom && (
-              <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+              <Time
+                displayTime
+                datetime={validFrom}
+                prefix={`${I18n('from')} `}
+              />
             )}
-            {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
+            {validTo && (
+              <Time displayTime datetime={validTo} prefix={`${I18n('to')} `} />
+            )}
           </div>
         </div>
         <div className={styles.buttonWrapper}>

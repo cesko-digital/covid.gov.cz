@@ -81,7 +81,7 @@ export default Home;
 
 export const query = graphql`
   query MeasureList($slug: String!, $langCode: String!) {
-    measureType(path: { alias: { eq: $slug } }) {
+    measureType(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       name
       relationships {
         icon {

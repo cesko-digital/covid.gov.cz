@@ -102,8 +102,8 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
 export default Page;
 
 export const query = graphql`
-  query MeasurePage($slug: String!, $listSlug: String!) {
-    measure(path: { alias: { eq: $slug } }) {
+  query MeasurePage($slug: String!, $listSlug: String!, $langCode: String!) {
+    measure(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       title
       meta_description
       content: description {
