@@ -33,7 +33,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'edit any situation content'
+          perm: 'access toolbar'
       cache:
         type: tag
         options: {  }
