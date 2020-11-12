@@ -76,8 +76,8 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
 export default Home;
 
 export const query = graphql`
-  query($slug: String!) {
-    measureType(path: { alias: { eq: $slug } }) {
+  query MeasuresListQuery($slug: String!, $langCode: String!) {
+    measureType(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       name
       relationships {
         measure {

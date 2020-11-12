@@ -81,8 +81,8 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
 export default SituationList;
 
 export const query = graphql`
-  query($slug: String!) {
-    area(path: { alias: { eq: $slug } }) {
+  query($slug: String!, $langCode: String!) {
+    area(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       name
       relationships {
         situation {

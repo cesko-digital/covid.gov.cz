@@ -116,14 +116,16 @@ export const createPages: GatsbyNode['createPages'] = async ({
 
   const pathLangPrefix = (lang) => (lang === 'cs' ? '' : '/' + lang);
 
-  const generateLanguageVariants = (nodes, toLanguage, filter) => nodes
-    // include variants with different language and matching node filter (drupal_id/target)
-    .filter((item) => item.langcode != toLanguage && filter(item))
-    // reduce variants to mapping {[language]: /path}
-    .reduce((acc, item) => {
-      acc[item.langcode] = pathLangPrefix(item.langcode) + (item.target || item.path?.alias);
-      return acc;
-    }, {});
+  const generateLanguageVariants = (nodes, toLanguage, filter) =>
+    nodes
+      // include variants with different language and matching node filter (drupal_id/target)
+      .filter((item) => item.langcode != toLanguage && filter(item))
+      // reduce variants to mapping {[language]: /path}
+      .reduce((acc, item) => {
+        acc[item.langcode] =
+          pathLangPrefix(item.langcode) + (item.target || item.path?.alias);
+        return acc;
+      }, {});
 
   languages.forEach((lang) => {
     const pathPrefix = pathLangPrefix(lang);
@@ -144,7 +146,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
       const languageVariants = generateLanguageVariants(
         translations,
         lang,
-        (i) => i.source === source
+        (i) => i.source === source,
       );
 
       createPage({
@@ -165,7 +167,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
     const languageVariants = generateLanguageVariants(
       customPages,
       page.langcode,
-      (p) => p.drupal_id == page.drupal_id
+      (p) => p.drupal_id == page.drupal_id,
     );
 
     const pathPrefix = pathLangPrefix(page.langcode);
@@ -183,14 +185,22 @@ export const createPages: GatsbyNode['createPages'] = async ({
   // Create blog posts pages.
   const blogPostSpecs = [
     ['situation', result.data.allArea.edges, listTemplate[0], pageTemplate[0]],
-    ['measure', result.data.allMeasureType.edges, listTemplate[1], pageTemplate[1]],
+    [
+      'measure',
+      result.data.allMeasureType.edges,
+      listTemplate[1],
+      pageTemplate[1],
+    ],
   ];
   blogPostSpecs.forEach((spec) => {
     const [key, posts, itemTmpl, subTmpl] = spec;
-    const nodes = posts.map(p => p.node);
+    const nodes = posts.map((p) => p.node);
 
     // extract all subnodes from all nodes and flats them to one dimensional array
-    const flattenedSubNodes = nodes.map(n => n.relationships[key]).flat().filter(Boolean);
+    const flattenedSubNodes = nodes
+      .map((n) => n.relationships[key])
+      .flat()
+      .filter(Boolean);
 
     nodes.forEach((node) => {
       const pathPrefix = pathLangPrefix(node.langcode);
@@ -198,8 +208,8 @@ export const createPages: GatsbyNode['createPages'] = async ({
       const languageVariants = generateLanguageVariants(
         nodes,
         node.langcode,
-        (n) => n.drupal_id === node.drupal_id
-      )
+        (n) => n.drupal_id === node.drupal_id,
+      );
 
       createPage({
         path: pathPrefix + node.path.alias,
@@ -217,7 +227,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
         const languageVariants = generateLanguageVariants(
           flattenedSubNodes,
           subNode.langcode,
-          (n) => n.drupal_id === subNode.drupal_id
+          (n) => n.drupal_id === subNode.drupal_id,
         );
 
         createPage({
