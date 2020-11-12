@@ -122,14 +122,3 @@ test('Button with disabled state renders correctly ', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-test('Anchor with disabled state renders like button ', () => {
-  const component = renderer.create(
-    <>
-      <Button href="#" disabled variant="contained" />
-      <Button href="" disabled variant="contained" />
-    </>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});

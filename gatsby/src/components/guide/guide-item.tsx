@@ -93,7 +93,7 @@ const GuideItem: React.FC<IProps> = ({
             variant="outline-yellow"
             text={buttonText}
             href={buttonUrl}
-            linkTitle={title}
+            title={title}
             className={classNames(classes.guideItemBtn, {
               [classes.guideItemBtnBlue]: variant === 'white',
             })}
