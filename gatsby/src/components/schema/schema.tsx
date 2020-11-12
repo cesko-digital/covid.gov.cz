@@ -137,27 +137,26 @@ export const SchemaComp: React.FC<IProps> = ({
             ? {
                 '@context': 'http://schema.org',
                 '@type': 'BlogPosting',
-                url,
-                name: title,
-                articleBody: body,
+                mainEntityOfPage: {
+                  '@type': 'WebPage',
+                  '@id': url,
+                },
                 headline: title,
-                description,
+                image: `${BASE_URL}/images/ogimage.jpg`,
+                datePublished,
+                dateModified,
                 publisher: {
                   '@type': 'Organization',
                   url: 'https://gov.cz',
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
-                mainEntityOfPage: url,
                 author: {
                   '@type': 'Organization',
                   url: 'https://gov.cz',
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
-                image: `${BASE_URL}/images/ogimage.jpg`,
-                datePublished,
-                dateModified,
               }
             : '',
         ]
