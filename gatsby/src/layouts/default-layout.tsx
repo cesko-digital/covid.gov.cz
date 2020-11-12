@@ -14,6 +14,7 @@ import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
 import { ISitePageContext, IDefaultLayoutQuery } from '@graphql-types';
 import { Helmet } from 'react-helmet';
+import { TranslationsProvider } from '@/components/i18n/TranslatorContext';
 
 interface IProps {
   children: ReactElement[];
@@ -61,38 +62,61 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
 
   return (
     <div className={classnames('body__wrapper', styles.wrapper)}>
-      <Helmet>
-        <link
-          rel="preload"
-          as="font"
-          href={PvsIcons}
-          type="font/woff"
-          crossOrigin="anonymous"
-        />
-      </Helmet>
-      <div>
-        <div className={styles.overflow}>
-          <GatsbyImage
-            fluid={sources}
-            className={styles.bkgPhoto}
-            alt="Background image"
-            loading="eager"
+      <TranslationsProvider>
+        <Helmet>
+          <link
+            rel="preload"
+            as="font"
+            href={PvsIcons}
+            type="font/woff"
+            crossOrigin="anonymous"
           />
+        </Helmet>
+        {process.env.GATSBY_VERCEL ? (
+          <Alert
+            isInfo
+            message={
+              'Poslední úspěšný build proběhl v ' +
+              new Date(data.currentBuildDate.currentDate).toLocaleString(
+                'cs-CZ',
+                {
+                  day: 'numeric',
+                  month: 'numeric',
+                  weekday: 'long',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  timeZone: 'Europe/Prague',
+                },
+              )
+            }
+          />
+        ) : (
+          <></>
+        )}
+        <div>
+          <div className={styles.overflow}>
+            <GatsbyImage
+              fluid={sources}
+              className={styles.bkgPhoto}
+              alt="Background image"
+              loading="eager"
+            />
+          </div>
         </div>
-      </div>
-      <Header
-        pageContext={pageContext}
-        navItems={[
-          { label: I18n('home'), to: '/' },
-          { label: I18n('life_situations'), to: I18n('slug_situations') },
-          { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
-        ]}
-      />
+        <Header
+          pageContext={pageContext}
+          navItems={[
+            { label: I18n('home'), to: '/' },
+            { label: I18n('life_situations'), to: I18n('slug_situations') },
+            { label: I18n('current_measures'), to: I18n('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
+          ]}
+        />
 
-      <main className={styles.main}>
-        <div className={styles.mainInner}>{children}</div>
-      </main>
-      <Footer />
+        <main className={styles.main}>
+          <div className={styles.mainInner}>{children}</div>
+        </main>
+        <Footer />
+      </TranslationsProvider>
     </div>
   );
 };

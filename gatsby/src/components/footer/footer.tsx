@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import I18n, { gLang } from '@/components/i18n';
+import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 
 import styles from './footer.module.scss';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -16,10 +16,12 @@ const DRUPAL_INTERNAL_IDS = {
 
 const Footer: React.FC = () => {
   const result = useStaticQuery<IFooterLinksQuery>(query);
+  const currentLanguage = useCurrentLanguage();
+  const { t } = useTranslation();
 
   const getContentByDrupalInternalId = (internalId: string) => {
     const edge = result.allBlocks.edges.find(({ node }) => {
-      const matchesLanguage = node.langcode === gLang();
+      const matchesLanguage = node.langcode === currentLanguage;
       const matchesId = node.drupal_internal__id === internalId;
       return matchesLanguage && matchesId;
     });
@@ -38,7 +40,7 @@ const Footer: React.FC = () => {
             <div className="row">
               <div className="col-12 col-sm-6 col-lg-3">
                 <div className="footer__box pb-md-4 pb-lg-0">
-                  <h3>{I18n('useful_links')}</h3>
+                  <h3>{t('useful_links')}</h3>
                 </div>
               </div>
 

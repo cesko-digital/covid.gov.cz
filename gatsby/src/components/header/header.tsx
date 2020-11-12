@@ -11,7 +11,7 @@ import classes from './header.module.scss';
 import headerLogoCS from './header-logo-cs.svg';
 import headerLogoEN from './header-logo-en.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
-import I18n, { TRoute } from '@/components/i18n';
+import I18n, { useCurrentLanguage } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
 
 interface NavItem {
@@ -28,6 +28,7 @@ export const locales = ['cs', 'en'];
 
 const Header: React.FC<Props> = ({ navItems, pageContext }) => {
   const [isOpen, setOpen] = useState(false);
+  const currentLanguage = useCurrentLanguage();
 
   const toggleOpen = useCallback(() => {
     setOpen(!isOpen);
@@ -50,7 +51,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
             {/* LOGO */}
             <Col col={7} colMd={3} colLg={3}>
               <Link to="/" title={'COVID PORTAL - ' + I18n('home')}>
-                {TRoute('/') === '/' ? (
+                {currentLanguage === 'cs' ? (
                   <img src={headerLogoCS} alt="Covid Portál" />
                 ) : (
                   <img src={headerLogoEN} alt="Covid Portal" />
@@ -151,10 +152,10 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                   ))}
                 </div>
                 <div className="mt-auto">
-                  {TRoute('/') !== '/' ? (
+                  {currentLanguage === 'en' ? (
                     <Link
                       to={languageVariants.cs || '/'}
-                      noTR
+                      noLanguageCodePrefix
                       onClick={onUseLink}
                       className={classnames(
                         classes.nav__mobileLink,
@@ -166,7 +167,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                   ) : (
                     <Link
                       to={languageVariants.en || '/en/'}
-                      noTR
+                      noLanguageCodePrefix
                       onClick={onUseLink}
                       className={classnames(
                         classes.nav__mobileLink,
