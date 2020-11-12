@@ -126,7 +126,7 @@ export const SchemaComp: React.FC<IProps> = ({
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
-                image: 'https://covid.gov.cz/images/ogimage.jpg',
+                image: 'https://covid.gov.cz/images/ogimage.png',
                 datePublished,
                 dateModified,
               }
@@ -151,8 +151,8 @@ export const SchemaComp: React.FC<IProps> = ({
       ) : (
         <meta property="og:type" content="website" />
       )}
-      <meta property="og:image" content={`${origin}/images/ogimage.jpg`} />
-      <meta property="twitter:image" content={`${origin}/images/ogimage.jpg`} />
+      <meta property="og:image" content={`${origin}/images/ogimage.png`} />
+      <meta property="twitter:image" content={`${origin}/images/ogimage.png`} />
       <meta property="og:description" content={description} />
       <meta name="description" content={description} />
       <meta property="og:site_name" content={I18n('covid_portal')} />

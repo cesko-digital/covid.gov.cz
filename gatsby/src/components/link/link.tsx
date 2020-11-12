@@ -3,22 +3,19 @@ import classnames from 'classnames';
 import { Link as OriginalLink } from 'gatsby';
 import { TRoute } from '@/components/i18n';
 
-interface Props {
-  label?: string;
+interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;
-  className?: string;
   dataTestId?: string;
   activeClassName?: string;
   partiallyActive?: boolean;
   noTR?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const ABSOLUTE_URL_REGEX = new RegExp('^(?:[a-z]+:)?//', 'i');
 
 const Link: React.FC<Props> = ({
   children,
-  label,
+  title,
   to,
   dataTestId,
   className,
@@ -26,6 +23,7 @@ const Link: React.FC<Props> = ({
   activeClassName,
   partiallyActive,
   noTR,
+  ...rest
 }) => {
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
@@ -37,8 +35,8 @@ const Link: React.FC<Props> = ({
       external: isExternal,
       [className]: className,
     }),
-    title: label,
-    'aria-label': label,
+    title,
+    'aria-label': title,
     'data-testid': dataTestId,
   };
 
@@ -63,8 +61,9 @@ const Link: React.FC<Props> = ({
       activeClassName={activeClassName}
       partiallyActive={partiallyActive}
       {...commonProps}
+      {...rest}
     >
-      {children || label}
+      {children || title}
     </OriginalLink>
   ) : (
     <a
@@ -73,8 +72,9 @@ const Link: React.FC<Props> = ({
       target="_blank"
       rel="noreferrer"
       {...commonProps}
+      {...rest}
     >
-      {children || label}
+      {children || title}
     </a>
   );
 };

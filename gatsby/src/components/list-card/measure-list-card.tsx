@@ -26,12 +26,8 @@ const MeasureListCard: React.FC<IProps> = ({
   return (
     <Link
       to={link}
-      className={classNames(
-        'card p-2 mb-2 text-decoration-none',
-        styles.listItem,
-      )}
+      className={classNames('card text-decoration-none', styles.listItem)}
     >
-      {/* TODO: Add icon */}
       <h2 className="font-weight-medium mb-1">{title}</h2>
       <p className="mt-0 color-gray">{description}</p>
       <div className="d-flex justify-content-between align-items-end">
@@ -41,9 +37,15 @@ const MeasureListCard: React.FC<IProps> = ({
           </div>
           <div className={styles.measureListCardDetail}>
             {validFrom && (
-              <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+              <Time
+                displayTime
+                datetime={validFrom}
+                prefix={`${I18n('from')} `}
+              />
             )}
-            {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
+            {validTo && (
+              <Time displayTime datetime={validTo} prefix={`${I18n('to')} `} />
+            )}
           </div>
         </div>
         <div className={styles.buttonWrapper}>
