@@ -34,9 +34,15 @@ const Measure: React.FC<Props> = ({
           </div>
           <div className={styles.measureDetail}>
             {validFrom && (
-              <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+              <Time
+                displayTime
+                datetime={validFrom}
+                prefix={`${I18n('from')} `}
+              />
             )}
-            {validTo && <Time datetime={validTo} prefix={`${I18n('to')} `} />}
+            {validTo && (
+              <Time displayTime datetime={validTo} prefix={`${I18n('to')} `} />
+            )}
           </div>
         </div>
         <Link to={link} label={I18n('more')}>
