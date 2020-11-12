@@ -37,6 +37,7 @@
     "drupal/password_policy": "3.x-dev@dev",
     "drupal/pathauto": "^1.8",
     "drupal/quick_node_clone": "^1.13",
+    "drupal/role_delegation": "^1.1",
     "drupal/sqlsrv": "^4.0.3",
     "drush/drush": "^10.3",
     "vlucas/phpdotenv": "^5.1",
