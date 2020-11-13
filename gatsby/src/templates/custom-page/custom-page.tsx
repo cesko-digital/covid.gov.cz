@@ -30,7 +30,6 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         dateModified={page.changed}
         isBlogPost
         description={page.meta_description}
-        body={page.content.processed}
         title={page.title}
         langCode={pageContext.langCode}
         breadcrumbItems={[{ title: I18n('home'), url: '/' }, page.title]}

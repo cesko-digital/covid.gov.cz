@@ -48,11 +48,6 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           pageContext.langCode ? pageContext.langCode : data.situation.langcode
         }
         isBlogPost
-        body={
-          data.situation.content
-            ? data.situation.content.processed
-            : data.situation.meta_description
-        }
         description={data.situation.meta_description}
         breadcrumbItems={[
           { title: I18n('home'), url: '/' },
