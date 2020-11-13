@@ -47,11 +47,6 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         title={data.measure.title}
         langCode={data.measure.langcode}
         isBlogPost
-        body={
-          data.measure.content
-            ? data.measure.content.processed
-            : data.measure.meta_description
-        }
         description={data.measure.meta_description}
         breadcrumbItems={[
           { title: t('home'), url: '/' },
