@@ -33,7 +33,10 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
         title={I18n('life_situations')}
         breadcrumbItems={[
           { title: I18n('home'), url: '/' },
-          { title: I18n('life_situations'), url: I18n('slug_situations') },
+          {
+            title: I18n('life_situations'),
+            url: I18n('slug_situations'),
+          },
         ]}
       />
       <Container className="pt-1">

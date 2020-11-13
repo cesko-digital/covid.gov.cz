@@ -37,10 +37,16 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        datePublished={data.situation.valid_from}
+        datePublished={
+          data.situation.valid_from
+            ? data.situation.valid_from
+            : data.situation.created
+        }
         dateModified={data.situation.changed}
         title={data.situation.title}
-        langCode={pageContext.langCode}
+        langCode={
+          pageContext.langCode ? pageContext.langCode : data.situation.langcode
+        }
         isBlogPost
         body={
           data.situation.content
@@ -60,6 +66,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           },
           data.situation.title,
         ]}
+        questions_answers={data.situation.questions_answers}
       />
       <Container>
         <div className="pt-1">
@@ -132,6 +139,11 @@ export const query = graphql`
           }
         }
       }
+      changed
+      valid_from
+      langcode
+      created
+      ...SituationDetail
     }
   }
 `;
