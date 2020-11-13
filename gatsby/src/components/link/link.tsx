@@ -69,7 +69,6 @@ const Link: React.FC<Props> = ({
     <a
       href={to}
       onClick={handleExternalLinkClick}
-      target="_blank"
       rel="noreferrer"
       {...commonProps}
       {...rest}
