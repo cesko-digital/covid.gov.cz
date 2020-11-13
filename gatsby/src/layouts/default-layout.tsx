@@ -10,7 +10,6 @@ import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Alert } from '@/components/alert';
 import styles from './default-layout.module.scss';
 import { ISitePageContext, IDefaultLayoutQuery } from '@graphql-types';
 import { Helmet } from 'react-helmet';
@@ -72,27 +71,6 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      {process.env.GATSBY_VERCEL ? (
-        <Alert
-          isInfo
-          message={
-            'Poslední úspěšný build proběhl v ' +
-            new Date(data.currentBuildDate.currentDate).toLocaleString(
-              'cs-CZ',
-              {
-                day: 'numeric',
-                month: 'numeric',
-                weekday: 'long',
-                hour: '2-digit',
-                minute: '2-digit',
-                timeZone: 'Europe/Prague',
-              },
-            )
-          }
-        />
-      ) : (
-        <></>
-      )}
       <div>
         <div className={styles.overflow}>
           <GatsbyImage
