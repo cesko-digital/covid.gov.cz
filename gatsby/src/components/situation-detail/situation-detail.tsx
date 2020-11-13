@@ -10,36 +10,36 @@ import { ISituationDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';
+import LinkList from '../link-list';
 
 interface IProps {
   situation: ISituationDetailFragment;
 }
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {
+  const relatedSituations = situation.relationships.related_situations;
+  const faq = situation.questions_answers;
+
+  const hasFaq = Boolean(faq.length);
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
+  const hasRelatedSituations = Boolean(relatedSituations.length);
+
+  const iconCode =
+    situation.relationships?.icon?.code ||
+    situation.relationships?.situation_type?.relationships?.icon?.code;
+
   return (
     <>
       <TopicDetail
-        breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
-          {
-            title: I18n('life_situations'),
-            url: I18n(`slug_situations`),
-          },
-          {
-            title: situation.relationships?.situation_type?.name,
-            url: situation.relationships?.situation_type?.path?.alias,
-          },
-          situation.title,
-        ]}
         title={situation.title}
+        titleIconCode={iconCode}
         processedContent={situation?.content?.processed}
       >
         {hasRelatedMeasures && (
           <div className="mt-2">
             <hr />
-            <h3 className="mb-1 color-blue-dark">Související opatření</h3>
+            <h3 className="mb-1 color-blue-dark">{I18n('related_measures')}</h3>
             {situation.relationships.measures.map((measure) => (
               <RelatedMeasure key={measure.path.alias} measure={measure} />
             ))}
@@ -62,8 +62,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         )}
       </TopicDetail>
       <Container>
-        {situation.questions_answers?.length ? (
-          // TODO: localize
+        {hasFaq && (
           <ContentBox variant="blue" title={I18n('faq')} boldedTitleCount={2}>
             <Accordion
               data={situation.questions_answers.map((item) => ({
@@ -72,8 +71,15 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
               }))}
             />
           </ContentBox>
-        ) : (
-          ''
+        )}
+        {hasRelatedSituations && (
+          <ContentBox
+            title={I18n('similar_topics')}
+            boldedTitleCount={1}
+            variant="blue"
+          >
+            <LinkList links={relatedSituations} />
+          </ContentBox>
         )}
       </Container>
     </>
@@ -94,14 +100,29 @@ export const query = graphql`
       region {
         name
       }
+      icon {
+        code
+      }
       situation_type {
         name
         path {
           alias
         }
+        relationships {
+          icon {
+            code
+          }
+        }
       }
       measures {
         ...RelatedMeasure
+      }
+      related_situations {
+        title
+        path {
+          alias
+          langcode
+        }
       }
     }
     path {

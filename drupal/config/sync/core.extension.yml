@@ -44,6 +44,7 @@ module:
   path: 0
   path_alias: 0
   quick_node_clone: 0
+  role_delegation: 0
   serialization: 0
   system: 0
   taxonomy: 0
@@ -52,6 +53,7 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  userprotect: 0
   views_ui: 0
   workflows: 0
   pathauto: 1

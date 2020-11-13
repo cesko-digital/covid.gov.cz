@@ -13,7 +13,7 @@ const LinkList: React.FC<Props> = ({ links }) => {
     <div>
       {links.length !== 0
         ? links.map((link, i) => (
-            <LinkStyled key={i} label={link.title} to={link.path.alias} />
+            <LinkStyled key={i} title={link.title} to={link.path.alias} />
           ))
         : ''}
     </div>

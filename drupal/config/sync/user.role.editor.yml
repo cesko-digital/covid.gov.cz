@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: editor
 label: Editor
-weight: -8
+weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -42,13 +42,16 @@ permissions:
   - 'edit terms in region'
   - 'edit terms in situation_type'
   - 'translate any entity'
+  - 'translate interface'
   - 'update content translations'
   - 'use content transition approved'
+  - 'use content transition archive'
   - 'use content transition create_new_draft'
   - 'use content transition publish'
   - 'use content transition review'
   - 'use text format basic'
   - 'view any unpublished content'
+  - 'view latest version'
   - 'view measure revisions'
   - 'view own unpublished content'
   - 'view page revisions'

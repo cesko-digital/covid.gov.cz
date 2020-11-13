@@ -1,11 +1,32 @@
+@import '../../../assets/scss/design-system/base/variables';
+
 .categoryItem {
   display: flex;
-  margin: 1.8rem 0;
+  padding: 12px 36px 12px 24px;
   text-decoration: none;
+  position: relative;
+
+  .chevron {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 8px);
+    bottom: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s;
+
+    .chevron {
+      transition: all 0.2s;
+      right: 16px;
+    }
+  }
 
   &Icon {
     color: white;
-    margin-right: 1.2rem;
+    margin-right: 16px;
     font-size: 2rem !important;
   }
 
@@ -19,5 +40,18 @@
     color: white;
     text-transform: uppercase;
     margin-right: 1rem;
+  }
+
+  &.isActive {
+    background: white;
+
+    .chevron {
+      display: none;
+    }
+
+    .categoryItemTitle,
+    .categoryItemIcon {
+      color: $theme-blue-dark;
+    }
   }
 }

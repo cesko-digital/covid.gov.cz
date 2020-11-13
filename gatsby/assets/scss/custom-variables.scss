@@ -22,14 +22,6 @@ $h2-font-size-mobile: 18px;
 
 @import 'design-system/front';
 
-// Temporarily hide menu link for English measure page.
-
-/*! purgecss ignore */
-.nav__link[href='/en/measures'],
-.nav__link--mobile[href='/en/measures'] {
-  visibility: hidden;
-}
-
 .form-control {
   cursor: auto;
   font-size: 16px;
@@ -77,8 +69,7 @@ ol {
 }
 
 /* stylelint-disable-next-line prettier/prettier */
-ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box)
-  > li::before {
+ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box) > li::before {
   left: -10px;
 }
 

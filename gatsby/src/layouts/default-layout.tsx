@@ -2,21 +2,17 @@ import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 // @ts-ignore
-import RobotoRegular from 'assets/fonts/roboto-regular.woff2';
-// @ts-ignore
-import RobotoBold from 'assets/fonts/roboto-bold.woff2';
-// @ts-ignore
 import PvsIcons from 'assets/fonts/pvs-icons.woff';
 
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+
+import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import { Alert } from '@/components/alert';
 import I18n from '@/components/i18n';
 import styles from './default-layout.module.scss';
-import { ISitePageContext } from '@graphql-types';
+import { ISitePageContext, IDefaultLayoutQuery } from '@graphql-types';
 import { Helmet } from 'react-helmet';
 
 interface IProps {
@@ -25,8 +21,8 @@ interface IProps {
 }
 
 const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
-  const data = useStaticQuery(graphql`
-    query {
+  const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
+    query DefaultLayout {
       mobileImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 80) {
@@ -53,9 +49,6 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           }
         }
       }
-      currentBuildDate {
-        currentDate
-      }
     }
   `);
   const sources = [
@@ -72,48 +65,20 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
         <link
           rel="preload"
           as="font"
-          href={RobotoRegular}
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="font"
-          href={RobotoBold}
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="font"
           href={PvsIcons}
           type="font/woff"
           crossOrigin="anonymous"
         />
       </Helmet>
-      {process.env.GATSBY_VERCEL ? (
-        <Alert
-          isInfo
-          message={
-            'Poslední úspěšný build proběhl v ' +
-            new Date(data.currentBuildDate.currentDate).toLocaleString(
-              'cs-CZ',
-              {
-                day: 'numeric',
-                month: 'numeric',
-                weekday: 'long',
-                hour: '2-digit',
-                minute: '2-digit',
-                timeZone: 'Europe/Prague',
-              },
-            )
-          }
-        />
-      ) : (
-        <></>
-      )}
-      <div className={styles.overflow}>
-        <Img fluid={sources} className={styles.bkgPhoto} />
+      <div>
+        <div className={styles.overflow}>
+          <GatsbyImage
+            fluid={sources}
+            className={styles.bkgPhoto}
+            alt="Background image"
+            loading="eager"
+          />
+        </div>
       </div>
       <Header
         pageContext={pageContext}

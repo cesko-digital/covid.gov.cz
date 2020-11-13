@@ -4,6 +4,8 @@ import renderer from 'react-test-renderer';
 import Button from '@/components/button';
 import { Add } from '@material-ui/icons';
 
+jest.mock('@/components/i18n');
+
 test('Button renders HTML button element (not anchor element)', () => {
   const component = renderer.create(
     <>
@@ -115,17 +117,6 @@ test('Button with disabled state renders correctly ', () => {
   const component = renderer.create(
     <>
       <Button disabled variant="contained" />
-    </>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Anchor with disabled state renders like button ', () => {
-  const component = renderer.create(
-    <>
-      <Button href="#" disabled variant="contained" />
-      <Button href="" disabled variant="contained" />
     </>,
   );
   const tree = component.toJSON();

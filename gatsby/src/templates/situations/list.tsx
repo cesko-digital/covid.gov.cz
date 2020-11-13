@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { IQuery, ISitePageContext } from '@graphql-types';
+import { ISituationsListQuery, ISitePageContext } from 'graphql-types';
 import Container from '@/components/container';
 
 import { SEO as Seo } from 'gatsby-plugin-seo';
@@ -10,9 +10,11 @@ import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
 import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
+import { SituationAreaList } from '@/components/category-item-list';
+import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 
 interface IProps {
-  data: IQuery;
+  data: ISituationsListQuery;
   pageContext: ISitePageContext;
 }
 
@@ -59,10 +61,13 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
             variant="inverse"
           />
         </div>
-        <div className="mt-3">
-          <Headline>{area.name}</Headline>
-        </div>
-        <div>
+        <DesktopLeftMenuLayout
+          menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
+          hideMenuOnMobile
+        >
+          <Headline iconCode={data.area?.relationships?.icon?.code}>
+            {area.name}
+          </Headline>
           {situations.map(({ id, title, meta_description, path }) => {
             return (
               <ListCard
@@ -73,7 +78,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
               />
             );
           })}
-        </div>
+        </DesktopLeftMenuLayout>
       </Container>
     </Layout>
   );
@@ -81,10 +86,13 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
 export default SituationList;
 
 export const query = graphql`
-  query($slug: String!) {
-    area(path: { alias: { eq: $slug } }) {
+  query SituationsList($slug: String!, $langCode: String!) {
+    area(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       name
       relationships {
+        icon {
+          code
+        }
         situation {
           id
           title
@@ -93,6 +101,14 @@ export const query = graphql`
             alias
           }
         }
+      }
+    }
+    allSituationAreas: allArea(
+      filter: { langcode: { eq: $langCode } }
+      sort: { fields: name }
+    ) {
+      nodes {
+        ...SituationArea
       }
     }
   }

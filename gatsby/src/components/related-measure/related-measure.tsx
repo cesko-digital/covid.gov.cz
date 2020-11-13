@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { IRelatedMeasureFragment } from '@graphql-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Link from '@/components/link';
 import { RegionsMarker, TimeMarker } from '../marker';
 
 import styles from './related-measure.module.scss';
@@ -17,7 +18,11 @@ const RelatedMeasure: React.FC<IProps> = ({ measure }) => {
         {measure.title}
       </Link>
       <RegionsMarker regions={measure.relationships.region} />
-      <TimeMarker validFrom={measure.valid_from} validTo={measure.valid_to} />
+      <TimeMarker
+        displayTime
+        validFrom={measure.valid_from}
+        validTo={measure.valid_to}
+      />
     </div>
   );
 };

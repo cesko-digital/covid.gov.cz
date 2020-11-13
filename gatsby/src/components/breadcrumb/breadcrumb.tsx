@@ -43,7 +43,7 @@ const Breadcrumb: React.FC<IProps> = ({ items, variant = 'normal' }) => {
                 <Link
                   to={item.url}
                   className="breadcrumb__link"
-                  label={item.title}
+                  title={item.title}
                 />
               ) : (
                 <span className="breadcrumb__link">{item}</span>
