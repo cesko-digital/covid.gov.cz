@@ -112,7 +112,10 @@ export const query = graphql`
       path {
         alias
       }
+      changed
       valid_from
+      langcode
+      created
       ...SituationDetail
     }
     situationArea: area(path: { alias: { eq: $listSlug } }) {

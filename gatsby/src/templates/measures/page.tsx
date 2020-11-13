@@ -38,7 +38,11 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={data.measure.langcode}
       />
       <SchemaComp
-        datePublished={data.measure.valid_from}
+        datePublished={
+          data.measure.valid_from
+            ? data.measure.valid_from
+            : data.measure.created
+        }
         dateModified={data.measure.changed}
         title={data.measure.title}
         langCode={data.measure.langcode}
@@ -115,6 +119,7 @@ export const query = graphql`
       }
       langcode
       valid_from
+      created
       relationships {
         region {
           name
