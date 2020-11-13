@@ -38,9 +38,12 @@ We try to localize all of the strings in this app. All of the strings are transl
 3. Use the translation:
 
 ```tsx
-import I18n from '@/components/i18n';
+import { useTranslation } from '../i18n';
+
+const Header: React.FC<Props> = () => {
+  const { t } = useTranslation();
 
 //...
-<h3>{I18n('useful_links')}</h3>;
+<h3>{t('related_measures')}</h3>;
 //...
 ```
