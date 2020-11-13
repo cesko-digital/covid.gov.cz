@@ -8,7 +8,7 @@ import LinkList from '@/components/link-list';
 import Container from '@/components/container';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import I18n from '@/components/i18n';
+import I18n, { TRoute } from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -47,14 +47,16 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         }
         description={data.situation.meta_description}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
+          { title: I18n('home'), url: TRoute('/') },
           {
             title: I18n('life_situations'),
-            url: I18n(`slug_situations`),
+            url: TRoute(I18n(`slug_situations`)),
           },
           {
             title: data.situation.relationships?.situation_type?.name,
-            url: data.situation.relationships?.situation_type?.path?.alias,
+            url: TRoute(
+              data.situation.relationships?.situation_type?.path?.alias,
+            ),
           },
           data.situation.title,
         ]}

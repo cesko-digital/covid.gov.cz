@@ -8,7 +8,7 @@ import Headline from '@/components/headline';
 import ListCard from '@/components/list-card';
 import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
-import I18n from '@/components/i18n';
+import I18n, { TRoute } from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 
 interface IProps {
@@ -37,10 +37,10 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
         title={area.name}
         description={I18n('situations_overview_meta')}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
+          { title: I18n('home'), url: TRoute('/') },
           {
             title: I18n('life_situations'),
-            url: I18n('slug_situations'),
+            url: TRoute(I18n('slug_situations')),
           },
           area.name,
         ]}

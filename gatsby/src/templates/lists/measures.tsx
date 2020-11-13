@@ -8,7 +8,7 @@ import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
-import I18n from '@/components/i18n';
+import I18n, { TRoute } from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 
 interface IProps {
@@ -39,8 +39,11 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         isSpecialList
         title={I18n('current_measures_overview')}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
-          { title: I18n('current_measures'), url: I18n('slug_measures') },
+          { title: I18n('home'), url: TRoute('/') },
+          {
+            title: I18n('current_measures'),
+            url: TRoute(I18n('slug_measures')),
+          },
         ]}
       />
       <Container className="pt-1">

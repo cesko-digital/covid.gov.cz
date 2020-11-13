@@ -4,7 +4,7 @@ import { IMeasurePageQueryQuery, ISitePageContext } from '@graphql-types';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import Layout from '@/layouts/default-layout';
-import I18n from '@/components/i18n';
+import I18n, { TRoute } from '@/components/i18n';
 import MeasureDetail from '@/components/measure-detail';
 
 interface IProps {
@@ -37,14 +37,16 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         }
         description={data.measure.meta_description}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
+          { title: I18n('home'), url: TRoute('/') },
           {
             title: I18n('current_measures'),
-            url: I18n(`slug_measures`),
+            url: TRoute(I18n(`slug_measures`)),
           },
           {
             title: data.measure.relationships?.situation_type?.name,
-            url: data.measure.relationships?.situation_type?.path?.alias,
+            url: TRoute(
+              data.measure.relationships?.situation_type?.path?.alias,
+            ),
           },
           data.measure.title,
         ]}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
-import I18n from '../i18n';
+import I18n, { TRoute } from '../i18n';
 import { ISituationQuestions_Answers } from '@graphql-types';
 
 const BASE_URL = 'https://covid.gov.cz';
@@ -38,9 +38,7 @@ export const SchemaComp: React.FC<IProps> = ({
   const { pathname } = useLocation();
   const url = `${BASE_URL}${pathname}`;
 
-  const websiteUrl = `${BASE_URL}/${
-    langCode !== 'cs' && typeof langCode !== 'undefined' ? langCode + '/' : ''
-  }`;
+  const websiteUrl = `${BASE_URL}${TRoute('/')}`;
 
   const baseSchema = [
     {
@@ -69,9 +67,7 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'ListItem',
             position: breadcrumbItemsListIter,
             item: {
-              '@id': `${
-                websiteUrl.endsWith('/') ? websiteUrl.slice(0, -1) : websiteUrl
-              }${breadcrumbItem.url}`,
+              '@id': `${BASE_URL}${breadcrumbItem.url}`,
               name: breadcrumbItem.title,
             },
           });
