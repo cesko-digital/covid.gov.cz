@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
-import I18n, { TRoute } from '../i18n';
-import { ISituationQuestions_Answers } from '@graphql-types';
+import I18n from '../i18n';
 
 const BASE_URL = 'https://covid.gov.cz';
 
@@ -18,7 +17,6 @@ interface IProps {
   title: string;
   isHomePage?: boolean;
   breadcrumbItems?: Array<Object | string>;
-  questions_answers?: ISituationQuestions_Answers[];
 }
 
 export const SchemaComp: React.FC<IProps> = ({
@@ -33,18 +31,15 @@ export const SchemaComp: React.FC<IProps> = ({
   body,
   isHomePage,
   breadcrumbItems,
-  questions_answers,
 }) => {
   const { pathname } = useLocation();
   const url = `${BASE_URL}${pathname}`;
-
-  const websiteUrl = `${BASE_URL}${TRoute('/')}`;
 
   const baseSchema = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: websiteUrl,
+      url: 'https://covid.gov.cz',
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
     },
@@ -67,7 +62,7 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'ListItem',
             position: breadcrumbItemsListIter,
             item: {
-              '@id': `${BASE_URL}${TRoute(breadcrumbItem.url)}`,
+              '@id': breadcrumbItem.url,
               name: breadcrumbItem.title,
             },
           });
@@ -100,21 +95,6 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
-  let faqList = null;
-  if (typeof questions_answers !== 'undefined') {
-    faqList = [];
-    questions_answers.forEach((questions_answer) => {
-      faqList.push({
-        '@type': 'Question',
-        name: questions_answer.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: questions_answer.value,
-        },
-      });
-    });
-  }
-
   const schema =
     isBlogPost || isBlogList || isSpecialList
       ? [
@@ -124,37 +104,31 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
-          isBlogPost && faqList !== null && faqList.length > 0
-            ? {
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: faqList,
-              }
-            : '',
           isBlogPost
             ? {
                 '@context': 'http://schema.org',
                 '@type': 'BlogPosting',
-                mainEntityOfPage: {
-                  '@type': 'WebPage',
-                  '@id': url,
-                },
+                url,
+                name: title,
+                articleBody: body,
                 headline: title,
-                image: `${BASE_URL}/images/ogimage.jpg`,
-                datePublished,
-                dateModified,
+                description,
                 publisher: {
                   '@type': 'Organization',
                   url: 'https://gov.cz',
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
+                mainEntityOfPage: url,
                 author: {
                   '@type': 'Organization',
                   url: 'https://gov.cz',
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
+                image: 'https://covid.gov.cz/images/ogimage.png',
+                datePublished,
+                dateModified,
               }
             : '',
         ]

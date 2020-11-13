@@ -32,10 +32,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         title={I18n('current_measures_overview')}
         breadcrumbItems={[
           { title: I18n('home'), url: '/' },
-          {
-            title: I18n('current_measures'),
-            url: I18n('slug_measures'),
-          },
+          { title: I18n('current_measures'), url: I18n('slug_measures') },
         ]}
       />
       <Container className="pt-1">
