@@ -13,8 +13,6 @@ import headerLogoEN from './header-logo-en.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
-import SearchBox from '../search-box';
-import useSearchEngine from '../search-engine';
 
 interface NavItem {
   label: string;
@@ -43,8 +41,6 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
   };
 
   const languageVariants = pageContext.languageVariants || {};
-  const [onSearch, searchResults] = useSearchEngine();
-  console.log(searchResults);
 
   return (
     <div>
@@ -119,26 +115,6 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </Col>
-                {/* SEARCH */}
-                <Col col={12} colLg={3} className="m-auto">
-                  <div style={{ position: 'relative' }}>
-                    <SearchBox onSearch={onSearch} />
-                    <div
-                      className={classnames(
-                        'search__results',
-                        classes.search__results,
-                      )}
-                    >
-                      {searchResults
-                        ? searchResults.map((searchItem) => (
-                            <Link key={searchItem.id} to={searchItem.path}>
-                              {searchItem.title}
-                            </Link>
-                          ))
-                        : ''}
-                    </div>
                   </div>
                 </Col>
               </Row>

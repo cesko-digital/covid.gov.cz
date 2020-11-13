@@ -1,0 +1,43 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
+  margin: 40px 0;
+  position: relative;
+}
+
+.search__results {
+  background: $white;
+  max-height: 300px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 8px 10px rgb(0 0 0 / 20%);
+}
+
+.search__results a {
+  display: block;
+  text-decoration: none;
+  padding: 12px 16px;
+  color: black;
+
+  &:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:visited {
+    color: black;
+  }
+}

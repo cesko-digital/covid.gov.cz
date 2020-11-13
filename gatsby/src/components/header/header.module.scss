@@ -143,28 +143,3 @@
   color: $theme-blue-light !important;
   font-weight: 900;
 }
-
-.search__results {
-  background: $white;
-  max-height: 300px;
-  overflow-y: scroll;
-  position: absolute;
-  top: 45px;
-  left: 0;
-  right: 0;
-  border-top: 1px solid $theme-blue-light;
-}
-
-.search__results a {
-  display: block;
-  text-decoration: none;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  border-bottom: 1px solid $theme-blue-light;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}

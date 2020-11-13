@@ -21,14 +21,13 @@ interface SearchResult {
   id: string;
   title: string;
   path: string;
+  langcode: string;
 }
 
 const useSearchEngine = () => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const data = useStaticQuery<ISearchIndexQuery>(query);
   const index = useRef(Index.load<SearchResult>(data.siteSearchIndex.index));
-
-  console.log({ data, index, results });
 
   const handleSearch = (term: string) => {
     if (data) {

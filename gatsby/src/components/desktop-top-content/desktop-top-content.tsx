@@ -1,48 +1,22 @@
-import useMobile from '@/hooks/useMobile';
 import classNames from 'classnames';
 import React from 'react';
 import Col from '../col';
-import SearchBox from '../search-box';
-import classes from './desktop-top-content.module.scss';
+import SearchPanel from '../search-panel';
 
-interface IProps {
-  title: string;
-  subtitle?: string;
-  searchQuery?: string;
-  showSearch?: boolean;
-}
-
-const DesktopTopContent: React.FC<IProps> = ({
-  title,
-  subtitle,
-  showSearch = true,
-}) => {
-  const isMobile = useMobile();
-
-  if (isMobile) {
-    return null;
-  }
-
+const DesktopTopContent: React.FC = () => {
   return (
-    <>
-      <div
-        className={classNames(
-          'd-flex',
-          'flex-column',
-          'justify-content-center',
-          'align-items-center',
-        )}
-        style={{ height: 250 }}
-      >
-        {title && <h2 className={classes.title}>{title}</h2>}
-        {showSearch && (
-          <Col col={10} colMd={8} colLg={4} colXl={3}>
-            <SearchBox />
-          </Col>
-        )}
-        {subtitle && <p className={classes.subtitle}>{subtitle}</p>}
-      </div>
-    </>
+    <div
+      className={classNames(
+        'd-flex',
+        'flex-column',
+        'justify-content-center',
+        'align-items-center',
+      )}
+    >
+      <Col col={12} colMd={6} colLg={4} colXl={3}>
+        <SearchPanel />
+      </Col>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@ import { SEO as Seo } from 'gatsby-plugin-seo';
 import { Helmet } from 'react-helmet';
 import SchemaComp from '@/components/schema';
 import { useTranslation } from '@/components/i18n';
+import SearchPanel from '@/components/search-panel';
 
 interface IProps {
   data: IQuery;
@@ -49,7 +50,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         isHomePage
       />
       <Helmet title={t('homepage_meta_title')} />
-      <DesktopTopContent title={t('header_headline')} showSearch={false} />
+      <DesktopTopContent title={t('header_headline')} />
       <Container className="pt-2">
         {situation_items?.length ? (
           <Guide
