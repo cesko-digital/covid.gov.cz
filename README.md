@@ -40,7 +40,7 @@
 
 If you only want to run frontend part of this app, you **dont have to install Docker** and the backend part. It works standalone as well - see the frontend  for more details
 
-- 🚀 [see how to get up and running with the frontend](https://github.com/cesko-digital/covid.gov.cz/tree/master/gatsby#gatsby) ➡️ 
+- 🚀 [see how to get up and running with the frontend](/gatsby/README.md#gatsby) ➡️ 
   
 
 ### Backend - Drupal
