@@ -35,9 +35,8 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer__inner pt-md-2">
           <div className="footer__links pb-3">
-            <h3>{I18n('useful_links')}</h3>
             <div className="row">
-              <div className="col-12 col-sm-6 col-lg-4">
+              <div className="col-12 col-sm-6 col-lg-3">
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
                     dangerouslySetInnerHTML={{
@@ -49,12 +48,12 @@ const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <div className="col-12 col-sm-6 col-lg-4">
+              <div className="col-12 col-sm-6 col-lg-5">
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: getContentByDrupalInternalId(
-                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_1,
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_3,
                       ),
                     }}
                   />
@@ -62,11 +61,11 @@ const Footer: React.FC = () => {
               </div>
 
               <div className="col-12 col-lg-4">
-                <div className="footer__box pb-4 pb-lg-0">
+                <div className="footer__box">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: getContentByDrupalInternalId(
-                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_3,
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_1,
                       ),
                     }}
                   />
