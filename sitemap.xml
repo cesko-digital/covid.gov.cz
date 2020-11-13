@@ -448,9 +448,10 @@
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/nakup-nemovitosti-stehovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/promoce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/cizinci/cizinci-zijici-na-uzemi-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/moznosti-povinnosti-cizincu-pri-vstupu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/turistika-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/cizinci/obchodni-cesty-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/cizinci/preshranicni-pracovnici-obchodni-pracovni-cesty-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/studovani-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/novy-rok</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/novy-rok/venkovni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
