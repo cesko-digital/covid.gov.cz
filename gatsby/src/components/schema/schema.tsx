@@ -7,7 +7,6 @@ import { ISituationQuestions_Answers } from '@graphql-types';
 const BASE_URL = 'https://covid.gov.cz';
 
 interface IProps {
-  body?: string;
   langCode: string;
   datePublished?: string;
   dateModified?: string;
@@ -30,7 +29,6 @@ export const SchemaComp: React.FC<IProps> = ({
   isSpecialList,
   title,
   langCode,
-  body,
   isHomePage,
   breadcrumbItems,
   questions_answers,
