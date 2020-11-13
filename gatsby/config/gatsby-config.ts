@@ -220,6 +220,34 @@ const config = {
         ],
       },
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [`title`, `path`],
+        resolvers: {
+          situation: {
+            title: (node) => node.title,
+            path: (node) => node.path.alias,
+            langcode: (node) => node.langcode,
+          },
+          area: {
+            title: (node) => node.name,
+            path: (node) => node.path.alias,
+            langcode: (node) => node.langcode,
+          },
+          measure: {
+            title: (node) => node.title,
+            path: (node) => node.path.alias,
+            langcode: (node) => node.langcode,
+          },
+          measureType: {
+            title: (node) => node.name,
+            path: (node) => node.path.alias,
+            langcode: (node) => node.langcode,
+          },
+        },
+      },
+    },
   ],
 };
 

@@ -16,3 +16,5 @@ export const navMobileOpen: string;
 export const nav__mobileLink: string;
 export const navMobileLink: string;
 export const navMobileLinkActive: string;
+export const search__results: string;
+export const searchResults: string;

@@ -14,23 +14,23 @@ interface IProps {
 
 const SearchBox: React.FC<IProps> = ({ placeholder, onSearch }) => {
   const { t } = useTranslation();
-  const [search, setSearch] = useState('');
+  const [searchValue, setSearchValue] = useState('');
 
-  const handleSearch = () => {
-    if (search.length < 1) {
-      return;
-    }
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    setSearchValue(value);
 
-    if (onSearch) {
-      onSearch(search);
-    }
-    console.log('Search:', search);
+    handleSearch(value);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
-      handleSearch();
+  const handleSearch = (searchPhrase: string) => {
+    if (searchPhrase.length > 2) {
+      onSearch(searchPhrase);
     }
+  };
+
+  const submitButtonHandler = () => {
+    handleSearch(searchValue);
   };
 
   return (
@@ -48,13 +48,12 @@ const SearchBox: React.FC<IProps> = ({ placeholder, onSearch }) => {
             'form-control search__input',
           )}
           placeholder={placeholder ?? t('search_placeholder')}
-          onChange={(event) => setSearch(event.currentTarget.value)}
-          value={search}
-          onKeyDown={handleKeyDown}
+          onChange={onChangeHandler}
+          value={searchValue}
         />
         <Button
           icon={<GovIcon icon="search" className="search__button--icon" />}
-          onClick={handleSearch}
+          onClick={submitButtonHandler}
           variant="yellow"
           className="search__button color-white"
         />
