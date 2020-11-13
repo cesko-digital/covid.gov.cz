@@ -7,7 +7,7 @@ import Container from '@/components/container';
 import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
-import I18n, { TRoute } from '@/components/i18n';
+import I18n from '@/components/i18n';
 import MeasureListCard from '@/components/list-card/measure-list-card';
 import SchemaComp from '@/components/schema';
 
@@ -37,10 +37,10 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         title={measureType.name}
         description={I18n('current_measures_overview_meta')}
         breadcrumbItems={[
-          { title: I18n('home'), url: TRoute('/') },
+          { title: I18n('home'), url: '/' },
           {
             title: I18n('current_measures'),
-            url: TRoute(I18n('slug_measures')),
+            url: I18n('slug_measures'),
           },
           measureType.name,
         ]}

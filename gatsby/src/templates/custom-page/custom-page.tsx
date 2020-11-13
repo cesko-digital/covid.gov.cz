@@ -7,7 +7,7 @@ import Container from '@/components/container';
 import { graphql } from 'gatsby';
 import Breadcrumb from '@/components/breadcrumb';
 import Layout from '@/layouts/default-layout';
-import I18n, { TRoute } from '@/components/i18n';
+import I18n from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -33,10 +33,7 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         body={page.content.processed}
         title={page.title}
         langCode={pageContext.langCode}
-        breadcrumbItems={[
-          { title: I18n('home'), url: TRoute('/') },
-          page.title,
-        ]}
+        breadcrumbItems={[{ title: I18n('home'), url: '/' }, page.title]}
       />
       <Container className="mb-4">
         <div className="pt-1">

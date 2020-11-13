@@ -9,7 +9,7 @@ import Headline from '@/components/headline';
 import CategoryItem from '@/components/category-item';
 import Layout from '@/layouts/default-layout';
 
-import I18n, { TRoute } from '@/components/i18n';
+import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 
 interface IProps {
@@ -40,10 +40,10 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
         isSpecialList
         title={I18n('life_situations')}
         breadcrumbItems={[
-          { title: I18n('home'), url: TRoute('/') },
+          { title: I18n('home'), url: '/' },
           {
             title: I18n('life_situations'),
-            url: TRoute(I18n('slug_situations')),
+            url: I18n('slug_situations'),
           },
         ]}
       />

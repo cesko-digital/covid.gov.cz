@@ -67,7 +67,7 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'ListItem',
             position: breadcrumbItemsListIter,
             item: {
-              '@id': `${BASE_URL}${breadcrumbItem.url}`,
+              '@id': `${BASE_URL}${TRoute(breadcrumbItem.url)}`,
               name: breadcrumbItem.title,
             },
           });
