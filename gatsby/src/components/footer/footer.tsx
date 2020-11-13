@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
     >
       <div className="container">
         <div className="footer__inner pt-md-2">
-          <div className="footer__links">
+          <div className="footer__links pb-3">
             <h3>{I18n('useful_links')}</h3>
             <div className="row">
               <div className="col-12 col-sm-6 col-lg-4">
