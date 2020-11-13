@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "dev": "gatsby develop",
+    "dev:clean": "gatsby clean && gatsby develop",
     "dev:local": "gatsby develop -H 0.0.0.0",
     "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "format": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,json,md}\"",

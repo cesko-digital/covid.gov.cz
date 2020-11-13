@@ -25,6 +25,7 @@
 ### How does it work?
 
 1. Upon running the gatsby build/dev, it first downloads all of the data from Drupal prod env (you will see the requests in your console).
+   (it will only download the data once, and that use those until you clean Gatsby cache by `yarn dev:clean`, or set your env variable `SHOULD_REFRESH_DRUPAL_DATA` to `1` if you always want to have fresh Drupal data)
 2. Gatsby then stores this data locally and offers a GraphQL on top of that data.
 3. You can browse all of the data to be used in components later in [GraphiQL](http://localhost:8000/___graphql)
 4. Sometimes the dev env halts, solution is usually to stop and run `yarn dev` again. We will eventually fix that, _but feel free to fix it and create a PR_ 🤗
