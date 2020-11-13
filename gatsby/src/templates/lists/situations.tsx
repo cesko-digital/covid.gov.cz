@@ -18,7 +18,7 @@ interface IProps {
 const Situations: React.FC<IProps> = ({ data, pageContext }) => {
   const { t } = useTranslation();
   const {
-    allArea: { nodes },
+    allSituationAreas: { nodes },
   } = data;
 
   const collator = new Intl.Collator([pageContext.langCode]);
