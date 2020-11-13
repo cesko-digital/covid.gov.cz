@@ -1,65 +1,119 @@
 import React, { useState } from 'react';
+import Autosuggest, {
+  SuggestionsFetchRequested,
+  InputProps,
+  OnSuggestionSelected,
+  RenderSuggestionsContainer,
+} from 'react-autosuggest';
 import classnames from 'classnames';
 
 import Button from '../button';
 import GovIcon from '../gov-icon';
 
-import classes from './search-box.module.scss';
-import { useTranslation } from '@/components/i18n';
+import styles from './search-box.module.scss';
+import { useCurrentLanguage, useTranslation } from '@/components/i18n';
+import useSearchEngine from '../search-engine';
+import { SearchResult } from '../search-engine/useSearchEngine';
+import Link from '../link';
+import { navigate } from 'gatsby';
 
-interface IProps {
-  placeholder?: string;
-  onSearch?: (term: string) => void;
-}
-
-const SearchBox: React.FC<IProps> = ({ placeholder, onSearch }) => {
+const SearchBox: React.FC = () => {
   const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState('');
+  const currentLanguage = useCurrentLanguage();
+  const [onSearch, searchResults] = useSearchEngine();
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    setSearchValue(value);
+  const currentLanguageResults = searchResults.filter(
+    (result) => result.langcode === currentLanguage,
+  );
 
-    handleSearch(value);
+  const firstFiveResults = currentLanguageResults.slice(0, 5);
+
+  const renderSuggestion = (item: SearchResult) => (
+    <Link key={item.id} to={item.path} title={item.title}>
+      {item.title}
+    </Link>
+  );
+
+  const handleFetchRequest: SuggestionsFetchRequested = ({ value, reason }) => {
+    console.log({ value, reason });
   };
 
-  const handleSearch = (searchPhrase: string) => {
-    if (searchPhrase.length > 2) {
-      onSearch(searchPhrase);
+  const onChangeHandler: InputProps<SearchResult>['onChange'] = (_, params) => {
+    setSearchValue(params.newValue);
+    onSearch(params.newValue);
+  };
+
+  const getSuggestionValue = () => {
+    return searchValue;
+  };
+
+  const suggestionSelectedHandler: OnSuggestionSelected<SearchResult> = (
+    _,
+    { suggestion },
+  ) => {
+    if (currentLanguage !== 'cs') {
+      return navigate(`/${suggestion.langcode}${suggestion.path}`);
     }
+    return navigate(suggestion.path);
   };
 
-  const submitButtonHandler = () => {
-    handleSearch(searchValue);
+  const renderSuggestionContainer: RenderSuggestionsContainer = ({
+    containerProps,
+    children,
+  }) => {
+    return (
+      <div {...containerProps} className={styles.search__results}>
+        {children}
+      </div>
+    );
   };
 
   return (
-    <div className="search">
-      <div
-        className={classnames(
-          classes.searchBox,
-          'search__input-holder search--with-icon',
-        )}
-      >
-        <input
-          type="text"
-          className={classnames(
-            classes.searchBoxInput,
-            'form-control search__input',
-          )}
-          placeholder={placeholder ?? t('search_placeholder')}
-          onChange={onChangeHandler}
-          value={searchValue}
-        />
-        <Button
-          icon={<GovIcon icon="search" className="search__button--icon" />}
-          onClick={submitButtonHandler}
-          variant="yellow"
-          className="search__button color-white"
-        />
-      </div>
-    </div>
+    <Autosuggest
+      suggestions={firstFiveResults}
+      onSuggestionsFetchRequested={handleFetchRequest}
+      renderSuggestion={renderSuggestion}
+      inputProps={{
+        placeholder: t('search_placeholder'),
+        onChange: onChangeHandler,
+        value: searchValue,
+        className: classnames(
+          styles.searchBoxInput,
+          'form-control search__input',
+        ),
+      }}
+      getSuggestionValue={getSuggestionValue}
+      onSuggestionSelected={suggestionSelectedHandler}
+      highlightFirstSuggestion
+      renderSuggestionsContainer={renderSuggestionContainer}
+      alwaysRenderSuggestions
+    />
   );
+
+  // return (
+  //   <div className="search">
+  //     <div
+  //       className={classnames(
+  //         classes.searchBox,
+  //         'search__input-holder search--with-icon',
+  //       )}
+  //     >
+  //       <input
+  //         type="text"
+  //         placeholder={placeholder ?? t('search_placeholder')}
+  //         onChange={onChangeHandler}
+  //         value={searchValue}
+  //       />
+  //       <Button
+  //         icon={<GovIcon icon="search" className="search__button--icon" />}
+  //         onClick={submitButtonHandler}
+  //         variant="yellow"
+  //         className="search__button color-white"
+  //       />
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default SearchBox;
