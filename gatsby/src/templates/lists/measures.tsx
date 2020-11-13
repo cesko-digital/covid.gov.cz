@@ -45,7 +45,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
       />
       <Container className="pt-1">
         <Breadcrumb
-          items={[{ title: I18n('home'), url: '/' }, I18n('current_measures')]}
+          items={[{ title: t('home'), url: '/' }, t('current_measures')]}
           variant="inverse"
         />
       </Container>
