@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './measure.module.scss';
 import Button from '@/components/button';
-import I18n from '@/components/i18n';
 import Time from '@/components/time';
 import Link from '@/components/link';
+import { useTranslation } from '@/components/i18n';
 
 interface Props {
   title: string;
@@ -23,6 +23,7 @@ const Measure: React.FC<Props> = ({
   validTo,
   link,
 }) => {
+  const { t } = useTranslation();
   return (
     <div className={styles.measure}>
       <h3 className={styles.measureTitle}>{title}</h3>
@@ -30,24 +31,20 @@ const Measure: React.FC<Props> = ({
       <div className={styles.measureDetails}>
         <div>
           <div className={styles.measureDetail}>
-            {I18n('applies_for')} {area}
+            {t('applies_for')} {area}
           </div>
           <div className={styles.measureDetail}>
             {validFrom && (
-              <Time
-                displayTime
-                datetime={validFrom}
-                prefix={`${I18n('from')} `}
-              />
+              <Time displayTime datetime={validFrom} prefix={`${t('from')} `} />
             )}
             {validTo && (
-              <Time displayTime datetime={validTo} prefix={`${I18n('to')} `} />
+              <Time displayTime datetime={validTo} prefix={`${t('to')} `} />
             )}
           </div>
         </div>
-        <Link to={link} title={I18n('more')}>
+        <Link to={link} title={t('more')}>
           <Button
-            text={I18n('more')}
+            text={t('more')}
             variant="outline-yellow"
             className={styles.measureButton}
           />

@@ -6,18 +6,19 @@ import Container from '@/components/container';
 import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
 import Breadcrumb from '@/components/breadcrumb';
-import I18n from '@/components/i18n';
 import MeasureListCard from '@/components/list-card/measure-list-card';
 import SchemaComp from '@/components/schema';
 import { MeasureAreaList } from '@/components/category-item-list';
 import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   pageContext: ISitePageContext;
   data: IMeasureListQuery;
 }
-// todo add meta description
+
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
+  const { t } = useTranslation();
   const { measureType } = data;
   const measures = measureType.relationships?.measure || [];
 
@@ -28,7 +29,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
     <Layout pageContext={pageContext}>
       <Seo
         title={measureType.name}
-        description={I18n('current_measures_overview_meta')}
+        description={t('current_measures_overview_meta')}
         pagePath={pageContext.slug}
       />
       <SchemaComp
@@ -36,10 +37,10 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         isBlogPost={false}
         isBlogList
         title={measureType.name}
-        description={I18n('current_measures_overview_meta')}
+        description={t('current_measures_overview_meta')}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
-          { title: I18n('current_measures'), url: I18n('slug_measures') },
+          { title: t('home'), url: '/' },
+          { title: t('current_measures'), url: t('slug_measures') },
           measureType.name,
         ]}
       />
@@ -47,8 +48,8 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         <div className="pt-1">
           <Breadcrumb
             items={[
-              { title: I18n('home'), url: '/' },
-              { title: I18n('current_measures'), url: I18n('slug_measures') },
+              { title: t('home'), url: '/' },
+              { title: t('current_measures'), url: t('slug_measures') },
               measureType.name,
             ]}
             variant="inverse"

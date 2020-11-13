@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { IMeasureAreaFragment } from 'graphql-types';
 import CategoryItemList from './category-item-list';
-import I18n from '../i18n';
+import { useTranslation } from '../i18n';
 
 interface IProps {
   data: IMeasureAreaFragment[];
@@ -11,6 +11,7 @@ interface IProps {
 
 const MeasureAreaList: React.FC<IProps> = ({ data }) => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   const listItems = data
     .filter(({ relationships }) => relationships.measure !== null)
@@ -21,9 +22,7 @@ const MeasureAreaList: React.FC<IProps> = ({ data }) => {
       iconCode: relationships.icon?.code,
       isActive: path.alias === location.pathname,
     }));
-  return (
-    <CategoryItemList items={listItems} title={I18n('current_measures')} />
-  );
+  return <CategoryItemList items={listItems} title={t('current_measures')} />;
 };
 
 export const query = graphql`
