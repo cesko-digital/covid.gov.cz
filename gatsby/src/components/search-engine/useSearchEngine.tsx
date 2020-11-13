@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
-import { Index } from 'elasticlunr';
+import elasticlunr, { Index } from 'elasticlunr';
 import { graphql, useStaticQuery } from 'gatsby';
 import { ISearchIndexQuery } from '@graphql-types';
+
+import asciiFolder from 'fold-to-ascii';
 
 export const query = graphql`
   query SearchIndex {
@@ -10,6 +12,10 @@ export const query = graphql`
     }
   }
 `;
+
+const replaceDiacritics = (token) => asciiFolder.fold(token);
+
+elasticlunr.Pipeline.registerFunction(replaceDiacritics, 'replaceDiacritics');
 
 interface SearchResult {
   id: string;

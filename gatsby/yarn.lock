@@ -7297,6 +7297,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+fold-to-ascii@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fold-to-ascii/-/fold-to-ascii-5.0.0.tgz#12986e02004abd0984a99f701e0707aa1c2ae0d0"
+  integrity sha512-HjtRWXC9aVit47DOEqvorgaQDiIyeX+frV3tM22RlllposIxnPXRM/vYoE6y6pwW57RdgahSe32Cu0vf4/UX1Q==
+
 follow-redirects@1.5.10:
   version "1.5.10"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"

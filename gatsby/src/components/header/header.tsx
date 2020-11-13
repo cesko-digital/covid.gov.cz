@@ -122,7 +122,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                   </div>
                 </Col>
                 {/* SEARCH */}
-                <Col col={12} colLg={4} className="ml-auto">
+                <Col col={12} colLg={3} className="m-auto">
                   <div style={{ position: 'relative' }}>
                     <SearchBox onSearch={onSearch} />
                     <div
