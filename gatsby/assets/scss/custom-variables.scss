@@ -28,6 +28,20 @@ $h2-font-size-mobile: 18px;
   line-height: 1;
 }
 
+.footer a {
+  &,
+  &:visited {
+    font-size: inherit;
+    text-transform: none;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
 .color-yellow {
   color: $theme-yellow;
 }

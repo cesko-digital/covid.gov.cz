@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { useCurrentLanguage, useTranslation } from '@/components/i18n';
+import { useCurrentLanguage } from '@/components/i18n';
 
 import styles from './footer.module.scss';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -17,7 +17,6 @@ const DRUPAL_INTERNAL_IDS = {
 const Footer: React.FC = () => {
   const result = useStaticQuery<IFooterLinksQuery>(query);
   const currentLanguage = useCurrentLanguage();
-  const { t } = useTranslation();
 
   const getContentByDrupalInternalId = (internalId: string) => {
     const edge = result.allBlocks.edges.find(({ node }) => {
@@ -36,14 +35,8 @@ const Footer: React.FC = () => {
     >
       <div className="container">
         <div className="footer__inner pt-md-2">
-          <div className="footer__links">
+          <div className="footer__links pb-3">
             <div className="row">
-              <div className="col-12 col-sm-6 col-lg-3">
-                <div className="footer__box pb-md-4 pb-lg-0">
-                  <h3>{t('useful_links')}</h3>
-                </div>
-              </div>
-
               <div className="col-12 col-sm-6 col-lg-3">
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
@@ -56,19 +49,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <div className="col-12 col-sm-6 col-lg-3">
-                <div className="footer__box pb-4 pb-lg-0">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: getContentByDrupalInternalId(
-                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_1,
-                      ),
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div className="col-12 col-sm-6 col-lg-3">
+              <div className="col-12 col-sm-6 col-lg-5">
                 <div className="footer__box pb-4 pb-lg-0">
                   <div
                     dangerouslySetInnerHTML={{
@@ -79,14 +60,26 @@ const Footer: React.FC = () => {
                   />
                 </div>
               </div>
+
+              <div className="col-12 col-lg-4">
+                <div className="footer__box">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_1,
+                      ),
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="footer__common">
             <div className="row">
-              <div className="col-12 col-sm-6">
+              <div className="col-12">
                 <div className="footer__box">
                   <div
-                    className="footer__brand"
+                    className=""
                     dangerouslySetInnerHTML={{
                       __html: getContentByDrupalInternalId(
                         DRUPAL_INTERNAL_IDS.COPYRIGHT,
@@ -96,7 +89,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               {process.env.GATSBY_VERCEL && (
-                <div className="col-12 col-sm-6">
+                <div className="col-12">
                   <div className="footer__box">
                     <div className="footer__brand">
                       {'Poslední úspěšný build proběhl v ' +

@@ -45,10 +45,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
       />
       <Container className="pt-1">
         <Breadcrumb
-          items={[
-            { title: t('home'), url: '/' },
-            { title: t('life_situations'), url: t('slug_situations') },
-          ]}
+          items={[{ title: t('home'), url: '/' }, t('life_situations')]}
           variant="inverse"
         />
       </Container>
