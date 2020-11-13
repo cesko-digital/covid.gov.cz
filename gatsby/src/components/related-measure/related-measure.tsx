@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { IRelatedMeasureFragment } from '@graphql-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Link from '@/components/link';
 import { RegionsMarker, TimeMarker } from '../marker';
 
 import styles from './related-measure.module.scss';

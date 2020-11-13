@@ -5,7 +5,7 @@ import React from 'react';
 import Button from '../button';
 import Col from '../col';
 import ContentBox from '../content-box';
-import I18n from '../i18n';
+import { useTranslation } from '@/components/i18n';
 import MeasureList from '../measure-list';
 import Row from '../row';
 import SituationsBox from '../situations-box';
@@ -31,6 +31,7 @@ const Guide: React.FC<IProps> = ({
   variant = 'blue',
   itemDescriptions,
 }) => {
+  const { t } = useTranslation();
   const isMobile = useMobile();
 
   const isSituationBox = isSituation(items[0]);
@@ -82,7 +83,7 @@ const Guide: React.FC<IProps> = ({
                           key={x.id}
                           title={x.name}
                           buttonUrl={x.path.alias}
-                          buttonText={I18n('more')}
+                          buttonText={t('more')}
                           description={itemDescriptions[i] ?? ''}
                           variant={variant}
                           iconCode={x.relationships?.icon?.code}
@@ -98,7 +99,7 @@ const Guide: React.FC<IProps> = ({
                           title={x.title}
                           buttonUrl={x.path.alias}
                           variant={variant}
-                          buttonText={I18n('more')}
+                          buttonText={t('more')}
                           description={itemDescriptions[i] ?? ''}
                           area={x.relationships?.region
                             ?.map((item) => item.name)

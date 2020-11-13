@@ -3,7 +3,7 @@ import React from 'react';
 import { Room, Event } from '@material-ui/icons';
 import { IRegion } from '@graphql-types';
 import Time from '../time';
-import I18n from '../i18n';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   icon: React.ReactNode;
@@ -39,23 +39,26 @@ export const TimeMarker: React.FC<ITimeProps> = ({
   validFrom,
   validTo,
   displayTime,
-}) => (
-  <Marker icon={<Event />}>
-    {validFrom && (
-      <Time
-        displayTime={displayTime}
-        datetime={validFrom}
-        prefix={`${I18n('from')} `}
-      />
-    )}
-    {validTo && (
-      <Time
-        displayTime={displayTime}
-        datetime={validTo}
-        prefix={`${I18n('to')} `}
-      />
-    )}
-  </Marker>
-);
+}) => {
+  const { t } = useTranslation();
+  return (
+    <Marker icon={<Event />}>
+      {validFrom && (
+        <Time
+          displayTime={displayTime}
+          datetime={validFrom}
+          prefix={`${t('from')} `}
+        />
+      )}
+      {validTo && (
+        <Time
+          displayTime={displayTime}
+          datetime={validTo}
+          prefix={`${t('to')} `}
+        />
+      )}
+    </Marker>
+  );
+};
 
 export default Marker;

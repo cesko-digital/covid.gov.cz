@@ -1,14 +1,14 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import { Link as OriginalLink } from 'gatsby';
-import { TRoute } from '@/components/i18n';
+import { useCurrentLanguage } from '../i18n';
 
 interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;
   dataTestId?: string;
   activeClassName?: string;
   partiallyActive?: boolean;
-  noTR?: boolean;
+  noLanguageCodePrefix?: boolean;
 }
 
 const ABSOLUTE_URL_REGEX = new RegExp('^(?:[a-z]+:)?//', 'i');
@@ -22,9 +22,10 @@ const Link: React.FC<Props> = ({
   onClick,
   activeClassName,
   partiallyActive,
-  noTR,
+  noLanguageCodePrefix,
   ...rest
 }) => {
+  const currentLanguage = useCurrentLanguage();
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
     return ABSOLUTE_URL_REGEX.test(to);
@@ -54,10 +55,17 @@ const Link: React.FC<Props> = ({
     }
   };
 
+  const getTo = () => {
+    if (noLanguageCodePrefix || currentLanguage === 'cs') {
+      return to;
+    }
+    return `/${currentLanguage}${to}`;
+  };
+
   return !isExternal ? (
     <OriginalLink
       onClick={handleInternalLinkClick}
-      to={noTR ? to : TRoute(to)}
+      to={getTo()}
       activeClassName={activeClassName}
       partiallyActive={partiallyActive}
       {...commonProps}

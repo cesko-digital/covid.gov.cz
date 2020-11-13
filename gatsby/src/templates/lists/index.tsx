@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Container from '@/components/container';
-import I18n from '@/components/i18n';
 import { IQuery, ISitePageContext } from '@graphql-types';
 import Layout from '@/layouts/default-layout';
 import { Guide } from '@/components/guide';
@@ -9,6 +8,7 @@ import DesktopTopContent from '@/components/desktop-top-content';
 import { SEO as Seo } from 'gatsby-plugin-seo';
 import { Helmet } from 'react-helmet';
 import SchemaComp from '@/components/schema';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -16,6 +16,7 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ data, pageContext }) => {
+  const { t } = useTranslation();
   const { homepage } = data;
   const {
     situation_label,
@@ -35,7 +36,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
   return (
     <Layout pageContext={pageContext}>
       <Seo
-        title={I18n('homepage_meta_title')}
+        title={t('homepage_meta_title')}
         description={meta_description ?? 'CovidPortal'}
         pagePath="/"
         htmlLanguage={pageContext.langCode}
@@ -43,19 +44,19 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
       <SchemaComp
         langCode={pageContext.langCode}
         isBlogPost={false}
-        title={I18n('homepage_meta_title')}
+        title={t('homepage_meta_title')}
         description={meta_description}
         isHomePage
       />
-      <Helmet title={I18n('homepage_meta_title')} />
-      <DesktopTopContent title={I18n('header_headline')} showSearch={false} />
+      <Helmet title={t('homepage_meta_title')} />
+      <DesktopTopContent title={t('header_headline')} showSearch={false} />
       <Container className="pt-2">
         {situation_items?.length ? (
           <Guide
             items={situation_items}
             title={situation_label.processed}
             description={situation_text}
-            buttonHref={I18n('slug_situations')}
+            buttonHref={t('slug_situations')}
             buttonText={situation_link?.title}
             variant="blue"
             itemDescriptions={situation_description}
@@ -69,7 +70,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
             items={measure_items}
             title={measure_label.processed}
             description={measure_text}
-            buttonHref={I18n('slug_measures')}
+            buttonHref={t('slug_measures')}
             buttonText={measure_link?.title}
             variant="white"
             itemDescriptions={measure_description}

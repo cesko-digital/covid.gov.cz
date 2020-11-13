@@ -6,9 +6,9 @@ import { IMeasureTypeQueryQuery, ISitePageContext } from '@graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
 import Layout from '@/layouts/default-layout';
-import I18n from '@/components/i18n';
 import SchemaComp from '@/components/schema';
 import { MeasureAreaList } from '@/components/category-item-list';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   data: IMeasureTypeQueryQuery;
@@ -16,23 +16,31 @@ interface IProps {
 }
 
 const Measures: React.FC<IProps> = ({ data, pageContext }) => {
+  const { t } = useTranslation();
+  const {
+    allMeasureType: { nodes },
+  } = data;
+
+  const collator = new Intl.Collator([pageContext.langCode]);
+  nodes.sort((a, b) => collator.compare(a.name, b.name));
+
   return (
     <Layout pageContext={pageContext}>
       <Seo
-        title={I18n('current_measures_overview')}
-        description={I18n('current_measures_overview_meta')}
-        pagePath={I18n('slug_measures')}
+        title={t('current_measures_overview')}
+        description={t('current_measures_overview_meta')}
+        pagePath={t('slug_measures')}
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
         langCode={pageContext.langCode}
-        description={I18n('current_measures_overview_meta')}
+        description={t('current_measures_overview_meta')}
         isBlogPost={false}
         isSpecialList
-        title={I18n('current_measures_overview')}
+        title={t('current_measures_overview')}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
-          { title: I18n('current_measures'), url: I18n('slug_measures') },
+          { title: t('home'), url: '/' },
+          { title: t('current_measures'), url: t('slug_measures') },
         ]}
       />
       <Container className="pt-1">
@@ -42,7 +50,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         />
       </Container>
       <Container className="mt-3 d-block d-md-none">
-        <Headline>{I18n('current_measures_overview')}</Headline>
+        <Headline>{t('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">
         <MeasureAreaList data={data.allMeasureType.nodes} />

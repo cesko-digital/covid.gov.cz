@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from '@/components/button';
 import Link from '@/components/link';
-import I18n from '@/components/i18n';
 import Time from '@/components/time';
 import styles from './measure-list-card.module.scss';
 import classNames from 'classnames';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   title: string;
@@ -23,6 +23,7 @@ const MeasureListCard: React.FC<IProps> = ({
   validFrom,
   validTo,
 }) => {
+  const { t } = useTranslation();
   return (
     <Link
       to={link}
@@ -33,23 +34,19 @@ const MeasureListCard: React.FC<IProps> = ({
       <div className="d-flex justify-content-between align-items-end">
         <div>
           <div className={styles.measureListCardDetail}>
-            {I18n('applies_for')} {area}
+            {t('applies_for')} {area}
           </div>
           <div className={styles.measureListCardDetail}>
             {validFrom && (
-              <Time
-                displayTime
-                datetime={validFrom}
-                prefix={`${I18n('from')} `}
-              />
+              <Time displayTime datetime={validFrom} prefix={`${t('from')} `} />
             )}
             {validTo && (
-              <Time displayTime datetime={validTo} prefix={`${I18n('to')} `} />
+              <Time displayTime datetime={validTo} prefix={`${t('to')} `} />
             )}
           </div>
         </div>
         <div className={styles.buttonWrapper}>
-          <Button text={I18n('detail')} variant="outline" />
+          <Button text={t('detail')} variant="outline" />
         </div>
       </div>
     </Link>
