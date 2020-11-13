@@ -12,6 +12,7 @@ permissions:
   - 'access toolbar'
   - 'administer users'
   - 'assign editor role'
+  - 'assign reviewer role'
   - 'assign translator role'
   - 'change own username'
   - userprotect.account.edit
