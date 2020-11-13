@@ -23,6 +23,7 @@ permissions:
   - 'translate situation node'
   - 'update content translations'
   - 'use content transition create_new_draft'
+  - 'use content transition review'
   - 'use text format basic'
   - 'view any unpublished content'
   - 'view latest version'
