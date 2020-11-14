@@ -126,7 +126,6 @@ final class JsonapiResourceController {
             return $allowed ?: $object->getResourceType() === $resource_type;
           }, FALSE);
           if (!$allowed) {
-            var_dump(array_keys($request->attributes->get('resource_types', [])));die();
             throw new \LogicException('This resource attempted to serve data that contains unsupported resource type.');
           }
         }
