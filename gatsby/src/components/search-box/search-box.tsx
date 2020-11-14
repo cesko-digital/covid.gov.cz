@@ -45,9 +45,7 @@ const SearchBox: React.FC = () => {
   );
 
   const handleFetchRequest: SuggestionsFetchRequested = ({ value }) => {
-    if (value.length > 2) {
-      onSearch(value);
-    }
+    onSearch(value);
   };
 
   const onChangeHandler: InputProps<SearchResult>['onChange'] = (_, params) => {
