@@ -82,6 +82,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         <DesktopLeftMenuLayout
           menu={
             <CategoryItemList
+              theme="white"
               items={relatedMeasures}
               linkBack={{
                 slug: pageContext.listSlug,

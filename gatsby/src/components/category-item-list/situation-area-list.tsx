@@ -7,9 +7,10 @@ import { useTranslation } from '../i18n';
 
 interface IProps {
   data: ISituationAreaFragment[];
+  theme: 'white' | 'blue';
 }
 
-const SituationAreaList: React.FC<IProps> = ({ data }) => {
+const SituationAreaList: React.FC<IProps> = ({ data, theme }) => {
   const location = useLocation();
   const { t } = useTranslation();
 
@@ -22,7 +23,13 @@ const SituationAreaList: React.FC<IProps> = ({ data }) => {
       iconCode: relationships.icon?.code,
       isActive: path.alias === location.pathname,
     }));
-  return <CategoryItemList items={listItems} title={t('life_situations')} />;
+  return (
+    <CategoryItemList
+      theme={theme}
+      items={listItems}
+      title={t('life_situations')}
+    />
+  );
 };
 
 export const query = graphql`

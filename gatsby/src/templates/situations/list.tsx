@@ -63,7 +63,12 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           />
         </div>
         <DesktopLeftMenuLayout
-          menu={<SituationAreaList data={data.allSituationAreas.nodes} />}
+          menu={
+            <SituationAreaList
+              theme="blue"
+              data={data.allSituationAreas.nodes}
+            />
+          }
           hideMenuOnMobile
         >
           <Headline iconCode={data.area?.relationships?.icon?.code}>

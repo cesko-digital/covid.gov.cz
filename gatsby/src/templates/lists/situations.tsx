@@ -53,7 +53,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
         <Headline>{t('situations_overview')}</Headline>
       </Container>
       <Container className="mt-3">
-        <SituationAreaList data={data.allSituationAreas.nodes} />
+        <SituationAreaList theme="blue" data={data.allSituationAreas.nodes} />
       </Container>
     </Layout>
   );

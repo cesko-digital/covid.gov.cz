@@ -3,8 +3,49 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
-.wrapper {
+.whiteTheme {
+  background-color: $theme-white;
+  color: $theme-blue;
+
+  .header {
+    > h2 {
+      color: $theme-blue;
+    }
+  }
+
+  a {
+    span,
+    i {
+      color: $theme-blue;
+    }
+
+    &.isActive {
+      background-color: $theme-blue;
+      color: $theme-white;
+    }
+  }
+}
+
+.blueTheme {
   background-color: $theme-blue;
+  color: $theme-white;
+
+  .header {
+    > h2 {
+      color: $theme-white;
+    }
+  }
+
+  a {
+    span,
+    i {
+      color: $theme-white;
+    }
+  }
+}
+
+.wrapper {
+  // background-color: $theme-blue;
   padding: 12px 0;
   max-width: 800px;
 
@@ -19,7 +60,6 @@
 
   .header {
     > h2 {
-      color: $white;
       padding: 12px 24px 8px 24px;
       letter-spacing: normal;
       margin: 0;
