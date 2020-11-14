@@ -44,13 +44,14 @@ const SearchBox: React.FC = () => {
     </Link>
   );
 
-  const handleFetchRequest: SuggestionsFetchRequested = ({ value, reason }) => {
-    console.log({ value, reason });
+  const handleFetchRequest: SuggestionsFetchRequested = ({ value }) => {
+    if (value.length > 2) {
+      onSearch(value);
+    }
   };
 
   const onChangeHandler: InputProps<SearchResult>['onChange'] = (_, params) => {
     setSearchValue(params.newValue);
-    onSearch(params.newValue);
   };
 
   const getSuggestionValue = () => {
@@ -83,6 +84,7 @@ const SearchBox: React.FC = () => {
       <Autosuggest
         suggestions={firstFiveResults}
         onSuggestionsFetchRequested={handleFetchRequest}
+        onSuggestionsClearRequested={() => {}}
         renderSuggestion={renderSuggestion}
         inputProps={{
           placeholder: t('search_placeholder'),

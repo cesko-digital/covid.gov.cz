@@ -15,8 +15,10 @@ export const query = graphql`
 export type SearchResult = {
   id: string;
   title: string;
+  content: string;
   path: string;
   langcode: string;
+  type: string;
 };
 
 const useSearchEngine = () => {
@@ -30,12 +32,17 @@ const useSearchEngine = () => {
 
   const handleSearch = (term: string) => {
     if (data) {
-      const results = index
-        .search(term, {
-          expand: true,
-          fields: { title: { boost: 2 }, path: { boost: 1 } },
-        })
-        .map(({ ref }) => index.documentStore.getDoc(ref));
+      const searchedIndex = index.search(term, {
+        expand: true,
+        fields: {
+          title: { boost: 3 },
+          content: { boost: 2 },
+          path: { boost: 1 },
+        },
+      });
+      const results = searchedIndex.map(({ ref }) =>
+        index.documentStore.getDoc(ref),
+      );
       setResults(results);
     }
   };
