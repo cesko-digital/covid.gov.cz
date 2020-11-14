@@ -14,7 +14,7 @@ import classnames from 'classnames';
 import styles from './search-box.module.scss';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import useSearchEngine from '../search-engine';
-import { SearchResult } from '../search-engine/useSearchEngine';
+import { IndexedResult } from '../search-engine/useSearchEngine';
 import Link from '../link';
 import { navigate } from 'gatsby';
 
@@ -30,7 +30,7 @@ const SearchBox: React.FC = () => {
 
   const firstFiveResults = currentLanguageResults.slice(0, 5);
 
-  const renderSuggestion: RenderSuggestion<SearchResult> = (
+  const renderSuggestion: RenderSuggestion<IndexedResult> = (
     item,
     { isHighlighted },
   ) => (
@@ -48,7 +48,10 @@ const SearchBox: React.FC = () => {
     onSearch(value);
   };
 
-  const onChangeHandler: InputProps<SearchResult>['onChange'] = (_, params) => {
+  const onChangeHandler: InputProps<IndexedResult>['onChange'] = (
+    _,
+    params,
+  ) => {
     setSearchValue(params.newValue);
   };
 
@@ -56,7 +59,7 @@ const SearchBox: React.FC = () => {
     return searchValue;
   };
 
-  const suggestionSelectedHandler: OnSuggestionSelected<SearchResult> = (
+  const suggestionSelectedHandler: OnSuggestionSelected<IndexedResult> = (
     _,
     { suggestion },
   ) => {

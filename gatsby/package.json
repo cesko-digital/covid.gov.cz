@@ -49,6 +49,7 @@
     "gatsby-plugin-seo": "^0.0.2",
     "gatsby-plugin-typescript": "^2.4.25",
     "gatsby-source-drupal": "^3.6.0",
+    "minisearch": "^3.0.1",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-autosuggest": "^10.0.3",
