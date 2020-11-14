@@ -4,11 +4,12 @@ import Autosuggest, {
   InputProps,
   OnSuggestionSelected,
   RenderSuggestionsContainer,
+  RenderSuggestion,
 } from 'react-autosuggest';
 import classnames from 'classnames';
 
-import Button from '../button';
-import GovIcon from '../gov-icon';
+// import Button from '../button';
+// import GovIcon from '../gov-icon';
 
 import styles from './search-box.module.scss';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
@@ -29,8 +30,16 @@ const SearchBox: React.FC = () => {
 
   const firstFiveResults = currentLanguageResults.slice(0, 5);
 
-  const renderSuggestion = (item: SearchResult) => (
-    <Link key={item.id} to={item.path} title={item.title}>
+  const renderSuggestion: RenderSuggestion<SearchResult> = (
+    item,
+    { isHighlighted },
+  ) => (
+    <Link
+      key={item.id}
+      to={item.path}
+      title={item.title}
+      className={classnames({ [styles.isHighlighted]: isHighlighted })}
+    >
       {item.title}
     </Link>
   );
@@ -87,33 +96,8 @@ const SearchBox: React.FC = () => {
       onSuggestionSelected={suggestionSelectedHandler}
       highlightFirstSuggestion
       renderSuggestionsContainer={renderSuggestionContainer}
-      alwaysRenderSuggestions
     />
   );
-
-  // return (
-  //   <div className="search">
-  //     <div
-  //       className={classnames(
-  //         classes.searchBox,
-  //         'search__input-holder search--with-icon',
-  //       )}
-  //     >
-  //       <input
-  //         type="text"
-  //         placeholder={placeholder ?? t('search_placeholder')}
-  //         onChange={onChangeHandler}
-  //         value={searchValue}
-  //       />
-  //       <Button
-  //         icon={<GovIcon icon="search" className="search__button--icon" />}
-  //         onClick={submitButtonHandler}
-  //         variant="yellow"
-  //         className="search__button color-white"
-  //       />
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default SearchBox;

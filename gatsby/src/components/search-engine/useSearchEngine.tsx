@@ -1,11 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
-import { Index, Pipeline } from 'elasticlunr';
+import { useMemo, useState } from 'react';
+import { Index } from 'elasticlunr';
 import { graphql, useStaticQuery } from 'gatsby';
 import { ISearchIndexQuery } from '@graphql-types';
-
-import asciiFolder from 'fold-to-ascii';
-
-const replaceDiacritics = (token) => asciiFolder.fold(token);
+import removeAccents from 'remove-accents';
 
 export const query = graphql`
   query SearchIndex {
@@ -25,26 +22,24 @@ export type SearchResult = {
 const useSearchEngine = () => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const data = useStaticQuery<ISearchIndexQuery>(query);
-  const index = useRef(Index.load<SearchResult>(data.siteSearchIndex.index));
+  const index = useMemo(() => {
+    const searchIndex = Index.load<SearchResult>(data.siteSearchIndex.index);
+    searchIndex.pipeline.add((token) => removeAccents.remove(token));
+    return searchIndex;
+  }, []);
 
   const handleSearch = (term: string) => {
     if (data) {
-      const results = index.current
+      const results = index
         .search(term, {
           expand: true,
           fields: { title: { boost: 2 }, path: { boost: 1 } },
         })
-        .map(({ ref }) => index.current.documentStore.getDoc(ref));
-      console.log({ data, index, results });
+        .map(({ ref }) => index.documentStore.getDoc(ref));
       setResults(results);
     }
   };
 
-  useEffect(() => {
-    Pipeline.registerFunction(replaceDiacritics, 'replaceDiacritics');
-
-    console.log(Index, Pipeline);
-  }, []);
   return [handleSearch, results] as const;
 };
 

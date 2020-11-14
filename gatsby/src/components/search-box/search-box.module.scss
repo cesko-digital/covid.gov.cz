@@ -56,4 +56,8 @@
   &:visited {
     color: black;
   }
+
+  &.isHighlighted {
+    background-color: rgba(35, 98, 162, 0.22);
+  }
 }
