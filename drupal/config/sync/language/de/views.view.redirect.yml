@@ -1,0 +1,68 @@
+label: Umleiten
+description: 'Liste der Umleitungen'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ Vorherige Seite'
+            next: 'Nächste Seite ›'
+            first: '« Anfang'
+            last: 'Ende »'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      fields:
+        redirect_bulk_form:
+          action_title: 'Mit Auswahl'
+        redirect_source__path:
+          label: Von
+          separator: ', '
+        created:
+          label: Erstellt
+      filters:
+        redirect_source__path:
+          expose:
+            label: Von
+        redirect_redirect__uri:
+          expose:
+            label: An
+        status_code:
+          expose:
+            label: Statuscode
+          group_info:
+            label: Statuscode
+            group_items:
+              1:
+                title: '300 Multiple Choices'
+              2:
+                title: '301 Moved Permanently'
+              3:
+                title: '302 Found'
+              4:
+                title: '303 See Other'
+              5:
+                title: '304 Not Modified'
+              6:
+                title: '305 Use Proxy'
+              7:
+                title: '307 Temporary Redirect'
+        language:
+          expose:
+            label: Originalsprache
+      title: Umleiten
+      empty:
+        area_text_custom:
+          content: 'Es wurde noch keine Umleitung eingerichtet.'
+  page_1:
+    display_title: Seite

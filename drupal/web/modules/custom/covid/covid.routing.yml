@@ -1,0 +1,7 @@
+covid.redirects:
+  path: '/%jsonapi%/redirects'
+  defaults:
+    _jsonapi_resource: Drupal\covid\Resource\Redirects
+    _jsonapi_resource_types: ['redirect--redirect']
+  requirements:
+    _permission: 'access content'
