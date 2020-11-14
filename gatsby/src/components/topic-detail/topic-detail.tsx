@@ -19,25 +19,23 @@ const TopicDetail: React.FC<IProps> = ({
   title,
   titleIconCode,
   processedContent,
-  children,
   lastUpdated,
   subtitle,
-}) => {
-  return (
-    <div className={styles.topicDetail}>
-      <Headline iconCode={titleIconCode}>{title}</Headline>
-      <LastUpdate lastUpdated={lastUpdated} />
-      <article className="bg-white rounded p-2 p-md-3 pb-3 mb-1">
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: processedContent,
-          }}
-        />
-        {children}
-      </article>
-    </div>
-  );
-};
+}) => (
+  <div className={styles.topicDetail}>
+    <Headline iconCode={titleIconCode}>{title}</Headline>
+    <LastUpdate isMobile={false} lastUpdated={lastUpdated} />
+    <article className="bg-white rounded px-2 pb-2 px-md-3 pb-md-3 pt-md-0 pt-2">
+      <hr className="mt-0 mb-2 d-none d-md-block" />
+      {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      <div
+        className={styles.article}
+        dangerouslySetInnerHTML={{
+          __html: processedContent,
+        }}
+      />
+    </article>
+  </div>
+);
 
 export default TopicDetail;

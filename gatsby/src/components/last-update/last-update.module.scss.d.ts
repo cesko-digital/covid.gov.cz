@@ -1,1 +1,2 @@
-export const lastUpdate: string;
+export const lastUpdateMobile: string;
+export const lastUpdateDesktop: string;

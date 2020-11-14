@@ -9,12 +9,18 @@ import styles from './last-update.module.scss';
 
 interface Props {
   lastUpdated: Maybe<Scalars['Date']>;
+  isMobile: boolean;
 }
 
-const LastUpdate: React.FC<Props> = ({ lastUpdated }) => {
+const LastUpdate: React.FC<Props> = ({ lastUpdated, isMobile }) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(styles.lastUpdate)}>
+    <div
+      className={classNames({
+        [styles.lastUpdateDesktop]: !isMobile,
+        [styles.lastUpdateMobile]: isMobile,
+      })}
+    >
       <Time
         prefix={`${t('last_updated')} `}
         displayTime

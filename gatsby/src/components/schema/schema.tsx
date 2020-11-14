@@ -1,12 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useLocation } from '@reach/router';
-import { useTranslation } from '@/components/i18n';
+import { useTranslation, useCurrentLanguage } from '@/components/i18n';
+import { ISituationQuestions_Answers } from '@graphql-types';
 
 const BASE_URL = 'https://covid.gov.cz';
 
 interface IProps {
-  body?: string;
   langCode: string;
   datePublished?: string;
   dateModified?: string;
@@ -17,6 +17,7 @@ interface IProps {
   title: string;
   isHomePage?: boolean;
   breadcrumbItems?: Array<Object | string>;
+  questions_answers?: ISituationQuestions_Answers[];
 }
 
 export const SchemaComp: React.FC<IProps> = ({
@@ -28,25 +29,32 @@ export const SchemaComp: React.FC<IProps> = ({
   isSpecialList,
   title,
   langCode,
-  body,
   isHomePage,
   breadcrumbItems,
+  questions_answers,
 }) => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
+  const currentLanguage = useCurrentLanguage();
   const url = `${BASE_URL}${pathname}`;
+
+  const websiteUrl = `${BASE_URL}${
+    currentLanguage !== 'cs' ? `/${currentLanguage}/` : '/'
+  }`;
 
   const baseSchema = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: 'https://covid.gov.cz',
+      '@id': websiteUrl,
+      url: websiteUrl,
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
     },
     {
       '@context': 'http://schema.org',
       '@type': 'WebPage',
+      '@id': url,
       url,
       name: title,
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
@@ -63,7 +71,9 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'ListItem',
             position: breadcrumbItemsListIter,
             item: {
-              '@id': breadcrumbItem.url,
+              '@id': `${
+                websiteUrl.endsWith('/') ? websiteUrl.slice(0, -1) : websiteUrl
+              }${breadcrumbItem.url}`,
               name: breadcrumbItem.title,
             },
           });
@@ -96,6 +106,15 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
+  const faqList = questions_answers?.map((questions_answer) => ({
+    '@type': 'Question',
+    name: questions_answer.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: questions_answer.value,
+    },
+  }));
+
   const schema =
     isBlogPost || isBlogList || isSpecialList
       ? [
@@ -105,31 +124,37 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
+          isBlogPost && faqList !== null
+            ? {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: faqList,
+              }
+            : '',
           isBlogPost
             ? {
                 '@context': 'http://schema.org',
                 '@type': 'BlogPosting',
-                url,
-                name: title,
-                articleBody: body,
+                mainEntityOfPage: {
+                  '@type': 'WebPage',
+                  '@id': url,
+                },
                 headline: title,
-                description,
+                image: `${BASE_URL}/images/ogimage.png`,
+                datePublished,
+                dateModified,
                 publisher: {
                   '@type': 'Organization',
                   url: 'https://gov.cz',
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
-                mainEntityOfPage: url,
                 author: {
                   '@type': 'Organization',
                   url: 'https://gov.cz',
                   logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
                   name: 'Gov.cz',
                 },
-                image: 'https://covid.gov.cz/images/ogimage.png',
-                datePublished,
-                dateModified,
               }
             : '',
         ]
