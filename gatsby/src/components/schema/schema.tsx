@@ -106,20 +106,14 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
-  let faqList = null;
-  if (typeof questions_answers !== 'undefined') {
-    faqList = [];
-    questions_answers.forEach((questions_answer) => {
-      faqList.push({
-        '@type': 'Question',
-        name: questions_answer.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: questions_answer.value,
-        },
-      });
-    });
-  }
+  const faqList = questions_answers?.map((questions_answer) => ({
+  '@type': 'Question',
+  name: questions_answer.question,
+  acceptedAnswer: {
+    '@type': 'Answer',
+    text: questions_answer.value,
+  },
+}));
 
   const schema =
     isBlogPost || isBlogList || isSpecialList
