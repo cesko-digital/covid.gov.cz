@@ -36,6 +36,9 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         title={situation.title}
         titleIconCode={iconCode}
         processedContent={situation?.content?.processed}
+        validFrom={situation?.valid_from}
+        validTo={situation?.valid_to}
+        region={situation?.relationships?.region}
       >
         {hasRelatedMeasures && (
           <div className="mt-2">

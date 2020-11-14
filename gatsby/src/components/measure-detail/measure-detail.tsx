@@ -5,7 +5,6 @@ import Link from '@/components/link';
 import { IMeasureDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
-import { RegionsMarker, TimeMarker } from '../marker';
 import { useTranslation } from '../i18n';
 
 interface IProps {
@@ -15,29 +14,15 @@ interface IProps {
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const { t } = useTranslation();
   const hasSourceLink = Boolean(measure.source);
-  const hasRegion = Boolean(measure.relationships.region.length);
-  const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
   return (
     <TopicDetail
       title={measure.title}
       subtitle={measure.norm}
       processedContent={measure?.content?.processed}
+      validFrom={measure?.valid_from}
+      validTo={measure?.valid_to}
+      region={measure?.relationships?.region}
     >
-      {(hasRegion || hasTimeConstraint) && (
-        <div className="mt-2">
-          <h3 className="mb-1 color-blue-dark">{t('location_validity')}</h3>
-          {hasRegion && (
-            <RegionsMarker regions={measure.relationships.region} />
-          )}
-          {hasTimeConstraint && (
-            <TimeMarker
-              displayTime
-              validFrom={measure.valid_from}
-              validTo={measure.valid_to}
-            />
-          )}
-        </div>
-      )}
       {hasSourceLink && (
         <div className="mt-2">
           <hr />
