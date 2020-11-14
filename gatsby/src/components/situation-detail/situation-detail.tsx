@@ -36,9 +36,10 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         title={situation.title}
         titleIconCode={iconCode}
         processedContent={situation?.content?.processed}
-      >
+      />
+      <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
         {hasRelatedMeasures && (
-          <div className="mt-2">
+          <div className="pt-2">
             <hr />
             <h3 className="mb-1 color-blue-dark">{t('related_measures')}</h3>
             {situation.relationships.measures.map((measure) => (
@@ -47,7 +48,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
           </div>
         )}
         {hasRelatedLinks && (
-          <div className="mt-2">
+          <div className="pt-2">
             <hr />
             <h3 className="mb-1 color-blue-dark">{t('related')}</h3>
             <div>
@@ -61,7 +62,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             </div>
           </div>
         )}
-      </TopicDetail>
+      </div>
       <Container>
         {hasFaq && (
           <ContentBox variant="blue" title={t('faq')} boldedTitleCount={2}>
