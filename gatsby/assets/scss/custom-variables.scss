@@ -22,18 +22,24 @@ $h2-font-size-mobile: 18px;
 
 @import 'design-system/front';
 
-// Temporarily hide menu link for English measure page.
-
-/*! purgecss ignore */
-.nav__link[href='/en/measures'],
-.nav__link--mobile[href='/en/measures'] {
-  visibility: hidden;
-}
-
 .form-control {
   cursor: auto;
   font-size: 16px;
   line-height: 1;
+}
+
+.footer a {
+  &,
+  &:visited {
+    font-size: inherit;
+    text-transform: none;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 .color-yellow {
@@ -70,6 +76,7 @@ ol {
   margin: 0;
   padding: 0;
   margin-left: 15px;
+  margin-bottom: 15px;
 
   & > li {
     margin-bottom: 4px;

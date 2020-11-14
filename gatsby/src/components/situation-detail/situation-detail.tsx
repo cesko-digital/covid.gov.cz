@@ -2,7 +2,6 @@ import React from 'react';
 
 import Container from '@/components/container';
 import Link from '@/components/link';
-import I18n from '@/components/i18n';
 
 import Accordion from '../accordion';
 import ContentBox from '../content-box';
@@ -11,6 +10,7 @@ import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';
 import LinkList from '../link-list';
+import { useTranslation } from '../i18n';
 
 interface IProps {
   situation: ISituationDetailFragment;
@@ -21,6 +21,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
   const faq = situation.questions_answers;
 
   const hasFaq = Boolean(faq.length);
+  const { t } = useTranslation();
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
   const hasRelatedSituations = Boolean(relatedSituations.length);
@@ -35,20 +36,21 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         title={situation.title}
         titleIconCode={iconCode}
         processedContent={situation?.content?.processed}
-      >
+      />
+      <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
         {hasRelatedMeasures && (
-          <div className="mt-2">
+          <div className="pt-2">
             <hr />
-            <h3 className="mb-1 color-blue-dark">{I18n('related_measures')}</h3>
+            <h3 className="mb-1 color-blue-dark">{t('related_measures')}</h3>
             {situation.relationships.measures.map((measure) => (
               <RelatedMeasure key={measure.path.alias} measure={measure} />
             ))}
           </div>
         )}
         {hasRelatedLinks && (
-          <div className="mt-2">
+          <div className="pt-2">
             <hr />
-            <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
+            <h3 className="mb-1 color-blue-dark">{t('related')}</h3>
             <div>
               {situation.links.map((link, index) => (
                 <div key={index}>
@@ -60,10 +62,10 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             </div>
           </div>
         )}
-      </TopicDetail>
+      </div>
       <Container>
         {hasFaq && (
-          <ContentBox variant="blue" title={I18n('faq')} boldedTitleCount={2}>
+          <ContentBox variant="blue" title={t('faq')} boldedTitleCount={2}>
             <Accordion
               data={situation.questions_answers.map((item) => ({
                 title: item.question,
@@ -74,7 +76,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         )}
         {hasRelatedSituations && (
           <ContentBox
-            title={I18n('similar_topics')}
+            title={t('similar_topics')}
             boldedTitleCount={1}
             variant="blue"
           >

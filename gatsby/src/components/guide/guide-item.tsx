@@ -6,7 +6,7 @@ import ContentIcon from '../content-icon';
 import classes from './guide-item.module.scss';
 
 import Time from '@/components/time';
-import I18n from '@/components/i18n';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   title: string;
@@ -31,6 +31,7 @@ const GuideItem: React.FC<IProps> = ({
   validTo,
   validFrom,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <Col col={12} colSm={6} colLg={4} className="box">
@@ -72,11 +73,9 @@ const GuideItem: React.FC<IProps> = ({
               <p>{area}</p>
               <p>
                 {validFrom && (
-                  <Time datetime={validFrom} prefix={`${I18n('from')} `} />
+                  <Time datetime={validFrom} prefix={`${t('from')} `} />
                 )}
-                {validTo && (
-                  <Time datetime={validTo} prefix={`${I18n('to')} `} />
-                )}
+                {validTo && <Time datetime={validTo} prefix={`${t('to')} `} />}
               </p>
             </div>
           )}

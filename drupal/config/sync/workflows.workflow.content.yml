@@ -83,11 +83,7 @@ type_settings:
     review:
       label: Review
       from:
-        - approved
-        - archived
         - draft
-        - needs_review
-        - published
       to: needs_review
       weight: -1
   entity_types:

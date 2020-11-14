@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styles from './category-item-list.module.scss';
 import CategoryItem from '../category-item/category-item';
-import I18n, { gLang } from '@/components/i18n';
 import Link from '@/components/link';
 import { KeyboardArrowLeft } from '@material-ui/icons';
 import ContentIcon from '../content-icon';
+import { useCurrentLanguage, useTranslation } from '../i18n';
 
 type Props = {
   title: string;
@@ -30,8 +30,9 @@ const CategoryItemList: FC<Props> = ({
   titleIconCode,
   linkBack,
 }) => {
-  const lang = gLang();
-  const collator = new Intl.Collator([lang]);
+  const currentLanguage = useCurrentLanguage();
+  const { t } = useTranslation();
+  const collator = new Intl.Collator([currentLanguage]);
   items.sort((a, b) => collator.compare(a.name, b.name));
 
   const styledTitle = makeFirstWordBold(title);
@@ -52,7 +53,7 @@ const CategoryItemList: FC<Props> = ({
               className={styles.chevron}
             />{' '}
             <span>
-              {I18n('back_to')}&nbsp;{linkBack.title}
+              {t('back_to')}&nbsp;{linkBack.title}
             </span>
           </Link>
         ) : (

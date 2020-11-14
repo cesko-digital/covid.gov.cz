@@ -1,11 +1,11 @@
 import React from 'react';
 
-import I18n from '@/components/i18n';
 import Link from '@/components/link';
 
 import { IMeasureDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
+import { useTranslation } from '../i18n';
 import { RegionsMarker, TimeMarker } from '../marker';
 
 interface IProps {
@@ -13,42 +13,42 @@ interface IProps {
 }
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
+  const { t } = useTranslation();
   const hasSourceLink = Boolean(measure.source);
-  const hasRegion = Boolean(measure.relationships.region.length);
-  const hasTimeConstraint = Boolean(measure.valid_from || measure.valid_to);
+  const hasRegion = Boolean(measure?.relationships?.region?.length);
+  const hasTimeConstraint = Boolean(measure?.valid_from || measure?.valid_to);
+
   return (
-    <TopicDetail
-      title={measure.title}
-      subtitle={measure.norm}
-      processedContent={measure?.content?.processed}
-    >
-      {(hasRegion || hasTimeConstraint) && (
-        <div className="mt-2">
-          <h3 className="mb-1 color-blue-dark">{I18n('location_validity')}</h3>
-          {hasRegion && (
-            <RegionsMarker regions={measure.relationships.region} />
-          )}
-          {hasTimeConstraint && (
-            <TimeMarker
-              displayTime
-              validFrom={measure.valid_from}
-              validTo={measure.valid_to}
-            />
-          )}
-        </div>
-      )}
-      {hasSourceLink && (
-        <div className="mt-2">
-          <hr />
-          <h3 className="mb-1 color-blue-dark">{I18n('related')}</h3>
-          <div>
-            <Link className="color-blue mb-1" to={measure.source.uri}>
-              {measure.source.title}
-            </Link>
+    <>
+      <TopicDetail
+        title={measure.title}
+        subtitle={measure.norm}
+        processedContent={measure?.content?.processed}
+      />
+      <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
+        {hasRegion && (
+          <RegionsMarker regions={measure?.relationships?.region} />
+        )}
+        {hasTimeConstraint && (
+          <TimeMarker
+            displayTime
+            validFrom={measure?.valid_from}
+            validTo={measure?.valid_to}
+          />
+        )}
+        {hasSourceLink && (
+          <div className="pt-2">
+            <hr />
+            <h3 className="mb-1 color-blue-dark">{t('related')}</h3>
+            <div>
+              <Link className="color-blue mb-1" to={measure.source.uri}>
+                {measure.source.title}
+              </Link>
+            </div>
           </div>
-        </div>
-      )}
-    </TopicDetail>
+        )}
+      </div>
+    </>
   );
 };
 

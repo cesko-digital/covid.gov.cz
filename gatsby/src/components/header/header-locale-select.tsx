@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { TRoute } from '@/components/i18n';
+import { useCurrentLanguage } from '@/components/i18n';
 import Link from '@/components/link';
 
 import classes from './header-locale-select.module.scss';
@@ -12,6 +12,7 @@ interface IProps {
 
 export const HeaderLocaleSelect: React.FC<IProps> = ({ languageVariants }) => {
   const variants = languageVariants || {};
+  const currentLanguage = useCurrentLanguage();
 
   return (
     <div
@@ -20,14 +21,20 @@ export const HeaderLocaleSelect: React.FC<IProps> = ({ languageVariants }) => {
         'd-none d-md-flex align-items-center',
       )}
     >
-      {TRoute('/') !== '/' ? (
-        <span>
-          <Link to={variants.cs || '/'} noTR className="text-white">
-            CZ
-          </Link>
-        </span>
+      {currentLanguage === 'en' ? (
+        <Link
+          to={variants.cs || '/'}
+          noLanguageCodePrefix
+          className="text-white"
+        >
+          CZ
+        </Link>
       ) : (
-        <Link to={variants.en || '/en/'} noTR className="text-white">
+        <Link
+          to={variants.en || '/en/'}
+          noLanguageCodePrefix
+          className="text-white"
+        >
           EN
         </Link>
       )}

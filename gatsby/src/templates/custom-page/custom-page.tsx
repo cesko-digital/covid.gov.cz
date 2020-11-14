@@ -7,7 +7,7 @@ import Container from '@/components/container';
 import { graphql } from 'gatsby';
 import Breadcrumb from '@/components/breadcrumb';
 import Layout from '@/layouts/default-layout';
-import I18n from '@/components/i18n';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
@@ -16,6 +16,7 @@ interface IProps {
 
 const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
   const page: IPage = data.page;
+  const { t } = useTranslation();
 
   return (
     <Layout pageContext={pageContext}>
@@ -30,15 +31,14 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         dateModified={page.changed}
         isBlogPost
         description={page.meta_description}
-        body={page.content.processed}
         title={page.title}
         langCode={pageContext.langCode}
-        breadcrumbItems={[{ title: I18n('home'), url: '/' }, page.title]}
+        breadcrumbItems={[{ title: t('home'), url: '/' }, page.title]}
       />
       <Container className="mb-4">
         <div className="pt-1">
           <Breadcrumb
-            items={[{ title: I18n('home'), url: '/' }, page.title]}
+            items={[{ title: t('home'), url: '/' }, page.title]}
             variant="inverse"
           />
         </div>

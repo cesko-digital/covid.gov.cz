@@ -3,6 +3,7 @@
 'use strict';
 
 const axios = require(`axios`);
+const chalk = require('chalk');
 
 const _ = require(`lodash`);
 
@@ -49,6 +50,26 @@ exports.sourceNodes = async (
   },
   pluginOptions,
 ) => {
+  const shouldRefresh = Boolean(process.env.SHOULD_REFRESH_DRUPAL_DATA);
+  const lastFetched = await cache.get('lastFetched');
+
+  if(!shouldRefresh && lastFetched){
+    // Touch nodes so they are not garbage collected by Gatsby.
+    getNodes().forEach((node) => {
+      if (node.internal.owner === `gatsby-source-drupal`) {
+        actions.touchNode({
+          nodeId: node.id,
+        });
+      }
+    }); // Process sync data from Drupal.
+    
+    console.log(chalk.green(`--------------------------------------------------------------------------------------------`));
+    console.log(chalk.green(`Last Drupal data fetched already on ${new Date().toLocaleString()}, skipping the data pull.`));
+    console.log(chalk.gray(`Clear the Gatsby cache by running `, chalk.black.bgGray('yarn dev:clean') , ` if you want to pull the new data, or set the SHOULD_REFRESH_DRUPAL_DATA variable`));
+    console.log(chalk.green(`--------------------------------------------------------------------------------------------`));
+    return;
+  }
+  
   var _store$getState$statu, _store$getState$statu2;
 
   let {
@@ -421,6 +442,7 @@ exports.sourceNodes = async (
     node.internal.contentDigest = createContentDigest(node);
     createNode(node);
   }
+  await cache.set('lastFetched', new Date().toISOString());
 }; // This is maintained for legacy reasons and will eventually be removed.
 
 exports.onCreateDevServer = (

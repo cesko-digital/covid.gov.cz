@@ -6,10 +6,10 @@ import SituationDetail from '@/components/situation-detail/situation-detail';
 import Container from '@/components/container';
 import { SchemaComp } from '@/components/schema/schema';
 import { SEO as Seo } from 'gatsby-plugin-seo';
-import I18n from '@/components/i18n';
 import Breadcrumb from '@/components/breadcrumb';
 import DesktopLeftMenuLayout from '@/layouts/desktop-left-menu-layout';
 import CategoryItemList from '@/components/category-item-list';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   data: ISituationPageQuery;
@@ -25,34 +25,35 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
     path: situation.path.alias,
     isActive: situation.path.alias === pageContext.slug,
   }));
+  const { t } = useTranslation();
   return (
     <Layout pageContext={pageContext}>
       <Seo
         title={data.situation.title}
         description={
-          data.situation.meta_description ||
-          I18n('current_measures_overview_meta')
+          data.situation.meta_description || t('current_measures_overview_meta')
         }
         pagePath={data.situation.path.alias}
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        datePublished={data.situation.valid_from}
+        datePublished={
+          data.situation.valid_from
+            ? data.situation.valid_from
+            : data.situation.created
+        }
         dateModified={data.situation.changed}
         title={data.situation.title}
-        langCode={pageContext.langCode}
-        isBlogPost
-        body={
-          data.situation.content
-            ? data.situation.content.processed
-            : data.situation.meta_description
+        langCode={
+          pageContext.langCode ? pageContext.langCode : data.situation.langcode
         }
+        isBlogPost
         description={data.situation.meta_description}
         breadcrumbItems={[
-          { title: I18n('home'), url: '/' },
+          { title: t('home'), url: '/' },
           {
-            title: I18n('life_situations'),
-            url: I18n(`slug_situations`),
+            title: t('life_situations'),
+            url: t(`slug_situations`),
           },
           {
             title: data.situation.relationships?.situation_type?.name,
@@ -60,15 +61,16 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           },
           data.situation.title,
         ]}
+        questions_answers={data.situation.questions_answers}
       />
       <Container>
         <div className="pt-1">
           <Breadcrumb
             items={[
-              { title: I18n('home'), url: '/' },
+              { title: t('home'), url: '/' },
               {
-                title: I18n('life_situations'),
-                url: I18n(`slug_situations`),
+                title: t('life_situations'),
+                url: t(`slug_situations`),
               },
               {
                 title: data.situation.relationships?.situation_type?.name,
@@ -85,7 +87,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               items={relatedSituations}
               linkBack={{
                 slug: pageContext.listSlug,
-                title: I18n('life_situations'),
+                title: t('life_situations'),
               }}
               title={data.situationArea.name}
               titleIconCode={data.situationArea?.relationships?.icon?.code}
@@ -112,7 +114,10 @@ export const query = graphql`
       path {
         alias
       }
+      changed
       valid_from
+      langcode
+      created
       ...SituationDetail
     }
     situationArea: area(path: { alias: { eq: $listSlug } }) {
