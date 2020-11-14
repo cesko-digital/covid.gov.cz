@@ -1,0 +1,20 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.lastUpdate {
+  text-align: right;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 1rem;
+  color: $theme-white;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-bottom: 0;
+    color: $theme-gray-lighter;
+  }
+}

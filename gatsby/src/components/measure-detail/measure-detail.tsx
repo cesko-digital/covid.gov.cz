@@ -21,6 +21,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
     <TopicDetail
       title={measure.title}
       subtitle={measure.norm}
+      lastUpdated={measure?.last_updated}
       processedContent={measure?.content?.processed}
     >
       {(hasRegion || hasTimeConstraint) && (
@@ -84,6 +85,7 @@ export const query = graphql`
     changed
     valid_from
     valid_to
+    last_updated
   }
 `;
 

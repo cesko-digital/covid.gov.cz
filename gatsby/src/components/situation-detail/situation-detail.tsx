@@ -30,11 +30,14 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
     situation.relationships?.icon?.code ||
     situation.relationships?.situation_type?.relationships?.icon?.code;
 
+  console.log(situation);
+
   return (
     <>
       <TopicDetail
         title={situation.title}
         titleIconCode={iconCode}
+        lastUpdated={situation?.last_updated}
         processedContent={situation?.content?.processed}
       >
         {hasRelatedMeasures && (
@@ -136,6 +139,7 @@ export const query = graphql`
     changed
     valid_from
     valid_to
+    last_updated
   }
 `;
 
