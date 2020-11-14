@@ -3,8 +3,9 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
-.searchBox {
+.wrapper {
   margin: 14px 0;
+  position: relative;
 }
 
 .searchBoxInput {

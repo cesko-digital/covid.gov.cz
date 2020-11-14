@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import Col from '../col';
-import SearchPanel from '../search-panel';
+import SearchBox from '../search-box';
 
 const DesktopTopContent: React.FC = () => {
   return (
@@ -13,8 +13,8 @@ const DesktopTopContent: React.FC = () => {
         'align-items-center',
       )}
     >
-      <Col col={12} colMd={6} colLg={4} colXl={3}>
-        <SearchPanel />
+      <Col col={12} colMd={6} colLg={4} colXl={3} className="mt-3 mb-3">
+        <SearchBox />
       </Col>
     </div>
   );

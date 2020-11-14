@@ -79,24 +79,26 @@ const SearchBox: React.FC = () => {
   };
 
   return (
-    <Autosuggest
-      suggestions={firstFiveResults}
-      onSuggestionsFetchRequested={handleFetchRequest}
-      renderSuggestion={renderSuggestion}
-      inputProps={{
-        placeholder: t('search_placeholder'),
-        onChange: onChangeHandler,
-        value: searchValue,
-        className: classnames(
-          styles.searchBoxInput,
-          'form-control search__input',
-        ),
-      }}
-      getSuggestionValue={getSuggestionValue}
-      onSuggestionSelected={suggestionSelectedHandler}
-      highlightFirstSuggestion
-      renderSuggestionsContainer={renderSuggestionContainer}
-    />
+    <div className={styles.wrapper}>
+      <Autosuggest
+        suggestions={firstFiveResults}
+        onSuggestionsFetchRequested={handleFetchRequest}
+        renderSuggestion={renderSuggestion}
+        inputProps={{
+          placeholder: t('search_placeholder'),
+          onChange: onChangeHandler,
+          value: searchValue,
+          className: classnames(
+            styles.searchBoxInput,
+            'form-control search__input',
+          ),
+        }}
+        getSuggestionValue={getSuggestionValue}
+        onSuggestionSelected={suggestionSelectedHandler}
+        highlightFirstSuggestion
+        renderSuggestionsContainer={renderSuggestionContainer}
+      />
+    </div>
   );
 };
 
