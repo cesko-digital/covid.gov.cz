@@ -107,13 +107,13 @@ export const SchemaComp: React.FC<IProps> = ({
   }
 
   const faqList = questions_answers?.map((questions_answer) => ({
-  '@type': 'Question',
-  name: questions_answer.question,
-  acceptedAnswer: {
-    '@type': 'Answer',
-    text: questions_answer.value,
-  },
-}));
+    '@type': 'Question',
+    name: questions_answer.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: questions_answer.value,
+    },
+  }));
 
   const schema =
     isBlogPost || isBlogList || isSpecialList
@@ -124,7 +124,7 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
-          isBlogPost && faqList !== null && faqList.length > 0
+          isBlogPost && faqList !== null
             ? {
                 '@context': 'https://schema.org',
                 '@type': 'FAQPage',
