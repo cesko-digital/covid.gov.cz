@@ -8,6 +8,7 @@ weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'
+  - 'access flood unblock'
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'administer users'
