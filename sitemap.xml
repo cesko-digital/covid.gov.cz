@@ -22,10 +22,10 @@
 <url> <loc>https://covid.gov.cz/en/situations/employment/job-interviews</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/protection-employees</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/legal-support</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/employment/job-loss</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/employment/unemployment-due-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/retraining</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/corporate-events</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/employment/job-training</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/employment/staff-training</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/company-canteens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/shift-work</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/employment/infected-colleague</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
