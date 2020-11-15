@@ -25,6 +25,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flood_unblock: 0
   jsonapi: 0
   jsonapi_extras: 0
   language: 0
