@@ -7,23 +7,11 @@
   > nav {
     background-color: $theme-white;
   }
-
-  .main {
-    @include media-breakpoint-up(md) {
-      background-color: $theme-white;
-    }
-  }
 }
 
 .blueTheme {
   > nav {
     background-color: $theme-blue;
-  }
-
-  .main {
-    @include media-breakpoint-up(md) {
-      background-color: $theme-blue;
-    }
   }
 }
 
@@ -53,5 +41,9 @@
 
   .main {
     flex: 1;
+
+    @include media-breakpoint-up(md) {
+      background-color: $theme-white;
+    }
   }
 }
