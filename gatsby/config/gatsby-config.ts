@@ -1,5 +1,4 @@
 import * as path from 'path';
-import sanitizeHtml from 'sanitize-html';
 
 const config = {
   siteMetadata: {
@@ -220,31 +219,6 @@ const config = {
             subsets: ['latin-ext'],
           },
         ],
-      },
-    },
-    {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-      options: {
-        fields: [`title`, `path`, 'content'],
-        resolvers: {
-          situation: {
-            title: (node) => node.title,
-            path: (node) => node.path.alias,
-            langcode: (node) => node.langcode,
-            content: (node) =>
-              sanitizeHtml(node.content?.processed ?? '', { allowedTags: [] }),
-          },
-          measure: {
-            title: (node) => node.title,
-            path: (node) => node.path.alias,
-            langcode: (node) => node.langcode,
-            norm: (node) => node.norm,
-            content: (node) =>
-              sanitizeHtml(node.description?.processed ?? '', {
-                allowedTags: [],
-              }),
-          },
-        },
       },
     },
   ],
