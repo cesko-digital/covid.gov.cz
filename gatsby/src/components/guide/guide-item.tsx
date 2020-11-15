@@ -34,8 +34,13 @@ const GuideItem: React.FC<IProps> = ({
   const { t } = useTranslation();
   return (
     <>
-      <Col col={12} colSm={6} colLg={4} className="box">
-        <div className="box__inner">
+      <Col
+        col={12}
+        colSm={6}
+        colLg={4}
+        className={classNames(classes.box, 'box')}
+      >
+        <div className={classNames(classes.wrapper, 'box__inner')}>
           <div className="d-flex flex-row">
             {iconCode && (
               <ContentIcon
