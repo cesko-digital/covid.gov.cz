@@ -31,7 +31,6 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
     situation.relationships?.icon?.code ||
     situation.relationships?.situation_type?.relationships?.icon?.code;
 
-
   return (
     <>
       <TopicDetail
