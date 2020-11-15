@@ -1,5 +1,51 @@
 @import '../../../assets/scss/design-system/base/variables';
 
+.whiteTheme {
+  &:hover {
+    background-color: rgba(35, 98, 162, 0.05);
+  }
+
+  &Icon {
+    color: $theme-white;
+  }
+
+  &Title {
+    color: $theme-blue;
+  }
+
+  &.isActive {
+    background: $theme-blue;
+
+    .categoryItemTitle,
+    .categoryItemIcon {
+      color: $theme-white;
+    }
+  }
+}
+
+.blueTheme {
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  &Icon {
+    color: $theme-blue;
+  }
+
+  &Title {
+    color: $theme-white;
+  }
+
+  &.isActive {
+    background: $theme-white;
+
+    .categoryItemTitle,
+    .categoryItemIcon {
+      color: $theme-blue-dark;
+    }
+  }
+}
+
 .categoryItem {
   display: flex;
   padding: 12px 36px 12px 24px;
@@ -15,7 +61,6 @@
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
     transition: all 0.2s;
 
     .chevron {
@@ -25,7 +70,6 @@
   }
 
   &Icon {
-    color: white;
     margin-right: 16px;
     font-size: 2rem !important;
   }
@@ -37,21 +81,7 @@
     line-height: 1.2;
     font-weight: 500;
     flex-grow: 1;
-    color: white;
     text-transform: uppercase;
     margin-right: 1rem;
-  }
-
-  &.isActive {
-    background: white;
-
-    .chevron {
-      display: none;
-    }
-
-    .categoryItemTitle,
-    .categoryItemIcon {
-      color: $theme-blue-dark;
-    }
   }
 }
