@@ -183,6 +183,7 @@ export const SchemaComp: React.FC<IProps> = ({
       <meta name="description" content={description} />
       <meta property="og:site_name" content={t('covid_portal')} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      {process.env.GATSBY_VERCEL && <meta name="robots" content="noindex" />}
     </Helmet>
   );
 };
