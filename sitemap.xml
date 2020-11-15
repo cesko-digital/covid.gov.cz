@@ -297,6 +297,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/compensation/compensation-bonus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-culture-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-tourism</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/covid-rent-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-bus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-sport-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/large-tax-liberation-package</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -614,7 +615,6 @@
 <url> <loc>https://covid.gov.cz/situace/restaurace/rezim-provozu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace/zahradky-terasy-zimni-zahrady</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/covid-najemne-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/hmotna-nouze</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/najemne-prispevky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-osvc-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -622,6 +622,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/kompenzacni-bonus-pro-osvc-dpp-dpc-male-sro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kultura-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-cestovni-ruch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/covid-najemne-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-bus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-sport-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/velky-liberacni-danovy-balicek</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
