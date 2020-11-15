@@ -7,6 +7,10 @@
   background-color: $theme-white;
   color: $theme-blue;
 
+  hr {
+    border: 1px solid $theme-blue;
+  }
+
   .header {
     > h2 {
       color: $theme-blue;
@@ -30,6 +34,10 @@
   background-color: $theme-blue;
   color: $theme-white;
 
+  hr {
+    border: 1px solid $theme-white;
+  }
+
   .header {
     > h2 {
       color: $theme-white;
@@ -45,7 +53,6 @@
 }
 
 .wrapper {
-  // background-color: $theme-blue;
   padding: 12px 0;
   max-width: 800px;
 
@@ -84,7 +91,6 @@
     .linkBack {
       text-transform: uppercase;
       padding: 0 24px;
-      color: $theme-yellow !important;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -92,6 +98,10 @@
       font-weight: 500;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
+
+      span {
+        color: $theme-yellow !important;
+      }
 
       &:hover {
         span {

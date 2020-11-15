@@ -24,6 +24,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
     name: situation.title,
     path: situation.path.alias,
     isActive: situation.path.alias === pageContext.slug,
+    theme: 'blue',
   }));
   const { t } = useTranslation();
   return (
@@ -82,6 +83,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           />
         </div>
         <DesktopLeftMenuLayout
+          theme="blue"
           menu={
             <CategoryItemList
               theme="blue"

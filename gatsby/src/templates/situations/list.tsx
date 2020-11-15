@@ -63,6 +63,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           />
         </div>
         <DesktopLeftMenuLayout
+          theme="blue"
           menu={
             <SituationAreaList
               theme="blue"

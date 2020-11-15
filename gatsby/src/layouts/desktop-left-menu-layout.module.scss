@@ -3,12 +3,34 @@
 @import '../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../assets/scss/design-system/vendor/bootstrap/variables';
 
+.whiteTheme {
+  > nav {
+    background-color: $theme-white;
+  }
+
+  .main {
+    @include media-breakpoint-up(md) {
+      background-color: $theme-white;
+    }
+  }
+}
+
+.blueTheme {
+  > nav {
+    background-color: $theme-blue;
+  }
+
+  .main {
+    @include media-breakpoint-up(md) {
+      background-color: $theme-blue;
+    }
+  }
+}
+
 .wrapper {
   display: flex;
 
   > nav {
-    background-color: $theme-blue;
-
     @include media-breakpoint-up(xl) {
       width: 320px;
     }
@@ -31,9 +53,5 @@
 
   .main {
     flex: 1;
-
-    @include media-breakpoint-up(md) {
-      background-color: $white;
-    }
   }
 }

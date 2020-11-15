@@ -14,7 +14,7 @@ const MeasureAreaList: React.FC<IProps> = ({ data, theme }) => {
   const location = useLocation();
   const { t } = useTranslation();
 
-  const listItems = data
+  const listItems: React.ComponentProps<typeof CategoryItemList>['items'] = data
     .filter(({ relationships }) => relationships.measure !== null)
     .map(({ id, name, path, relationships }) => ({
       id,
@@ -22,6 +22,7 @@ const MeasureAreaList: React.FC<IProps> = ({ data, theme }) => {
       path: path.alias,
       iconCode: relationships.icon?.code,
       isActive: path.alias === location.pathname,
+      theme,
     }));
   return (
     <CategoryItemList

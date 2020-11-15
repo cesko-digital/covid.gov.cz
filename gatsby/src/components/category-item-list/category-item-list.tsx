@@ -48,13 +48,7 @@ const CategoryItemList: FC<Props> = ({
         [styles.blueTheme]: theme === 'blue',
       })}
     >
-      <div
-        className={classNames({
-          [styles.header]: true,
-          [styles.whiteTheme]: theme === 'white',
-          [styles.blueTheme]: theme === 'blue',
-        })}
-      >
+      <div className={styles.header}>
         <h2>
           {titleIconCode && (
             <ContentIcon code={titleIconCode} className={styles.icon} />
@@ -76,7 +70,7 @@ const CategoryItemList: FC<Props> = ({
         )}
       </div>
       {items.map((item, i) => (
-        <CategoryItem key={`${item.iconCode}${i}`} {...item} />
+        <CategoryItem theme={theme} key={`${item.iconCode}${i}`} {...item} />
       ))}
     </div>
   );

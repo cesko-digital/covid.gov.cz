@@ -56,6 +56,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           />
         </div>
         <DesktopLeftMenuLayout
+          theme="white"
           menu={
             <MeasureAreaList theme="white" data={data.allMeasureType.nodes} />
           }
