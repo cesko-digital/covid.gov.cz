@@ -11,6 +11,7 @@ import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';
 import LinkList from '../link-list';
 import { useTranslation } from '../i18n';
+import LastUpdate from '../last-update';
 
 interface IProps {
   situation: ISituationDetailFragment;
@@ -35,6 +36,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
       <TopicDetail
         title={situation.title}
         titleIconCode={iconCode}
+        lastUpdated={situation?.last_updated}
         processedContent={situation?.content?.processed}
       />
       <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
@@ -62,6 +64,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
             </div>
           </div>
         )}
+        <LastUpdate isMobile lastUpdated={situation?.last_updated} />
       </div>
       <Container>
         {hasFaq && (
@@ -137,6 +140,7 @@ export const query = graphql`
     changed
     valid_from
     valid_to
+    last_updated
   }
 `;
 

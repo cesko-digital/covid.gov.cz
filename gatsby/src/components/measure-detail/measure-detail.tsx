@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import { useTranslation } from '../i18n';
 import { RegionsMarker, TimeMarker } from '../marker';
+import LastUpdate from '../last-update';
 
 interface IProps {
   measure: IMeasureDetailFragment;
@@ -23,6 +24,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
       <TopicDetail
         title={measure.title}
         subtitle={measure.norm}
+        lastUpdated={measure?.last_updated}
         processedContent={measure?.content?.processed}
       />
       <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
@@ -47,6 +49,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
             </div>
           </div>
         )}
+        <LastUpdate isMobile lastUpdated={measure?.last_updated} />
       </div>
     </>
   );
@@ -83,6 +86,7 @@ export const query = graphql`
     changed
     valid_from
     valid_to
+    last_updated
   }
 `;
 
