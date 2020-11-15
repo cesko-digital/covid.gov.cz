@@ -2,6 +2,8 @@ import { GraphQLScalarType } from 'gatsby/graphql';
 import MiniSearch from 'minisearch';
 import crypto from 'crypto';
 import { GatsbyNode } from 'gatsby';
+import removeAccents from 'remove-accents';
+import sanitizeHtml from 'sanitize-html';
 
 export { createPages } from './create-pages';
 
@@ -56,6 +58,12 @@ const createOrGetIndex = async (node, cache, getNode) => {
   const index = new MiniSearch<IndexedResult>({
     fields: ['title', 'content'], // fields to index for full-text search
     storeFields: ['title', 'content', 'path', 'langcode', 'type'], // fields to return with search results
+    processTerm: (term) => {
+      const withoutAccents = removeAccents.remove(term);
+      const lowerCase = withoutAccents.toLocaleLowerCase();
+      const withoutHtml = sanitizeHtml(lowerCase, { allowedTags: [] });
+      return withoutHtml;
+    },
   });
 
   for (const pageId of node.pages) {
@@ -67,7 +75,6 @@ const createOrGetIndex = async (node, cache, getNode) => {
         langcode: pageNode.langcode,
         path: pageNode.path?.alias,
         title: pageNode.title,
-        // type: pageNode.relationships?.type?.name,
       };
 
       index.add(doc);

@@ -16,7 +16,6 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from '@/components/i18n';
 
 interface IProps {
-  children: ReactElement[];
   pageContext: ISitePageContext;
 }
 

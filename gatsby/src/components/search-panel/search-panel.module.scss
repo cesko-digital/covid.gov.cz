@@ -1,0 +1,27 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.title {
+  margin-top: 16px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  // desktop
+  @include media-breakpoint-up(md) {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+}
+
+.resultsTotal {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  margin: 20px 0;
+
+  span {
+    color: $theme-yellow;
+  }
+}

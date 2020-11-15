@@ -48,6 +48,7 @@
     "gatsby-source-drupal": "^3.6.0",
     "minisearch": "^3.0.1",
     "node-sass": "^4.14.1",
+    "query-string": "^6.13.7",
     "react": "^16.12.0",
     "react-autosuggest": "^10.0.3",
     "react-dom": "^16.12.0",

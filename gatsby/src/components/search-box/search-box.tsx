@@ -1,105 +1,60 @@
 import React, { useState } from 'react';
-import Autosuggest, {
-  SuggestionsFetchRequested,
-  InputProps,
-  OnSuggestionSelected,
-  RenderSuggestionsContainer,
-  RenderSuggestion,
-} from 'react-autosuggest';
+import { navigate } from 'gatsby';
 import classnames from 'classnames';
 
-// import Button from '../button';
-// import GovIcon from '../gov-icon';
+import Button from '../button';
+import GovIcon from '../gov-icon';
 
 import styles from './search-box.module.scss';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
-import useSearchEngine from '../search-engine';
-import { IndexedResult } from '../search-engine/useSearchEngine';
-import Link from '../link';
-import { navigate } from 'gatsby';
 
-const SearchBox: React.FC = () => {
+type IProps = {
+  initialValue?: string;
+};
+
+const SearchBox: React.FC<IProps> = ({ initialValue }) => {
   const { t } = useTranslation();
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState(initialValue ?? '');
   const currentLanguage = useCurrentLanguage();
-  const [onSearch, searchResults] = useSearchEngine();
 
-  const currentLanguageResults = searchResults.filter(
-    (result) => result.langcode === currentLanguage,
-  );
-
-  const firstFiveResults = currentLanguageResults.slice(0, 5);
-
-  const renderSuggestion: RenderSuggestion<IndexedResult> = (
-    item,
-    { isHighlighted },
-  ) => (
-    <Link
-      key={item.id}
-      to={item.path}
-      title={item.title}
-      className={classnames({ [styles.isHighlighted]: isHighlighted })}
-    >
-      {item.title}
-    </Link>
-  );
-
-  const handleFetchRequest: SuggestionsFetchRequested = ({ value }) => {
-    onSearch(value);
-  };
-
-  const onChangeHandler: InputProps<IndexedResult>['onChange'] = (
-    _,
-    params,
-  ) => {
-    setSearchValue(params.newValue);
-  };
-
-  const getSuggestionValue = () => {
-    return searchValue;
-  };
-
-  const suggestionSelectedHandler: OnSuggestionSelected<IndexedResult> = (
-    _,
-    { suggestion },
-  ) => {
-    if (currentLanguage !== 'cs') {
-      return navigate(`/${suggestion.langcode}${suggestion.path}`);
+  const navigateToSearchResults = () => {
+    if (currentLanguage === 'cs') {
+      navigate(`/hledat?q=${searchValue}`);
+    } else {
+      navigate(`/en/search?q=${searchValue}`);
     }
-    return navigate(suggestion.path);
   };
 
-  const renderSuggestionContainer: RenderSuggestionsContainer = ({
-    containerProps,
-    children,
-  }) => {
-    return (
-      <div {...containerProps} className={styles.search__results}>
-        {children}
-      </div>
-    );
+  const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    console.log(event.key);
+    if (event.key === 'Enter') {
+      navigateToSearchResults();
+    }
   };
 
   return (
-    <div className={styles.wrapper}>
-      <Autosuggest
-        suggestions={firstFiveResults}
-        onSuggestionsFetchRequested={handleFetchRequest}
-        onSuggestionsClearRequested={() => {}}
-        renderSuggestion={renderSuggestion}
-        inputProps={{
-          placeholder: t('search_placeholder'),
-          onChange: onChangeHandler,
-          value: searchValue,
-          className: classnames(
-            styles.searchBoxInput,
-            'form-control search__input',
-          ),
-        }}
-        getSuggestionValue={getSuggestionValue}
-        onSuggestionSelected={suggestionSelectedHandler}
-        highlightFirstSuggestion
-        renderSuggestionsContainer={renderSuggestionContainer}
+    <div
+      className={classnames(
+        styles.wrapper,
+        'search__input-holder search--with-icon',
+      )}
+    >
+      <input
+        type="text"
+        className={classnames(
+          styles.searchBoxInput,
+          'form-control search__input',
+        )}
+        placeholder={t('search_placeholder')}
+        onChange={(e) => setSearchValue(e.target.value)}
+        value={searchValue}
+        onKeyDown={keyDownHandler}
+      />
+      <Button
+        icon={<GovIcon icon="search" className="search__button--icon" />}
+        onClick={navigateToSearchResults}
+        variant="yellow"
+        className="search__button color-white"
       />
     </div>
   );

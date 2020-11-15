@@ -3,12 +3,38 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { ISearchIndexQuery } from '@graphql-types';
 import removeAccents from 'remove-accents';
 import MiniSearch, { SearchResult } from 'minisearch';
-import sanitizeHtml from 'sanitize-html';
+import { useCurrentLanguage } from '../i18n';
 
 export const query = graphql`
   query SearchIndex {
     siteMiniSearchIndex {
       index
+    }
+    allSituation {
+      edges {
+        node {
+          id
+          relationships {
+            type: situation_type {
+              id
+              name
+            }
+          }
+        }
+      }
+    }
+    allMeasure {
+      edges {
+        node {
+          id
+          relationships {
+            type: measure_type {
+              id
+              name
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -27,23 +53,28 @@ export type Result = IndexedResult & SearchResult;
 const useSearchEngine = () => {
   const [results, setResults] = useState<Result[]>([]);
   const data = useStaticQuery<ISearchIndexQuery>(query);
+  const currentLanguage = useCurrentLanguage();
+  const dataById = useMemo(() => {
+    return [...data.allMeasure.edges, ...data.allSituation.edges].reduce(
+      (acc, { node }) => {
+        acc[node.id] = node;
+        return acc;
+      },
+      {},
+    );
+  }, []);
+
   const miniSearch = useMemo(
     () =>
       MiniSearch.loadJSON<Result>(
         JSON.stringify(data.siteMiniSearchIndex.index),
         {
           fields: ['title', 'content'],
-          processTerm: (term) => {
-            const withoutAccents = removeAccents.remove(term);
-            const lowerCase = withoutAccents.toLocaleLowerCase();
-            const withoutHtml = sanitizeHtml(lowerCase, { allowedTags: [] });
-            return withoutHtml;
-          },
           searchOptions: {
             processTerm: (term) => {
               return removeAccents.remove(term).toLocaleLowerCase();
             },
-            boost: { title: 2, content: 1 },
+            boost: { title: 3, content: 1 },
             prefix: true,
             fuzzy: 0.2,
           },
@@ -54,10 +85,18 @@ const useSearchEngine = () => {
 
   const handleSearch = (term: string) => {
     if (data) {
-      const results = miniSearch.search(term) as Result[];
+      const results = (miniSearch.search(term) as Result[])
+        .map((result, i, array) => ({
+          ...result,
+          type: dataById[result.id]?.relationships?.type?.name,
+          sameTitleTwice: array.find((item) => item.title === result.title),
+        }))
+        .filter((result) => result.langcode === currentLanguage);
+      console.log({ miniSearch, results });
       setResults(results);
     }
   };
+
   return [handleSearch, results] as const;
 };
 
