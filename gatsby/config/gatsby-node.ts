@@ -1,7 +1,5 @@
 import { GraphQLScalarType } from 'gatsby/graphql';
-import removeAccents from 'remove-accents';
 import MiniSearch from 'minisearch';
-import sanitizeHtml from 'sanitize-html';
 import crypto from 'crypto';
 import { GatsbyNode } from 'gatsby';
 
@@ -58,24 +56,10 @@ const createOrGetIndex = async (node, cache, getNode) => {
   const index = new MiniSearch<IndexedResult>({
     fields: ['title', 'content'], // fields to index for full-text search
     storeFields: ['title', 'content', 'path', 'langcode', 'type'], // fields to return with search results
-    processTerm: (term) => {
-      const withoutAccents = removeAccents.remove(term);
-      const lowerCase = withoutAccents.toLocaleLowerCase();
-      const withoutHtml = sanitizeHtml(lowerCase, { allowedTags: [] });
-      return withoutHtml;
-    },
-    searchOptions: {
-      processTerm: (term) => {
-        return removeAccents.remove(term).toLocaleLowerCase();
-      },
-      boost: { title: 2 },
-      fuzzy: 0.2,
-    },
   });
 
   for (const pageId of node.pages) {
     const pageNode = getNode(pageId);
-    console.log({ pageNode });
     if (INDEXED_TYPES.includes(pageNode.internal.type)) {
       const doc: IndexedResult = {
         id: pageNode.id,
@@ -97,7 +81,7 @@ const createOrGetIndex = async (node, cache, getNode) => {
 
 const SearchIndex = new GraphQLScalarType({
   name: `${SEARCH_INDEX_TYPE}_Index`,
-  description: `Serialized elasticlunr search index`,
+  description: `Serialized minisearch index`,
   parseValue() {
     throw new Error(`Not supported`);
   },
@@ -108,16 +92,6 @@ const SearchIndex = new GraphQLScalarType({
     throw new Error(`Not supported`);
   },
 });
-
-export const sourceNodes = async ({ getNodes, actions }) => {
-  const { touchNode } = actions;
-
-  const existingNodes = getNodes().filter(
-    (n) =>
-      n.internal.owner === `@gatsby-contrib/gatsby-plugin-minisearh-search`,
-  );
-  existingNodes.forEach((n) => touchNode({ nodeId: n.id }));
-};
 
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   node,
