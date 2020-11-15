@@ -13,6 +13,7 @@ export const query = graphql`
     allSituation {
       edges {
         node {
+          __typename
           id
           relationships {
             type: situation_type {
@@ -26,6 +27,7 @@ export const query = graphql`
     allMeasure {
       edges {
         node {
+          __typename
           id
           relationships {
             type: measure_type {
@@ -86,10 +88,9 @@ const useSearchEngine = () => {
   const handleSearch = (term: string) => {
     if (data) {
       const results = (miniSearch.search(term) as Result[])
-        .map((result, i, array) => ({
+        .map((result) => ({
           ...result,
-          type: dataById[result.id]?.relationships?.type?.name,
-          sameTitleTwice: array.find((item) => item.title === result.title),
+          type: dataById[result.id].__typename,
         }))
         .filter((result) => result.langcode === currentLanguage);
       console.log({ miniSearch, results });

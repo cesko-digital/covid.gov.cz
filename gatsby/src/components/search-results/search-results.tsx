@@ -1,33 +1,53 @@
+import classNames from 'classnames';
 import React from 'react';
-import ContentBox from '@/components/content-box';
 import styles from './search-results.module.scss';
 import { KeyboardArrowRight } from '@material-ui/icons';
+import { Result } from '../search-engine/useSearchEngine';
+import sanitizeHtml from 'sanitize-html';
+import Row from '../row';
+import Col from '../col';
+import Button from '../button';
 
 interface Props {
-  results: Array<{ title: string; href: string; text: string }>;
+  results: Result[];
 }
 
 const SearchResults: React.FC<Props> = ({ results }) => {
   return (
     <>
-      {results.map((result, index) => {
+      {results.map((result) => {
         return (
-          <ContentBox key={index} variant="white">
-            <h3 className={styles.searchResultsTitle}>
-              <a href={result.href} className={styles.searchResultsLink}>
-                {result.title}
-                <KeyboardArrowRight
-                  style={{ fontSize: 20 }}
-                  className="color-yellow"
+          <div key={result.id} className={styles.resultWrapper}>
+            <Row>
+              <Col col={12} colMd={10}>
+                <h3 className={styles.searchResultsTitle}>
+                  <a href={result.path} className={styles.searchResultsLink}>
+                    {result.title}
+                    <KeyboardArrowRight
+                      style={{ fontSize: 26 }}
+                      className={classNames(
+                        'color-yellow',
+                        styles.chevronRight,
+                      )}
+                    />
+                  </a>
+                </h3>
+                <p className={styles.searchResultsDesc}>
+                  {sanitizeHtml(result.content, { allowedTags: [] })}
+                </p>
+              </Col>
+              <Col colMd={2}>
+                <Button
+                  href={result.path}
+                  variant="outline-yellow"
+                  text="Detail"
+                  className={styles.linkButton}
                 />
-              </a>
-            </h3>
-            {/* TODO: breadcrumbs */}
-            <p className={styles.searchResultsDesc}>{result.text}</p>
-          </ContentBox>
+              </Col>
+            </Row>
+          </div>
         );
       })}
-      ;
     </>
   );
 };

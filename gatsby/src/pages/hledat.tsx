@@ -5,9 +5,9 @@ import { useLocation } from '@reach/router';
 import queryString from 'query-string';
 import Container from '@/components/container';
 import useSearchEngine from '@/components/search-engine';
-import SearchResults from '@/components/search-results';
 import SearchPanel from '@/components/search-panel/search-panel';
 import { Helmet } from 'react-helmet';
+import SearchResultsCategory from '@/components/search-results/search-results-category';
 
 interface IProps {
   pageContext: ISitePageContext;
@@ -30,19 +30,27 @@ const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
 
   const hasResults = Boolean(results.length);
 
+  const foundMeasures = results.filter((item) => item.type === 'measure');
+  const foundSituations = results.filter((item) => item.type === 'situation');
+
   return (
     <Layout pageContext={pageContext}>
       <Helmet title={`"${searchValue}" - hledat | COVID PORTAL`} />
       <SearchPanel resultsTotal={results.length} initialValue={searchValue} />
       <Container>
         {hasResults ? (
-          <SearchResults
-            results={results.map((result) => ({
-              href: result.path,
-              text: result.content,
-              title: result.title,
-            }))}
-          />
+          <>
+            <SearchResultsCategory
+              type="situation"
+              results={foundSituations}
+              searchValue={searchValue}
+            />
+            <SearchResultsCategory
+              type="measure"
+              results={foundMeasures}
+              searchValue={searchValue}
+            />
+          </>
         ) : (
           <h2>Nic nenalezeno</h2>
         )}
