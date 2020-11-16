@@ -51,10 +51,10 @@ const SearchBox: React.FC<IProps> = ({ initialValue }) => {
         onKeyDown={keyDownHandler}
       />
       <Button
-        icon={<GovIcon icon="search" className="search__button--icon" />}
         onClick={navigateToSearchResults}
         variant="yellow"
-        className="search__button color-white"
+        className={classnames(styles.searchButton, 'search__button')}
+        text="Hledat"
       />
     </div>
   );

@@ -19,6 +19,7 @@ const SearchPanel: React.FC<IProps> = ({ resultsTotal, initialValue }) => {
           'flex-column',
           'justify-content-center',
           'align-items-center',
+          styles.wrapper,
         )}
       >
         <Col col={12} colMd={6}>
