@@ -1,0 +1,22 @@
+uuid: 3c8779f1-cf84-4ceb-bbfd-aaab0918b4a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pes
+id: taxonomy_term.pes.status
+field_name: status
+entity_type: taxonomy_term
+bundle: pes
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

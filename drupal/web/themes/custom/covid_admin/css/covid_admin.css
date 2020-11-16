@@ -26,11 +26,19 @@
   background: rgb(153, 255, 106); }
 
 .field-group--flex {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap; }
 
 @media (min-width: 1370px) {
   .field-group--flex  > div {
     margin-right: 20px; }
 }
+
+.field--name-field-pes-content .paragraph-type-label {
+  display: none;
+}
+.field--name-field-pes-content .filter-wrapper {
+  display: none;
+}
+
 /*# sourceMappingURL=covid_admin.css.map */

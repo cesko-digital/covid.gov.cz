@@ -1,0 +1,18 @@
+uuid: 162ebbb4-bd24-4a95-b344-26c7373b6c97
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pes
+id: taxonomy_term.pes.name
+field_name: name
+entity_type: taxonomy_term
+bundle: pes
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

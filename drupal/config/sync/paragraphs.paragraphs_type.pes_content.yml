@@ -1,0 +1,10 @@
+uuid: 62d6f03d-9ebb-46e9-91d0-e831319c87c9
+langcode: cs
+status: true
+dependencies: {  }
+id: pes_content
+label: 'PES Obsah'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

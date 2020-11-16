@@ -1,0 +1,8 @@
+uuid: ea33838e-bd07-47e1-b966-6f8ce37164f7
+langcode: cs
+status: true
+dependencies: {  }
+name: PES
+vid: pes
+description: 'Protiepidemický systém'
+weight: 0
