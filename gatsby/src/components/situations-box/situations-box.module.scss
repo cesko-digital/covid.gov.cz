@@ -1,3 +1,13 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .situations {
   border-top: 1px solid rgba(#bfbfbf, 30%);
+
+  // desktop
+  @include media-breakpoint-up(md) {
+    border-top: none;
+  }
 }
