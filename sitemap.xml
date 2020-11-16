@@ -262,6 +262,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/state-emergency</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/how-does-tracing-work</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/penalties</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/pes-anti-epidemic-system-czech-republic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/parents</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/parents/psychological-help-parents</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/parents/playgrounds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -563,7 +564,6 @@
 <url> <loc>https://covid.gov.cz/situace/skolstvi/knihovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/jsem-ucitel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/prezije-koronavirus-na-predmetech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/karantena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/izolace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -586,6 +586,7 @@
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/nouzovy-stav</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/jak-funguje-trasovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/sankce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/psychologicka-pomoc-rodicum</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/detska-hriste-detske-koutky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -743,4 +744,6 @@
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/policii-zajisteny-cizinec-strpi-provedeni-pcr-testu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-dopravcum-neumoznit-cestu-cestujicim-s-povinnosti-vyplnit-prijezdovy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-volneho-pohybu-osob-ktere-prijely-ze-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/hledat/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
