@@ -6,6 +6,7 @@ import Button from '../button';
 
 import styles from './search-box.module.scss';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
+import useMobile from '@/hooks/useMobile';
 
 type IProps = {
   initialValue?: string;
@@ -15,6 +16,7 @@ const SearchBox: React.FC<IProps> = ({ initialValue }) => {
   const { t } = useTranslation();
   const [searchValue, setSearchValue] = useState(initialValue ?? '');
   const currentLanguage = useCurrentLanguage();
+  const isMobile = useMobile();
 
   const navigateToSearchResults = () => {
     if (currentLanguage === 'cs') {
@@ -43,7 +45,7 @@ const SearchBox: React.FC<IProps> = ({ initialValue }) => {
           styles.searchBoxInput,
           'form-control search__input',
         )}
-        placeholder={t('search_placeholder')}
+        placeholder={isMobile ? t('search_cta') : t('search_placeholder')}
         onChange={(e) => setSearchValue(e.target.value)}
         value={searchValue}
         onKeyDown={keyDownHandler}
