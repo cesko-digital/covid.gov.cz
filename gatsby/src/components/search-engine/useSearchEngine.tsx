@@ -100,6 +100,10 @@ const useSearchEngine = () => {
   const handleSearch = (term: string) => {
     if (data) {
       const results = (miniSearch.search(term) as Result[])
+        .filter((result) => {
+          const hasArea = dataById[result.id].relationships?.area;
+          return Boolean(hasArea);
+        })
         .map((result) => ({
           ...result,
           type: dataById[result.id].__typename,
