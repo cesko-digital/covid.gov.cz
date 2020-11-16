@@ -335,11 +335,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/services-and-religious-gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/visit-churchsynagoguemoque</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/confessions-and-individual-spiritual-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/co-je-pes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/co-je-index-rizika-jak-se-pocita</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/uvolnovani-zprisnovani-opatreni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/pusobnost-pes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -567,6 +562,7 @@
 <url> <loc>https://covid.gov.cz/situace/skolstvi/knihovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/jsem-ucitel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/prezije-koronavirus-na-predmetech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/karantena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/izolace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
