@@ -22,7 +22,7 @@ const SearchPanel: React.FC<IProps> = ({ resultsTotal, initialValue }) => {
           styles.wrapper,
         )}
       >
-        <Col col={12} colMd={6}>
+        <Col col={12} colMd={6} colXl={5}>
           <h1 className={styles.title}>Výsledky vyhledávání</h1>
           <SearchBox initialValue={initialValue} />
           {Boolean(resultsTotal) && (

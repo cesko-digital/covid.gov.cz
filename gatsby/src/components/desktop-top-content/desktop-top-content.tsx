@@ -13,7 +13,7 @@ const DesktopTopContent: React.FC = () => {
         'align-items-center',
       )}
     >
-      <Col col={12} colMd={6} colLg={4} colXl={3} className="mt-3 mb-3">
+      <Col col={12} colMd={6} colXl={5} className="mt-3 mb-3">
         <SearchBox />
       </Col>
     </div>
