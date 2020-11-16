@@ -24,36 +24,36 @@
       display: none;
     }
   }
-}
 
-.search-results-title {
-  font-size: 23px;
-  font-weight: 500;
-  line-height: (21/18);
-  margin-bottom: 0.9rem;
-}
-
-.search-results-link {
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  &:hover,
-  &:focus,
-  &:visited:hover,
-  &:visited:focus {
-    color: $theme-yellow !important;
+  h3 {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: (21/18);
+    margin-bottom: 0.9rem;
   }
-}
 
-.search-results-desc {
-  margin-bottom: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &:hover,
+    &:focus,
+    &:visited:hover,
+    &:visited:focus {
+      color: $theme-yellow !important;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 }
 
 .searchResultsCategoryWrapper {

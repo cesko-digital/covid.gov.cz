@@ -20,8 +20,8 @@ const SearchResults: React.FC<Props> = ({ results }) => {
           <div key={result.id} className={styles.resultWrapper}>
             <Row>
               <Col col={12} colMd={10}>
-                <h3 className={styles.searchResultsTitle}>
-                  <a href={result.path} className={styles.searchResultsLink}>
+                <h3>
+                  <a href={result.path}>
                     {result.title}
                     <KeyboardArrowRight
                       style={{ fontSize: 26 }}
@@ -32,9 +32,7 @@ const SearchResults: React.FC<Props> = ({ results }) => {
                     />
                   </a>
                 </h3>
-                <p className={styles.searchResultsDesc}>
-                  {sanitizeHtml(result.content, { allowedTags: [] })}
-                </p>
+                <p>{sanitizeHtml(result.content, { allowedTags: [] })}</p>
               </Col>
               <Col colMd={2}>
                 <Button
