@@ -24,6 +24,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
     name: situation.title,
     path: situation.path.alias,
     isActive: situation.path.alias === pageContext.slug,
+    theme: 'blue',
   }));
   const { t } = useTranslation();
   return (
@@ -37,10 +38,16 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         htmlLanguage={pageContext.langCode}
       />
       <SchemaComp
-        datePublished={data.situation.valid_from}
+        datePublished={
+          data.situation.valid_from
+            ? data.situation.valid_from
+            : data.situation.created
+        }
         dateModified={data.situation.changed}
         title={data.situation.title}
-        langCode={pageContext.langCode}
+        langCode={
+          pageContext.langCode ? pageContext.langCode : data.situation.langcode
+        }
         isBlogPost
         description={data.situation.meta_description}
         breadcrumbItems={[
@@ -55,6 +62,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           },
           data.situation.title,
         ]}
+        questions_answers={data.situation.questions_answers}
       />
       <Container>
         <div className="pt-1">
@@ -75,8 +83,10 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           />
         </div>
         <DesktopLeftMenuLayout
+          theme="blue"
           menu={
             <CategoryItemList
+              theme="blue"
               items={relatedSituations}
               linkBack={{
                 slug: pageContext.listSlug,

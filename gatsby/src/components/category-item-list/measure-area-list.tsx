@@ -7,13 +7,14 @@ import { useTranslation } from '../i18n';
 
 interface IProps {
   data: IMeasureAreaFragment[];
+  theme: 'white' | 'blue';
 }
 
-const MeasureAreaList: React.FC<IProps> = ({ data }) => {
+const MeasureAreaList: React.FC<IProps> = ({ data, theme }) => {
   const location = useLocation();
   const { t } = useTranslation();
 
-  const listItems = data
+  const listItems: React.ComponentProps<typeof CategoryItemList>['items'] = data
     .filter(({ relationships }) => relationships.measure !== null)
     .map(({ id, name, path, relationships }) => ({
       id,
@@ -21,8 +22,15 @@ const MeasureAreaList: React.FC<IProps> = ({ data }) => {
       path: path.alias,
       iconCode: relationships.icon?.code,
       isActive: path.alias === location.pathname,
+      theme,
     }));
-  return <CategoryItemList items={listItems} title={t('current_measures')} />;
+  return (
+    <CategoryItemList
+      theme={theme}
+      items={listItems}
+      title={t('current_measures')}
+    />
+  );
 };
 
 export const query = graphql`

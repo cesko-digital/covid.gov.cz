@@ -1,3 +1,5 @@
+export const box: string;
+export const wrapper: string;
 export const guideItemTitle: string;
 export const guideItemTitleBlue: string;
 export const guideItemIcon: string;

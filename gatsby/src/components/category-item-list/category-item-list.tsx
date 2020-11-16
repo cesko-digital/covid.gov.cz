@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import classNames from 'classnames';
 import styles from './category-item-list.module.scss';
 import CategoryItem from '../category-item/category-item';
 import Link from '@/components/link';
@@ -14,6 +15,7 @@ type Props = {
     slug: string;
   };
   items: React.ComponentProps<typeof CategoryItem>[];
+  theme: 'white' | 'blue';
 };
 
 const makeFirstWordBold = (sentence: string) =>
@@ -29,6 +31,7 @@ const CategoryItemList: FC<Props> = ({
   title,
   titleIconCode,
   linkBack,
+  theme,
 }) => {
   const currentLanguage = useCurrentLanguage();
   const { t } = useTranslation();
@@ -38,7 +41,13 @@ const CategoryItemList: FC<Props> = ({
   const styledTitle = makeFirstWordBold(title);
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={classNames({
+        [styles.wrapper]: true,
+        [styles.whiteTheme]: theme === 'white',
+        [styles.blueTheme]: theme === 'blue',
+      })}
+    >
       <div className={styles.header}>
         <h2>
           {titleIconCode && (
@@ -61,7 +70,7 @@ const CategoryItemList: FC<Props> = ({
         )}
       </div>
       {items.map((item, i) => (
-        <CategoryItem key={`${item.iconCode}${i}`} {...item} />
+        <CategoryItem theme={theme} key={`${item.iconCode}${i}`} {...item} />
       ))}
     </div>
   );

@@ -53,7 +53,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
         <Headline>{t('current_measures_overview')}</Headline>
       </Container>
       <Container className="mt-3">
-        <MeasureAreaList data={data.allMeasureType.nodes} />
+        <MeasureAreaList theme="white" data={data.allMeasureType.nodes} />
       </Container>
     </Layout>
   );
