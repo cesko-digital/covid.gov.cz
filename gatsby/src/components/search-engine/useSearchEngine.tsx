@@ -106,7 +106,6 @@ const useSearchEngine = () => {
           area: dataById[result.id].relationships?.area,
         }))
         .filter((result) => result.langcode === currentLanguage);
-      console.log({ miniSearch, results });
       setResults(results);
     }
   };

@@ -25,7 +25,6 @@ const SearchBox: React.FC<IProps> = ({ initialValue }) => {
   };
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    console.log(event.key);
     if (event.key === 'Enter') {
       navigateToSearchResults();
     }
