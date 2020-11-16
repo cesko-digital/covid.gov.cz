@@ -42,11 +42,10 @@ export const SchemaComp: React.FC<IProps> = ({
     currentLanguage !== 'cs' ? `/${currentLanguage}/` : '/'
   }`;
 
-  const baseSchema = [
+  const baseSchema: Array<Object> = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      '@id': websiteUrl,
       url: websiteUrl,
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
@@ -106,16 +105,16 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
-  const faqList = questions_answers?.map((questions_answer) => ({
+  const faqList = questions_answers?.map((question_answer) => ({
     '@type': 'Question',
-    name: questions_answer.question,
+    name: question_answer.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: questions_answer.value,
+      text: question_answer.value,
     },
   }));
 
-  const schema =
+  const schema: Array<Object> =
     isBlogPost || isBlogList || isSpecialList
       ? [
           ...baseSchema,
@@ -124,41 +123,47 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
-          isBlogPost && faqList !== null
-            ? {
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: faqList,
-              }
-            : '',
-          isBlogPost
-            ? {
-                '@context': 'http://schema.org',
-                '@type': 'BlogPosting',
-                mainEntityOfPage: {
-                  '@type': 'WebPage',
-                  '@id': url,
-                },
-                headline: title,
-                image: `${BASE_URL}/images/ogimage.png`,
-                datePublished,
-                dateModified,
-                publisher: {
-                  '@type': 'Organization',
-                  url: 'https://gov.cz',
-                  logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
-                  name: 'Gov.cz',
-                },
-                author: {
-                  '@type': 'Organization',
-                  url: 'https://gov.cz',
-                  logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
-                  name: 'Gov.cz',
-                },
-              }
-            : '',
         ]
       : baseSchema;
+
+  if (isBlogPost && typeof faqList !== 'undefined') {
+    if (faqList.length > 0) {
+      schema.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        name: title,
+        mainEntity: faqList,
+      });
+    }
+  }
+
+  if (isBlogPost) {
+    schema.push({
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': url,
+        inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
+      },
+      headline: title,
+      image: `${BASE_URL}/images/ogimage.png`,
+      datePublished,
+      dateModified,
+      publisher: {
+        '@type': 'Organization',
+        url: 'https://gov.cz',
+        logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
+        name: 'Gov.cz',
+      },
+      author: {
+        '@type': 'Organization',
+        url: 'https://gov.cz',
+        logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
+        name: 'Gov.cz',
+      },
+    });
+  }
 
   const ogTitle = isHomePage ? title : `${title} · ${t('covid_portal')}`;
 
