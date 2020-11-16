@@ -134,6 +134,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/tourism-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/cross-border-workers-business-trips-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/study-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/foreigners/partners-czechs-and-eu-citizens-living-czech-republic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-new-years-celebrations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-new-years-celebrations/outdoor-events</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-new-years-celebrations/meeting</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -452,11 +453,11 @@
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/uzavreni-registrovaneho-partnerstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/cizinci-zijici-na-uzemi-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/cizinci/partneri-cechu-obcanu-eu-zijicich-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/moznosti-povinnosti-cizincu-pri-vstupu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/turistika-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/preshranicni-pracovnici-obchodni-pracovni-cesty-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/studovani-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/cizinci/partneri-cechu-obcanu-eu-zijicich-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/novy-rok</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/novy-rok/venkovni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/novy-rok/setkavani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
