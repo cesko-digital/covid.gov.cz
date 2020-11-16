@@ -3,7 +3,6 @@ import { navigate } from 'gatsby';
 import classnames from 'classnames';
 
 import Button from '../button';
-import GovIcon from '../gov-icon';
 
 import styles from './search-box.module.scss';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
