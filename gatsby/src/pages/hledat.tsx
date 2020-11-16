@@ -19,7 +19,7 @@ const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
   const location = useLocation();
   const { t } = useTranslation();
 
-  const { q: searchValue } = queryString.parse(location.search) as {
+  const { q: searchValue = '' } = queryString.parse(location.search) as {
     q: string;
   };
 
