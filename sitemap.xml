@@ -336,6 +336,10 @@
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/visit-churchsynagoguemoque</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/confessions-and-individual-spiritual-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/co-je-pes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/co-je-index-rizika-jak-se-pocita</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/uvolnovani-zprisnovani-opatreni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/pes-protiepidemicky-system-cr/pusobnost-pes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -682,7 +686,6 @@
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/foreigner-detained-police-obliged-undergo-pcr-test</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/protective-measure-allowing-carrier-condition-traveling-czech-republic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/ban-free-movement-people-arriving-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/zakaz-maloobchodniho-prodeje-poskytovani-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-oteviraci-doby-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
