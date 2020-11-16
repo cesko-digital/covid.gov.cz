@@ -62,7 +62,7 @@ const SearchResults: React.FC<Props> = ({ results }) => {
                 <Button
                   href={result.path}
                   variant="outline-yellow"
-                  text="Detail"
+                  text={t('detail')}
                   className={styles.linkButton}
                 />
               </Col>

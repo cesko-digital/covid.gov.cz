@@ -52,7 +52,7 @@ const SearchBox: React.FC<IProps> = ({ initialValue }) => {
         onClick={navigateToSearchResults}
         variant="yellow"
         className={classnames(styles.searchButton, 'search__button')}
-        text="Hledat"
+        text={t('search_button')}
       />
     </div>
   );
