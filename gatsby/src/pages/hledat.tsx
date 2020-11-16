@@ -9,6 +9,7 @@ import SearchPanel from '@/components/search-panel/search-panel';
 import { Helmet } from 'react-helmet';
 import SearchResultsCategory from '@/components/search-results/search-results-category';
 import SearchResultsNotFound from '@/components/search-results/search-results-not-found';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   pageContext: ISitePageContext;
@@ -16,6 +17,7 @@ interface IProps {
 
 const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   const { q: searchValue } = queryString.parse(location.search) as {
     q: string;
@@ -34,9 +36,10 @@ const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
   const foundMeasures = results.filter((item) => item.type === 'measure');
   const foundSituations = results.filter((item) => item.type === 'situation');
 
+  const title = `"${searchValue}" – ${t('search_button').toLowerCase()}`;
   return (
     <Layout pageContext={pageContext}>
-      <Helmet title={`"${searchValue}" - hledat | COVID PORTAL`} />
+      <Helmet title={`${title} | COVID PORTAL`} />
       <SearchPanel resultsTotal={results.length} initialValue={searchValue} />
       <Container>
         {hasResults ? (
