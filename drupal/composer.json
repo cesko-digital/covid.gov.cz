@@ -43,6 +43,7 @@
     "drupal/sqlsrv": "^4.0.3",
     "drupal/userprotect": "^1.1",
     "drush/drush": "^10.3",
+    "predis/predis": "^1.1",
     "vlucas/phpdotenv": "^5.1",
     "webflo/drupal-finder": "^1.2"
   },
