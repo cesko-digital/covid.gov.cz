@@ -1,4 +1,5 @@
 import * as path from 'path';
+
 const config = {
   siteMetadata: {
     siteUrl: `https://covid.gov.cz`,

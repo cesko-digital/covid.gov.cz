@@ -49,7 +49,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         isHomePage
       />
       <Helmet title={t('homepage_meta_title')} />
-      <DesktopTopContent title={t('header_headline')} showSearch={false} />
+      <DesktopTopContent />
       <Container className="pt-2">
         {situation_items?.length ? (
           <Guide

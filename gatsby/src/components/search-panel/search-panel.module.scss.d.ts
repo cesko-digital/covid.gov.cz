@@ -1,3 +1,3 @@
 export const wrapper: string;
 export const title: string;
-export const subtitle: string;
+export const resultsTotal: string;

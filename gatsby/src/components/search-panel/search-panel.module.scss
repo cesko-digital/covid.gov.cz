@@ -4,28 +4,31 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .wrapper {
-  margin: 36px 0;
   // desktop
   @include media-breakpoint-up(md) {
-    margin: 64px 0;
-  }
-  // desktop
-  @include media-breakpoint-up(lg) {
-    margin: 128px 0;
+    margin: 56px 0;
   }
 }
 
 .title {
-  color: #fff;
-  font-weight: 300;
-  font-size: 40px;
+  margin-top: 16px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  // desktop
+  @include media-breakpoint-up(md) {
+    font-size: 40px;
+    margin-top: 30px;
+  }
 }
 
-.subtitle {
-  color: #fff;
+.resultsTotal {
   text-align: center;
-  font-weight: 500;
   font-size: 20px;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  color: white;
+  margin: 20px 0;
+
+  span {
+    color: $theme-yellow;
+  }
 }

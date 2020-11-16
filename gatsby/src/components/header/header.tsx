@@ -117,7 +117,6 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                     </ul>
                   </div>
                 </Col>
-                {/* SEARCH */}
               </Row>
             </Col>
             {/* MOBILE NAV */}

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 // @ts-ignore
@@ -16,7 +16,6 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from '@/components/i18n';
 
 interface IProps {
-  children: ReactElement[];
   pageContext: ISitePageContext;
 }
 
