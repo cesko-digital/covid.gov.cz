@@ -42,6 +42,10 @@ export const SchemaComp: React.FC<IProps> = ({
     currentLanguage !== 'cs' ? `/${currentLanguage}/` : '/'
   }`;
 
+  const websiteUrlWithoutTrailSlash = websiteUrl.endsWith('/')
+    ? websiteUrl.slice(0, -1)
+    : websiteUrl;
+
   const baseSchema: Array<Object> = [
     {
       '@context': 'http://schema.org',
@@ -66,16 +70,24 @@ export const SchemaComp: React.FC<IProps> = ({
     breadcrumbItems.forEach(
       (breadcrumbItem: { url: string; title: string }) => {
         if (typeof breadcrumbItem !== 'string') {
-          breadcrumbItemsList.push({
-            '@type': 'ListItem',
-            position: breadcrumbItemsListIter,
-            item: {
-              '@id': `${
-                websiteUrl.endsWith('/') ? websiteUrl.slice(0, -1) : websiteUrl
-              }${breadcrumbItem.url}`,
-              name: breadcrumbItem.title,
-            },
-          });
+          if (breadcrumbItemsListIter < breadcrumbItems.length) {
+            breadcrumbItemsList.push({
+              '@type': 'ListItem',
+              position: breadcrumbItemsListIter,
+              item: {
+                '@id': `${websiteUrlWithoutTrailSlash}${breadcrumbItem.url}`,
+                name: breadcrumbItem.title,
+              },
+            });
+          } else {
+            breadcrumbItemsList.push({
+              '@type': 'ListItem',
+              position: breadcrumbItemsListIter,
+              item: {
+                '@id': `${websiteUrlWithoutTrailSlash}${breadcrumbItem.url}`,
+              },
+            });
+          }
           breadcrumbItemsListIter++;
         }
       },
@@ -86,7 +98,6 @@ export const SchemaComp: React.FC<IProps> = ({
         position: breadcrumbItemsListIter++,
         item: {
           '@id': url,
-          name: title,
         },
       });
     }
@@ -96,7 +107,6 @@ export const SchemaComp: React.FC<IProps> = ({
       position: breadcrumbItemsListIter,
       item: {
         '@id': url,
-        name: title,
       },
     });
   }
@@ -147,7 +157,11 @@ export const SchemaComp: React.FC<IProps> = ({
         inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
       },
       headline: title,
-      image: `${BASE_URL}/images/ogimage.png`,
+      image: [
+        `${BASE_URL}/images/ogimage-1x1.png`,
+        `${BASE_URL}/images/ogimage-4x3.png`,
+        `${BASE_URL}/images/ogimage-16x9.png`,
+      ],
       datePublished,
       dateModified,
       publisher: {
