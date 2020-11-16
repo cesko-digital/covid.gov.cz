@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './search-results.module.scss';
 import SearchResults from './search-results';
 import Button from '../button';
@@ -17,6 +17,11 @@ const SearchResultsCategory: React.FC<Props> = ({
   searchValue,
 }) => {
   const [numberOfItems, setNumberOfItems] = useState(PAGE_SIZE);
+
+  useEffect(() => {
+    setNumberOfItems(PAGE_SIZE);
+  }, [results.length]);
+
   const getTitle = () => {
     if (type === 'measure') {
       return `“${searchValue}” v aktuálních opatřeních ${
@@ -37,15 +42,16 @@ const SearchResultsCategory: React.FC<Props> = ({
   const getMoreText = () => {
     const noOfItems = results.length < PAGE_SIZE ? results.length : PAGE_SIZE;
     if (type === 'measure') {
-      return `Dalších ${noOfItems} životních situací`;
+      return `Dalších ${noOfItems} aktuálních opatření`;
     }
     if (type === 'situation') {
-      return `Dalších ${noOfItems} aktuálních opatření`;
+      return `Dalších ${noOfItems} životních situací`;
     }
   };
 
   const resultsToDisplay = results.slice(0, numberOfItems);
   const hasResultsToLoad = Boolean(results.length - resultsToDisplay.length);
+
   return (
     <div className={styles.searchResultsCategoryWrapper}>
       <h1>{getTitle()}</h1>

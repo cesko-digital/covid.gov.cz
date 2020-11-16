@@ -32,7 +32,7 @@
     margin-bottom: 0.9rem;
   }
 
-  a {
+  .titleLink {
     text-decoration: none;
     display: flex;
     justify-content: space-between;
@@ -44,6 +44,10 @@
     &:visited:focus {
       color: $theme-yellow !important;
     }
+  }
+
+  .breadcrumbWrapper {
+    margin: 16px 0;
   }
 
   p {

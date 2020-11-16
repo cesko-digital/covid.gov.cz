@@ -16,9 +16,12 @@ export const query = graphql`
           __typename
           id
           relationships {
-            type: situation_type {
+            area: situation_type {
               id
               name
+              path {
+                alias
+              }
             }
           }
         }
@@ -30,9 +33,12 @@ export const query = graphql`
           __typename
           id
           relationships {
-            type: measure_type {
+            area: measure_type {
               id
               name
+              path {
+                alias
+              }
             }
           }
         }
@@ -48,6 +54,12 @@ export type IndexedResult = {
   path: string;
   langcode: string;
   type: string;
+  area?: {
+    name: string;
+    path?: {
+      alias?: string;
+    };
+  };
 };
 
 export type Result = IndexedResult & SearchResult;
@@ -91,6 +103,7 @@ const useSearchEngine = () => {
         .map((result) => ({
           ...result,
           type: dataById[result.id].__typename,
+          area: dataById[result.id].relationships?.area,
         }))
         .filter((result) => result.langcode === currentLanguage);
       console.log({ miniSearch, results });
