@@ -9,6 +9,7 @@ import Col from '../col';
 import Button from '../button';
 import { useTranslation } from '../i18n';
 import Breadcrumb from '../breadcrumb';
+import Link from '../link';
 
 interface Props {
   results: Result[];
@@ -42,7 +43,7 @@ const SearchResults: React.FC<Props> = ({ results }) => {
             <Row>
               <Col col={12} colMd={10}>
                 <h3>
-                  <a href={result.path} className={styles.titleLink}>
+                  <Link to={result.path} className={styles.titleLink}>
                     {result.title}
                     <KeyboardArrowRight
                       style={{ fontSize: 26 }}
@@ -51,7 +52,7 @@ const SearchResults: React.FC<Props> = ({ results }) => {
                         styles.chevronRight,
                       )}
                     />
-                  </a>
+                  </Link>
                 </h3>
                 <div className={styles.breadcrumbWrapper}>
                   <Breadcrumb items={getBreadcrumbs()} />
