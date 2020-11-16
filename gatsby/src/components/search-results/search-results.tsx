@@ -24,6 +24,19 @@ const SearchResults: React.FC<Props> = ({ results }) => {
   return (
     <>
       {results.map((result) => {
+        const getBreadcrumbs = () => {
+          const withCategory = [t('home'), getBreadcrumbCategory(result.type)];
+          const area = result.area && {
+            title: result.area?.name,
+            url: result.area?.path?.alias,
+          };
+
+          if (area) {
+            return [...withCategory, area];
+          }
+
+          return withCategory;
+        };
         return (
           <div key={result.id} className={styles.resultWrapper}>
             <Row>
@@ -41,16 +54,7 @@ const SearchResults: React.FC<Props> = ({ results }) => {
                   </a>
                 </h3>
                 <div className={styles.breadcrumbWrapper}>
-                  <Breadcrumb
-                    items={[
-                      t('home'),
-                      getBreadcrumbCategory(result.type),
-                      {
-                        title: result.area?.name,
-                        url: result.area?.path?.alias,
-                      },
-                    ]}
-                  />
+                  <Breadcrumb items={getBreadcrumbs()} />
                 </div>
                 <p>{sanitizeHtml(result.content, { allowedTags: [] })}</p>
               </Col>
