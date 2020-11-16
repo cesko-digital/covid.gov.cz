@@ -78,8 +78,20 @@
     }
   }
 
-  .resultWrapper:not(:last-child) {
+  .resultWrapper:not(:last-of-type) {
     border-bottom: solid 1px #c7d5e1;
     padding-bottom: 24px;
+  }
+}
+
+.notFoundWrapper {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  margin: 30px 0;
+
+  > h1 {
+    font-size: 26px;
+    margin: 0;
   }
 }

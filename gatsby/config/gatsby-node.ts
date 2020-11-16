@@ -71,7 +71,7 @@ const createOrGetIndex = async (node, cache, getNode) => {
     if (INDEXED_TYPES.includes(pageNode.internal.type)) {
       const doc: IndexedResult = {
         id: pageNode.id,
-        content: pageNode.content?.processed,
+        content: pageNode.content?.processed ?? pageNode.description?.processed,
         langcode: pageNode.langcode,
         path: pageNode.path?.alias,
         title: pageNode.title,

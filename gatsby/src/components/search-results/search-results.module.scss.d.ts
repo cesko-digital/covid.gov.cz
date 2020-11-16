@@ -5,3 +5,4 @@ export const searchResultsTitle: string;
 export const searchResultsLink: string;
 export const searchResultsDesc: string;
 export const searchResultsCategoryWrapper: string;
+export const notFoundWrapper: string;

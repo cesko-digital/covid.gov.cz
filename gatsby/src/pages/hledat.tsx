@@ -8,6 +8,7 @@ import useSearchEngine from '@/components/search-engine';
 import SearchPanel from '@/components/search-panel/search-panel';
 import { Helmet } from 'react-helmet';
 import SearchResultsCategory from '@/components/search-results/search-results-category';
+import SearchResultsNotFound from '@/components/search-results/search-results-not-found';
 
 interface IProps {
   pageContext: ISitePageContext;
@@ -52,7 +53,7 @@ const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
             />
           </>
         ) : (
-          <h2>Nic nenalezeno</h2>
+          <SearchResultsNotFound />
         )}
       </Container>
     </Layout>
