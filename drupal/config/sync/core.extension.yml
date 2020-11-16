@@ -45,6 +45,7 @@ module:
   path: 0
   path_alias: 0
   quick_node_clone: 0
+  redis: 0
   role_delegation: 0
   serialization: 0
   system: 0
