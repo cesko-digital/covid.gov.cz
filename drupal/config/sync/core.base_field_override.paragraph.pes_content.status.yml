@@ -1,0 +1,22 @@
+uuid: c24b7120-85cf-43f7-9638-ea124d87990c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pes_content
+id: paragraph.pes_content.status
+field_name: status
+entity_type: paragraph
+bundle: pes_content
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

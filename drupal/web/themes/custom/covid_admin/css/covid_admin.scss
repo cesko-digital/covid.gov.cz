@@ -35,13 +35,13 @@ $moderated-content--approved: rgb(153, 255, 106);
     }
 
     .moderation-state--draft {
-      background: $moderated-content--draft; 
+      background: $moderated-content--draft;
     }
     .moderation-state--needs-review {
-      background: $moderated-content--needs-review; 
+      background: $moderated-content--needs-review;
     }
     .moderation-state--approved {
-      background: $moderated-content--approved; 
+      background: $moderated-content--approved;
     }
   }
 }
@@ -52,7 +52,17 @@ $moderated-content--approved: rgb(153, 255, 106);
 
   > div + div {
     @media (min-width: 1370px) {
-      margin-left: 20px; 
+      margin-left: 20px;
     }
  }
+}
+
+.field--name-field-pes-content {
+  .paragraph-type-label {
+    display: none;
+  }
+
+  .filter-wrapper {
+    display: none;
+  }
 }
