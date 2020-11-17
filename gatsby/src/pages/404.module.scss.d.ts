@@ -1,1 +1,1 @@
-export const vh90: string;
+export const wrapper: string;
