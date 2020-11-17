@@ -6,7 +6,7 @@ import PvsIcons from 'assets/fonts/pvs-icons.woff';
 
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
+import GatsbyImage from 'gatsby-image';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -26,26 +26,14 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
       mobileImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 80) {
-            base64
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
+            ...GatsbyImageSharpFluid
           }
         }
       }
       desktopImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
-            base64
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
+          fluid(maxWidth: 2000, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -85,7 +73,7 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
         navItems={[
           { label: t('home'), to: '/' },
           { label: t('life_situations'), to: t('slug_situations') },
-          { label: t('current_measures'), to: t('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
+          { label: t('current_measures'), to: t('slug_measures') },
         ]}
       />
 
