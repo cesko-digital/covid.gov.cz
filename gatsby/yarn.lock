@@ -2681,13 +2681,6 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@wardpeet/gatsby-image-nextgen@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@wardpeet/gatsby-image-nextgen/-/gatsby-image-nextgen-0.0.2.tgz#99d2bb10afc5644c60f351a5315f23bea66a4f92"
-  integrity sha512-B3zr6k0xLSzPJ+Vm1VVOStz2J/+kCVYUKUywKF1Cg6KM+QY4yg92eVVky3sr6UJokqYrwPCPw+eAwba6KeSwcQ==
-  dependencies:
-    prop-types "^15.7.2"
-
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"

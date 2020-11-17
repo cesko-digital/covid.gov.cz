@@ -31,7 +31,6 @@
     "@types/jest": "^26.0.15",
     "@types/react-helmet": "^6.1.0",
     "@types/react-test-renderer": "^16.9.3",
-    "@wardpeet/gatsby-image-nextgen": "^0.0.2",
     "classnames": "^2.2.6",
     "gatsby": "^2.24.91",
     "gatsby-plugin-catch-links": "^2.4.0",
