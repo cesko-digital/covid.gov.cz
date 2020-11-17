@@ -9,9 +9,10 @@ import { ISituationDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';
-import LinkList from '../link-list';
 import { useTranslation } from '../i18n';
 import LastUpdate from '../last-update';
+import RelatedTopics from '../related-topics/related-topics';
+import useMobile from '@/hooks/useMobile';
 
 interface IProps {
   situation: ISituationDetailFragment;
@@ -23,6 +24,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
 
   const hasFaq = Boolean(faq.length);
   const { t } = useTranslation();
+  const isMobile = useMobile();
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
   const hasRelatedSituations = Boolean(relatedSituations.length);
@@ -66,7 +68,13 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         )}
         <LastUpdate isMobile lastUpdated={situation?.last_updated} />
       </div>
-      <Container>
+      <Container className="px-sm-0 px-md-2">
+        {hasRelatedSituations && (
+          <RelatedTopics
+            variant={isMobile ? 'blue' : 'white'}
+            links={relatedSituations}
+          />
+        )}
         {hasFaq && (
           <ContentBox variant="blue" title={t('faq')} boldedTitleCount={2}>
             <Accordion
@@ -75,15 +83,6 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
                 text: item.value,
               }))}
             />
-          </ContentBox>
-        )}
-        {hasRelatedSituations && (
-          <ContentBox
-            title={t('similar_topics')}
-            boldedTitleCount={1}
-            variant="blue"
-          >
-            <LinkList links={relatedSituations} />
           </ContentBox>
         )}
       </Container>

@@ -1,17 +1,81 @@
 @import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .linkStyled {
-  margin: 1rem 0 0;
+  padding-top: 1rem;
+  margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    .chevron {
+      position: relative;
+      right: 20px;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      .chevron {
+        transition: all 0.2s;
+        right: 16px;
+      }
+    }
+  }
+}
+
+.linkStyledBlueLine {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $hr-border-color;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .linkStyledLink {
   display: flex;
   color: $theme-white;
+  align-items: center;
   justify-content: space-between;
   font-weight: 500;
   padding: 0.7rem 0 0.7rem 1.2rem;
 
+  @include media-breakpoint-up(lg) {
+    padding: 0.7rem 0;
+    text-decoration: none;
+  }
+
   // overriding complement-visited-links mixin
+  &:hover,
+  &:focus {
+    color: $theme-yellow !important;
+  }
+  &:visited {
+    color: $theme-white !important;
+
+    &:hover,
+    &:focus {
+      color: $theme-yellow !important;
+    }
+  }
+}
+
+.linkStyledLinkBlue {
+  color: $theme-blue !important;
+  // overriding complement-visited-links mixin
+  &:visited {
+    color: $theme-blue !important;
+
+    &:hover,
+    &:focus {
+      color: $theme-yellow !important;
+    }
+  }
+}
+
+.linkStyledLinkWhite {
+  // overriding complement-visited-links mixin
+  color: $theme-white !important;
   &:visited {
     color: $theme-white !important;
 

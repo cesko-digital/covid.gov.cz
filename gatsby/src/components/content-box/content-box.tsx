@@ -3,7 +3,10 @@ import classNames from 'classnames';
 import Button, { ButtonVariant } from '@/components/button';
 import Col from '@/components/col';
 
-import styles from './content-box.module.scss';
+import styles, {
+  contentBoxBlue,
+  contentBoxWhite,
+} from './content-box.module.scss';
 
 interface Props {
   title?: string;
@@ -30,12 +33,13 @@ const ContentBox: React.FC<Props> = ({
     // contentBox--white
     // contentBox--blue
     <div
-      className={classNames(
-        styles.contentBox,
-        styles[`contentBox--${variant}`],
-        noPadding && styles.contentBoxNoPadding,
-        'row',
-      )}
+      className={classNames({
+        row: true,
+        [styles.contentBox]: true,
+        [styles.contentBoxNoPadding]: noPadding,
+        [contentBoxWhite]: variant === 'white',
+        [contentBoxBlue]: variant === 'blue',
+      })}
     >
       <Col col={12}>
         {title && (
@@ -49,7 +53,7 @@ const ContentBox: React.FC<Props> = ({
         {description && (
           <p className={styles.contentBoxDescription}>{description}</p>
         )}
-        {children}
+        <div className={styles.contentBoxDescription}>{children}</div>
         {buttonText && (
           <Button
             href={buttonHref}
