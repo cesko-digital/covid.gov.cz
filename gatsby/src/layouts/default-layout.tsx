@@ -10,6 +10,7 @@ import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import { Alert } from '@/components/alert';
 import styles from './default-layout.module.scss';
 import { ISitePageContext, IDefaultLayoutQuery } from '@graphql-types';
 import { Helmet } from 'react-helmet';
@@ -88,7 +89,11 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           { label: t('current_measures'), to: t('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
         ]}
       />
-
+      {t('banner') !== 'banner' && t('banner') && (
+        <div className="position-relative my-md-2">
+          <Alert message={t('banner')} isInfo={false} />
+        </div>
+      )}
       <main className={styles.main}>
         <div className={styles.mainInner}>{children}</div>
       </main>

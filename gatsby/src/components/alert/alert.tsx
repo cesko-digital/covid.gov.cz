@@ -29,7 +29,10 @@ const Alert: React.FC<IProps> = ({
         <Col col={11} colMd={9} colLg={6}>
           <div className="d-flex align-items-center justify-content-center py-2">
             <GovIcon icon={isInfo ? 'time' : 'alert'} size={20} />
-            <span className="ml-2">{message}</span>
+            <span
+              className="ml-2"
+              dangerouslySetInnerHTML={{ __html: message }}
+            />
             {link != null ? (
               <Button variant="small-black" text="Více" href={link} />
             ) : (
