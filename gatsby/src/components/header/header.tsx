@@ -42,11 +42,11 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
 
   const languageVariants = pageContext.languageVariants || {};
 
-  const hasAlert = t('banner') !== 'banner';
+  const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
   return (
     <div>
       <div className={classes.gradient} />
-      {hasAlert && <Alert message={t('banner')} />}
+      {bannerMessage && <Alert message={bannerMessage} />}
 
       <div className={classes.header} role="banner">
         <Container>
