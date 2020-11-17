@@ -27,9 +27,14 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
     $fields = [];
 
     $fields['content'] = BaseFieldDefinition::create('text_long')
-      ->setLabel('Content')
+      ->setLabel(t('Content'))
       ->setComputed(TRUE)
-      ->setClass('\Drupal\covid\NodeComputedContent');
+      ->setClass('\Drupal\covid\NodeComputedContent')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'weight' => -5,
+      ]);
 
     return $fields;
   }
