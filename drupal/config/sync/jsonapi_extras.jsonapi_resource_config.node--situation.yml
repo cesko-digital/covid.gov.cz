@@ -64,11 +64,11 @@ resourceFields:
       id: ''
     disabled: false
   uid:
+    disabled: true
     fieldName: uid
     publicName: uid
     enhancer:
       id: ''
-    disabled: false
   title:
     fieldName: title
     publicName: title
@@ -123,6 +123,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  content:
+    fieldName: content
+    publicName: content
+    enhancer:
+      id: ''
+    disabled: false
   path:
     fieldName: path
     publicName: path
@@ -148,11 +154,11 @@ resourceFields:
     enhancer:
       id: ''
   field_content:
+    disabled: true
     fieldName: field_content
     publicName: content
     enhancer:
       id: ''
-    disabled: false
   field_faq_parser:
     disabled: true
     fieldName: field_faq_parser
@@ -177,6 +183,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_pes_content:
+    disabled: true
+    fieldName: field_pes_content
+    publicName: field_pes_content
+    enhancer:
+      id: ''
   field_questions_answers:
     fieldName: field_questions_answers
     publicName: questions_answers
@@ -195,6 +207,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_situations:
+    fieldName: field_situations
+    publicName: related_situations
+    enhancer:
+      id: ''
+    disabled: false
   field_situation_link:
     fieldName: field_situation_link
     publicName: links
@@ -210,12 +228,6 @@ resourceFields:
   field_situation_type:
     fieldName: field_situation_type
     publicName: situation_type
-    enhancer:
-      id: ''
-    disabled: false
-  field_situations:
-    fieldName: field_situations
-    publicName: related_situations
     enhancer:
       id: ''
     disabled: false

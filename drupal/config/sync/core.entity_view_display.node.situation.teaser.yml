@@ -22,6 +22,7 @@ dependencies:
     - node.type.situation
   module:
     - datetime
+    - text
     - user
 id: node.situation.teaser
 targetEntityType: node

@@ -21,7 +21,6 @@ dependencies:
     - node.type.situation
   module:
     - datetime
-    - entity_reference_revisions
     - link
     - text
     - user
@@ -30,18 +29,18 @@ targetEntityType: node
 bundle: situation
 mode: default
 content:
+  content:
+    label: above
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   content_moderation_control:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_internal_note:
     type: text_default
     weight: 12
@@ -64,15 +63,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  field_pes_content:
-    type: entity_reference_revisions_entity_view
-    weight: 13
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
   field_ref_icon:
     type: entity_reference_label
@@ -145,7 +135,9 @@ content:
     type: datetime_default
     region: content
 hidden:
+  field_content: true
   field_faq_parser: true
+  field_pes_content: true
   field_questions_answers: true
   langcode: true
   links: true
