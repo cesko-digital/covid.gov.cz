@@ -494,7 +494,7 @@
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/zasilkove-kuryrni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/autoskoly</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/e-shopy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/obchod-sluzby/veletrhy-trhy-farmarske-trhy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/obchod-sluzby/trhy-farmarske-trhy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/filmovy-prumysl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/ubytovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
