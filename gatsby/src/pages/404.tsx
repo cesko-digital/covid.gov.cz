@@ -19,7 +19,7 @@ const PageNotFound: React.FC<IProps> = ({ pageContext }) => {
     <Layout pageContext={pageContext}>
       <Helmet title={`${t('page_not_found')} | COVID PORTAL`} />
       <Container>
-        <Row className="flex-column mt-5" alignItems="center" justify="center">
+        <Row className="flex-column my-5" alignItems="center" justify="center">
           <Col
             col={12}
             colSm={8}
