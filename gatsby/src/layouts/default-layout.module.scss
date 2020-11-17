@@ -58,6 +58,7 @@
       object-fit: cover !important;
       position: relative !important;
       top: 0;
+      opacity: 1 !important;
 
       @include media-breakpoint-up(xl) {
         width: 100% !important;
