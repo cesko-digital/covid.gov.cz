@@ -123,6 +123,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  content:
+    disabled: true
+    fieldName: content
+    publicName: content
+    enhancer:
+      id: ''
   path:
     fieldName: path
     publicName: path
