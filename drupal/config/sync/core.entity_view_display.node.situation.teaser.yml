@@ -29,6 +29,13 @@ targetEntityType: node
 bundle: situation
 mode: teaser
 content:
+  content:
+    label: above
+    weight: -5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_meta_description:
     type: basic_string
     weight: 1
