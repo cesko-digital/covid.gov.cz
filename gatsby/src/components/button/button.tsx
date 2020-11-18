@@ -42,8 +42,8 @@ type AnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement> &
 
 // Input/output options
 type Overload = {
-  (props: ButtonProps): JSX.Element;
-  (props: AnchorProps): JSX.Element;
+  (props: ButtonProps): React.ReactElement;
+  (props: AnchorProps): React.ReactElement;
 };
 
 // Guard to check if href exists in props

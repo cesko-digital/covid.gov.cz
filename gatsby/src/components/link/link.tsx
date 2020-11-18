@@ -11,7 +11,7 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   noLanguageCodePrefix?: boolean;
 }
 
-const ABSOLUTE_URL_REGEX = new RegExp('^(?:[a-z]+:)?//', 'i');
+const ABSOLUTE_URL_REGEX_PATTERN = /^(?:[a-z]+:)?\/\//;
 
 const Link: React.FC<Props> = ({
   children,
@@ -28,7 +28,7 @@ const Link: React.FC<Props> = ({
   const currentLanguage = useCurrentLanguage();
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
-    return ABSOLUTE_URL_REGEX.test(to);
+    return new RegExp(ABSOLUTE_URL_REGEX_PATTERN).test(to);
   }, [to]);
 
   const commonProps = {

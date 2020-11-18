@@ -1,8 +1,8 @@
 import { useTheme, useMediaQuery, Options } from '@material-ui/core';
 
 const useMobile = (
-  key: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm',
   options?: Options,
+  key: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm',
 ): boolean => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down(key), options);
