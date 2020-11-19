@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.pes_content.field_content
     - field.field.paragraph.pes_content.field_pes
+    - field.field.paragraph.pes_content.field_qa
     - paragraphs.paragraphs_type.pes_content
   module:
     - text
@@ -27,5 +28,12 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_qa:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
 hidden: {  }
