@@ -108,7 +108,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/room-desinfection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/desinfection-personal-belongings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-velvet-revolution-remembrance-day</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/current-events-velvet-revolution-remembrance-day/struggle-freedom-and-democracy-day</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/turiste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zdravotnicke-obory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/household-and-housing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -434,7 +433,6 @@
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/dezinfekce-osobnich-veci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nadchazejici-oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/nadchazejici-oslavy-17-listopadu/oslavy-17-listopadu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/prevence-domaciho-nasili</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/souziti-v-dobe-nouzoveho-stavu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
