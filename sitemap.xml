@@ -172,6 +172,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/markets-farmers-markets</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/theatre-film-and-other-artistic-performances</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/accommodations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/shops-and-services/photographers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-three-kings-day-parade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/current-events-three-kings-day-parade/three-kings-day-parade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -495,6 +496,7 @@
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/trhy-farmarske-trhy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/filmovy-prumysl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/ubytovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/obchod-sluzby/fotografove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/tri-kralove/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
