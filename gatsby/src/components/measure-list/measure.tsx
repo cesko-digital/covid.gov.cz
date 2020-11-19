@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './measure.module.scss';
 import Button from '@/components/button';
 import Time from '@/components/time';
-import Link from '@/components/link';
 import { useTranslation } from '@/components/i18n';
 
 interface Props {
@@ -42,13 +41,12 @@ const Measure: React.FC<Props> = ({
             )}
           </div>
         </div>
-        <Link to={link} title={t('more')}>
-          <Button
-            text={t('more')}
-            variant="outline-yellow"
-            className={styles.measureButton}
-          />
-        </Link>
+        <Button
+          text={t('more')}
+          variant="outline-yellow"
+          className={styles.measureButton}
+          href={link}
+        />
       </div>
     </div>
   );
