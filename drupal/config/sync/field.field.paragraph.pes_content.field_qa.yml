@@ -1,0 +1,21 @@
+uuid: 08cabad3-e910-498a-9005-58aa7f3a3935
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_qa
+    - paragraphs.paragraphs_type.pes_content
+  module:
+    - covid
+id: paragraph.pes_content.field_qa
+field_name: field_qa
+entity_type: paragraph
+bundle: pes_content
+label: 'Otázky a odpovědi'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: covid_question_answer
