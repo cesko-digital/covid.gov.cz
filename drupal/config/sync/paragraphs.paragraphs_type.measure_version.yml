@@ -1,0 +1,10 @@
+uuid: c1c48463-169f-42c6-b096-35b7de115347
+langcode: cs
+status: true
+dependencies: {  }
+id: measure_version
+label: Verze
+icon_uuid: null
+icon_default: null
+description: 'Version of a measure in time.'
+behavior_plugins: {  }

@@ -1,0 +1,22 @@
+uuid: 828063cc-3a67-47df-bab5-c64ff39f2ea3
+langcode: cs
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.measure_version
+id: paragraph.measure_version.status
+field_name: status
+entity_type: paragraph
+bundle: measure_version
+label: Zveřejněno
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Zapnuto
+  off_label: Vypnuto
+field_type: boolean

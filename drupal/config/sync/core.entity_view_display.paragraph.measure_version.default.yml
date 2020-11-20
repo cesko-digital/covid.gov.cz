@@ -1,0 +1,57 @@
+uuid: 853c3e65-e1c3-48c4-95e1-353c266589e5
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.measure_version.field_content
+    - field.field.paragraph.measure_version.field_source
+    - field.field.paragraph.measure_version.field_valid_from
+    - field.field.paragraph.measure_version.field_valid_to
+    - paragraphs.paragraphs_type.measure_version
+  module:
+    - datetime
+    - link
+    - text
+id: paragraph.measure_version.default
+targetEntityType: paragraph
+bundle: measure_version
+mode: default
+content:
+  field_content:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_source:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_valid_from:
+    weight: 2
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 1
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

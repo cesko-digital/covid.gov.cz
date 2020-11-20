@@ -13,9 +13,11 @@ dependencies:
     - field.field.node.measure.field_source
     - field.field.node.measure.field_valid_from
     - field.field.node.measure.field_valid_to
+    - field.field.node.measure.field_versions
     - node.type.measure
   module:
     - datetime
+    - entity_reference_revisions
     - link
     - text
     - user
@@ -24,6 +26,13 @@ targetEntityType: node
 bundle: measure
 mode: default
 content:
+  content:
+    label: above
+    weight: -5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   content_moderation_control:
     weight: 0
     region: content
@@ -113,6 +122,15 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_versions:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
 hidden:
   langcode: true
