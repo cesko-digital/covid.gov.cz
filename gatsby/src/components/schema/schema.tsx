@@ -42,11 +42,14 @@ export const SchemaComp: React.FC<IProps> = ({
     currentLanguage !== 'cs' ? `/${currentLanguage}/` : '/'
   }`;
 
-  const baseSchema = [
+  const websiteUrlWithoutTrailSlash = websiteUrl.endsWith('/')
+    ? websiteUrl.slice(0, -1)
+    : websiteUrl;
+
+  const baseSchema: Array<Object> = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      '@id': websiteUrl,
       url: websiteUrl,
       name: langCode === 'en' ? 'Covid Portal' : 'Covid Portál',
       inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
@@ -67,16 +70,24 @@ export const SchemaComp: React.FC<IProps> = ({
     breadcrumbItems.forEach(
       (breadcrumbItem: { url: string; title: string }) => {
         if (typeof breadcrumbItem !== 'string') {
-          breadcrumbItemsList.push({
-            '@type': 'ListItem',
-            position: breadcrumbItemsListIter,
-            item: {
-              '@id': `${
-                websiteUrl.endsWith('/') ? websiteUrl.slice(0, -1) : websiteUrl
-              }${breadcrumbItem.url}`,
-              name: breadcrumbItem.title,
-            },
-          });
+          if (breadcrumbItemsListIter < breadcrumbItems.length) {
+            breadcrumbItemsList.push({
+              '@type': 'ListItem',
+              position: breadcrumbItemsListIter,
+              item: {
+                '@id': `${websiteUrlWithoutTrailSlash}${breadcrumbItem.url}`,
+                name: breadcrumbItem.title,
+              },
+            });
+          } else {
+            breadcrumbItemsList.push({
+              '@type': 'ListItem',
+              position: breadcrumbItemsListIter,
+              item: {
+                '@id': `${websiteUrlWithoutTrailSlash}${breadcrumbItem.url}`,
+              },
+            });
+          }
           breadcrumbItemsListIter++;
         }
       },
@@ -87,7 +98,6 @@ export const SchemaComp: React.FC<IProps> = ({
         position: breadcrumbItemsListIter++,
         item: {
           '@id': url,
-          name: title,
         },
       });
     }
@@ -97,7 +107,6 @@ export const SchemaComp: React.FC<IProps> = ({
       position: breadcrumbItemsListIter,
       item: {
         '@id': url,
-        name: title,
       },
     });
   }
@@ -106,16 +115,16 @@ export const SchemaComp: React.FC<IProps> = ({
     dateModified = datePublished || null;
   }
 
-  const faqList = questions_answers?.map((questions_answer) => ({
+  const faqList = questions_answers?.map((question_answer) => ({
     '@type': 'Question',
-    name: questions_answer.question,
+    name: question_answer.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: questions_answer.value,
+      text: question_answer.value,
     },
   }));
 
-  const schema =
+  const schema: Array<Object> =
     isBlogPost || isBlogList || isSpecialList
       ? [
           ...baseSchema,
@@ -124,41 +133,51 @@ export const SchemaComp: React.FC<IProps> = ({
             '@type': 'BreadcrumbList',
             itemListElement: breadcrumbItemsList,
           },
-          isBlogPost && faqList !== null
-            ? {
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                mainEntity: faqList,
-              }
-            : '',
-          isBlogPost
-            ? {
-                '@context': 'http://schema.org',
-                '@type': 'BlogPosting',
-                mainEntityOfPage: {
-                  '@type': 'WebPage',
-                  '@id': url,
-                },
-                headline: title,
-                image: `${BASE_URL}/images/ogimage.png`,
-                datePublished,
-                dateModified,
-                publisher: {
-                  '@type': 'Organization',
-                  url: 'https://gov.cz',
-                  logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
-                  name: 'Gov.cz',
-                },
-                author: {
-                  '@type': 'Organization',
-                  url: 'https://gov.cz',
-                  logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
-                  name: 'Gov.cz',
-                },
-              }
-            : '',
         ]
       : baseSchema;
+
+  if (isBlogPost && typeof faqList !== 'undefined') {
+    if (faqList.length > 0) {
+      schema.push({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        name: title,
+        mainEntity: faqList,
+      });
+    }
+  }
+
+  if (isBlogPost) {
+    schema.push({
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': url,
+        inLanguage: langCode === 'en' ? 'en-GB' : 'cs-CZ',
+      },
+      headline: title,
+      image: [
+        `${BASE_URL}/images/ogimage-1x1.png`,
+        `${BASE_URL}/images/ogimage-4x3.png`,
+        `${BASE_URL}/images/ogimage-16x9.png`,
+      ],
+      datePublished,
+      dateModified,
+      publisher: {
+        '@type': 'Organization',
+        url: 'https://gov.cz',
+        logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
+        name: 'Gov.cz',
+      },
+      author: {
+        '@type': 'Organization',
+        url: 'https://gov.cz',
+        logo: 'https://gov.cz/images/layout/pvs-logo-mobile.svg',
+        name: 'Gov.cz',
+      },
+    });
+  }
 
   const ogTitle = isHomePage ? title : `${title} · ${t('covid_portal')}`;
 
@@ -183,6 +202,7 @@ export const SchemaComp: React.FC<IProps> = ({
       <meta name="description" content={description} />
       <meta property="og:site_name" content={t('covid_portal')} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      {process.env.GATSBY_VERCEL && <meta name="robots" content="noindex" />}
     </Helmet>
   );
 };

@@ -111,10 +111,6 @@ class TranslateForm extends FormBase {
   }
 
   protected function setTranslation(string $source, string $target, string $langcode): void {
-    if (!$target) {
-      return;
-    }
-
     $translation = $this->getTranslation($source, $langcode);
 
     if ($translation->getTarget() !== $target) {

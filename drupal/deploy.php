@@ -26,6 +26,7 @@ set('shared_dirs', [
 ]);
 
 set('writable_dirs', [
+  'drupal/web/sites/{{drupal_site}}',
   'drupal/web/sites/{{drupal_site}}/files',
   'drupal/web/sites/{{drupal_site}}/files/translations'
 ]);
@@ -72,6 +73,7 @@ task('deploy', [
   'deploy:composer',
   'deploy:shared',
   'deploy:drush',
+  'deploy:writable',
   'deploy:symlink',
   'deploy:unlock',
   'cleanup'

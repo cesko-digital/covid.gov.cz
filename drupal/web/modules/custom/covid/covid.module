@@ -1,7 +1,10 @@
 <?php
 
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
 
@@ -14,6 +17,27 @@ function covid_theme($existing, $type, $theme, $path) {
       'render element' => 'form',
     ],
   ];
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'node') {
+    $fields = [];
+
+    $fields['content'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Content'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\NodeComputedContent')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'weight' => -5,
+      ]);
+
+    return $fields;
+  }
 }
 
 /**
@@ -41,6 +65,25 @@ function covid_node_presave(NodeInterface $entity) {
       $entity->set('field_questions_answers', $values);
       $entity->set('field_faq_parser', NULL);
     }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function covid_taxonomy_term_update(EntityInterface $entity) {
+  if ($entity->bundle() === 'region') {
+    $query = Drupal::entityTypeManager()->getStorage('node')->getQuery();
+
+    $query->condition('type', 'situation');
+
+    $result = $query->execute();
+
+    $tags = array_map(function($id) {
+      return 'node:' . $id;
+    }, $result ?? []);
+
+    Cache::invalidateTags($tags);
   }
 }
 

@@ -25,11 +25,20 @@ export const useCurrentLanguage = (): LanguageKey => {
 const getTranslationFactory = (
   translationsByLanguage: TranslationsByLanguage,
   language: LanguageKey,
-) => (translationKey: string): string => {
+) => (
+  translationKey: string,
+  options: { returnNullIfNotTranslated: boolean } = {
+    returnNullIfNotTranslated: false,
+  },
+): string | null => {
   const languageTranslations = translationsByLanguage[language];
   const translationString = languageTranslations[translationKey];
 
   if (!translationString) {
+    if (options.returnNullIfNotTranslated) {
+      return null;
+    }
+
     console.error(`Translation not found for: "${translationKey}"`);
     return translationKey;
   }

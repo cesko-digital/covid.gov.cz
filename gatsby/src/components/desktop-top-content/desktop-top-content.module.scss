@@ -1,3 +1,20 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
+  margin: 36px 0;
+  // desktop
+  @include media-breakpoint-up(md) {
+    margin: 64px 0;
+  }
+  // desktop
+  @include media-breakpoint-up(lg) {
+    margin: 128px 0;
+  }
+}
+
 .title {
   color: #fff;
   font-weight: 300;

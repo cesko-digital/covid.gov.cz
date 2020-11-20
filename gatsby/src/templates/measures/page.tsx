@@ -25,6 +25,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
     name: measure.title,
     path: measure.path.alias,
     isActive: measure.path.alias === pageContext.slug,
+    theme: 'white',
   }));
 
   return (
@@ -80,8 +81,10 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
           />
         </div>
         <DesktopLeftMenuLayout
+          theme="white"
           menu={
             <CategoryItemList
+              theme="white"
               items={relatedMeasures}
               linkBack={{
                 slug: pageContext.listSlug,

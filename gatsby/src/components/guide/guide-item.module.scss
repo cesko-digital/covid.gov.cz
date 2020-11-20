@@ -1,5 +1,23 @@
 @import '../../../assets/scss/design-system/base/variables';
 
+.box {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  .clickableWrapper {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    &:hover {
+      .guide-item-btn {
+        background-color: $theme-yellow;
+      }
+    }
+  }
+}
+
 /* purgecss start ignore */
 .guide-item-title {
   color: #fff !important;
@@ -26,6 +44,8 @@
 .guide-item-btn {
   background-color: transparent;
   color: #fff !important;
+  align-self: flex-start;
+  margin-top: auto;
 
   &--blue {
     color: $theme-blue !important;

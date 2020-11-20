@@ -1,8 +1,79 @@
-.searchBox {
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
   margin: 14px 0;
+  position: relative;
+}
+
+.title {
+  margin-top: 16px;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  // desktop
+  @include media-breakpoint-up(md) {
+    font-size: 40px;
+    margin-top: 30px;
+  }
 }
 
 .searchBoxInput {
   padding: 11px 16px;
   padding-right: 42px;
+}
+
+.search__results {
+  background: $white;
+  max-height: 300px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+
+  ul {
+    margin: 0;
+
+    li {
+      margin: 0;
+
+      &:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.search__results a {
+  display: block;
+  text-decoration: none;
+  padding: 12px 16px;
+  color: black;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:visited {
+    color: black;
+  }
+
+  &.isHighlighted {
+    background-color: rgba(35, 98, 162, 0.22);
+  }
+}
+
+.searchButton {
+  padding: 8px 16px;
 }

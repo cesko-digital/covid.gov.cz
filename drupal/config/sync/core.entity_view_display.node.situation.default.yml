@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_last_updated
     - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_pes_content
     - field.field.node.situation.field_questions_answers
     - field.field.node.situation.field_ref_icon
     - field.field.node.situation.field_region
@@ -28,18 +29,18 @@ targetEntityType: node
 bundle: situation
 mode: default
 content:
+  content:
+    label: above
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   content_moderation_control:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_internal_note:
     type: text_default
     weight: 12
@@ -134,7 +135,9 @@ content:
     type: datetime_default
     region: content
 hidden:
+  field_content: true
   field_faq_parser: true
+  field_pes_content: true
   field_questions_answers: true
   langcode: true
   links: true

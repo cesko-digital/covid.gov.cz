@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 // @ts-ignore
@@ -6,7 +6,7 @@ import PvsIcons from 'assets/fonts/pvs-icons.woff';
 
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { GatsbyImage } from '@wardpeet/gatsby-image-nextgen/compat';
+import GatsbyImage from 'gatsby-image';
 
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -16,7 +16,6 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from '@/components/i18n';
 
 interface IProps {
-  children: ReactElement[];
   pageContext: ISitePageContext;
 }
 
@@ -39,7 +38,7 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
       }
       desktopImage: file(relativePath: { eq: "covid-portal-compressed.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
+          fluid(maxWidth: 2000, quality: 90) {
             base64
             aspectRatio
             src
@@ -86,7 +85,7 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
         navItems={[
           { label: t('home'), to: '/' },
           { label: t('life_situations'), to: t('slug_situations') },
-          { label: t('current_measures'), to: t('slug_measures') }, // TODO: přidat podmínku pouze pokud je na HP obsah
+          { label: t('current_measures'), to: t('slug_measures') },
         ]}
       />
 

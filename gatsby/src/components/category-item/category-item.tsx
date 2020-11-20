@@ -12,14 +12,17 @@ type Props = {
   path: string;
   iconCode?: string;
   isActive: boolean;
+  theme: 'blue' | 'white';
 };
 
-const CategoryItem: FC<Props> = ({ name, path, iconCode, isActive }) => {
+const CategoryItem: FC<Props> = ({ name, path, iconCode, isActive, theme }) => {
   return (
     <Link
       to={path}
       className={classNames(styles.categoryItem, 'py-2', {
         [styles.isActive]: isActive,
+        [styles.whiteTheme]: theme === 'white',
+        [styles.blueTheme]: theme === 'blue',
       })}
     >
       {iconCode && (

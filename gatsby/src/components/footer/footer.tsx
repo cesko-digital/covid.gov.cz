@@ -14,6 +14,25 @@ const DRUPAL_INTERNAL_IDS = {
   COPYRIGHT: '3',
 };
 
+export const query = graphql`
+  query FooterLinks {
+    allBlocks {
+      edges {
+        node {
+          drupal_internal__id
+          langcode
+          content {
+            processed
+          }
+        }
+      }
+    }
+    currentBuildDate {
+      currentDate
+    }
+  }
+`;
+
 const Footer: React.FC = () => {
   const result = useStaticQuery<IFooterLinksQuery>(query);
   const currentLanguage = useCurrentLanguage();
@@ -116,22 +135,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
-export const query = graphql`
-  query FooterLinks {
-    allBlocks {
-      edges {
-        node {
-          drupal_internal__id
-          langcode
-          content {
-            processed
-          }
-        }
-      }
-    }
-    currentBuildDate {
-      currentDate
-    }
-  }
-`;

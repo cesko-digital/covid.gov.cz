@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.situation.field_internal_note
     - field.field.node.situation.field_last_updated
     - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_pes_content
     - field.field.node.situation.field_questions_answers
     - field.field.node.situation.field_ref_icon
     - field.field.node.situation.field_region
@@ -25,6 +26,7 @@ dependencies:
     - datetime
     - field_group
     - link
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -33,6 +35,7 @@ third_party_settings:
       children:
         - group_content_content
         - group_reference
+        - group_pes
         - group_faq
         - group_meta
       parent_name: ''
@@ -85,7 +88,7 @@ third_party_settings:
         - field_faq_parser
         - field_questions_answers
       parent_name: group_content
-      weight: 22
+      weight: 23
       format_type: tab
       region: content
       format_settings:
@@ -100,7 +103,7 @@ third_party_settings:
         - field_meta_description
         - field_internal_note
       parent_name: group_content
-      weight: 23
+      weight: 24
       format_type: tab
       region: content
       format_settings:
@@ -130,6 +133,20 @@ third_party_settings:
         id: ''
         classes: field-group--flex
       label: Flex
+    group_pes:
+      children:
+        - field_pes_content
+      parent_name: group_content
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: PES
 id: node.situation.default
 targetEntityType: node
 bundle: situation
@@ -172,6 +189,25 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_pes_content:
+    type: paragraphs
+    weight: 31
+    settings:
+      title: Obsah
+      title_plural: Obsahy
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 1
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
     region: content
   field_questions_answers:
     weight: 27

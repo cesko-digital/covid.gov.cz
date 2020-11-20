@@ -8,11 +8,11 @@ import Col from '../col';
 
 import classes from './header.module.scss';
 
-import headerLogoCS from './header-logo-cs.svg';
-import headerLogoEN from './header-logo-en.svg';
+import headerLogo from './header-logo.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
+import { Alert } from '../alert';
 
 interface NavItem {
   label: string;
@@ -42,9 +42,11 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
 
   const languageVariants = pageContext.languageVariants || {};
 
+  const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
   return (
     <div>
       <div className={classes.gradient} />
+      {bannerMessage && <Alert message={bannerMessage} />}
 
       <div className={classes.header} role="banner">
         <Container>
@@ -52,11 +54,7 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
             {/* LOGO */}
             <Col col={7} colMd={3} colLg={3}>
               <Link to="/" title={'COVID PORTAL - ' + t('home')}>
-                {currentLanguage === 'cs' ? (
-                  <img src={headerLogoCS} alt="Covid Portál" />
-                ) : (
-                  <img src={headerLogoEN} alt="Covid Portal" />
-                )}
+                <img src={headerLogo} alt="Covid Portál" />
               </Link>
             </Col>
             {/* MOBILE TOGGLE */}
@@ -117,7 +115,6 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                     </ul>
                   </div>
                 </Col>
-                {/* SEARCH */}
               </Row>
             </Col>
             {/* MOBILE NAV */}

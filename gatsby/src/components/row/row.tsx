@@ -13,7 +13,7 @@ const Row: React.FC<IProps> = ({
   alignItems,
 }) => {
   const getClassNames = () => {
-    var strng = '';
+    let strng = '';
 
     if (justify) {
       strng += `justify-content-${justify} `;

@@ -7,6 +7,7 @@ import classes from './guide-item.module.scss';
 
 import Time from '@/components/time';
 import { useTranslation } from '@/components/i18n';
+import Link from '../link';
 
 interface IProps {
   title: string;
@@ -34,8 +35,16 @@ const GuideItem: React.FC<IProps> = ({
   const { t } = useTranslation();
   return (
     <>
-      <Col col={12} colSm={6} colLg={4} className="box">
-        <div className="box__inner">
+      <Col
+        col={12}
+        colSm={6}
+        colLg={4}
+        className={classNames(classes.box, 'box')}
+      >
+        <Link
+          className={classNames(classes.clickableWrapper, 'box__inner')}
+          to={buttonUrl}
+        >
           <div className="d-flex flex-row">
             {iconCode && (
               <ContentIcon
@@ -91,13 +100,12 @@ const GuideItem: React.FC<IProps> = ({
           <Button
             variant="outline-yellow"
             text={buttonText}
-            href={buttonUrl}
             title={title}
             className={classNames(classes.guideItemBtn, {
               [classes.guideItemBtnBlue]: variant === 'white',
             })}
           />
-        </div>
+        </Link>
       </Col>
     </>
   );
