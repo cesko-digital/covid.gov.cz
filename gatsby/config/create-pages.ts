@@ -257,6 +257,10 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const redirects = result.data.allRedirect.nodes;
 
   redirects.forEach((redirect) => {
-    createRedirect({fromPath: redirect.redirect_from, toPath: redirect.redirect_to, statusCode: redirect.status_code})
+    createRedirect({
+      fromPath: redirect.redirect_from,
+      toPath: redirect.redirect_to,
+      statusCode: redirect.status_code,
+    });
   });
 };

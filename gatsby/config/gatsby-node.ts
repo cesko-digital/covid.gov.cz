@@ -6,7 +6,7 @@ import removeAccents from 'remove-accents';
 import sanitizeHtml from 'sanitize-html';
 
 export { createPages } from './create-pages';
-export { createSchemaCustomization } from './alter-schema'
+export { createSchemaCustomization } from './alter-schema';
 
 const SEARCH_INDEX_ID = `MiniSearchIndex < Site`;
 const SEARCH_INDEX_TYPE = `SiteMiniSearchIndex`;
