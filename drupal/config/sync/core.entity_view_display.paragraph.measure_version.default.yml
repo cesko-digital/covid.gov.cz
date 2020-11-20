@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.measure_version.field_content
+    - field.field.paragraph.measure_version.field_pes
     - field.field.paragraph.measure_version.field_source
     - field.field.paragraph.measure_version.field_valid_from
     - field.field.paragraph.measure_version.field_valid_to
@@ -23,6 +24,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_pes:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_source:
     weight: 3
