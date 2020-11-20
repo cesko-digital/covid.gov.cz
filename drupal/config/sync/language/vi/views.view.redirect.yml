@@ -1,0 +1,36 @@
+display:
+  default:
+    display_title: Chính
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Lọc
+          reset_button_label: 'Thiết lập lại'
+          exposed_sorts_label: 'Sắp xếp theo'
+          sort_asc_label: 'Tăng dần'
+          sort_desc_label: giảm
+      pager:
+        options:
+          tags:
+            previous: '‹ trước'
+            next: 'sau ›'
+            first: '« đầu'
+            last: 'cuối »'
+          expose:
+            items_per_page_label: 'Số mục trên một trang'
+            items_per_page_options_all_label: '- Tất cả -'
+            offset_label: 'Độ dịch'
+      fields:
+        redirect_source__path:
+          label: Từ
+        created:
+          label: 'Tạo bởi'
+      filters:
+        redirect_source__path:
+          expose:
+            label: Từ
+        redirect_redirect__uri:
+          expose:
+            label: Đến
+  page_1:
+    display_title: Trang

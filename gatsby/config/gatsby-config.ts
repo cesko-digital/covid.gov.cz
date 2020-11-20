@@ -223,6 +223,7 @@ const config = {
         },
       },
     },
+    `gatsby-plugin-meta-redirect`,
   ],
 };
 

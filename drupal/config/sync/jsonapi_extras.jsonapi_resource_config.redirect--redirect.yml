@@ -1,0 +1,71 @@
+uuid: 9d50eab3-64e9-46d3-adce-cf1ea1e1cb95
+langcode: en
+status: true
+dependencies:
+  module:
+    - redirect
+id: redirect--redirect
+disabled: true
+path: redirect_list
+resourceType: redirect
+resourceFields:
+  rid:
+    fieldName: rid
+    publicName: rid
+    enhancer:
+      id: ''
+    disabled: false
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  hash:
+    disabled: true
+    fieldName: hash
+    publicName: hash
+    enhancer:
+      id: ''
+  type:
+    disabled: true
+    fieldName: type
+    publicName: type
+    enhancer:
+      id: ''
+  uid:
+    disabled: true
+    fieldName: uid
+    publicName: uid
+    enhancer:
+      id: ''
+  redirect_source:
+    fieldName: redirect_source
+    publicName: redirect_source
+    enhancer:
+      id: ''
+    disabled: false
+  redirect_redirect:
+    fieldName: redirect_redirect
+    publicName: redirect_redirect
+    enhancer:
+      id: ''
+    disabled: false
+  language:
+    fieldName: language
+    publicName: language
+    enhancer:
+      id: ''
+    disabled: false
+  status_code:
+    fieldName: status_code
+    publicName: status_code
+    enhancer:
+      id: ''
+    disabled: false
+  created:
+    disabled: true
+    fieldName: created
+    publicName: created
+    enhancer:
+      id: ''

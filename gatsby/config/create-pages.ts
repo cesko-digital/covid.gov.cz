@@ -9,7 +9,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
   actions,
 }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const customPagesTemplate = path.resolve(
     `./src/templates/custom-page/custom-page.tsx`,
@@ -41,6 +41,13 @@ export const createPages: GatsbyNode['createPages'] = async ({
             langcode
             source
             target
+          }
+        }
+        allRedirect {
+          nodes {
+            redirect_from
+            redirect_to
+            status_code
           }
         }
         allArea {
@@ -243,6 +250,17 @@ export const createPages: GatsbyNode['createPages'] = async ({
           },
         });
       });
+    });
+  });
+
+  // Create redirects
+  const redirects = result.data.allRedirect.nodes;
+
+  redirects.forEach((redirect) => {
+    createRedirect({
+      fromPath: redirect.redirect_from,
+      toPath: redirect.redirect_to,
+      statusCode: redirect.status_code,
     });
   });
 };
