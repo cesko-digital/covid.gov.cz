@@ -14,15 +14,24 @@ dependencies:
     - field.field.node.measure.field_source
     - field.field.node.measure.field_valid_from
     - field.field.node.measure.field_valid_to
+    - field.field.node.measure.field_versions
     - node.type.measure
   module:
     - datetime
+    - text
     - user
 id: node.measure.teaser
 targetEntityType: node
 bundle: measure
 mode: teaser
 content:
+  content:
+    label: above
+    weight: -5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_meta_description:
     type: basic_string
     weight: 1
@@ -49,5 +58,6 @@ hidden:
   field_region: true
   field_source: true
   field_valid_from: true
+  field_versions: true
   langcode: true
   links: true

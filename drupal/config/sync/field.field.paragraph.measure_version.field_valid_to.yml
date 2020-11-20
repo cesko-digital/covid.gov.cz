@@ -1,0 +1,21 @@
+uuid: 68040df5-f35c-4ce9-a721-f32260cc2195
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_valid_to
+    - paragraphs.paragraphs_type.measure_version
+  module:
+    - datetime
+id: paragraph.measure_version.field_valid_to
+field_name: field_valid_to
+entity_type: paragraph
+bundle: measure_version
+label: 'Platnost do'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

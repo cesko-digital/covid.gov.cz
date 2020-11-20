@@ -57,7 +57,8 @@ $moderated-content--approved: rgb(153, 255, 106);
  }
 }
 
-.field--name-field-pes-content {
+.field--name-field-pes-content,
+.field--name-field-versions {
   .paragraph-type-label {
     display: none;
   }
