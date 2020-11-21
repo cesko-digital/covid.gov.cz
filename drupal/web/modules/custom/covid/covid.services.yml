@@ -1,7 +1,7 @@
 services:
   covid.request_event_subscriber:
     class: Drupal\covid\EventSubscriber\RequestEventSubscriber
-    arguments: ['@current_route_match', '@current_user', '@messenger']
+    arguments: ['@current_route_match', '@current_user', '@messenger', '@user.data']
     tags:
       - { name: event_subscriber }
 

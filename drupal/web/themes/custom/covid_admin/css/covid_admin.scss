@@ -67,3 +67,9 @@ $moderated-content--approved: rgb(153, 255, 106);
     display: none;
   }
 }
+
+@media all and (min-device-width: 800px) {
+  .content--narrow {
+    width: 800px;
+  }
+}

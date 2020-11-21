@@ -5,3 +5,11 @@ covid.redirects:
     _jsonapi_resource_types: ['redirect--redirect']
   requirements:
     _permission: 'access content'
+
+covid.license_agreement:
+  path: '/admin/license-agreement'
+  defaults:
+    _title: 'Licenční ujednání'
+    _form: 'Drupal\covid\Form\LicenseAgreementForm'
+  requirements:
+    _permission: 'access administration pages'
