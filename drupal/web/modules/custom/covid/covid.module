@@ -111,6 +111,21 @@ function covid_node_access(EntityInterface $entity, $operation, AccountInterface
 }
 
 /**
+ * Implements hook_entity_operation_alter().
+ */
+function covid_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  $roles = Drupal::currentUser()->getRoles();
+
+  $isTranslator = in_array('translator', $roles) && count($roles) === 2;
+
+  // Don't let translator edit nodes (or at least don't show the button).
+  // The permission is necessary for translating paragraphs.
+  if ($entity->getEntityTypeId() === 'node' && $isTranslator) {
+    unset($operations['edit']);
+  }
+}
+
+/**
  * Implements hook_editor_js_settings_alter
  */
 function covid_editor_js_settings_alter(array &$settings) {

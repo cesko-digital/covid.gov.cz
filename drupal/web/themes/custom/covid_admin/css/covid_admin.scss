@@ -67,3 +67,12 @@ $moderated-content--approved: rgb(153, 255, 106);
     display: none;
   }
 }
+
+.field--name-field-pes {
+  .form-checkboxes {
+    .form-item {
+      float: left;
+      margin-right: 1em;
+    }
+  }
+}

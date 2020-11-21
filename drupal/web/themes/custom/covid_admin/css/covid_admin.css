@@ -35,4 +35,8 @@
 .field--name-field-versions .filter-wrapper {
   display: none; }
 
+.field--name-field-pes .form-checkboxes .form-item {
+  float: left;
+  margin-right: 1em; }
+
 /*# sourceMappingURL=covid_admin.css.map */

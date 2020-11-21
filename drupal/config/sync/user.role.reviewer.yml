@@ -32,3 +32,4 @@ permissions:
   - 'view page revisions'
   - 'view situation revisions'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'
