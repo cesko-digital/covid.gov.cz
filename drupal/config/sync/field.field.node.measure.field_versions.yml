@@ -12,7 +12,7 @@ id: node.measure.field_versions
 field_name: field_versions
 entity_type: node
 bundle: measure
-label: Verze
+label: Znění
 description: ''
 required: false
 translatable: false
