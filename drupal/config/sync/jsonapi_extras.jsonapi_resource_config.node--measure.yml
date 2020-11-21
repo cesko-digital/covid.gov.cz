@@ -129,6 +129,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  valid_from:
+    fieldName: valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
   path:
     fieldName: path
     publicName: path
@@ -196,23 +202,23 @@ resourceFields:
       id: ''
     disabled: false
   field_source:
+    disabled: true
     fieldName: field_source
     publicName: source
     enhancer:
       id: ''
-    disabled: false
   field_valid_from:
+    disabled: true
     fieldName: field_valid_from
     publicName: valid_from
     enhancer:
       id: ''
-    disabled: false
   field_valid_to:
+    disabled: true
     fieldName: field_valid_to
     publicName: valid_to
     enhancer:
       id: ''
-    disabled: false
   field_versions:
     fieldName: field_versions
     publicName: field_versions

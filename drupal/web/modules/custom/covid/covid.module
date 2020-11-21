@@ -29,12 +29,57 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
     $fields['content'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Content'))
       ->setComputed(TRUE)
-      ->setClass('\Drupal\covid\NodeComputedContent')
+      ->setClass('\Drupal\covid\Field\VersionedField')
+      ->setSetting('field', 'field_content')
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
         'label' => 'above',
         'weight' => -5,
       ]);
+
+    $fields['questions_answers'] = BaseFieldDefinition::create('covid_question_answer')
+      ->setLabel(t('Questions and answers'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\Field\VersionedField')
+      ->setSetting('field', 'field_questions_answers')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'weight' => -5,
+      ]);
+
+    $fields['valid_from'] = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Valid from'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_valid_from')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'weight' => -5,
+    ]);
+
+    $fields['valid_to'] = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Valid to'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_valid_to')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'weight' => -5,
+    ]);
+
+    $fields['source'] = BaseFieldDefinition::create('link')
+    ->setLabel(t('Source'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_source')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'weight' => -5,
+    ]);
 
     return $fields;
   }

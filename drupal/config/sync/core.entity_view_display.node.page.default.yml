@@ -45,5 +45,10 @@ content:
     type: basic_string
     region: content
 hidden:
+  content: true
   langcode: true
   links: true
+  questions_answers: true
+  source: true
+  valid_from: true
+  valid_to: true
