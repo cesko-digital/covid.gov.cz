@@ -17,7 +17,6 @@ dependencies:
     - node.type.measure
   module:
     - datetime
-    - entity_reference_revisions
     - link
     - text
     - user
@@ -28,7 +27,7 @@ mode: default
 content:
   content:
     label: above
-    weight: -5
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -38,13 +37,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content:
-    weight: 8
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_last_updated:
     weight: 1
     label: above
@@ -93,9 +85,10 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_source:
-    weight: 3
+  source:
     label: above
+    weight: 3
+    region: content
     settings:
       trim_length: 80
       url_only: false
@@ -104,34 +97,30 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_valid_from:
-    weight: 6
-    label: inline
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_valid_to:
-    weight: 7
-    label: inline
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_versions:
-    type: entity_reference_revisions_entity_view
-    weight: 11
+  valid_from:
     label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
+    weight: 6
     region: content
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    type: datetime_default
+  valid_to:
+    label: above
+    weight: 7
+    region: content
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+    type: datetime_default
 hidden:
+  field_content: true
+  field_source: true
+  field_valid_from: true
+  field_valid_to: true
+  field_versions: true
   langcode: true
   links: true
+  questions_answers: true

@@ -129,6 +129,30 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  questions_answers:
+    fieldName: questions_answers
+    publicName: questions_answers
+    enhancer:
+      id: ''
+    disabled: false
+  valid_from:
+    disabled: true
+    fieldName: valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+  valid_to:
+    disabled: true
+    fieldName: valid_to
+    publicName: valid_to
+    enhancer:
+      id: ''
+  source:
+    disabled: true
+    fieldName: source
+    publicName: source
+    enhancer:
+      id: ''
   path:
     fieldName: path
     publicName: path
