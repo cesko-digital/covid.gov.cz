@@ -28,7 +28,11 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
   }));
   const { t } = useTranslation();
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader={false}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+    >
       <Seo
         title={data.situation.title}
         description={

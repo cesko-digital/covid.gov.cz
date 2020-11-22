@@ -29,7 +29,11 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
   }));
 
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader={false}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+    >
       <Seo
         title={data.measure.title}
         description={

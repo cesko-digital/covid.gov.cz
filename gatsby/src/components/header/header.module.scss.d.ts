@@ -4,6 +4,8 @@ export const logoWrapper: string;
 export const headerExtended: string;
 export const flexWrapper: string;
 export const headerTop: string;
+export const headerTopRight: string;
+export const searchBox: string;
 export const gradient: string;
 export const header__inner: string;
 export const headerInner: string;

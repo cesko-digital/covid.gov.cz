@@ -33,7 +33,11 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
   const { measure_items, situation_items } = relationships;
 
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader
+      showSearchInHeader={false}
+    >
       <Seo
         title={t('homepage_meta_title')}
         description={meta_description ?? 'CovidPortal'}

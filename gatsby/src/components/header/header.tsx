@@ -3,8 +3,6 @@ import classnames from 'classnames';
 import Link from '@/components/link';
 
 import Container from '../container';
-import Row from '../row';
-import Col from '../col';
 
 import classes from './header.module.scss';
 
@@ -13,6 +11,7 @@ import { HeaderLocaleSelect } from './header-locale-select';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
 import { Alert } from '../alert';
+import SearchBox from '../search-box';
 
 interface NavItem {
   label: string;
@@ -23,11 +22,17 @@ interface Props {
   navItems: NavItem[];
   pageContext: ISitePageContext;
   isTransparent: boolean;
+  showSearch: boolean;
 }
 
 export const locales = ['cs', 'en'];
 
-const Header: React.FC<Props> = ({ navItems, pageContext, isTransparent }) => {
+const Header: React.FC<Props> = ({
+  navItems,
+  pageContext,
+  isTransparent,
+  showSearch,
+}) => {
   const [isOpen, setOpen] = useState(false);
   const currentLanguage = useCurrentLanguage();
   const { t } = useTranslation();
@@ -94,8 +99,11 @@ const Header: React.FC<Props> = ({ navItems, pageContext, isTransparent }) => {
             >
               <div className={classes.flexWrapper}>
                 <div className={classes.headerTop}>
-                  <div className="infoline">Infolinka: 270 005 200</div>
-                  <div className="lang-change">
+                  <div className="left">Infolinka: 270 005 200</div>
+                  <div className={classnames('d-flex')}>
+                    {showSearch && (
+                      <SearchBox size="small" className={classes.searchBox} />
+                    )}
                     <HeaderLocaleSelect languageVariants={languageVariants} />
                   </div>
                 </div>

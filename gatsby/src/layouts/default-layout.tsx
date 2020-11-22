@@ -18,12 +18,14 @@ import { useTranslation } from '@/components/i18n';
 interface IProps {
   pageContext: ISitePageContext;
   hasTransparentHeader: boolean;
+  showSearchInHeader: boolean;
 }
 
 const DefaultLayout: React.FC<IProps> = ({
   children,
   pageContext,
   hasTransparentHeader,
+  showSearchInHeader,
 }) => {
   const { t } = useTranslation();
   const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
@@ -87,6 +89,7 @@ const DefaultLayout: React.FC<IProps> = ({
       )}
       <Header
         isTransparent={hasTransparentHeader}
+        showSearch={showSearchInHeader}
         pageContext={pageContext}
         navItems={[
           { label: t('home'), to: '/' },

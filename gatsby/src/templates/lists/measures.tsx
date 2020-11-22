@@ -25,7 +25,7 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader>
+    <Layout pageContext={pageContext} hasTransparentHeader showSearchInHeader>
       <Seo
         title={t('current_measures_overview')}
         description={t('current_measures_overview_meta')}

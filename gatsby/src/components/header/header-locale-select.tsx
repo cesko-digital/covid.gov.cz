@@ -14,7 +14,7 @@ export const HeaderLocaleSelect: React.FC<IProps> = ({ languageVariants }) => {
   const currentLanguage = useCurrentLanguage();
 
   return (
-    <div className={classnames('d-none d-md-flex align-items-center')}>
+    <div className={classnames('d-none d-md-flex align-items-center px-2')}>
       {currentLanguage === 'en' ? (
         <Link
           to={variants.cs || '/'}

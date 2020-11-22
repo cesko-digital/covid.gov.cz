@@ -19,7 +19,11 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
   const { t } = useTranslation();
 
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader={false}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+    >
       <Seo
         title={page.title}
         description={page.meta_description ?? 'Custom page meta description.'}

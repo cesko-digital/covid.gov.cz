@@ -8,7 +8,7 @@
     display: none;
   }
 
-  padding: 16px 0;
+  padding: 8px 0;
   // desktop
   @include media-breakpoint-up(md) {
     padding: 8px 32px 16px 32px;
