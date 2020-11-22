@@ -1,0 +1,23 @@
+uuid: 12a062e7-0644-40da-97c6-5f88081d1a5a
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_level
+    - taxonomy.vocabulary.pes
+id: taxonomy_term.pes.field_level
+field_name: field_level
+entity_type: taxonomy_term
+bundle: pes
+label: Stupeň
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

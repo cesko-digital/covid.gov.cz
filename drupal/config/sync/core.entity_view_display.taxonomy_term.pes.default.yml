@@ -1,0 +1,32 @@
+uuid: d83ff5f8-22f0-4967-8c96-f3f7c956af43
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pes.field_level
+    - taxonomy.vocabulary.pes
+  module:
+    - text
+id: taxonomy_term.pes.default
+targetEntityType: taxonomy_term
+bundle: pes
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_level:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  langcode: true

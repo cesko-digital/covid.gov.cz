@@ -1,0 +1,60 @@
+uuid: be208bab-adb9-4862-b434-73a95808c74d
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.validity.field_pes
+    - field.field.paragraph.validity.field_valid_from
+    - field.field.paragraph.validity.field_valid_to
+    - paragraphs.paragraphs_type.validity
+  module:
+    - datetime
+    - field_group
+third_party_settings:
+  field_group:
+    group_flex:
+      children:
+        - field_valid_from
+        - field_valid_to
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: field-group--flex
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Flex
+id: paragraph.validity.default
+targetEntityType: paragraph
+bundle: validity
+mode: default
+content:
+  field_pes:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_valid_from:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  created: true
+  status: true

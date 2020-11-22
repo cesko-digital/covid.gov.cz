@@ -78,6 +78,11 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
       'region' => 'hidden',
     ]);
 
+    $fields['update'] = BaseFieldDefinition::create('covid_situation_update')
+      ->setLabel(t('Update'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\Field\SituationUpdateField');
+
     return $fields;
   }
 }

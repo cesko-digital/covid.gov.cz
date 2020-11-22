@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.region.field_pes
+    - field.field.taxonomy_term.region.field_validity
     - taxonomy.vocabulary.region
   module:
+    - entity_reference_revisions
     - text
 id: taxonomy_term.region.default
 targetEntityType: taxonomy_term
@@ -26,6 +28,15 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_validity:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
 hidden:
   langcode: true
