@@ -4,7 +4,9 @@
 namespace Drupal\covid\Field;
 
 
+use DateTime;
 use Drupal;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldItemList;
 use Drupal\Core\TypedData\ComputedItemListTrait;
@@ -44,10 +46,13 @@ class SituationUpdateField extends FieldItemList {
         $update = $this->getTranslation($update, $langcode);
 
         if ($update->field_pes->entity->id() === $pes->id() && $update->field_pes_target->entity->id() === $nextPes->id()) {
+          $from = $nextValidity->field_valid_from->date ?? NULL;
+          $to = $nextValidity->field_valid_to->date ?? NULL;
+
           $value = $update->field_content[0]->getValue() + [
               'pes' => $nextPes->field_level->value,
-              'valid_from' => $nextValidity->field_valid_from->value,
-              'valid_to' => $nextValidity->field_valid_to->value
+              'valid_from' => $from ? $this->formatDate($from) : '',
+              'valid_to' => $to ? $this->formatDate($to) : ''
             ];
 
           $this->list[0] = $this->createItem(0, $value);
@@ -64,6 +69,18 @@ class SituationUpdateField extends FieldItemList {
     }
 
     return $entity;
+  }
+
+  /**
+   * @param \Drupal\Core\Datetime\DrupalDateTime $from
+   *
+   * @return string
+   */
+  protected function formatDate(DrupalDateTime $from): string {
+    /** @var \Drupal\Core\Datetime\DateFormatterInterface $formatter */
+    $formatter = Drupal::service('date.formatter');
+
+    return $formatter->format($from->getTimestamp(), 'custom', DateTime::ISO8601);
   }
 
 }
