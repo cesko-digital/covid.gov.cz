@@ -12,6 +12,9 @@ import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
 import { Alert } from '../alert';
 import SearchBox from '../search-box';
+import Row from '../row';
+import Col from '../col';
+import GovIcon from '../gov-icon';
 
 interface NavItem {
   label: string;
@@ -102,7 +105,11 @@ const Header: React.FC<Props> = ({
                   <div className="left">Infolinka: 270 005 200</div>
                   <div className={classnames('d-flex')}>
                     {showSearch && (
-                      <SearchBox size="small" className={classes.searchBox} />
+                      <SearchBox
+                        size="small"
+                        className={classes.searchBox}
+                        buttonProps={{ variant: 'contained' }}
+                      />
                     )}
                     <HeaderLocaleSelect languageVariants={languageVariants} />
                   </div>
@@ -191,6 +198,28 @@ const Header: React.FC<Props> = ({
           </div>
         </Container>
       </header>
+      {/* MOBILE SEARCH BOX */}
+      {showSearch && (
+        <div
+          className={classnames(
+            classes.mobileSearchBoxWrapper,
+            'd-block d-md-none',
+          )}
+        >
+          <Container>
+            <Row>
+              <Col colSm={12}>
+                <SearchBox
+                  buttonProps={{
+                    icon: <GovIcon icon="search" size={16} />,
+                    text: '',
+                  }}
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )}
     </>
   );
 };

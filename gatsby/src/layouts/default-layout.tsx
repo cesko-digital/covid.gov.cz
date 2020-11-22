@@ -81,7 +81,9 @@ const DefaultLayout: React.FC<IProps> = ({
         <div className={classnames(styles.overflow)}>
           <GatsbyImage
             fluid={sources}
-            className={styles.bkgPhoto}
+            className={classnames(styles.bkgPhoto, {
+              [styles.searchDisplayed]: showSearchInHeader,
+            })}
             alt="Background image"
             loading="eager"
           />

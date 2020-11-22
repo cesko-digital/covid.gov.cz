@@ -12,6 +12,7 @@ type IProps = {
   initialValue?: string;
   size?: 'default' | 'small';
   className?: string;
+  buttonProps?: Partial<React.ComponentProps<typeof Button>>;
 };
 
 const SearchBox: React.FC<IProps> = (
@@ -65,12 +66,12 @@ const SearchBox: React.FC<IProps> = (
       />
       <Button
         onClick={navigateToSearchResults}
-        variant="yellow"
         className={classnames(styles.searchButton, 'search__button', {
           'btn-sm': isSmall,
           [styles.searchButtonSmall]: isSmall,
         })}
         text={t('search_button')}
+        {...(props.buttonProps as {})}
       />
     </div>
   );
