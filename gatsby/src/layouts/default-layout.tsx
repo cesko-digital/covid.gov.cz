@@ -75,19 +75,16 @@ const DefaultLayout: React.FC<IProps> = ({
           crossOrigin="anonymous"
         />
       </Helmet>
-      <div
-        className={classnames(
-          { 'd-md-none': !hasTransparentHeader },
-          styles.overflow,
-        )}
-      >
-        <GatsbyImage
-          fluid={sources}
-          className={styles.bkgPhoto}
-          alt="Background image"
-          loading="eager"
-        />
-      </div>
+      {hasTransparentHeader && (
+        <div className={classnames(styles.overflow)}>
+          <GatsbyImage
+            fluid={sources}
+            className={styles.bkgPhoto}
+            alt="Background image"
+            loading="eager"
+          />
+        </div>
+      )}
       <Header
         isTransparent={hasTransparentHeader}
         pageContext={pageContext}

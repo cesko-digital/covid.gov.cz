@@ -71,7 +71,10 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           }
           hideMenuOnMobile
         >
-          <Headline iconCode={data.area?.relationships?.icon?.code}>
+          <Headline
+            iconCode={data.area?.relationships?.icon?.code}
+            color="blue"
+          >
             {area.name}
           </Headline>
           {situations.map(({ id, title, meta_description, path }) => {

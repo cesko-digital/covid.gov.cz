@@ -61,7 +61,10 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
           }
           hideMenuOnMobile
         >
-          <Headline iconCode={data.measureType?.relationships?.icon?.code}>
+          <Headline
+            iconCode={data.measureType?.relationships?.icon?.code}
+            color="blue"
+          >
             {measureType.name}
           </Headline>
           {measures.map((m) => (

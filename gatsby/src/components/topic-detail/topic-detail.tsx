@@ -23,7 +23,9 @@ const TopicDetail: React.FC<IProps> = ({
   subtitle,
 }) => (
   <div className={styles.topicDetail}>
-    <Headline iconCode={titleIconCode}>{title}</Headline>
+    <Headline iconCode={titleIconCode} color="blue">
+      {title}
+    </Headline>
     <LastUpdate isMobile={false} lastUpdated={lastUpdated} />
     <article className="bg-white rounded px-2 pb-2 px-md-3 pb-md-3 pt-md-0 pt-2">
       <hr className="mt-0 mb-2 d-none d-md-block" />
