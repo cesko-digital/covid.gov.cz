@@ -214,11 +214,11 @@ resourceFields:
     enhancer:
       id: ''
   field_questions_answers:
+    disabled: true
     fieldName: field_questions_answers
     publicName: questions_answers
     enhancer:
       id: ''
-    disabled: false
   field_ref_icon:
     fieldName: field_ref_icon
     publicName: icon

@@ -26,7 +26,7 @@ class VersionedField extends FieldItemList {
 
       $entity = $version ?? $node;
 
-      $this->setFieldValue($entity);
+      $this->createFieldItem($entity);
     }
 
     if ($node->bundle() === 'situation') {
@@ -34,11 +34,11 @@ class VersionedField extends FieldItemList {
 
       $entity = $version ?? $node;
 
-      $this->setFieldValue($entity);
+      $this->createFieldItem($entity);
     }
   }
 
-  private function setFieldValue(EntityInterface $entity) {
+  private function createFieldItem(EntityInterface $entity) {
     $langcode = Drupal::languageManager()->getCurrentLanguage()->getId();
 
     if ($entity->hasTranslation($langcode)) {
@@ -67,8 +67,8 @@ class VersionedField extends FieldItemList {
    */
   private function getSynonyms(string $fieldName): array {
     $synonyms = [
-      'questions_answers' => [
-        'questions_answers', 'qa'
+      'field_questions_answers' => [
+        'field_questions_answers', 'field_qa'
       ]
     ];
 
