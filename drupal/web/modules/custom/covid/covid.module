@@ -5,6 +5,7 @@ use Drupal\Core\Cache\Cache;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
 
@@ -38,6 +39,7 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
 
     $fields['questions_answers'] = BaseFieldDefinition::create('covid_question_answer')
       ->setLabel(t('Questions and answers'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setComputed(TRUE)
       ->setClass('\Drupal\covid\Field\VersionedField')
       ->setSetting('field', 'field_questions_answers')
