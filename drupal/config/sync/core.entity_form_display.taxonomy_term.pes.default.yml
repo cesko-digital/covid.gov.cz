@@ -1,0 +1,44 @@
+uuid: 87837e70-4345-4468-99ce-47f5bf1a5ab1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pes.field_level
+    - taxonomy.vocabulary.pes
+id: taxonomy_term.pes.default
+targetEntityType: taxonomy_term
+bundle: pes
+mode: default
+content:
+  field_level:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

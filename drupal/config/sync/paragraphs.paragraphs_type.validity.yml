@@ -1,0 +1,10 @@
+uuid: 707e9bee-1f42-4cf4-ab50-d0720309cb95
+langcode: cs
+status: true
+dependencies: {  }
+id: validity
+label: Platnost
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

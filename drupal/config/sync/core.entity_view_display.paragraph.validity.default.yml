@@ -1,0 +1,43 @@
+uuid: 2e3f1523-1da0-4cdf-b16a-19e71c299df7
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.validity.field_pes
+    - field.field.paragraph.validity.field_valid_from
+    - field.field.paragraph.validity.field_valid_to
+    - paragraphs.paragraphs_type.validity
+  module:
+    - datetime
+id: paragraph.validity.default
+targetEntityType: paragraph
+bundle: validity
+mode: default
+content:
+  field_pes:
+    weight: 0
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_valid_from:
+    weight: 1
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

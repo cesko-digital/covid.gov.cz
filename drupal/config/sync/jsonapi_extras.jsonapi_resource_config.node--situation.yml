@@ -231,12 +231,6 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
-  field_situations:
-    fieldName: field_situations
-    publicName: related_situations
-    enhancer:
-      id: ''
-    disabled: false
   field_situation_link:
     fieldName: field_situation_link
     publicName: links
@@ -252,6 +246,12 @@ resourceFields:
   field_situation_type:
     fieldName: field_situation_type
     publicName: situation_type
+    enhancer:
+      id: ''
+    disabled: false
+  field_situations:
+    fieldName: field_situations
+    publicName: related_situations
     enhancer:
       id: ''
     disabled: false

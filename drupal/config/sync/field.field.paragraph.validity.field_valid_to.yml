@@ -1,0 +1,21 @@
+uuid: e2510ce9-6688-4cd5-b518-3070cff99706
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_valid_to
+    - paragraphs.paragraphs_type.validity
+  module:
+    - datetime
+id: paragraph.validity.field_valid_to
+field_name: field_valid_to
+entity_type: paragraph
+bundle: validity
+label: 'Platnost do'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

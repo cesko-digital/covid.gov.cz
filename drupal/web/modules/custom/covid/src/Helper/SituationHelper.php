@@ -18,7 +18,7 @@ class SituationHelper {
   public static function getActiveVersion(NodeInterface $node): ?ParagraphInterface {
     $region = $node->field_region->entity;
 
-    $pes = $region->field_pes->entity ?? NULL;
+    $pes = RegionHelper::getPES($region);
 
     if ($pes === NULL) {
       return NULL;
