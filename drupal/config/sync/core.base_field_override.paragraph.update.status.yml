@@ -1,0 +1,22 @@
+uuid: a29a95f3-d796-4115-84dd-b1aef13dcfdc
+langcode: cs
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.update
+id: paragraph.update.status
+field_name: status
+entity_type: paragraph
+bundle: update
+label: Zveřejněno
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Zapnuto
+  off_label: Vypnuto
+field_type: boolean

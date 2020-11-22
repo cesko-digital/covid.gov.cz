@@ -255,6 +255,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_updates:
+    disabled: true
+    fieldName: field_updates
+    publicName: field_updates
+    enhancer:
+      id: ''
   field_valid_from:
     fieldName: field_valid_from
     publicName: valid_from

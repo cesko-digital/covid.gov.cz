@@ -1,0 +1,29 @@
+uuid: 515c8b25-80c5-4a86-bcb8-1bcbdd46434b
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pes
+    - paragraphs.paragraphs_type.update
+    - taxonomy.vocabulary.pes
+id: paragraph.update.field_pes
+field_name: field_pes
+entity_type: paragraph
+bundle: update
+label: 'Změna ze stupně'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pes: pes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

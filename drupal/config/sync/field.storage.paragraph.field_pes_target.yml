@@ -1,12 +1,12 @@
-uuid: e0d9e6fc-e532-4caf-b654-fe4f7d9d6857
+uuid: 2cc21396-6e97-486b-ace5-df1f2bf29c19
 langcode: cs
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-id: paragraph.field_pes
-field_name: field_pes
+id: paragraph.field_pes_target
+field_name: field_pes_target
 entity_type: paragraph
 type: entity_reference
 settings:
