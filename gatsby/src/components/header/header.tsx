@@ -61,6 +61,7 @@ const Header: React.FC<Props> = ({
         })}
         role="banner"
       >
+        {isTransparent && <div className={classes.gradient} />}
         <Container>
           <div className={classes.headerExtended}>
             {/* LOGO */}
