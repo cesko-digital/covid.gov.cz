@@ -167,11 +167,11 @@ export const query = graphql`
       question
       value
     }
-    update {
-      processed
-      valid_from
-      pes
-    }
+    # update {
+    #   processed
+    #   valid_from
+    #   pes
+    # }
     changed
     valid_from
     valid_to
