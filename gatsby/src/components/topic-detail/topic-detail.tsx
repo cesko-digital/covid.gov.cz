@@ -13,6 +13,7 @@ interface IProps {
   processedContent: string;
   lastUpdated: Maybe<Scalars['Date']>;
   subtitle?: string;
+  beforeContent?: React.ReactNode;
 }
 
 const TopicDetail: React.FC<IProps> = ({
@@ -21,6 +22,7 @@ const TopicDetail: React.FC<IProps> = ({
   processedContent,
   lastUpdated,
   subtitle,
+  beforeContent,
 }) => (
   <div className={styles.topicDetail}>
     <Headline iconCode={titleIconCode}>{title}</Headline>
@@ -28,6 +30,7 @@ const TopicDetail: React.FC<IProps> = ({
     <article className="bg-white rounded px-2 pb-2 px-md-3 pb-md-3 pt-md-0 pt-2">
       <hr className="mt-0 mb-2 d-none d-md-block" />
       {subtitle && <Subtitle>{subtitle}</Subtitle>}
+      {beforeContent}
       <div
         className={styles.article}
         dangerouslySetInnerHTML={{

@@ -1,4 +1,5 @@
 import React from 'react';
+import reactStringReplace from 'react-string-replace';
 
 import Container from '@/components/container';
 import Link from '@/components/link';
@@ -12,20 +13,24 @@ import RelatedMeasure from '../related-measure';
 import LinkList from '../link-list';
 import { useTranslation } from '../i18n';
 import LastUpdate from '../last-update';
+import { UpdateWarning } from '../update-warning/update-warning';
+import Time from '../time';
 
 interface IProps {
   situation: ISituationDetailFragment;
 }
 
 const SituationDetail: React.FC<IProps> = ({ situation }) => {
+  const { t } = useTranslation();
+
   const relatedSituations = situation.relationships.related_situations;
   const faq = situation.questions_answers;
 
   const hasFaq = Boolean(faq.length);
-  const { t } = useTranslation();
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
   const hasRelatedSituations = Boolean(relatedSituations.length);
+  const hasUpdate = Boolean(situation.update);
 
   const iconCode =
     situation.relationships?.icon?.code ||
@@ -38,6 +43,27 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         titleIconCode={iconCode}
         lastUpdated={situation?.last_updated}
         processedContent={situation?.content?.processed}
+        beforeContent={
+          hasUpdate && (
+            <UpdateWarning
+              variant="info"
+              title={reactStringReplace(
+                t('situation_valid_from_header').replace(
+                  '{pes}',
+                  situation.update.pes,
+                ),
+                '{date}',
+                () => (
+                  <Time datetime={new Date().toISOString()} />
+                ),
+              )}
+            >
+              <div
+                dangerouslySetInnerHTML={{ __html: situation.update.processed }}
+              />
+            </UpdateWarning>
+          )
+        }
       />
       <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
         {hasRelatedMeasures && (
@@ -136,6 +162,11 @@ export const query = graphql`
     questions_answers {
       question
       value
+    }
+    update {
+      processed
+      valid_from
+      pes
     }
     changed
     valid_from
