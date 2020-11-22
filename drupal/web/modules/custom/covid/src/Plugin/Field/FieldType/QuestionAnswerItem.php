@@ -17,7 +17,7 @@ use Drupal\text\Plugin\Field\FieldType\TextLongItem;
  *   description = @Translation("Question and its anser."),
  *   category = "COVID Portal",
  *   default_widget = "covid_question_answer_widget",
- *   default_formatter = "text_default"
+ *   default_formatter = "covid_question_answer"
  * )
  */
 class QuestionAnswerItem extends TextLongItem {

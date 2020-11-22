@@ -33,8 +33,7 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setSetting('field', 'field_content')
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
-        'weight' => -5,
+        'region' => 'hidden',
       ]);
 
     $fields['questions_answers'] = BaseFieldDefinition::create('covid_question_answer')
@@ -44,8 +43,7 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setSetting('field', 'field_questions_answers')
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
-        'weight' => -5,
+        'region' => 'hidden',
       ]);
 
     $fields['valid_from'] = BaseFieldDefinition::create('datetime')
@@ -55,8 +53,7 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
     ->setSetting('field', 'field_valid_from')
     ->setDisplayConfigurable('view', TRUE)
     ->setDisplayOptions('view', [
-      'label' => 'above',
-      'weight' => -5,
+      'region' => 'hidden',
     ]);
 
     $fields['valid_to'] = BaseFieldDefinition::create('datetime')
@@ -66,8 +63,7 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
     ->setSetting('field', 'field_valid_to')
     ->setDisplayConfigurable('view', TRUE)
     ->setDisplayOptions('view', [
-      'label' => 'above',
-      'weight' => -5,
+      'region' => 'hidden',
     ]);
 
     $fields['source'] = BaseFieldDefinition::create('link')
@@ -77,8 +73,7 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
     ->setSetting('field', 'field_source')
     ->setDisplayConfigurable('view', TRUE)
     ->setDisplayOptions('view', [
-      'label' => 'above',
-      'weight' => -5,
+      'region' => 'hidden',
     ]);
 
     return $fields;
