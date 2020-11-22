@@ -104,12 +104,12 @@ third_party_settings:
       format_type: tab
       region: content
       format_settings:
-        id: ''
-        classes: ''
         description: ''
         formatter: closed
         required_fields: true
-      label: Verze
+        id: ''
+        classes: ''
+      label: Znění
 id: node.measure.default
 targetEntityType: node
 bundle: measure
@@ -242,6 +242,11 @@ content:
     third_party_settings: {  }
   translation:
     weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }

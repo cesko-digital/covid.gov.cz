@@ -15,9 +15,11 @@ $moderated-content--approved: rgb(153, 255, 106);
     &.moderation-state--draft {
       background: $moderated-content--draft;
     }
+
     &.moderation-state--needs-review {
-      background:$moderated-content--needs-review;
+      background: $moderated-content--needs-review;
     }
+
     &.moderation-state--approved {
       background: $moderated-content--approved;
     }
@@ -37,9 +39,11 @@ $moderated-content--approved: rgb(153, 255, 106);
     .moderation-state--draft {
       background: $moderated-content--draft;
     }
+
     .moderation-state--needs-review {
       background: $moderated-content--needs-review;
     }
+
     .moderation-state--approved {
       background: $moderated-content--approved;
     }
@@ -54,7 +58,7 @@ $moderated-content--approved: rgb(153, 255, 106);
     @media (min-width: 1370px) {
       margin-left: 20px;
     }
- }
+  }
 }
 
 .field--name-field-pes-content,
@@ -71,5 +75,14 @@ $moderated-content--approved: rgb(153, 255, 106);
 @media all and (min-device-width: 800px) {
   .content--narrow {
     width: 800px;
+  }
+}
+
+.field--name-field-pes {
+  .form-checkboxes {
+    .form-item {
+      float: left;
+      margin-right: 1em;
+    }
   }
 }

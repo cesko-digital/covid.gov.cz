@@ -3,7 +3,7 @@ langcode: cs
 status: true
 dependencies: {  }
 id: measure_version
-label: Verze
+label: Znění
 icon_uuid: null
 icon_default: null
 description: 'Version of a measure in time.'

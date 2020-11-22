@@ -29,12 +29,52 @@ function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
     $fields['content'] = BaseFieldDefinition::create('text_long')
       ->setLabel(t('Content'))
       ->setComputed(TRUE)
-      ->setClass('\Drupal\covid\NodeComputedContent')
+      ->setClass('\Drupal\covid\Field\VersionedField')
+      ->setSetting('field', 'field_content')
       ->setDisplayConfigurable('view', TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
-        'weight' => -5,
+        'region' => 'hidden',
       ]);
+
+    $fields['questions_answers'] = BaseFieldDefinition::create('covid_question_answer')
+      ->setLabel(t('Questions and answers'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\Field\VersionedField')
+      ->setSetting('field', 'field_questions_answers')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'region' => 'hidden',
+      ]);
+
+    $fields['valid_from'] = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Valid from'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_valid_from')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ]);
+
+    $fields['valid_to'] = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Valid to'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_valid_to')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ]);
+
+    $fields['source'] = BaseFieldDefinition::create('link')
+    ->setLabel(t('Source'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_source')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ]);
 
     return $fields;
   }
@@ -108,6 +148,21 @@ function covid_node_access(EntityInterface $entity, $operation, AccountInterface
     }
   }
   return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function covid_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  $roles = Drupal::currentUser()->getRoles();
+
+  $isTranslator = in_array('translator', $roles) && count($roles) === 2;
+
+  // Don't let translator edit nodes (or at least don't show the button).
+  // The permission is necessary for translating paragraphs.
+  if ($entity->getEntityTypeId() === 'node' && $isTranslator) {
+    unset($operations['edit']);
+  }
 }
 
 /**

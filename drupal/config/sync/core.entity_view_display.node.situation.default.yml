@@ -16,11 +16,14 @@ dependencies:
     - field.field.node.situation.field_situation_ref_measures
     - field.field.node.situation.field_situation_type
     - field.field.node.situation.field_situations
+    - field.field.node.situation.field_updates
     - field.field.node.situation.field_valid_from
     - field.field.node.situation.field_valid_to
     - node.type.situation
   module:
+    - covid
     - datetime
+    - entity_reference_revisions
     - link
     - text
     - user
@@ -43,7 +46,7 @@ content:
     third_party_settings: {  }
   field_internal_note:
     type: text_default
-    weight: 12
+    weight: 13
     region: content
     label: above
     settings: {  }
@@ -58,7 +61,7 @@ content:
     type: datetime_default
     region: content
   field_meta_description:
-    weight: 11
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -81,7 +84,7 @@ content:
     type: entity_reference_label
     region: content
   field_situation_link:
-    weight: 10
+    weight: 11
     label: above
     settings:
       trim_length: 80
@@ -116,28 +119,47 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_valid_from:
+  field_updates:
+    type: entity_reference_revisions_entity_view
+    weight: 14
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  questions_answers:
+    type: covid_question_answer
+    weight: 10
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  valid_from:
+    label: above
     weight: 6
-    label: above
+    region: content
     settings:
       timezone_override: ''
-      format_type: nice_date_long
+      format_type: long
     third_party_settings: {  }
     type: datetime_default
-    region: content
-  field_valid_to:
+  valid_to:
+    label: above
     weight: 7
-    label: above
+    region: content
     settings:
       timezone_override: ''
-      format_type: nice_date_long
+      format_type: long
     third_party_settings: {  }
     type: datetime_default
-    region: content
 hidden:
   field_content: true
   field_faq_parser: true
   field_pes_content: true
   field_questions_answers: true
+  field_valid_from: true
+  field_valid_to: true
   langcode: true
   links: true
+  source: true

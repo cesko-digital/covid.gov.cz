@@ -38,23 +38,31 @@ content:
     type: link_separate
     region: content
   field_valid_from:
+    type: datetime_default
     weight: 0
+    region: content
     label: above
     settings:
+      format_type: medium
       timezone_override: ''
-      format_type: nice_date_long
     third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_valid_to:
+  source:
+    label: above
     weight: 1
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: nice_date_long
-    third_party_settings: {  }
-    type: datetime_default
     region: content
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
 hidden:
+  content: true
+  field_valid_to: true
   langcode: true
   links: true
+  questions_answers: true
+  valid_from: true
+  valid_to: true

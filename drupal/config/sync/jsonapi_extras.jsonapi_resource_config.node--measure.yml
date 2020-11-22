@@ -124,11 +124,17 @@ resourceFields:
       id: ''
     disabled: false
   content:
-    disabled: true
     fieldName: content
-    publicName: content
+    publicName: description
     enhancer:
       id: ''
+    disabled: false
+  valid_from:
+    fieldName: valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
   path:
     fieldName: path
     publicName: path
@@ -154,11 +160,11 @@ resourceFields:
     enhancer:
       id: ''
   field_content:
+    disabled: true
     fieldName: field_content
     publicName: description
     enhancer:
       id: ''
-    disabled: false
   field_last_updated:
     fieldName: field_last_updated
     publicName: last_updated
@@ -196,20 +202,26 @@ resourceFields:
       id: ''
     disabled: false
   field_source:
+    disabled: true
     fieldName: field_source
     publicName: source
     enhancer:
       id: ''
-    disabled: false
   field_valid_from:
+    disabled: true
     fieldName: field_valid_from
     publicName: valid_from
     enhancer:
       id: ''
-    disabled: false
   field_valid_to:
+    disabled: true
     fieldName: field_valid_to
     publicName: valid_to
+    enhancer:
+      id: ''
+  field_versions:
+    fieldName: field_versions
+    publicName: field_versions
     enhancer:
       id: ''
     disabled: false
