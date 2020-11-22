@@ -44,7 +44,7 @@ class RegionHelper {
    *
    * @return \Drupal\Core\Entity\EntityInterface|null
    */
-  public static function getPES($region): ?EntityInterface {
+  public static function getPES(EntityInterface $region): ?EntityInterface {
     $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
     foreach ($region->field_validity->referencedEntities() as $validity) {
       $from = $validity->field_valid_from->value ?? "";

@@ -16,7 +16,11 @@ class SituationHelper {
    * @return \Drupal\paragraphs\ParagraphInterface|null
    */
   public static function getActiveVersion(NodeInterface $node): ?ParagraphInterface {
-    $region = $node->field_region->entity;
+    $region = $node->field_region->entity ?? NULL;
+
+    if ($region === NULL) {
+      return NULL;
+    }
 
     $pes = RegionHelper::getPES($region);
 
