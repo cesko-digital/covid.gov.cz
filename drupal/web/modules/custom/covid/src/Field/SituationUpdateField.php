@@ -45,7 +45,7 @@ class SituationUpdateField extends FieldItemList {
 
         if ($update->field_pes->entity->id() === $pes->id() && $update->field_pes_target->entity->id() === $nextPes->id()) {
           $value = $update->field_content[0]->getValue() + [
-              'pes_id' => $nextPes->field_level->value,
+              'pes' => $nextPes->field_level->value,
               'valid_from' => $nextValidity->field_valid_from->value,
               'valid_to' => $nextValidity->field_valid_to->value
             ];

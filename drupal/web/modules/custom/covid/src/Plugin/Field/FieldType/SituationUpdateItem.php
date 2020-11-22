@@ -6,6 +6,7 @@ namespace Drupal\covid\Plugin\Field\FieldType;
 
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\Core\TypedData\DataReferenceTargetDefinition;
 use Drupal\text\Plugin\Field\FieldType\TextLongItem;
 
 /**
@@ -39,6 +40,9 @@ class SituationUpdateItem extends TextLongItem {
 
     $properties['valid_to'] = DataDefinition::create('string')
       ->setLabel(t('Valid to'));
+
+    $properties['pes'] = DataReferenceTargetDefinition::create('integer')
+      ->setSetting('unsigned', TRUE);
 
     return $properties;
   }
