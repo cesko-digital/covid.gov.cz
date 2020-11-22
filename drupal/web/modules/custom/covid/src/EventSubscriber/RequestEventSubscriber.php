@@ -99,27 +99,6 @@ class RequestEventSubscriber implements EventSubscriberInterface {
           $this->messenger->addError("Prosím zapněte dvoufaktorovou autorizaci pro váš účet.");
         }
       }
-      elseif (empty($license_agreement)) {
-        // Only if current route is not ignored.
-        if (!in_array($this->routeMatch->getRouteName(), [
-          'entity.user.edit_form',
-          'one_time_password.setup_form',
-          'user.logout',
-          'covid.license_agreement',
-        ])) {
-          // Redirect to TFA setup form and show message.
-          $url = new Url('covid.license_agreement');
-          $event->setResponse(new RedirectResponse($url->toString()));
-          $this->messenger->addError("Prosíme o udělení souhlasu s licenčním dojednáním.");
-        }
-      }
-
-      // Don't allow access to license agreement page if user already agreed.
-      if ($this->routeMatch->getRouteName() === 'covid.license_agreement' && !empty($license_agreement)) {
-        $url = new Url('<front>');
-        $event->setResponse(new RedirectResponse($url->toString()));
-        $this->messenger->addStatus("Souhlas s licenčním ujednáním  byl již udělen.");
-      }
     }
   }
 
