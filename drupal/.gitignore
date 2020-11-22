@@ -23,4 +23,8 @@
 /.editorconfig
 /.gitattributes
 
+# Ignore mssql dumps.
 *.bak
+
+# Ignore sass cache.
+.sass-cache
