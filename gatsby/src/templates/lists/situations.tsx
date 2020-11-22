@@ -25,7 +25,7 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   return (
-    <Layout pageContext={pageContext}>
+    <Layout pageContext={pageContext} hasTransparentHeader>
       <Seo
         title={t('life_situations')}
         description={t('situations_overview_meta')}
@@ -43,16 +43,16 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
           { title: t('life_situations'), url: t('slug_situations') },
         ]}
       />
-      <Container className="pt-1">
+      <Container className="pt-1 pb-1 pt-md-3 pb-md-3">
         <Breadcrumb
           items={[{ title: t('home'), url: '/' }, t('life_situations')]}
           variant="inverse"
         />
       </Container>
-      <Container className="mt-3 d-block d-md-none">
+      <Container className="mt-1 d-block d-md-none">
         <Headline>{t('situations_overview')}</Headline>
       </Container>
-      <Container className="mt-3">
+      <Container className="mt-1">
         <SituationAreaList theme="blue" data={data.allSituationAreas.nodes} />
       </Container>
     </Layout>

@@ -32,9 +32,8 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
   } = homepage;
   const { measure_items, situation_items } = relationships;
 
-  // todo add meta description
   return (
-    <Layout pageContext={pageContext}>
+    <Layout pageContext={pageContext} hasTransparentHeader>
       <Seo
         title={t('homepage_meta_title')}
         description={meta_description ?? 'CovidPortal'}

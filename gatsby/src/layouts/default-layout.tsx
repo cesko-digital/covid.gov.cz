@@ -17,9 +17,14 @@ import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   pageContext: ISitePageContext;
+  hasTransparentHeader: boolean;
 }
 
-const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
+const DefaultLayout: React.FC<IProps> = ({
+  children,
+  pageContext,
+  hasTransparentHeader,
+}) => {
   const { t } = useTranslation();
   const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
     query DefaultLayout {
@@ -70,17 +75,21 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      <div>
-        <div className={styles.overflow}>
-          <GatsbyImage
-            fluid={sources}
-            className={styles.bkgPhoto}
-            alt="Background image"
-            loading="eager"
-          />
-        </div>
+      <div
+        className={classnames(
+          { 'd-md-none': !hasTransparentHeader },
+          styles.overflow,
+        )}
+      >
+        <GatsbyImage
+          fluid={sources}
+          className={styles.bkgPhoto}
+          alt="Background image"
+          loading="eager"
+        />
       </div>
       <Header
+        isTransparent={hasTransparentHeader}
         pageContext={pageContext}
         navItems={[
           { label: t('home'), to: '/' },

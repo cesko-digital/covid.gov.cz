@@ -3,20 +3,45 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
-.header {
-  // background: linear-gradient(180deg, #000000 -64.66%, rgba(0, 0, 0, 0) 64.66%);
+.blueBgWrapper {
+  background: $theme-blue;
   position: relative;
-  z-index: 100;
+}
+
+.header {
+  position: relative;
   color: $white;
   padding: 10px 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
 
   @include media-breakpoint-down(sm) {
+    height: 70px;
     background-color: $theme-blue;
   }
+}
 
-  @include media-breakpoint-up(md) {
-    margin-top: 25px;
-  }
+.logoWrapper {
+  padding: 0 16px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.headerExtended {
+  display: flex;
+  flex: 1;
+}
+
+.flexWrapper {
+  flex: 1;
+}
+
+.headerTop {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .gradient {
@@ -36,21 +61,30 @@
   position: relative;
 }
 
-.navigation {
+.navigationWrapper {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   overflow: unset !important;
   flex-wrap: nowrap;
+  flex: 1;
+
+  > .navigation {
+    float: left;
+  }
 }
 
 .nav__link {
   margin-top: -1px !important;
   padding: 15px 14px 0 !important;
+  margin-right: 16px;
 }
 
 .nav__toggleWrapper {
   position: relative;
   z-index: 1001;
-  padding-left: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .nav__toggle {

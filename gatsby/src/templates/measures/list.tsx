@@ -26,7 +26,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
   measures.sort((a, b) => collator.compare(a.title, b.title));
 
   return (
-    <Layout pageContext={pageContext}>
+    <Layout pageContext={pageContext} hasTransparentHeader={false}>
       <Seo
         title={measureType.name}
         description={t('current_measures_overview_meta')}
@@ -45,14 +45,13 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         ]}
       />
       <Container>
-        <div className="pt-1">
+        <div className="pt-1 pb-1 pt-md-3 pb-md-3">
           <Breadcrumb
             items={[
               { title: t('home'), url: '/' },
               { title: t('current_measures'), url: t('slug_measures') },
               measureType.name,
             ]}
-            variant="inverse"
           />
         </div>
         <DesktopLeftMenuLayout
