@@ -65,6 +65,14 @@
   background-color: $theme-blue;
 }
 
+.verticalDivider {
+  display: block;
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 16px;
+}
+
 .gradient {
   background: linear-gradient(180deg, #000 -64.66%, rgba(0, 0, 0, 0) 64.66%);
   position: absolute;
