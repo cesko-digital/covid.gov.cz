@@ -129,9 +129,33 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  questions_answers:
+    fieldName: questions_answers
+    publicName: questions_answers
+    enhancer:
+      id: ''
+    disabled: false
   valid_from:
     fieldName: valid_from
     publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
+  valid_to:
+    fieldName: valid_to
+    publicName: valid_to
+    enhancer:
+      id: ''
+    disabled: false
+  source:
+    fieldName: source
+    publicName: source
+    enhancer:
+      id: ''
+    disabled: false
+  update:
+    fieldName: update
+    publicName: update
     enhancer:
       id: ''
     disabled: false
@@ -221,7 +245,7 @@ resourceFields:
       id: ''
   field_versions:
     fieldName: field_versions
-    publicName: field_versions
+    publicName: versions
     enhancer:
       id: ''
     disabled: false

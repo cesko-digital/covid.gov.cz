@@ -6,5 +6,5 @@ id: validity
 label: Platnost
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Platnost stupně PES (Proti Epidemický Systém) v čase která se váže k regionu.'
 behavior_plugins: {  }

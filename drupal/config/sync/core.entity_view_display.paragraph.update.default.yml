@@ -15,25 +15,25 @@ bundle: update
 mode: default
 content:
   field_content:
-    weight: 0
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_pes:
-    weight: 1
-    label: above
+    weight: 0
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_pes_target:
-    weight: 2
-    label: above
+    weight: 1
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
