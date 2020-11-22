@@ -74,7 +74,7 @@ class RequestEventSubscriber implements EventSubscriberInterface {
    * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
    *   The request event.
    */
-  public function checkRequirements(RequestEvent $event) {
+  public function checkOneTimePasswordEnabled(RequestEvent $event) {
     // Only for authenticated users.
     if ($this->currentUser->isAuthenticated()) {
       $user = User::load($this->currentUser->id());
@@ -124,10 +124,63 @@ class RequestEventSubscriber implements EventSubscriberInterface {
   }
 
   /**
+   * Force user to agree with license.
+   *
+   * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
+   *   The request event.
+   */
+  public function forceLicenseAgreement(RequestEvent $event) {
+    // Only for authenticated users.
+    if ($this->currentUser->isAuthenticated()) {
+      $user = User::load($this->currentUser->id());
+      $license_agreement = $this->userData->get('covid', $user->id(), 'license_agreement');
+
+      // Check if TFA is disabled.
+      if (empty($license_agreement)) {
+        // Only if current route is not ignored.
+        if (!in_array($this->routeMatch->getRouteName(), [
+          'entity.user.edit_form',
+          'one_time_password.setup_form',
+          'user.logout',
+          'covid.license_agreement',
+        ])) {
+          // Redirect to TFA setup form and show message.
+          $url = new Url('covid.license_agreement');
+          $event->setResponse(new RedirectResponse($url->toString()));
+          $this->messenger->addError("Prosíme o udělení souhlasu s licenčním dojednáním.");
+        }
+      }
+    }
+  }
+
+  /**
+   * Don't allow access to license agreement page if user already agreed with it.
+   *
+   * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
+   *   The request event.
+   */
+  public function checkLicenseAgreement(RequestEvent $event) {
+    // Only for authenticated users.
+    if ($this->currentUser->isAuthenticated()) {
+      $user = User::load($this->currentUser->id());
+      $license_agreement = $this->userData->get('covid', $user->id(), 'license_agreement');
+
+      // Don't allow access to license agreement page if user already agreed.
+      if ($this->routeMatch->getRouteName() === 'covid.license_agreement' && !empty($license_agreement)) {
+        $url = new Url('<front>');
+        $event->setResponse(new RedirectResponse($url->toString()));
+        $this->messenger->addStatus("Souhlas s licenčním ujednáním  byl již udělen.");
+      }
+    }
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[KernelEvents::REQUEST][] = ['checkRequirements'];
+    $events[KernelEvents::REQUEST][] = ['checkOneTimePasswordEnabled'];
+    $events[KernelEvents::REQUEST][] = ['forceLicenseAgreement'];
+    $events[KernelEvents::REQUEST][] = ['checkLicenseAgreement'];
     return $events;
   }
 
