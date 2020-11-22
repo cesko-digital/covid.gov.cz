@@ -3,7 +3,6 @@ langcode: cs
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.region.field_pes
     - field.field.taxonomy_term.region.field_validity
     - taxonomy.vocabulary.region
   module:
@@ -13,12 +12,6 @@ targetEntityType: taxonomy_term
 bundle: region
 mode: default
 content:
-  field_pes:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_validity:
     type: paragraphs
     weight: 2
