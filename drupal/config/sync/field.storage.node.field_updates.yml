@@ -1,0 +1,21 @@
+uuid: 59a71f7c-ad2b-4a7e-b5cd-ab1a495b859b
+langcode: cs
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_updates
+field_name: field_updates
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
