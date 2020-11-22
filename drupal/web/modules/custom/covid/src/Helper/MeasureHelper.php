@@ -19,12 +19,12 @@ class MeasureHelper {
    * @return \Drupal\paragraphs\ParagraphInterface|null
    */
   public static function getActiveVersion(NodeInterface $node): ?ParagraphInterface {
+    $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
+
     foreach ($node->field_versions->referencedEntities() as $version) {
 
       $from = $version->field_valid_from->value ?? "";
       $to = $version->field_valid_to->value ?? "9999-12-31T23:59:59";
-
-      $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
 
       if ($from <= $now && $now <= $to) {
         return $version;

@@ -3,8 +3,8 @@ langcode: cs
 status: true
 dependencies: {  }
 id: pes_content
-label: 'PES Obsah'
+label: Obsah
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Obsah životní situace vázaný na stupeň PES.'
 behavior_plugins: {  }

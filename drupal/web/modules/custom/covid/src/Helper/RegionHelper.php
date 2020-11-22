@@ -45,7 +45,17 @@ class RegionHelper {
    * @return \Drupal\Core\Entity\EntityInterface|null
    */
   public static function getPES($region): ?EntityInterface {
-    return $region->field_pes->entity ?? NULL;
+    $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
+    foreach ($region->field_validity->referencedEntities() as $validity) {
+      $from = $validity->field_valid_from->value ?? "";
+      $to = $validity->field_valid_to->value ?? "9999-12-31T23:59:59";
+
+      if ($from <= $now && $now <= $to) {
+        return $validity->field_pes->entity ?? NULL;
+      }
+    }
+
+    return NULL;
   }
 
 }
