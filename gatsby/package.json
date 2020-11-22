@@ -90,7 +90,7 @@
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
     "gatsby-plugin-robots-txt": "^1.5.3",
-    "gatsby-plugin-sharp": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.9.0",
     "gatsby-plugin-sitemap": "^2.6.0",
     "gatsby-plugin-stylelint": "^3.2.0",
     "gatsby-plugin-ts-config": "^1.1.1",
