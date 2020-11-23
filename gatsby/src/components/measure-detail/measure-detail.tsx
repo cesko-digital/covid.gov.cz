@@ -24,21 +24,18 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const hash =
     typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
   const sortedVersions = measure?.relationships?.versions
-    .filter((v) => v.valid_from !== measure?.valid_from)
+    .filter((v) => v.valid_from > measure?.valid_from)
     .sort((a, b) => (a.valid_from > b.valid_from ? 1 : -1));
   const currentVersionI = sortedVersions.findIndex(
     (v) => v.valid_from.replace(/T.*/, '') === hash,
   );
-  const currentContent = sortedVersions[currentVersionI]
-    ? sortedVersions[currentVersionI].content?.processed
-    : measure?.content?.processed;
+  const currentVersion = sortedVersions[currentVersionI]
+    ? sortedVersions[currentVersionI]
+    : measure;
   const nextVersionFrom = sortedVersions[currentVersionI + 1]
     ? sortedVersions[currentVersionI + 1].valid_from
     : '';
   const isOriginal = currentVersionI === -1;
-  const thisVersionFrom = !isOriginal
-    ? sortedVersions[currentVersionI].valid_from
-    : '';
 
   return (
     <>
@@ -46,34 +43,43 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         title={measure.title}
         subtitle={measure.norm}
         lastUpdated={measure?.last_updated}
-        processedContent={currentContent}
+        processedContent={currentVersion?.content?.processed}
         beforeContent={
           <>
             {!isOriginal && (
               <UpdateWarning
+                className="position-relative"
                 variant="alert"
                 title={reactStringReplace(
                   reactStringReplace(
                     t('measure_valid_from'),
                     /{{(.*)}}/,
-                    (match) => <a href="#">{match}</a>,
+                    (match) => (
+                      <a href="#" className="stretched-link">
+                        {match}
+                      </a>
+                    ),
                   ),
                   '{date}',
                   () => (
-                    <Time datetime={thisVersionFrom} suffix="" />
+                    <Time datetime={currentVersion?.valid_from} suffix="" />
                   ),
                 )}
               ></UpdateWarning>
             )}
             {nextVersionFrom && (
               <UpdateWarning
+                className="position-relative"
                 variant="info"
                 title={reactStringReplace(
                   reactStringReplace(
                     t('measure_changes'),
                     /{{(.*)}}/,
                     (match) => (
-                      <a href={'#' + nextVersionFrom.replace(/T.*/, '')}>
+                      <a
+                        href={'#' + nextVersionFrom.replace(/T.*/, '')}
+                        className="stretched-link"
+                      >
                         {match}
                       </a>
                     ),
@@ -95,8 +101,8 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         {hasTimeConstraint && (
           <TimeMarker
             displayTime
-            validFrom={measure?.valid_from}
-            validTo={measure?.valid_to}
+            validFrom={currentVersion?.valid_from}
+            validTo={currentVersion?.valid_to}
           />
         )}
         {hasSourceLink && (

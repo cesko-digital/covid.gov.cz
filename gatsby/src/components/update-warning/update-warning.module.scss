@@ -21,7 +21,11 @@
 
   &.alert {
     border-color: $theme-red;
-    color: $theme-red;
+
+    &,
+    a {
+      color: $theme-red;
+    }
   }
 
   p {
