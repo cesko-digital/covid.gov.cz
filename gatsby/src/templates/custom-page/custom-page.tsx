@@ -23,6 +23,7 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
       pageContext={pageContext}
       hasTransparentHeader={false}
       showSearchInHeader
+      showBackgroundImage
     >
       <Seo
         title={page.title}

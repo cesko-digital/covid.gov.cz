@@ -25,7 +25,12 @@ const Situations: React.FC<IProps> = ({ data, pageContext }) => {
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader showSearchInHeader>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showBackgroundImage
+      showSearchInHeader
+    >
       <Seo
         title={t('life_situations')}
         description={t('situations_overview_meta')}

@@ -42,6 +42,7 @@ const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
       pageContext={pageContext}
       hasTransparentHeader
       showSearchInHeader={false}
+      showBackgroundImage
     >
       <Helmet title={`${title} | COVID PORTAL`} />
       <SearchPanel resultsTotal={results.length} initialValue={searchValue} />

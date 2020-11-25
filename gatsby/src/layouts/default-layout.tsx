@@ -18,6 +18,7 @@ import { useTranslation } from '@/components/i18n';
 interface IProps {
   pageContext: ISitePageContext;
   hasTransparentHeader: boolean;
+  showBackgroundImage: boolean;
   showSearchInHeader: boolean;
 }
 
@@ -26,6 +27,7 @@ const DefaultLayout: React.FC<IProps> = ({
   pageContext,
   hasTransparentHeader,
   showSearchInHeader,
+  showBackgroundImage,
 }) => {
   const { t } = useTranslation();
   const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
@@ -77,7 +79,7 @@ const DefaultLayout: React.FC<IProps> = ({
           crossOrigin="anonymous"
         />
       </Helmet>
-      {hasTransparentHeader && (
+      {showBackgroundImage && (
         <div className={classnames(styles.overflow)}>
           <GatsbyImage
             fluid={sources}

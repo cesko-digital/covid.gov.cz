@@ -16,7 +16,12 @@ interface IProps {
 const PageNotFound: React.FC<IProps> = ({ pageContext }) => {
   const { t } = useTranslation();
   return (
-    <Layout pageContext={pageContext} hasTransparentHeader showSearchInHeader>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+      showBackgroundImage={false}
+    >
       <Helmet title={`${t('page_not_found')} | COVID PORTAL`} />
       <Container>
         <Row className="flex-column my-5" alignItems="center" justify="center">

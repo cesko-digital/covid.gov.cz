@@ -37,6 +37,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
       pageContext={pageContext}
       hasTransparentHeader
       showSearchInHeader={false}
+      showBackgroundImage
     >
       <Seo
         title={t('homepage_meta_title')}

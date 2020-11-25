@@ -30,6 +30,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
       pageContext={pageContext}
       hasTransparentHeader={false}
       showSearchInHeader
+      showBackgroundImage={false}
     >
       <Seo
         title={measureType.name}

@@ -31,6 +31,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
       pageContext={pageContext}
       hasTransparentHeader={false}
       showSearchInHeader
+      showBackgroundImage={false}
     >
       <Seo
         title={area.name}
