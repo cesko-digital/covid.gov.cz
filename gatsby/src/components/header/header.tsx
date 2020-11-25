@@ -103,15 +103,11 @@ const Header: React.FC<Props> = ({
             >
               <div className={classes.flexWrapper}>
                 <div className={classes.headerTop}>
-                  <div className="left">Infolinka: 270 005 200</div>
+                  <div className="left"></div>
                   <div className={classnames('d-flex', 'align-items-center')}>
                     {showSearch && (
                       <>
-                        <SearchBox
-                          size="small"
-                          className={classes.searchBox}
-                          buttonProps={{ variant: 'contained' }}
-                        />
+                        <SearchBox size="small" className={classes.searchBox} />
                         <span className={classes.verticalDivider} />
                       </>
                     )}
