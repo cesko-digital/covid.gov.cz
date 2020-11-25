@@ -641,6 +641,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/zaruka-covid-plus-pro-velke-exportery-program-exportni-garancni-pojistovaci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/nemoznost-splacet-uver-ci-hypoteku-kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/kompenzacni-bonus-osetrovne-pro-osvc-invalidni-duchod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/testovani-odber-vzorku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/telefonni-linky-pro-sluchove-postizene</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/opatreni-ve-znakovem-jazyce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
