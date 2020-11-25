@@ -106,6 +106,11 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({
   actions,
   getNode,
 }) => {
+  const existingSearchIndex = getNode(SEARCH_INDEX_ID);
+  if (existingSearchIndex) {
+    actions.touchNode({ nodeId: existingSearchIndex.id });
+  }
+
   if (INDEXED_TYPES.indexOf(node.internal.type) === -1) {
     return;
   }
