@@ -12,7 +12,6 @@ import RelatedMeasure from '../related-measure';
 import { useTranslation } from '../i18n';
 import LastUpdate from '../last-update';
 import RelatedTopics from '../related-topics/related-topics';
-import useMobile from '@/hooks/useMobile';
 
 interface IProps {
   situation: ISituationDetailFragment;
@@ -24,7 +23,6 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
 
   const hasFaq = Boolean(faq.length);
   const { t } = useTranslation();
-  const isMobile = useMobile();
   const hasRelatedLinks = Boolean(situation.links.length);
   const hasRelatedMeasures = Boolean(situation.relationships.measures.length);
   const hasRelatedSituations = Boolean(relatedSituations.length);
@@ -68,13 +66,9 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         )}
         <LastUpdate isMobile lastUpdated={situation?.last_updated} />
       </div>
-      <Container className="px-sm-0 px-md-2">
-        {hasRelatedSituations && (
-          <RelatedTopics
-            variant={isMobile ? 'blue' : 'white'}
-            links={relatedSituations}
-          />
-        )}
+      <Container className="px-0 px-md-3">
+        <hr />
+        {hasRelatedSituations && <RelatedTopics links={relatedSituations} />}
         {hasFaq && (
           <ContentBox variant="blue" title={t('faq')} boldedTitleCount={2}>
             <Accordion

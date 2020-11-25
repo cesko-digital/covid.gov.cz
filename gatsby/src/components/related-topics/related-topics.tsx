@@ -1,26 +1,26 @@
 import React from 'react';
-import ContentBox from '../content-box';
+import classNames from 'classnames';
 import { useTranslation } from '../i18n';
 import LinkList from '../link-list';
+import styles from './related-topics.module.scss';
 
 interface Props {
   links: Array<{
     path?: { alias?: string; langcode?: string };
     title?: string;
   }>;
-  variant: 'white' | 'blue';
 }
 
-const RelatedTopics: React.FC<Props> = ({ links, variant }) => {
+const RelatedTopics: React.FC<Props> = ({ links }) => {
   const { t } = useTranslation();
   return (
-    <ContentBox
-      title={t('similar_topics')}
-      boldedTitleCount={1}
-      variant={variant}
-    >
-      <LinkList variant={variant === 'blue' ? 'white' : 'blue'} links={links} />
-    </ContentBox>
+    <div className={classNames(styles.wrapper)}>
+      <h3
+        dangerouslySetInnerHTML={{ __html: t('similar_topics') }}
+        className="mb-1"
+      ></h3>
+      <LinkList links={links} />
+    </div>
   );
 };
 

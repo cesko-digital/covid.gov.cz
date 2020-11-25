@@ -1,13 +1,18 @@
 @import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/base/functions';
 @import '../../../assets/scss/design-system/vendor/bootstrap/functions';
 @import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .linkStyled {
-  padding-top: 1rem;
   margin: 0;
 
-  @include media-breakpoint-up(lg) {
+  //desktop
+  @include media-breakpoint-up(md) {
+    &:not(:last-of-type) {
+      border-bottom: solid 1px darken($theme-white, 9%);
+    }
+
     .chevron {
       position: relative;
       right: 20px;
@@ -23,65 +28,36 @@
   }
 }
 
-.linkStyledBlueLine {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid $hr-border-color;
-
-  &:last-of-type {
-    border-bottom: none;
-  }
-}
-
 .linkStyledLink {
+  padding: 4px 0;
   display: flex;
-  color: $theme-white;
   align-items: center;
   justify-content: space-between;
   font-weight: 500;
-  padding: 0.7rem 0 0.7rem 1.2rem;
+  color: $theme-white;
 
-  @include media-breakpoint-up(lg) {
-    padding: 0.7rem 0;
+  @include complement-visited-links() {
+    color: $theme-white;
+
+    &:hover,
+    &:focus {
+      color: $theme-yellow;
+    }
+  }
+
+  // desktop
+  @include media-breakpoint-up(md) {
+    color: $theme-blue;
+    padding: 12px 0;
     text-decoration: none;
-  }
-
-  // overriding complement-visited-links mixin
-  &:hover,
-  &:focus {
-    color: $theme-yellow !important;
-  }
-  &:visited {
-    color: $theme-white !important;
 
     &:hover,
     &:focus {
-      color: $theme-yellow !important;
+      color: $theme-yellow;
     }
-  }
-}
 
-.linkStyledLinkBlue {
-  color: $theme-blue !important;
-  // overriding complement-visited-links mixin
-  &:visited {
-    color: $theme-blue !important;
-
-    &:hover,
-    &:focus {
-      color: $theme-yellow !important;
-    }
-  }
-}
-
-.linkStyledLinkWhite {
-  // overriding complement-visited-links mixin
-  color: $theme-white !important;
-  &:visited {
-    color: $theme-white !important;
-
-    &:hover,
-    &:focus {
-      color: $theme-yellow !important;
+    @include complement-visited-links() {
+      color: $theme-blue;
     }
   }
 }
