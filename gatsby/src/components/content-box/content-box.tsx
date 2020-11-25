@@ -30,11 +30,12 @@ const ContentBox: React.FC<Props> = ({
     // contentBox--white
     // contentBox--blue
     <div
-      className={classNames({
-        row: true,
-        [styles.contentBox]: true,
-        [styles.contentBoxNoPadding]: noPadding,
-      })}
+      className={classNames(
+        styles.contentBox,
+        styles[`contentBox--${variant}`],
+        noPadding && styles.contentBoxNoPadding,
+        'row',
+      )}
     >
       <Col col={12}>
         {title && (
