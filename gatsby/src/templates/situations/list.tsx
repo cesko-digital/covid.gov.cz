@@ -68,6 +68,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
             <SituationAreaList
               theme="blue"
               data={data.allSituationAreas.nodes}
+              currentActiveSlug={pageContext.slug}
             />
           }
           hideMenuOnMobile

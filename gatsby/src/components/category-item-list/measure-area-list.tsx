@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { useLocation } from '@reach/router';
 import { IMeasureAreaFragment } from 'graphql-types';
 import CategoryItemList from './category-item-list';
 import { useTranslation } from '../i18n';
@@ -8,10 +7,14 @@ import { useTranslation } from '../i18n';
 interface IProps {
   data: IMeasureAreaFragment[];
   theme: 'white' | 'blue';
+  currentActiveSlug?: string;
 }
 
-const MeasureAreaList: React.FC<IProps> = ({ data, theme }) => {
-  const location = useLocation();
+const MeasureAreaList: React.FC<IProps> = ({
+  data,
+  theme,
+  currentActiveSlug,
+}) => {
   const { t } = useTranslation();
 
   const listItems: React.ComponentProps<typeof CategoryItemList>['items'] = data
@@ -21,7 +24,7 @@ const MeasureAreaList: React.FC<IProps> = ({ data, theme }) => {
       name,
       path: path.alias,
       iconCode: relationships.icon?.code,
-      isActive: path.alias === location.pathname,
+      isActive: path.alias === currentActiveSlug,
       theme,
     }));
   return (
