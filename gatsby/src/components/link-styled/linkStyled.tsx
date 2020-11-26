@@ -13,10 +13,12 @@ const LinkStyled: React.FC<Props> = ({ to, title }) => {
     <p className={styles.linkStyled}>
       <Link to={to} title={title} className={styles.linkStyledLink}>
         {title}
-        <KeyboardArrowRight
-          style={{ fontSize: 20 }}
-          className={styles.linkStyledIcon}
-        />
+        <span className={styles.chevron}>
+          <KeyboardArrowRight
+            style={{ fontSize: 20 }}
+            className={styles.linkStyledIcon}
+          />
+        </span>
       </Link>
     </p>
   );

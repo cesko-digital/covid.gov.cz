@@ -10,11 +10,11 @@ import { ISituationDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import RelatedMeasure from '../related-measure';
-import LinkList from '../link-list';
 import { useTranslation } from '../i18n';
 import LastUpdate from '../last-update';
 import { UpdateWarning } from '../update-warning/update-warning';
 import Time from '../time';
+import RelatedTopics from '../related-topics/related-topics';
 
 interface IProps {
   situation: ISituationDetailFragment;
@@ -96,7 +96,9 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         )}
         <LastUpdate isMobile lastUpdated={situation?.last_updated} />
       </div>
-      <Container>
+      <Container className="px-0 px-md-3">
+        <hr />
+        {hasRelatedSituations && <RelatedTopics links={relatedSituations} />}
         {hasFaq && (
           <ContentBox variant="blue" title={t('faq')} boldedTitleCount={2}>
             <Accordion
@@ -105,15 +107,6 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
                 text: item.value,
               }))}
             />
-          </ContentBox>
-        )}
-        {hasRelatedSituations && (
-          <ContentBox
-            title={t('similar_topics')}
-            boldedTitleCount={1}
-            variant="blue"
-          >
-            <LinkList links={relatedSituations} />
           </ContentBox>
         )}
       </Container>

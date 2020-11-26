@@ -1,0 +1,26 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
+  padding: 16px;
+  background: $theme-blue;
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  > h3 {
+    color: $theme-white;
+  }
+
+  // desktop
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    padding: 8px 0 16px 0;
+    background: transparent;
+
+    > h3 {
+      color: $theme-blue;
+    }
+  }
+}

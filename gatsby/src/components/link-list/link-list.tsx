@@ -9,14 +9,15 @@ interface Props {
 }
 
 const LinkList: React.FC<Props> = ({ links }) => {
+  if (links.length === 0) {
+    return null;
+  }
   return (
-    <div>
-      {links.length !== 0
-        ? links.map((link, i) => (
-            <LinkStyled key={i} title={link.title} to={link.path.alias} />
-          ))
-        : ''}
-    </div>
+    <>
+      {links.map((link, i) => (
+        <LinkStyled key={i} title={link.title} to={link.path.alias} />
+      ))}
+    </>
   );
 };
 

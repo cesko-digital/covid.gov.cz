@@ -58,7 +58,11 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
         <DesktopLeftMenuLayout
           theme="white"
           menu={
-            <MeasureAreaList theme="white" data={data.allMeasureType.nodes} />
+            <MeasureAreaList
+              theme="white"
+              data={data.allMeasureType.nodes}
+              currentActiveSlug={pageContext.slug}
+            />
           }
           hideMenuOnMobile
         >

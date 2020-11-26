@@ -2,7 +2,6 @@ import React from 'react';
 import reactStringReplace from 'react-string-replace';
 
 import Link from '@/components/link';
-
 import { IMeasureDetailFragment } from '@graphql-types';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
@@ -145,6 +144,10 @@ export const query = graphql`
       }
       related_situations: situation {
         title
+        path {
+          alias
+          langcode
+        }
       }
       versions {
         content {
