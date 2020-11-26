@@ -10,6 +10,7 @@ import { RegionsMarker, TimeMarker } from '../marker';
 import LastUpdate from '../last-update';
 import { UpdateWarning } from '../update-warning/update-warning';
 import Time from '../time';
+import { useHasMounted } from '../client-only';
 
 interface IProps {
   measure: IMeasureDetailFragment;
@@ -20,8 +21,8 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const hasSourceLink = Boolean(measure.source);
   const hasRegion = Boolean(measure?.relationships?.region?.length);
   const hasTimeConstraint = Boolean(measure?.valid_from || measure?.valid_to);
-  const hash =
-    typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
+  const hasMounted = useHasMounted();
+  const hash = hasMounted ? window.location.hash.replace('#', '') : '';
   const sortedVersions = measure?.relationships?.versions
     .filter((v) => v.valid_from > measure?.valid_from)
     .sort((a, b) => (a.valid_from > b.valid_from ? 1 : -1));
