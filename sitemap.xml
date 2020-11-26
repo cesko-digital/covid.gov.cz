@@ -57,7 +57,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/visits-hospitals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/non-emergency-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/occupational-quarantine-paramedics</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/visits-social-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/social-situations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/social-situations/grief-and-loss</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
