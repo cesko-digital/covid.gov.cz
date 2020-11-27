@@ -3,6 +3,7 @@ import reactStringReplace from 'react-string-replace';
 
 import Link from '@/components/link';
 import { IMeasureDetailFragment } from '@graphql-types';
+import { useLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import TopicDetail from '../topic-detail';
 import { useTranslation } from '../i18n';
@@ -10,7 +11,7 @@ import { RegionsMarker, TimeMarker } from '../marker';
 import LastUpdate from '../last-update';
 import { UpdateWarning } from '../update-warning/update-warning';
 import Time from '../time';
-import { useHasMounted } from '../client-only';
+import { getCurrentMeasureVersion } from './getCurrentMeasureVersion.util';
 
 interface IProps {
   measure: IMeasureDetailFragment;
@@ -21,21 +22,13 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const hasSourceLink = Boolean(measure.source);
   const hasRegion = Boolean(measure?.relationships?.region?.length);
   const hasTimeConstraint = Boolean(measure?.valid_from || measure?.valid_to);
-  const hasMounted = useHasMounted();
-  const hash = hasMounted ? window.location.hash.replace('#', '') : '';
-  const sortedVersions = measure?.relationships?.versions
-    .filter((v) => v.valid_from > measure?.valid_from)
-    .sort((a, b) => (a.valid_from > b.valid_from ? 1 : -1));
-  const currentVersionI = sortedVersions.findIndex(
-    (v) => v.valid_from.replace(/T.*/, '') === hash,
-  );
-  const currentVersion = sortedVersions[currentVersionI]
-    ? sortedVersions[currentVersionI]
-    : measure;
-  const nextVersionFrom = sortedVersions[currentVersionI + 1]
-    ? sortedVersions[currentVersionI + 1].valid_from
-    : '';
-  const isOriginal = currentVersionI === -1;
+  const { hash } = useLocation();
+  const {
+    versionToDisplay,
+    isDisplayedVersionCurrent,
+    nextVersionFrom,
+    nextVersionHash,
+  } = getCurrentMeasureVersion(hash, measure);
 
   return (
     <>
@@ -43,10 +36,10 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         title={measure.title}
         subtitle={measure.norm}
         lastUpdated={measure?.last_updated}
-        processedContent={currentVersion?.content?.processed}
+        processedContent={versionToDisplay?.content?.processed}
         beforeContent={
           <>
-            {!isOriginal && (
+            {!isDisplayedVersionCurrent && (
               <UpdateWarning
                 className="position-relative"
                 variant="alert"
@@ -62,7 +55,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                   ),
                   '{date}',
                   () => (
-                    <Time datetime={currentVersion?.valid_from} suffix="" />
+                    <Time datetime={versionToDisplay?.valid_from} suffix="" />
                   ),
                 )}
               ></UpdateWarning>
@@ -76,10 +69,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                     t('measure_changes'),
                     /{{(.*)}}/,
                     (match) => (
-                      <a
-                        href={'#' + nextVersionFrom.replace(/T.*/, '')}
-                        className="stretched-link"
-                      >
+                      <a href={nextVersionHash} className="stretched-link">
                         {match}
                       </a>
                     ),
@@ -101,8 +91,8 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         {hasTimeConstraint && (
           <TimeMarker
             displayTime
-            validFrom={currentVersion?.valid_from}
-            validTo={currentVersion?.valid_to}
+            validFrom={versionToDisplay?.valid_from}
+            validTo={versionToDisplay?.valid_to}
           />
         )}
         {hasSourceLink && (
