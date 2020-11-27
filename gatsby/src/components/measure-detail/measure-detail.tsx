@@ -12,6 +12,7 @@ import LastUpdate from '../last-update';
 import { UpdateWarning } from '../update-warning/update-warning';
 import Time from '../time';
 import { getCurrentMeasureVersion } from './getCurrentMeasureVersion.util';
+import { useHasMounted } from '../client-only';
 
 interface IProps {
   measure: IMeasureDetailFragment;
@@ -23,12 +24,13 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const hasRegion = Boolean(measure?.relationships?.region?.length);
   const hasTimeConstraint = Boolean(measure?.valid_from || measure?.valid_to);
   const { hash } = useLocation();
+  const hasMounted = useHasMounted();
   const {
     versionToDisplay,
     isDisplayedVersionCurrent,
     nextVersionFrom,
     nextVersionHash,
-  } = getCurrentMeasureVersion(hash, measure);
+  } = getCurrentMeasureVersion(hasMounted ? hash : '', measure);
 
   return (
     <>
@@ -41,6 +43,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
           <>
             {!isDisplayedVersionCurrent && (
               <UpdateWarning
+                key={`${measure.path.alias}-current`}
                 className="position-relative"
                 variant="alert"
                 title={reactStringReplace(
@@ -58,10 +61,11 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                     <Time datetime={versionToDisplay?.valid_from} suffix="" />
                   ),
                 )}
-              ></UpdateWarning>
+              />
             )}
             {nextVersionFrom && (
               <UpdateWarning
+                key={`${measure.path.alias}-future`}
                 className="position-relative"
                 variant="info"
                 title={reactStringReplace(
@@ -79,7 +83,7 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                     <Time datetime={nextVersionFrom} suffix="" />
                   ),
                 )}
-              ></UpdateWarning>
+              />
             )}
           </>
         }
