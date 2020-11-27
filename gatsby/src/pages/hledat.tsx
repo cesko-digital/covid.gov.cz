@@ -38,7 +38,12 @@ const SearchResultsPage: React.FC<IProps> = ({ pageContext }) => {
 
   const title = `"${searchValue}" – ${t('search_button').toLowerCase()}`;
   return (
-    <Layout pageContext={pageContext}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader
+      showSearchInHeader={false}
+      showBackgroundImage
+    >
       <Helmet title={`${title} | COVID PORTAL`} />
       <SearchPanel resultsTotal={results.length} initialValue={searchValue} />
       <Container>

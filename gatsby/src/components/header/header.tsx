@@ -3,8 +3,6 @@ import classnames from 'classnames';
 import Link from '@/components/link';
 
 import Container from '../container';
-import Row from '../row';
-import Col from '../col';
 
 import classes from './header.module.scss';
 
@@ -13,6 +11,10 @@ import { HeaderLocaleSelect } from './header-locale-select';
 import { useCurrentLanguage, useTranslation } from '@/components/i18n';
 import { ISitePageContext } from '@graphql-types';
 import { Alert } from '../alert';
+import SearchBox from '../search-box';
+import Row from '../row';
+import Col from '../col';
+import GovIcon from '../gov-icon';
 
 interface NavItem {
   label: string;
@@ -22,11 +24,18 @@ interface NavItem {
 interface Props {
   navItems: NavItem[];
   pageContext: ISitePageContext;
+  isTransparent: boolean;
+  showSearch: boolean;
 }
 
 export const locales = ['cs', 'en'];
 
-const Header: React.FC<Props> = ({ navItems, pageContext }) => {
+const Header: React.FC<Props> = ({
+  navItems,
+  pageContext,
+  isTransparent,
+  showSearch,
+}) => {
   const [isOpen, setOpen] = useState(false);
   const currentLanguage = useCurrentLanguage();
   const { t } = useTranslation();
@@ -44,22 +53,25 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
 
   const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
   return (
-    <div>
-      <div className={classes.gradient} />
+    <>
       {bannerMessage && <Alert message={bannerMessage} />}
-
-      <div className={classes.header} role="banner">
+      <header
+        className={classnames(classes.header, {
+          [classes.blueBgWrapper]: !isTransparent,
+        })}
+        role="banner"
+      >
+        {isTransparent && <div className={classes.gradient} />}
         <Container>
-          <Row alignItems="center" className={classes.header__inner}>
+          <div className={classes.headerExtended}>
             {/* LOGO */}
-            <Col col={7} colMd={3} colLg={3}>
+            <div className={classes.logoWrapper}>
               <Link to="/" title={'COVID PORTAL - ' + t('home')}>
                 <img src={headerLogo} alt="Covid Portál" />
               </Link>
-            </Col>
+            </div>
             {/* MOBILE TOGGLE */}
-            <Col
-              col={5}
+            <div
               className={classnames(
                 classes.nav__toggleWrapper,
                 'd-md-none text-right',
@@ -79,44 +91,52 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                   {(isOpen ? t('menu_close') : t('menu_open')).toUpperCase()}
                 </div>
               </div>
-            </Col>
-            {/* DESKTOP NAV & SEARCH */}
-            <Col col={12} colMd={8} colLg={9}>
-              <Row alignItems="center">
-                {/* NAVIGATION */}
-                <Col
-                  col={12}
-                  colLg={10}
-                  colXl={8}
-                  className="d-none d-md-block"
-                >
-                  <div className={classnames('navigation')}>
-                    <ul
-                      className={classnames(
-                        classes.navigation,
-                        'nav nav--primary',
-                      )}
-                    >
-                      {navItems.map(({ label, to }) => (
-                        <li className={classnames('nav__item')} key={label}>
-                          <Link
-                            to={to}
-                            className={classnames(
-                              'nav__link',
-                              classes.nav__link,
-                            )}
-                            activeClassName="active"
-                            partiallyActive={to !== '/'}
-                          >
-                            {label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+            </div>
+            {/* NAVIGATION */}
+            <nav
+              className={classnames(
+                classes.headerExtended,
+                'navigation',
+                'd-none',
+                'd-md-block',
+              )}
+            >
+              <div className={classes.flexWrapper}>
+                <div className={classes.headerTop}>
+                  <div className="left"></div>
+                  <div className={classnames('d-flex', 'align-items-center')}>
+                    {showSearch && (
+                      <>
+                        <SearchBox size="small" className={classes.searchBox} />
+                        <span className={classes.verticalDivider} />
+                      </>
+                    )}
+                    <HeaderLocaleSelect languageVariants={languageVariants} />
                   </div>
-                </Col>
-              </Row>
-            </Col>
+                </div>
+                <div className={classes.navigationWrapper}>
+                  <ul
+                    className={classnames(
+                      classes.navigation,
+                      'nav nav--primary',
+                    )}
+                  >
+                    {navItems.map(({ label, to }) => (
+                      <li className={classnames('nav__item')} key={label}>
+                        <Link
+                          to={to}
+                          className={classnames('nav__link', classes.nav__link)}
+                          activeClassName="active"
+                          partiallyActive={to !== '/'}
+                        >
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </nav>
             {/* MOBILE NAV */}
             <div
               className={classnames(
@@ -175,12 +195,32 @@ const Header: React.FC<Props> = ({ navItems, pageContext }) => {
                 </div>
               </div>
             </div>
-            {/* DESKTOP LOCALE SELECT */}
-            <HeaderLocaleSelect languageVariants={languageVariants} />
-          </Row>
+          </div>
         </Container>
-      </div>
-    </div>
+      </header>
+      {/* MOBILE SEARCH BOX */}
+      {showSearch && (
+        <div
+          className={classnames(
+            classes.mobileSearchBoxWrapper,
+            'd-block d-md-none',
+          )}
+        >
+          <Container>
+            <Row>
+              <Col colSm={12}>
+                <SearchBox
+                  buttonProps={{
+                    icon: <GovIcon icon="search" size={16} />,
+                    text: '',
+                  }}
+                />
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      )}
+    </>
   );
 };
 

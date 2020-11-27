@@ -17,9 +17,18 @@ import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   pageContext: ISitePageContext;
+  hasTransparentHeader: boolean;
+  showBackgroundImage: boolean;
+  showSearchInHeader: boolean;
 }
 
-const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
+const DefaultLayout: React.FC<IProps> = ({
+  children,
+  pageContext,
+  hasTransparentHeader,
+  showSearchInHeader,
+  showBackgroundImage,
+}) => {
   const { t } = useTranslation();
   const data = useStaticQuery<IDefaultLayoutQuery>(graphql`
     query DefaultLayout {
@@ -70,17 +79,21 @@ const DefaultLayout: React.FC<IProps> = ({ children, pageContext }) => {
           crossOrigin="anonymous"
         />
       </Helmet>
-      <div>
-        <div className={styles.overflow}>
+      {showBackgroundImage && (
+        <div className={classnames(styles.overflow)}>
           <GatsbyImage
             fluid={sources}
-            className={styles.bkgPhoto}
+            className={classnames(styles.bkgPhoto, {
+              [styles.searchDisplayed]: showSearchInHeader,
+            })}
             alt="Background image"
             loading="eager"
           />
         </div>
-      </div>
+      )}
       <Header
+        isTransparent={hasTransparentHeader}
+        showSearch={showSearchInHeader}
         pageContext={pageContext}
         navItems={[
           { label: t('home'), to: '/' },

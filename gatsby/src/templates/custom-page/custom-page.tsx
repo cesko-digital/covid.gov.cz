@@ -19,7 +19,12 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
   const { t } = useTranslation();
 
   return (
-    <Layout pageContext={pageContext}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+      showBackgroundImage
+    >
       <Seo
         title={page.title}
         description={page.meta_description ?? 'Custom page meta description.'}
@@ -36,7 +41,7 @@ const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
         breadcrumbItems={[{ title: t('home'), url: '/' }, page.title]}
       />
       <Container className="mb-4">
-        <div className="pt-1">
+        <div className="pt-1 pb-1 pt-md-3 pb-md-3">
           <Breadcrumb
             items={[{ title: t('home'), url: '/' }, page.title]}
             variant="inverse"

@@ -26,7 +26,7 @@ const getBreadcrumbClasses = (variant: IProps['variant']): string => {
 const Breadcrumb: React.FC<IProps> = ({ items, variant = 'normal' }) => {
   const getItemClasses = (index: number): string => {
     return classNames('breadcrumb__item', classes.breadcrumbItem, {
-      [classes.breadcrumbItemActive]: index === items.length - 1,
+      'breadcrumb__item--active': index === items.length - 1,
     });
   };
 

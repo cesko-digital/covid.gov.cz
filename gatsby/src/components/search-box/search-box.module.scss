@@ -4,7 +4,7 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .wrapper {
-  margin: 14px 0;
+  margin: 0;
   position: relative;
 }
 
@@ -23,6 +23,12 @@
 .searchBoxInput {
   padding: 11px 16px;
   padding-right: 42px;
+
+  &Small {
+    font-size: 12px;
+    height: 30px;
+    padding: 8px 12px;
+  }
 }
 
 .search__results {
@@ -76,4 +82,10 @@
 
 .searchButton {
   padding: 8px 16px;
+  color: black;
+
+  &Small {
+    padding: 4px 8px;
+    height: 23px;
+  }
 }

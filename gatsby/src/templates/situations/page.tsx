@@ -28,7 +28,12 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
   }));
   const { t } = useTranslation();
   return (
-    <Layout pageContext={pageContext}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+      showBackgroundImage={false}
+    >
       <Seo
         title={data.situation.title}
         description={
@@ -65,7 +70,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         questions_answers={data.situation.questions_answers}
       />
       <Container>
-        <div className="pt-1">
+        <div className="pt-1 pb-1 pt-md-3 pb-md-3">
           <Breadcrumb
             items={[
               { title: t('home'), url: '/' },
@@ -79,7 +84,6 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               },
               data.situation.title,
             ]}
-            variant="inverse"
           />
         </div>
         <DesktopLeftMenuLayout

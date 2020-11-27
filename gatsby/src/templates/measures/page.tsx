@@ -29,7 +29,12 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
   }));
 
   return (
-    <Layout pageContext={pageContext}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+      showBackgroundImage={false}
+    >
       <Seo
         title={data.measure.title}
         description={
@@ -63,7 +68,7 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
         ]}
       />
       <Container>
-        <div className="pt-1">
+        <div className="pt-1 pb-1 pt-md-3 pb-md-3">
           <Breadcrumb
             items={[
               { title: t('home'), url: '/' },
@@ -77,7 +82,6 @@ const Page: React.FC<IProps> = ({ data, pageContext }) => {
               },
               data.measure.title,
             ]}
-            variant="inverse"
           />
         </div>
         <DesktopLeftMenuLayout

@@ -32,6 +32,13 @@
   height: auto !important;
   backface-visibility: hidden;
 
+  &.searchDisplayed {
+    // additional top position when search on mobile is visible
+    @include media-breakpoint-down(sm) {
+      top: 55px;
+    }
+  }
+
   [aria-hidden='true'] {
     top: 0 !important;
     position: absolute !important;

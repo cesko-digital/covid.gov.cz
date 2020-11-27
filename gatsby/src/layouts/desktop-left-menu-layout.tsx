@@ -19,7 +19,6 @@ const DesktopLeftMenuLayout: React.FC<IProps> = ({
     <div
       className={classNames({
         [styles.wrapper]: true,
-        'mt-3': true,
         [styles.whiteTheme]: theme === 'white',
         [styles.blueTheme]: theme === 'blue',
       })}

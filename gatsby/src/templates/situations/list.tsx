@@ -27,7 +27,12 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
   situations.sort((a, b) => collator.compare(a.title, b.title));
 
   return (
-    <Layout pageContext={pageContext}>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+      showBackgroundImage={false}
+    >
       <Seo
         title={area.name}
         description={t('situations_overview_meta')}
@@ -49,7 +54,7 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
         ]}
       />
       <Container>
-        <div className="pt-1">
+        <div className="pt-1 pb-1 pt-md-3 pb-md-3">
           <Breadcrumb
             items={[
               { title: t('home'), url: '/' },
@@ -59,7 +64,6 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
               },
               area.name,
             ]}
-            variant="inverse"
           />
         </div>
         <DesktopLeftMenuLayout
@@ -73,7 +77,10 @@ const SituationList: React.FC<IProps> = ({ data, pageContext }) => {
           }
           hideMenuOnMobile
         >
-          <Headline iconCode={data.area?.relationships?.icon?.code}>
+          <Headline
+            iconCode={data.area?.relationships?.icon?.code}
+            color="blue"
+          >
             {area.name}
           </Headline>
           {situations.map(({ id, title, meta_description, path }) => {

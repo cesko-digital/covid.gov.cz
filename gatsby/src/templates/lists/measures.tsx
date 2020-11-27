@@ -25,7 +25,12 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
   nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   return (
-    <Layout pageContext={pageContext}>
+    <Layout
+      pageContext={pageContext}
+      showSearchInHeader
+      showBackgroundImage
+      hasTransparentHeader={false}
+    >
       <Seo
         title={t('current_measures_overview')}
         description={t('current_measures_overview_meta')}
@@ -43,16 +48,16 @@ const Measures: React.FC<IProps> = ({ data, pageContext }) => {
           { title: t('current_measures'), url: t('slug_measures') },
         ]}
       />
-      <Container className="pt-1">
+      <Container className="pt-1 pb-1 pt-md-3 pb-md-3">
         <Breadcrumb
           items={[{ title: t('home'), url: '/' }, t('current_measures')]}
           variant="inverse"
         />
       </Container>
-      <Container className="mt-3 d-block d-md-none">
-        <Headline>{t('current_measures_overview')}</Headline>
+      <Container className="mt-1 d-block d-md-none">
+        <Headline color="white">{t('current_measures_overview')}</Headline>
       </Container>
-      <Container className="mt-3">
+      <Container className="mt-1">
         <MeasureAreaList theme="white" data={data.allMeasureType.nodes} />
       </Container>
     </Layout>
