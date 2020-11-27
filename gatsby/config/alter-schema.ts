@@ -1,13 +1,13 @@
 import { GatsbyNode } from 'gatsby';
 
 /**
- * Create redirect type so everything is working fine if there are no redirects coming from Drupal.
+ * Create fallback types so everything is working fine if there are no redirects coming from Drupal.
  */
 export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] = async ({
   actions,
 }) => {
   const { createTypes } = actions;
-  const redirectType = `
+  const fallbackTypes = `
     """
     Redirect Node
     """
@@ -16,6 +16,19 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       redirect_to: String
       status_code: String
     }
+
+    """
+    Update
+    """
+    type situation implements Node @infer {
+      update: update
+    }
+
+    type update {
+      processed: String
+      valid_from: String
+      pes: String
+    }
   `;
-  createTypes(redirectType);
+  createTypes(fallbackTypes);
 };

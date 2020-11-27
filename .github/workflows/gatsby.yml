@@ -45,3 +45,6 @@ jobs:
 
       - name: Run typescript check
         run: yarn lint:tsc
+      
+      - name: Run tests
+        run: yarn test

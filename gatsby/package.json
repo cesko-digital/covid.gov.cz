@@ -53,6 +53,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.0.7",
+    "react-string-replace": "^0.4.4",
     "remove-accents": "^0.4.2",
     "sanitize-html": "^2.1.2"
   },

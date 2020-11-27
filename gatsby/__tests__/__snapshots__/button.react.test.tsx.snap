@@ -4,6 +4,7 @@ exports[`Anchor does not render unknown variants classes 1`] = `
 <a
   className="btn"
   data-testid="button-link"
+  href="#"
   onClick={[Function]}
 />
 `;
@@ -12,6 +13,7 @@ exports[`Anchor element renders correctly 1`] = `
 <a
   className="btn btn-primary"
   data-testid="button-link"
+  href="#"
   onClick={[Function]}
 />
 `;
@@ -20,6 +22,7 @@ exports[`Anchor renders with additional class correctly 1`] = `
 <a
   className="btn btn-primary whatever-anchor"
   data-testid="button-link"
+  href="#"
   onClick={[Function]}
 />
 `;
@@ -28,6 +31,7 @@ exports[`Anchor with text inside renders correctly 1`] = `
 <a
   className="btn btn-primary"
   data-testid="button-link"
+  href="/more"
   onClick={[Function]}
 >
   VÍCE
@@ -39,26 +43,31 @@ Array [
   <a
     className="btn btn-primary"
     data-testid="button-link"
+    href="#"
     onClick={[Function]}
   />,
   <a
     className="btn btn-outline-primary"
     data-testid="button-link"
+    href="#"
     onClick={[Function]}
   />,
   <a
     className="btn btn-secondary"
     data-testid="button-link"
+    href="#"
     onClick={[Function]}
   />,
   <a
     className="btn btn-outline-dark text-black"
     data-testid="button-link"
+    href="#"
     onClick={[Function]}
   />,
   <a
     className="btnSmallBlack"
     data-testid="button-link"
+    href="#"
     onClick={[Function]}
   />,
 ]
@@ -80,6 +89,7 @@ Array [
   <a
     className="btn btn-primary"
     data-testid="button-link"
+    href=""
     onClick={[Function]}
   />,
 ]
