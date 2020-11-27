@@ -4,7 +4,9 @@ import renderer from 'react-test-renderer';
 import Button from '@/components/button';
 import { Add } from '@material-ui/icons';
 
-jest.mock('@/components/i18n');
+jest.mock('@/components/i18n', () => ({
+  useCurrentLanguage: () => 'cs',
+}));
 
 test('Button renders HTML button element (not anchor element)', () => {
   const component = renderer.create(
@@ -25,7 +27,7 @@ test('Button with text renders correctly', () => {
 
 test('Anchor with text inside renders correctly', () => {
   const component = renderer.create(
-    <Button text="VÍCE" href="#" variant="contained" />,
+    <Button text="VÍCE" href="/more" variant="contained" />,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
