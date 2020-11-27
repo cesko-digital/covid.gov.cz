@@ -54,11 +54,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
                 ),
                 '{date}',
                 () => (
-                  <Time
-                    datetime={new Date(
-                      `${situation.update.valid_from}Z`,
-                    ).toISOString()}
-                  />
+                  <Time datetime={situation.update.valid_from} />
                 ),
               )}
             >
