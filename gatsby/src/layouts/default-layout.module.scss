@@ -80,8 +80,6 @@
 
       @include media-breakpoint-up(xs) {
         object-position: center -75px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
         top: 70px !important;
       }
     }
