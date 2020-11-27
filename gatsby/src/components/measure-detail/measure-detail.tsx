@@ -51,14 +51,22 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                     t('measure_valid_from'),
                     /{{(.*)}}/,
                     (match) => (
-                      <a href="#" className="stretched-link">
+                      <a
+                        href="#"
+                        className="stretched-link"
+                        key="current-version-link"
+                      >
                         {match}
                       </a>
                     ),
                   ),
                   '{date}',
                   () => (
-                    <Time datetime={versionToDisplay?.valid_from} suffix="" />
+                    <Time
+                      datetime={versionToDisplay?.valid_from}
+                      suffix=""
+                      key="current-version-time"
+                    />
                   ),
                 )}
               />
@@ -73,14 +81,22 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                     t('measure_changes'),
                     /{{(.*)}}/,
                     (match) => (
-                      <a href={nextVersionHash} className="stretched-link">
+                      <a
+                        href={nextVersionHash}
+                        className="stretched-link"
+                        key="next-version-link"
+                      >
                         {match}
                       </a>
                     ),
                   ),
                   '{date}',
                   () => (
-                    <Time datetime={nextVersionFrom} suffix="" />
+                    <Time
+                      datetime={nextVersionFrom}
+                      suffix=""
+                      key="next-version-time"
+                    />
                   ),
                 )}
               />
