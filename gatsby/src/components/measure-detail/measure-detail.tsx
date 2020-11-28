@@ -20,9 +20,7 @@ interface IProps {
 
 const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const { t } = useTranslation();
-  const hasSourceLink = Boolean(measure.source);
   const hasRegion = Boolean(measure?.relationships?.region?.length);
-  const hasTimeConstraint = Boolean(measure?.valid_from || measure?.valid_to);
   const { hash } = useLocation();
   const hasMounted = useHasMounted();
   const {
@@ -31,6 +29,10 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
     nextVersionFrom,
     nextVersionHash,
   } = getCurrentMeasureVersion(hasMounted ? hash : '', measure);
+  const hasSourceLink = Boolean(versionToDisplay.source);
+  const hasTimeConstraint = Boolean(
+    versionToDisplay?.valid_from || versionToDisplay?.valid_to,
+  );
 
   return (
     <>
@@ -120,8 +122,11 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
             <hr />
             <h3 className="mb-1 color-blue-dark">{t('related')}</h3>
             <div>
-              <Link className="color-blue mb-1" to={measure.source.uri}>
-                {measure.source.title}
+              <Link
+                className="color-blue mb-1"
+                to={versionToDisplay.source.uri}
+              >
+                {versionToDisplay.source.title}
               </Link>
             </div>
           </div>
@@ -166,6 +171,10 @@ export const query = graphql`
         }
         valid_from
         valid_to
+        source {
+          uri
+          title
+        }
       }
     }
     path {
