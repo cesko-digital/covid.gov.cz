@@ -1,0 +1,11 @@
+uuid: 9e2f6033-11c7-4bdd-b525-31f96197e63f
+langcode: cs
+status: true
+dependencies:
+  module:
+    - covid
+id: covid_translation.covid_translation
+target_entity_type_id: covid_translation
+target_bundle: covid_translation
+default_langcode: site_default
+language_alterable: false

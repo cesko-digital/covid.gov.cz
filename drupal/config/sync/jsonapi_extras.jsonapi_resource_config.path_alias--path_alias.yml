@@ -7,7 +7,7 @@ dependencies:
 id: path_alias--path_alias
 disabled: false
 path: path_alias
-resourceType: path_alias--path_alias
+resourceType: path_alias
 resourceFields:
   id:
     fieldName: id

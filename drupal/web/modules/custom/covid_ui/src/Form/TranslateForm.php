@@ -63,7 +63,7 @@ class TranslateForm extends FormBase {
         'source' => [
           '#type' => 'hidden',
           '#value' => $source,
-          '#prefix' => $source
+          '#prefix' => $source,
         ],
       ];
 
@@ -79,6 +79,7 @@ class TranslateForm extends FormBase {
 
     $form['table'] = [
       '#type' => 'table',
+      '#sticky' => TRUE,
       '#header' => ['lid' => 'klíč'] + array_map(function(Language $language) {
         return $language->getName();
       }, $languages),
@@ -110,10 +111,6 @@ class TranslateForm extends FormBase {
   }
 
   protected function setTranslation(string $source, string $target, string $langcode): void {
-    if (!$target) {
-      return;
-    }
-
     $translation = $this->getTranslation($source, $langcode);
 
     if ($translation->getTarget() !== $target) {

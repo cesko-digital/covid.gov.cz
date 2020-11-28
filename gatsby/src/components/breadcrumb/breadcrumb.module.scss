@@ -4,4 +4,11 @@
 
 .breadcrumbItem {
   display: block !important;
+
+  &.breadcrumbItemActive {
+    color: #ecae1a;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
 }

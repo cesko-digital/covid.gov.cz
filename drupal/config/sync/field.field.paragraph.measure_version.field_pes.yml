@@ -1,0 +1,29 @@
+uuid: 4c05989b-8766-4c74-b422-7151b7707353
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pes
+    - paragraphs.paragraphs_type.measure_version
+    - taxonomy.vocabulary.pes
+id: paragraph.measure_version.field_pes
+field_name: field_pes
+entity_type: paragraph
+bundle: measure_version
+label: PES
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pes: pes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

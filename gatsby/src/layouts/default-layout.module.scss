@@ -1,11 +1,91 @@
+@import '../../assets/scss/design-system/base/variables';
+@import '../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .wrapper {
   background: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main {
   position: relative;
+  flex-grow: 1;
 }
 
 .mainInner {
   position: relative;
 }
+
+.overflow {
+  overflow: hidden;
+}
+
+/*! purgecss start ignore */
+
+.bkgPhoto {
+  overflow: auto;
+  position: absolute !important;
+  width: 100%;
+  height: auto !important;
+  backface-visibility: hidden;
+
+  &.searchDisplayed {
+    // additional top position when search on mobile is visible
+    @include media-breakpoint-down(sm) {
+      top: 55px;
+    }
+  }
+
+  [aria-hidden='true'] {
+    top: 0 !important;
+    position: absolute !important;
+    padding: 0 !important;
+  }
+
+  & > div {
+    padding: 0 !important;
+  }
+
+  @include media-breakpoint-up(xs) {
+    height: 55vh !important;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: auto !important;
+  }
+
+  picture {
+    position: relative;
+
+    img {
+      width: 100% !important;
+      object-fit: cover !important;
+      position: relative !important;
+      top: 0;
+
+      @include media-breakpoint-up(xl) {
+        width: 100% !important;
+        object-position: center -100px !important;
+        top: 0 !important;
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 100% !important;
+        object-position: center top !important;
+        top: 0 !important;
+      }
+
+      @include media-breakpoint-up(xs) {
+        object-position: center -75px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 70px !important;
+      }
+    }
+  }
+}
+
+/*! purgecss end ignore */

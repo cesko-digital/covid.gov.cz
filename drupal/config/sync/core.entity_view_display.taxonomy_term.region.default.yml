@@ -1,0 +1,33 @@
+uuid: 41472834-c36d-4a27-9bc8-0809eecfa912
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.region.field_validity
+    - taxonomy.vocabulary.region
+  module:
+    - entity_reference_revisions
+    - text
+id: taxonomy_term.region.default
+targetEntityType: taxonomy_term
+bundle: region
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_validity:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

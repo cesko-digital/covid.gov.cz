@@ -16,6 +16,7 @@ module:
   dblog: 0
   devel: 0
   devel_entity_updates: 0
+  diff: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
@@ -24,16 +25,17 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flood_unblock: 0
   jsonapi: 0
   jsonapi_extras: 0
+  jsonapi_hypermedia: 0
+  jsonapi_resources: 0
   language: 0
   link: 0
+  linkit: 0
   locale: 0
   menu_link_content: 0
   menu_ui: 0
-  migrate: 0
-  migrate_plus: 0
-  migrate_tools: 0
   node: 0
   one_time_password: 0
   options: 0
@@ -45,6 +47,9 @@ module:
   path: 0
   path_alias: 0
   quick_node_clone: 0
+  redirect: 0
+  redis: 0
+  role_delegation: 0
   serialization: 0
   system: 0
   taxonomy: 0
@@ -53,11 +58,13 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  userprotect: 0
   views_ui: 0
   workflows: 0
   pathauto: 1
   content_translation: 10
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   seven: 0

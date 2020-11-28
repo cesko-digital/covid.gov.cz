@@ -123,6 +123,42 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  content:
+    fieldName: content
+    publicName: description
+    enhancer:
+      id: ''
+    disabled: false
+  questions_answers:
+    fieldName: questions_answers
+    publicName: questions_answers
+    enhancer:
+      id: ''
+    disabled: false
+  valid_from:
+    fieldName: valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+    disabled: false
+  valid_to:
+    fieldName: valid_to
+    publicName: valid_to
+    enhancer:
+      id: ''
+    disabled: false
+  source:
+    fieldName: source
+    publicName: source
+    enhancer:
+      id: ''
+    disabled: false
+  update:
+    fieldName: update
+    publicName: update
+    enhancer:
+      id: ''
+    disabled: false
   path:
     fieldName: path
     publicName: path
@@ -148,14 +184,20 @@ resourceFields:
     enhancer:
       id: ''
   field_content:
+    disabled: true
     fieldName: field_content
     publicName: description
+    enhancer:
+      id: ''
+  field_last_updated:
+    fieldName: field_last_updated
+    publicName: last_updated
     enhancer:
       id: ''
     disabled: false
   field_measure_type:
     fieldName: field_measure_type
-    publicName: field_measure_type
+    publicName: measure_type
     enhancer:
       id: ''
     disabled: false
@@ -173,7 +215,7 @@ resourceFields:
     disabled: false
   field_ref_icon:
     fieldName: field_ref_icon
-    publicName: field_ref_icon
+    publicName: icon
     enhancer:
       id: ''
     disabled: false
@@ -184,20 +226,26 @@ resourceFields:
       id: ''
     disabled: false
   field_source:
+    disabled: true
     fieldName: field_source
     publicName: source
     enhancer:
       id: ''
-    disabled: false
   field_valid_from:
+    disabled: true
     fieldName: field_valid_from
     publicName: valid_from
     enhancer:
       id: ''
-    disabled: false
   field_valid_to:
+    disabled: true
     fieldName: field_valid_to
     publicName: valid_to
+    enhancer:
+      id: ''
+  field_versions:
+    fieldName: field_versions
+    publicName: versions
     enhancer:
       id: ''
     disabled: false

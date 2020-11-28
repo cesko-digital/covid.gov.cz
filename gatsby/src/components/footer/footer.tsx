@@ -1,69 +1,131 @@
 import React from 'react';
-import Link from '@/components/link';
+import classnames from 'classnames';
+
+import { useCurrentLanguage } from '@/components/i18n';
+
+import styles from './footer.module.scss';
+import { graphql, useStaticQuery } from 'gatsby';
+import { IFooterLinksQuery } from '@graphql-types';
+
+const DRUPAL_INTERNAL_IDS = {
+  USEFUL_LINKS_1: '1',
+  USEFUL_LINKS_2: '2',
+  USEFUL_LINKS_3: '4',
+  COPYRIGHT: '3',
+};
+
+export const query = graphql`
+  query FooterLinks {
+    allBlocks {
+      edges {
+        node {
+          drupal_internal__id
+          langcode
+          content {
+            processed
+          }
+        }
+      }
+    }
+    currentBuildDate {
+      currentDate
+    }
+  }
+`;
 
 const Footer: React.FC = () => {
+  const result = useStaticQuery<IFooterLinksQuery>(query);
+  const currentLanguage = useCurrentLanguage();
+
+  const getContentByDrupalInternalId = (internalId: string) => {
+    const edge = result.allBlocks.edges.find(({ node }) => {
+      const matchesLanguage = node.langcode === currentLanguage;
+      const matchesId = node.drupal_internal__id === internalId;
+      return matchesLanguage && matchesId;
+    });
+
+    return edge.node.content.processed;
+  };
+
   return (
-    <div className="footer" role="contentinfo">
+    <div
+      className={classnames(styles.footer, 'footer mt-4')}
+      role="contentinfo"
+    >
       <div className="container">
-        <div className="footer__inner">
-          <div className="footer__links">
+        <div className="footer__inner pt-md-2">
+          <div className="footer__links pb-3">
             <div className="row">
               <div className="col-12 col-sm-6 col-lg-3">
                 <div className="footer__box pb-4 pb-lg-0">
-                  <h3>Užitečné odkazy</h3>
-                  <ul>
-                    <li>
-                      <Link label="Opatření v rámci celé ČR" to="#" />
-                    </li>
-                    <li>
-                      <Link label="Aktuální čísla nakažených" to="#" />
-                    </li>
-                    <li>
-                      <Link label="Přehled všech opatření" to="#" />
-                    </li>
-                    <li>
-                      <Link label="Často se ptáte" to="#" />
-                    </li>
-                    <li>
-                      <Link label="Poradna pro každého" to="#" />
-                    </li>
-                    <li>
-                      <Link label="další užitečný odkaz" to="#" />
-                    </li>
-                  </ul>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_2,
+                      ),
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div className="col-12 col-sm-6 col-lg-5">
+                <div className="footer__box pb-4 pb-lg-0">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_3,
+                      ),
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div className="col-12 col-lg-4">
+                <div className="footer__box">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.USEFUL_LINKS_1,
+                      ),
+                    }}
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div className="footer__common">
             <div className="row">
-              <div className="col-12 col-sm-6">
-                <div className="footer__box pb-3 pb-sm-0">
-                  <ul>
-                    <li>
-                      <Link
-                        to="https://portal.gov.cz/prohlaseni-o-pristupnosti/"
-                        label="Prohlášení o přístupnosti"
-                      />
-                    </li>
-                    <li>
-                      <Link
-                        to="https://portal.gov.cz/odkazy/informace"
-                        label="Informace o zpracování osobních údajů"
-                      />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-12 col-sm-6">
+              <div className="col-12">
                 <div className="footer__box">
-                  <p className="footer__brand">
-                    2020&nbsp;© Ministerstvo vnitra • Informace jsou poskytovány
-                    v&nbsp;souladu se zákonem č.&nbsp;106/1999&nbsp;Sb.,
-                    o&nbsp;svobodném přístupu k&nbsp;informacím.
-                  </p>
+                  <div
+                    className=""
+                    dangerouslySetInnerHTML={{
+                      __html: getContentByDrupalInternalId(
+                        DRUPAL_INTERNAL_IDS.COPYRIGHT,
+                      ),
+                    }}
+                  />
                 </div>
               </div>
+              {process.env.GATSBY_VERCEL && (
+                <div className="col-12">
+                  <div className="footer__box">
+                    <div className="footer__brand">
+                      {'Poslední úspěšný build proběhl v ' +
+                        new Date(
+                          result.currentBuildDate.currentDate,
+                        ).toLocaleString('cs-CZ', {
+                          day: 'numeric',
+                          month: 'numeric',
+                          weekday: 'long',
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          timeZone: 'Europe/Prague',
+                        })}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAEI,uEAAM;EACJ,KAAK,EAAE,IAAI",
-"sources": ["covid_admin.scss"],
-"names": [],
-"file": "covid_admin.css"
-}
+{"version":3,"sourceRoot":"","sources":["covid_admin.scss"],"names":[],"mappings":"AAEI,wEACE,WAWF,8EACE,WANqB,QASvB,qFACE,WAT4B,QAY9B,iFACE,WAZwB,QAgB5B,kDACE,aACA,8BACA,gBACA,sBAEA,sDACE,YACA,WAGF,2EACE,WA9BqB,QAiCvB,kFACE,WAjC4B,QAoC9B,8EACE,WApCwB,QA0C9B,mBACE,aAGE,0BADF,2BAEI,kBAOJ,uGACE,aAGF,2FACE,aAIJ,yCACE,iBACE,aAMA,mDACE,WACA","file":"covid_admin.css"}

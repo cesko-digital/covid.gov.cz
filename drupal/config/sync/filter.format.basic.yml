@@ -1,7 +1,9 @@
 uuid: fc1e972d-f0ef-4357-bf6b-2cec9884a99a
 langcode: cs
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - linkit
 name: Basic
 format: basic
 weight: 0
@@ -12,7 +14,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang aria-label title target rel class=""> <em> <strong> <ul> <li> <ol> <p> <h2> <img src alt data-entity-type data-entity-uuid>'
+      allowed_html: '<em> <strong> <ul> <li> <ol> <p> <h2> <img src alt data-entity-type data-entity-uuid> <i class=""> <a href hreflang aria-label title target rel data-entity-substitution data-entity-type data-entity-uuid class="">'
       filter_html_help: true
       filter_html_nofollow: true
   filter_autop:
@@ -27,3 +29,10 @@ filters:
     status: true
     weight: 10
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

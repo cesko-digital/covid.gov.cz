@@ -778,6 +778,22 @@ $databases['default']['default'] = [
   'driver' => 'sqlsrv',
 ];
 
+if (getenv("REDIS_HOST") && \Drupal::service('module_handler')->moduleExists('redis')) {
+  $settings['redis.connection']['interface'] = 'PhpRedis';
+  $settings['redis.connection']['host'] = getenv("REDIS_HOST");
+
+  if (getenv("REDIS_PORT") !== FALSE) {
+    $settings['redis.connection']['port'] = getenv("REDIS_PORT");
+  }
+
+  if (getenv("REDIS_PASSWORD") !== FALSE) {
+    $settings['redis.connection']['password'] = getenv("REDIS_PASSWORD");
+  }
+
+  $settings['cache']['default'] = 'cache.backend.redis';
+  $settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
+}
+
 /**
  * Load local development override configuration, if available.
  *

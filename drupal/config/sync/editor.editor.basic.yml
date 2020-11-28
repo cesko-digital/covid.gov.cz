@@ -38,10 +38,13 @@ settings:
           items:
             - DrupalImage
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: public

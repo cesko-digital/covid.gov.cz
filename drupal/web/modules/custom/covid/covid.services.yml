@@ -1,11 +1,16 @@
 services:
   covid.request_event_subscriber:
     class: Drupal\covid\EventSubscriber\RequestEventSubscriber
-    arguments: ['@current_route_match', '@current_user', '@messenger']
+    arguments: ['@current_route_match', '@current_user', '@messenger', '@user.data']
     tags:
       - { name: event_subscriber }
 
   covid.normalizer:
-    class: Drupal\covid\Normalizer
+    class: Drupal\covid\Normalizer\Normalizer
     tags:
       - { name: normalizer, priority: 10 }
+
+  covid.normalizer_text_processed:
+    class: Drupal\covid\Normalizer\TextProcessedNormalizer
+    tags:
+      - { name: normalizer, priority: 20 }

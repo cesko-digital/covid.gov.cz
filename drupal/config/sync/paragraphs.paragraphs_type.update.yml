@@ -1,0 +1,10 @@
+uuid: 58a56fe5-c32a-4014-89e0-c08002cabfcf
+langcode: cs
+status: true
+dependencies: {  }
+id: update
+label: Aktualizace
+icon_uuid: null
+icon_default: null
+description: 'Aktualizace životní situace nebo jiného obsahu. Má vazbu na úroveň PES a krátké shrnutí změn.'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: e9b0839c-2475-47bc-b80d-8c7ed3b9acd9
+langcode: cs
+status: true
+dependencies:
+  module:
+    - covid
+    - paragraphs
+id: paragraph.field_qa
+field_name: field_qa
+entity_type: paragraph
+type: covid_question_answer
+settings: {  }
+module: covid
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

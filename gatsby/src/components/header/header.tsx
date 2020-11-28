@@ -3,15 +3,18 @@ import classnames from 'classnames';
 import Link from '@/components/link';
 
 import Container from '../container';
-import Row from '../row';
-import Col from '../col';
-import SearchBox from '../search-box';
 
 import classes from './header.module.scss';
 
 import headerLogo from './header-logo.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
-import I18n, { TRoute } from '@/components/i18n';
+import { useCurrentLanguage, useTranslation } from '@/components/i18n';
+import { ISitePageContext } from '@graphql-types';
+import { Alert } from '../alert';
+import SearchBox from '../search-box';
+import Row from '../row';
+import Col from '../col';
+import GovIcon from '../gov-icon';
 
 interface NavItem {
   label: string;
@@ -20,63 +23,104 @@ interface NavItem {
 
 interface Props {
   navItems: NavItem[];
+  pageContext: ISitePageContext;
+  isTransparent: boolean;
+  showSearch: boolean;
 }
 
 export const locales = ['cs', 'en'];
 
-const Header: React.FC<Props> = ({ navItems }) => {
+const Header: React.FC<Props> = ({
+  navItems,
+  pageContext,
+  isTransparent,
+  showSearch,
+}) => {
   const [isOpen, setOpen] = useState(false);
+  const currentLanguage = useCurrentLanguage();
+  const { t } = useTranslation();
 
   const toggleOpen = useCallback(() => {
     setOpen(!isOpen);
     document.body.style.overflow = isOpen ? 'unset' : 'hidden';
   }, [isOpen]);
 
-  const [activeLocale, setLocale] = useState(locales[0]);
+  const onUseLink = () => {
+    document.body.style.overflow = 'unset';
+  };
 
+  const languageVariants = pageContext.languageVariants || {};
+
+  const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
   return (
-    <div className={classes.header} role="banner">
-      <Container>
-        <Row alignItems="center" className={classes.header__inner}>
-          {/* LOGO */}
-          <Col col={7} colMd={3} colLg={3}>
-            <Link to="/" label="COVID PORTÁL - úvodní strana">
-              <img src={headerLogo} />
-            </Link>
-          </Col>
-          {/* MOBILE TOGGLE */}
-          <Col
-            col={5}
-            className={classnames(
-              classes.nav__toggleWrapper,
-              'd-md-none text-right',
-            )}
-          >
-            {/* MENU */}
+    <>
+      {bannerMessage && <Alert message={bannerMessage} />}
+      <header
+        className={classnames(classes.header, {
+          [classes.blueBgWrapper]: !isTransparent,
+        })}
+        role="banner"
+      >
+        {isTransparent && <div className={classes.gradient} />}
+        <Container>
+          <div className={classes.headerExtended}>
+            {/* LOGO */}
+            <div className={classes.logoWrapper}>
+              <Link to="/" title={'COVID PORTAL - ' + t('home')}>
+                <img src={headerLogo} alt="Covid Portál" />
+              </Link>
+            </div>
+            {/* MOBILE TOGGLE */}
             <div
               className={classnames(
-                classes.nav__toggle,
-                isOpen && classes['nav__toggle--open'],
+                classes.nav__toggleWrapper,
+                'd-md-none text-right',
               )}
-              onClick={toggleOpen}
             >
-              <span />
-              <span />
-              <div>
-                {(isOpen
-                  ? I18n('menu_close')
-                  : I18n('menu_open')
-                ).toUpperCase()}
+              {/* MENU */}
+              <div
+                className={classnames(
+                  classes.nav__toggle,
+                  isOpen && classes['nav__toggle--open'],
+                )}
+                onClick={toggleOpen}
+              >
+                <span />
+                <span />
+                <div>
+                  {(isOpen ? t('menu_close') : t('menu_open')).toUpperCase()}
+                </div>
               </div>
             </div>
-          </Col>
-          {/* DESKTOP NAV & SEARCH */}
-          <Col col={12} colMd={8} colLg={9}>
-            <Row alignItems="center">
-              {/* NAVIGATION */}
-              <Col col={12} colLg={8} className="d-none d-md-block">
-                <div className={classnames(classes.navigation, 'navigation')}>
-                  <ul className={classnames('nav nav--primary')}>
+            {/* NAVIGATION */}
+            <nav
+              className={classnames(
+                classes.headerExtended,
+                'navigation',
+                'd-none',
+                'd-md-block',
+              )}
+            >
+              <div className={classes.flexWrapper}>
+                <div className={classes.headerTop}>
+                  <div className="left"></div>
+                  <div className={classnames('d-flex', 'align-items-center')}>
+                    {showSearch && (
+                      <>
+                        <SearchBox size="small" className={classes.searchBox} />
+                        <span className={classes.verticalDivider} />
+                      </>
+                    )}
+                    <HeaderLocaleSelect languageVariants={languageVariants} />
+                  </div>
+                </div>
+                <div className={classes.navigationWrapper}>
+                  <ul
+                    className={classnames(
+                      classes.navigation,
+                      'nav nav--primary',
+                    )}
+                  >
                     {navItems.map(({ label, to }) => (
                       <li className={classnames('nav__item')} key={label}>
                         <Link
@@ -91,78 +135,92 @@ const Header: React.FC<Props> = ({ navItems }) => {
                     ))}
                   </ul>
                 </div>
-              </Col>
-              {/* SEARCH */}
-              <Col col={12} colLg={4} className="ml-auto">
-                <SearchBox onSearch={() => {}} />
+              </div>
+            </nav>
+            {/* MOBILE NAV */}
+            <div
+              className={classnames(
+                classes.nav__mobile,
+                isOpen && classes['nav__mobile--open'],
+                'd-md-none',
+              )}
+            >
+              <div
+                className="d-flex flex-column justify-content-between"
+                style={{ height: '100%' }}
+              >
+                <div>
+                  {navItems.map(({ label, to }) => (
+                    <Link
+                      onClick={onUseLink}
+                      to={to}
+                      key={label}
+                      className={classnames(
+                        classes.nav__mobileLink,
+                        'container nav__link--mobile',
+                      )}
+                      activeClassName={classes['nav__mobileLink--active']}
+                      partiallyActive={to !== '/'}
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+                <div className="mt-auto">
+                  {currentLanguage === 'en' ? (
+                    <Link
+                      to={languageVariants.cs || '/'}
+                      noLanguageCodePrefix
+                      onClick={onUseLink}
+                      className={classnames(
+                        classes.nav__mobileLink,
+                        'container',
+                      )}
+                    >
+                      Čeština
+                    </Link>
+                  ) : (
+                    <Link
+                      to={languageVariants.en || '/en/'}
+                      noLanguageCodePrefix
+                      onClick={onUseLink}
+                      className={classnames(
+                        classes.nav__mobileLink,
+                        'container',
+                      )}
+                    >
+                      English
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </header>
+      {/* MOBILE SEARCH BOX */}
+      {showSearch && (
+        <div
+          className={classnames(
+            classes.mobileSearchBoxWrapper,
+            'd-block d-md-none',
+          )}
+        >
+          <Container>
+            <Row>
+              <Col colSm={12}>
+                <SearchBox
+                  buttonProps={{
+                    icon: <GovIcon icon="search" size={16} />,
+                    text: '',
+                  }}
+                />
               </Col>
             </Row>
-          </Col>
-          {/* MOBILE NAV */}
-          <div
-            className={classnames(
-              classes.nav__mobile,
-              isOpen && classes['nav__mobile--open'],
-              'd-md-none',
-            )}
-          >
-            {navItems.map(({ label, to }) => (
-              <Link
-                to={to}
-                key={label}
-                className={classnames(classes.nav__mobileLink, 'container')}
-                activeClassName={classes['nav__mobileLink--active']}
-                partiallyActive
-              >
-                {label}
-              </Link>
-            ))}
-            {/* {locales.map((locale, index) => (
-              <Link
-                to="/"
-                onClick={() => setLocale(locale)}
-                key={index}
-                className={classnames(
-                  classes.nav__mobileLink,
-                  index === 0 && 'mt-auto',
-                  locale === activeLocale && classes['nav__mobileLink--active'],
-                )}
-              >
-                {locale}
-              </Link>
-            ))} */}
-            {TRoute('/') !== '/' ? (
-              <a
-                href="/"
-                className={classnames(
-                  classes.nav__mobileLink,
-                  'mt-auto',
-                  'container',
-                )}
-              >
-                Čeština
-              </a>
-            ) : (
-              <a
-                href="/en"
-                className={classnames(
-                  classes.nav__mobileLink,
-                  'mt-auto',
-                  'container',
-                )}
-              >
-                English
-              </a>
-            )}
-          </div>
-          {/* DESKTOP LOCALE SELECT */}
-          <HeaderLocaleSelect
-            activeLocale={activeLocale}
-            onLocaleChange={setLocale}
-          />
-        </Row>
-      </Container>
-    </div>
+          </Container>
+        </div>
+      )}
+    </>
   );
 };
 

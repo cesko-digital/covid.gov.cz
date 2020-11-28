@@ -12,9 +12,13 @@ $theme-gray-dark: #3b3b3b;
 $theme-gray: #707070;
 $theme-gray-lighten: #e1e1e1;
 $theme-gray-light: #f5f5f5;
+$box-border-color-white: rgba(#bfbfbf, 0.3);
 
 $grid-gutter-width: 32px;
 $theme-path: '/ds';
+
+$h2-font-size: 23px;
+$h2-font-size-mobile: 18px;
 
 @import 'design-system/front';
 
@@ -22,6 +26,20 @@ $theme-path: '/ds';
   cursor: auto;
   font-size: 16px;
   line-height: 1;
+}
+
+.footer a {
+  &,
+  &:visited {
+    font-size: inherit;
+    text-transform: none;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
 }
 
 .color-yellow {
@@ -40,9 +58,43 @@ $theme-path: '/ds';
   font-weight: 500;
 }
 
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.color-gray {
+  color: $theme-gray;
+}
+
 a.external,
 a.more {
   padding-right: 15px;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+  margin-bottom: 15px;
+
+  & > li {
+    margin-bottom: 4px;
+  }
+}
+
+/* stylelint-disable-next-line prettier/prettier */
+ul:not(.breadcrumb):not(.tabs__list-holder):not(.paginator__list):not(.tabs__content-list):not(.modal-list):not(.data-box) > li::before {
+  left: -10px;
+}
+
+ol > li::before {
+  left: -17px;
+}
+
+h2,
+.h2 {
+  margin-bottom: 10px;
 }
 
 // Button
@@ -71,7 +123,7 @@ a.more {
 
   &.btn-outline-primary {
     border-color: $theme-blue;
-    color: $theme-gray-dark;
+    color: $theme-blue-dark;
     text-align: left;
     white-space: normal;
     font-weight: 500;
@@ -81,6 +133,7 @@ a.more {
       &:not([disabled]) {
         border-color: $theme-blue;
         background-color: $theme-blue;
+        color: $white;
       }
     }
 
@@ -162,4 +215,31 @@ a.more {
       }
     }
   }
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: '';
+}
+
+.material-icons {
+  font-family: 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  font-display: block;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }

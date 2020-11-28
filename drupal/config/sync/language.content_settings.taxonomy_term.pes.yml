@@ -1,0 +1,18 @@
+uuid: 6afe0231-f263-437f-81fb-bb93af2f9fb6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pes
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.pes
+target_entity_type_id: taxonomy_term
+target_bundle: pes
+default_langcode: site_default
+language_alterable: false

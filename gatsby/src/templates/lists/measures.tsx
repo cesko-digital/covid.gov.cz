@@ -1,61 +1,64 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { IQuery } from 'graphql-types';
+import { SEO as Seo } from 'gatsby-plugin-seo';
+import { IMeasureTypeQueryQuery, ISitePageContext } from '@graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
-import CategoryItem from '@/components/category-item';
-import LookingForSomething from '@/components/looking-for-something';
-import Pagination from '@/components/pagination';
-import usePagination from '@/hooks/usePagination';
 import Layout from '@/layouts/default-layout';
-
-const breadcrumbItems = [
-  {
-    title: 'domů',
-    url: '/',
-  },
-  {
-    title: 'aktuální opatření',
-    url: '/opatreni',
-  },
-];
+import SchemaComp from '@/components/schema';
+import { MeasureAreaList } from '@/components/category-item-list';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
-  data: IQuery;
+  data: IMeasureTypeQueryQuery;
+  pageContext: ISitePageContext;
 }
 
-const Measures: React.FC<IProps> = ({ data }) => {
+const Measures: React.FC<IProps> = ({ data, pageContext }) => {
+  const { t } = useTranslation();
   const {
-    allTaxonomyTermMeasureType: { nodes },
+    allMeasureType: { nodes },
   } = data;
 
-  const { slicedItems, ...pagination } = usePagination(nodes);
+  const collator = new Intl.Collator([pageContext.langCode]);
+  nodes.sort((a, b) => collator.compare(a.name, b.name));
 
   return (
-    <Layout>
-      <Helmet title="Aktuální opatření" />
-      <Container className="mt-3">
-        <Breadcrumb items={breadcrumbItems} variant="inverse" />
+    <Layout
+      pageContext={pageContext}
+      showSearchInHeader
+      showBackgroundImage
+      hasTransparentHeader={false}
+    >
+      <Seo
+        title={t('current_measures_overview')}
+        description={t('current_measures_overview_meta')}
+        pagePath={t('slug_measures')}
+        htmlLanguage={pageContext.langCode}
+      />
+      <SchemaComp
+        langCode={pageContext.langCode}
+        description={t('current_measures_overview_meta')}
+        isBlogPost={false}
+        isSpecialList
+        title={t('current_measures_overview')}
+        breadcrumbItems={[
+          { title: t('home'), url: '/' },
+          { title: t('current_measures'), url: t('slug_measures') },
+        ]}
+      />
+      <Container className="pt-1 pb-1 pt-md-3 pb-md-3">
+        <Breadcrumb
+          items={[{ title: t('home'), url: '/' }, t('current_measures')]}
+          variant="inverse"
+        />
       </Container>
-      <Container className="mt-3">
-        <Headline>Přehled aktuálních opatření</Headline>
+      <Container className="mt-1 d-block d-md-none">
+        <Headline color="white">{t('current_measures_overview')}</Headline>
       </Container>
-      <Container className="mt-3">
-        <ContentBox noPadding>
-          {slicedItems.map(
-            (n) =>
-              n.relationships.measure !== null && (
-                <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
-              ),
-          )}
-        </ContentBox>
-        <Pagination {...pagination} />
-      </Container>
-      <Container className="mt-3 mb-3">
-        <LookingForSomething />
+      <Container className="mt-1">
+        <MeasureAreaList theme="white" data={data.allMeasureType.nodes} />
       </Container>
     </Layout>
   );
@@ -64,21 +67,9 @@ export default Measures;
 
 export const query = graphql`
   query MeasureTypeQuery($langCode: String!) {
-    allTaxonomyTermMeasureType(
-      filter: { langcode: { eq: $langCode } }
-      sort: { fields: name }
-    ) {
+    allMeasureType(filter: { langcode: { eq: $langCode } }) {
       nodes {
-        id
-        name
-        path {
-          alias
-        }
-        relationships {
-          measure {
-            id
-          }
-        }
+        ...MeasureArea
       }
     }
   }

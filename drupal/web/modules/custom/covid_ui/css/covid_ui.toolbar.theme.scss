@@ -13,3 +13,18 @@
     }
   }
 }
+
+.toolbar {
+  .toolbar-tray-vertical {
+    .toolbar-right {
+      text-align: right;
+      padding: 1em;
+    }
+  }
+
+  .toolbar-tray-horizontal {
+    .toolbar-right {
+      float: right;
+    }
+  }
+}

@@ -271,3 +271,28 @@ ul.tabs {
   background: #2362A2;
   color: #FFFFFF;
 }
+
+
+/* Diff style */
+.diff-header,
+.diff-controls {
+  border-bottom: 1px solid #2362A2;
+  padding: 5px;
+  background-color: #e5ebf0;
+  color: #254e80;
+}
+
+.diff-header label,
+.diff-controls label {
+  font-weight: bold;
+}
+
+.diff-controls__item {
+flex-direction: column;
+justify-content: flex-start;
+width: 25%;
+}
+
+.diff-controls__item:last-child {
+  display: none;
+}

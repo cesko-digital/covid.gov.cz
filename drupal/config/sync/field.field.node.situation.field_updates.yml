@@ -1,0 +1,37 @@
+uuid: baea8f7d-5e19-4077-b0e5-baa2d29e6372
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_updates
+    - node.type.situation
+    - paragraphs.paragraphs_type.update
+  module:
+    - entity_reference_revisions
+id: node.situation.field_updates
+field_name: field_updates
+entity_type: node
+bundle: situation
+label: Aktualizace
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      update: update
+    target_bundles_drag_drop:
+      measure_version:
+        weight: 4
+        enabled: false
+      pes_content:
+        weight: 5
+        enabled: false
+      update:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

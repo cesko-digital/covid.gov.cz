@@ -1,10 +1,15 @@
-import { useTheme, useMediaQuery } from '@material-ui/core';
+import { useTheme, useMediaQuery, Options } from '@material-ui/core';
 
 const useMobile = (
-  key: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md',
+  options?: Options,
+  key: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm',
 ): boolean => {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down(key));
+  const matches = useMediaQuery(theme.breakpoints.down(key), options);
+  // return true during SSR
+  if (typeof window === 'undefined') {
+    return true;
+  }
   return matches;
 };
 

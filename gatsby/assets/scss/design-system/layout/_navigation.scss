@@ -43,7 +43,7 @@
 				margin-right: auto;
 
 				// Media queries
-				@include media-breakpoint-up(sm) {
+				@include media-breakpoint-down(sm) {
 					display: inline-block;
 					padding-right: 0;
 				}

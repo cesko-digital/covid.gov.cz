@@ -1,66 +1,78 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 import classnames from 'classnames';
-import I18n from '@/components/i18n';
 
 import Button from '../button';
-import GovIcon from '../gov-icon';
 
-import classes from './search-box.module.scss';
+import styles from './search-box.module.scss';
+import { useCurrentLanguage, useTranslation } from '@/components/i18n';
+import useMobile from '@/hooks/useMobile';
 
-interface IProps {
-  placeholder?: string;
-  onSearch?: (term: string) => void;
-}
+type IProps = {
+  initialValue?: string;
+  size?: 'default' | 'small';
+  className?: string;
+  buttonProps?: Partial<React.ComponentProps<typeof Button>>;
+};
 
-const SearchBox: React.FC<IProps> = ({
-  placeholder = I18n('search_placeholder'),
-  onSearch,
-}) => {
-  const [search, setSearch] = useState('');
+const SearchBox: React.FC<IProps> = (
+  props = {
+    initialValue: '',
+    size: 'default',
+  },
+) => {
+  const { t } = useTranslation();
+  const [searchValue, setSearchValue] = useState(props.initialValue);
+  const currentLanguage = useCurrentLanguage();
+  const isMobile = useMobile();
 
-  const handleSearch = () => {
-    if (search.length < 1) {
-      return;
+  const navigateToSearchResults = () => {
+    if (currentLanguage === 'cs') {
+      navigate(`/hledat?q=${searchValue}`);
+    } else {
+      navigate(`/en/search?q=${searchValue}`);
     }
-
-    if (onSearch) {
-      onSearch(search);
-    }
-    console.log('Search:', search);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      handleSearch();
+      navigateToSearchResults();
     }
   };
+
+  const isSmall = props.size === 'small';
 
   return (
-    <div className="search">
-      <div
+    <div
+      className={classnames(
+        props.className,
+        styles.wrapper,
+        'search__input-holder search--with-icon',
+      )}
+    >
+      <input
+        type="text"
         className={classnames(
-          classes.searchBox,
-          'search__input-holder search--with-icon',
+          styles.searchBoxInput,
+          'form-control search__input',
+          {
+            [styles.searchBoxInputSmall]: isSmall,
+          },
         )}
-      >
-        <input
-          type="text"
-          className={classnames(
-            classes.searchBoxInput,
-            'form-control search__input',
-          )}
-          placeholder={placeholder}
-          onChange={(event) => setSearch(event.currentTarget.value)}
-          value={search}
-          onKeyDown={handleKeyDown}
-        />
-        <Button
-          icon={<GovIcon icon="search" className="search__button--icon" />}
-          onClick={handleSearch}
-          variant="yellow"
-          className="search__button color-white"
-        />
-      </div>
+        placeholder={isMobile ? t('search_cta') : t('search_placeholder')}
+        onChange={(e) => setSearchValue(e.target.value)}
+        value={searchValue}
+        onKeyDown={keyDownHandler}
+      />
+      <Button
+        onClick={navigateToSearchResults}
+        className={classnames(styles.searchButton, 'search__button', {
+          'btn-sm': isSmall,
+          [styles.searchButtonSmall]: isSmall,
+        })}
+        text={t('search_button')}
+        {...(props.buttonProps as {})}
+      />
     </div>
   );
 };

@@ -1,31 +1,49 @@
-import { IPage, IQuery } from 'graphql-types';
-import { Helmet } from 'react-helmet';
+import { IPage, IQuery, ISitePageContext } from '@graphql-types';
+
+import { SchemaComp } from '@/components/schema/schema';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import React from 'react';
 import Container from '@/components/container';
 import { graphql } from 'gatsby';
 import Breadcrumb from '@/components/breadcrumb';
 import Layout from '@/layouts/default-layout';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
   data: IQuery;
+  pageContext: ISitePageContext;
 }
 
-const CustomPage: React.FC<IProps> = ({ data }) => {
+const CustomPage: React.FC<IProps> = ({ data, pageContext }) => {
   const page: IPage = data.page;
-  const homeTranslation = data.translation;
+  const { t } = useTranslation();
 
   return (
-    <Layout>
-      <Helmet title={page.title + ' | Covid Portal'} />
-
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showSearchInHeader
+      showBackgroundImage
+    >
+      <Seo
+        title={page.title}
+        description={page.meta_description ?? 'Custom page meta description.'}
+        pagePath={page.path.alias}
+        htmlLanguage={page.langcode}
+      />
+      <SchemaComp
+        datePublished={page.created}
+        dateModified={page.changed}
+        isBlogPost
+        description={page.meta_description}
+        title={page.title}
+        langCode={pageContext.langCode}
+        breadcrumbItems={[{ title: t('home'), url: '/' }, page.title]}
+      />
       <Container className="mb-4">
-        <div className="mt-2">
+        <div className="pt-1 pb-1 pt-md-3 pb-md-3">
           <Breadcrumb
-            items={[
-              // Todo: add localized title
-              { title: homeTranslation.target, url: '/' },
-              page.title,
-            ]}
+            items={[{ title: t('home'), url: '/' }, page.title]}
             variant="inverse"
           />
         </div>
@@ -44,13 +62,15 @@ export default CustomPage;
 
 export const query = graphql`
   query($slug: String!, $langCode: String!) {
-    page(path: { alias: { eq: $slug } }) {
+    page(path: { alias: { eq: $slug }, langcode: { eq: $langCode } }) {
       id
       content {
         processed
       }
+      langcode
       title
       changed
+      meta_description
       path {
         alias
       }

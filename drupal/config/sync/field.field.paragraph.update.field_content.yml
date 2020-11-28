@@ -1,0 +1,21 @@
+uuid: 0949c33f-284a-478a-9bd0-dbf5f885d2c1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.update
+  module:
+    - text
+id: paragraph.update.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: update
+label: 'Popis změny'
+description: 'Popište v několika bodech co se změní pro danou životní situaci při tomto přechodu.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

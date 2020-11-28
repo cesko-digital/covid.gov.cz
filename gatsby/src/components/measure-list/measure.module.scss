@@ -1,6 +1,16 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
 .measure {
   border-top: 1px solid rgba(35, 98, 162, 0.3);
   padding: 1.6rem 0;
+
+  // desktop
+  @include media-breakpoint-up(md) {
+    border-top: none;
+  }
 }
 
 .measureTitle {
@@ -29,9 +39,9 @@
   color: #2362a2;
 }
 
-.measureButton:global(.btn.btn-outline-primary) {
-  border-color: #2362a2;
-  color: #2362a2;
+.measureButton {
+  color: $theme-blue;
+  background-color: #fff;
 
   &:hover,
   &:focus {

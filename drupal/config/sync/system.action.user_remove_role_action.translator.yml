@@ -1,0 +1,14 @@
+uuid: 83e14fb3-1954-4b79-b024-33a3d6345a10
+langcode: cs
+status: true
+dependencies:
+  config:
+    - user.role.translator
+  module:
+    - user
+id: user_remove_role_action.translator
+label: 'Odebrat vybraným uživatelům roli Překladatel'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: translator

@@ -1,0 +1,20 @@
+uuid: 40e305c3-a41a-4922-a94f-1f935ade88d0
+langcode: cs
+status: true
+dependencies: {  }
+id: user_manager
+label: 'User manager'
+weight: -6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access flood unblock'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'administer users'
+  - 'assign editor role'
+  - 'assign reviewer role'
+  - 'assign translator role'
+  - 'change own username'
+  - userprotect.account.edit
+  - 'view the administration theme'

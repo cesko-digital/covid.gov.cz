@@ -1,0 +1,34 @@
+uuid: 35043480-6e47-4871-88df-f7ac0e8d0e18
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_versions
+    - node.type.measure
+    - paragraphs.paragraphs_type.measure_version
+  module:
+    - entity_reference_revisions
+id: node.measure.field_versions
+field_name: field_versions
+entity_type: node
+bundle: measure
+label: Znění
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      measure_version: measure_version
+    target_bundles_drag_drop:
+      measure_version:
+        enabled: true
+        weight: 3
+      pes_content:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

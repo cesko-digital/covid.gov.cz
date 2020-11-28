@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.measure.field_content
+    - field.field.node.measure.field_last_updated
     - field.field.node.measure.field_measure_type
     - field.field.node.measure.field_meta_description
     - field.field.node.measure.field_norm
@@ -13,15 +14,24 @@ dependencies:
     - field.field.node.measure.field_source
     - field.field.node.measure.field_valid_from
     - field.field.node.measure.field_valid_to
+    - field.field.node.measure.field_versions
     - node.type.measure
   module:
     - datetime
+    - text
     - user
 id: node.measure.teaser
 targetEntityType: node
 bundle: measure
 mode: teaser
 content:
+  content:
+    label: above
+    weight: -5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_meta_description:
     type: basic_string
     weight: 1
@@ -41,11 +51,13 @@ content:
 hidden:
   content_moderation_control: true
   field_content: true
+  field_last_updated: true
   field_measure_type: true
   field_norm: true
   field_ref_icon: true
   field_region: true
   field_source: true
   field_valid_from: true
+  field_versions: true
   langcode: true
   links: true

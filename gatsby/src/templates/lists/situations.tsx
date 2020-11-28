@@ -1,78 +1,79 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO as Seo } from 'gatsby-plugin-seo';
 import { graphql } from 'gatsby';
-import ContentBox from '@/components/content-box';
 import Container from '@/components/container';
-import { IQuery } from 'graphql-types';
+import { ISitePageContext, ISituationsAreasListQuery } from 'graphql-types';
 import Breadcrumb from '@/components/breadcrumb';
 import Headline from '@/components/headline';
-import CategoryItem from '@/components/category-item';
-import LookingForSomething from '@/components/looking-for-something';
 import Layout from '@/layouts/default-layout';
-
-const breadcrumbItems = [
-  {
-    title: 'domů',
-    url: '/',
-  },
-  {
-    title: 'Životní události',
-    url: '/situace',
-  },
-];
+import SchemaComp from '@/components/schema';
+import { SituationAreaList } from '@/components/category-item-list';
+import { useTranslation } from '@/components/i18n';
 
 interface IProps {
-  data: IQuery;
+  data: ISituationsAreasListQuery;
+  pageContext: ISitePageContext;
 }
 
-const Situations: React.FC<IProps> = ({ data }) => {
+const Situations: React.FC<IProps> = ({ data, pageContext }) => {
+  const { t } = useTranslation();
   const {
-    allArea: { nodes },
+    allSituationAreas: { nodes },
   } = data;
 
+  const collator = new Intl.Collator([pageContext.langCode]);
+  nodes.sort((a, b) => collator.compare(a.name, b.name));
+
   return (
-    <Layout>
-      <Helmet title="Aktuální opatření" />
-      <Container>
-        <div className="mt-3">
-          <Breadcrumb items={breadcrumbItems} variant="inverse" />
-        </div>
-        <div className="mt-3">
-          <Headline>Přehled životních situací</Headline>
-        </div>
-        <div className="mt-3">
-          <ContentBox noPadding>
-            {nodes.map(
-              (n) =>
-                n.relationships.situation !== null && (
-                  <CategoryItem key={n.id} name={n.name} path={n.path.alias} />
-                ),
-            )}
-          </ContentBox>
-        </div>
+    <Layout
+      pageContext={pageContext}
+      hasTransparentHeader={false}
+      showBackgroundImage
+      showSearchInHeader
+    >
+      <Seo
+        title={t('life_situations')}
+        description={t('situations_overview_meta')}
+        pagePath={t('slug_situations')}
+        htmlLanguage={pageContext.langCode}
+      />
+      <SchemaComp
+        langCode={pageContext.langCode}
+        description={t('situations_overview_meta')}
+        isBlogPost={false}
+        isSpecialList
+        title={t('life_situations')}
+        breadcrumbItems={[
+          { title: t('home'), url: '/' },
+          { title: t('life_situations'), url: t('slug_situations') },
+        ]}
+      />
+      <Container className="pt-1 pb-1 pt-md-3 pb-md-3">
+        <Breadcrumb
+          items={[{ title: t('home'), url: '/' }, t('life_situations')]}
+          variant="inverse"
+        />
       </Container>
-      <Container className="mt-3 mb-3">
-        <LookingForSomething />
+      <Container className="mt-1 d-block d-md-none">
+        <Headline color="white">{t('situations_overview')}</Headline>
+      </Container>
+      <Container className="mt-1">
+        <SituationAreaList theme="blue" data={data.allSituationAreas.nodes} />
       </Container>
     </Layout>
   );
 };
+
 export default Situations;
 
 export const query = graphql`
-  query SituationTypeQuery($langCode: String!) {
-    allArea(filter: { langcode: { eq: $langCode } }, sort: { fields: name }) {
+  query SituationsAreasList($langCode: String!) {
+    allSituationAreas: allArea(
+      filter: { langcode: { eq: $langCode } }
+      sort: { fields: name }
+    ) {
       nodes {
-        name
-        id
-        path {
-          alias
-        }
-        relationships {
-          situation {
-            id
-          }
-        }
+        ...SituationArea
       }
     }
   }

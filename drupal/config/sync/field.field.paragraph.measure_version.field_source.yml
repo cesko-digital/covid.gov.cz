@@ -1,0 +1,23 @@
+uuid: 21944b7f-7277-48a1-989f-b7fbea0f501d
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_source
+    - paragraphs.paragraphs_type.measure_version
+  module:
+    - link
+id: paragraph.measure_version.field_source
+field_name: field_source
+entity_type: paragraph
+bundle: measure_version
+label: Zdroj
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

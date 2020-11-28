@@ -1,0 +1,85 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.box {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  .clickableWrapper {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    &:hover {
+      .guide-item-btn {
+        background-color: $theme-yellow;
+      }
+    }
+  }
+}
+
+/* purgecss start ignore */
+.guide-item-title {
+  color: #fff !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  &--blue {
+    color: #2b4762 !important;
+  }
+}
+
+.guide-item-icon {
+  color: #fff;
+  margin-right: 5px;
+
+  &--blue {
+    color: $theme-blue !important;
+  }
+}
+
+.guide-item-btn {
+  background-color: transparent;
+  color: #fff !important;
+  align-self: flex-start;
+  margin-top: auto;
+
+  &--blue {
+    color: $theme-blue !important;
+  }
+}
+
+.guide-item-sub-title {
+  color: #fff;
+
+  /*! purgecss ignore */
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  &--blue {
+    color: #2362a2;
+  }
+}
+
+/**
+ * Probably shouldn't be ellipsis, but it will work for now
+ */
+
+.guide-item-description-text {
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  &--blue {
+    color: #808080;
+  }
+}
+
+/* purgecss end ignore */

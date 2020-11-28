@@ -1,0 +1,77 @@
+uuid: f78bd2ad-a65b-43bd-9335-f05ef965ea47
+langcode: en
+status: true
+dependencies:
+  module:
+    - userprotect
+id: userprotect_rule--userprotect_rule
+disabled: true
+path: userprotect_rule/userprotect_rule
+resourceType: userprotect_rule--userprotect_rule
+resourceFields:
+  uuid:
+    fieldName: uuid
+    publicName: uuid
+    enhancer:
+      id: ''
+    disabled: false
+  langcode:
+    fieldName: langcode
+    publicName: langcode
+    enhancer:
+      id: ''
+    disabled: false
+  status:
+    fieldName: status
+    publicName: status
+    enhancer:
+      id: ''
+    disabled: false
+  dependencies:
+    fieldName: dependencies
+    publicName: dependencies
+    enhancer:
+      id: ''
+    disabled: false
+  third_party_settings:
+    fieldName: third_party_settings
+    publicName: third_party_settings
+    enhancer:
+      id: ''
+    disabled: false
+  _core:
+    fieldName: _core
+    publicName: _core
+    enhancer:
+      id: ''
+    disabled: false
+  name:
+    fieldName: name
+    publicName: name
+    enhancer:
+      id: ''
+    disabled: false
+  label:
+    fieldName: label
+    publicName: label
+    enhancer:
+      id: ''
+    disabled: false
+  protectedEntityTypeId:
+    fieldName: protectedEntityTypeId
+    publicName: protectedEntityTypeId
+    enhancer:
+      id: ''
+    disabled: false
+  protectedEntityId:
+    fieldName: protectedEntityId
+    publicName: protectedEntityId
+    enhancer:
+      id: ''
+    disabled: false
+  protections:
+    fieldName: protections
+    publicName: protections
+    enhancer:
+      id: ''
+    disabled: false

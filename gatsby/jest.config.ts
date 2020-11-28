@@ -15,7 +15,6 @@ const config = {
   },
   testURL: `http://localhost`,
   setupFiles: [`<rootDir>/loadershim.ts`],
-  collectCoverage: true,
   collectCoverageFrom: ['<rootDir>/src/components/**/*.tsx'],
   setupFilesAfterEnv: ['<rootDir>/setup-test-env.ts'],
 };

@@ -2,6 +2,7 @@ name: covid
 recipe: drupal8
 config:
   webroot: web
+  xdebug: false
 services:
   appserver:
     type: php:7.4
@@ -24,3 +25,18 @@ services:
     type: mssql
     creds:
       password: SuperDrupalSite8
+    overrides:
+      image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root

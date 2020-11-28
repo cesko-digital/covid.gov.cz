@@ -1,5 +1,12 @@
 <?php
 
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\node\NodeInterface;
 
 /**
@@ -11,6 +18,73 @@ function covid_theme($existing, $type, $theme, $path) {
       'render element' => 'form',
     ],
   ];
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function covid_entity_base_field_info(EntityTypeInterface $entity_type) {
+  if ($entity_type->id() === 'node') {
+    $fields = [];
+
+    $fields['content'] = BaseFieldDefinition::create('text_long')
+      ->setLabel(t('Content'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\Field\VersionedField')
+      ->setSetting('field', 'field_content')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'region' => 'hidden',
+      ]);
+
+    $fields['questions_answers'] = BaseFieldDefinition::create('covid_question_answer')
+      ->setLabel(t('Questions and answers'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\Field\VersionedField')
+      ->setSetting('field', 'field_questions_answers')
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('view', [
+        'region' => 'hidden',
+      ]);
+
+    $fields['valid_from'] = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Valid from'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_valid_from')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ]);
+
+    $fields['valid_to'] = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Valid to'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_valid_to')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ]);
+
+    $fields['source'] = BaseFieldDefinition::create('link')
+    ->setLabel(t('Source'))
+    ->setComputed(TRUE)
+    ->setClass('\Drupal\covid\Field\VersionedField')
+    ->setSetting('field', 'field_source')
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'region' => 'hidden',
+    ]);
+
+    $fields['update'] = BaseFieldDefinition::create('covid_situation_update')
+      ->setLabel(t('Update'))
+      ->setComputed(TRUE)
+      ->setClass('\Drupal\covid\Field\SituationUpdateField');
+
+    return $fields;
+  }
 }
 
 /**
@@ -38,5 +112,73 @@ function covid_node_presave(NodeInterface $entity) {
       $entity->set('field_questions_answers', $values);
       $entity->set('field_faq_parser', NULL);
     }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function covid_taxonomy_term_update(EntityInterface $entity) {
+  if ($entity->bundle() === 'region') {
+    $query = Drupal::entityTypeManager()->getStorage('node')->getQuery();
+
+    $query->condition('type', 'situation');
+
+    $result = $query->execute();
+
+    $tags = array_map(function($id) {
+      return 'node:' . $id;
+    }, $result ?? []);
+
+    Cache::invalidateTags($tags);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function covid_node_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  /** @var NodeInterface $entity */
+  // If node is already published, then allow only admins to delete it.
+  if ($operation === 'delete' && !in_array('administrator', $account->getRoles()) && $entity->isPublished()) {
+    // Check if any previous revision has been published, we want to restrict access in that case as well.
+    $nodeStorage = \Drupal::entityTypeManager()->getStorage('node');
+    $revisionIds = $nodeStorage->revisionIds($entity);
+    foreach ($revisionIds as $revisionId) {
+      /** @var NodeInterface $revision */
+      $revision = $nodeStorage->loadRevision($revisionId);
+      if ($revision->isPublished()) {
+        return AccessResult::forbidden()
+          ->cachePerPermissions()
+          ->cachePerUser();
+      }
+    }
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function covid_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  $roles = Drupal::currentUser()->getRoles();
+
+  $isTranslator = in_array('translator', $roles) && count($roles) === 2;
+
+  // Don't let translator edit nodes (or at least don't show the button).
+  // The permission is necessary for translating paragraphs.
+  if ($entity->getEntityTypeId() === 'node' && $isTranslator) {
+    unset($operations['edit']);
+  }
+}
+
+/**
+ * Implements hook_editor_js_settings_alter
+ */
+function covid_editor_js_settings_alter(array &$settings) {
+  foreach ($settings['editor']['formats'] as $name => $value) {
+    $settings['editor']['formats'][$name]['editorSettings']['disableNativeSpellChecker'] = FALSE;
+    $settings['editor']['formats'][$name]['editorSettings']['removePlugins'] = 'liststyle,tabletools,scayt,menubutton,contextmenu,tableresize';
+    $settings['editor']['formats'][$name]['editorSettings']['browserContextMenuOnCtrl'] = FALSE;
   }
 }

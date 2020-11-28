@@ -1,0 +1,56 @@
+name: "Deploy"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  build:
+    name: Build Gatsby
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y ca-certificates wget apt-transport-https gnupg apt-utils curl git g++ \
+          && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
+          && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
+          && sudo apt update && sudo apt install yarn -y
+      - name: Build Gatsby
+        run: |
+          export GATSBY_APPINSIGHTS_KEY=${{ secrets.GATSBY_APPINSIGHTS_KEY }} \
+          && yarn install \
+          && yarn build \
+        working-directory: gatsby
+      - name: Checkout gh-pages
+        run: |
+          git clone https://git:${{ secrets.GITHUB_TOKEN }}@github.com/cesko-digital/covid.gov.cz.git --branch gh-pages gh-pages &&
+          rm -rf gh-pages/* gh-pages/.github
+      - name: Move new build
+        run: |
+          mv gatsby/public/* gh-pages \
+          && cp .gitattributes gh-pages
+      - name: Set identity
+        run: |
+          git config --global user.email "bot@cesko.digital" && git config --global user.name "Bot Cesko.Digital"
+      - name: Commit && move on
+        working-directory: gh-pages
+        run: |
+          git add -A && git commit -m "Build" --allow-empty && git push --force
+      - name: Send notification to Slack
+        uses: rtCamp/action-slack-notify@master
+        env:
+          SLACK_COLOR: '#3278BD'
+          SLACK_ICON: https://covid.gov.cz/favicon.svg
+          SLACK_USERNAME: "Nový build"
+          SLACK_MESSAGE: "Máme nový build :tada:, deploy na produkci probíhá 20 minut po celé hodině."
+          SLACK_FOOTER: ""
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          MSG_MINIMAL: true

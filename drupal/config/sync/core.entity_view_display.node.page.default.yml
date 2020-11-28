@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_content
+    - field.field.node.page.field_last_updated
     - field.field.node.page.field_meta_description
     - node.type.page
   module:
+    - datetime
     - text
     - user
 id: node.page.default
@@ -15,24 +17,38 @@ bundle: page
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   field_content:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_last_updated:
+    weight: 1
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: nice_date_long
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_meta_description:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
 hidden:
+  content: true
   langcode: true
   links: true
+  questions_answers: true
+  source: true
+  valid_from: true
+  valid_to: true

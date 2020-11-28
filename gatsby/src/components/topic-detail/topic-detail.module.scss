@@ -1,0 +1,18 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.topicDetail {
+  h2 {
+    font-weight: 500;
+
+    strong {
+      font-weight: 400;
+    }
+  }
+}
+
+.article {
+  h2 {
+    font-weight: 400;
+    color: $theme-blue;
+  }
+}

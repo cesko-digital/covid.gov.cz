@@ -1,0 +1,22 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.wrapper {
+  background-color: $theme-yellow;
+  color: black;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+
+  a {
+    color: black;
+
+    &:hover,
+    &:focus,
+    &:visited {
+      color: black;
+    }
+  }
+}

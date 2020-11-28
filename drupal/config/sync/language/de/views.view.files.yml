@@ -1,0 +1,89 @@
+label: Dateien
+description: 'Dateien suchen und verwalten.'
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ Vorherige Seite'
+            next: 'Nächste Seite ›'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      fields:
+        fid:
+          label: Fid
+        filename:
+          label: Name
+          separator: ', '
+        filemime:
+          label: MIME-Typ
+        filesize:
+          label: Größe
+        status:
+          label: Status
+          settings:
+            format_custom_false: Temporär
+            format_custom_true: Dauerhaft
+        created:
+          label: Upload-Datum
+        changed:
+          label: Änderungsdatum
+        count:
+          label: 'Verwendet in'
+      filters:
+        filename:
+          expose:
+            label: Dateiname
+        filemime:
+          expose:
+            label: MIME-Typ
+        status:
+          expose:
+            label: Status
+      title: Dateien
+      empty:
+        area_text_custom:
+          content: 'Keine Dateien verfügbar'
+  page_1:
+    display_title: Dateiübersicht
+    display_options:
+      menu:
+        title: Dateien
+  page_2:
+    display_title: Dateinutzung
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Vorherige Seite'
+            next: 'Nächste Seite ›'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      fields:
+        entity_label:
+          label: Entität
+        type:
+          label: Entitätstyp
+        module:
+          label: 'Registrierendes Modul'
+        count:
+          label: 'Anzahl der Verwendung'
+      title: Dateinutzung
+      arguments:
+        fid:
+          exception:
+            title: Alle
+          title: 'Dateiverwendungsinformationen für {{ arguments.fid }}'

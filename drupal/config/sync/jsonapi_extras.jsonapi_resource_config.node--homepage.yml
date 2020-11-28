@@ -123,6 +123,30 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  content:
+    disabled: true
+    fieldName: content
+    publicName: content
+    enhancer:
+      id: ''
+  valid_from:
+    disabled: true
+    fieldName: valid_from
+    publicName: valid_from
+    enhancer:
+      id: ''
+  valid_to:
+    disabled: true
+    fieldName: valid_to
+    publicName: valid_to
+    enhancer:
+      id: ''
+  source:
+    disabled: true
+    fieldName: source
+    publicName: source
+    enhancer:
+      id: ''
   path:
     fieldName: path
     publicName: path
@@ -204,6 +228,12 @@ resourceFields:
   field_hp_situation_text:
     fieldName: field_hp_situation_text
     publicName: situation_text
+    enhancer:
+      id: ''
+    disabled: false
+  field_last_updated:
+    fieldName: field_last_updated
+    publicName: last_updated
     enhancer:
       id: ''
     disabled: false

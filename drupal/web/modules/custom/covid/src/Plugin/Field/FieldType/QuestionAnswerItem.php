@@ -6,6 +6,7 @@ namespace Drupal\covid\Plugin\Field\FieldType;
 
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\Core\TypedData\DataReferenceTargetDefinition;
 use Drupal\text\Plugin\Field\FieldType\TextLongItem;
 
 /**
@@ -17,7 +18,7 @@ use Drupal\text\Plugin\Field\FieldType\TextLongItem;
  *   description = @Translation("Question and its anser."),
  *   category = "COVID Portal",
  *   default_widget = "covid_question_answer_widget",
- *   default_formatter = "text_default"
+ *   default_formatter = "covid_question_answer"
  * )
  */
 class QuestionAnswerItem extends TextLongItem {
@@ -39,6 +40,10 @@ class QuestionAnswerItem extends TextLongItem {
     $properties['question'] = DataDefinition::create('string')
       ->setLabel(t('Question'))
       ->setRequired(TRUE);
+
+    $properties['pes_id'] = DataReferenceTargetDefinition::create('integer')
+      ->setLabel('PES')
+      ->setSetting('unsigned', TRUE);
 
     return $properties;
   }

@@ -4,6 +4,7 @@
   color: #2362a2;
   background: white;
   padding: 5px 17px 16px 17px;
+  border-radius: 0.3rem;
 }
 
 .section {
@@ -31,10 +32,10 @@
   margin-right: 15px;
 }
 
-.separator {
-  margin: 16px 0;
+.link {
+  text-decoration: none !important;
 }
 
-.phone-number {
-  text-decoration: none;
+.separator {
+  margin: 16px 0;
 }

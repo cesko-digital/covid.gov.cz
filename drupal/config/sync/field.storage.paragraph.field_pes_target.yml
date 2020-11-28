@@ -1,0 +1,20 @@
+uuid: 2cc21396-6e97-486b-ace5-df1f2bf29c19
+langcode: cs
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_pes_target
+field_name: field_pes_target
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

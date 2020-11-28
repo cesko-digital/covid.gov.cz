@@ -1,7 +1,6 @@
 import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
-import { IQuery } from 'graphql-types';
-import { IPage, IPageGroupConnection } from '../graphql-types';
+import { IPage, ICreatePagesQuery } from 'graphql-types';
 
 /**
  * Gatsby exposes interfaces for every lifecycle hook
@@ -10,7 +9,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
   graphql,
   actions,
 }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   const customPagesTemplate = path.resolve(
     `./src/templates/custom-page/custom-page.tsx`,
@@ -34,9 +33,9 @@ export const createPages: GatsbyNode['createPages'] = async ({
   /**
    * Pass the query structure generic for complete type-check coverage
    */
-  const result = await graphql<IQuery>(
+  const result = await graphql<ICreatePagesQuery>(
     `
-      {
+      query CreatePages {
         allTranslation {
           nodes {
             langcode
@@ -44,16 +43,25 @@ export const createPages: GatsbyNode['createPages'] = async ({
             target
           }
         }
+        allRedirect {
+          nodes {
+            redirect_from
+            redirect_to
+            status_code
+          }
+        }
         allArea {
           edges {
             node {
               langcode
+              drupal_id
               path {
                 alias
               }
               relationships {
                 situation {
                   langcode
+                  drupal_id
                   path {
                     alias
                   }
@@ -62,16 +70,18 @@ export const createPages: GatsbyNode['createPages'] = async ({
             }
           }
         }
-        allTaxonomyTermMeasureType {
+        allMeasureType {
           edges {
             node {
               langcode
+              drupal_id
               path {
                 alias
               }
               relationships {
                 measure {
                   langcode
+                  drupal_id
                   path {
                     alias
                   }
@@ -85,6 +95,7 @@ export const createPages: GatsbyNode['createPages'] = async ({
             id
             title
             langcode
+            drupal_id
             path {
               alias
             }
@@ -103,11 +114,28 @@ export const createPages: GatsbyNode['createPages'] = async ({
   }
 
   // index
-  var trArray = result.data.allTranslation.nodes;
+  const translations = result.data.allTranslation.nodes;
   const languages = ['cs', 'en'];
+  const pageSpecs = [
+    ['slug_situations', situationTemplate],
+    ['slug_measures', measureTemplate],
+  ];
+
+  const pathLangPrefix = (lang) => (lang === 'cs' ? '' : '/' + lang);
+
+  const generateLanguageVariants = (nodes, toLanguage, filter) =>
+    nodes
+      // include variants with different language and matching node filter (drupal_id/target)
+      .filter((item) => item.langcode != toLanguage && filter(item))
+      // reduce variants to mapping {[language]: /path}
+      .reduce((acc, item) => {
+        acc[item.langcode] =
+          pathLangPrefix(item.langcode) + (item.target || item.path?.alias);
+        return acc;
+      }, {});
 
   languages.forEach((lang) => {
-    const pathPrefix = lang === 'cs' ? '' : '/' + lang;
+    const pathPrefix = pathLangPrefix(lang);
 
     createPage({
       path: pathPrefix + '/',
@@ -117,81 +145,122 @@ export const createPages: GatsbyNode['createPages'] = async ({
       },
     });
 
-    const situationSlug = trArray.filter((item) => {
-      return item.langcode === lang && item.source === 'slug_situations';
-    });
+    pageSpecs.forEach(([source, template]) => {
+      const slug = translations.filter((item) => {
+        return item.langcode === lang && item.source === source;
+      })[0].target;
 
-    const measureSlug = trArray.filter((item) => {
-      return item.langcode === lang && item.source === 'slug_measures';
-    });
+      const languageVariants = generateLanguageVariants(
+        translations,
+        lang,
+        (i) => i.source === source,
+      );
 
-    createPage({
-      path: pathPrefix + measureSlug[0].target,
-      component: measureTemplate,
-      context: {
-        langCode: lang,
-      },
-    });
-
-    createPage({
-      path: pathPrefix + situationSlug[0].target,
-      component: situationTemplate,
-      context: {
-        langCode: lang,
-      },
+      createPage({
+        path: pathPrefix + slug,
+        component: template,
+        context: {
+          langCode: lang,
+          languageVariants,
+        },
+      });
     });
   });
 
   // custom pages
-  const customPages: IPageGroupConnection = result.data.allPage;
+  const customPages = result.data.allPage.nodes;
 
-  customPages.nodes.forEach((page: IPage) => {
-    const pathPrefix = page.langcode === 'cs' ? '' : '/' + page.langcode;
+  customPages.forEach((page) => {
+    const languageVariants = generateLanguageVariants(
+      customPages,
+      page.langcode,
+      (p) => p.drupal_id == page.drupal_id,
+    );
+
+    const pathPrefix = pathLangPrefix(page.langcode);
     createPage({
       path: pathPrefix + page.path.alias,
       component: customPagesTemplate,
       context: {
         slug: page.path.alias,
         langCode: page.langcode,
+        languageVariants,
       },
     });
   });
 
   // Create blog posts pages.
-  const posts = [
-    result.data.allArea.edges,
-    result.data.allTaxonomyTermMeasureType.edges,
+  const blogPostSpecs = [
+    ['situation', result.data.allArea.edges, listTemplate[0], pageTemplate[0]],
+    [
+      'measure',
+      result.data.allMeasureType.edges,
+      listTemplate[1],
+      pageTemplate[1],
+    ],
   ];
+  blogPostSpecs.forEach((spec) => {
+    const [key, posts, itemTmpl, subTmpl] = spec;
+    const nodes = posts.map((p) => p.node);
 
-  const itemNames = ['situation', 'measure'];
+    // extract all subnodes from all nodes and flats them to one dimensional array
+    const flattenedSubNodes = nodes
+      .map((n) => n.relationships[key])
+      .flat()
+      .filter(Boolean);
 
-  for (let i = 0; i < 2; i++) {
-    posts[i].forEach((post, index) => {
-      const pathPrefix =
-        post.node.langcode === 'cs' ? '' : '/' + post.node.langcode;
+    nodes.forEach((node) => {
+      const pathPrefix = pathLangPrefix(node.langcode);
+
+      const languageVariants = generateLanguageVariants(
+        nodes,
+        node.langcode,
+        (n) => n.drupal_id === node.drupal_id,
+      );
+
+      const listSlug = node.path.alias;
+
       createPage({
-        path: pathPrefix + post.node.path.alias,
-        component: listTemplate[i],
+        path: pathPrefix + listSlug,
+        component: itemTmpl,
         context: {
-          slug: post.node.path.alias,
-          langCode: post.node.langcode,
+          slug: listSlug,
+          langCode: node.langcode,
+          languageVariants,
         },
       });
 
-      if (post.node.relationships[itemNames[i]] !== null) {
-        post.node.relationships[itemNames[i]].forEach((situation, index) => {
-          const pathPrefix =
-            situation.langcode === 'cs' ? '' : '/' + situation.langcode;
-          createPage({
-            path: pathPrefix + situation.path.alias,
-            component: pageTemplate[i],
-            context: {
-              slug: situation.path.alias,
-              langCode: situation.path.langcode,
-            },
-          });
+      (node.relationships[key] || []).forEach((subNode) => {
+        const pathPrefix = pathLangPrefix(subNode.langcode);
+
+        const languageVariants = generateLanguageVariants(
+          flattenedSubNodes,
+          subNode.langcode,
+          (n) => n.drupal_id === subNode.drupal_id,
+        );
+
+        createPage({
+          path: pathPrefix + subNode.path.alias,
+          component: subTmpl,
+          context: {
+            slug: subNode.path.alias,
+            langCode: subNode.langcode,
+            listSlug,
+            languageVariants,
+          },
         });
-      }
+      });
     });
-  }
+  });
+
+  // Create redirects
+  const redirects = result.data.allRedirect.nodes;
+
+  redirects.forEach((redirect) => {
+    createRedirect({
+      fromPath: redirect.redirect_from,
+      toPath: redirect.redirect_to,
+      statusCode: redirect.status_code,
+    });
+  });
 };

@@ -1,33 +1,34 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import { Link as OriginalLink } from 'gatsby';
-import { TRoute } from '@/components/i18n';
+import { useCurrentLanguage } from '../i18n';
 
-interface Props {
-  label?: string;
+interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to: string;
-  className?: string;
+  dataTestId?: string;
   activeClassName?: string;
   partiallyActive?: boolean;
-  noTR?: boolean;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  noLanguageCodePrefix?: boolean;
 }
 
-const ABSOLUTE_URL_REGEX = new RegExp('^(?:[a-z]+:)?//', 'i');
+const ABSOLUTE_URL_REGEX_PATTERN = /^(?:[a-z]+:)?\/\//;
 
 const Link: React.FC<Props> = ({
   children,
-  label,
+  title,
   to,
+  dataTestId,
   className,
   onClick,
   activeClassName,
   partiallyActive,
-  noTR,
+  noLanguageCodePrefix,
+  ...rest
 }) => {
+  const currentLanguage = useCurrentLanguage();
   // FIXME: udelat porovnavani domeny, je potreba vyresit SSR
   const isExternal = useMemo(() => {
-    return ABSOLUTE_URL_REGEX.test(to);
+    return new RegExp(ABSOLUTE_URL_REGEX_PATTERN).test(to);
   }, [to]);
 
   const commonProps = {
@@ -35,8 +36,9 @@ const Link: React.FC<Props> = ({
       external: isExternal,
       [className]: className,
     }),
-    title: label,
-    'aria-label': label,
+    title,
+    'aria-label': title,
+    'data-testid': dataTestId,
   };
 
   const handleExternalLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -53,25 +55,33 @@ const Link: React.FC<Props> = ({
     }
   };
 
+  const getTo = () => {
+    if (noLanguageCodePrefix || currentLanguage === 'cs') {
+      return to;
+    }
+    return `/${currentLanguage}${to}`;
+  };
+
   return !isExternal ? (
     <OriginalLink
       onClick={handleInternalLinkClick}
-      to={noTR ? to : TRoute(to)}
+      to={getTo()}
       activeClassName={activeClassName}
       partiallyActive={partiallyActive}
       {...commonProps}
+      {...rest}
     >
-      {children || label}
+      {children || title}
     </OriginalLink>
   ) : (
     <a
       href={to}
       onClick={handleExternalLinkClick}
-      target="_blank"
       rel="noreferrer"
       {...commonProps}
+      {...rest}
     >
-      {children || label}
+      {children || title}
     </a>
   );
 };

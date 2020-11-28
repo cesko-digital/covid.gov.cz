@@ -1,0 +1,49 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.wrapper {
+  margin: 16px 0;
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: solid 1px transparent;
+
+  //mobile
+  @include media-breakpoint-down(md) {
+    margin-top: 0;
+  }
+
+  &.info {
+    border-color: $theme-blue;
+    color: $theme-blue;
+  }
+
+  &.alert {
+    border-color: $theme-red;
+
+    &,
+    a {
+      color: $theme-red;
+    }
+  }
+
+  p {
+    margin: 8px 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.iconWrapper {
+  padding: 0 12px;
+  margin-top: 2px;
+  margin-left: -12px;
+}

@@ -4,12 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.page.field_content
+    - field.field.node.page.field_last_updated
     - field.field.node.page.field_meta_description
     - node.type.page
     - workflows.workflow.content
   module:
     - content_moderation
+    - datetime
     - field_group
+    - path
     - text
 third_party_settings:
   field_group:
@@ -74,6 +77,12 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_last_updated:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_meta_description:
     weight: 3
     settings:
@@ -94,6 +103,12 @@ content:
     weight: 11
     settings: {  }
     region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

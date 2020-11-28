@@ -1,0 +1,3 @@
+redirects:
+  # uri: 'https://drupal.org/project/redirect/link-relations/#redirects'
+  description: "The link's target points to a resource that has list of redirects."

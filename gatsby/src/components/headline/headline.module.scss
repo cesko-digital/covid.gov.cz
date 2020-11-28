@@ -1,7 +1,43 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.headlineWrapper {
+  hr {
+    display: none;
+  }
+
+  padding: 8px 0;
+  // desktop
+  @include media-breakpoint-up(md) {
+    padding: 8px 32px 16px 32px;
+  }
+}
+
 .headline {
   font-size: 2.3rem;
   line-height: 3.2rem;
   font-weight: 500;
-  color: white;
-  margin-bottom: 2.7rem;
+  margin: 0;
+
+  .headlineIcon {
+    display: none;
+  }
+  // desktop
+  @include media-breakpoint-up(md) {
+    margin-top: 16px;
+    color: $theme-blue;
+    display: flex;
+
+    .headlineIcon {
+      display: inline-block;
+      margin-top: 4px;
+      margin-right: 16px;
+    }
+
+    hr {
+      display: block;
+    }
+  }
 }

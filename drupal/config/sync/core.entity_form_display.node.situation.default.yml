@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.situation.field_content
     - field.field.node.situation.field_faq_parser
     - field.field.node.situation.field_internal_note
+    - field.field.node.situation.field_last_updated
     - field.field.node.situation.field_meta_description
+    - field.field.node.situation.field_pes_content
     - field.field.node.situation.field_questions_answers
     - field.field.node.situation.field_ref_icon
     - field.field.node.situation.field_region
@@ -14,6 +16,7 @@ dependencies:
     - field.field.node.situation.field_situation_ref_measures
     - field.field.node.situation.field_situation_type
     - field.field.node.situation.field_situations
+    - field.field.node.situation.field_updates
     - field.field.node.situation.field_valid_from
     - field.field.node.situation.field_valid_to
     - node.type.situation
@@ -24,6 +27,8 @@ dependencies:
     - datetime
     - field_group
     - link
+    - paragraphs
+    - path
     - text
 third_party_settings:
   field_group:
@@ -31,6 +36,8 @@ third_party_settings:
       children:
         - group_content_content
         - group_reference
+        - group_pes
+        - group_updates
         - group_faq
         - group_meta
       parent_name: ''
@@ -50,6 +57,7 @@ third_party_settings:
         - field_region
         - group_flex
         - field_content
+        - field_last_updated
       parent_name: group_content
       weight: 20
       format_type: tab
@@ -82,7 +90,7 @@ third_party_settings:
         - field_faq_parser
         - field_questions_answers
       parent_name: group_content
-      weight: 22
+      weight: 24
       format_type: tab
       region: content
       format_settings:
@@ -97,7 +105,7 @@ third_party_settings:
         - field_meta_description
         - field_internal_note
       parent_name: group_content
-      weight: 23
+      weight: 25
       format_type: tab
       region: content
       format_settings:
@@ -127,6 +135,34 @@ third_party_settings:
         id: ''
         classes: field-group--flex
       label: Flex
+    group_pes:
+      children:
+        - field_pes_content
+      parent_name: group_content
+      weight: 22
+      format_type: tab
+      region: content
+      format_settings:
+        description: 'Vyplňte znění pro jednotlivé úrovně na stupnici PES (Proti Epidemický Systém). Tato znění automaticky nahradí výchozí obsah v případě, kdy je PES aktivován.'
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: PES
+    group_updates:
+      children:
+        - field_updates
+      parent_name: group_content
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        description: 'Vyplňte krátký popis pro přechody mezi jednotlivými úrovněmi PES (Proti Epidemický Systém). Každá aktualizace popisuje přechod mezi dvěma stupni - například z PES 2 na PES 3.'
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Změny PES'
 id: node.situation.default
 targetEntityType: node
 bundle: situation
@@ -156,6 +192,12 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_last_updated:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_meta_description:
     weight: 12
     settings:
@@ -163,6 +205,25 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_pes_content:
+    type: paragraphs
+    weight: 31
+    settings:
+      title: Obsah
+      title_plural: Obsahy
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 1
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
     region: content
   field_questions_answers:
     weight: 27
@@ -222,6 +283,25 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_updates:
+    type: paragraphs
+    weight: 51
+    settings:
+      title: Aktualizace
+      title_plural: Aktualizace
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
+    third_party_settings: {  }
+    region: content
   field_valid_from:
     weight: 5
     settings: {  }
@@ -270,6 +350,11 @@ content:
     third_party_settings: {  }
   translation:
     weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }

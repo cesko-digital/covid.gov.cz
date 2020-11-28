@@ -1,0 +1,35 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.lastUpdateMobile {
+  text-align: left;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  color: $theme-gray-lighter;
+  background-color: $theme-white;
+  display: block;
+  visibility: visible;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.lastUpdateDesktop {
+  display: none;
+  visibility: hidden;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    visibility: visible;
+    text-align: left;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    color: $theme-gray-lighter;
+    background-color: $theme-white;
+  }
+}

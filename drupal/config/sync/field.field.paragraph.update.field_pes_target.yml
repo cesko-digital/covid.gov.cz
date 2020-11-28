@@ -1,0 +1,29 @@
+uuid: a040bfc8-586a-49c5-920a-3d1c8f542577
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pes_target
+    - paragraphs.paragraphs_type.update
+    - taxonomy.vocabulary.pes
+id: paragraph.update.field_pes_target
+field_name: field_pes_target
+entity_type: paragraph
+bundle: update
+label: 'Na stupeň'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pes: pes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

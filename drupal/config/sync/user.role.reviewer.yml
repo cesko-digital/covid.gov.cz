@@ -4,13 +4,14 @@ status: true
 dependencies: {  }
 id: reviewer
 label: Reviewer
-weight: -7
+weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'change own username'
+  - 'create url aliases'
   - 'delete any measure content'
   - 'delete any page content'
   - 'delete any situation content'
@@ -19,10 +20,16 @@ permissions:
   - 'edit any page content'
   - 'edit any situation content'
   - 'use content transition approved'
+  - 'use content transition archive'
   - 'use content transition create_new_draft'
   - 'use content transition publish'
   - 'use content transition review'
   - 'view any unpublished content'
+  - 'view homepage revisions'
   - 'view latest version'
+  - 'view measure revisions'
   - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view situation revisions'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'

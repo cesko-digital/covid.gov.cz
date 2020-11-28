@@ -1,0 +1,40 @@
+uuid: 2bc1afa3-01b1-433a-aca7-2397a06582ad
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_validity
+    - paragraphs.paragraphs_type.validity
+    - taxonomy.vocabulary.region
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.region.field_validity
+field_name: field_validity
+entity_type: taxonomy_term
+bundle: region
+label: Platnost
+description: 'Pro daný region zadejte platnost úrovně PES.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      validity: validity
+    target_bundles_drag_drop:
+      measure_version:
+        weight: 6
+        enabled: false
+      pes_content:
+        weight: 7
+        enabled: false
+      update:
+        weight: 8
+        enabled: false
+      validity:
+        enabled: true
+        weight: 5
+field_type: entity_reference_revisions

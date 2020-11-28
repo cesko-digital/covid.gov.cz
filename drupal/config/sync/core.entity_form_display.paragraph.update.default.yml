@@ -1,0 +1,44 @@
+uuid: 780c0de5-56bd-4600-a720-7b1ff1f09973
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.update.field_content
+    - field.field.paragraph.update.field_pes
+    - field.field.paragraph.update.field_pes_target
+    - paragraphs.paragraphs_type.update
+  module:
+    - text
+id: paragraph.update.default
+targetEntityType: paragraph
+bundle: update
+mode: default
+content:
+  field_content:
+    weight: 2
+    settings:
+      rows: 3
+      placeholder: 'Vyplňte krátký popis aktualizace.'
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_pes:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_pes_target:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

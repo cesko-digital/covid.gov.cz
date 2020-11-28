@@ -1,0 +1,31 @@
+uuid: 151a9dfb-a186-4215-b7b6-67a0e334f5ec
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pes_content
+    - node.type.situation
+    - paragraphs.paragraphs_type.pes_content
+  module:
+    - entity_reference_revisions
+id: node.situation.field_pes_content
+field_name: field_pes_content
+entity_type: node
+bundle: situation
+label: PES
+description: 'Vyplňte hodnoty pro jednotlivé úrovně na škále PES (Protiepidemický systém ČR). Pokud je daná úroveň aktivní, bude zobrazen text pro tuto úroveň PES.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      pes_content: pes_content
+    target_bundles_drag_drop:
+      pes_content:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

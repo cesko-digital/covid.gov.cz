@@ -1,0 +1,51 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+/* purgecss start ignore */
+.guide {
+  margin: initial;
+  background-image: none;
+  background-color: #2362a2;
+  box-shadow: none;
+
+  &--white {
+    background-color: #fff;
+  }
+
+  // desktop
+  @include media-breakpoint-up(md) {
+    padding: 24px 28px;
+  }
+}
+
+.guide-title {
+  font-size: 36px;
+  color: #fff;
+
+  &--blue {
+    color: $theme-blue !important;
+  }
+}
+
+.guide-description-text {
+  font-size: 15px;
+  color: #fff;
+
+  &--blue {
+    color: $theme-blue;
+  }
+}
+
+.guide-btn {
+  color: #2362a2 !important;
+  background-color: #fff;
+
+  &--blue {
+    color: #fff !important;
+    background-color: #2362a2;
+  }
+}
+
+/* purgecss end ignore */

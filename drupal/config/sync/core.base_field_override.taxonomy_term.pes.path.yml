@@ -1,0 +1,20 @@
+uuid: ec0922b0-d0bd-4763-9994-d1b144a1e740
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pes
+  module:
+    - path
+id: taxonomy_term.pes.path
+field_name: path
+entity_type: taxonomy_term
+bundle: pes
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

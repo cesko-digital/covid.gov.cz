@@ -14,7 +14,16 @@ function covid_ui_toolbar() {
     'covid_menu' => [
       '#lazy_builder' => [ToolbarHandler::class . ':lazyBuilder', []],
       '#create_placeholder' => TRUE,
-    ]
+    ],
+
+    'publish' => [
+      '#type' => 'link',
+      '#title' => 'Aktualizovat testovací prostředí',
+      '#url' => Url::fromRoute('covid_ui.publish'),
+      '#options' => [
+        'attributes' => ['class' => ['toolbar-right']]
+      ]
+    ],
   ];
 
   $items['covid'] = [

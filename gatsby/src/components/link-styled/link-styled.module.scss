@@ -1,0 +1,67 @@
+@import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/base/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
+
+.linkStyled {
+  margin: 0;
+
+  //desktop
+  @include media-breakpoint-up(md) {
+    &:not(:last-of-type) {
+      border-bottom: solid 1px darken($theme-white, 9%);
+    }
+
+    .chevron {
+      position: relative;
+      right: 20px;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      .chevron {
+        transition: all 0.2s;
+        right: 16px;
+      }
+    }
+  }
+}
+
+.linkStyledLink {
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  color: $theme-white;
+
+  @include complement-visited-links() {
+    color: $theme-white;
+
+    &:hover,
+    &:focus {
+      color: $theme-yellow;
+    }
+  }
+
+  // desktop
+  @include media-breakpoint-up(md) {
+    color: $theme-blue;
+    padding: 12px 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $theme-yellow;
+    }
+
+    @include complement-visited-links() {
+      color: $theme-blue;
+    }
+  }
+}
+
+.linkStyledIcon {
+  color: #ecae1a;
+}

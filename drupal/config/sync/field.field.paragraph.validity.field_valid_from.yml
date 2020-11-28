@@ -1,0 +1,21 @@
+uuid: 762d08b5-0e90-432d-be1e-e7a99564ed27
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_valid_from
+    - paragraphs.paragraphs_type.validity
+  module:
+    - datetime
+id: paragraph.validity.field_valid_from
+field_name: field_valid_from
+entity_type: paragraph
+bundle: validity
+label: 'Platnost od'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

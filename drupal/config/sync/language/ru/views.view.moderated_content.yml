@@ -1,0 +1,61 @@
+label: 'Модерируемые материалы'
+description: 'Найти и модерировать контент.'
+display:
+  default:
+    display_title: Основной
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Фильтр
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: убыв.
+      pager:
+        options:
+          tags:
+            previous: '‹ Предыдущий'
+            next: 'Следующий ›'
+            first: '« Первая'
+            last: 'Последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      fields:
+        title:
+          label: Заголовок
+          separator: ', '
+        type:
+          label: 'Тип материала'
+          separator: ', '
+        name:
+          label: Автор
+          separator: ', '
+        moderation_state:
+          label: 'Состояние модерации'
+          separator: ', '
+        changed:
+          label: Обновлено
+          separator: ', '
+        operations:
+          label: Операции
+      filters:
+        title:
+          expose:
+            label: Заголовок
+        type:
+          expose:
+            label: 'Тип материала'
+        moderation_state:
+          expose:
+            label: 'Состояние модерации'
+        langcode:
+          expose:
+            label: Язык
+      title: 'Модерируемые материалы'
+      empty:
+        area_text_custom:
+          content: 'Нет доступных модерируемых материалов. Здесь перечислены только ожидающие версии материалов, такие как черновики.'
+  moderated_content:
+    display_title: 'Модерируемые материалы'

@@ -1,0 +1,85 @@
+uuid: 7745c3e6-058b-48a5-8808-ad1cb01de7e1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.measure_version.field_content
+    - field.field.paragraph.measure_version.field_pes
+    - field.field.paragraph.measure_version.field_source
+    - field.field.paragraph.measure_version.field_valid_from
+    - field.field.paragraph.measure_version.field_valid_to
+    - paragraphs.paragraphs_type.measure_version
+  module:
+    - datetime
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_flex:
+      children:
+        - field_valid_from
+        - field_valid_to
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: field-group--flex
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Flex
+id: paragraph.measure_version.default
+targetEntityType: paragraph
+bundle: measure_version
+mode: default
+content:
+  field_content:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_pes:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_source:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_valid_from:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_valid_to:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

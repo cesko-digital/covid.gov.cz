@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: editor
 label: Editor
-weight: -8
+weight: -7
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -24,6 +24,7 @@ permissions:
   - 'create terms in measure_type'
   - 'create terms in region'
   - 'create terms in situation_type'
+  - 'create url aliases'
   - 'delete any measure content'
   - 'delete any page content'
   - 'delete any situation content'
@@ -40,21 +41,17 @@ permissions:
   - 'edit terms in measure_type'
   - 'edit terms in region'
   - 'edit terms in situation_type'
-  - 'revert homepage revisions'
-  - 'revert measure revisions'
-  - 'revert page revisions'
-  - 'revert situation revisions'
   - 'translate any entity'
+  - 'translate interface'
   - 'update content translations'
-  - 'use content transition approved'
   - 'use content transition create_new_draft'
-  - 'use content transition publish'
   - 'use content transition review'
   - 'use text format basic'
   - 'view any unpublished content'
-  - 'view homepage revisions'
+  - 'view latest version'
   - 'view measure revisions'
   - 'view own unpublished content'
   - 'view page revisions'
   - 'view situation revisions'
   - 'view the administration theme'
+  - 'view unpublished paragraphs'
