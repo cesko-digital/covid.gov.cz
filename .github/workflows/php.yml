@@ -1,10 +1,9 @@
-name: PHP Composer
+name: Drupal
 
 on:
   push:
     branches:
     - master
-    - 'drupal/feature/pipeline-composer'
     paths-ignore:
     - 'gatsby/**'
     - 'docker/**'
@@ -41,5 +40,5 @@ jobs:
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: cd drupal && composer install --no-progress --no-suggest
 
-#      - name: Deploy to stage
-#        run: cd drupal && vendor/bin/dep deploy staging
+      - name: Deploy to stage
+        run: cd drupal && vendor/bin/dep deploy staging
