@@ -39,5 +39,5 @@ jobs:
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: cd drupal && composer install --no-progress --no-suggest
 
-      - name: Deploy to stage
-        run: cd drupal && vendor/bin/dep deploy staging
+#      - name: Deploy to stage
+#        run: cd drupal && vendor/bin/dep deploy staging
