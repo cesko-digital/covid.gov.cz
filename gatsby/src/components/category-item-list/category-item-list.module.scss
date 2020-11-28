@@ -28,6 +28,11 @@
       color: $theme-white;
     }
   }
+
+  .linkBack span,
+  .chevron {
+    color: $theme-blue !important;
+  }
 }
 
 .blueTheme {
@@ -49,6 +54,11 @@
     i {
       color: $theme-white;
     }
+  }
+
+  .linkBack span,
+  .chevron {
+    color: $theme-yellow !important;
   }
 }
 
@@ -84,7 +94,6 @@
     }
 
     .chevron {
-      color: $theme-yellow;
       margin-left: -4px;
     }
 
@@ -98,10 +107,6 @@
       font-weight: 500;
       letter-spacing: 0.5px;
       margin-bottom: 12px;
-
-      span {
-        color: $theme-yellow !important;
-      }
 
       &:hover {
         span {

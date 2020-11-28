@@ -46,6 +46,7 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
         beforeContent={
           hasUpdate && (
             <UpdateWarning
+              className="pb-2"
               variant="info"
               title={reactStringReplace(
                 t('situation_valid_from_header').replace(
