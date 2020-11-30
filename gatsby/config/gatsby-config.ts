@@ -105,7 +105,8 @@ const config = {
           'img-src': "'self' www.google.cz stats.g.doubleclick.net data:",
           'connect-src':
             "'self' analytics.google.com dc.services.visualstudio.com dc.applicationinsights.microsoft.com dc.applicationinsights.azure.com stats.g.doubleclick.net",
-          'default-src': "'self' www.googletagmanager.com fonts.googleapis.com",
+          'default-src':
+            "'self' www.googletagmanager.com fonts.googleapis.com www.google-analytics.com",
         },
       },
     },
