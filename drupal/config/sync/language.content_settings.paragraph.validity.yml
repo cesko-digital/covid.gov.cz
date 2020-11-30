@@ -1,18 +1,18 @@
-uuid: 01550f6f-d3fe-4ee5-a449-50f89fd6b640
-langcode: en
+uuid: 5b49cba2-2cd7-4d5a-85ec-aa623f0bcba6
+langcode: cs
 status: true
 dependencies:
   config:
-    - paragraphs.paragraphs_type.pes_content
+    - paragraphs.paragraphs_type.validity
   module:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: true
+    enabled: false
     bundle_settings:
-      untranslatable_fields_hide: '1'
-id: paragraph.pes_content
+      untranslatable_fields_hide: '0'
+id: paragraph.validity
 target_entity_type_id: paragraph
-target_bundle: pes_content
+target_bundle: validity
 default_langcode: site_default
 language_alterable: false
