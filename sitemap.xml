@@ -693,6 +693,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-oteviraci-doby-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-konani-trhu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/narizeni-pro-provozovatele-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-pro-provozovatele-heren-kasin-sazkovych-kancelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-strednich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -723,7 +724,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/provadeni-pravidelnych-poc-antigennich-testu-u-zamestnancu-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/zakaz-koncertu-predstaveni-v-divadlech-atd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/kultura/zakaz-konani-pouti-podobnych-tradicnich-akci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/kultura/omezeni-konani-pouti-podobnych-tradicnich-akci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/omezeni-provozu-knihoven</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstev-zoologickych-zahrad-zamku-atd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
