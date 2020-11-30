@@ -99,13 +99,16 @@ const config = {
         mergeStyleHashes: false,
         mergeScriptHashes: false,
         directives: {
-          'script-src': "'self' 'unsafe-inline' www.googletagmanager.com",
+          'script-src':
+            "'self' 'unsafe-inline' www.googletagmanager.com www.google-analytics.com",
           'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
           'font-src': "'self' fonts.googleapis.com fonts.gstatic.com",
-          'img-src': "'self' www.google.cz stats.g.doubleclick.net data:",
+          'img-src':
+            "'self' www.google.cz stats.g.doubleclick.net data: www.google-analytics.com",
           'connect-src':
-            "'self' analytics.google.com dc.services.visualstudio.com dc.applicationinsights.microsoft.com dc.applicationinsights.azure.com stats.g.doubleclick.net",
-          'default-src': "'self' www.googletagmanager.com fonts.googleapis.com",
+            "'self' analytics.google.com dc.services.visualstudio.com dc.applicationinsights.microsoft.com dc.applicationinsights.azure.com stats.g.doubleclick.net www.google-analytics.com",
+          'default-src':
+            "'self' www.googletagmanager.com fonts.googleapis.com www.google-analytics.com",
         },
       },
     },
@@ -203,6 +206,9 @@ const config = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ['G-GKH7GB76MH', 'UA-182156006-1'],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
         pluginConfig: {
           // Puts tracking script in the head instead of the body
           head: false,
