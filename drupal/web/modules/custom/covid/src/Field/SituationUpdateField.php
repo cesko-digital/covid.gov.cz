@@ -84,7 +84,7 @@ class SituationUpdateField extends FieldItemList {
     /** @var \Drupal\Core\Datetime\DateFormatterInterface $formatter */
     $formatter = Drupal::service('date.formatter');
 
-    return $formatter->format($from->getTimestamp(), 'custom', DateTime::ISO8601);
+    return $formatter->format($from->getTimestamp(), 'custom', DateTime::W3C);
   }
 
 }
