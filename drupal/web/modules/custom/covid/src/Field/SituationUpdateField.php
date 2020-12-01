@@ -20,6 +20,7 @@ class SituationUpdateField extends FieldItemList {
    * @inheritDoc
    */
   protected function computeValue() {
+    /** @var \Drupal\node\NodeInterface $node */
     $node = $this->getParent()->getValue();
 
     if ($node->bundle() === 'situation') {
@@ -48,8 +49,11 @@ class SituationUpdateField extends FieldItemList {
         if ($update->field_pes->entity->id() === $pes->id() && $update->field_pes_target->entity->id() === $nextPes->id()) {
           $from = $nextValidity->field_valid_from->date ?? NULL;
           $to = $nextValidity->field_valid_to->date ?? NULL;
-
-          $value = $update->field_content[0]->getValue() + [
+          if (empty($update->field_content->first())) {
+            \Drupal::logger('situation-update')->critical('Skipping PES field because it has empty content for update ' . $update->id() . ' at node ' . $node->id());
+            continue;
+          }
+          $value = $update->field_content->first()->getValue() + [
               'pes' => $nextPes->field_level->value,
               'valid_from' => $from ? $this->formatDate($from) : '',
               'valid_to' => $to ? $this->formatDate($to) : ''
