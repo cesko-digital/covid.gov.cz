@@ -206,9 +206,6 @@ const config = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ['G-GKH7GB76MH', 'UA-182156006-1'],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
         pluginConfig: {
           // Puts tracking script in the head instead of the body
           head: false,
