@@ -674,7 +674,6 @@
 <url> <loc>https://covid.gov.cz/en/measures/employment</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/hospitals-and-social-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/culture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/measures/culture/omezeni-provozu-knihoven</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/leisure-time</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/restaurants</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/face-masks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -694,6 +693,8 @@
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-konani-trhu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/narizeni-pro-provozovatele-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-pro-provozovatele-heren-kasin-sazkovych-kancelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-konani-veletrhu-prodejnich-hospodarskych-vystav</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-provozu-provoz-pouzivani-umelych-koupalist-wellness-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-strednich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -705,6 +706,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/zakaz-skol-v-prirode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/pracovni-povinnost-zaku-studentu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-umeleckych-skol-jazykovych-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/skolstvi/dobrovolne-testovani-pedagogickych-pracovniku-skol-poc-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-v-noci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-osob-ve-dne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -727,10 +729,13 @@
 <url> <loc>https://covid.gov.cz/opatreni/kultura/omezeni-konani-pouti-podobnych-tradicnich-akci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/omezeni-provozu-knihoven</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstev-zoologickych-zahrad-zamku-atd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstevovani-sportovist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-navstev-zoologickych-botanickych-zahrad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-vyuzivani-sportovist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-uziti-lyzarskych-vleku-lanovych-drah-verejnosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-navstev-hradu-zamku-obdobnych-historickych-nebo-kulturnich-objektu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-navstev-prohlidky-muzei-galerii-vystavnich-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/restaurace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/restaurace/zakaz-pritomnosti-verejnosti-v-provozovnach-stravovacich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/restaurace/omezeni-v-provozovnach-stravovacich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-ve-venkovnim-prostoru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-v-motorovych-vozidlech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
