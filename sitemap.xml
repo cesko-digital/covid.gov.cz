@@ -618,7 +618,7 @@
 <url> <loc>https://covid.gov.cz/situace/seniori/informovanost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace-bary-kavarny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace-bary-kavarny/rezim-provozu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/restaurace/zahradky-terasy-zimni-zahrady</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/restaurace-bary-kavarny/zahradky-terasy-zimni-zahrady</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/hmotna-nouze</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/najemne-prispevky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
