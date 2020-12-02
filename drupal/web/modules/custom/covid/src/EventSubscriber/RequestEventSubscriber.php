@@ -126,7 +126,7 @@ class RequestEventSubscriber implements EventSubscriberInterface {
           // Redirect to TFA setup form and show message.
           $url = new Url('covid.license_agreement');
           $event->setResponse(new RedirectResponse($url->toString()));
-          $this->messenger->addError("Prosíme o udělení souhlasu s licenčním dojednáním.");
+          $this->messenger->addError("Prosíme o udělení souhlasu s licenčním ujednáním.");
         }
       }
     }
