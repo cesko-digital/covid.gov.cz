@@ -65,15 +65,15 @@ informační technologie (NAKIT), která celý projekt zaštiťuje a organizuje.
 informace dostali k širšímu publiku.</p>
 <p><strong>Potvrďte prosím zaškrtnutím políčka níže, že souhlasíte s následujícími
 licenčními ujednáními:</strong></p>
-<p><i>„Vstupem do [editorského rozhraní] uděluji Národní agentuře pro komunikačních
+<p><i>„Vstupem do administrace Covid portálu uděluji Národní agentuře pro komunikačních
 a informační technologie (dále jen „NAKIT“) bezúplatné nevýhradní oprávnění k
 užití všech literárních děl, které jsem vytvořila/vytvořil nebo vytvořím pro
 webovou stránku Covid portál (dále jen „díla“), a to ke všem způsobům užití
 těchto děl, územně, věcně i množstevně neomezeným, s neomezenými právy
 provádět na díle změny, úpravy, spojení s jiným dílem či díly, vytváření
 odvozených děl, a to na celou dobu trvání majetkových práv, a to včetně práva
-NAKIT zveřejnit dílo pod veřejnou licencí Creative Commons CC BY 4.0 M
-ezinárodní. Uděluji NAKIT rovněž souhlas s tím, že smí díla zveřejnit pod
+NAKIT zveřejnit dílo pod veřejnou licencí Creative Commons CC BY 4.0
+Mezinárodní. Uděluji NAKIT rovněž souhlas s tím, že smí díla zveřejnit pod
 svým jménem. NAKIT není povinen dílo užít. Zároveň prohlašuji, že na
 dílech neváznou práva třetích osob.“</i></p></div>
 EOT,
