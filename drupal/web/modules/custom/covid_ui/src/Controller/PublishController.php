@@ -42,7 +42,7 @@ class PublishController extends ControllerBase {
 
     $response = $this->client->post('https://api.vercel.com/v1/integrations/deploy/' . $vercelKey);
     if ($response->getStatusCode() === 201) {
-      $this->messenger()->addStatus('Obsah byl publikován na testovací server. Může to chvíli trvat, než se změny projeví.');
+      $this->messenger()->addStatus('Obsah byl publikován na <a href="https://covidgov.cesko.digital/">testovací server</a>. Může to chvíli trvat, než se změny projeví.');
     } else {
       $this->messenger()->addError('Něco je špatně. Nepodařilo se obsah vypublikovat');
     }
