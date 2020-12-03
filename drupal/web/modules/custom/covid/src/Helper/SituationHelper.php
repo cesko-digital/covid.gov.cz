@@ -22,15 +22,15 @@ class SituationHelper {
       return NULL;
     }
 
-    $pes = RegionHelper::getPES($region);
+    $currentPes = RegionHelper::getPES($region);
 
-    if ($pes === NULL) {
+    if ($currentPes === []) {
       return NULL;
     }
 
     foreach ($node->field_pes_content->referencedEntities() as $version) {
-      foreach ($pes as $item) {
-        if ($version->field_pes->entity->id() === $item) {
+      foreach ($currentPes as $pes) {
+        if ($version->field_pes->entity->id() === $pes->id()) {
           return $version;
         }
       }

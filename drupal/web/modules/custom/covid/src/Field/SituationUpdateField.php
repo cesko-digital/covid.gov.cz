@@ -32,41 +32,40 @@ class SituationUpdateField extends FieldItemList {
         return;
       }
 
-      $pes = RegionHelper::getPES($region);
+      $currentPesIds = array_map(function(EntityInterface $pes) {
+        return $pes->id();
+      }, RegionHelper::getPES($region));
 
-      $nextValidityArray = RegionHelper::getNextValidity($region);
+      $validities = RegionHelper::getNextValidities($region);
 
-      if (empty($pes) || empty($nextValidityArray)) {
+      if (empty($currentPesIds) || empty($validities)) {
         return;
-      }
-
-      $nextPes = [];
-      foreach ($nextValidityArray as $nextValidity) {
-        $nextPes[] = $nextValidity->field_pes->entity;
       }
 
       foreach ($node->field_updates->referencedEntities() as $update) {
         $update = $this->getTranslation($update, $langcode);
 
-        foreach ($nextPes as $nextPesItem) {
-          foreach ($pes as $pesId) {
-            if ($update->field_pes->entity->id() === $pesId && $update->field_pes_target->entity->id() === $nextPesItem->id()) {
-              $from = $nextValidity->field_valid_from->date ?? NULL;
-              $to = $nextValidity->field_valid_to->date ?? NULL;
-              if (empty($update->field_content->first())) {
-                \Drupal::logger('situation-update')->critical('Skipping PES field because it has empty content for update ' . $update->id() . ' at node ' . $node->id());
-                continue;
-              }
-              $value = $update->field_content->first()->getValue() + [
-                  'pes' => $nextPesItem->field_level->value,
-                  'valid_from' => $from ? $this->formatDate($from) : '',
-                  'valid_to' => $to ? $this->formatDate($to) : ''
-                ];
+        foreach ($validities as $validity) {
+          $nextPes = $validity->field_pes->entity;
 
-              $this->list[0] = $this->createItem(0, $value);
+          if (in_array($update->field_pes->entity->id(), $currentPesIds) && $update->field_pes_target->entity->id() === $nextPes->id()) {
+            $from = $validity->field_valid_from->date ?? NULL;
+            $to = $validity->field_valid_to->date ?? NULL;
 
-              return;
+            if (empty($update->field_content->first())) {
+              \Drupal::logger('situation-update')->critical('Skipping PES field because it has empty content for update ' . $update->id() . ' at node ' . $node->id());
+              continue;
             }
+
+            $value = $update->field_content->first()->getValue() + [
+                'pes' => $nextPes->field_level->value,
+                'valid_from' => $from ? $this->formatDate($from) : '',
+                'valid_to' => $to ? $this->formatDate($to) : ''
+              ];
+
+            $this->list[0] = $this->createItem(0, $value);
+
+            return;
           }
         }
       }

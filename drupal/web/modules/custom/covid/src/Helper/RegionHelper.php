@@ -17,7 +17,7 @@ class RegionHelper {
    *
    * @return \Drupal\Core\Entity\EntityInterface[]
    */
-  public static function getNextValidity(EntityInterface $region): array {
+  public static function getNextValidities(EntityInterface $region): array {
     $entities = [];
 
     $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
@@ -42,24 +42,25 @@ class RegionHelper {
    *
    * @param $region
    *
-   * @return int[]
+   * @return EntityInterface[]
    */
   public static function getPES(EntityInterface $region): array {
-    $dogs = [];
+    $result = [];
     $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
+
     foreach ($region->field_validity->referencedEntities() as $validity) {
       $from = $validity->field_valid_from->value ?? "";
       $to = $validity->field_valid_to->value ?? "9999-12-31T23:59:59";
 
       if ($from <= $now && $now <= $to) {
-        $dog = $validity->field_pes->entity ?? NULL;
-        if (!empty($dog)) {
-          $dogs[] = $dog->id();
+        $pes = $validity->field_pes->entity ?? NULL;
+        if (!empty($pes)) {
+          $result[] = $pes;
         }
       }
     }
 
-    return $dogs;
+    return $result;
   }
 
 }
