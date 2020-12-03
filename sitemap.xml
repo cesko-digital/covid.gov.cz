@@ -335,7 +335,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/funerals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/pilgrimages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/services-and-religious-gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/visit-churchsynagoguemoque</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/visit-churchsynagoguemosque</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/confessions-and-individual-spiritual-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/churches-and-religious-activities/christening</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -688,8 +688,6 @@
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/protective-measure-allowing-carrier-condition-traveling-czech-republic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/ban-free-movement-people-arriving-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/zakaz-maloobchodniho-prodeje-poskytovani-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-oteviraci-doby-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-konani-trhu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/narizeni-pro-provozovatele-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-pro-provozovatele-heren-kasin-sazkovych-kancelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -708,14 +706,9 @@
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-umeleckych-skol-jazykovych-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/dobrovolne-testovani-pedagogickych-pracovniku-skol-poc-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-v-noci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-osob-ve-dne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-piti-alkoholu-na-verejne-pristupnych-mistech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/omezeni-prava-pokojne-se-shromazdovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/narizeni-omezeni-pohybu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/obecne-doporuceni-zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-zamestnavatelum-o-vyuzivani-prace-na-dalku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/zakaz-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/zakaz-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
