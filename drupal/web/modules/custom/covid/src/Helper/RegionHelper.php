@@ -11,13 +11,13 @@ use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
 class RegionHelper {
 
   /**
-   * Get the first next validity of region.
+   * Get all next valid from dates of region.
    *
    * @param \Drupal\Core\Entity\EntityInterface $region
    *
-   * @return \Drupal\Core\Entity\EntityInterface
+   * @return \Drupal\Core\Entity\EntityInterface[]
    */
-  public static function getNextValidity(EntityInterface $region): ?EntityInterface {
+  public static function getNextValidity(EntityInterface $region): array {
     $entities = [];
 
     $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
@@ -34,7 +34,7 @@ class RegionHelper {
       return $a->field_valid_from->value ?? "" > $b->field_valid_from->value ?? "";
     });
 
-    return $entities ? reset($entities): NULL;
+    return $entities;
   }
 
   /**
@@ -42,20 +42,24 @@ class RegionHelper {
    *
    * @param $region
    *
-   * @return \Drupal\Core\Entity\EntityInterface|null
+   * @return int[]
    */
-  public static function getPES(EntityInterface $region): ?EntityInterface {
+  public static function getPES(EntityInterface $region): array {
+    $dogs = [];
     $now = (new DrupalDateTime())->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
     foreach ($region->field_validity->referencedEntities() as $validity) {
       $from = $validity->field_valid_from->value ?? "";
       $to = $validity->field_valid_to->value ?? "9999-12-31T23:59:59";
 
       if ($from <= $now && $now <= $to) {
-        return $validity->field_pes->entity ?? NULL;
+        $dog = $validity->field_pes->entity ?? NULL;
+        if (!empty($dog)) {
+          $dogs[] = $dog->id();
+        }
       }
     }
 
-    return NULL;
+    return $dogs;
   }
 
 }
