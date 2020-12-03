@@ -29,8 +29,10 @@ class SituationHelper {
     }
 
     foreach ($node->field_pes_content->referencedEntities() as $version) {
-      if ($version->field_pes->entity->id() === $pes->id()) {
-        return $version;
+      foreach ($pes as $item) {
+        if ($version->field_pes->entity->id() === $item) {
+          return $version;
+        }
       }
     }
 
