@@ -98,6 +98,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/volunteering/financial-gifts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/volunteering/electronical-gifts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/volunteering/support-and-delivery-services-risk-groups-and-those-infected</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/volunteering/volunteering-hospitals-and-social-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/hand-washing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hygiene/hand-sanitizer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -420,11 +421,11 @@
 <url> <loc>https://covid.gov.cz/situace/volny-cas/materska-centra-ddm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/volny-cas/zimni-sporty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/dobrovolnictvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/dobrovolnictvi-v-nemocnicich-socialnich-sluzbach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/darcovstvi-krve</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/financni-dary</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/dary-elektroniky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/podpora-donaskova-sluzba-rizikovym-skupinam-ci-nakazenym</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/dobrovolnictvi/dobrovolnictvi-v-nemocnicich-socialnich-sluzbach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/myti-rukou</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hygiena/vyroba-dezinfekce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
