@@ -696,7 +696,10 @@
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/protective-measure-allowing-carrier-condition-traveling-czech-republic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/ban-free-movement-people-arriving-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/exemptions-obligation-fill-arrival-forms-or-undergo-test</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-obyvatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/provadeni-pravidelnych-poc-antigennich-testu-u-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/provadeni-pravidelnych-poc-antigennich-testu-u</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/dobrovolne-testovani-pedagogickych-pracovniku-skol-poc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-obyvatel/bezplatne-dobrovolne-testovani-poc-antigennimi-testy-obyvatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/narizeni-pravidla-trhu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -715,7 +718,6 @@
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/zakaz-skol-v-prirode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/pracovni-povinnost-zaku-studentu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-umeleckych-skol-jazykovych-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/skolstvi/dobrovolne-testovani-pedagogickych-pracovniku-skol-poc-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-piti-alkoholu-na-verejne-pristupnych-mistech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/omezeni-prava-pokojne-se-shromazdovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -726,8 +728,6 @@
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/prijem-novych-osob-do-socialnich-zarizeni-zakazan-praha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/podminky-pritomnosti-tretich-osob-pri-porodu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/provadeni-pravidelnych-poc-antigennich-testu-u-zamestnancu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/provadeni-pravidelnych-poc-antigennich-testu-u-zamestnancu-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/zakaz-koncertu-predstaveni-v-divadlech-atd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/omezeni-konani-pouti-podobnych-tradicnich-akci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
