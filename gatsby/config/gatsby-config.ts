@@ -8,7 +8,7 @@ const config = {
     {
       resolve: 'gatsby-source-drupal',
       options: {
-        baseUrl: 'https://covid.pristup.net',
+        baseUrl: process.env.GATSBY_API_URL || 'https://covid.pristup.net',
         apiBase: 'api',
         translation: true,
         languageConfig: {
