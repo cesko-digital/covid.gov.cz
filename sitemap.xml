@@ -295,7 +295,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/restaurants-bars-coffee-shops/mode-operation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/restaurants-bars-coffee-shops/outside-seating-terraces-indoor-gardens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-self-employed-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-self-employed-ii-october-call-closed</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/caregivers-allowance-full-time-employeespeople-work-agreements</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/compensation-bonus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-culture-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -633,7 +633,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/hmotna-nouze</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/najemne-prispevky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/pripravuje-se-vylite-pivo-trvale-osvobozeno-od-dane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-osvc-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-osvc-ii-vyzva-za-rijen-2020-ukoncena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-zamestnance-vcetne-dpp-dpc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/kompenzacni-bonus-pro-osvc-dpp-dpc-male-sro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kultura-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
