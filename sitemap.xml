@@ -312,7 +312,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-plus-guarantee-large-exporters-export-guarantee-and-insurance-company</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/impossibility-repay-loan-or-mortgage-citizen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-gastro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/compensation/covid-accommodation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/covid-accommodation-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities/tests-sampling</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities/telephone-lines-hearing-impaired</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -652,7 +652,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/zaruka-covid-plus-pro-velke-exportery-program-exportni-garancni-pojistovaci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/nemoznost-splacet-uver-ci-hypoteku-kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-gastro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/covid-ubytovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/covid-ubytovani-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/kompenzacni-bonus-osetrovne-pro-osvc-invalidni-duchod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/testovani-odber-vzorku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -692,6 +692,7 @@
 <url> <loc>https://covid.gov.cz/en/measures/retail-and-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/education</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/outdoor-activities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/measures/outdoor-activities/narizeni-omezeni-pohybu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/employment</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/hospitals-and-social-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/culture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -739,6 +740,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/narizeni-omezeni-pohybu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/obecne-doporuceni-zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-zamestnavatelum-o-vyuzivani-prace-na-dalku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/zakaz-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -752,7 +754,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-navstev-zoologickych-botanickych-zahrad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-vyuzivani-sportovist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-uziti-lyzarskych-vleku-lanovych-drah-verejnosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-lyzarskych-vleku-lanovych-drah-verejnosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-navstev-hradu-zamku-obdobnych-historickych-nebo-kulturnich-objektu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-navstev-prohlidky-muzei-galerii-vystavnich-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/restaurace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
