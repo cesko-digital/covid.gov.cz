@@ -611,6 +611,7 @@
 <url> <loc>https://covid.gov.cz/situace/rodice/nemoc-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/narozeni-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/zahranici/navrat-z-velke-britanie-od-20-12-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/mapa-cestovatele-podminky-vstupu-do-zeme-povinnosti-po-navratu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/obchodni-cesty-do-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/letiste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
