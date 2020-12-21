@@ -611,7 +611,7 @@
 <url> <loc>https://covid.gov.cz/situace/rodice/nemoc-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/narozeni-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/zahranici/navrat-z-velke-britanie-severniho-irska-od-20-12-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/zahranici/cestovani-doz-velke-britanie-severniho-irska-od-20-12-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/mapa-cestovatele-podminky-vstupu-do-zeme-povinnosti-po-navratu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/obchodni-cesty-do-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/letiste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -774,7 +774,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/urady-instituce/zakaz-navstev-ve-vazebnich-veznicich-veznicich-v-ustavech-pro-vykon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zmena-zamestnani-cizincu-v-dobe-krizoveho-stavu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-pro-osoby-vracejici-se-z-velke-britanie-severniho-irska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-pro-cesty-zdo-velke-britanie-severniho-irska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/vstup-na-uzemi-cr-s-priznaky-infekcniho-onemocneni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/navrat-ze-zahranici-z-mista-s-vyssim-rizikem-nakazy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-vstupu-do-cr-pro-obcany-tretich-zemi-ktere-jsou-rizikove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
