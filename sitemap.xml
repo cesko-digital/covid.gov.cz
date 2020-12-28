@@ -599,7 +599,7 @@
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/kdy-vyhledat-lekarskou-peci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/strava</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/vylecil-jsem-se-z-covidu-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/kdy-bude-vakcina</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/kdy-zacne-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/co-znamena-hodnota-r</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/ucel-opatreni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/nouzovy-stav</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
