@@ -762,8 +762,8 @@
 <url> <loc>https://covid.gov.cz/opatreni/kultura/omezeni-provozu-knihoven</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstev-zoologickych-botanickych-zahrad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-vyuzivani-sportovist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/volny-cas/omezeni-lyzarskych-vleku-lanovych-drah-verejnosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-vyuzivani-sportovist</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-provozovani-lyzarskych-vleku-lanovych-drah</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstev-hradu-zamku-obdobnych-historickych-nebo-kulturnich-objektu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstev-prohlidky-muzei-galerii-vystavnich-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/restaurace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
