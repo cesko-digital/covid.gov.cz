@@ -474,9 +474,6 @@
 <url> <loc>https://covid.gov.cz/situace/cizinci/studovani-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/cizinci-zijici-na-uzemi-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/partneri-cechu-obcanu-eu-zijicich-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/novy-rok</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/novy-rok/venkovni-akce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/novy-rok/setkavani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/volny-pohyb-osob-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/modre-zony</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
