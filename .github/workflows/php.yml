@@ -24,6 +24,11 @@ jobs:
           name: id_rsa
           known_hosts: ${{ secrets.KNOWN_HOSTS_STAGE }}
 
+      - name: Setup PHP version
+        uses: nanasess/setup-php@v3.0.6
+        with:
+          php-version: '7.4'
+
       - name: Validate composer.json and composer.lock
         run: cd drupal && composer validate
 
