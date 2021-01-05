@@ -39,7 +39,7 @@ final class Redirects extends EntityQueryResourceBase {
     $cacheability = new CacheableMetadata();
 
     $paginator = $this->getPaginatorForRequest($request);
-    $paginator->applyToQuery($query, $cacheability);
+//    $paginator->applyToQuery($query, $cacheability);
 
     $redirectIds = $query->execute();
     /** @var Redirect[] $redirects */
