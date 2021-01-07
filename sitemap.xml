@@ -263,7 +263,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/state-emergency</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/how-does-tracing-work</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/penalties</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/pes-anti-epidemic-system-czech-republic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/pes-anti-epidemic-system-czech-republic-version-202021</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/parents</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/parents/psychological-help-parents</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/parents/playgrounds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -317,7 +317,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-accommodation-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-outdoor-schools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/agricovid-food-production</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/compensation/covid-closed-establishments</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/covid-gastro-closed-establishments</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities/tests-sampling</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/people-severe-health-disabilities/telephone-lines-hearing-impaired</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -354,6 +354,16 @@
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-social-care-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-employees-outside-sanitary-facility</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/problems-and-failures-can-occur-when-testing-ag-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/informace-o-dostupnych-vakcinach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/jak-ockovani-funguje-co-se-v-mem-tele-stane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/plosne-ockovani-obcanu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/seznam-mist-kde-ockovani-bude-probihat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/jak-vyplnit-rezervacni-fomular</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/jak-se-nechat-naockovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/kdo-se-nemel-nechat-ockovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/nepravdive-informace-o-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -603,7 +613,7 @@
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/nouzovy-stav</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/jak-funguje-trasovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/sankce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/pes-protiepidemicky-system-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/pes-protiepidemicky-system-cr-verze-20-2021</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/psychologicka-pomoc-rodicum</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/detska-hriste-detske-koutky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
