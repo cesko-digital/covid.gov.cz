@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { navigate } from 'gatsby';
 import classnames from 'classnames';
 
@@ -25,12 +25,17 @@ const SearchBox: React.FC<IProps> = (
   const [searchValue, setSearchValue] = useState(props.initialValue);
   const currentLanguage = useCurrentLanguage();
   const isMobile = useMobile();
+  const searchInput = useRef(null);
 
   const navigateToSearchResults = () => {
-    if (currentLanguage === 'cs') {
-      navigate(`/hledat?q=${searchValue}`);
+    if (searchValue !== props.initialValue && searchValue !== '') {
+      if (currentLanguage === 'cs') {
+        navigate(`/hledat?q=${searchValue}`);
+      } else {
+        navigate(`/en/search?q=${searchValue}`);
+      }
     } else {
-      navigate(`/en/search?q=${searchValue}`);
+      searchInput.current.focus();
     }
   };
 
@@ -61,8 +66,9 @@ const SearchBox: React.FC<IProps> = (
         )}
         placeholder={isMobile ? t('search_cta') : t('search_placeholder')}
         onChange={(e) => setSearchValue(e.target.value)}
-        value={searchValue}
+        value={searchValue || ''}
         onKeyDown={keyDownHandler}
+        ref={searchInput}
       />
       <Button
         onClick={navigateToSearchResults}
