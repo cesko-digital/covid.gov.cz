@@ -38,9 +38,6 @@ final class Redirects extends EntityQueryResourceBase {
 
     $cacheability = new CacheableMetadata();
 
-    $paginator = $this->getPaginatorForRequest($request);
-//    $paginator->applyToQuery($query, $cacheability);
-
     $redirectIds = $query->execute();
     /** @var Redirect[] $redirects */
     $redirects = $this->entityTypeManager->getStorage($entity_type_id)
@@ -54,9 +51,7 @@ final class Redirects extends EntityQueryResourceBase {
     }
     $data = new ResourceObjectData($resourceObjects);
 
-    $pagination_links = $paginator->getPaginationLinks($query, $cacheability);
-
-    return $this->createJsonapiResponse($data, $request, 200, [], $pagination_links);
+    return $this->createJsonapiResponse($data, $request, 200, [], new LinkCollection([]));
   }
 
   private function transform(Redirect $redirect, ResourceType $type): ResourceObject {
