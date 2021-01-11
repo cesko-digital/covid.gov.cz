@@ -26,7 +26,10 @@ const SearchResults: React.FC<Props> = ({ results }) => {
     <>
       {results.map((result) => {
         const getBreadcrumbs = () => {
-          const withCategory = [t('home'), getBreadcrumbCategory(result.type)];
+          const withCategory = [
+            { title: t('home'), url: '/' },
+            getBreadcrumbCategory(result.type),
+          ];
           const area = result.area && {
             title: result.area?.name,
             url: result.area?.path?.alias,
