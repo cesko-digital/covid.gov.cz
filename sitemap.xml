@@ -504,6 +504,7 @@
 <url> <loc>https://covid.gov.cz/situace/rousky/zdravotni-komplikace-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/veletrhy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/obchod-sluzby/pohrebni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/maloobchod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/posta</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/nakupovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -733,6 +734,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/zakaz-provozu-heren-kasin-sazkovych-kancelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/zakaz-konani-veletrhu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/zakaz-provozu-pouzivani-umelych-koupalist-wellness-zarizeni-vcetne-saun</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/narizeni-pro-pohrebni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-strednich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
