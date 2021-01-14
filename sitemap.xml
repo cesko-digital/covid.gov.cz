@@ -730,6 +730,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-upravujici-povinne-hlaseni-nakladani-s</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-ockovani-zdravotni-pojistovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/usneseni-vlady-k-metodickemu-pokynu-pro-ockovaci-kampan-planu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-oteviraci-doby-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/narizeni-pravidla-trhu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
