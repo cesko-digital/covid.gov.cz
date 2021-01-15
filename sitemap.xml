@@ -368,6 +368,14 @@
 <url> <loc>https://covid.gov.cz/situace/ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/jake-informace-o-sobe-budu-muset-pri-registraci-zadavat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/slovnicek-pojmu-s-kterymi-se-behem-ockovani-setkate</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/postup-registrace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/chtela-bych-pomoci-s-registraci-na-ockovani-seniorovi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/jak-presne-bude-probihat-ockovani-na-ockovacim-miste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/ockovani-imobilnich-pacientu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/kde-se-mohu-na-ockovani-zaregistrovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/postup-pri-vyskytu-nezadouci-reakce-po-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/specificke-situace-pri-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/od-registrace-po-naockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -680,6 +688,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-gastro-uzavrene-provozovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/kompenzacni-bonus-osetrovne-pro-osvc-invalidni-duchod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/ockovani-osob-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/odber-vzorku-pcr-testovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/telefonni-linky-pro-sluchove-postizene</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/opatreni-ve-znakovem-jazyce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
