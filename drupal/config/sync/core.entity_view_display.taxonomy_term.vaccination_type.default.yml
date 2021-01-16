@@ -1,0 +1,31 @@
+uuid: 8efadf3c-e354-4c5b-b1ec-4497e7e7e599
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.vaccination_type.field_ref_icon
+    - taxonomy.vocabulary.vaccination_type
+  module:
+    - text
+id: taxonomy_term.vaccination_type.default
+targetEntityType: taxonomy_term
+bundle: vaccination_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_ref_icon:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true

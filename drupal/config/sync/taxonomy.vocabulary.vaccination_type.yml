@@ -1,0 +1,8 @@
+uuid: fae1ad1b-e4bf-47b7-b610-2cdd35a7fa23
+langcode: cs
+status: true
+dependencies: {  }
+name: 'Okruh očkování'
+vid: vaccination_type
+description: 'Okruh obsahu týkajícího se očkování.'
+weight: 0

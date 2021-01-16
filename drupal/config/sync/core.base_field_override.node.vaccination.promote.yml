@@ -1,0 +1,22 @@
+uuid: e394ab7e-5192-428a-ba90-edf3c0a927fc
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.vaccination
+id: node.vaccination.promote
+field_name: promote
+entity_type: node
+bundle: vaccination
+label: 'Zobrazit na titulní stránce'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Zapnuto
+  off_label: Vypnuto
+field_type: boolean

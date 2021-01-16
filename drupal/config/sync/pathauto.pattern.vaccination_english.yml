@@ -1,0 +1,33 @@
+uuid: 50ac1794-f109-4425-a253-933044665529
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: vaccination_english
+label: 'Vaccination English'
+type: 'canonical_entities:node'
+pattern: '/vaccination/[node:field_vaccination_type:entity:name]/[node:title]'
+selection_criteria:
+  6efae840-eee2-4747-8efd-99d322d44d3a:
+    id: node_type
+    bundles:
+      vaccination: vaccination
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 6efae840-eee2-4747-8efd-99d322d44d3a
+  f51dfdf8-dff2-44fb-bd76-5ded4a216547:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: f51dfdf8-dff2-44fb-bd76-5ded4a216547
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Jazyk

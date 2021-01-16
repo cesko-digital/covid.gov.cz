@@ -1,0 +1,16 @@
+uuid: fbe9f38f-6d68-4117-803a-e66fc8b428f3
+langcode: cs
+status: true
+dependencies:
+  config:
+    - node.type.vaccination
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.vaccination
+target_entity_type_id: node
+target_bundle: vaccination
+default_langcode: site_default
+language_alterable: false

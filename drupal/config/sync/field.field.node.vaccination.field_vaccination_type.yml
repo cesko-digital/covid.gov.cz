@@ -1,0 +1,29 @@
+uuid: bd2d8cc8-937a-45f3-bcf8-c11889d9c817
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vaccination_type
+    - node.type.vaccination
+    - taxonomy.vocabulary.vaccination_type
+id: node.vaccination.field_vaccination_type
+field_name: field_vaccination_type
+entity_type: node
+bundle: vaccination
+label: Okruh
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vaccination_type: vaccination_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

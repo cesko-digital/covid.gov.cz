@@ -6,6 +6,7 @@ dependencies:
     - node.type.measure
     - node.type.page
     - node.type.situation
+    - node.type.vaccination
     - system.menu.covid
     - workflows.workflow.content
   enforced:
@@ -829,6 +830,7 @@ display:
           operator: in
           value:
             measure: measure
+            vaccination: vaccination
             page: page
             situation: situation
           group: 1
@@ -848,8 +850,10 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              translator: '0'
               editor: '0'
               reviewer: '0'
+              user_manager: '0'
               administrator: '0'
             reduce: true
           is_grouped: false
@@ -1013,6 +1017,7 @@ display:
           operator: in
           value:
             measure: measure
+            vaccination: vaccination
             page: page
             situation: situation
           group: 1

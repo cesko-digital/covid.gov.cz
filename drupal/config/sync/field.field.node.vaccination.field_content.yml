@@ -1,0 +1,21 @@
+uuid: 9ced3b1d-8b65-49dd-9fe1-db52a990b660
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.vaccination
+  module:
+    - text
+id: node.vaccination.field_content
+field_name: field_content
+entity_type: node
+bundle: vaccination
+label: Obsah
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

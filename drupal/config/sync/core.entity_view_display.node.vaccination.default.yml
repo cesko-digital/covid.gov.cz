@@ -1,0 +1,43 @@
+uuid: 95fa333b-5ced-495c-a8dc-fd77762f44bd
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.field.node.vaccination.field_content
+    - field.field.node.vaccination.field_vaccination_type
+    - node.type.vaccination
+  module:
+    - text
+    - user
+id: node.vaccination.default
+targetEntityType: node
+bundle: vaccination
+mode: default
+content:
+  field_content:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_vaccination_type:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content: true
+  langcode: true
+  questions_answers: true
+  source: true
+  valid_from: true
+  valid_to: true

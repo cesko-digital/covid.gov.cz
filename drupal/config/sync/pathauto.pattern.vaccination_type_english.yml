@@ -1,0 +1,34 @@
+uuid: 85b35e9a-1119-453b-82a8-bdc2b6f79414
+langcode: cs
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: vaccination_type_english
+label: 'Vaccination Type English'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'vaccination/[term:name]'
+selection_criteria:
+  0af3d990-3224-4cf9-b7b5-8c171c656996:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      vaccination_type: vaccination_type
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 0af3d990-3224-4cf9-b7b5-8c171c656996
+  cabd70d1-13cb-4877-b845-a11e6041cacf:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: cabd70d1-13cb-4877-b845-a11e6041cacf
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Jazyk

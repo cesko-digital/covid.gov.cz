@@ -1,0 +1,30 @@
+uuid: 3bea9782-cdc3-4090-a9fd-0a2a40eeecf3
+langcode: cs
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vaccination.field_content
+    - field.field.node.vaccination.field_vaccination_type
+    - node.type.vaccination
+  module:
+    - user
+id: node.vaccination.teaser
+targetEntityType: node
+bundle: vaccination
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  content: true
+  field_content: true
+  field_vaccination_type: true
+  langcode: true
+  questions_answers: true
+  source: true
+  valid_from: true
+  valid_to: true

@@ -1,0 +1,17 @@
+uuid: bd29e771-2f69-4122-a546-7e10edcda9de
+langcode: cs
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Očkování
+type: vaccination
+description: 'Stránka popisující situace a opatření související s opatřeními, nevztahuje se k aktuální úrovni Proti Epidemického Systému (PES).'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

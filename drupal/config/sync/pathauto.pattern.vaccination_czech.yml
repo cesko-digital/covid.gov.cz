@@ -1,0 +1,33 @@
+uuid: e376e9ba-fc14-4e3a-84a4-53b4f701bb70
+langcode: cs
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: vaccination_czech
+label: 'Vaccination Czech'
+type: 'canonical_entities:node'
+pattern: '/ockovani/[node:field_vaccination_type:entity:name]/[node:title]'
+selection_criteria:
+  b751a72c-6362-4d1b-b096-5420b81b50f9:
+    id: node_type
+    bundles:
+      vaccination: vaccination
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b751a72c-6362-4d1b-b096-5420b81b50f9
+  8d89d16b-05ab-4047-a24c-1784530f5113:
+    id: language
+    langcodes:
+      cs: cs
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 8d89d16b-05ab-4047-a24c-1784530f5113
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Jazyk

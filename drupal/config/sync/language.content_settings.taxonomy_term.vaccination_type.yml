@@ -1,0 +1,16 @@
+uuid: 9bcb8b8d-ab30-4051-b204-2fda52191516
+langcode: cs
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vaccination_type
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.vaccination_type
+target_entity_type_id: taxonomy_term
+target_bundle: vaccination_type
+default_langcode: site_default
+language_alterable: false
