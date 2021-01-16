@@ -5,6 +5,14 @@ covid_ui:
   weight: 0
   menu_name: covid
 
+covid_ui:taxonomies:
+  title: 'Okruhy'
+  description: 'Okruhy obsahu COVID Portálu'
+  route_name: covid_ui.taxonomies
+  parent: covid_ui
+  weight: 10
+  menu_name: covid
+
 covid_ui.translation:
   title: 'Překlad'
   description: 'Překlad rozhraní COVID Portálu'

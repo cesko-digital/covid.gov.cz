@@ -586,7 +586,7 @@ display:
         title: 'Okruhy ŽS'
         description: ''
         expanded: false
-        parent: covid_ui
+        parent: 'covid_ui:taxonomies'
         weight: 0
         context: '0'
         menu_name: covid

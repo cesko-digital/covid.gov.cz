@@ -6,6 +6,14 @@ covid_ui:
   requirements:
     _permission: 'access administration pages'
 
+covid_ui.taxonomies:
+  path: '/admin/covid/taxonomies'
+  defaults:
+    _controller: '\Drupal\covid_ui\Controller\AdminMenuController::adminMenuBlockPage'
+    _title: 'Okruhy'
+  requirements:
+    _permission: 'access administration pages'
+
 covid_ui.translation:
   path: '/admin/covid/translate'
   defaults:
