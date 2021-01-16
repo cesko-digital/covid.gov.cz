@@ -6,13 +6,18 @@ dependencies:
     - field.field.node.homepage.field_f_hp_measure_label
     - field.field.node.homepage.field_f_hp_ref_situation
     - field.field.node.homepage.field_f_hp_situation_label
+    - field.field.node.homepage.field_f_hp_vaccination_label
     - field.field.node.homepage.field_hp_measure_description
     - field.field.node.homepage.field_hp_measure_link
     - field.field.node.homepage.field_hp_measure_text
     - field.field.node.homepage.field_hp_ref_measure
+    - field.field.node.homepage.field_hp_ref_vaccination_icon
     - field.field.node.homepage.field_hp_situation_description
     - field.field.node.homepage.field_hp_situation_link
     - field.field.node.homepage.field_hp_situation_text
+    - field.field.node.homepage.field_hp_vaccination_description
+    - field.field.node.homepage.field_hp_vaccination_label
+    - field.field.node.homepage.field_hp_vaccination_links
     - field.field.node.homepage.field_last_updated
     - field.field.node.homepage.field_meta_description
     - node.type.homepage
@@ -31,6 +36,7 @@ third_party_settings:
         - group_content_content
         - group_situation
         - group_measure
+        - group_vaccination
         - group_meta
       parent_name: ''
       weight: 0
@@ -60,7 +66,7 @@ third_party_settings:
       children:
         - field_meta_description
       parent_name: group_content
-      weight: 23
+      weight: 24
       format_type: tab
       region: content
       format_settings:
@@ -106,6 +112,24 @@ third_party_settings:
         id: ''
         classes: ''
       label: Opatření
+    group_vaccination:
+      children:
+        - field_f_hp_vaccination_label
+        - field_hp_ref_vaccination_icon
+        - field_hp_vaccination_label
+        - field_hp_vaccination_description
+        - field_hp_vaccination_links
+      parent_name: group_content
+      weight: 23
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: '<h3>Očkování</h3>'
+        formatter: closed
+        required_fields: true
+      label: Očkování
 id: node.homepage.default
 targetEntityType: node
 bundle: homepage
@@ -137,6 +161,14 @@ content:
     region: content
   field_f_hp_situation_label:
     weight: 36
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_f_hp_vaccination_label:
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -177,6 +209,16 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_hp_ref_vaccination_icon:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_hp_situation_description:
     weight: 40
     settings:
@@ -201,6 +243,30 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_hp_vaccination_description:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hp_vaccination_label:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hp_vaccination_links:
+    weight: 16
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_last_updated:
     weight: 2
     settings: {  }
@@ -217,7 +283,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
@@ -277,5 +343,10 @@ content:
       placeholder: ''
       match_limit: 10
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 11
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

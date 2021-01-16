@@ -1,0 +1,20 @@
+uuid: c002a337-0841-492c-948d-d6b2cd335c9d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_hp_ref_vaccination_icon
+field_name: field_hp_ref_vaccination_icon
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

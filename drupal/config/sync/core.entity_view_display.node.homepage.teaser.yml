@@ -7,13 +7,18 @@ dependencies:
     - field.field.node.homepage.field_f_hp_measure_label
     - field.field.node.homepage.field_f_hp_ref_situation
     - field.field.node.homepage.field_f_hp_situation_label
+    - field.field.node.homepage.field_f_hp_vaccination_label
     - field.field.node.homepage.field_hp_measure_description
     - field.field.node.homepage.field_hp_measure_link
     - field.field.node.homepage.field_hp_measure_text
     - field.field.node.homepage.field_hp_ref_measure
+    - field.field.node.homepage.field_hp_ref_vaccination_icon
     - field.field.node.homepage.field_hp_situation_description
     - field.field.node.homepage.field_hp_situation_link
     - field.field.node.homepage.field_hp_situation_text
+    - field.field.node.homepage.field_hp_vaccination_description
+    - field.field.node.homepage.field_hp_vaccination_label
+    - field.field.node.homepage.field_hp_vaccination_links
     - field.field.node.homepage.field_last_updated
     - field.field.node.homepage.field_meta_description
     - node.type.homepage
@@ -35,16 +40,26 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  content: true
   field_f_hp_measure_label: true
   field_f_hp_ref_situation: true
   field_f_hp_situation_label: true
+  field_f_hp_vaccination_label: true
   field_hp_measure_description: true
   field_hp_measure_link: true
   field_hp_measure_text: true
   field_hp_ref_measure: true
+  field_hp_ref_vaccination_icon: true
   field_hp_situation_description: true
   field_hp_situation_link: true
   field_hp_situation_text: true
+  field_hp_vaccination_description: true
+  field_hp_vaccination_label: true
+  field_hp_vaccination_links: true
   field_last_updated: true
   field_meta_description: true
   langcode: true
+  questions_answers: true
+  source: true
+  valid_from: true
+  valid_to: true

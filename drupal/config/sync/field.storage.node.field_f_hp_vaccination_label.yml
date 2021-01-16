@@ -1,0 +1,19 @@
+uuid: df34895d-e643-4c14-97c3-2f950b40d724
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_f_hp_vaccination_label
+field_name: field_f_hp_vaccination_label
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
