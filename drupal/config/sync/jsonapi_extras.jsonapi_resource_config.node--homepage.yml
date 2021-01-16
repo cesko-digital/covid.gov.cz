@@ -129,6 +129,12 @@ resourceFields:
     publicName: content
     enhancer:
       id: ''
+  questions_answers:
+    fieldName: questions_answers
+    publicName: questions_answers
+    enhancer:
+      id: ''
+    disabled: false
   valid_from:
     disabled: true
     fieldName: valid_from
@@ -147,6 +153,12 @@ resourceFields:
     publicName: source
     enhancer:
       id: ''
+  update:
+    fieldName: update
+    publicName: update
+    enhancer:
+      id: ''
+    disabled: false
   path:
     fieldName: path
     publicName: path
@@ -189,6 +201,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_f_hp_vaccination_label:
+    fieldName: field_f_hp_vaccination_label
+    publicName: vaccination_label
+    enhancer:
+      id: ''
+    disabled: false
   field_hp_measure_description:
     fieldName: field_hp_measure_description
     publicName: measure_description
@@ -213,6 +231,12 @@ resourceFields:
     enhancer:
       id: ''
     disabled: false
+  field_hp_ref_vaccination_icon:
+    fieldName: field_hp_ref_vaccination_icon
+    publicName: vaccination_icon
+    enhancer:
+      id: ''
+    disabled: false
   field_hp_situation_description:
     fieldName: field_hp_situation_description
     publicName: situation_description
@@ -228,6 +252,24 @@ resourceFields:
   field_hp_situation_text:
     fieldName: field_hp_situation_text
     publicName: situation_text
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_vaccination_description:
+    fieldName: field_hp_vaccination_description
+    publicName: vaccination_description
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_vaccination_label:
+    fieldName: field_hp_vaccination_label
+    publicName: vaccination_title
+    enhancer:
+      id: ''
+    disabled: false
+  field_hp_vaccination_links:
+    fieldName: field_hp_vaccination_links
+    publicName: vaccination_link
     enhancer:
       id: ''
     disabled: false
