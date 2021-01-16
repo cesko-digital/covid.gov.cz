@@ -1,0 +1,19 @@
+uuid: 8a036d9e-339a-4dc4-b1df-b175019e39dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_hp_vaccination_links
+field_name: field_hp_vaccination_links
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

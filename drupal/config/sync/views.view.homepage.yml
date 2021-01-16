@@ -7,6 +7,8 @@ dependencies:
     - field.storage.node.field_hp_measure_description
     - field.storage.node.field_hp_ref_measure
     - field.storage.node.field_hp_situation_description
+    - field.storage.node.field_hp_vaccination_description
+    - field.storage.node.field_hp_vaccination_label
     - node.type.homepage
     - system.menu.covid
   module:
@@ -61,6 +63,72 @@ display:
       row:
         type: fields
       fields:
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: h3
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: language
+          settings:
+            link_to_entity: false
+            native_language: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: langcode
+          plugin_id: field
         field_f_hp_ref_situation:
           id: field_f_hp_ref_situation
           table: node__field_f_hp_ref_situation
@@ -313,14 +381,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        langcode:
-          id: langcode
-          table: node_field_data
-          field: langcode
+        field_hp_vaccination_label:
+          id: field_hp_vaccination_label
+          table: node__field_hp_vaccination_label
+          field: field_hp_vaccination_label
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Očkování
           exclude: false
           alter:
             alter_text: false
@@ -353,7 +421,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -362,22 +430,82 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: language
+          type: string
           settings:
             link_to_entity: false
-            native_language: false
           group_column: value
           group_columns: {  }
           group_rows: true
-          delta_limit: 0
+          delta_limit: 3
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ul
           separator: ', '
           field_api_classes: false
-          entity_type: node
-          entity_field: langcode
+          plugin_id: field
+        field_hp_vaccination_description:
+          id: field_hp_vaccination_description
+          table: node__field_hp_vaccination_description
+          field: field_hp_vaccination_description
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Popisky
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 3
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: ul
+          separator: ', '
+          field_api_classes: false
           plugin_id: field
         operations:
           id: operations
@@ -463,6 +591,8 @@ display:
         - 'config:field.storage.node.field_hp_measure_description'
         - 'config:field.storage.node.field_hp_ref_measure'
         - 'config:field.storage.node.field_hp_situation_description'
+        - 'config:field.storage.node.field_hp_vaccination_description'
+        - 'config:field.storage.node.field_hp_vaccination_label'
   page_1:
     display_plugin: page
     id: page_1
@@ -492,3 +622,5 @@ display:
         - 'config:field.storage.node.field_hp_measure_description'
         - 'config:field.storage.node.field_hp_ref_measure'
         - 'config:field.storage.node.field_hp_situation_description'
+        - 'config:field.storage.node.field_hp_vaccination_description'
+        - 'config:field.storage.node.field_hp_vaccination_label'

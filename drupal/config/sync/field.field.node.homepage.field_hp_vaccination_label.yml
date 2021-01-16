@@ -1,0 +1,19 @@
+uuid: 65497c73-f90b-4abd-8bf7-0edf6365cc19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hp_vaccination_label
+    - node.type.homepage
+id: node.homepage.field_hp_vaccination_label
+field_name: field_hp_vaccination_label
+entity_type: node
+bundle: homepage
+label: Nadpisy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

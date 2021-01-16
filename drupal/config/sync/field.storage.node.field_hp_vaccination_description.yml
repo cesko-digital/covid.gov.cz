@@ -1,0 +1,21 @@
+uuid: 7613ace6-f358-4e00-aa28-e681b52363af
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_hp_vaccination_description
+field_name: field_hp_vaccination_description
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

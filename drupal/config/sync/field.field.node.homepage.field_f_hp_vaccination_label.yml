@@ -1,0 +1,21 @@
+uuid: 7f9d33a0-ba3f-4e38-9056-8263b044863d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_f_hp_vaccination_label
+    - node.type.homepage
+  module:
+    - text
+id: node.homepage.field_f_hp_vaccination_label
+field_name: field_f_hp_vaccination_label
+entity_type: node
+bundle: homepage
+label: 'Nadpis sekce'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
