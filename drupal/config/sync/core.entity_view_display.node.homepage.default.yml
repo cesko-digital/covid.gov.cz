@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.homepage.field_hp_vaccination_description
     - field.field.node.homepage.field_hp_vaccination_label
     - field.field.node.homepage.field_hp_vaccination_links
+    - field.field.node.homepage.field_hp_vaccination_text
     - field.field.node.homepage.field_last_updated
     - field.field.node.homepage.field_meta_description
     - node.type.homepage
@@ -210,6 +211,13 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_hp_vaccination_text:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_last_updated:
     weight: 1

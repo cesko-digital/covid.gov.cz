@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.homepage.field_hp_vaccination_description
     - field.field.node.homepage.field_hp_vaccination_label
     - field.field.node.homepage.field_hp_vaccination_links
+    - field.field.node.homepage.field_hp_vaccination_text
     - field.field.node.homepage.field_last_updated
     - field.field.node.homepage.field_meta_description
     - node.type.homepage
@@ -115,6 +116,7 @@ third_party_settings:
     group_vaccination:
       children:
         - field_f_hp_vaccination_label
+        - field_hp_vaccination_text
         - field_hp_ref_vaccination_icon
         - field_hp_vaccination_label
         - field_hp_vaccination_description
@@ -210,7 +212,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_hp_ref_vaccination_icon:
-    weight: 13
+    weight: 14
     settings:
       match_operator: CONTAINS
       match_limit: 10
@@ -244,7 +246,7 @@ content:
     type: string_textarea
     region: content
   field_hp_vaccination_description:
-    weight: 15
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -252,7 +254,7 @@ content:
     type: string_textfield
     region: content
   field_hp_vaccination_label:
-    weight: 14
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -260,12 +262,20 @@ content:
     type: string_textfield
     region: content
   field_hp_vaccination_links:
-    weight: 16
+    weight: 17
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_hp_vaccination_text:
+    weight: 13
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
     region: content
   field_last_updated:
     weight: 2

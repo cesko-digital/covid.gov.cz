@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.homepage.field_hp_vaccination_description
     - field.field.node.homepage.field_hp_vaccination_label
     - field.field.node.homepage.field_hp_vaccination_links
+    - field.field.node.homepage.field_hp_vaccination_text
     - field.field.node.homepage.field_last_updated
     - field.field.node.homepage.field_meta_description
     - node.type.homepage
@@ -56,6 +57,7 @@ hidden:
   field_hp_vaccination_description: true
   field_hp_vaccination_label: true
   field_hp_vaccination_links: true
+  field_hp_vaccination_text: true
   field_last_updated: true
   field_meta_description: true
   langcode: true
