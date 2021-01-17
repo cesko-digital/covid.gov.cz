@@ -21,7 +21,7 @@ class Normalizer extends TypedDataNormalizer {
     $data = parent::normalize($object, $format, $context);
     $parent = $object->getParent();
 
-    if ( in_array(get_class($object), [StringData::class, StringLongItem::class])) {
+    if (in_array(get_class($object), [StringData::class, StringLongItem::class])) {
       if ($parent instanceof LinkItem && $object->getString() === "") {
         $parsedUrl = parse_url($parent->get('uri')->getValue());
         $url = '';
@@ -32,9 +32,14 @@ class Normalizer extends TypedDataNormalizer {
         }
         return $url;
       }
+
       $space = html_entity_decode("&nbsp;");
 
       return mb_ereg_replace('(?<![<-])\b(\w(?:\b|\.?))(<? )', "\\1$space", $object->getString());
+    }
+
+    if ($object->getName() == 'uri' && $parent instanceof LinkItem && !$parent->isExternal()) {
+      return $parent->getUrl()->toString();
     }
 
     return $data;
