@@ -29,6 +29,13 @@ export const createSchemaCustomization: GatsbyNode['createSchemaCustomization'] 
       valid_from: String
       pes: String
     }
+
+    """
+    Vaccination Text
+    """
+    type homepage implements Node @infer {
+      vaccination_text: String
+    }
   `;
   createTypes(fallbackTypes);
 };

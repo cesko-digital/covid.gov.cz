@@ -15,8 +15,8 @@ import classes from './guide.module.scss';
 interface IProps {
   items: IArea[] | IMeasure[] | any;
   title: string;
-  buttonHref: string;
-  buttonText: string;
+  buttonHref?: string;
+  buttonText?: string;
   description?: string;
   variant?: 'white' | 'blue' | 'green';
   itemDescriptions?: string[];
@@ -117,24 +117,26 @@ const Guide: React.FC<IProps> = ({
                 </Row>
               </Col>
             </Row>
-            <Row>
-              <Col col={12} colLg={3}>
-                <div className="guide__more">
-                  <Button
-                    href={buttonHref}
-                    className={classNames(
-                      'btn--color-white',
-                      classes.guideBtn,
-                      {
-                        [classes.guideBtnBlue]: variant === 'white',
-                        [classes.guideBtnGreen]: variant === 'green',
-                      },
-                    )}
-                    text={buttonText}
-                  />
-                </div>
-              </Col>
-            </Row>
+            {buttonText && (
+              <Row>
+                <Col col={12} colLg={3}>
+                  <div className="guide__more">
+                    <Button
+                      href={buttonHref}
+                      className={classNames(
+                        'btn--color-white',
+                        classes.guideBtn,
+                        {
+                          [classes.guideBtnBlue]: variant === 'white',
+                          [classes.guideBtnGreen]: variant === 'green',
+                        },
+                      )}
+                      text={buttonText}
+                    />
+                  </div>
+                </Col>
+              </Row>
+            )}
           </div>
         </div>
       </div>

@@ -33,6 +33,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
     vaccination_link,
     vaccination_title,
     vaccination_label,
+    vaccination_text,
   } = homepage;
   const { measure_items, situation_items } = relationships;
 
@@ -71,9 +72,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
               },
             }))}
             title={vaccination_label.processed}
-            // description={TODO}
-            buttonHref={t('slug_situations')}
-            buttonText={situation_link?.title}
+            description={vaccination_text}
             variant="green"
             itemDescriptions={vaccination_description}
           />
@@ -146,6 +145,7 @@ export const query = graphql`
         title
       }
       vaccination_title
+      vaccination_text
       relationships {
         measure_items {
           id

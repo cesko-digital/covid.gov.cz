@@ -14,7 +14,7 @@
 }
 
 .contentBox {
-  padding: 1.6rem 0;
+  padding-top: 1.6rem;
   margin: 0 0 1.6rem;
   border-radius: 0.3rem;
   overflow: hidden;
@@ -51,6 +51,7 @@
   margin-top: 3px;
   color: $theme-blue;
   background-color: #fff;
+  margin-bottom: 1.6rem;
 
   &--blue {
     color: #fff !important;

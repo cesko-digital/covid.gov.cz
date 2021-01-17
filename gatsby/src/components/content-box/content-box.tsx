@@ -29,6 +29,7 @@ const ContentBox: React.FC<Props> = ({
   return (
     // contentBox--white
     // contentBox--blue
+    // contentBox--green
     <div
       className={classNames(
         styles.contentBox,
