@@ -666,7 +666,9 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-sport-iii-lyzarska-strediska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kalkulacka</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-najemne-iii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-osvc-ii-vyzva-za-rijen-2020-ukoncena</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/krizove-osetrovne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/mimoradna-okamzita-pomoc-mop-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-osvc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/osetrovne-pro-zamestnance-vcetne-dpp-dpc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/kompenzacni-bonus-pro-osvc-dpp-dpc-male-sro</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kultura-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
