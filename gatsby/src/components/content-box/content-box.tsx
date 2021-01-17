@@ -14,7 +14,7 @@ interface Props {
   buttonHref?: string;
   variant?: 'white' | 'blue' | 'green';
   noPadding?: boolean;
-  className: string;
+  className?: string;
 }
 
 const ContentBox: React.FC<Props> = ({
