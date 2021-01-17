@@ -29,6 +29,10 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
     measure_link,
     measure_text,
     relationships,
+    vaccination_description,
+    vaccination_link,
+    vaccination_title,
+    vaccination_label,
   } = homepage;
   const { measure_items, situation_items } = relationships;
 
@@ -55,6 +59,28 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
       <Helmet title={t('homepage_meta_title')} />
       <DesktopTopContent />
       <Container className="pt-2">
+        {vaccination_title?.length ? (
+          <Guide
+            items={vaccination_title.map((x, i) => ({
+              id: i,
+              name: x,
+              path: { alias: vaccination_link[i].uri },
+              buttonText: vaccination_link[i].title,
+              relationships: {
+                icon: { code: relationships.vaccination_icon[i].code },
+              },
+            }))}
+            title={vaccination_label.processed}
+            // description={TODO}
+            buttonHref={t('slug_situations')}
+            buttonText={situation_link?.title}
+            variant="green"
+            itemDescriptions={vaccination_description}
+          />
+        ) : (
+          ''
+        )}
+
         {situation_items?.length ? (
           <Guide
             items={situation_items}
@@ -97,7 +123,6 @@ export const query = graphql`
       situation_description
       meta_description
       measure_link {
-        uri
         title
       }
       moderation_state
@@ -109,10 +134,18 @@ export const query = graphql`
         processed
       }
       situation_link {
-        uri
         title
       }
       situation_text
+      vaccination_description
+      vaccination_label {
+        processed
+      }
+      vaccination_link {
+        uri
+        title
+      }
+      vaccination_title
       relationships {
         measure_items {
           id
@@ -140,6 +173,9 @@ export const query = graphql`
               code
             }
           }
+        }
+        vaccination_icon {
+          code
         }
       }
     }

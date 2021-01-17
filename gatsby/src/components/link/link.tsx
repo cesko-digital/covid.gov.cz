@@ -9,6 +9,7 @@ interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   activeClassName?: string;
   partiallyActive?: boolean;
   noLanguageCodePrefix?: boolean;
+  noExternalClass?: boolean;
 }
 
 const ABSOLUTE_URL_REGEX_PATTERN = /^(?:[a-z]+:)?\/\//;
@@ -23,6 +24,7 @@ const Link: React.FC<Props> = ({
   activeClassName,
   partiallyActive,
   noLanguageCodePrefix,
+  noExternalClass,
   ...rest
 }) => {
   const currentLanguage = useCurrentLanguage();
@@ -33,7 +35,7 @@ const Link: React.FC<Props> = ({
 
   const commonProps = {
     className: classnames({
-      external: isExternal,
+      external: isExternal && !noExternalClass,
       [className]: className,
     }),
     title,
