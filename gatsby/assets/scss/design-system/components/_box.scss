@@ -44,7 +44,7 @@
 			// Media queries
 			@include media-breakpoint-up(sm) {
 				border-top: none;
-				padding-top: 15px;
+				// padding-top: 15px; 
 			}
 		}
 	}
@@ -54,7 +54,7 @@
 		.box__inner {
 			// Media queries
 			@include media-breakpoint-up(sm) {
-				padding-bottom: 15px;
+				// padding-bottom: 15px;
 			}
 		}
 	}
@@ -64,7 +64,8 @@
 			// Media queries
 			@include media-breakpoint-up(lg) {
 				border-top: none;
-				padding-top: 20px;
+        // padding-top: 20px;
+        // padding-bottom: 15px;
 
 				&::before {
 					display: none;

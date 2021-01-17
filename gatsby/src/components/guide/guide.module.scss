@@ -14,6 +14,10 @@
     background-color: #fff;
   }
 
+  &--green {
+    background-color: #1b9b2c;
+  }
+
   // desktop
   @include media-breakpoint-up(md) {
     padding: 24px 28px;
@@ -45,6 +49,10 @@
   &--blue {
     color: #fff !important;
     background-color: #2362a2;
+  }
+
+  &--green {
+    color: #1b9b2c !important;
   }
 }
 

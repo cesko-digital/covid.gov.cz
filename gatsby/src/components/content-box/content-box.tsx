@@ -12,7 +12,7 @@ interface Props {
   buttonVariant?: ButtonVariant;
   buttonText?: string;
   buttonHref?: string;
-  variant?: 'white' | 'blue';
+  variant?: 'white' | 'blue' | 'green';
   noPadding?: boolean;
 }
 
@@ -57,6 +57,7 @@ const ContentBox: React.FC<Props> = ({
             text={buttonText}
             className={classNames(styles.contentBoxBtn, {
               [styles.contentBoxBtnBlue]: variant === 'white',
+              [styles.contentBoxBtnGreen]: variant === 'green',
             })}
           />
         )}

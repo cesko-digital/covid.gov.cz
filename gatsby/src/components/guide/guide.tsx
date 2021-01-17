@@ -13,12 +13,12 @@ import GuideItem from './guide-item';
 import classes from './guide.module.scss';
 
 interface IProps {
-  items: IArea[] | IMeasure[];
+  items: IArea[] | IMeasure[] | any;
   title: string;
   buttonHref: string;
   buttonText: string;
   description?: string;
-  variant?: 'white' | 'blue';
+  variant?: 'white' | 'blue' | 'green';
   itemDescriptions?: string[];
 }
 
@@ -53,6 +53,7 @@ const Guide: React.FC<IProps> = ({
             'mt-0',
             'mb-2',
             { [classes.guideWhite]: variant === 'white' },
+            { [classes.guideGreen]: variant === 'green' },
             classes.guide,
           )}
         >
@@ -87,7 +88,7 @@ const Guide: React.FC<IProps> = ({
                           key={x.id}
                           title={x.name}
                           buttonUrl={x.path.alias}
-                          buttonText={t('more')}
+                          buttonText={items[i].buttonText || t('more')}
                           description={itemDescriptions[i] ?? ''}
                           variant={variant}
                           iconCode={x.relationships?.icon?.code}
@@ -126,6 +127,7 @@ const Guide: React.FC<IProps> = ({
                       classes.guideBtn,
                       {
                         [classes.guideBtnBlue]: variant === 'white',
+                        [classes.guideBtnGreen]: variant === 'green',
                       },
                     )}
                     text={buttonText}

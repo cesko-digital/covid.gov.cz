@@ -14,7 +14,7 @@ const Situation: React.FC<Props> = ({ situation }) => {
   const iconCode = situation?.relationships?.icon?.code;
 
   return (
-    <Link to={path.alias} className={styles.situation}>
+    <Link to={path.alias} className={styles.situation} noExternalClass>
       <span className={styles.situationTitle}>
         <ContentIcon className={styles.situationTitleIcon} code={iconCode} />
         {name}

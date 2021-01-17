@@ -36,6 +36,10 @@
     }
   }
 
+  &--green {
+    background: #1b9b2c;
+  }
+
   &--blue {
     background: $theme-blue;
     color: $white;
@@ -51,5 +55,9 @@
   &--blue {
     color: #fff !important;
     background-color: $theme-blue;
+  }
+
+  &--green {
+    color: #1b9b2c;
   }
 }

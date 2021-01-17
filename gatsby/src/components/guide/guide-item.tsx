@@ -13,7 +13,7 @@ interface IProps {
   title: string;
   description?: string;
   buttonUrl: string;
-  variant?: 'white' | 'blue';
+  variant?: 'white' | 'blue' | 'green';
   buttonText: string;
   iconCode?: string;
   area?: string;
@@ -44,6 +44,7 @@ const GuideItem: React.FC<IProps> = ({
         <Link
           className={classNames(classes.clickableWrapper, 'box__inner')}
           to={buttonUrl}
+          noExternalClass
         >
           <div className="d-flex flex-row">
             {iconCode && (
