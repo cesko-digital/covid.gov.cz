@@ -14,6 +14,7 @@ interface Props {
   buttonHref?: string;
   variant?: 'white' | 'blue' | 'green';
   noPadding?: boolean;
+  className: string;
 }
 
 const ContentBox: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const ContentBox: React.FC<Props> = ({
   buttonHref,
   variant = '',
   noPadding,
+  className,
 }) => {
   return (
     // contentBox--white
@@ -36,6 +38,7 @@ const ContentBox: React.FC<Props> = ({
         styles[`contentBox--${variant}`],
         noPadding && styles.contentBoxNoPadding,
         'row',
+        className,
       )}
     >
       <Col col={12}>

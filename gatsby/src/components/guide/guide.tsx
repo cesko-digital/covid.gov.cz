@@ -1,4 +1,3 @@
-import useMobile from '@/hooks/useMobile';
 import classNames from 'classnames';
 import { IArea, IMeasure } from '@graphql-types';
 import React from 'react';
@@ -36,15 +35,14 @@ const Guide: React.FC<IProps> = ({
   itemDescriptions,
 }) => {
   const { t } = useTranslation();
-  const isMobile = useMobile();
 
   const isSituationBox = isSituation(items[0]);
 
   title = title.replace('<p>', '').replace('</p>', '');
 
-  if (!isMobile) {
-    return (
-      <div>
+  return (
+    <>
+      <div className="d-none d-lg-block">
         {isSituationBox}
         <div
           className={classNames(
@@ -140,23 +138,21 @@ const Guide: React.FC<IProps> = ({
           </div>
         </div>
       </div>
-    );
-  }
-
-  return (
-    <ContentBox
-      title={title}
-      boldedTitleCount={2}
-      buttonText={buttonText}
-      buttonHref={buttonHref}
-      variant={variant}
-    >
-      {isSituationBox ? (
-        <SituationsBox situations={items} />
-      ) : (
-        <MeasureList measures={items} descriptions={itemDescriptions} />
-      )}
-    </ContentBox>
+      <ContentBox
+        title={title}
+        boldedTitleCount={2}
+        buttonText={buttonText}
+        buttonHref={buttonHref}
+        variant={variant}
+        className="d-lg-none"
+      >
+        {isSituationBox ? (
+          <SituationsBox situations={items} />
+        ) : (
+          <MeasureList measures={items} descriptions={itemDescriptions} />
+        )}
+      </ContentBox>
+    </>
   );
 };
 
