@@ -55,7 +55,6 @@
 .guide-item-sub-title {
   color: #fff;
 
-  /*! purgecss ignore */
   p {
     margin-bottom: 0.5rem;
   }
@@ -76,6 +75,10 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
+  &--no-clamp {
+    -webkit-line-clamp: none;
+  }
 
   &--blue {
     color: #808080;

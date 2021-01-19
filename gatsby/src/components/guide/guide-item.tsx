@@ -19,6 +19,7 @@ interface IProps {
   area?: string;
   validFrom?: string;
   validTo?: string;
+  noClamp?: boolean;
 }
 
 const GuideItem: React.FC<IProps> = ({
@@ -31,6 +32,7 @@ const GuideItem: React.FC<IProps> = ({
   area,
   validTo,
   validFrom,
+  noClamp,
 }) => {
   const { t } = useTranslation();
   return (
@@ -93,6 +95,7 @@ const GuideItem: React.FC<IProps> = ({
             <p
               className={classNames(classes.guideItemDescriptionText, {
                 [classes.guideItemDescriptionTextBlue]: variant === 'white',
+                [classes.guideItemDescriptionTextNoClamp]: noClamp,
               })}
             >
               {description}
