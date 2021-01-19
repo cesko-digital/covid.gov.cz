@@ -217,6 +217,12 @@ h2,
   }
 }
 
+.guide__more {
+  @include media-breakpoint-up(lg) {
+    margin-top: -$spacer / 0.6;
+  }
+}
+
 .stretched-link::after {
   position: absolute;
   top: 0;

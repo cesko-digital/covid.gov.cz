@@ -75,6 +75,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
             description={vaccination_text}
             variant="green"
             itemDescriptions={vaccination_description}
+            noClamp
           />
         ) : (
           ''

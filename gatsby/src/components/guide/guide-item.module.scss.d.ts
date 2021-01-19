@@ -9,4 +9,5 @@ export const guideItemBtnBlue: string;
 export const guideItemSubTitle: string;
 export const guideItemSubTitleBlue: string;
 export const guideItemDescriptionText: string;
+export const guideItemDescriptionTextNoClamp: string;
 export const guideItemDescriptionTextBlue: string;

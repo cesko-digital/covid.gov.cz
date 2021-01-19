@@ -19,6 +19,7 @@ interface IProps {
   description?: string;
   variant?: 'white' | 'blue' | 'green';
   itemDescriptions?: string[];
+  noClamp?: boolean;
 }
 
 const isSituation = (x: any): x is IArea => {
@@ -33,6 +34,7 @@ const Guide: React.FC<IProps> = ({
   buttonHref = '',
   variant = 'blue',
   itemDescriptions,
+  noClamp,
 }) => {
   const { t } = useTranslation();
 
@@ -90,6 +92,7 @@ const Guide: React.FC<IProps> = ({
                           description={itemDescriptions[i] ?? ''}
                           variant={variant}
                           iconCode={x.relationships?.icon?.code}
+                          noClamp={noClamp}
                         />
                       );
                     })}
