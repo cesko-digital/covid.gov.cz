@@ -135,9 +135,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/study-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/foreigners-living-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/partners-czechs-and-eu-citizens-living-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/current-events-new-years-celebrations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/current-events-new-years-celebrations/outdoor-events</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/current-events-new-years-celebrations/meeting</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/measures-free-movement</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/blue-zones</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -172,8 +169,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/theatre-film-and-other-artistic-performances</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/accommodations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/photographers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/current-events-three-kings-day-parade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/current-events-three-kings-day-parade/three-kings-day-parade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes/sms-fake-positive-result</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes/non-covid-related-deaths-blamed-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -535,8 +530,6 @@
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/filmovy-prumysl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/ubytovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/fotografove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/tri-kralove/tri-kralove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy/sms-s-pozitivnim-vysledkem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy/umrti-nas-covidem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
