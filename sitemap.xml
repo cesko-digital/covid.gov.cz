@@ -567,6 +567,7 @@
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/dusevni-hygiena-zdravotniku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/umrti-blizkeho-na-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/skolstvi/jesle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/materske-skoly</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/prvni-stupen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/druhy-stupen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
