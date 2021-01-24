@@ -16,7 +16,8 @@
 		display: none;
 		color: $theme-blue;
 		@include reset-pa-ma();
-		@include text-truncate;
+    @include text-truncate;
+    white-space: normal;
 		padding-top: ( $spacer / 12 );
 		padding-bottom: ( $spacer / 12 );
 
