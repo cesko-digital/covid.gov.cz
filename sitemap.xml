@@ -378,6 +378,7 @@
 <url> <loc>https://covid.gov.cz/situace/ockovani/muze-se-stat-ze-po-ockovani-budu-neplodna</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/zmeni-vakcina-moje-dna</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/je-mozne-ze-na-nasledky-vakcinace-umiraji-lide</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/bude-vakcina-ucinna-i-po-mutaci-viru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/postup-registrace-rezervace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -406,6 +407,7 @@
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/vcelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/eidentita-prihlaseni-do-agendoveho-informacniho-systemu-mpo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/pracovnelekarske-prohlidky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/sankce-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/nemoznost-splacet-uver-ci-hypoteku-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/prace-u-klienta</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -782,7 +784,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/obecne-doporuceni-zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-zamestnavatelum-o-vyuzivani-prace-na-dalku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-o-pracovne-lekarskych-prohlidkach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-o-pracovnelekarskych-prohlidkach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
