@@ -780,6 +780,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-osob-ve-dne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-piti-alkoholu-na-verejne-pristupnych-mistech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/omezeni-prava-pokojne-se-shromazdovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-pobytu-cizincu-na-uzemi-ceske-republiky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/narizeni-omezeni-pohybu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/obecne-doporuceni-zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -810,6 +811,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-ve-vsech-prostredcich-verejne-dopravy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-ve-vsech-vnitrnich-prostorech-staveb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-pro-sportovce-osoby-v-dobe-cviceni-treninku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/rousky/doporuceni-pouzivat-respirator-tridy-ffp2-nebo-kn95</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/urady-instituce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/urady-instituce/omezeni-rozsahu-urednich-hodin-organu-verejne-moci-spravnich-organu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/urady-instituce/omezeni-osobniho-kontaktu-zamestnancu-s-adresaty-verejne-spravy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
