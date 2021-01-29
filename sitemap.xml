@@ -348,12 +348,10 @@
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-employees-outside-sanitary-facility</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/problems-and-failures-can-occur-when-testing-ag-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/ockovani/informace-o-dostupnych-vakcinach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/dobrovolne-plosne-ockovani-obcanu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/seznam-mist-kde-ockovani-bude-probihat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/centralni-rezervacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/ockovani/kdo-se-nemel-nechat-ockovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/informace-pro-osoby-s-chronickym-onemocnenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jake-informace-o-sobe-budu-muset-pri-registraci-zadavat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -362,8 +360,6 @@
 <url> <loc>https://covid.gov.cz/situace/ockovani/jak-presne-bude-probihat-ockovani-na-ockovacim-miste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-imobilnich-pacientu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/kde-se-mohu-na-ockovani-zaregistrovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/ockovani/postup-pri-vyskytu-nezadouci-reakce-po-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/ockovani/specificke-situace-pri-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/od-registrace-po-naockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/telefonicka-pomoc-seniorum-s-registraci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/nejcasteji-se-ministerstva-zdravotnictvi-ptate</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -372,7 +368,11 @@
 <url> <loc>https://covid.gov.cz/situace/ockovani/certifikat-o-provedenem-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/postup-registrace-rezervace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/informace-o-dostupnych-vakcinach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/jak-ockovani-funguje-co-se-v-mem-tele-stane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/kdo-se-nemel-nechat-ockovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/postup-pri-vyskytu-nezadouci-reakce-po-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/specificke-situace-pri-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/jak-je-mozne-ze-vakcina-byla-vyvinuta-tak-rychle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/vime-co-bude-s-nasim-telem-za-10-let-po-vakcinaci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/vime-jake-nezadouci-ucinky-vakcina-ma</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
