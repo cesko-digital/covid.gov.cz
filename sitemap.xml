@@ -353,7 +353,6 @@
 <url> <loc>https://covid.gov.cz/situace/ockovani/seznam-mist-kde-ockovani-bude-probihat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/centralni-rezervacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/informace-pro-osoby-s-chronickym-onemocnenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jake-informace-o-sobe-budu-muset-pri-registraci-zadavat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/slovnicek-pojmu-s-kterymi-se-behem-ockovani-setkate</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/chtela-bych-pomoci-s-registraci-na-ockovani-seniorovi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -366,6 +365,7 @@
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/casova-osa-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/zaregistrovala-jsem-se-na-ockovani-ale-nemam-kam-zadat-pin2-nebo-mi-neprisel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/certifikat-o-provedenem-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/postup-registrace-rezervace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/informace-o-dostupnych-vakcinach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
