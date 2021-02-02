@@ -819,6 +819,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zmena-zamestnani-cizincu-v-dobe-krizoveho-stavu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-pro-cesty-zdo-velke-britanie-severniho-irska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zahranici/narizeni-nosit-po-vstupu-na-uzemi-cr-respirator-ci-rousku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/vstup-na-uzemi-cr-s-priznaky-infekcniho-onemocneni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/navrat-ze-zahranici-z-mista-s-vyssim-rizikem-nakazy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zahranici/zakaz-vstupu-do-cr-pro-obcany-tretich-zemi-ktere-jsou-rizikove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
