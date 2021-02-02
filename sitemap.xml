@@ -348,13 +348,13 @@
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-employees-outside-sanitary-facility</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/problems-and-failures-can-occur-when-testing-ag-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/who-will-be-vaccinated-first</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/who-will-be-vaccinated-first</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/general-vaccination-citizens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/central-reservation-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/how-does-prioritization-system-works</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/glossary-terms-connected-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/ockovani/manual-registration</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/registration-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/registration-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/frequently-asked-questions-ministry-health</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/vaccination-timeline</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/certificate-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
