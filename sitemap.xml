@@ -354,6 +354,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/certificate-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/information-about-available-vaccines</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/how-vaccination-works-what-will-happen-my-body</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/who-should-not-get-vaccinated</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/can-i-be-infertile-after-i-receive-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/informace-o-vakcine/will-vaccine-alter-my-dna</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -728,13 +729,13 @@
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/casova-osa-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/certifikat-o-provedenem-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/jak-ockovani-funguje-co-se-v-mem-tele-stane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/postup-pri-vyskytu-nezadouci-reakce-po-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/specificke-situace-pri-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/jak-je-mozne-ze-vakcina-byla-vyvinuta-tak-rychle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/vime-co-bude-s-nasim-telem-za-10-let-po-vakcinaci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/vime-jake-nezadouci-ucinky-vakcina-ma</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/informace-o-dostupnych-vakcinach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/jak-ockovani-funguje-co-se-v-mem-tele-stane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/kdo-se-nemel-nechat-ockovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/muze-se-stat-ze-po-ockovani-budu-neplodna</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/informace-o-vakcine/zmeni-vakcina-moje-dna</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
