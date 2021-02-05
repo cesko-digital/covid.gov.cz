@@ -307,6 +307,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-iii-guarantee-program-companies-affected-coronavirus-czech-moravian</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-plus-guarantee-large-exporters-export-guarantee-and-insurance-company</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/material-need</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/compensation/rent-subsidy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/impossibility-repay-loan-or-mortgage-citizen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/beer-poured-down-drain-exempted-consumption-tax-permanently</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/compensation/covid-accommodation-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -648,7 +649,6 @@
 <url> <loc>https://covid.gov.cz/situace/restaurace-bary-kavarny/rezim-provozu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/restaurace-bary-kavarny/zahradky-terasy-zimni-zahrady</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/kompenzace/rent-subsidy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-sport-iii-lyzarska-strediska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-kalkulacka</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-najemne-iii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -673,6 +673,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/zarucni-program-covid-iii-pro-firmy-zasazene-koronavirem-od-ceskomoravske</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/zaruka-covid-plus-pro-velke-exportery-program-exportni-garancni-pojistovaci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/hmotna-nouze</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/kompenzace/najemne-prispevky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/nemoznost-splacet-uver-ci-hypoteku-kompenzace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/vylite-pivo-trvale-osvobozeno-od-dane</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/kompenzace/covid-ubytovani-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
