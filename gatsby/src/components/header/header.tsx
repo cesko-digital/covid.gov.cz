@@ -65,7 +65,11 @@ const Header: React.FC<Props> = ({
         <Container>
           <div className={classes.headerExtended}>
             {/* LOGO */}
-            <div className={classes.logoWrapper}>
+            <div
+              className={classnames(classes.logoWrapper, {
+                [classes.menuHideElement]: isOpen,
+              })}
+            >
               <Link to="/" title={'COVID PORTAL - ' + t('home')}>
                 <img src={headerLogo} alt="Covid Portál" />
               </Link>
@@ -75,6 +79,9 @@ const Header: React.FC<Props> = ({
               className={classnames(
                 classes.nav__toggleWrapper,
                 'd-md-none text-right',
+                {
+                  [classes.menuHideElement]: isOpen,
+                },
               )}
             >
               {/* MENU */}

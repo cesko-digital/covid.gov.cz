@@ -6,6 +6,7 @@ export const flexWrapper: string;
 export const headerTop: string;
 export const headerTopRight: string;
 export const searchBox: string;
+export const menuHideElement: string;
 export const mobileSearchBoxWrapper: string;
 export const verticalDivider: string;
 export const gradient: string;
