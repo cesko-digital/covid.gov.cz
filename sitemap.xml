@@ -273,7 +273,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/business-trips-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/airports</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/slovakia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/cross-border-workers-business-trips-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/cross-border-workers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/visas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/family-or-partner-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/crossing-green-border</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
