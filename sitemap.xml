@@ -236,6 +236,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/education/students-return-home</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/education/libraries</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/education/im-teacher</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/education/day-nurseries</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/can-coronavirus-survive-surfaces</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/infection-and-general-measures/quarantine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -560,7 +561,6 @@
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/dusevni-hygiena-zdravotniku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/stres-zvladani-dopadu-pandemie/umrti-blizkeho-na-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/skolstvi/jesle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/materske-skoly</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/prvni-stupen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/druhy-stupen</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -590,6 +590,7 @@
 <url> <loc>https://covid.gov.cz/situace/skolstvi/studenti-navrat-domu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/knihovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/skolstvi/jsem-ucitel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/skolstvi/jesle</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/informace-pro-osoby-s-chronickym-onemocnenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/onemocneni-obecne-o-opatrenich/proc-dodrzovat-preventivni-opatreni-proti-covidu-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
