@@ -4,6 +4,7 @@ import styles from './measure.module.scss';
 import Button from '@/components/button';
 import Time from '@/components/time';
 import { useTranslation } from '@/components/i18n';
+import classNames from 'classnames';
 
 interface Props {
   title: string;
@@ -24,7 +25,7 @@ const Measure: React.FC<Props> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <div className={styles.measure}>
+    <div className={classNames(styles.measure, 'position-relative')}>
       <h3 className={styles.measureTitle}>{title}</h3>
       <p className={styles.measureDescription}>{description}</p>
       <div className={styles.measureDetails}>
@@ -44,7 +45,7 @@ const Measure: React.FC<Props> = ({
         <Button
           text={t('more')}
           variant="outline-yellow"
-          className={styles.measureButton}
+          className={classNames(styles.measureButton, 'stretched-link')}
           href={link}
         />
       </div>
