@@ -757,6 +757,7 @@
 <url> <loc>https://covid.gov.cz/en/measures/outdoor-activities/movement-restriction-regulations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/employment</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/hospitals-and-social-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/measures/hospitals-and-social-services/conditions-presence-third-persons-birth</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/culture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/leisure-time</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/restaurants</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -815,9 +816,9 @@
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/prijem-novych-osob-do-socialnich-zarizeni-zakazan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/podminky-pritomnosti-tretich-osob-pri-porodu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/vychazky-uzivatelu-domovu-pro-seniory-domovu-se-zvlastnim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/narizeni-pro-poskytovatele-akutni-luzkove-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/podminky-pritomnosti-tretich-osob-pri-porodu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/zakaz-koncertu-predstaveni-v-divadlech-atd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/kultura/zakaz-konani-pouti-podobnych-tradicnich-akci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
