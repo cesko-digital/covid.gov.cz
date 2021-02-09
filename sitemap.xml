@@ -693,6 +693,7 @@
 <url> <loc>https://covid.gov.cz/situace/kompenzace/agricovid-potravinarstvi-ii</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/ockovani-osob-se-zdravotnim-postizenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/prepis-tiskovych-konferenci-vlady-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/odber-vzorku-pcr-testovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/telefonni-linky-pro-sluchove-postizene</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/osoby-se-zdravotnim-postizenim/opatreni-ve-znakovem-jazyce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
