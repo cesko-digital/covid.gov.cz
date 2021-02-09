@@ -1,5 +1,6 @@
 import useMobile from '@/hooks/useMobile';
 import { IMeasure } from '@graphql-types';
+import { useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import Measure from './measure';
 
@@ -10,8 +11,9 @@ interface Props {
 
 const MeasureList: React.FC<Props> = ({ measures, descriptions }) => {
   const isMobile = useMobile();
+  const isTablet = useMediaQuery('(max-width: 992px)');
 
-  const maxItems = isMobile ? 3 : 6;
+  const maxItems = isMobile || isTablet ? 3 : 6;
 
   return (
     <>

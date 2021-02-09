@@ -8,7 +8,7 @@
   padding: 1.6rem 0;
 
   // desktop
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     border-top: none;
   }
 }
