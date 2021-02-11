@@ -388,6 +388,7 @@
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/cesty-za-osobou-blizkou</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/omezeni-pohybu-v-okresech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/informace-pro-podnikatele-zamestnavatele</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/kontrola-prijatych-opatreni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
