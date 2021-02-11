@@ -810,6 +810,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/okresy-cheb-sokolov-trutnov</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/okresy-cheb-sokolov-trutnov/zakaz-vstupu-ci-opusteni-uzemi-okresu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/okresy-cheb-sokolov-trutnov/povinnost-nosit-chirurgickou-rousku-nebo-respirator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/okresy-cheb-sokolov-trutnov/povinnosti-osob-tranzitujicich-pres-uzemi-okresu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/okresy-cheb-sokolov-trutnov/doporuceni-pro-zamestnavatele</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/omezeni-oteviraci-doby-obchodu-provozoven-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
