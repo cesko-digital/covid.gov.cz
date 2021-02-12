@@ -360,7 +360,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/central-reservation-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/how-does-prioritization-system-works</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/which-informations-will-i-be-supposed-enter-when-registering</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/glossary-terms-connected-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/glossary-terms-connected-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/ockovani/manual-registration</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/i-would-help-elderly-register-vaccination-booking-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/registration-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
