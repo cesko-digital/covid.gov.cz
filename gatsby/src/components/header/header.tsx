@@ -15,6 +15,7 @@ import SearchBox from '../search-box';
 import Row from '../row';
 import Col from '../col';
 import GovIcon from '../gov-icon';
+import { SkipToContent } from '../skip-to-content';
 
 interface NavItem {
   label: string;
@@ -50,10 +51,12 @@ const Header: React.FC<Props> = ({
   };
 
   const languageVariants = pageContext.languageVariants || {};
+  const urlId = '/#' + t('a11y_main_content_link');
 
   const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
   return (
     <>
+      <SkipToContent message={t('a11y_main_content_text')} link={urlId} />
       {bannerMessage && <Alert message={bannerMessage} />}
       <header
         className={classnames(classes.header, {

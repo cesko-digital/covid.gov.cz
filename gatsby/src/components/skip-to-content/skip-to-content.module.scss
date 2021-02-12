@@ -1,0 +1,20 @@
+@import '../../../assets/scss/design-system/base/variables';
+
+.skipLink {
+  position: absolute;
+  left: 0;
+  top: -40px;
+  color: $white !important;
+}
+
+.skipLink:visited,
+.skipLink:focus {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 8px 0;
+  background-color: $theme-blue-light;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
