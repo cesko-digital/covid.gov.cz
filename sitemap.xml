@@ -365,6 +365,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/ockovani/manual-registration</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/i-would-help-elderly-register-vaccination-booking-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/registration-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/telephone-assistance-vaccination-registration-seniors</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/frequently-asked-questions-ministry-health</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/vaccination-timeline</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/i-registered-vaccination-i-have-nowhere-enter-my-pin2-or-i-did-not</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -751,7 +752,6 @@
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jak-presne-bude-probihat-ockovani-na-ockovacim-miste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-imobilnich-pacientu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/kde-se-mohu-na-ockovani-zaregistrovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/telefonicka-pomoc-seniorum-s-registraci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-osob-s-omezenou-svepravnosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-cizich-statnich-prislusniku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -763,6 +763,7 @@
 <url> <loc>https://covid.gov.cz/situace/ockovani/postup-registrace-rezervace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/chtela-bych-pomoci-s-registraci-na-ockovani-seniorovi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/od-registrace-po-naockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/telefonicka-pomoc-seniorum-s-registraci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/nejcasteji-se-ministerstva-zdravotnictvi-ptate</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/casova-osa-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/zaregistrovala-jsem-se-na-ockovani-ale-nemam-kam-zadat-pin2-nebo-mi-neprisel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
