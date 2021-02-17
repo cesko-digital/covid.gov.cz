@@ -83,12 +83,42 @@ const GuideItem: React.FC<IProps> = ({
                * and show end date during the mesurement?
                */}
               <p>{area}</p>
-              <p>
+              <div className={classes.guideMobileWrapper}>
                 {validFrom && (
-                  <Time datetime={validFrom} prefix={`${t('from')} `} />
+                  <Time
+                    datetime={validFrom}
+                    prefix={`${t('from')} `}
+                    displayShorterDate={true}
+                    displayShortMonth={true}
+                  />
                 )}
-                {validTo && <Time datetime={validTo} prefix={`${t('to')} `} />}
-              </p>
+                {validTo && (
+                  <Time
+                    datetime={validTo}
+                    prefix={`${t('to')} `}
+                    displayShorterDate={true}
+                    displayShortMonth={true}
+                  />
+                )}
+              </div>
+              <div className={classes.guideDesktopWrapper}>
+                {validFrom && (
+                  <Time
+                    datetime={validFrom}
+                    prefix={`${t('from')} `}
+                    displayShorterDate={false}
+                    displayShortMonth={true}
+                  />
+                )}
+                {validTo && (
+                  <Time
+                    datetime={validTo}
+                    prefix={`${t('to')} `}
+                    displayShorterDate={false}
+                    displayShortMonth={true}
+                  />
+                )}
+              </div>
             </div>
           )}
           {description && (

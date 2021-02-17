@@ -23,12 +23,13 @@ export type CzechDaysFromToKey = typeof CZECH_DAYS_FROM_TO[number];
 export type CzechDaysOnKey = typeof CZECH_DAYS_ON[number];
 
 export const useCurrentCzechDay = (
-  datetime,
-  usedForLastUpdatedCase,
+  datetime: number,
+  usedForLastUpdatedCase: boolean,
+  isShownShorterDate: boolean,
 ): CzechDaysFromToKey | CzechDaysOnKey => {
   const currentLanguage = useCurrentLanguage();
 
-  if (currentLanguage === 'cs') {
+  if (currentLanguage === 'cs' && isShownShorterDate === false) {
     if (usedForLastUpdatedCase === false) {
       if (datetime === 0) {
         return CZECH_DAYS_FROM_TO[6];
