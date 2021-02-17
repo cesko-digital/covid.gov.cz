@@ -43,6 +43,19 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         processedContent={versionToDisplay?.content?.processed}
         beforeContent={
           <>
+            <div className="bg-white mb-3">
+              {hasRegion && (
+                <RegionsMarker regions={measure?.relationships?.region} />
+              )}
+              {hasTimeConstraint && (
+                <TimeMarker
+                  displayTime
+                  validFrom={versionToDisplay?.valid_from}
+                  validTo={versionToDisplay?.valid_to}
+                />
+              )}
+              <hr />
+            </div>
             {!isDisplayedVersionCurrent && (
               <UpdateWarning
                 key={`${measure.path.alias}-current`}
@@ -107,16 +120,6 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         }
       />
       <div className="bg-white mb-3 pb-2 pb-md-0 px-2 px-md-3">
-        {hasRegion && (
-          <RegionsMarker regions={measure?.relationships?.region} />
-        )}
-        {hasTimeConstraint && (
-          <TimeMarker
-            displayTime
-            validFrom={versionToDisplay?.valid_from}
-            validTo={versionToDisplay?.valid_to}
-          />
-        )}
         {hasSourceLink && (
           <div className="pt-2">
             <hr />

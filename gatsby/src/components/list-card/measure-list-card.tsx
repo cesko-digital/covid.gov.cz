@@ -5,6 +5,7 @@ import Time from '@/components/time';
 import styles from './measure-list-card.module.scss';
 import classNames from 'classnames';
 import { useTranslation } from '@/components/i18n';
+import { isAllCzechArea } from '../regions-time-logic/regions-time-logic';
 
 interface IProps {
   title: string;
@@ -33,7 +34,14 @@ const MeasureListCard: React.FC<IProps> = ({
       <p className="mt-0 color-gray">{description}</p>
       <div className="d-flex justify-content-between align-items-end">
         <div>
-          <div className={styles.measureListCardDetail}>
+          <div
+            className={classNames(
+              styles.measureListCardDetail,
+              isAllCzechArea(area)
+                ? 'font-weight-normal'
+                : 'font-weight-medium',
+            )}
+          >
             {t('applies_for')} {area}
           </div>
           <div className={styles.measureListCardDetail}>

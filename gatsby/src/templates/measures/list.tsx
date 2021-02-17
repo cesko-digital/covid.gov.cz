@@ -84,7 +84,7 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
               link={m.path?.alias}
               validFrom={m.valid_from}
               validTo={m.valid_to}
-              area={m.relationships?.region?.map((r) => r.name).join(' ,')}
+              area={m.relationships?.region?.map((r) => r.name).join(', ')}
             />
           ))}
         </DesktopLeftMenuLayout>
