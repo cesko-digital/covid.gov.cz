@@ -5,6 +5,8 @@ import { IRegion } from '@graphql-types';
 import Time from '../time';
 import { useTranslation } from '@/components/i18n';
 import { isAllCzechRegions } from '../regions-time-logic';
+import styles from './marker.module.scss';
+import classNames from 'classnames';
 
 interface IProps {
   icon: React.ReactNode;
@@ -12,8 +14,8 @@ interface IProps {
 
 const Marker: React.FC<IProps> = ({ icon, children }) => {
   return (
-    <div className="d-flex align-items-center mb-1 color-blue">
-      {icon}
+    <div className={classNames('color-blue', styles.markerWrapper)}>
+      <div className={styles.iconWrapper}>{icon}</div>
       &nbsp;
       <span>{children}</span>
     </div>

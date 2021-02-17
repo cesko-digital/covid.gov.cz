@@ -11,6 +11,20 @@ export const isEndDateLessThanFiveDays = (date: string): boolean => {
   } else return false;
 };
 
+export const formatTimeHHMM = (datetime: string, timeConfig: {}): string => {
+  let date = new Date(datetime).toLocaleTimeString('cs-CZ', timeConfig);
+
+  if (date.length === 8) {
+    date = date.substr(0, 5);
+  }
+  if (date.length === 7) {
+    date = '0' + date;
+    date = date.substr(0, 5);
+  }
+
+  return ' ' + `(${date})`;
+};
+
 export const isAllCzechRegions = (regions: string[]): boolean => {
   const currentLanguage = useCurrentLanguage();
 

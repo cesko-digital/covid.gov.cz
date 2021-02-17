@@ -1,4 +1,7 @@
 @import '../../../assets/scss/design-system/base/variables';
+@import '../../../assets/scss/design-system/vendor/bootstrap/functions';
+@import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
+@import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
 .box {
   position: relative;
@@ -15,6 +18,24 @@
         background-color: $theme-yellow;
       }
     }
+  }
+}
+
+.guideMobileWrapper {
+  display: none;
+
+  @include media-breakpoint-down(lg) {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.guideDesktopWrapper {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
   }
 }
 

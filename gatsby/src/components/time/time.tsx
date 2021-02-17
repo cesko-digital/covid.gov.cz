@@ -1,7 +1,10 @@
 import React from 'react';
 import { useCurrentLanguage } from '@/components/i18n';
 import { useCurrentCzechDay } from '../czech-days';
-import { isEndDateLessThanFiveDays } from '../regions-time-logic/regions-time-logic';
+import {
+  formatTimeHHMM,
+  isEndDateLessThanFiveDays,
+} from '../regions-time-logic/regions-time-logic';
 
 interface Props {
   datetime: string;
@@ -9,6 +12,8 @@ interface Props {
   prefix?: string;
   suffix?: string;
   displayLastUpdatedCzDays?: boolean;
+  displayShorterDate?: boolean;
+  displayShortMonth?: boolean;
 }
 
 const Time: React.FC<Props> = ({
@@ -17,15 +22,20 @@ const Time: React.FC<Props> = ({
   prefix,
   suffix = ' ',
   displayLastUpdatedCzDays = false,
+  displayShorterDate = false,
+  displayShortMonth = false,
 }) => {
   const currentLanguage = useCurrentLanguage();
   const dateConfig = {
     year: 'numeric',
-    month: 'long',
+    month: displayShortMonth ? 'numeric' : 'long',
     day: 'numeric',
     timeZone: 'Europe/Prague',
   };
-  const dateConfigEn = { ...dateConfig, weekday: 'long' };
+  const dateConfigEn = {
+    ...dateConfig,
+    weekday: displayShorterDate ? undefined : 'long',
+  };
   const timeConfig = {
     hour: displayTime ? '2-digit' : undefined,
     minute: displayTime ? '2-digit' : undefined,
@@ -43,7 +53,7 @@ const Time: React.FC<Props> = ({
         >
           {prefix.toLocaleLowerCase()}
           {new Date(datetime).toLocaleString('en-US', dateConfigEn)}
-          {' (' + new Date(datetime).toLocaleString('en-US', timeConfig) + ')'}
+          {formatTimeHHMM(datetime, timeConfig)}
           {suffix}
         </time>
       ) : (
@@ -59,9 +69,10 @@ const Time: React.FC<Props> = ({
           {useCurrentCzechDay(
             new Date(datetime).getDay(),
             displayLastUpdatedCzDays,
+            displayShorterDate,
           )}
           {new Date(datetime).toLocaleString('cs-CZ', dateConfig)}
-          {' (' + new Date(datetime).toLocaleString('cs-CZ', timeConfig) + ')'}
+          {formatTimeHHMM(datetime, timeConfig)}
           {suffix}
         </time>
       )}
