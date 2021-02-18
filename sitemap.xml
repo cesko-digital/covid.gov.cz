@@ -393,7 +393,6 @@
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/potrebuji-k-lekari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/jsem-pozvan-na-svatbu-ci-uzavreni-registrovaneho</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/bohosluzby-jine-duchovni-aktivity</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/informace-pro-osoby-tranzitujici-skrz-okresy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/veterinarni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/musim-na-urad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/zaci-rodice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -402,6 +401,7 @@
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/informace-pro-podnikatele-zamestnavatele</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/kontrola-prijatych-opatreni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/cesty-na-pohreb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/informace-pro-osoby-tranzitujici-skrz-okresy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/home-office</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zamestnani/hygienicka-prevence-na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
