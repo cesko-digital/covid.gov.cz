@@ -65,11 +65,11 @@ const SearchResultsCategory: React.FC<Props> = ({
 
   return (
     <div className={styles.searchResultsCategoryWrapper}>
-      <h1>
+      <h2>
         {getTitle()
           .replace('{searchValue}', searchValue)
           .replace('{noOfItems}', String(results.length))}
-      </h1>
+      </h2>
       <SearchResults results={resultsToDisplay} />
       {hasResultsToLoad && (
         <Button

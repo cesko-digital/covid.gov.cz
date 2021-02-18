@@ -51,7 +51,7 @@ const Header: React.FC<Props> = ({
   };
 
   const languageVariants = pageContext.languageVariants || {};
-  const urlId = '/#' + t('a11y_main_content_link');
+  const urlId = '#' + t('a11y_main_content_link');
 
   const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
   return (

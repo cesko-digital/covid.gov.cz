@@ -49,12 +49,12 @@ const CategoryItemList: FC<Props> = ({
       })}
     >
       <div className={styles.header}>
-        <h2>
+        <h1 id={t('a11y_main_content_link')}>
           {titleIconCode && (
             <ContentIcon code={titleIconCode} className={styles.icon} />
           )}
           <span dangerouslySetInnerHTML={{ __html: styledTitle }} />
-        </h2>
+        </h1>
         {linkBack ? (
           <Link className={styles.linkBack} to={linkBack.slug}>
             <KeyboardArrowLeft

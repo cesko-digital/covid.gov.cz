@@ -54,6 +54,7 @@ const SearchBox: React.FC<IProps> = (
         styles.wrapper,
         'search__input-holder search--with-icon',
       )}
+      id={t('a11y_main_content_link')}
     >
       <input
         type="text"

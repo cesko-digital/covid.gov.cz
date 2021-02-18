@@ -12,8 +12,9 @@
   }
 
   .header {
-    > h2 {
+    > h1 {
       color: $theme-blue;
+      font-size: 3.5rem;
     }
   }
 
@@ -44,8 +45,9 @@
   }
 
   .header {
-    > h2 {
+    > h1 {
       color: $theme-white;
+      font-size: 3.5rem;
     }
   }
 
@@ -76,10 +78,11 @@
   }
 
   .header {
-    > h2 {
+    > h1 {
       padding: 12px 24px 8px 24px;
       letter-spacing: normal;
       margin: 0;
+      font-size: 3.5rem;
 
       .icon {
         vertical-align: middle;

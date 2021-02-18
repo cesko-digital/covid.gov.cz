@@ -60,56 +60,54 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
       <Helmet title={t('homepage_meta_title')} />
       <DesktopTopContent />
       <Container className="pt-2">
-        <div id={t('a11y_main_content_link')}>
-          {vaccination_title?.length ? (
-            <Guide
-              items={vaccination_title.map((x, i) => ({
-                id: i,
-                name: x,
-                path: { alias: vaccination_link[i].uri },
-                buttonText: vaccination_link[i].title,
-                relationships: {
-                  icon: { code: relationships.vaccination_icon[i].code },
-                },
-              }))}
-              title={vaccination_label.processed}
-              description={vaccination_text}
-              variant="green"
-              itemDescriptions={vaccination_description}
-              noClamp
-            />
-          ) : (
-            ''
-          )}
+        {vaccination_title?.length ? (
+          <Guide
+            items={vaccination_title.map((x, i) => ({
+              id: i,
+              name: x,
+              path: { alias: vaccination_link[i].uri },
+              buttonText: vaccination_link[i].title,
+              relationships: {
+                icon: { code: relationships.vaccination_icon[i].code },
+              },
+            }))}
+            title={vaccination_label.processed}
+            description={vaccination_text}
+            variant="green"
+            itemDescriptions={vaccination_description}
+            noClamp
+          />
+        ) : (
+          ''
+        )}
 
-          {situation_items?.length ? (
-            <Guide
-              items={situation_items}
-              title={situation_label.processed}
-              description={situation_text}
-              buttonHref={t('slug_situations')}
-              buttonText={situation_link?.title}
-              variant="blue"
-              itemDescriptions={situation_description}
-            />
-          ) : (
-            ''
-          )}
+        {situation_items?.length ? (
+          <Guide
+            items={situation_items}
+            title={situation_label.processed}
+            description={situation_text}
+            buttonHref={t('slug_situations')}
+            buttonText={situation_link?.title}
+            variant="blue"
+            itemDescriptions={situation_description}
+          />
+        ) : (
+          ''
+        )}
 
-          {measure_items?.length ? (
-            <Guide
-              items={measure_items}
-              title={measure_label.processed}
-              description={measure_text}
-              buttonHref={t('slug_measures')}
-              buttonText={measure_link?.title}
-              variant="white"
-              itemDescriptions={measure_description}
-            />
-          ) : (
-            ''
-          )}
-        </div>
+        {measure_items?.length ? (
+          <Guide
+            items={measure_items}
+            title={measure_label.processed}
+            description={measure_text}
+            buttonHref={t('slug_measures')}
+            buttonText={measure_link?.title}
+            variant="white"
+            itemDescriptions={measure_description}
+          />
+        ) : (
+          ''
+        )}
       </Container>
     </Layout>
   );

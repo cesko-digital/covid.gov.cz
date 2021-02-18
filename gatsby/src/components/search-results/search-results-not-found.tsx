@@ -6,7 +6,7 @@ const SearchResultsNotFound: React.FC = () => {
   const { t } = useTranslation();
   return (
     <div className={styles.notFoundWrapper}>
-      <h1>{t('search_not_found')}</h1>
+      <h2>{t('search_not_found')}</h2>
       <p
         dangerouslySetInnerHTML={{
           __html: t('search_hint')
