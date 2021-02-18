@@ -131,6 +131,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/life-events/graduation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/life-events/registered-partnership</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/visas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/possibilities-and-obligations-foreigners-when-entering-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/tourism-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners/cross-border-workers-business-trips-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -276,7 +277,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/airports</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/slovakia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/cross-border-workers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/visas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/family-or-partner-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/crossing-green-border</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/students-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -518,6 +518,7 @@
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/promoce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/uzavreni-registrovaneho-partnerstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/cizinci/viza</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/moznosti-povinnosti-cizincu-pri-vstupu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/turistika-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/preshranicni-pracovnici-obchodni-pracovni-cesty-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -669,7 +670,6 @@
 <url> <loc>https://covid.gov.cz/situace/zahranici/letiste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/slovensko</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/pendleri</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/zahranici/viza</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/rodina-ci-partner-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/prechod-zelene-hranice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/studenti-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
