@@ -445,6 +445,7 @@
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/konani-valnych-hromad-clenskych-schuzi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/datove-schranky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/poskytovani-socialnich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/navstevy-nemocnic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/neakutni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/navstevy-socialnich-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -863,6 +864,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/narizeni-pro-poskytovatele-akutni-luzkove-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-poskytovani-socialnich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/prijem-novych-osob-do-socialnich-zarizeni-zakazan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/podminky-pritomnosti-tretich-osob-pri-porodu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/vychazky-uzivatelu-domovu-pro-seniory-domovu-se-zvlastnim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
