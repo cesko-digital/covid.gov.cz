@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import classnames from 'classnames';
 import Link from '@/components/link';
 
@@ -43,6 +43,19 @@ const Header: React.FC<Props> = ({
   const toggleOpen = useCallback(() => {
     setOpen(!isOpen);
     document.body.style.overflow = isOpen ? 'unset' : 'hidden';
+    if (!isOpen) {
+      const el = document.querySelectorAll('main, main *, .footer, .footer *');
+      let i;
+      for (i = 0; i < el.length; i++) {
+        el[i].setAttribute('tabIndex', '-1');
+      }
+    } else {
+      const el = document.querySelectorAll('main, main *, .footer, .footer *');
+      let i;
+      for (i = 0; i < el.length; i++) {
+        el[i].removeAttribute('tabIndex');
+      }
+    }
   }, [isOpen]);
 
   const onUseLink = () => {
@@ -52,6 +65,19 @@ const Header: React.FC<Props> = ({
   const languageVariants = pageContext.languageVariants || {};
 
   const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
+
+  useEffect(() => {
+    document.addEventListener('keyup', function (event) {
+      let isEscape = false;
+      isEscape = event.key === 'Escape' || event.key === 'Esc';
+      if (isEscape) {
+        if (isOpen) {
+          toggleOpen();
+        }
+      }
+    });
+  });
+
   return (
     <>
       {bannerMessage && <Alert message={bannerMessage} />}
@@ -90,7 +116,13 @@ const Header: React.FC<Props> = ({
                   classes.nav__toggle,
                   isOpen && classes['nav__toggle--open'],
                 )}
+                tabIndex={0}
                 onClick={toggleOpen}
+                onKeyPress={(event) => {
+                  if (event.key === 'Enter') {
+                    toggleOpen();
+                  }
+                }}
               >
                 <span />
                 <span />
