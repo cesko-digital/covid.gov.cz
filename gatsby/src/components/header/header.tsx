@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import Link from '@/components/link';
 
@@ -40,22 +40,19 @@ const Header: React.FC<Props> = ({
   const currentLanguage = useCurrentLanguage();
   const { t } = useTranslation();
 
+  const mobileNav = useRef(null);
+  const navToggle = useRef(null);
+
   const toggleOpen = useCallback(() => {
     setOpen(!isOpen);
     document.body.style.overflow = isOpen ? 'unset' : 'hidden';
-    if (!isOpen) {
-      const el = document.querySelectorAll('main, main *, .footer, .footer *');
-      let i;
-      for (i = 0; i < el.length; i++) {
-        el[i].setAttribute('tabIndex', '-1');
+    const mobileNavEl = mobileNav.current;
+    mobileNavEl.addEventListener('focusout', (event) => {
+      if (mobileNavEl.contains(event.relatedTarget)) {
+        return;
       }
-    } else {
-      const el = document.querySelectorAll('main, main *, .footer, .footer *');
-      let i;
-      for (i = 0; i < el.length; i++) {
-        el[i].removeAttribute('tabIndex');
-      }
-    }
+      navToggle.current.focus();
+    });
   }, [isOpen]);
 
   const onUseLink = () => {
@@ -123,6 +120,7 @@ const Header: React.FC<Props> = ({
                     toggleOpen();
                   }
                 }}
+                ref={navToggle}
               >
                 <span />
                 <span />
@@ -183,6 +181,7 @@ const Header: React.FC<Props> = ({
                 isOpen && classes['nav__mobile--open'],
                 'd-md-none',
               )}
+              ref={mobileNav}
             >
               <div
                 className="d-flex flex-column justify-content-between"
