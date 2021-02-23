@@ -47,12 +47,17 @@ const Header: React.FC<Props> = ({
     setOpen(!isOpen);
     document.body.style.overflow = isOpen ? 'unset' : 'hidden';
     const mobileNavEl = mobileNav.current;
-    mobileNavEl.addEventListener('focusout', (event) => {
-      if (mobileNavEl.contains(event.relatedTarget)) {
-        return;
-      }
-      navToggle.current.focus();
-    });
+    mobileNavEl.addEventListener(
+      'focusout',
+      (event: { relatedTarget: any }) => {
+        if (mobileNavEl.contains(event.relatedTarget)) {
+          return;
+        }
+        if (navToggle.current !== null) {
+          navToggle.current.focus();
+        }
+      },
+    );
   }, [isOpen]);
 
   const onUseLink = () => {
@@ -64,7 +69,7 @@ const Header: React.FC<Props> = ({
   const bannerMessage = t('banner', { returnNullIfNotTranslated: true });
 
   useEffect(() => {
-    document.addEventListener('keyup', function (event) {
+    document.addEventListener('keyup', (event) => {
       let isEscape = false;
       isEscape = event.key === 'Escape' || event.key === 'Esc';
       if (isEscape) {
