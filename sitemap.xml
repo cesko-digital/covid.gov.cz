@@ -173,6 +173,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/theatre-film-and-other-artistic-performances</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/accommodations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services/photographers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/shops-and-services/funeral-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes/sms-fake-positive-result</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hoaxes/non-covid-related-deaths-blamed-covid-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -377,7 +378,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/frequently-asked-questions-ministry-health</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/vaccination-timeline</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/i-registered-vaccination-i-have-nowhere-enter-my-pin2-or-i-did-not</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/certificate-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/certificate-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/vaccination-people-limited-legal-capacity</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/vaccination-foreign-nationals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -549,7 +550,6 @@
 <url> <loc>https://covid.gov.cz/situace/rousky/zdravotni-komplikace-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/veletrhy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/obchod-sluzby/pohrebni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/maloobchod</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/posta</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/nakupovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -566,6 +566,7 @@
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/filmovy-prumysl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/ubytovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/fotografove</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/obchod-sluzby/pohrebni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy/sms-s-pozitivnim-vysledkem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/hoaxy/umrti-nas-covidem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
