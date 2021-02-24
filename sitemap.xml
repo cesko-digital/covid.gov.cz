@@ -768,7 +768,7 @@
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-imobilnich-pacientu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-pedagogu-dalsich-zamestnancu-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/ockovani/dobrovolne-plosne-ockovani-obcanu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/dobrovolne-plosne-ockovani-obcanu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/seznam-mist-kde-ockovani-bude-probihat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/centralni-rezervacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
