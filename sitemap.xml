@@ -53,6 +53,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/trainings-business</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/general-or-holding-meetings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/data-boxes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/business-activities/eidentity-and-login-ministry-industry-and-trade-agenda-information</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/visits-hospitals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/non-emergency-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -364,7 +365,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/problems-and-failures-can-occur-when-testing-ag-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/who-will-be-vaccinated-first</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/general-vaccination-citizens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/general-vaccination-citizens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/list-vaccination-centers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/central-reservation-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/how-does-prioritization-system-works</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -435,7 +436,6 @@
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/detske-spolky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/vcelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/eidentita-prihlaseni-do-agendoveho-informacniho-systemu-mpo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/pracovnelekarske-prohlidky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/sankce-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/nemoznost-splacet-uver-ci-hypoteku-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -450,6 +450,7 @@
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/skoleni-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/konani-valnych-hromad-clenskych-schuzi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/datove-schranky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/eidentita-prihlaseni-do-agendoveho-informacniho-systemu-mpo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/navstevy-nemocnic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/neakutni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -674,6 +675,7 @@
 <url> <loc>https://covid.gov.cz/situace/rodice/nemoc-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/narozeni-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/zahranici/podminky-cestovani-do-zemi-s-novymi-mutacemi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/mapa-cestovatele-podminky-vstupu-do-zeme-povinnosti-po-navratu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/obchodni-cesty-do-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/letiste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -682,7 +684,6 @@
 <url> <loc>https://covid.gov.cz/situace/zahranici/rodina-ci-partner-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/prechod-zelene-hranice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/studenti-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/zahranici/podminky-cestovani-do-zemi-s-novymi-mutacemi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/nakupy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/ochrana-pred-virem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
