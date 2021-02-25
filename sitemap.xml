@@ -367,7 +367,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/general-vaccination-citizens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/list-vaccination-centers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/central-reservation-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/how-does-prioritization-system-works</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/how-does-prioritization-system-works</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/which-informations-will-i-be-supposed-enter-when-registering</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/glossary-terms-connected-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/registration-and-reservation-process</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -682,6 +682,7 @@
 <url> <loc>https://covid.gov.cz/situace/zahranici/rodina-ci-partner-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/prechod-zelene-hranice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/studenti-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/zahranici/podminky-cestovani-do-zemi-s-novymi-mutacemi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/nakupy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/ochrana-pred-virem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
