@@ -285,6 +285,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/crossing-green-border</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/students-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/traveling-tofrom-great-britain-and-northern-ireland-december-20-2020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/travelling-abroad/conditions-traveling-countries-new-mutations</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors/shopping</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/seniors/protection-virus</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -675,7 +676,6 @@
 <url> <loc>https://covid.gov.cz/situace/rodice/nemoc-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rodice/narozeni-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/zahranici/podminky-cestovani-do-zemi-s-novymi-mutacemi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/mapa-cestovatele-podminky-vstupu-do-zeme-povinnosti-po-navratu-do-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/obchodni-cesty-do-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/letiste</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -684,6 +684,7 @@
 <url> <loc>https://covid.gov.cz/situace/zahranici/rodina-ci-partner-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/prechod-zelene-hranice</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zahranici/studenti-v-zahranici</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/zahranici/podminky-cestovani-do-zemi-s-novymi-mutacemi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/nakupy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/seniori/ochrana-pred-virem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -771,7 +772,7 @@
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-pedagogu-dalsich-zamestnancu-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/dobrovolne-plosne-ockovani-obcanu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/seznam-mist-kde-ockovani-bude-probihat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/seznam-mist-kde-ockovani-probiha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/centralni-rezervacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jake-informace-o-sobe-budu-muset-pri-registraci-zadavat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
