@@ -542,7 +542,7 @@
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/shromazdovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/vyroba-rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/rousky/pece-o-rousku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/rousky/pece-o-rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/druhy-ochrany</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/k-cemu-slouzi-rouska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/rousky-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
