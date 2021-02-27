@@ -379,7 +379,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/where-can-i-register-myself-vaccination-timeslot-booking-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/registration-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/telephone-assistance-vaccination-registration-seniors</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/registrace-na-ockovani/frequently-asked-questions-ministry-health</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/frequently-asked-questions-ministry-health</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/vaccination-timeline</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/i-registered-vaccination-i-have-nowhere-enter-my-pin2-or-i-did-not</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/certificate-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -396,8 +396,8 @@
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/what-we-know-about-side-effects-vaccine</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/can-i-be-infertile-after-i-receive-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/informace-o-vakcine/will-vaccine-alter-my-dna</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/informace-o-vakcine/it-possible-people-die-result-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/informace-o-vakcine/will-vaccine-be-effective-even-after-virus-mutation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/it-possible-people-die-result-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/information-about-vaccine/will-vaccine-be-effective-even-after-virus-mutation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/potrebuji-k-lekari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/omezeni-pro-okresy-cheb-sokolov-trutnov/jsem-pozvan-na-svatbu-ci-uzavreni-registrovaneho</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
