@@ -878,6 +878,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-zamestnavatelum-o-vyuzivani-prace-na-dalku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-o-pracovnelekarskych-prohlidkach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/zamestnani/narizeni-pro-konani-zasedani-voleb-do-organu-pravnickych-osob</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/zamestnani/zamestnavani-cizincu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-ve-zdravotnickych-zarizenich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-navstev-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
