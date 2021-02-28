@@ -492,7 +492,6 @@
 <url> <loc>https://covid.gov.cz/situace/volny-cas/setkavani-vecirky-rodinne-oslavy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/volny-cas/prace-na-zahrade</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/volny-cas/pobyt-v-parku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/volny-cas/rande</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/volny-cas/rodina</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/volny-cas/materska-centra-ddm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/volny-cas/zimni-sporty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -808,6 +807,8 @@
 <url> <loc>https://covid.gov.cz/en/measures/education</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/education/restrictions-defining-operation-primary-schools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/education/restrictions-defining-operation-university-dormitories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/measures/education/restrictions-defining-operation-school-accommodation-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/measures/education/restrictions-defining-rules-leisure-centres-school-clubs-and-after-school-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/education/school-exams-regulation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/education/prohibition-outdoor-schools-and-school-trips</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/education/students-work-duty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -858,11 +859,11 @@
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-strednich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-vysokych-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-skolskych-vychovnych-ubytovacich-zarizeni-domov-mladeze-internat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-stredisek-volneho-casu-skolnich-klubu-skolnich-druzin</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-umeleckych-skol-jazykovych-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-vysokoskolskych-koleji</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-skolskych-vychovnych-ubytovacich-zarizeni-domov-mladeze-internat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-stredisek-volneho-casu-skolnich-klubu-skolnich-druzin</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-konani-zkousek</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/zakaz-skol-v-prirode-skolnich-vyletu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/pracovni-povinnost-zaku-studentu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
