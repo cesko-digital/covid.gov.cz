@@ -153,7 +153,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/indoor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/penalties-not-wearing-face-masks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/public-transport-taxi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/face-masks/traveling-car</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/traveling-car</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/workplace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/skin-problems</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/shops-and-services</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -528,14 +528,14 @@
 <url> <loc>https://covid.gov.cz/situace/rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/vyroba-rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/pece-o-rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/rousky/druhy-ochrany</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/rousky-respiratory/druhy-ochrany</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky-respiratory/k-cemu-slouzi-rouska-respirator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/rousky-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky-respiratory/rousky-uvnitr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/sankce-za-nenoseni-rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/verejna-mezimestska-doprava-taxi-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/cestovani-autem</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/rousky/na-pracovisti-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/rousky-respiratory/na-pracovisti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/zdravotni-komplikace-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/obchod-sluzby/veletrhy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
