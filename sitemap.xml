@@ -129,7 +129,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/life-events/weddings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/life-events/birthdays-and-anniversaries</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/life-events/funerals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/life-events/buying-real-estate-and-moving-or-out</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/life-events/graduation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/life-events/registered-partnership</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/foreigners</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -145,7 +144,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/blue-zones</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/travelling-around-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/face-masks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/how-make-face-mask</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/how-take-care-face-mask</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/types-protection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -525,7 +524,6 @@
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/svatba</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/narozeniny-vyroci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/pohreb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/nakup-nemovitosti-stehovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/promoce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/uzavreni-registrovaneho-partnerstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -541,7 +539,7 @@
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/modre-zony</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/cestovani-po-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/shromazdovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/vyroba-rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/pece-o-rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/druhy-ochrany</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -869,7 +867,6 @@
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/pracovni-povinnost-zaku-studentu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-v-noci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-volneho-pohybu-osob-ve-dne</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-piti-alkoholu-na-verejne-pristupnych-mistech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/omezeni-prava-pokojne-se-shromazdovat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/pohyb-venku/zakaz-pobytu-cizincu-na-uzemi-ceske-republiky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
