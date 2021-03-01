@@ -806,7 +806,7 @@
 <url> <loc>https://covid.gov.cz/en/measures/culture</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/leisure-time</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/restaurants</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/measures/face-masks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/measures/face-masks-and-respirators</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/offices-and-institutions</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/measures/travelling-abroad/entering-czech-republic-symptoms-infectious-disease</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -880,7 +880,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/volny-cas/zakaz-navstev-prohlidky-muzei-galerii-vystavnich-prostor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/restaurace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/restaurace/zakaz-provozovani-stravovacich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/opatreni/rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-ve-venkovnim-prostoru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-v-motorovych-vozidlech</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/rousky/povinnost-mit-zakryta-usta-i-nos-ve-vsech-prostredcich-verejne-dopravy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
