@@ -368,6 +368,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/general-vaccination-citizens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/list-vaccination-centers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/central-reservation-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/register-vaccination/information-people-chronical-illness</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/how-does-prioritization-system-works</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/which-informations-will-i-be-supposed-enter-when-registering</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/glossary-terms-connected-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -752,12 +753,12 @@
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-zamestnancu-mimo-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/problemy-nezdary-ktere-mohou-pri-testovani-ag-testy-nastat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/informace-pro-osoby-s-chronickym-onemocnenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-pedagogu-dalsich-zamestnancu-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/dobrovolne-plosne-ockovani-obcanu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/seznam-mist-kde-ockovani-probiha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/centralni-rezervacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/informace-pro-osoby-s-chronickym-onemocnenim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jak-funguje-prioritizacni-system</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/jake-informace-o-sobe-budu-muset-pri-registraci-zadavat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/ockovani/slovnicek-pojmu-s-kterymi-se-behem-ockovani-setkate</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
