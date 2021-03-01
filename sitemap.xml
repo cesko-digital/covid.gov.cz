@@ -521,6 +521,7 @@
 <url> <loc>https://covid.gov.cz/situace/cizinci/cizinci-zijici-na-uzemi-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cizinci/partneri-cechu-obcanu-eu-zijicich-v-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/pohyb-venku/nejcastejsi-otazky-odpovedi-k-cestovani-skrz-okresy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/volny-pohyb-osob-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/modre-zony</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/pohyb-venku/cestovani-po-cr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
