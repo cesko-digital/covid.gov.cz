@@ -145,14 +145,14 @@
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/travelling-around-cz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/free-movement-people/gatherings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/face-masks/how-make-face-mask</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/how-make-face-mask</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/how-take-care-face-mask</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks/types-protection</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/what-purpose-face-masks-and-respirators</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/masks-outdoor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/indoor</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/face-masks/penalties-not-wearing-face-masks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/face-masks/public-transport-taxi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/penalties-not-wearing-face-mask</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/public-transport-taxi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/traveling-car</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/workplace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/face-masks-and-respirators/skin-problems</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -746,6 +746,7 @@
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/zpovedi-individualni-duchovni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/krtiny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-zamestnancu-ve-firmach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/obecne-informace-o-antigennich-testech-popis-provedeni-testu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/interpretace-vysledku-antigenniho-testu-jak-se-zachovat-po-obdrzeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/informace-k-plosnemu-testovani-obyvatel-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -824,6 +825,8 @@
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/provadeni-pravidelnych-poc-antigennich-testu-u-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/provadeni-pravidelnych-poc-antigennich-testu-u</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/bezplatne-dobrovolne-testovani-poc-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/opatreni-k-samotestovani-zamestnancu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/opatreni-k-povinnemu-testovani-ve-firmach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-upravujici-povinne-hlaseni-nakladani-s</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-ockovani-zdravotni-pojistovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
