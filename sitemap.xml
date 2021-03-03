@@ -507,6 +507,7 @@
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/doporuceni-pro-pronajimatele</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/domacnost-bydleni/dezinfekce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/nakup-nemovitosti-stehovani-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/tehotenstvi-narozeni-ditete</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/svatba</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/zivotni-udalosti/narozeniny-vyroci</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
