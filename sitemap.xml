@@ -360,7 +360,6 @@
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/interpretation-antigen-test-result-how-behave-after-receiving</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/information-comprehensive-testing-antigen-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-social-care-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-employees-outside-sanitary-facility</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/problems-and-failures-can-occur-when-testing-ag-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/who-will-be-vaccinated-first</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -751,7 +750,6 @@
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/interpretace-vysledku-antigenniho-testu-jak-se-zachovat-po-obdrzeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/informace-k-plosnemu-testovani-obyvatel-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-zamestnancu-mimo-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/problemy-nezdary-ktere-mohou-pri-testovani-ag-testy-nastat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-pedagogu-dalsich-zamestnancu-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
