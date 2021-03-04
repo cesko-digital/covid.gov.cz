@@ -8,6 +8,7 @@ import classes from './guide-item.module.scss';
 import Time from '@/components/time';
 import { useTranslation } from '@/components/i18n';
 import Link from '../link';
+import { isAllCzechRegions } from '../regions-detail';
 
 interface IProps {
   title: string;
@@ -17,6 +18,7 @@ interface IProps {
   buttonText: string;
   iconCode?: string;
   area?: string;
+  areaTid?: string[];
   validFrom?: string;
   validTo?: string;
   noClamp?: boolean;
@@ -30,6 +32,7 @@ const GuideItem: React.FC<IProps> = ({
   variant,
   description,
   area,
+  areaTid,
   validTo,
   validFrom,
   noClamp,
@@ -69,7 +72,7 @@ const GuideItem: React.FC<IProps> = ({
             <div
               className={classNames(
                 'd-flex',
-                'flex-row',
+                'flex-column',
                 'flex-wrap',
                 'justify-content-between',
                 classes.guideItemSubTitle,
@@ -82,43 +85,31 @@ const GuideItem: React.FC<IProps> = ({
                * Maybe show start date before it actually starts
                * and show end date during the mesurement?
                */}
-              <p>{area}</p>
-              <div className={classes.guideMobileWrapper}>
-                {validFrom && (
-                  <Time
-                    datetime={validFrom}
-                    prefix={`${t('from')} `}
-                    displayShorterDate={true}
-                    displayShortMonth={true}
-                  />
-                )}
-                {validTo && (
-                  <Time
-                    datetime={validTo}
-                    prefix={`${t('to')} `}
-                    displayShorterDate={true}
-                    displayShortMonth={true}
-                  />
-                )}
-              </div>
-              <div className={classes.guideDesktopWrapper}>
-                {validFrom && (
-                  <Time
-                    datetime={validFrom}
-                    prefix={`${t('from')} `}
-                    displayShorterDate={false}
-                    displayShortMonth={true}
-                  />
-                )}
-                {validTo && (
-                  <Time
-                    datetime={validTo}
-                    prefix={`${t('to')} `}
-                    displayShorterDate={false}
-                    displayShortMonth={true}
-                  />
-                )}
-              </div>
+              <p
+                className={
+                  isAllCzechRegions(areaTid)
+                    ? 'font-weight-normal'
+                    : 'font-weight-medium'
+                }
+              >
+                {area}
+              </p>
+              {validFrom && (
+                <Time
+                  datetime={validFrom}
+                  prefix={`${t('from')} `}
+                  displayShortDate={true}
+                  displayTime={false}
+                />
+              )}
+              {validTo && (
+                <Time
+                  datetime={validTo}
+                  prefix={`${t('to')} `}
+                  displayShortDate={true}
+                  displayTime={false}
+                />
+              )}
             </div>
           )}
           {description && (

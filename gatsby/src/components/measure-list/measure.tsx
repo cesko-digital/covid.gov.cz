@@ -5,11 +5,13 @@ import Button from '@/components/button';
 import Time from '@/components/time';
 import { useTranslation } from '@/components/i18n';
 import classNames from 'classnames';
+import { isAllCzechRegions } from '../regions-detail';
 
 interface Props {
   title: string;
   description: string;
   area: string;
+  areaTid: string[];
   validFrom: string;
   validTo: string;
   link: string;
@@ -19,6 +21,7 @@ const Measure: React.FC<Props> = ({
   title,
   description,
   area,
+  areaTid,
   validFrom,
   validTo,
   link,
@@ -30,15 +33,60 @@ const Measure: React.FC<Props> = ({
       <p className={styles.measureDescription}>{description}</p>
       <div className={styles.measureDetails}>
         <div>
-          <div className={styles.measureDetail}>
+          <div
+            className={classNames(
+              styles.measureDetail,
+              isAllCzechRegions(areaTid)
+                ? 'font-weight-normal'
+                : 'font-weight-medium',
+            )}
+          >
             {t('applies_for')} {area}
           </div>
-          <div className={styles.measureDetail}>
+          <div
+            className={classNames(
+              styles.measureDetail,
+              styles.measureDetailMobile,
+            )}
+          >
             {validFrom && (
-              <Time displayTime datetime={validFrom} prefix={`${t('from')} `} />
+              <Time
+                displayTime={false}
+                displayShortDate={true}
+                datetime={validFrom}
+                prefix={`${t('from')} `}
+              />
             )}
             {validTo && (
-              <Time displayTime datetime={validTo} prefix={`${t('to')} `} />
+              <Time
+                displayTime={false}
+                displayShortDate={true}
+                datetime={validTo}
+                prefix={`${t('to')} `}
+              />
+            )}
+          </div>
+          <div
+            className={classNames(
+              styles.measureDetail,
+              styles.measureDetailDesktop,
+            )}
+          >
+            {validFrom && (
+              <Time
+                displayTime={false}
+                displayShortDate={false}
+                datetime={validFrom}
+                prefix={`${t('from')} `}
+              />
+            )}
+            {validTo && (
+              <Time
+                displayTime={false}
+                displayShortDate={false}
+                datetime={validTo}
+                prefix={`${t('to')} `}
+              />
             )}
           </div>
         </div>

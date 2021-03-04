@@ -110,6 +110,9 @@ const Guide: React.FC<IProps> = ({
                           area={x.relationships?.region
                             ?.map((item) => item.name)
                             .join(', ')}
+                          areaTid={x.relationships?.region?.map(
+                            (item) => item.drupal_internal__tid,
+                          )}
                           validFrom={x.valid_from}
                           validTo={x.valid_to}
                         />
