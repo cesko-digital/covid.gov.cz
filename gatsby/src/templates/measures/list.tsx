@@ -85,6 +85,9 @@ const Home: React.FC<IProps> = ({ data, pageContext }) => {
               validFrom={m.valid_from}
               validTo={m.valid_to}
               area={m.relationships?.region?.map((r) => r.name).join(', ')}
+              areaTid={m.relationships?.region?.map(
+                (r) => r.drupal_internal__tid,
+              )}
             />
           ))}
         </DesktopLeftMenuLayout>
@@ -111,6 +114,7 @@ export const query = graphql`
           relationships {
             region {
               name
+              drupal_internal__tid
             }
           }
           path {

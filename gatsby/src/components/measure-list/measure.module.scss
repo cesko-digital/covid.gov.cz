@@ -37,6 +37,26 @@
   line-height: 2rem;
   font-weight: 500;
   color: #2362a2;
+  display: flex;
+  flex-direction: column;
+}
+
+.measureDetailMobile {
+  display: none;
+
+  // desktop
+  @include media-breakpoint-down(sm) {
+    display: flex;
+  }
+}
+
+.measureDetailDesktop {
+  display: flex;
+
+  // desktop
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 .measureButton {

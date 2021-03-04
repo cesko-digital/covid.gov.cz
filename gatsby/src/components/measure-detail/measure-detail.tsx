@@ -13,6 +13,8 @@ import { UpdateWarning } from '../update-warning/update-warning';
 import Time from '../time';
 import { getCurrentMeasureVersion } from './getCurrentMeasureVersion.util';
 import { useHasMounted } from '../client-only';
+import classNames from 'classnames';
+import styles from './measure-detail.module.scss';
 
 interface IProps {
   measure: IMeasureDetailFragment;
@@ -33,6 +35,9 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
   const hasTimeConstraint = Boolean(
     versionToDisplay?.valid_from || versionToDisplay?.valid_to,
   );
+  const hasUpdateWarning = Boolean(
+    !isDisplayedVersionCurrent || nextVersionFrom,
+  );
 
   return (
     <>
@@ -43,19 +48,6 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
         processedContent={versionToDisplay?.content?.processed}
         beforeContent={
           <>
-            <div className="bg-white mb-3">
-              {hasRegion && (
-                <RegionsMarker regions={measure?.relationships?.region} />
-              )}
-              {hasTimeConstraint && (
-                <TimeMarker
-                  displayTime
-                  validFrom={versionToDisplay?.valid_from}
-                  validTo={versionToDisplay?.valid_to}
-                />
-              )}
-              <hr />
-            </div>
             {!isDisplayedVersionCurrent && (
               <UpdateWarning
                 key={`${measure.path.alias}-current`}
@@ -79,6 +71,8 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                   () => (
                     <Time
                       datetime={versionToDisplay?.valid_from}
+                      displayOnCzDayCase={false}
+                      displayTime={true}
                       suffix=""
                       key="current-version-time"
                     />
@@ -109,6 +103,8 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                   () => (
                     <Time
                       datetime={nextVersionFrom}
+                      displayOnCzDayCase={true}
+                      displayTime={true}
                       suffix=""
                       key="next-version-time"
                     />
@@ -116,6 +112,45 @@ const MeasureDetail: React.FC<IProps> = ({ measure }) => {
                 )}
               />
             )}
+            {hasUpdateWarning && <hr />}
+            <div
+              className={classNames(
+                styles.measureDetailMobile,
+                'bg-white mb-3',
+              )}
+            >
+              {hasRegion && (
+                <RegionsMarker regions={measure?.relationships?.region} />
+              )}
+              {hasTimeConstraint && (
+                <TimeMarker
+                  displayTime
+                  displayShortDay={true}
+                  validFrom={versionToDisplay?.valid_from}
+                  validTo={versionToDisplay?.valid_to}
+                />
+              )}
+              <hr />
+            </div>
+            <div
+              className={classNames(
+                styles.measureDetailDesktop,
+                'bg-white mb-3',
+              )}
+            >
+              {hasRegion && (
+                <RegionsMarker regions={measure?.relationships?.region} />
+              )}
+              {hasTimeConstraint && (
+                <TimeMarker
+                  displayTime
+                  displayShortDay={false}
+                  validFrom={versionToDisplay?.valid_from}
+                  validTo={versionToDisplay?.valid_to}
+                />
+              )}
+              <hr />
+            </div>
           </>
         }
       />
@@ -154,6 +189,7 @@ export const query = graphql`
     relationships {
       region {
         name
+        drupal_internal__tid
       }
       situation_type: measure_type {
         name

@@ -23,6 +23,9 @@ const MeasureList: React.FC<Props> = ({ measures, descriptions }) => {
             validTo={valid_to}
             link={path.alias}
             area={relationships.region.map((item) => item.name).join(', ')}
+            areaTid={relationships.region.map(
+              (item) => item.drupal_internal__tid,
+            )}
           />
         ))}
     </>

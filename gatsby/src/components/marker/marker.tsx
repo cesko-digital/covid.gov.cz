@@ -4,9 +4,9 @@ import { Room, Event } from '@material-ui/icons';
 import { IRegion } from '@graphql-types';
 import Time from '../time';
 import { useTranslation } from '@/components/i18n';
-import { isAllCzechRegions } from '../regions-time-logic';
 import styles from './marker.module.scss';
 import classNames from 'classnames';
+import RegionsDetail from '../regions-detail';
 
 interface IProps {
   icon: React.ReactNode;
@@ -17,26 +17,18 @@ const Marker: React.FC<IProps> = ({ icon, children }) => {
     <div className={classNames('color-blue', styles.markerWrapper)}>
       <div className={styles.iconWrapper}>{icon}</div>
       &nbsp;
-      <span>{children}</span>
+      <div className={styles.childrenWrapper}>{children}</div>
     </div>
   );
 };
 
 interface IRegionsMarkerProps {
-  regions: Pick<IRegion, 'name'>[];
+  regions: Pick<IRegion, 'name' | 'drupal_internal__tid'>[];
 }
 
 export const RegionsMarker: React.FC<IRegionsMarkerProps> = ({ regions }) => (
   <Marker icon={<Room />}>
-    <span
-      className={
-        isAllCzechRegions(regions.map((region) => region.name))
-          ? 'font-weight-normal'
-          : 'font-weight-medium'
-      }
-    >
-      {regions.map((region) => region.name).join(', ')}
-    </span>
+    {<RegionsDetail regions={regions}></RegionsDetail>}
   </Marker>
 );
 
@@ -44,12 +36,14 @@ interface ITimeProps {
   validFrom: string;
   validTo: string;
   displayTime: boolean;
+  displayShortDay: boolean;
 }
 
 export const TimeMarker: React.FC<ITimeProps> = ({
   validFrom,
   validTo,
   displayTime,
+  displayShortDay,
 }) => {
   const { t } = useTranslation();
   return (
@@ -57,6 +51,7 @@ export const TimeMarker: React.FC<ITimeProps> = ({
       {validFrom && (
         <Time
           displayTime={displayTime}
+          displayShortDate={displayShortDay}
           datetime={validFrom}
           prefix={`${t('from')} `}
         />
@@ -64,6 +59,7 @@ export const TimeMarker: React.FC<ITimeProps> = ({
       {validTo && (
         <Time
           displayTime={displayTime}
+          displayShortDate={displayShortDay}
           datetime={validTo}
           prefix={`${t('to')} `}
         />

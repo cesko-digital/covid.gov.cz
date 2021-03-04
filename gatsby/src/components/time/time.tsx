@@ -4,16 +4,15 @@ import { useCurrentCzechDay } from '../czech-days';
 import {
   formatTimeHHMM,
   isEndDateLessThanFiveDays,
-} from '../regions-time-logic/regions-time-logic';
+} from '../time-logic/time-logic';
 
 interface Props {
   datetime: string;
   displayTime?: boolean;
   prefix?: string;
   suffix?: string;
-  displayLastUpdatedCzDays?: boolean;
-  displayShorterDate?: boolean;
-  displayShortMonth?: boolean;
+  displayOnCzDayCase?: boolean;
+  displayShortDate?: boolean;
 }
 
 const Time: React.FC<Props> = ({
@@ -21,27 +20,26 @@ const Time: React.FC<Props> = ({
   displayTime,
   prefix,
   suffix = ' ',
-  displayLastUpdatedCzDays = false,
-  displayShorterDate = false,
-  displayShortMonth = false,
+  displayOnCzDayCase = false,
+  displayShortDate = false,
 }) => {
   const currentLanguage = useCurrentLanguage();
   const dateConfig = {
     year: 'numeric',
-    month: displayShortMonth ? 'numeric' : 'long',
+    month: displayShortDate ? 'short' : 'long',
     day: 'numeric',
     timeZone: 'Europe/Prague',
   };
   const dateConfigEn = {
     ...dateConfig,
-    weekday: displayShorterDate ? undefined : 'long',
+    weekday: displayShortDate ? undefined : 'long',
   };
   const timeConfig = {
     hour: displayTime ? '2-digit' : undefined,
     minute: displayTime ? '2-digit' : undefined,
   };
   return (
-    <div>
+    <span>
       {currentLanguage === 'en' ? (
         <time
           dateTime={datetime}
@@ -51,9 +49,9 @@ const Time: React.FC<Props> = ({
               : 'font-weight-normal'
           }
         >
-          {prefix.toLocaleLowerCase()}
+          {prefix?.toLocaleLowerCase()}
           {new Date(datetime).toLocaleString('en-US', dateConfigEn)}
-          {formatTimeHHMM(datetime, timeConfig)}
+          {formatTimeHHMM(datetime, timeConfig, displayTime)}
           {suffix}
         </time>
       ) : (
@@ -65,18 +63,18 @@ const Time: React.FC<Props> = ({
               : 'font-weight-normal'
           }
         >
-          {prefix.toLocaleLowerCase()}
+          {prefix?.toLocaleLowerCase()}
           {useCurrentCzechDay(
             new Date(datetime).getDay(),
-            displayLastUpdatedCzDays,
-            displayShorterDate,
+            displayOnCzDayCase,
+            displayShortDate,
           )}
           {new Date(datetime).toLocaleString('cs-CZ', dateConfig)}
-          {formatTimeHHMM(datetime, timeConfig)}
+          {formatTimeHHMM(datetime, timeConfig, displayTime)}
           {suffix}
         </time>
       )}
-    </div>
+    </span>
   );
 };
 

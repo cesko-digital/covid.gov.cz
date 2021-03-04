@@ -55,7 +55,10 @@ const SituationDetail: React.FC<IProps> = ({ situation }) => {
                 ),
                 '{date}',
                 () => (
-                  <Time datetime={situation.update.valid_from} />
+                  <Time
+                    displayOnCzDayCase={false}
+                    datetime={situation.update.valid_from}
+                  />
                 ),
               )}
             >
@@ -124,6 +127,7 @@ export const query = graphql`
     relationships {
       region {
         name
+        drupal_internal__tid
       }
       icon {
         code

@@ -25,7 +25,7 @@ const LastUpdate: React.FC<Props> = ({ lastUpdated, isMobile }) => {
         prefix={`${t('last_updated')} `}
         displayTime
         datetime={lastUpdated}
-        displayLastUpdatedCzDays={true}
+        displayOnCzDayCase={true}
       />
     </div>
   );

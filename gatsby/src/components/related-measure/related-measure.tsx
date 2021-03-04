@@ -20,6 +20,7 @@ const RelatedMeasure: React.FC<IProps> = ({ measure }) => {
       <RegionsMarker regions={measure.relationships.region} />
       <TimeMarker
         displayTime
+        displayShortDay
         validFrom={measure.valid_from}
         validTo={measure.valid_to}
       />
@@ -39,6 +40,7 @@ export const query = graphql`
     relationships {
       region {
         name
+        drupal_internal__tid
       }
     }
   }

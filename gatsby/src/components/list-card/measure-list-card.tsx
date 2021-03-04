@@ -5,13 +5,14 @@ import Time from '@/components/time';
 import styles from './measure-list-card.module.scss';
 import classNames from 'classnames';
 import { useTranslation } from '@/components/i18n';
-import { isAllCzechArea } from '../regions-time-logic/regions-time-logic';
+import { isAllCzechRegions } from '../regions-detail';
 
 interface IProps {
   title: string;
   link: string;
   description: string;
   area: string;
+  areaTid: string[];
   validFrom: string;
   validTo: string;
 }
@@ -21,6 +22,7 @@ const MeasureListCard: React.FC<IProps> = ({
   description,
   link,
   area,
+  areaTid,
   validFrom,
   validTo,
 }) => {
@@ -37,7 +39,7 @@ const MeasureListCard: React.FC<IProps> = ({
           <div
             className={classNames(
               styles.measureListCardDetail,
-              isAllCzechArea(area)
+              isAllCzechRegions(areaTid)
                 ? 'font-weight-normal'
                 : 'font-weight-medium',
             )}

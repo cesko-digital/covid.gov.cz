@@ -160,6 +160,7 @@ export const query = graphql`
           relationships {
             region {
               name
+              drupal_internal__tid
             }
           }
         }

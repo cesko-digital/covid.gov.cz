@@ -3,20 +3,20 @@
 @import '../../../assets/scss/design-system/vendor/bootstrap/mixins';
 @import '../../../assets/scss/design-system/vendor/bootstrap/variables';
 
-.markerWrapper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5em;
+.measureDetailMobile {
+  display: none;
+
+  // desktop
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
 }
 
-.iconWrapper {
-  display: flex;
-  align-self: flex-start;
-  justify-self: center;
-  margin-top: 0.15em;
-}
+.measureDetailDesktop {
+  display: block;
 
-.childrenWrapper {
-  display: flex;
-  flex-direction: column;
+  // desktop
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }

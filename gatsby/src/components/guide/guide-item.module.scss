@@ -21,22 +21,8 @@
   }
 }
 
-.guideMobileWrapper {
-  display: none;
-
-  @include media-breakpoint-down(lg) {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-}
-
-.guideDesktopWrapper {
-  display: block;
+.guideWrapper {
   margin-bottom: 0.5rem;
-
-  @include media-breakpoint-down(lg) {
-    display: none;
-  }
 }
 
 /* purgecss start ignore */
@@ -96,6 +82,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin-top: 0.5rem;
 
   &--no-clamp {
     -webkit-line-clamp: none;
