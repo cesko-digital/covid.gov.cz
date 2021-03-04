@@ -871,6 +871,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/omezeni-poskytovani-socialnich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/narizeni-podminek-poslani-osob-do-karanteny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/narizeni-podminek-poslani-osob-do-izolace</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/opatreni-k-zajisteni-poskytovani-zdravotnich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/prijem-novych-osob-do-socialnich-zarizeni-zakazan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/podminky-pritomnosti-tretich-osob-pri-porodu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/nemocnice-socialni-zarizeni/vychazky-uzivatelu-domovu-pro-seniory-domovu-se-zvlastnim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
