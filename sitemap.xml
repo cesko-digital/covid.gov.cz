@@ -51,9 +51,10 @@
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/dealing-official-matters-business</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/compensation-business</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/trainings-business</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/en/situations/business-activities/general-or-holding-meetings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/business-activities/company-and-membership-meetings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/data-boxes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/business-activities/eidentity-and-login-ministry-industry-and-trade-agenda-information</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/business-activities/employees-health-condition-assessment</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/visits-hospitals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/hospitals-and-sanitary-facilities/non-emergency-care</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -423,7 +424,6 @@
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/detske-spolky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/spolkova-cinnost/vcelari</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/pracovnelekarske-prohlidky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/povinne-testovani-zamestnancu-na-pracovistich</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/sankce-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/nemoznost-splacet-uver-ci-hypoteku-podnikatel</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -439,6 +439,7 @@
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/konani-valnych-hromad-clenskych-schuzi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/datove-schranky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/eidentita-prihlaseni-do-agendoveho-informacniho-systemu-mpo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/podnikatelska-cinnost/pracovnelekarske-prohlidky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/navstevy-nemocnic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/nemocnice-socialni-zarizeni/neakutni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
