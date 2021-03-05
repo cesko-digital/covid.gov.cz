@@ -534,7 +534,7 @@
 <url> <loc>https://covid.gov.cz/situace/rousky/pece-o-rousky-respiratory</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky-respiratory/druhy-ochrany</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky-respiratory/k-cemu-slouzi-rouska-respirator</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/rousky/rousky-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/rousky-respiratory/rousky-venku</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky-respiratory/rousky-uvnitr</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/sankce-za-nenoseni-rousky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/rousky/verejna-mezimestska-doprava-taxi-0</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -829,6 +829,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/bezplatne-dobrovolne-testovani-poc-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/opatreni-k-samotestovani-zamestnancu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/opatreni-k-povinnemu-testovani-ve-firmach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/antigenni-testovani-zamestnancu-verejneho</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-upravujici-povinne-hlaseni-nakladani-s</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-ockovani-zdravotni-pojistovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
