@@ -580,6 +580,7 @@
 <url> <loc>https://covid.gov.cz/situace/deti-studenti/dppdpc-osvc</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/deti-studenti/hygienicka-doporuceni-pro-deti-studenty</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/urady-instituce</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/urady-instituce/povinne-testovani-zamestnancu-verejneho-sektoru</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/urady-instituce/provoz</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/urady-instituce/vymena-dokladu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/urady-instituce/notari-advokati-exekutori</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -845,6 +846,7 @@
 <url> <loc>https://covid.gov.cz/opatreni/maloobchod-sluzby/zakaz-pritomnosti-verejnosti-v-provozovnach-ubytovacich-sluzeb</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-vysokych-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/skolstvi/narizeni-pracovni-povinnosti-studentum</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-zakladnich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-strednich-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/skolstvi/omezeni-provozu-vysokoskolskych-koleji</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
