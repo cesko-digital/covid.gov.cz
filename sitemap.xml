@@ -831,6 +831,8 @@
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/opatreni-k-samotestovani-zamestnancu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/opatreni-k-povinnemu-testovani-ve-firmach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/antigenni-testovani-zamestnancu-verejneho</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/narizeni-testovani-klientu-v-domovech-pro-seniory-osoby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/opatreni/antigenni-testovani-na-koronavirus/narizeni-testovani-zamestnancu-zdravotnickych</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-upravujici-povinne-hlaseni-nakladani-s</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/opatreni/ockovani-proti-covidu-19/narizeni-pro-poskytovatele-ockovani-zdravotni-pojistovny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
