@@ -362,6 +362,7 @@
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/information-comprehensive-testing-antigen-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-social-care-facilities</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/problems-and-failures-can-occur-when-testing-ag-tests</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/en/situations/antigen-testing-sars-cov-2/antigen-testing-employees</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/who-will-be-vaccinated-first</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/en/situations/register-vaccination/general-vaccination-citizens</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -748,12 +749,12 @@
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/zpovedi-individualni-duchovni-sluzby</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/cirkve-nabozenstvi/krtiny</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-zamestnancu-ve-firmach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/obecne-informace-o-antigennich-testech-popis-provedeni-testu</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/interpretace-vysledku-antigenniho-testu-jak-se-zachovat-po-obdrzeni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/informace-k-plosnemu-testovani-obyvatel-antigennimi-testy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-v-zarizenich-socialni-pece</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/antigenni-testovani/problemy-nezdary-ktere-mohou-pri-testovani-ag-testy-nastat</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://covid.gov.cz/situace/antigenni-testovani/antigenni-testovani-zamestnancu-ve-firmach</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/ockovani-pedagogu-dalsich-zamestnancu-skol</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://covid.gov.cz/situace/registrace-na-ockovani/kdo-bude-ockovan-jako-prvni</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
