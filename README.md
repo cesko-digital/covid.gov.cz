@@ -1,6 +1,6 @@
 # COVID Portal 🦠 🖥 🇨🇿
 
-| ⚠️ Development has moved to a private repository. This is no longer updated. ⚠️ |
+| ⚠️ Development has moved to a [public code.gov.cz repository](https://code.gov.cz/gov-cz/covid-portal). This is no longer updated. ⚠️ |
 | --- |
 
 ## Links
